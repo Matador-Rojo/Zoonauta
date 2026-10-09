@@ -1,0 +1,10 @@
+{
+  "resultado": "CORRECTO",
+  "archivos_de_observaciones": 72,
+  "observaciones_cerradas_comprobadas": 142289,
+  "modelos_reconciliados": 18,
+  "corridas_evaluacion": 54,
+  "parametros_evaluacion_congelados": true,
+  "actualizaciones_unicas": true,
+  "semillas_separadas": true
+}

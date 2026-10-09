@@ -1,0 +1,624 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "formalizacion_agente_animales_habitats.md",
+    "modelo_principal_probabilistico_animales_habitats.md"
+  ],
+  "items": [
+    {
+      "id": "CP01",
+      "descripcion": "Jirafa: ayudas 1, 2, 3 y 3; respuesta y cierre.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 1,
+        "politica": "ID3",
+        "modalidad": "JUGADOR",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "JUGADOR"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A08"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 1
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 2
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 3
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 3
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H02"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 1
+          }
+        },
+        {
+          "tipo": "continuar",
+          "esperado": {
+            "fase": "COMPLETADA",
+            "completados": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "CP02",
+      "descripcion": "Capibara: aceptar selva tropical aunque la guía apunte a agua dulce.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 1,
+        "politica": "ID3",
+        "modalidad": "JUGADOR",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "JUGADOR"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A31"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A31",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 1
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H01"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 1,
+            "resultado": "VALIDA"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CP03",
+      "descripcion": "Relación pendiente: nivel conservado y observación sin etiqueta.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 1,
+        "politica": "PROBABILISTICO",
+        "modalidad": "JUGADOR",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "JUGADOR"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A31"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A31",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 1
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H03"
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 1,
+            "completados": 0,
+            "resultado": "PENDIENTE",
+            "etiqueta_cierre_observacion": null
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H06"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 1,
+            "actualizaciones_modelo": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "CP04",
+      "descripcion": "Repetir y pausar conservan el reto.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 1,
+        "politica": "PROBABILISTICO",
+        "modalidad": "JUGADOR",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "JUGADOR"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A08"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 1
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 2
+          }
+        },
+        {
+          "tipo": "repetir",
+          "esperado": {
+            "nivel": 2,
+            "conservar_u": true,
+            "repeticion_previa": 1,
+            "conservar_observacion": true
+          }
+        },
+        {
+          "tipo": "pausar",
+          "esperado": {
+            "fase": "PAUSADA",
+            "nivel": 2,
+            "conservar_u": true
+          }
+        },
+        {
+          "tipo": "reanudar",
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 2,
+            "animal_id": "A08",
+            "conservar_u": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "CP05",
+      "descripcion": "Un segundo clic después de resolver no duplica el progreso.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 1,
+        "politica": "ID3",
+        "modalidad": "JUGADOR",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "JUGADOR"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A08"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H02"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 1
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H02"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 1,
+            "accion_ignorada": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "CP06",
+      "descripcion": "Dos retos: capibara en selva y pingüino en mar.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 2,
+        "politica": "ID3",
+        "modalidad": "JUGADOR",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "JUGADOR"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A31"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A31",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H01"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 1
+          }
+        },
+        {
+          "tipo": "continuar",
+          "esperado": {
+            "fase": "SELECCION_ANIMAL",
+            "completados": 1,
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A39"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A39",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA"
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H04"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 2
+          }
+        },
+        {
+          "tipo": "continuar",
+          "esperado": {
+            "fase": "COMPLETADA",
+            "completados": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "CP07",
+      "descripcion": "Inicio del agente con un escenario del banco.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 1,
+        "politica": "ID3",
+        "modalidad": "AGENTE",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "AGENTE"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "generar_reto",
+          "payload": {
+            "animal_id": "A08",
+            "interno": true
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A08"
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "seleccionar_habitat",
+          "payload": {
+            "habitat_id": "H02"
+          },
+          "esperado": {
+            "fase": "RETO_RESUELTO",
+            "completados": 1
+          }
+        },
+        {
+          "tipo": "continuar",
+          "esperado": {
+            "fase": "COMPLETADA",
+            "completados": 1
+          }
+        }
+      ],
+      "orden_escenarios": [
+        "E08"
+      ]
+    },
+    {
+      "id": "CP08",
+      "descripcion": "Nueva ayuda de nivel 3 cambia la variante; Repetir conserva esa variante.",
+      "estado": "ESPECIFICACION_NO_EJECUTADA",
+      "configuracion": {
+        "retos_por_partida": 1,
+        "politica": "PROBABILISTICO",
+        "modalidad": "JUGADOR",
+        "reiniciar_memoria_variantes": true,
+        "parametros": "PRIORS_UNIFORMES_CONGELADOS"
+      },
+      "acciones": [
+        {
+          "tipo": "iniciar",
+          "payload": {
+            "modalidad": "JUGADOR"
+          },
+          "esperado": {
+            "fase": "SELECCION_ANIMAL"
+          }
+        },
+        {
+          "tipo": "elegir_animal",
+          "payload": {
+            "animal_id": "A08"
+          },
+          "esperado": {
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "presentar_reto",
+          "payload": {
+            "interno": true
+          },
+          "esperado": {
+            "fase": "ESPERANDO_RESPUESTA",
+            "nivel": 0
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 1,
+            "variante": "V1"
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 2,
+            "variante": "V1"
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 3,
+            "variante": "V1"
+          }
+        },
+        {
+          "tipo": "ayuda",
+          "esperado": {
+            "nivel": 3,
+            "variante": "V2"
+          }
+        },
+        {
+          "tipo": "repetir",
+          "esperado": {
+            "nivel": 3,
+            "variante": "V2",
+            "conservar_u": true,
+            "repeticion_previa": 1
+          }
+        }
+      ]
+    }
+  ],
+  "ejecutados": false,
+  "nota": "Son recorridos esperados para la futura PoC. La preparación de datos no ejecuta el motor del juego."
+}

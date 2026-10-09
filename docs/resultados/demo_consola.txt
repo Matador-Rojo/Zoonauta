@@ -1,0 +1,205 @@
+ANIMALES Y HÁBITATS: PoC en consola
+
+Los recorridos siguientes son pruebas de control sintéticas.
+Los parámetros probabilísticos permanecen sin entrenar y congelados.
+
+ID3 calculado sobre los ocho perfiles didácticos:
+Entropía inicial: 3.00 bits.
+Ganancia de entorno: 2.000000 bits.
+Ganancia de temperatura: 1.905639 bits.
+Ganancia de agua: 1.061278 bits.
+Ganancia de vegetacion: 1.000000 bits.
+Ganancia de ubicacion: 1.061278 bits.
+Raíz elegida: entorno.
+
+Rutas construidas:
+H01: entorno=ARBOLADO; temperatura=CALIDO; hoja=H01.
+H02: entorno=LLANURA_CALIDA; vegetacion=ABUNDANTE; hoja=H02.
+H03: entorno=LLANURA_CALIDA; vegetacion=ESCASA; hoja=H03.
+H04: entorno=ACUATICO; agua=SALADA; hoja=H04.
+H05: entorno=ARBOLADO; temperatura=TEMPLADO; hoja=H05.
+H06: entorno=ACUATICO; agua=DULCE; hoja=H06.
+H07: entorno=PAISAJE_FRIO; ubicacion=POLAR; hoja=H07.
+H08: entorno=PAISAJE_FRIO; ubicacion=MONTANA; hoja=H08.
+
+CP01: Jirafa: ayudas 1, 2, 3 y 3; respuesta y cierre.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  02. elegir_animal => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A08, P_VIVIR
+  04. ayuda => ESPERANDO_RESPUESTA; nivel=1; completados=0.
+      Busca un lugar abierto y cálido.
+      Secuencia simbólica: P_BUSCAR, P_LUGAR_ABIERTO, P_CALOR
+      Variante=V1; elegibles=V1; K=H02,H03.
+  05. ayuda => ESPERANDO_RESPUESTA; nivel=2; completados=0.
+      Busca mucho pasto y árboles separados.
+      Secuencia simbólica: P_BUSCAR, P_PASTO_ABUNDANTE, P_ARBOLES_SEPARADOS
+      Variante=V1; elegibles=V1; K=H02.
+  06. ayuda => ESPERANDO_RESPUESTA; nivel=3; completados=0.
+      Una opción es la sabana. Toca su pictograma.
+      Secuencia simbólica: P_OPCION, P_H02, P_TOCAR
+      Variante=V1; elegibles=V1; K=H02.
+  07. ayuda => ESPERANDO_RESPUESTA; nivel=3; completados=0.
+      Una opción es la sabana. Toca su pictograma.
+      Secuencia simbólica: P_OPCION, P_H02, P_TOCAR
+      Variante=V1; elegibles=V1; K=H02.
+  08. seleccionar_habitat => RETO_RESUELTO; nivel=3; completados=1.
+      ¡Sí! Este animal puede vivir en la sabana.
+      Secuencia simbólica: P_CONFIRMAR, P_A08, P_VIVIR, P_H02
+  09. continuar => COMPLETADA; nivel=3; completados=1.
+      Terminamos esta partida. ¡Gracias por jugar!
+      Secuencia simbólica: P_FIN, P_CONFIRMAR
+  Resultado del caso: CORRECTO.
+
+CP02: Capibara: aceptar selva tropical aunque la guía apunte a agua dulce.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  02. elegir_animal => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A31, P_VIVIR
+  04. ayuda => ESPERANDO_RESPUESTA; nivel=1; completados=0.
+      Busca un lugar con mucha agua.
+      Secuencia simbólica: P_BUSCAR, P_MUCHA_AGUA
+      Variante=V1; elegibles=V1; K=H04,H06.
+  05. seleccionar_habitat => RETO_RESUELTO; nivel=1; completados=1.
+      ¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.
+      Secuencia simbólica: P_CONFIRMAR, P_A31, P_VIVIR, P_H01
+  Resultado del caso: CORRECTO.
+
+CP03: Relación pendiente: nivel conservado y observación sin etiqueta.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  02. elegir_animal => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A31, P_VIVIR
+  04. ayuda => ESPERANDO_RESPUESTA; nivel=1; completados=0.
+      Busca un lugar con mucha agua.
+      Secuencia simbólica: P_BUSCAR, P_MUCHA_AGUA
+      Variante=V1; elegibles=V1,V2,V3; K=H04,H06.
+  05. seleccionar_habitat => ESPERANDO_RESPUESTA; nivel=1; completados=0.
+      Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista.
+      Secuencia simbólica: P_A31, P_EXPLORAR, P_AYUDA
+  06. seleccionar_habitat => RETO_RESUELTO; nivel=1; completados=1.
+      ¡Sí! Este animal puede vivir en un entorno de agua dulce.
+      Secuencia simbólica: P_CONFIRMAR, P_A31, P_VIVIR, P_H06
+  Resultado del caso: CORRECTO.
+
+CP04: Repetir y pausar conservan el reto.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  02. elegir_animal => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A08, P_VIVIR
+  04. ayuda => ESPERANDO_RESPUESTA; nivel=1; completados=0.
+      Busca un lugar abierto y cálido.
+      Secuencia simbólica: P_BUSCAR, P_LUGAR_ABIERTO, P_CALOR
+      Variante=V1; elegibles=V1,V2,V3; K=H02,H03.
+  05. ayuda => ESPERANDO_RESPUESTA; nivel=2; completados=0.
+      Busca mucho pasto y árboles separados.
+      Secuencia simbólica: P_BUSCAR, P_PASTO_ABUNDANTE, P_ARBOLES_SEPARADOS
+      Variante=V1; elegibles=V1,V2,V3; K=H02.
+  06. repetir => ESPERANDO_RESPUESTA; nivel=2; completados=0.
+      Busca mucho pasto y árboles separados.
+      Secuencia simbólica: P_BUSCAR, P_PASTO_ABUNDANTE, P_ARBOLES_SEPARADOS
+  07. pausar => PAUSADA; nivel=2; completados=0.
+      Partida en pausa. Puedes reanudarla.
+      Secuencia simbólica: P_PAUSAR, P_REANUDAR
+  08. reanudar => ESPERANDO_RESPUESTA; nivel=2; completados=0.
+      Busca mucho pasto y árboles separados.
+      Secuencia simbólica: P_BUSCAR, P_PASTO_ABUNDANTE, P_ARBOLES_SEPARADOS
+  Resultado del caso: CORRECTO.
+
+CP05: Un segundo clic después de resolver no duplica el progreso.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  02. elegir_animal => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A08, P_VIVIR
+  04. seleccionar_habitat => RETO_RESUELTO; nivel=0; completados=1.
+      ¡Sí! Este animal puede vivir en la sabana.
+      Secuencia simbólica: P_CONFIRMAR, P_A08, P_VIVIR, P_H02
+  05. seleccionar_habitat => RETO_RESUELTO; nivel=0; completados=1.
+  Resultado del caso: CORRECTO.
+
+CP06: Dos retos: capibara en selva y pingüino en mar.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  02. elegir_animal => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A31, P_VIVIR
+  04. seleccionar_habitat => RETO_RESUELTO; nivel=0; completados=1.
+      ¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.
+      Secuencia simbólica: P_CONFIRMAR, P_A31, P_VIVIR, P_H01
+  05. continuar => SELECCION_ANIMAL; nivel=0; completados=1.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  06. elegir_animal => PRESENTACION; nivel=0; completados=1.
+  07. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=1.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A39, P_VIVIR
+  08. seleccionar_habitat => RETO_RESUELTO; nivel=0; completados=2.
+      ¡Sí! Este animal puede vivir en el mar. Se alimenta en el mar y se reproduce sobre hielo antártico.
+      Secuencia simbólica: P_CONFIRMAR, P_A39, P_VIVIR, P_H04
+  09. continuar => COMPLETADA; nivel=0; completados=2.
+      Terminamos esta partida. ¡Gracias por jugar!
+      Secuencia simbólica: P_FIN, P_CONFIRMAR
+  Resultado del caso: CORRECTO.
+
+CP07: Inicio del agente con un escenario del banco.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+  02. generar_reto => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A08, P_VIVIR
+  04. seleccionar_habitat => RETO_RESUELTO; nivel=0; completados=1.
+      ¡Sí! Este animal puede vivir en la sabana.
+      Secuencia simbólica: P_CONFIRMAR, P_A08, P_VIVIR, P_H02
+  05. continuar => COMPLETADA; nivel=0; completados=1.
+      Terminamos esta partida. ¡Gracias por jugar!
+      Secuencia simbólica: P_FIN, P_CONFIRMAR
+  Resultado del caso: CORRECTO.
+
+CP08: Nueva ayuda de nivel 3 cambia la variante; Repetir conserva esa variante.
+  01. iniciar => SELECCION_ANIMAL; nivel=0; completados=0.
+      Elige un animal.
+      Secuencia simbólica: P_ELEGIR
+  02. elegir_animal => PRESENTACION; nivel=0; completados=0.
+  03. presentar_reto => ESPERANDO_RESPUESTA; nivel=0; completados=0.
+      ¿Dónde puede vivir este animal?
+      Secuencia simbólica: P_QUE_LUGAR, P_A08, P_VIVIR
+  04. ayuda => ESPERANDO_RESPUESTA; nivel=1; completados=0.
+      Busca un lugar abierto y cálido.
+      Secuencia simbólica: P_BUSCAR, P_LUGAR_ABIERTO, P_CALOR
+      Variante=V1; elegibles=V1,V2,V3; K=H02,H03.
+  05. ayuda => ESPERANDO_RESPUESTA; nivel=2; completados=0.
+      Busca mucho pasto y árboles separados.
+      Secuencia simbólica: P_BUSCAR, P_PASTO_ABUNDANTE, P_ARBOLES_SEPARADOS
+      Variante=V1; elegibles=V1,V2,V3; K=H02.
+  06. ayuda => ESPERANDO_RESPUESTA; nivel=3; completados=0.
+      Una opción es la sabana. Toca su pictograma.
+      Secuencia simbólica: P_OPCION, P_H02, P_TOCAR
+      Variante=V1; elegibles=V1,V2,V3; K=H02.
+  07. ayuda => ESPERANDO_RESPUESTA; nivel=3; completados=0.
+      Este animal puede vivir en la sabana. Toca su pictograma.
+      Secuencia simbólica: P_A08, P_VIVIR, P_H02, P_TOCAR
+      Variante=V2; elegibles=V2,V3; K=H02.
+  08. repetir => ESPERANDO_RESPUESTA; nivel=3; completados=0.
+      Este animal puede vivir en la sabana. Toca su pictograma.
+      Secuencia simbólica: P_A08, P_VIVIR, P_H02, P_TOCAR
+  Resultado del caso: CORRECTO.
+
+Aceptación: 8/8 casos correctos.
+No se ha ejecutado aprendizaje bayesiano ni evaluación con jugadores.

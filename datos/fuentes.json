@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "matriz_animales_habitats_48.md"
+  ],
+  "items": [
+    {
+      "id": "F001",
+      "url": "https://animaldiversity.org/accounts/Panthera_onca/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F002",
+      "url": "https://animaldiversity.org/accounts/Pongo_pygmaeus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F003",
+      "url": "https://animaldiversity.org/accounts/Gorilla_gorilla/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F004",
+      "url": "https://animaldiversity.org/accounts/Choloepus_hoffmanni/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F005",
+      "url": "https://animaldiversity.org/accounts/Ara_macao/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F006",
+      "url": "https://aqua.org/explore/animals/blue-poison-dart-frog",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F007",
+      "url": "https://animaldiversity.org/accounts/Panthera_leo/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F008",
+      "url": "https://giraffeconservation.org/giraffe-species/reticulated-giraffe/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F009",
+      "url": "https://animals.sandiegozoo.org/animals/giraffe",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F010",
+      "url": "https://animals.sandiegozoo.org/animals/zebra",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F011",
+      "url": "https://animals.sandiegozoo.org/animals/elephant",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F012",
+      "url": "https://animaldiversity.org/accounts/Acinonyx_jubatus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F013",
+      "url": "https://animaldiversity.org/accounts/Struthio_camelus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F014",
+      "url": "https://animals.sandiegozoo.org/animals/ostrich",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F015",
+      "url": "https://animaldiversity.org/accounts/Camelus_dromedarius/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F016",
+      "url": "https://animaldiversity.org/accounts/Vulpes_zerda/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F017",
+      "url": "https://animaldiversity.org/accounts/Suricata_suricatta/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F018",
+      "url": "https://animaldiversity.org/accounts/Gopherus_agassizii/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F019",
+      "url": "https://animaldiversity.org/accounts/Heloderma_suspectum/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F020",
+      "url": "https://animaldiversity.org/accounts/Jaculus_jaculus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F021",
+      "url": "https://animaldiversity.org/accounts/Tursiops_truncatus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F022",
+      "url": "https://animaldiversity.org/accounts/Balaenoptera_musculus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F023",
+      "url": "https://animaldiversity.org/accounts/Carcharodon_carcharias/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F024",
+      "url": "https://animaldiversity.org/accounts/Manta_birostris/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F025",
+      "url": "https://animaldiversity.org/accounts/Octopus_vulgaris/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F026",
+      "url": "https://animaldiversity.org/accounts/Chelonia_mydas/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F027",
+      "url": "https://animaldiversity.org/accounts/Ursus_arctos/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F028",
+      "url": "https://animaldiversity.org/accounts/Canis_lupus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F029",
+      "url": "https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.105212/Canis_lupus",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F030",
+      "url": "https://animaldiversity.org/accounts/Vulpes_vulpes/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F031",
+      "url": "https://home.nps.gov/bela/learn/nature/red-fox.htm",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F032",
+      "url": "https://animaldiversity.org/accounts/Sciurus_vulgaris/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F033",
+      "url": "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/mammals/roe-deer/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F034",
+      "url": "https://animaldiversity.org/accounts/Sus_scrofa/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F035",
+      "url": "https://animaldiversity.org/accounts/Hydrochoerus_hydrochaeris/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F036",
+      "url": "https://www.worldwildlife.org/resources/facts/are-capybaras-rodents-and-5-other-capybara-facts/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F037",
+      "url": "https://animals.sandiegozoo.org/animals/axolotl",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F038",
+      "url": "https://animaldiversity.org/accounts/Inia_geoffrensis/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F039",
+      "url": "https://animaldiversity.org/accounts/Pteronura_brasiliensis/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F040",
+      "url": "https://www.iucnosgbull.org/Volume14/Schenck_et_al_1997.html",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F041",
+      "url": "https://animaldiversity.org/accounts/Castor_canadensis/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F042",
+      "url": "https://seaworld.org/animals/facts/reptiles/nile-crocodile/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F043",
+      "url": "https://animaldiversity.org/accounts/Ursus_maritimus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F044",
+      "url": "https://animaldiversity.org/accounts/Vulpes_lagopus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F045",
+      "url": "https://animaldiversity.org/accounts/Aptenodytes_forsteri/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F046",
+      "url": "https://animaldiversity.org/accounts/Odobenus_rosmarus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F047",
+      "url": "https://animaldiversity.org/accounts/Nyctea_scandiaca/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F048",
+      "url": "https://animaldiversity.org/accounts/Lepus_arcticus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F049",
+      "url": "https://animaldiversity.org/accounts/Vicugna_vicugna/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F050",
+      "url": "https://animaldiversity.org/accounts/Bos_grunniens/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F051",
+      "url": "https://animals.sandiegozoo.org/animals/snow-leopard",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F052",
+      "url": "https://animaldiversity.org/accounts/Vultur_gryphus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F053",
+      "url": "https://animaldiversity.org/accounts/Oreamnos_americanus/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F054",
+      "url": "https://www.adfg.alaska.gov/index.cfm?adfg=goat.printerfriendly",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    },
+    {
+      "id": "F055",
+      "url": "https://animaldiversity.org/accounts/Chinchilla_chinchilla/",
+      "tipo": "REFERENCIA_CITADA_EN_MATRIZ",
+      "documento_origen": "matriz_animales_habitats_48.md",
+      "verificacion_en_esta_etapa": "REFERENCIA_CONSERVADA; NO_NUEVA_REVISION_WEB"
+    }
+  ]
+}

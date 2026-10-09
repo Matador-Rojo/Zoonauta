@@ -1,0 +1,63 @@
+{
+  "version": "3.0.0",
+  "fecha": "2026-10-09",
+  "python": {
+    "total": 35,
+    "correctas": 35,
+    "fallidas": 0
+  },
+  "navegador": {
+    "fecha": "2026-10-09",
+    "navegador": "145.0.7632.6",
+    "resultados": [
+      {
+        "caso": "Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Actualización del navegador conserva sesión sin repetir eventos ni audio",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Voz española: texto exacto, repetición y cancelación",
+        "resultado": "OK",
+        "alcance": "Síntesis simulada en navegador; no certifica sonido audible ni comprensión."
+      },
+      {
+        "caso": "95 recursos visuales decodificados sin errores",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Pantalla móvil 390 × 844: ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Dispositivo sin voz española: aviso visible, texto y pictogramas operativos",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Consulta técnica separada y modelo congelado",
+        "resultado": "OK"
+      }
+    ],
+    "errores_js": []
+  },
+  "pictogramas": {
+    "total": 95,
+    "png_arasaac_sin_modificar": 28,
+    "svg_originales": 67,
+    "validacion_caa_con_usuarios": false
+  },
+  "modelo_demo": {
+    "ruta": "docs/experimentos/modelos/SIM_CONTEXTUAL_R01.json",
+    "sha256": "ee2bcd397ae18de09f5b4ed83c3244ceacc0c757146276a7b086534c62cc05e9",
+    "congelado": true,
+    "datos_entrenamiento": "SINTETICOS",
+    "criterio": "primera replica predefinida"
+  },
+  "voz": {
+    "adaptador": "Web Speech API",
+    "prueba_texto_idioma_y_cancelacion": "CORRECTA_SINTESIS_CONTROLADA",
+    "audio_audible_en_dispositivo_usuario_verificado": false
+  }
+}

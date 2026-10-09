@@ -1,0 +1,2240 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "matriz_animales_habitats_48.md",
+    "formalizacion_agente_animales_habitats.md"
+  ],
+  "items": [
+    {
+      "id": "E01",
+      "animal_id": "A01",
+      "habitat_guia_id": "H01",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H01",
+        "H05"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H01_L1_V1",
+          "V2": "AY_H01_L1_V2",
+          "V3": "AY_H01_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H01_L2_V1",
+          "V2": "AY_H01_L2_V2",
+          "V3": "AY_H01_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H01_L3_V1",
+          "V2": "AY_H01_L3_V2",
+          "V3": "AY_H01_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A01_L1",
+        "BASE_A01_L2",
+        "BASE_A01_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E02",
+      "animal_id": "A02",
+      "habitat_guia_id": "H01",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H01_L1_V1",
+          "V2": "AY_H01_L1_V2",
+          "V3": "AY_H01_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H01_L2_V1",
+          "V2": "AY_H01_L2_V2",
+          "V3": "AY_H01_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H01_L3_V1",
+          "V2": "AY_H01_L3_V2",
+          "V3": "AY_H01_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A02_L1",
+        "BASE_A02_L2",
+        "BASE_A02_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E03",
+      "animal_id": "A03",
+      "habitat_guia_id": "H01",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H01_L1_V1",
+          "V2": "AY_H01_L1_V2",
+          "V3": "AY_H01_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H01_L2_V1",
+          "V2": "AY_H01_L2_V2",
+          "V3": "AY_H01_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H01_L3_V1",
+          "V2": "AY_H01_L3_V2",
+          "V3": "AY_H01_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A03_L1",
+        "BASE_A03_L2",
+        "BASE_A03_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E04",
+      "animal_id": "A04",
+      "habitat_guia_id": "H01",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H01_L1_V1",
+          "V2": "AY_H01_L1_V2",
+          "V3": "AY_H01_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H01_L2_V1",
+          "V2": "AY_H01_L2_V2",
+          "V3": "AY_H01_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H01_L3_V1",
+          "V2": "AY_H01_L3_V2",
+          "V3": "AY_H01_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A04_L1",
+        "BASE_A04_L2",
+        "BASE_A04_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E05",
+      "animal_id": "A05",
+      "habitat_guia_id": "H01",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H01_L1_V1",
+          "V2": "AY_H01_L1_V2",
+          "V3": "AY_H01_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H01_L2_V1",
+          "V2": "AY_H01_L2_V2",
+          "V3": "AY_H01_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H01_L3_V1",
+          "V2": "AY_H01_L3_V2",
+          "V3": "AY_H01_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A05_L1",
+        "BASE_A05_L2",
+        "BASE_A05_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E06",
+      "animal_id": "A06",
+      "habitat_guia_id": "H01",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H01_L1_V1",
+          "V2": "AY_H01_L1_V2",
+          "V3": "AY_H01_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H01_L2_V1",
+          "V2": "AY_H01_L2_V2",
+          "V3": "AY_H01_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H01_L3_V1",
+          "V2": "AY_H01_L3_V2",
+          "V3": "AY_H01_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A06_L1",
+        "BASE_A06_L2",
+        "BASE_A06_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E07",
+      "animal_id": "A07",
+      "habitat_guia_id": "H02",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H02",
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H02_L1_V1",
+          "V2": "AY_H02_L1_V2",
+          "V3": "AY_H02_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H02_L2_V1",
+          "V2": "AY_H02_L2_V2",
+          "V3": "AY_H02_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H02_L3_V1",
+          "V2": "AY_H02_L3_V2",
+          "V3": "AY_H02_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A07_L1",
+        "BASE_A07_L2",
+        "BASE_A07_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E08",
+      "animal_id": "A08",
+      "habitat_guia_id": "H02",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H02"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H02_L1_V1",
+          "V2": "AY_H02_L1_V2",
+          "V3": "AY_H02_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H02_L2_V1",
+          "V2": "AY_H02_L2_V2",
+          "V3": "AY_H02_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H02_L3_V1",
+          "V2": "AY_H02_L3_V2",
+          "V3": "AY_H02_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A08_L1",
+        "BASE_A08_L2",
+        "BASE_A08_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E09",
+      "animal_id": "A09",
+      "habitat_guia_id": "H02",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H02"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H02_L1_V1",
+          "V2": "AY_H02_L1_V2",
+          "V3": "AY_H02_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H02_L2_V1",
+          "V2": "AY_H02_L2_V2",
+          "V3": "AY_H02_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H02_L3_V1",
+          "V2": "AY_H02_L3_V2",
+          "V3": "AY_H02_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A09_L1",
+        "BASE_A09_L2",
+        "BASE_A09_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E10",
+      "animal_id": "A10",
+      "habitat_guia_id": "H02",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H02"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H02_L1_V1",
+          "V2": "AY_H02_L1_V2",
+          "V3": "AY_H02_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H02_L2_V1",
+          "V2": "AY_H02_L2_V2",
+          "V3": "AY_H02_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H02_L3_V1",
+          "V2": "AY_H02_L3_V2",
+          "V3": "AY_H02_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A10_L1",
+        "BASE_A10_L2",
+        "BASE_A10_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E11",
+      "animal_id": "A11",
+      "habitat_guia_id": "H02",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H02",
+        "H03"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H02_L1_V1",
+          "V2": "AY_H02_L1_V2",
+          "V3": "AY_H02_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H02_L2_V1",
+          "V2": "AY_H02_L2_V2",
+          "V3": "AY_H02_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H02_L3_V1",
+          "V2": "AY_H02_L3_V2",
+          "V3": "AY_H02_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A11_L1",
+        "BASE_A11_L2",
+        "BASE_A11_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E12",
+      "animal_id": "A12",
+      "habitat_guia_id": "H02",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H02",
+        "H03"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H02_L1_V1",
+          "V2": "AY_H02_L1_V2",
+          "V3": "AY_H02_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H02_L2_V1",
+          "V2": "AY_H02_L2_V2",
+          "V3": "AY_H02_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H02_L3_V1",
+          "V2": "AY_H02_L3_V2",
+          "V3": "AY_H02_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A12_L1",
+        "BASE_A12_L2",
+        "BASE_A12_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E13",
+      "animal_id": "A13",
+      "habitat_guia_id": "H03",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H03_L1_V1",
+          "V2": "AY_H03_L1_V2",
+          "V3": "AY_H03_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H03_L2_V1",
+          "V2": "AY_H03_L2_V2",
+          "V3": "AY_H03_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H03_L3_V1",
+          "V2": "AY_H03_L3_V2",
+          "V3": "AY_H03_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A13_L1",
+        "BASE_A13_L2",
+        "BASE_A13_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E14",
+      "animal_id": "A14",
+      "habitat_guia_id": "H03",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H03_L1_V1",
+          "V2": "AY_H03_L1_V2",
+          "V3": "AY_H03_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H03_L2_V1",
+          "V2": "AY_H03_L2_V2",
+          "V3": "AY_H03_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H03_L3_V1",
+          "V2": "AY_H03_L3_V2",
+          "V3": "AY_H03_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A14_L1",
+        "BASE_A14_L2",
+        "BASE_A14_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E15",
+      "animal_id": "A15",
+      "habitat_guia_id": "H03",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H03",
+        "H02"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H03_L1_V1",
+          "V2": "AY_H03_L1_V2",
+          "V3": "AY_H03_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H03_L2_V1",
+          "V2": "AY_H03_L2_V2",
+          "V3": "AY_H03_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H03_L3_V1",
+          "V2": "AY_H03_L3_V2",
+          "V3": "AY_H03_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A15_L1",
+        "BASE_A15_L2",
+        "BASE_A15_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E16",
+      "animal_id": "A16",
+      "habitat_guia_id": "H03",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H03_L1_V1",
+          "V2": "AY_H03_L1_V2",
+          "V3": "AY_H03_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H03_L2_V1",
+          "V2": "AY_H03_L2_V2",
+          "V3": "AY_H03_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H03_L3_V1",
+          "V2": "AY_H03_L3_V2",
+          "V3": "AY_H03_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A16_L1",
+        "BASE_A16_L2",
+        "BASE_A16_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E17",
+      "animal_id": "A17",
+      "habitat_guia_id": "H03",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H03_L1_V1",
+          "V2": "AY_H03_L1_V2",
+          "V3": "AY_H03_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H03_L2_V1",
+          "V2": "AY_H03_L2_V2",
+          "V3": "AY_H03_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H03_L3_V1",
+          "V2": "AY_H03_L3_V2",
+          "V3": "AY_H03_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A17_L1",
+        "BASE_A17_L2",
+        "BASE_A17_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E18",
+      "animal_id": "A18",
+      "habitat_guia_id": "H03",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H03_L1_V1",
+          "V2": "AY_H03_L1_V2",
+          "V3": "AY_H03_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H03_L2_V1",
+          "V2": "AY_H03_L2_V2",
+          "V3": "AY_H03_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H03_L3_V1",
+          "V2": "AY_H03_L3_V2",
+          "V3": "AY_H03_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A18_L1",
+        "BASE_A18_L2",
+        "BASE_A18_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E19",
+      "animal_id": "A19",
+      "habitat_guia_id": "H04",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H04_L1_V1",
+          "V2": "AY_H04_L1_V2",
+          "V3": "AY_H04_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H04_L2_V1",
+          "V2": "AY_H04_L2_V2",
+          "V3": "AY_H04_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H04_L3_V1",
+          "V2": "AY_H04_L3_V2",
+          "V3": "AY_H04_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A19_L1",
+        "BASE_A19_L2",
+        "BASE_A19_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E20",
+      "animal_id": "A20",
+      "habitat_guia_id": "H04",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H04",
+        "H07"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H04_L1_V1",
+          "V2": "AY_H04_L1_V2",
+          "V3": "AY_H04_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H04_L2_V1",
+          "V2": "AY_H04_L2_V2",
+          "V3": "AY_H04_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H04_L3_V1",
+          "V2": "AY_H04_L3_V2",
+          "V3": "AY_H04_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A20_L1",
+        "BASE_A20_L2",
+        "BASE_A20_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E21",
+      "animal_id": "A21",
+      "habitat_guia_id": "H04",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H04_L1_V1",
+          "V2": "AY_H04_L1_V2",
+          "V3": "AY_H04_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H04_L2_V1",
+          "V2": "AY_H04_L2_V2",
+          "V3": "AY_H04_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H04_L3_V1",
+          "V2": "AY_H04_L3_V2",
+          "V3": "AY_H04_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A21_L1",
+        "BASE_A21_L2",
+        "BASE_A21_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E22",
+      "animal_id": "A22",
+      "habitat_guia_id": "H04",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H04_L1_V1",
+          "V2": "AY_H04_L1_V2",
+          "V3": "AY_H04_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H04_L2_V1",
+          "V2": "AY_H04_L2_V2",
+          "V3": "AY_H04_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H04_L3_V1",
+          "V2": "AY_H04_L3_V2",
+          "V3": "AY_H04_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A22_L1",
+        "BASE_A22_L2",
+        "BASE_A22_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E23",
+      "animal_id": "A23",
+      "habitat_guia_id": "H04",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H04_L1_V1",
+          "V2": "AY_H04_L1_V2",
+          "V3": "AY_H04_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H04_L2_V1",
+          "V2": "AY_H04_L2_V2",
+          "V3": "AY_H04_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H04_L3_V1",
+          "V2": "AY_H04_L3_V2",
+          "V3": "AY_H04_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A23_L1",
+        "BASE_A23_L2",
+        "BASE_A23_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E24",
+      "animal_id": "A24",
+      "habitat_guia_id": "H04",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H04_L1_V1",
+          "V2": "AY_H04_L1_V2",
+          "V3": "AY_H04_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H04_L2_V1",
+          "V2": "AY_H04_L2_V2",
+          "V3": "AY_H04_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H04_L3_V1",
+          "V2": "AY_H04_L3_V2",
+          "V3": "AY_H04_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A24_L1",
+        "BASE_A24_L2",
+        "BASE_A24_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E25",
+      "animal_id": "A25",
+      "habitat_guia_id": "H05",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H05",
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H05_L1_V1",
+          "V2": "AY_H05_L1_V2",
+          "V3": "AY_H05_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H05_L2_V1",
+          "V2": "AY_H05_L2_V2",
+          "V3": "AY_H05_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H05_L3_V1",
+          "V2": "AY_H05_L3_V2",
+          "V3": "AY_H05_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A25_L1",
+        "BASE_A25_L2",
+        "BASE_A25_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E26",
+      "animal_id": "A26",
+      "habitat_guia_id": "H05",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H05",
+        "H07",
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H05_L1_V1",
+          "V2": "AY_H05_L1_V2",
+          "V3": "AY_H05_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H05_L2_V1",
+          "V2": "AY_H05_L2_V2",
+          "V3": "AY_H05_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H05_L3_V1",
+          "V2": "AY_H05_L3_V2",
+          "V3": "AY_H05_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A26_L1",
+        "BASE_A26_L2",
+        "BASE_A26_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E27",
+      "animal_id": "A27",
+      "habitat_guia_id": "H05",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H05",
+        "H07",
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H05_L1_V1",
+          "V2": "AY_H05_L1_V2",
+          "V3": "AY_H05_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H05_L2_V1",
+          "V2": "AY_H05_L2_V2",
+          "V3": "AY_H05_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H05_L3_V1",
+          "V2": "AY_H05_L3_V2",
+          "V3": "AY_H05_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A27_L1",
+        "BASE_A27_L2",
+        "BASE_A27_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E28",
+      "animal_id": "A28",
+      "habitat_guia_id": "H05",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H05"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H05_L1_V1",
+          "V2": "AY_H05_L1_V2",
+          "V3": "AY_H05_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H05_L2_V1",
+          "V2": "AY_H05_L2_V2",
+          "V3": "AY_H05_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H05_L3_V1",
+          "V2": "AY_H05_L3_V2",
+          "V3": "AY_H05_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A28_L1",
+        "BASE_A28_L2",
+        "BASE_A28_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E29",
+      "animal_id": "A29",
+      "habitat_guia_id": "H05",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H05"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H05_L1_V1",
+          "V2": "AY_H05_L1_V2",
+          "V3": "AY_H05_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H05_L2_V1",
+          "V2": "AY_H05_L2_V2",
+          "V3": "AY_H05_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H05_L3_V1",
+          "V2": "AY_H05_L3_V2",
+          "V3": "AY_H05_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A29_L1",
+        "BASE_A29_L2",
+        "BASE_A29_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E30",
+      "animal_id": "A30",
+      "habitat_guia_id": "H05",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H05"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H05_L1_V1",
+          "V2": "AY_H05_L1_V2",
+          "V3": "AY_H05_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H05_L2_V1",
+          "V2": "AY_H05_L2_V2",
+          "V3": "AY_H05_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H05_L3_V1",
+          "V2": "AY_H05_L3_V2",
+          "V3": "AY_H05_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A30_L1",
+        "BASE_A30_L2",
+        "BASE_A30_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E31",
+      "animal_id": "A31",
+      "habitat_guia_id": "H06",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H06",
+        "H01",
+        "H02"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H06_L1_V1",
+          "V2": "AY_H06_L1_V2",
+          "V3": "AY_H06_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H06_L2_V1",
+          "V2": "AY_H06_L2_V2",
+          "V3": "AY_H06_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H06_L3_V1",
+          "V2": "AY_H06_L3_V2",
+          "V3": "AY_H06_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A31_L1",
+        "BASE_A31_L2",
+        "BASE_A31_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E32",
+      "animal_id": "A32",
+      "habitat_guia_id": "H06",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H06"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H06_L1_V1",
+          "V2": "AY_H06_L1_V2",
+          "V3": "AY_H06_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H06_L2_V1",
+          "V2": "AY_H06_L2_V2",
+          "V3": "AY_H06_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H06_L3_V1",
+          "V2": "AY_H06_L3_V2",
+          "V3": "AY_H06_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A32_L1",
+        "BASE_A32_L2",
+        "BASE_A32_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E33",
+      "animal_id": "A33",
+      "habitat_guia_id": "H06",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H06",
+        "H01"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H06_L1_V1",
+          "V2": "AY_H06_L1_V2",
+          "V3": "AY_H06_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H06_L2_V1",
+          "V2": "AY_H06_L2_V2",
+          "V3": "AY_H06_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H06_L3_V1",
+          "V2": "AY_H06_L3_V2",
+          "V3": "AY_H06_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A33_L1",
+        "BASE_A33_L2",
+        "BASE_A33_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E34",
+      "animal_id": "A34",
+      "habitat_guia_id": "H06",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H06",
+        "H01"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H06_L1_V1",
+          "V2": "AY_H06_L1_V2",
+          "V3": "AY_H06_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H06_L2_V1",
+          "V2": "AY_H06_L2_V2",
+          "V3": "AY_H06_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H06_L3_V1",
+          "V2": "AY_H06_L3_V2",
+          "V3": "AY_H06_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A34_L1",
+        "BASE_A34_L2",
+        "BASE_A34_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E35",
+      "animal_id": "A35",
+      "habitat_guia_id": "H06",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H06",
+        "H05"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H06_L1_V1",
+          "V2": "AY_H06_L1_V2",
+          "V3": "AY_H06_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H06_L2_V1",
+          "V2": "AY_H06_L2_V2",
+          "V3": "AY_H06_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H06_L3_V1",
+          "V2": "AY_H06_L3_V2",
+          "V3": "AY_H06_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A35_L1",
+        "BASE_A35_L2",
+        "BASE_A35_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E36",
+      "animal_id": "A36",
+      "habitat_guia_id": "H06",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H06"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H06_L1_V1",
+          "V2": "AY_H06_L1_V2",
+          "V3": "AY_H06_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H06_L2_V1",
+          "V2": "AY_H06_L2_V2",
+          "V3": "AY_H06_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H06_L3_V1",
+          "V2": "AY_H06_L3_V2",
+          "V3": "AY_H06_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A36_L1",
+        "BASE_A36_L2",
+        "BASE_A36_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E37",
+      "animal_id": "A37",
+      "habitat_guia_id": "H07",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H07",
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H07_L1_V1",
+          "V2": "AY_H07_L1_V2",
+          "V3": "AY_H07_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H07_L2_V1",
+          "V2": "AY_H07_L2_V2",
+          "V3": "AY_H07_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H07_L3_V1",
+          "V2": "AY_H07_L3_V2",
+          "V3": "AY_H07_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A37_L1",
+        "BASE_A37_L2",
+        "BASE_A37_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E38",
+      "animal_id": "A38",
+      "habitat_guia_id": "H07",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H07",
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H07_L1_V1",
+          "V2": "AY_H07_L1_V2",
+          "V3": "AY_H07_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H07_L2_V1",
+          "V2": "AY_H07_L2_V2",
+          "V3": "AY_H07_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H07_L3_V1",
+          "V2": "AY_H07_L3_V2",
+          "V3": "AY_H07_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A38_L1",
+        "BASE_A38_L2",
+        "BASE_A38_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E39",
+      "animal_id": "A39",
+      "habitat_guia_id": "H07",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H07",
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H07_L1_V1",
+          "V2": "AY_H07_L1_V2",
+          "V3": "AY_H07_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H07_L2_V1",
+          "V2": "AY_H07_L2_V2",
+          "V3": "AY_H07_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H07_L3_V1",
+          "V2": "AY_H07_L3_V2",
+          "V3": "AY_H07_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A39_L1",
+        "BASE_A39_L2",
+        "BASE_A39_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E40",
+      "animal_id": "A40",
+      "habitat_guia_id": "H07",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H07",
+        "H04"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H07_L1_V1",
+          "V2": "AY_H07_L1_V2",
+          "V3": "AY_H07_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H07_L2_V1",
+          "V2": "AY_H07_L2_V2",
+          "V3": "AY_H07_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H07_L3_V1",
+          "V2": "AY_H07_L3_V2",
+          "V3": "AY_H07_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A40_L1",
+        "BASE_A40_L2",
+        "BASE_A40_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E41",
+      "animal_id": "A41",
+      "habitat_guia_id": "H07",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H07"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H07_L1_V1",
+          "V2": "AY_H07_L1_V2",
+          "V3": "AY_H07_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H07_L2_V1",
+          "V2": "AY_H07_L2_V2",
+          "V3": "AY_H07_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H07_L3_V1",
+          "V2": "AY_H07_L3_V2",
+          "V3": "AY_H07_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A41_L1",
+        "BASE_A41_L2",
+        "BASE_A41_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E42",
+      "animal_id": "A42",
+      "habitat_guia_id": "H07",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H07"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H07_L1_V1",
+          "V2": "AY_H07_L1_V2",
+          "V3": "AY_H07_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H07_L2_V1",
+          "V2": "AY_H07_L2_V2",
+          "V3": "AY_H07_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H07_L3_V1",
+          "V2": "AY_H07_L3_V2",
+          "V3": "AY_H07_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A42_L1",
+        "BASE_A42_L2",
+        "BASE_A42_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E43",
+      "animal_id": "A43",
+      "habitat_guia_id": "H08",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H08_L1_V1",
+          "V2": "AY_H08_L1_V2",
+          "V3": "AY_H08_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H08_L2_V1",
+          "V2": "AY_H08_L2_V2",
+          "V3": "AY_H08_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H08_L3_V1",
+          "V2": "AY_H08_L3_V2",
+          "V3": "AY_H08_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A43_L1",
+        "BASE_A43_L2",
+        "BASE_A43_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E44",
+      "animal_id": "A44",
+      "habitat_guia_id": "H08",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H08_L1_V1",
+          "V2": "AY_H08_L1_V2",
+          "V3": "AY_H08_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H08_L2_V1",
+          "V2": "AY_H08_L2_V2",
+          "V3": "AY_H08_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H08_L3_V1",
+          "V2": "AY_H08_L3_V2",
+          "V3": "AY_H08_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A44_L1",
+        "BASE_A44_L2",
+        "BASE_A44_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E45",
+      "animal_id": "A45",
+      "habitat_guia_id": "H08",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H08_L1_V1",
+          "V2": "AY_H08_L1_V2",
+          "V3": "AY_H08_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H08_L2_V1",
+          "V2": "AY_H08_L2_V2",
+          "V3": "AY_H08_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H08_L3_V1",
+          "V2": "AY_H08_L3_V2",
+          "V3": "AY_H08_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A45_L1",
+        "BASE_A45_L2",
+        "BASE_A45_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E46",
+      "animal_id": "A46",
+      "habitat_guia_id": "H08",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H08_L1_V1",
+          "V2": "AY_H08_L1_V2",
+          "V3": "AY_H08_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H08_L2_V1",
+          "V2": "AY_H08_L2_V2",
+          "V3": "AY_H08_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H08_L3_V1",
+          "V2": "AY_H08_L3_V2",
+          "V3": "AY_H08_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A46_L1",
+        "BASE_A46_L2",
+        "BASE_A46_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E47",
+      "animal_id": "A47",
+      "habitat_guia_id": "H08",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H08",
+        "H05"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H08_L1_V1",
+          "V2": "AY_H08_L1_V2",
+          "V3": "AY_H08_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H08_L2_V1",
+          "V2": "AY_H08_L2_V2",
+          "V3": "AY_H08_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H08_L3_V1",
+          "V2": "AY_H08_L3_V2",
+          "V3": "AY_H08_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A47_L1",
+        "BASE_A47_L2",
+        "BASE_A47_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    },
+    {
+      "id": "E48",
+      "animal_id": "A48",
+      "habitat_guia_id": "H08",
+      "pregunta_id": "MSG_PREGUNTA",
+      "modalidades": [
+        "AGENTE",
+        "JUGADOR"
+      ],
+      "opciones_habitat": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08"
+      ],
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "ayudas": {
+        "1": {
+          "V1": "AY_H08_L1_V1",
+          "V2": "AY_H08_L1_V2",
+          "V3": "AY_H08_L1_V3"
+        },
+        "2": {
+          "V1": "AY_H08_L2_V1",
+          "V2": "AY_H08_L2_V2",
+          "V3": "AY_H08_L2_V3"
+        },
+        "3": {
+          "V1": "AY_H08_L3_V1",
+          "V2": "AY_H08_L3_V2",
+          "V3": "AY_H08_L3_V3"
+        }
+      },
+      "pistas_originales": [
+        "BASE_A48_L1",
+        "BASE_A48_L2",
+        "BASE_A48_L3"
+      ],
+      "tipo_reto": "ASOCIACION_GENERAL"
+    }
+  ]
+}

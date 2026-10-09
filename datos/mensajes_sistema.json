@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "formalizacion_agente_animales_habitats.md",
+    "pistas_progresivas_animales_48.md"
+  ],
+  "items": [
+    {
+      "id": "MSG_INICIO",
+      "tipo": "NAVEGACION",
+      "texto": "Elige quién inicia la partida.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_INICIAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGENTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_JUGADOR"
+        }
+      ],
+      "modifica_u": false,
+      "texto_voz": "Elige quién inicia la partida."
+    },
+    {
+      "id": "MSG_ELEGIR_ANIMAL",
+      "tipo": "NAVEGACION",
+      "texto": "Elige un animal.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_ELEGIR"
+        }
+      ],
+      "modifica_u": false,
+      "texto_voz": "Elige un animal."
+    },
+    {
+      "id": "MSG_PREGUNTA",
+      "tipo": "PREGUNTA",
+      "texto": "¿Dónde puede vivir este animal?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        }
+      ],
+      "modifica_u": true,
+      "texto_voz": "¿Dónde puede vivir este animal?"
+    },
+    {
+      "id": "MSG_VALIDA",
+      "tipo": "CONFIRMACION",
+      "texto_plantilla": "¡Sí! Este animal puede vivir {habitat_locativo}.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CONFIRMAR"
+        },
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "SLOT",
+          "nombre": "habitat_seleccionado"
+        }
+      ],
+      "condicion": "ASOCIACION_VALIDA",
+      "contexto": "Agregar el contexto confirmado de la asociación cuando corresponda.",
+      "modifica_u": true,
+      "texto_voz_plantilla": "¡Sí! Este animal puede vivir {habitat_locativo}."
+    },
+    {
+      "id": "MSG_PENDIENTE",
+      "tipo": "NEUTRAL",
+      "texto": "Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_EXPLORAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AYUDA"
+        }
+      ],
+      "modifica_u": true,
+      "texto_voz": "Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista."
+    },
+    {
+      "id": "MSG_INCORRECTA_VALIDADA",
+      "tipo": "INVITACION",
+      "texto": "Probemos otra opción.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PROBAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        }
+      ],
+      "condicion": "SOLO_ASOCIACION_INCORRECTA_VALIDADA",
+      "disponible_con_matriz_actual": false,
+      "acompanar_con_siguiente_ayuda": true,
+      "modifica_u": true,
+      "texto_voz": "Probemos otra opción."
+    },
+    {
+      "id": "MSG_PAUSA",
+      "tipo": "NAVEGACION",
+      "texto": "Partida en pausa. Puedes reanudarla.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAUSAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_REANUDAR"
+        }
+      ],
+      "modifica_u": false,
+      "texto_voz": "Partida en pausa. Puedes reanudarla."
+    },
+    {
+      "id": "MSG_CIERRE",
+      "tipo": "CIERRE",
+      "texto": "Terminamos esta partida. ¡Gracias por jugar!",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_FIN"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CONFIRMAR"
+        }
+      ],
+      "modifica_u": true,
+      "texto_voz": "Terminamos esta partida. ¡Gracias por jugar!"
+    },
+    {
+      "id": "MSG_SALIDA",
+      "tipo": "NAVEGACION",
+      "texto": "La partida ha terminado. Puedes comenzar otra cuando quieras.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SALIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_INICIAR"
+        }
+      ],
+      "modifica_u": false,
+      "texto_voz": "La partida ha terminado. Puedes comenzar otra cuando quieras."
+    }
+  ],
+  "slots_permitidos": [
+    "animal_actual",
+    "habitat_seleccionado"
+  ],
+  "variables_texto_permitidas": [
+    "habitat_locativo"
+  ]
+}

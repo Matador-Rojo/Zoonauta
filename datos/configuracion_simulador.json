@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "modelo_principal_probabilistico_animales_habitats.md"
+  ],
+  "items": [
+    {
+      "id": "SIM_UNIFORME",
+      "descripcion": "Todas las variantes tienen igual probabilidad sintética.",
+      "probabilidades": {
+        "b0": {
+          "V1": 0.6,
+          "V2": 0.6,
+          "V3": 0.6
+        },
+        "b1": {
+          "V1": 0.6,
+          "V2": 0.6,
+          "V3": 0.6
+        }
+      }
+    },
+    {
+      "id": "SIM_DIFERENCIAS",
+      "descripcion": "Diferencias sintéticas constantes entre variantes.",
+      "probabilidades": {
+        "b0": {
+          "V1": 0.75,
+          "V2": 0.55,
+          "V3": 0.45
+        },
+        "b1": {
+          "V1": 0.75,
+          "V2": 0.55,
+          "V3": 0.45
+        }
+      }
+    },
+    {
+      "id": "SIM_CONTEXTUAL",
+      "descripcion": "La variante más favorable cambia con la señal b.",
+      "probabilidades": {
+        "b0": {
+          "V1": 0.75,
+          "V2": 0.55,
+          "V3": 0.45
+        },
+        "b1": {
+          "V1": 0.55,
+          "V2": 0.75,
+          "V3": 0.45
+        }
+      }
+    }
+  ],
+  "origen": "SINTETICO_CONFIGURADO",
+  "datos_observados": false,
+  "alcance": "Probabilidades de resultados etiquetados; no modelan comprensión ni efecto pedagógico.",
+  "evento_si_y1": "SELECCIONAR_UN_HABITAT_CONFIRMADO",
+  "evento_si_y0": "PEDIR_NUEVA_AYUDA",
+  "eventos_sin_etiqueta": [
+    "SELECCION_PENDIENTE",
+    "SALIDA",
+    "REGISTRO_INCOMPLETO"
+  ],
+  "independencia_b": "En simulaciones completas b cambia solo cuando se usa Repetir; en pruebas por contexto se fija como condición experimental.",
+  "separar_semillas_entrenamiento_evaluacion": true
+}

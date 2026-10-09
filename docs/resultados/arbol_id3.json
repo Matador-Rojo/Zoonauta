@@ -1,0 +1,197 @@
+{
+  "algoritmo": "ID3",
+  "origen": "OCHO_PERFILES_DIDACTICOS",
+  "entropia_inicial": 3.0,
+  "ganancias_raiz": {
+    "entorno": 2.0,
+    "temperatura": 1.9056390622295665,
+    "agua": 1.061278124459133,
+    "vegetacion": 1.0,
+    "ubicacion": 1.061278124459133
+  },
+  "arbol": {
+    "id": "N00",
+    "clases": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08"
+    ],
+    "entropia": 3.0,
+    "atributo": "entorno",
+    "clase": null,
+    "ganancias": {
+      "entorno": 2.0,
+      "temperatura": 1.9056390622295665,
+      "agua": 1.061278124459133,
+      "vegetacion": 1.0,
+      "ubicacion": 1.061278124459133
+    },
+    "hijos": {
+      "ACUATICO": {
+        "id": "N01",
+        "clases": [
+          "H04",
+          "H06"
+        ],
+        "entropia": 1.0,
+        "atributo": "agua",
+        "clase": null,
+        "ganancias": {
+          "temperatura": 0.0,
+          "agua": 1.0,
+          "vegetacion": 1.0,
+          "ubicacion": 0.0
+        },
+        "hijos": {
+          "DULCE": {
+            "id": "N02",
+            "clases": [
+              "H06"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H06",
+            "ganancias": {},
+            "hijos": {}
+          },
+          "SALADA": {
+            "id": "N03",
+            "clases": [
+              "H04"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H04",
+            "ganancias": {},
+            "hijos": {}
+          }
+        }
+      },
+      "ARBOLADO": {
+        "id": "N04",
+        "clases": [
+          "H01",
+          "H05"
+        ],
+        "entropia": 1.0,
+        "atributo": "temperatura",
+        "clase": null,
+        "ganancias": {
+          "temperatura": 1.0,
+          "agua": 0.0,
+          "vegetacion": 0.0,
+          "ubicacion": 0.0
+        },
+        "hijos": {
+          "CALIDO": {
+            "id": "N05",
+            "clases": [
+              "H01"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H01",
+            "ganancias": {},
+            "hijos": {}
+          },
+          "TEMPLADO": {
+            "id": "N06",
+            "clases": [
+              "H05"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H05",
+            "ganancias": {},
+            "hijos": {}
+          }
+        }
+      },
+      "LLANURA_CALIDA": {
+        "id": "N07",
+        "clases": [
+          "H02",
+          "H03"
+        ],
+        "entropia": 1.0,
+        "atributo": "vegetacion",
+        "clase": null,
+        "ganancias": {
+          "temperatura": 0.0,
+          "agua": 0.0,
+          "vegetacion": 1.0,
+          "ubicacion": 0.0
+        },
+        "hijos": {
+          "ABUNDANTE": {
+            "id": "N08",
+            "clases": [
+              "H02"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H02",
+            "ganancias": {},
+            "hijos": {}
+          },
+          "ESCASA": {
+            "id": "N09",
+            "clases": [
+              "H03"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H03",
+            "ganancias": {},
+            "hijos": {}
+          }
+        }
+      },
+      "PAISAJE_FRIO": {
+        "id": "N10",
+        "clases": [
+          "H07",
+          "H08"
+        ],
+        "entropia": 1.0,
+        "atributo": "ubicacion",
+        "clase": null,
+        "ganancias": {
+          "temperatura": 0.0,
+          "agua": 0.0,
+          "vegetacion": 0.0,
+          "ubicacion": 1.0
+        },
+        "hijos": {
+          "MONTANA": {
+            "id": "N11",
+            "clases": [
+              "H08"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H08",
+            "ganancias": {},
+            "hijos": {}
+          },
+          "POLAR": {
+            "id": "N12",
+            "clases": [
+              "H07"
+            ],
+            "entropia": -0.0,
+            "atributo": null,
+            "clase": "H07",
+            "ganancias": {},
+            "hijos": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,662 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "matriz_animales_habitats_48.md"
+  ],
+  "items": [
+    {
+      "id": "A01",
+      "nombre": "Jaguar",
+      "pictograma_id": "P_A01",
+      "habitat_referencia_id": "H01",
+      "habitats_confirmados": [
+        "H01",
+        "H05"
+      ],
+      "precision": "Animal terrestre. Su proximidad a ríos se registra como contexto; no se equipara automáticamente a vivir dentro del agua.",
+      "fuente_ids": [
+        "F001"
+      ]
+    },
+    {
+      "id": "A02",
+      "nombre": "Orangután de Borneo",
+      "pictograma_id": "P_A02",
+      "habitat_referencia_id": "H01",
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "precision": "Usar orangután de Borneo, no un pictograma que represente indistintamente todas las especies.",
+      "fuente_ids": [
+        "F002"
+      ]
+    },
+    {
+      "id": "A03",
+      "nombre": "Gorila occidental",
+      "pictograma_id": "P_A03",
+      "habitat_referencia_id": "H01",
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "precision": "Usar gorila occidental; no confundirlo con el gorila de montaña.",
+      "fuente_ids": [
+        "F003"
+      ]
+    },
+    {
+      "id": "A04",
+      "nombre": "Perezoso de dos dedos de Hoffmann",
+      "pictograma_id": "P_A04",
+      "habitat_referencia_id": "H01",
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "precision": "Los bosques tropicales de montaña siguen siendo selva; la altitud no basta para añadir alta montaña.",
+      "fuente_ids": [
+        "F004"
+      ]
+    },
+    {
+      "id": "A05",
+      "nombre": "Guacamayo rojo",
+      "pictograma_id": "P_A05",
+      "habitat_referencia_id": "H01",
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "precision": "Usar guacamayo rojo.",
+      "fuente_ids": [
+        "F005"
+      ]
+    },
+    {
+      "id": "A06",
+      "nombre": "Rana dardo azul",
+      "pictograma_id": "P_A06",
+      "habitat_referencia_id": "H01",
+      "habitats_confirmados": [
+        "H01"
+      ],
+      "precision": "La tarjeta representa a la rana adulta. La rana azul vive en parches de selva, aunque estén rodeados de sabana; no se clasifica como sabana solo por ese paisaje.",
+      "fuente_ids": [
+        "F006"
+      ]
+    },
+    {
+      "id": "A07",
+      "nombre": "León africano",
+      "pictograma_id": "P_A07",
+      "habitat_referencia_id": "H02",
+      "habitats_confirmados": [
+        "H02",
+        "H08"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F007"
+      ]
+    },
+    {
+      "id": "A08",
+      "nombre": "Jirafa reticulada",
+      "pictograma_id": "P_A08",
+      "habitat_referencia_id": "H02",
+      "habitats_confirmados": [
+        "H02"
+      ],
+      "precision": "Mantener la identidad de jirafa reticulada.",
+      "fuente_ids": [
+        "F008",
+        "F009"
+      ]
+    },
+    {
+      "id": "A09",
+      "nombre": "Cebra de llanura",
+      "pictograma_id": "P_A09",
+      "habitat_referencia_id": "H02",
+      "habitats_confirmados": [
+        "H02"
+      ],
+      "precision": "Mantener la cebra de llanura; la cebra de montaña es otro animal.",
+      "fuente_ids": [
+        "F010"
+      ]
+    },
+    {
+      "id": "A10",
+      "nombre": "Elefante africano de sabana",
+      "pictograma_id": "P_A10",
+      "habitat_referencia_id": "H02",
+      "habitats_confirmados": [
+        "H02"
+      ],
+      "precision": "Mantener el elefante africano de sabana; no confundirlo con el elefante africano de bosque.",
+      "fuente_ids": [
+        "F011"
+      ]
+    },
+    {
+      "id": "A11",
+      "nombre": "Guepardo",
+      "pictograma_id": "P_A11",
+      "habitat_referencia_id": "H02",
+      "habitats_confirmados": [
+        "H02",
+        "H03"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F012"
+      ]
+    },
+    {
+      "id": "A12",
+      "nombre": "Avestruz común",
+      "pictograma_id": "P_A12",
+      "habitat_referencia_id": "H02",
+      "habitats_confirmados": [
+        "H02",
+        "H03"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F013",
+        "F014"
+      ]
+    },
+    {
+      "id": "A13",
+      "nombre": "Dromedario",
+      "pictograma_id": "P_A13",
+      "habitat_referencia_id": "H03",
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "precision": "El dromedario es un animal domesticado. La ficha no debe afirmar que todas sus poblaciones son silvestres.",
+      "fuente_ids": [
+        "F015"
+      ]
+    },
+    {
+      "id": "A14",
+      "nombre": "Zorro fénec",
+      "pictograma_id": "P_A14",
+      "habitat_referencia_id": "H03",
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F016"
+      ]
+    },
+    {
+      "id": "A15",
+      "nombre": "Suricata",
+      "pictograma_id": "P_A15",
+      "habitat_referencia_id": "H03",
+      "habitats_confirmados": [
+        "H03",
+        "H02"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F017"
+      ]
+    },
+    {
+      "id": "A16",
+      "nombre": "Tortuga del desierto de Mojave",
+      "pictograma_id": "P_A16",
+      "habitat_referencia_id": "H03",
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "precision": "La tarjeta representa específicamente la tortuga del desierto de Mojave. La fuente antigua de ADW contiene un alcance taxonómico más amplio; usar solo la evidencia pertinente a Mojave.",
+      "fuente_ids": [
+        "F018"
+      ]
+    },
+    {
+      "id": "A17",
+      "nombre": "Monstruo de Gila",
+      "pictograma_id": "P_A17",
+      "habitat_referencia_id": "H03",
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F019"
+      ]
+    },
+    {
+      "id": "A18",
+      "nombre": "Jerbo egipcio menor",
+      "pictograma_id": "P_A18",
+      "habitat_referencia_id": "H03",
+      "habitats_confirmados": [
+        "H03"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F020"
+      ]
+    },
+    {
+      "id": "A19",
+      "nombre": "Delfín nariz de botella",
+      "pictograma_id": "P_A19",
+      "habitat_referencia_id": "H04",
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "precision": "Los estuarios pueden tener agua salobre; no se convierten automáticamente en agua dulce.",
+      "fuente_ids": [
+        "F021"
+      ]
+    },
+    {
+      "id": "A20",
+      "nombre": "Ballena azul",
+      "pictograma_id": "P_A20",
+      "habitat_referencia_id": "H04",
+      "habitats_confirmados": [
+        "H04",
+        "H07"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F022"
+      ]
+    },
+    {
+      "id": "A21",
+      "nombre": "Tiburón blanco",
+      "pictograma_id": "P_A21",
+      "habitat_referencia_id": "H04",
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F023"
+      ]
+    },
+    {
+      "id": "A22",
+      "nombre": "Mantarraya gigante",
+      "pictograma_id": "P_A22",
+      "habitat_referencia_id": "H04",
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "precision": "La fuente de ADW usa el nombre histórico Manta birostris. El catálogo visual identifica a la mantarraya gigante.",
+      "fuente_ids": [
+        "F024"
+      ]
+    },
+    {
+      "id": "A23",
+      "nombre": "Pulpo común",
+      "pictograma_id": "P_A23",
+      "habitat_referencia_id": "H04",
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F025"
+      ]
+    },
+    {
+      "id": "A24",
+      "nombre": "Tortuga verde",
+      "pictograma_id": "P_A24",
+      "habitat_referencia_id": "H04",
+      "habitats_confirmados": [
+        "H04"
+      ],
+      "precision": "Anidar en una playa no convierte a esta tortuga marina en un animal del desierto.",
+      "fuente_ids": [
+        "F026"
+      ]
+    },
+    {
+      "id": "A25",
+      "nombre": "Oso pardo",
+      "pictograma_id": "P_A25",
+      "habitat_referencia_id": "H05",
+      "habitats_confirmados": [
+        "H05",
+        "H08"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F027"
+      ]
+    },
+    {
+      "id": "A26",
+      "nombre": "Lobo gris",
+      "pictograma_id": "P_A26",
+      "habitat_referencia_id": "H05",
+      "habitats_confirmados": [
+        "H05",
+        "H07",
+        "H08"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F028",
+        "F029"
+      ]
+    },
+    {
+      "id": "A27",
+      "nombre": "Zorro rojo",
+      "pictograma_id": "P_A27",
+      "habitat_referencia_id": "H05",
+      "habitats_confirmados": [
+        "H05",
+        "H07",
+        "H08"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F030",
+        "F031"
+      ]
+    },
+    {
+      "id": "A28",
+      "nombre": "Ardilla roja euroasiática",
+      "pictograma_id": "P_A28",
+      "habitat_referencia_id": "H05",
+      "habitats_confirmados": [
+        "H05"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F032"
+      ]
+    },
+    {
+      "id": "A29",
+      "nombre": "Corzo europeo",
+      "pictograma_id": "P_A29",
+      "habitat_referencia_id": "H05",
+      "habitats_confirmados": [
+        "H05"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F033"
+      ]
+    },
+    {
+      "id": "A30",
+      "nombre": "Jabalí",
+      "pictograma_id": "P_A30",
+      "habitat_referencia_id": "H05",
+      "habitats_confirmados": [
+        "H05"
+      ],
+      "precision": "La fuente menciona varios ambientes. No deducir sabana tropical de una etiqueta conjunta «savanna or grassland».",
+      "fuente_ids": [
+        "F034"
+      ]
+    },
+    {
+      "id": "A31",
+      "nombre": "Capibara o ronsoco",
+      "pictograma_id": "P_A31",
+      "habitat_referencia_id": "H06",
+      "habitats_confirmados": [
+        "H06",
+        "H01",
+        "H02"
+      ],
+      "precision": "Animal semiacuático: el agua accesible es esencial en los contextos de selva y sabana.",
+      "fuente_ids": [
+        "F035",
+        "F036"
+      ]
+    },
+    {
+      "id": "A32",
+      "nombre": "Ajolote mexicano",
+      "pictograma_id": "P_A32",
+      "habitat_referencia_id": "H06",
+      "habitats_confirmados": [
+        "H06"
+      ],
+      "precision": "La tarjeta representa al ajolote mexicano.",
+      "fuente_ids": [
+        "F037"
+      ]
+    },
+    {
+      "id": "A33",
+      "nombre": "Delfín rosado amazónico",
+      "pictograma_id": "P_A33",
+      "habitat_referencia_id": "H06",
+      "habitats_confirmados": [
+        "H06",
+        "H01"
+      ],
+      "precision": "Selva significa aquí bosque inundado; no selva seca ni desplazamiento terrestre.",
+      "fuente_ids": [
+        "F038"
+      ]
+    },
+    {
+      "id": "A34",
+      "nombre": "Nutria gigante",
+      "pictograma_id": "P_A34",
+      "habitat_referencia_id": "H06",
+      "habitats_confirmados": [
+        "H06",
+        "H01"
+      ],
+      "precision": "Selva significa aquí ríos, lagunas y sus orillas dentro del bosque tropical.",
+      "fuente_ids": [
+        "F039",
+        "F040"
+      ]
+    },
+    {
+      "id": "A35",
+      "nombre": "Castor norteamericano",
+      "pictograma_id": "P_A35",
+      "habitat_referencia_id": "H06",
+      "habitats_confirmados": [
+        "H06",
+        "H05"
+      ],
+      "precision": "Sin precisión adicional para la asociación de referencia.",
+      "fuente_ids": [
+        "F041"
+      ]
+    },
+    {
+      "id": "A36",
+      "nombre": "Cocodrilo del Nilo",
+      "pictograma_id": "P_A36",
+      "habitat_referencia_id": "H06",
+      "habitats_confirmados": [
+        "H06"
+      ],
+      "precision": "También se registran estuarios y manglares en la fuente; esa evidencia no basta para aceptar automáticamente mar abierto.",
+      "fuente_ids": [
+        "F042"
+      ]
+    },
+    {
+      "id": "A37",
+      "nombre": "Oso polar",
+      "pictograma_id": "P_A37",
+      "habitat_referencia_id": "H07",
+      "habitats_confirmados": [
+        "H07",
+        "H04"
+      ],
+      "precision": "La asociación con mar se refiere al ecosistema marino y al hielo marino.",
+      "fuente_ids": [
+        "F043"
+      ]
+    },
+    {
+      "id": "A38",
+      "nombre": "Zorro ártico",
+      "pictograma_id": "P_A38",
+      "habitat_referencia_id": "H07",
+      "habitats_confirmados": [
+        "H07",
+        "H08"
+      ],
+      "precision": "Distinguir la tundra ártica de la tundra alpina.",
+      "fuente_ids": [
+        "F044"
+      ]
+    },
+    {
+      "id": "A39",
+      "nombre": "Pingüino emperador",
+      "pictograma_id": "P_A39",
+      "habitat_referencia_id": "H07",
+      "habitats_confirmados": [
+        "H07",
+        "H04"
+      ],
+      "precision": "Región polar: Antártida.",
+      "fuente_ids": [
+        "F045"
+      ]
+    },
+    {
+      "id": "A40",
+      "nombre": "Morsa",
+      "pictograma_id": "P_A40",
+      "habitat_referencia_id": "H07",
+      "habitats_confirmados": [
+        "H07",
+        "H04"
+      ],
+      "precision": "Región polar: Ártico.",
+      "fuente_ids": [
+        "F046"
+      ]
+    },
+    {
+      "id": "A41",
+      "nombre": "Búho nival",
+      "pictograma_id": "P_A41",
+      "habitat_referencia_id": "H07",
+      "habitats_confirmados": [
+        "H07"
+      ],
+      "precision": "Usar búho nival. La fuente usa el nombre histórico Nyctea scandiaca. La asociación polar se refiere especialmente a la tundra de reproducción.",
+      "fuente_ids": [
+        "F047"
+      ]
+    },
+    {
+      "id": "A42",
+      "nombre": "Liebre ártica",
+      "pictograma_id": "P_A42",
+      "habitat_referencia_id": "H07",
+      "habitats_confirmados": [
+        "H07"
+      ],
+      "precision": "Las colinas y mesetas árticas no equivalen automáticamente a alta montaña alpina.",
+      "fuente_ids": [
+        "F048"
+      ]
+    },
+    {
+      "id": "A43",
+      "nombre": "Vicuña",
+      "pictograma_id": "P_A43",
+      "habitat_referencia_id": "H08",
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "precision": "Los pastizales altos y fríos de la puna no se clasifican como sabana tropical.",
+      "fuente_ids": [
+        "F049"
+      ]
+    },
+    {
+      "id": "A44",
+      "nombre": "Yak salvaje",
+      "pictograma_id": "P_A44",
+      "habitat_referencia_id": "H08",
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "precision": "Usar yak salvaje. La fuente histórica Bos grunniens trata conjuntamente poblaciones silvestres y domésticas; usar la evidencia de hábitats altos de las poblaciones silvestres.",
+      "fuente_ids": [
+        "F050"
+      ]
+    },
+    {
+      "id": "A45",
+      "nombre": "Leopardo de las nieves",
+      "pictograma_id": "P_A45",
+      "habitat_referencia_id": "H08",
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "precision": "Vivir en montañas nevadas no equivale a vivir en el Ártico o la Antártida.",
+      "fuente_ids": [
+        "F051"
+      ]
+    },
+    {
+      "id": "A46",
+      "nombre": "Cóndor andino",
+      "pictograma_id": "P_A46",
+      "habitat_referencia_id": "H08",
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "precision": "Habita también zonas costeras. Ser un ave costera no implica vivir en el medio marino; revisar por separado la correspondencia del desierto costero con nuestra categoría desierto cálido.",
+      "fuente_ids": [
+        "F052"
+      ]
+    },
+    {
+      "id": "A47",
+      "nombre": "Cabra de las Rocosas",
+      "pictograma_id": "P_A47",
+      "habitat_referencia_id": "H08",
+      "habitats_confirmados": [
+        "H08",
+        "H05"
+      ],
+      "precision": "La asociación con bosque es estacional y depende de la población.",
+      "fuente_ids": [
+        "F053",
+        "F054"
+      ]
+    },
+    {
+      "id": "A48",
+      "nombre": "Chinchilla de cola corta",
+      "pictograma_id": "P_A48",
+      "habitat_referencia_id": "H08",
+      "habitats_confirmados": [
+        "H08"
+      ],
+      "precision": "Mantener chinchilla de cola corta. Sus pastizales altos no se equiparan a sabana tropical.",
+      "fuente_ids": [
+        "F055"
+      ]
+    }
+  ]
+}

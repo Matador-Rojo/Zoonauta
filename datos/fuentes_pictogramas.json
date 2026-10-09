@@ -1,0 +1,1465 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_consulta": "2026-10-09",
+  "items": [
+    {
+      "pictograma_id": "P_A02",
+      "arasaac_id": 39491,
+      "url_descarga": "https://static.arasaac.org/pictograms/39491/39491_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal"
+        ],
+        "synsets": [],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild"
+        ],
+        "_id": 39491,
+        "keywords": [
+          {
+            "keyword": "orangután",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "orangutanes"
+          }
+        ],
+        "created": "2025-02-10T11:19:01.182Z",
+        "lastUpdated": "2025-02-10T12:22:44.883Z"
+      }
+    },
+    {
+      "pictograma_id": "P_A03",
+      "arasaac_id": 2410,
+      "url_descarga": "https://static.arasaac.org/pictograms/2410/2410_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "02483486-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild"
+        ],
+        "_id": 2410,
+        "created": "2007-12-14T09:47:46.000Z",
+        "lastUpdated": "2020-12-27T12:28:58.024Z",
+        "keywords": [
+          {
+            "keyword": "gorila",
+            "type": 2,
+            "meaning": " m. Mono antropomorfo, de color pardo oscuro y de estatura igual a la del hombre; tres dedos de sus pies están unidos por la piel hasta la última falange; es membrudo y muy fiero, y habita en África, a orillas del río Gabón.",
+            "plural": "gorilas",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A07",
+      "arasaac_id": 25187,
+      "url_descarga": "https://static.arasaac.org/pictograms/25187/25187_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02131817-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild",
+          "core vocabulary"
+        ],
+        "_id": 25187,
+        "created": "2011-08-05T18:21:32.000Z",
+        "lastUpdated": "2024-10-21T11:22:10.451Z",
+        "keywords": [
+          {
+            "keyword": "león",
+            "type": 2,
+            "meaning": " m. y f. Mamífero carnívoro félido, de pelaje entre amarillo y rojo, cabeza grande, dientes y uñas muy fuertes y cola larga. La hembra carece de la abundante melena característica de la cabeza del macho.",
+            "plural": "leones",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A08",
+      "arasaac_id": 2437,
+      "url_descarga": "https://static.arasaac.org/pictograms/2437/2437_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02441664-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild",
+          "core vocabulary"
+        ],
+        "_id": 2437,
+        "created": "2007-12-14T10:53:32.000Z",
+        "lastUpdated": "2021-02-05T09:06:33.008Z",
+        "keywords": [
+          {
+            "keyword": "jirafa",
+            "type": 2,
+            "meaning": " f. Mamífero rumiante, de unos 5 m de altura, cuello largo y esbelto, cabeza pequeña con dos cuernos poco desarrollados y pelaje amarillo con manchas oscuras. ",
+            "plural": "jirafas",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A09",
+      "arasaac_id": 2324,
+      "url_descarga": "https://static.arasaac.org/pictograms/2324/2324_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02393701-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild",
+          "core vocabulary"
+        ],
+        "_id": 2324,
+        "created": "2007-12-13T10:04:10.000Z",
+        "lastUpdated": "2021-02-05T09:02:08.392Z",
+        "keywords": [
+          {
+            "keyword": "cebra",
+            "type": 2,
+            "meaning": " f. Mamífero cuadrúpedo africano parecido al asno, de pelo blanco amarillento con rayas transversales pardas o negras.",
+            "plural": "cebras",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A10",
+      "arasaac_id": 2372,
+      "url_descarga": "https://static.arasaac.org/pictograms/2372/2372_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal",
+          "domestic animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02506148-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild",
+          "domestic",
+          "core vocabulary"
+        ],
+        "_id": 2372,
+        "created": "2007-12-13T12:42:52.000Z",
+        "lastUpdated": "2024-10-21T09:40:09.748Z",
+        "keywords": [
+          {
+            "keyword": "elefante",
+            "type": 2,
+            "meaning": " m. Mamífero del orden de los proboscidios, de gran tamaño, piel cenicienta, rugosa y gruesa, la cabeza y los ojos pequeños, las orejas grandes y colgantes, la nariz y el labio superior unidos y prolongados en una trompa que usa como mano; tiene dos dientes incisivos, llamados comúnmente colmillos, macizos y muy desarrollados. Habita en Asia y Africa, donde lo emplean como animal de carga.",
+            "plural": "elefantes",
+            "hasLocution": true
+          },
+          {
+            "keyword": "elefanta",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "elefantas"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A11",
+      "arasaac_id": 39488,
+      "url_descarga": "https://static.arasaac.org/pictograms/39488/39488_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal"
+        ],
+        "synsets": [],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild"
+        ],
+        "_id": 39488,
+        "keywords": [
+          {
+            "keyword": "guepardo",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "guepardos"
+          }
+        ],
+        "created": "2025-02-10T11:19:01.182Z",
+        "lastUpdated": "2025-02-10T12:31:15.540Z"
+      }
+    },
+    {
+      "pictograma_id": "P_A12",
+      "arasaac_id": 2650,
+      "url_descarga": "https://static.arasaac.org/pictograms/2650/2650_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "bird",
+          "oviparous",
+          "terrestrial animal",
+          "cattle farming",
+          "domestic animal"
+        ],
+        "synsets": [
+          "01521519-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "bird",
+          "oviparous",
+          "terrestrial animal",
+          "work",
+          "primary sector",
+          "cattle farming",
+          "domestic"
+        ],
+        "_id": 2650,
+        "created": "2007-12-19T10:14:42.000Z",
+        "lastUpdated": "2020-12-27T12:16:23.670Z",
+        "keywords": [
+          {
+            "keyword": "avestruz",
+            "type": 2,
+            "meaning": "\tm. Ave corredora que puede llegar a medir 2 m de altura, de piernas largas y robustas, cabeza y cuello casi desnudos y plumaje suelto y flexible.",
+            "plural": "avestruces",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A13",
+      "arasaac_id": 2305,
+      "url_descarga": "https://static.arasaac.org/pictograms/2305/2305_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "domestic animal"
+        ],
+        "synsets": [
+          "02439943-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "domestic"
+        ],
+        "_id": 2305,
+        "created": "2007-12-13T09:19:58.000Z",
+        "lastUpdated": "2024-10-21T11:19:10.036Z",
+        "keywords": [
+          {
+            "keyword": "dromedario",
+            "type": 2,
+            "meaning": "  m. Artiodáctilo rumiante, propio de Arabia y del norte de África, muy semejante al camello, del cual se distingue principalmente por no tener más que una giba adiposa en el dorso. ",
+            "plural": "dromedarios",
+            "hasLocution": true
+          },
+          {
+            "keyword": "dromedaria",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "dromedarias"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A19",
+      "arasaac_id": 2732,
+      "url_descarga": "https://static.arasaac.org/pictograms/2732/2732_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mammal",
+          "viviparous",
+          "marine animal",
+          "wild animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02071627-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "aquatic animal",
+          "marine animal",
+          "sea",
+          "wild",
+          "core vocabulary"
+        ],
+        "_id": 2732,
+        "created": "2007-12-20T10:05:43.000Z",
+        "lastUpdated": "2021-02-05T09:03:04.597Z",
+        "keywords": [
+          {
+            "keyword": "delfín",
+            "type": 2,
+            "meaning": "m. Mamífero cetáceo carnívoro de 2 a 3 m de largo, de lomo oscuro y vientre blanquecino, de cabeza voluminosa, ojos pequeños, boca muy grande con numerosos dientes cónicos, hocico delgado y agudo, y una sola abertura nasal.",
+            "plural": "delfines",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A20",
+      "arasaac_id": 2268,
+      "url_descarga": "https://static.arasaac.org/pictograms/2268/2268_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "omnivorous",
+          "mammal",
+          "viviparous",
+          "marine animal",
+          "wild animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02065397-n"
+        ],
+        "tags": [
+          "animal",
+          "omnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "aquatic animal",
+          "marine animal",
+          "sea",
+          "wild",
+          "core vocabulary"
+        ],
+        "_id": 2268,
+        "created": "2007-12-12T11:05:38.000Z",
+        "lastUpdated": "2021-02-05T09:00:44.252Z",
+        "keywords": [
+          {
+            "keyword": "ballena",
+            "type": 2,
+            "meaning": " f. Mamífero cetáceo, el mayor de todos los animales conocidos, que llega a medir más de 30 m de longitud en algunas especies. Vive en todos los mares, especialmente los polares. ",
+            "plural": "ballenas",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A21",
+      "arasaac_id": 2589,
+      "url_descarga": "https://static.arasaac.org/pictograms/2589/2589_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "fish-animal",
+          "ovoviviparous",
+          "marine animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "01484971-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "fish",
+          "ovoviviparous",
+          "aquatic animal",
+          "marine animal",
+          "sea",
+          "wild"
+        ],
+        "_id": 2589,
+        "created": "2007-12-18T12:23:41.000Z",
+        "lastUpdated": "2020-12-27T12:30:18.239Z",
+        "keywords": [
+          {
+            "keyword": "tiburón",
+            "type": 2,
+            "meaning": " m. Pez selacio marino del suborden de los escuálidos, de cuerpo fusiforme y muy esbelto, con hendiduras branquiales laterales y boca situada en la parte inferior de la cabeza, provista de varias filas de dientes comprimidos, agudos y cortantes",
+            "plural": "tiburones",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A23",
+      "arasaac_id": 3379,
+      "url_descarga": "https://static.arasaac.org/pictograms/3379/3379_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": true,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mollusc",
+          "oviparous",
+          "marine animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "01972805-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "invertebrate",
+          "mollusc",
+          "oviparous",
+          "aquatic animal",
+          "marine animal",
+          "sea",
+          "wild"
+        ],
+        "_id": 3379,
+        "created": "2008-02-01T14:20:36.000Z",
+        "lastUpdated": "2020-12-27T12:34:05.273Z",
+        "keywords": [
+          {
+            "keyword": "pulpo",
+            "type": 2,
+            "meaning": "Molusco cefalópodo dibranquial, octópodo, que vive de ordinario en el fondo del mar, y a veces nada a flor de agua. Es muy voraz, se alimenta de moluscos y crustáceos y su carne es comestible. Los individuos de la especie común en los mares de España, apenas tienen un metro de extremo a extremo de los tentáculos; pero los hay de otras especies que alcanzan hasta diez y doce.",
+            "plural": "pulpos",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A25",
+      "arasaac_id": 2488,
+      "url_descarga": "https://static.arasaac.org/pictograms/2488/2488_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": true,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "omnivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02134305-n"
+        ],
+        "tags": [
+          "animal",
+          "omnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild",
+          "core vocabulary"
+        ],
+        "_id": 2488,
+        "created": "2007-12-14T13:09:57.000Z",
+        "lastUpdated": "2024-10-21T09:53:14.645Z",
+        "keywords": [
+          {
+            "keyword": "oso",
+            "type": 2,
+            "meaning": " m. ZOOL. Mamífero plantígrado, que llega a tener 1 y 3 m de altura, de pelaje fuerte, abundante y lacio, cabeza grande, ojos pequeños, extremidades fuertes y gruesas, cinco dedos en cada una, con uñas recias y cola corta; su alimentación es omnívora.",
+            "plural": "osos",
+            "hasLocution": true
+          },
+          {
+            "keyword": "osa",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "osas"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A26",
+      "arasaac_id": 5892,
+      "url_descarga": "https://static.arasaac.org/pictograms/5892/5892_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": true,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal",
+          "core vocabulary-living being"
+        ],
+        "synsets": [
+          "02116752-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild",
+          "core vocabulary"
+        ],
+        "_id": 5892,
+        "created": "2008-10-20T13:20:31.000Z",
+        "lastUpdated": "2024-10-21T10:13:39.953Z",
+        "keywords": [
+          {
+            "keyword": "lobo",
+            "type": 2,
+            "meaning": " m. y f. Mamífero carnívoro, de pelaje gris oscuro o pardo, cabeza aguzada, orejas tiesas, mandíbula fuerte y cola larga con mucho pelo.",
+            "plural": "lobos",
+            "hasLocution": true
+          },
+          {
+            "keyword": "loba",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "lobas"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A27",
+      "arasaac_id": 2623,
+      "url_descarga": "https://static.arasaac.org/pictograms/2623/2623_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "omnivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "02120985-n"
+        ],
+        "tags": [
+          "animal",
+          "omnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "wild"
+        ],
+        "_id": 2623,
+        "created": "2007-12-19T09:40:48.000Z",
+        "lastUpdated": "2024-10-21T11:25:31.696Z",
+        "keywords": [
+          {
+            "keyword": "zorro",
+            "type": 2,
+            "meaning": " m. Mamífero carnívoro de menos de 1 m de longitud incluida la cola, hocico alargado, de pelaje color pardo rojizo y muy espeso, especialmente en la cola, de punta blanca: un zorro entró en el redil y mató varias ovejas.",
+            "plural": "zorros",
+            "hasLocution": true
+          },
+          {
+            "keyword": "raposo",
+            "type": 2,
+            "meaning": " m. zorro",
+            "plural": "raposos",
+            "hasLocution": true
+          },
+          {
+            "keyword": "zorra",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "zorras"
+          },
+          {
+            "keyword": "raposa",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "raposas"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A28",
+      "arasaac_id": 2257,
+      "url_descarga": "https://static.arasaac.org/pictograms/2257/2257_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal"
+        ],
+        "synsets": [
+          "02357879-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal"
+        ],
+        "_id": 2257,
+        "created": "2007-12-12T10:29:41.000Z",
+        "lastUpdated": "2020-05-29T18:53:50.078Z",
+        "keywords": [
+          {
+            "keyword": "ardilla",
+            "type": 2,
+            "meaning": "f. ZOOL. Mamífero roedor, muy ligero e inquieto, de unos 20 cm de largo, sin contar la cola, y de color negro rojizo por el lomo y blanco por el vientre.",
+            "plural": "ardillas",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A29",
+      "arasaac_id": 39681,
+      "url_descarga": "https://static.arasaac.org/pictograms/39681/39681_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "mammal",
+          "herbivorous",
+          "viviparous",
+          "terrestrial animal",
+          "hunting"
+        ],
+        "synsets": [],
+        "tags": [
+          "animal",
+          "vertebrate",
+          "mammal",
+          "herbivorous",
+          "viviparous",
+          "terrestrial animal",
+          "work",
+          "primary sector",
+          "hunting"
+        ],
+        "_id": 39681,
+        "keywords": [
+          {
+            "keyword": "corzo",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "corzos"
+          }
+        ],
+        "created": "2025-09-10T07:27:19.858Z",
+        "lastUpdated": "2025-09-10T07:50:13.924Z"
+      }
+    },
+    {
+      "pictograma_id": "P_A30",
+      "arasaac_id": 2965,
+      "url_descarga": "https://static.arasaac.org/pictograms/2965/2965_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "omnivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "hunting",
+          "wild animal"
+        ],
+        "synsets": [
+          "02399079-n"
+        ],
+        "tags": [
+          "animal",
+          "omnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "work",
+          "primary sector",
+          "hunting",
+          "wild"
+        ],
+        "_id": 2965,
+        "created": "2008-01-15T13:52:14.000Z",
+        "lastUpdated": "2024-10-21T11:43:41.311Z",
+        "keywords": [
+          {
+            "keyword": "jabalí",
+            "type": 2,
+            "meaning": "  m. Mamífero paquidermo, bastante común en los montes de España, que es la variedad salvaje del cerdo, del cual se distingue por tener la cabeza más aguda, la jeta más prolongada, las orejas siempre tiesas, el pelaje muy tupido, fuerte, de color gris uniforme, y los colmillos grandes y salientes de la boca.",
+            "plural": "jabalís",
+            "hasLocution": true
+          },
+          {
+            "keyword": "jabalina",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "jabalinas"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A31",
+      "arasaac_id": 39781,
+      "url_descarga": "https://static.arasaac.org/pictograms/39781/39781_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "mammal",
+          "carnivorous",
+          "terrestrial animal",
+          "viviparous"
+        ],
+        "synsets": [],
+        "tags": [
+          "animal",
+          "vertebrate",
+          "mammal",
+          "carnivorous",
+          "terrestrial animal",
+          "viviparous"
+        ],
+        "_id": 39781,
+        "keywords": [
+          {
+            "keyword": "capibara",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "capibaras"
+          },
+          {
+            "keyword": "carpincho",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "carpinchos"
+          },
+          {
+            "keyword": "chigüire",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "chigüires"
+          }
+        ],
+        "created": "2026-01-16T08:20:15.877Z",
+        "lastUpdated": "2026-01-16T10:10:32.963Z"
+      }
+    },
+    {
+      "pictograma_id": "P_A34",
+      "arasaac_id": 6158,
+      "url_descarga": "https://static.arasaac.org/pictograms/6158/6158_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mammal",
+          "viviparous",
+          "river animal",
+          "marine animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "02447450-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "aquatic animal",
+          "freshwater animal",
+          "river",
+          "marine animal",
+          "sea",
+          "wild"
+        ],
+        "_id": 6158,
+        "created": "2008-11-25T13:04:30.000Z",
+        "lastUpdated": "2020-12-27T12:24:36.937Z",
+        "keywords": [
+          {
+            "keyword": "nutria",
+            "type": 2,
+            "meaning": "Mamífero carnicero, de tres a cuatro decímetros de altura y unos nueve desde el hocico hasta el arranque de la cola, que tiene cerca de seis; cabeza ancha y aplastada, orejas pequeñas y redondas, cuerpo delgado, patas cortas, con los dedos de los pies unidos por una membrana, y pelaje espeso, muy suave y de color pardo rojizo. Vive a orillas de los ríos y arroyos, se alimenta de peces, y se la busca por su piel, muy apreciada en peletería.",
+            "plural": "nutrias",
+            "hasLocution": true
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A35",
+      "arasaac_id": 7055,
+      "url_descarga": "https://static.arasaac.org/pictograms/7055/7055_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "river animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "02365657-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "aquatic animal",
+          "freshwater animal",
+          "river",
+          "wild"
+        ],
+        "_id": 7055,
+        "created": "2009-01-14T10:20:29.000Z",
+        "lastUpdated": "2024-10-21T11:31:29.945Z",
+        "keywords": [
+          {
+            "keyword": "castor",
+            "type": 2,
+            "meaning": " m. Mamífero roedor, de cuerpo grueso, que llega a tener 65 cm de largo, cubierto de pelo castaño muy fino, con patas cortas, pies con cinco dedos palmeados, y cola aplastada, oval y escamosa. Vive mucho en el agua, se alimenta de hojas, cortezas y raíces de los árboles, y construye con destreza sus viviendas a orillas de ríos o lagos, haciendo verdaderos diques de gran extensión. Se le caza para quitarle la piel, que se aprovecha en peletería, así como para extraerle el castóreo. Habita en Asia, en América Septentrional y en el norte de Europa. ",
+            "plural": "castores",
+            "hasLocution": true
+          },
+          {
+            "keyword": "castora",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "castoras"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A36",
+      "arasaac_id": 34433,
+      "url_descarga": "https://static.arasaac.org/pictograms/34433/34433_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "reptile",
+          "oviparous",
+          "river animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "01700098-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "reptile",
+          "oviparous",
+          "aquatic animal",
+          "freshwater animal",
+          "river",
+          "wild"
+        ],
+        "_id": 34433,
+        "created": "2019-03-05T13:50:46.000Z",
+        "lastUpdated": "2020-12-27T12:49:03.628Z",
+        "keywords": [
+          {
+            "keyword": "cocodrilo",
+            "type": 2,
+            "meaning": "m. Reptil de 4 a 5 m de largo, anfibio, cubierto de escamas muy duras en forma de escudo, que vive en los ríos de regiones intertropicales y es temible por su voracidad.",
+            "plural": "cocodrilos",
+            "hasLocution": true
+          },
+          {
+            "type": 2,
+            "meaning": "Una de las tres especies de cocodrilos que habitan en África ?junto con el cocodrilo hociquifino africano y el cocodrilo enano?, y la segunda en tamaño en el mundo, pues puede alcanzar los 6 m de largo y pesar hasta 730 kg; aunque sus tallas medias son de 5 metros y de 225 kg.",
+            "plural": "cocodrilos del Nilo",
+            "keyword": "cocodrilo del Nilo",
+            "hasLocution": false
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A37",
+      "arasaac_id": 2868,
+      "url_descarga": "https://static.arasaac.org/pictograms/2868/2868_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mammal",
+          "viviparous",
+          "marine animal",
+          "terrestrial animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "02136736-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "aquatic animal",
+          "marine animal",
+          "sea",
+          "terrestrial animal",
+          "wild"
+        ],
+        "_id": 2868,
+        "created": "2008-01-14T18:49:59.000Z",
+        "lastUpdated": "2024-10-21T09:42:40.048Z",
+        "keywords": [
+          {
+            "keyword": "oso",
+            "type": 2,
+            "meaning": " m. ZOOL. Mamífero plantígrado, que llega a tener 1 y 3 m de altura, de pelaje fuerte, abundante y lacio, cabeza grande, ojos pequeños, extremidades fuertes y gruesas, cinco dedos en cada una, con uñas recias y cola corta; su alimentación es omnívora.",
+            "plural": "osos",
+            "hasLocution": true
+          },
+          {
+            "keyword": "oso polar",
+            "type": 2,
+            "meaning": "m. Especie mayor que la común, con pelaje blanco, cabeza aplastada y hocico puntiagudo. Habita en los países marítimos más septentrionales, es buen nadador y, aventurándose sobre los témpanos de hielo, persigue y devora las focas, morsas y peces. ",
+            "plural": "osos polares",
+            "hasLocution": true
+          },
+          {
+            "keyword": "osa",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "osas"
+          },
+          {
+            "keyword": "osa polar",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "osas polares"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A39",
+      "arasaac_id": 10240,
+      "url_descarga": "https://static.arasaac.org/pictograms/10240/10240_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "bird",
+          "oviparous",
+          "marine animal",
+          "terrestrial animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "02058457-n",
+          "02059382-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "bird",
+          "oviparous",
+          "aquatic animal",
+          "marine animal",
+          "sea",
+          "terrestrial animal",
+          "wild"
+        ],
+        "_id": 10240,
+        "created": "2009-11-11T21:44:42.000Z",
+        "lastUpdated": "2024-10-21T09:47:48.678Z",
+        "keywords": [
+          {
+            "keyword": "pingüino emperador",
+            "type": 2,
+            "meaning": "Presente en la Antártida, es el más grande de todos los pingüinos.Destacan como grandes nadadores, por su particular forma de protegerse del frío, por su monogamia y el peculiar viaje que realizan en busca de su lugar de cría.",
+            "plural": "pingüinos emperadores",
+            "hasLocution": true
+          },
+          {
+            "keyword": "pingüina emperador",
+            "type": 2,
+            "hasLocution": false,
+            "plural": "pingüinas emperadores"
+          }
+        ]
+      }
+    },
+    {
+      "pictograma_id": "P_A40",
+      "arasaac_id": 38147,
+      "url_descarga": "https://static.arasaac.org/pictograms/38147/38147_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "mammal",
+          "viviparous",
+          "marine animal",
+          "terrestrial animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "02084223-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "aquatic animal",
+          "marine animal",
+          "sea",
+          "terrestrial animal",
+          "wild"
+        ],
+        "_id": 38147,
+        "keywords": [
+          {
+            "keyword": "morsa",
+            "hasLocution": true,
+            "plural": "morsas",
+            "type": 2
+          }
+        ],
+        "created": "2022-02-28T14:59:11.172Z",
+        "lastUpdated": "2022-02-28T16:37:48.104Z"
+      }
+    },
+    {
+      "pictograma_id": "P_A43",
+      "arasaac_id": 37012,
+      "url_descarga": "https://static.arasaac.org/pictograms/37012/37012_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "herbivorous",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "cattle farming",
+          "domestic animal"
+        ],
+        "synsets": [
+          "02441211-n"
+        ],
+        "tags": [
+          "animal",
+          "herbivorous",
+          "vertebrate",
+          "mammal",
+          "viviparous",
+          "terrestrial animal",
+          "work",
+          "primary sector",
+          "cattle farming",
+          "domestic"
+        ],
+        "_id": 37012,
+        "keywords": [
+          {
+            "keyword": "vicuña",
+            "hasLocution": false,
+            "plural": "vicuñas",
+            "type": 2
+          }
+        ],
+        "created": "2020-08-14T09:34:29.623Z",
+        "lastUpdated": "2020-12-27T12:05:36.008Z"
+      }
+    },
+    {
+      "pictograma_id": "P_A46",
+      "arasaac_id": 36986,
+      "url_descarga": "https://static.arasaac.org/pictograms/36986/36986_500.png",
+      "fecha_consulta": "2026-10-09",
+      "metadatos_originales": {
+        "schematic": false,
+        "sex": false,
+        "violence": false,
+        "aac": false,
+        "aacColor": false,
+        "skin": false,
+        "hair": false,
+        "downloads": 0,
+        "categories": [
+          "carnivorous",
+          "bird",
+          "oviparous",
+          "flying animal",
+          "wild animal"
+        ],
+        "synsets": [
+          "01622177-n"
+        ],
+        "tags": [
+          "animal",
+          "carnivorous",
+          "vertebrate",
+          "bird",
+          "oviparous",
+          "flying animal",
+          "wild"
+        ],
+        "_id": 36986,
+        "keywords": [
+          {
+            "keyword": "cóndor",
+            "hasLocution": false,
+            "plural": "cóndores",
+            "type": 2
+          }
+        ],
+        "created": "2020-08-14T09:31:33.365Z",
+        "lastUpdated": "2020-12-27T12:51:06.507Z"
+      }
+    }
+  ],
+  "condiciones": "https://arasaac.org/terms-of-use"
+}

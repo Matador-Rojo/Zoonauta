@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "matriz_animales_habitats_48.md"
+  ],
+  "items": [
+    {
+      "id": "H01",
+      "nombre": "Selva tropical",
+      "definicion": "Bosque tropical cálido y húmedo. Incluye sus ríos y sectores inundados cuando la asociación se explica.",
+      "frase_locativa": "en la selva tropical",
+      "nombre_con_articulo": "la selva tropical",
+      "pictograma_id": "P_H01"
+    },
+    {
+      "id": "H02",
+      "nombre": "Sabana",
+      "definicion": "Sabana tropical o subtropical: pastizales con árboles dispersos. No incluye automáticamente todos los pastizales del mundo.",
+      "frase_locativa": "en la sabana",
+      "nombre_con_articulo": "la sabana",
+      "pictograma_id": "P_H02"
+    },
+    {
+      "id": "H03",
+      "nombre": "Desierto cálido",
+      "definicion": "Desiertos cálidos o con verano cálido, como Sahara, Kalahari y Mojave. Excluye los desiertos fríos de alta montaña.",
+      "frase_locativa": "en el desierto cálido",
+      "nombre_con_articulo": "el desierto cálido",
+      "pictograma_id": "P_H03"
+    },
+    {
+      "id": "H04",
+      "nombre": "Mar",
+      "definicion": "Medio marino, incluidas las aguas polares y el hielo marino asociado. Una costa terrestre o un estuario no bastan por sí solos.",
+      "frase_locativa": "en el mar",
+      "nombre_con_articulo": "el mar",
+      "pictograma_id": "P_H04"
+    },
+    {
+      "id": "H05",
+      "nombre": "Bosque templado",
+      "definicion": "Bosques de regiones templadas, incluidos bosques de coníferas y caducifolios. Especificar la población cuando corresponda.",
+      "frase_locativa": "en un bosque templado",
+      "nombre_con_articulo": "el bosque templado",
+      "pictograma_id": "P_H05"
+    },
+    {
+      "id": "H06",
+      "nombre": "Agua dulce",
+      "definicion": "Ríos, lagos, lagunas y humedales de agua dulce, con sus orillas para animales semiacuáticos.",
+      "frase_locativa": "en un entorno de agua dulce",
+      "nombre_con_articulo": "el agua dulce",
+      "pictograma_id": "P_H06"
+    },
+    {
+      "id": "H07",
+      "nombre": "Regiones polares",
+      "definicion": "Ártico y Antártida, incluidas tundra, hielo y aguas polares. No equivale simplemente a cualquier lugar frío.",
+      "frase_locativa": "en regiones polares",
+      "nombre_con_articulo": "las regiones polares",
+      "pictograma_id": "P_H07"
+    },
+    {
+      "id": "H08",
+      "nombre": "Alta montaña",
+      "definicion": "Ambientes de alta montaña, como zonas alpinas y puna. No equivale a cualquier cerro, acantilado o bosque con pendiente.",
+      "frase_locativa": "en la alta montaña",
+      "nombre_con_articulo": "la alta montaña",
+      "pictograma_id": "P_H08"
+    }
+  ]
+}
