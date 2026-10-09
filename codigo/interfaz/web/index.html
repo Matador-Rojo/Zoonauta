@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zoonauta · Animales y hábitats</title><link rel="stylesheet" href="/estilos.css"><script src="/app.js" defer></script></head>
+<body>
+  <header class="cabecera"><a class="marca" href="/" aria-label="Zoonauta, recuperar pantalla">Zoonauta <span>Animales y hábitats</span></a><button id="ajustes" class="boton-texto" aria-haspopup="dialog">Preferencias</button></header>
+  <main id="juego" aria-busy="true"></main>
+  <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+  <footer class="creditos">Pictogramas ARASAAC: Sergio Palao · Gobierno de Aragón · CC BY-NC-SA. Ilustraciones SVG del prototipo: elaboración propia.</footer>
+  <dialog id="preferencias" aria-labelledby="titulo-preferencias">
+    <h2 id="titulo-preferencias">Preferencias</h2>
+    <label class="campo">Retos por partida <input id="retos" type="number" min="1" max="48" value="8"></label>
+    <p class="detalle">Se aplica al comenzar una partida. Todos los animales siguen disponibles.</p>
+    <label class="campo horizontal"><input id="voz" type="checkbox" checked> Leer las respuestas en voz alta</label>
+    <label class="campo">Voz en español <select id="voces"><option value="">Buscando voces…</option></select></label>
+    <label class="campo">Velocidad <select id="velocidad"><option value="0.8">Despacio</option><option value="0.95" selected>Normal</option><option value="1.1">Más rápido</option></select></label>
+    <p id="estado-voz" class="detalle"></p>
+    <button id="probar-voz" class="secundario">Probar voz</button>
+    <button id="cerrar-preferencias" class="primario">Volver al juego</button>
+  </dialog>
+  <noscript><p>Activa JavaScript para seleccionar pictogramas y escuchar las respuestas.</p></noscript>
+</body></html>

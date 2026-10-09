@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-10-09",
+  "navegador": "145.0.7632.6",
+  "resultados": [
+    {
+      "caso": "Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Actualización del navegador conserva sesión sin repetir eventos ni audio",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Voz española: texto exacto, repetición y cancelación",
+      "resultado": "OK",
+      "alcance": "Síntesis simulada en navegador; no certifica sonido audible ni comprensión."
+    },
+    {
+      "caso": "95 recursos visuales decodificados sin errores",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Pantalla móvil 390 × 844: ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Dispositivo sin voz española: aviso visible, texto y pictogramas operativos",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Consulta técnica separada y modelo congelado",
+      "resultado": "OK"
+    }
+  ],
+  "errores_js": []
+}

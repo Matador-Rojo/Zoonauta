@@ -1,0 +1,4015 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "matriz_animales_habitats_48.md"
+  ],
+  "items": [
+    {
+      "animal_id": "A01",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F001"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A01",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A01",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A01",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A01",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Bosques de encino en el norte de México; no todos los bosques son selvas.",
+      "fuentes_del_animal": [
+        "F001"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A01",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A01",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A01",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F002"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A02",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F003"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A03",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F004"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A04",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F005"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A05",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F006"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A06",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F007"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A07",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Poblaciones documentadas en alta montaña de Etiopía; asociación menos habitual.",
+      "fuentes_del_animal": [
+        "F007"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F008",
+        "F009"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A08",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F010"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A09",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F011"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A10",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F012"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "También ocupa ambientes desérticos.",
+      "fuentes_del_animal": [
+        "F012"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A11",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F013",
+        "F014"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Se encuentra en sabanas y regiones desérticas africanas.",
+      "fuentes_del_animal": [
+        "F013",
+        "F014"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A12",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F015"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A13",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F016"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A14",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "También ocupa sabanas semidesérticas del sur de África.",
+      "fuentes_del_animal": [
+        "F017"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F017"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A15",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F018"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A16",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F019"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A17",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H03",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F020"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A18",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F021"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A19",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F022"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Ocupa aguas polares, especialmente en su alimentación estacional.",
+      "fuentes_del_animal": [
+        "F022"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A20",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F023"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A21",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F024"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A22",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F025"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A23",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F026"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A24",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F027"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A25",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Puede ocupar bosques de alta montaña y praderas alpinas.",
+      "fuentes_del_animal": [
+        "F027"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F028",
+        "F029"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Incluye poblaciones de tundra ártica.",
+      "fuentes_del_animal": [
+        "F028",
+        "F029"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A26",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "La especie también ocupa ambientes alpinos; no todas sus poblaciones viven en altura.",
+      "fuentes_del_animal": [
+        "F028",
+        "F029"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F030",
+        "F031"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Puede ocupar tundra ártica, aunque no sea su asociación más representativa.",
+      "fuentes_del_animal": [
+        "F030",
+        "F031"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A27",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Puede ocupar ambientes montañosos de gran altitud.",
+      "fuentes_del_animal": [
+        "F030",
+        "F031"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F032"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A28",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F033"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A29",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F034"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A30",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Selvas y bosques tropicales con agua accesible.",
+      "fuentes_del_animal": [
+        "F035",
+        "F036"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H02",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Sabanas inundables o próximas a cuerpos de agua.",
+      "fuentes_del_animal": [
+        "F035",
+        "F036"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H06",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F035",
+        "F036"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A31",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H06",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F037"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A32",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Bosques tropicales inundados; sigue siendo un animal de agua dulce.",
+      "fuentes_del_animal": [
+        "F038"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H06",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F038"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A33",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H01",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Ríos y lagunas dentro de la selva tropical.",
+      "fuentes_del_animal": [
+        "F039",
+        "F040"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H06",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F039",
+        "F040"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A34",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Bosques con ríos, arroyos, lagunas o estanques.",
+      "fuentes_del_animal": [
+        "F041"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H06",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F041"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A35",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H06",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F042"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A36",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Ecosistema marino ártico y hielo marino.",
+      "fuentes_del_animal": [
+        "F043"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F043"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A37",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F044"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A38",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Tundra alpina; el frío por sí solo no convierte una montaña en región polar.",
+      "fuentes_del_animal": [
+        "F044"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Se alimenta en el mar y se reproduce sobre hielo antártico.",
+      "fuentes_del_animal": [
+        "F045"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F045"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A39",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H04",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Mares árticos someros y costas asociadas.",
+      "fuentes_del_animal": [
+        "F046"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F046"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A40",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F047"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A41",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H07",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F048"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A42",
+      "habitat_id": "H08",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A43",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F049"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A44",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F050"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A45",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F051"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A46",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F052"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H05",
+      "estado": "VALIDA",
+      "es_referencia": false,
+      "marca_fuente": "✓",
+      "contexto": "Algunas poblaciones costeras bajan a bosques en invierno.",
+      "fuentes_del_animal": [
+        "F053",
+        "F054"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A47",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F053",
+        "F054"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H01",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H02",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H03",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H04",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H05",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H06",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H07",
+      "estado": "PENDIENTE",
+      "es_referencia": false,
+      "marca_fuente": "?",
+      "contexto": null,
+      "fuentes_del_animal": [],
+      "respaldo": "NO_VALIDADA"
+    },
+    {
+      "animal_id": "A48",
+      "habitat_id": "H08",
+      "estado": "VALIDA",
+      "es_referencia": true,
+      "marca_fuente": "R",
+      "contexto": null,
+      "fuentes_del_animal": [
+        "F055"
+      ],
+      "respaldo": "MATRIZ_PREVIAMENTE_REVISADA"
+    }
+  ],
+  "estados_permitidos": [
+    "VALIDA",
+    "INCORRECTA",
+    "PENDIENTE"
+  ],
+  "estados_presentes": {
+    "VALIDA": 69,
+    "INCORRECTA": 0,
+    "PENDIENTE": 315
+  },
+  "criterio": "Una relación PENDIENTE nunca se interpreta como INCORRECTA."
+}

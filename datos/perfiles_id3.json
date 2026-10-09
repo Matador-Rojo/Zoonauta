@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "baseline_id3_animales_habitats.md"
+  ],
+  "items": [
+    {
+      "clase": "H01",
+      "atributos": {
+        "entorno": "ARBOLADO",
+        "temperatura": "CALIDO",
+        "agua": "NO_PRINCIPAL",
+        "vegetacion": "ABUNDANTE",
+        "ubicacion": "OTRA"
+      },
+      "peso": 1
+    },
+    {
+      "clase": "H02",
+      "atributos": {
+        "entorno": "LLANURA_CALIDA",
+        "temperatura": "CALIDO",
+        "agua": "NO_PRINCIPAL",
+        "vegetacion": "ABUNDANTE",
+        "ubicacion": "OTRA"
+      },
+      "peso": 1
+    },
+    {
+      "clase": "H03",
+      "atributos": {
+        "entorno": "LLANURA_CALIDA",
+        "temperatura": "CALIDO",
+        "agua": "NO_PRINCIPAL",
+        "vegetacion": "ESCASA",
+        "ubicacion": "OTRA"
+      },
+      "peso": 1
+    },
+    {
+      "clase": "H04",
+      "atributos": {
+        "entorno": "ACUATICO",
+        "temperatura": "VARIABLE",
+        "agua": "SALADA",
+        "vegetacion": "ESCASA",
+        "ubicacion": "OTRA"
+      },
+      "peso": 1
+    },
+    {
+      "clase": "H05",
+      "atributos": {
+        "entorno": "ARBOLADO",
+        "temperatura": "TEMPLADO",
+        "agua": "NO_PRINCIPAL",
+        "vegetacion": "ABUNDANTE",
+        "ubicacion": "OTRA"
+      },
+      "peso": 1
+    },
+    {
+      "clase": "H06",
+      "atributos": {
+        "entorno": "ACUATICO",
+        "temperatura": "VARIABLE",
+        "agua": "DULCE",
+        "vegetacion": "ABUNDANTE",
+        "ubicacion": "OTRA"
+      },
+      "peso": 1
+    },
+    {
+      "clase": "H07",
+      "atributos": {
+        "entorno": "PAISAJE_FRIO",
+        "temperatura": "FRIO",
+        "agua": "NO_PRINCIPAL",
+        "vegetacion": "ESCASA",
+        "ubicacion": "POLAR"
+      },
+      "peso": 1
+    },
+    {
+      "clase": "H08",
+      "atributos": {
+        "entorno": "PAISAJE_FRIO",
+        "temperatura": "FRIO",
+        "agua": "NO_PRINCIPAL",
+        "vegetacion": "ESCASA",
+        "ubicacion": "MONTANA"
+      },
+      "peso": 1
+    }
+  ],
+  "tipo_datos": "PERFILES_DIDACTICOS_DE_TARJETAS",
+  "objetivo": "clase",
+  "orden_desempate": [
+    "entorno",
+    "temperatura",
+    "agua",
+    "vegetacion",
+    "ubicacion"
+  ],
+  "arbol_entrenado": null,
+  "nota": "Estos ocho perfiles no son 48 observaciones ni datos recogidos de jugadores."
+}

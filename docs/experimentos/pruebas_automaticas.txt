@@ -1,0 +1,32 @@
+test_actualizacion_unica_y_sin_etiqueta (test_aprendizaje.PruebasAprendizaje.test_actualizacion_unica_y_sin_etiqueta) ... ok
+test_cortes_de_simulacion_no_crean_etiquetas_cero (test_aprendizaje.PruebasAprendizaje.test_cortes_de_simulacion_no_crean_etiquetas_cero) ... ok
+test_experimento_completo_con_cierres_y_modelos (test_aprendizaje.PruebasAprendizaje.test_experimento_completo_con_cierres_y_modelos) ... ok
+test_exportacion_y_evaluacion_inmutable (test_aprendizaje.PruebasAprendizaje.test_exportacion_y_evaluacion_inmutable) ... ok
+test_feedback_se_aplica_antes_de_nueva_decision (test_aprendizaje.PruebasAprendizaje.test_feedback_se_aplica_antes_de_nueva_decision) ... ok
+test_flujos_exogenos_no_dependen_de_politica (test_aprendizaje.PruebasAprendizaje.test_flujos_exogenos_no_dependen_de_politica) ... ok
+test_thompson_excluye_ultima_y_es_reproducible (test_aprendizaje.PruebasAprendizaje.test_thompson_excluye_ultima_y_es_reproducible) ... ok
+test_48_retos_automaticos_y_reinicio_local (test_nucleo.PruebasNucleo.test_48_retos_automaticos_y_reinicio_local) ... ok
+test_argmax_probabilistico_respeta_exclusion (test_nucleo.PruebasNucleo.test_argmax_probabilistico_respeta_exclusion) ... ok
+test_consola_agente_y_fin_de_entrada (test_nucleo.PruebasNucleo.test_consola_agente_y_fin_de_entrada) ... ok
+test_consola_jugador_recorrido_completo (test_nucleo.PruebasNucleo.test_consola_jugador_recorrido_completo) ... ok
+test_entrada_desconocida_y_sesion_distinta (test_nucleo.PruebasNucleo.test_entrada_desconocida_y_sesion_distinta) ... ok
+test_evento_duplicado_y_clic_tardio (test_nucleo.PruebasNucleo.test_evento_duplicado_y_clic_tardio) ... ok
+test_evento_ignorado_no_se_reactiva_en_otra_fase (test_nucleo.PruebasNucleo.test_evento_ignorado_no_se_reactiva_en_otra_fase) ... ok
+test_id3_calcula_arbol_y_rutas (test_nucleo.PruebasNucleo.test_id3_calcula_arbol_y_rutas) ... ok
+test_limites_y_eventos_internos (test_nucleo.PruebasNucleo.test_limites_y_eventos_internos) ... ok
+test_nueva_ayuda_cierra_un_resultado_y_usa_b_actual (test_nucleo.PruebasNucleo.test_nueva_ayuda_cierra_un_resultado_y_usa_b_actual) ... ok
+test_ocho_casos_especificados (test_nucleo.PruebasNucleo.test_ocho_casos_especificados) ... ok
+test_ocho_opciones_y_catalogo_sin_datos_tecnicos (test_nucleo.PruebasNucleo.test_ocho_opciones_y_catalogo_sin_datos_tecnicos) ... ok
+test_pausa_y_entrada_durante_pausa (test_nucleo.PruebasNucleo.test_pausa_y_entrada_durante_pausa) ... ok
+test_pendientes_conservan_ruta_y_no_son_errores (test_nucleo.PruebasNucleo.test_pendientes_conservan_ruta_y_no_son_errores) ... ok
+test_politicas_y_parametros_congelados (test_nucleo.PruebasNucleo.test_politicas_y_parametros_congelados) ... ok
+test_registro_jsonl_preserva_resultados_sin_etiqueta (test_nucleo.PruebasNucleo.test_registro_jsonl_preserva_resultados_sin_etiqueta) ... ok
+test_repetir_preserva_contenido_y_contexto_de_observacion (test_nucleo.PruebasNucleo.test_repetir_preserva_contenido_y_contexto_de_observacion) ... ok
+test_salir_cierra_sin_etiqueta_y_terminal_no_cambia (test_nucleo.PruebasNucleo.test_salir_cierra_sin_etiqueta_y_terminal_no_cambia) ... ok
+test_todas_las_asociaciones_confirmadas_resuelven (test_nucleo.PruebasNucleo.test_todas_las_asociaciones_confirmadas_resuelven) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.734s
+
+OK
+

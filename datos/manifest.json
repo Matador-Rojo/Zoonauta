@@ -1,0 +1,1812 @@
+{
+  "schema_version": "1.0.0",
+  "version_proyecto": "3.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "paquete": "poc_interfaz_animales_habitats_v3",
+  "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
+  "conteos_datos": {
+    "animales": 48,
+    "habitats": 8,
+    "relaciones": 384,
+    "validas": 69,
+    "pendientes": 315,
+    "incorrectas": 0,
+    "escenarios": 48,
+    "perfiles_id3": 8,
+    "variantes": 72,
+    "pistas_originales": 144,
+    "pictogramas_definidos": 95,
+    "imagenes_incluidas": 95,
+    "mensajes_sistema": 9,
+    "distribuciones_iniciales": 144,
+    "condiciones_simulador": 3,
+    "casos_aceptacion_no_ejecutados": 8,
+    "fuentes_referenciadas": 55,
+    "imagenes_png_arasaac": 28,
+    "imagenes_svg_originales": 67
+  },
+  "documentos_consultados": [
+    {
+      "nombre": "matriz_animales_habitats_48.md",
+      "modified_at": "2026-10-09T21:39:37.954658Z",
+      "sha256_texto_consultado": "f03cd0076f78cb74f85ac3c853f56d48d78d490732ba66b49a2ca2bd578b4b16"
+    },
+    {
+      "nombre": "pistas_progresivas_animales_48.md",
+      "modified_at": "2026-10-09T21:44:49.586522Z",
+      "sha256_texto_consultado": "8a55c848c07606a4d4d89cf048e37313354b511fcac8347a224bfc733d4b11dc"
+    },
+    {
+      "nombre": "modelo_principal_probabilistico_animales_habitats.md",
+      "modified_at": "2026-10-09T22:15:24.064395Z",
+      "sha256_texto_consultado": "25d69d14c245ed6115eeaa3421354e78e430cfcb6d854a45ef0e7a32b22f7d75"
+    },
+    {
+      "nombre": "arquitectura_sistema_animales_habitats.md",
+      "modified_at": "2026-10-09T22:25:43.292508Z",
+      "sha256_texto_consultado": "52f83d925afd1f15c2fefa1200f949ee79ce9a09b7b6bb208c5774006ee3573a"
+    },
+    {
+      "nombre": "formalizacion_agente_animales_habitats.md",
+      "modified_at": "2026-10-09T21:53:49.718875Z",
+      "sha256_texto_consultado": "9fb37fd03ccf6dad0defa035e2cad32178b0e23922d642de656fcd06005dd75f"
+    },
+    {
+      "nombre": "baseline_id3_animales_habitats.md",
+      "modified_at": "2026-10-09T22:07:43.283359Z",
+      "sha256_texto_consultado": "faaa2ce9f79d321ca437ef36e0946cc567d875b259378d8ff3f1f4608d56fe2e"
+    }
+  ],
+  "estado": "INTERFAZ_DIGITAL_PICTOGRAMAS_Y_ADAPTADOR_VOZ_IMPLEMENTADOS",
+  "validacion": {
+    "pruebas_automaticas_correctas": 35,
+    "casos_aceptacion_correctos": 8,
+    "aprendizaje_bayesiano_ejecutado": true,
+    "modelos_aprendidos": 18,
+    "retos_entrenamiento": 34560,
+    "retos_evaluacion": 51840,
+    "revision_registros": {
+      "resultado": "CORRECTO",
+      "archivos_de_observaciones": 72,
+      "observaciones_cerradas_comprobadas": 142289,
+      "modelos_reconciliados": 18,
+      "corridas_evaluacion": 54,
+      "parametros_evaluacion_congelados": true,
+      "actualizaciones_unicas": true,
+      "semillas_separadas": true
+    },
+    "evaluacion_con_jugadores": false,
+    "casos_navegador_correctos": 7,
+    "validacion_caa_con_usuarios": false,
+    "voz_prueba": "SINTESIS_CONTROLADA_EN_NAVEGADOR",
+    "audio_audible_en_dispositivo_usuario_verificado": false
+  },
+  "archivos": [
+    {
+      "ruta": ".gitattributes",
+      "bytes": 237,
+      "sha256": "2a5c59bbf91732d48a68a61aca76522cb8a8505131508d29f3efed22f4682977"
+    },
+    {
+      "ruta": ".gitignore",
+      "bytes": 490,
+      "sha256": "e0899b1ac47e07290cee343b627f35129a13fde6df40cd934f3117b6121d2318"
+    },
+    {
+      "ruta": "README.md",
+      "bytes": 3150,
+      "sha256": "5c5f1c7fddc9d3d4a66d9fac8099c793a735e109d997df22a727a29865d46e30"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A01.svg",
+      "bytes": 1867,
+      "sha256": "6c7728417729b79ac1d823ff483aa87093169f5d5429798e7ca7bcbdff9b7006"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A02.png",
+      "bytes": 29243,
+      "sha256": "0cf9296a53816d17403a9ab7b3b8e7a07dd1e8413a961d50517eb9f001dd42d4"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A03.png",
+      "bytes": 20052,
+      "sha256": "b40c37b2fd9bd7ecb27e951e3b42cd793f034190c1440b8f038429aeb23a4569"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A04.svg",
+      "bytes": 914,
+      "sha256": "bfc61ab7f8d0c549d537672fdb56715068c235a24d6d991d4cbfbb36b7c06a80"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A05.svg",
+      "bytes": 765,
+      "sha256": "3be46f17595a348da6c8f266da24404580cc7a815a9c0443854be180bb1384d4"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A06.svg",
+      "bytes": 959,
+      "sha256": "1394c730b14ab937dfe9345f8abb740f8df6fafb5984d7a990c6bf266cce91f4"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A07.png",
+      "bytes": 22260,
+      "sha256": "ae558f9e8bb8db82925798a17960efaf87fb1534147f84a8e43ca6344f5ab5f0"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A08.png",
+      "bytes": 19124,
+      "sha256": "1d67c93e7f1c7116350a292b454281634e978c10acfd17aceed0ecfe015cf6a6"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A09.png",
+      "bytes": 27457,
+      "sha256": "8f371771d19b93122db3ccec634548f7d81f9b754f7e268c8181e99f4dd7c5bd"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A10.png",
+      "bytes": 24524,
+      "sha256": "2703902b41dc9437078e3bdc342e889c54c46db298195de170b7e62e356cf4eb"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A11.png",
+      "bytes": 43605,
+      "sha256": "c1fc7f43d5c8dd0c8d346955aa77471b50b5fc0ec4268d51b02901563d9287c7"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A12.png",
+      "bytes": 20350,
+      "sha256": "a5a632169f5ead2a4a1a5a999625f2e53540399c79e8afb26b84936432281810"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A13.png",
+      "bytes": 20183,
+      "sha256": "8379f1b7d86de8ebeb8c240790757ce2c03c5c1b2e457c8729d2e377519658d1"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A14.svg",
+      "bytes": 885,
+      "sha256": "2eaff561147ef54c026d724fbcf83161593eb432dc2155d28385828aceefe1b6"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A15.svg",
+      "bytes": 928,
+      "sha256": "cf2d4b0047d4245e690481448a8ba49206a2f03f009d2f8cb559544d8f943ec7"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A16.svg",
+      "bytes": 777,
+      "sha256": "f39e952aa19f2a15ffb93fc5cee945e7e2fea07cc4ca79e825e75d72c8c5fff8"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A17.svg",
+      "bytes": 1158,
+      "sha256": "a1262513f44cbcccc784b26a1b0f75e3c9fe6e0b34bab0f67362dc9f5cb4d1db"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A18.svg",
+      "bytes": 919,
+      "sha256": "58797b88c4e79ea0bc717863a06233af9e0cc6020e325397384f58be11fbbe9b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A19.png",
+      "bytes": 20005,
+      "sha256": "90af21fc0841982efee9ffbc918a2970425f6ae032a3e3186bac89213c356a1f"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A20.png",
+      "bytes": 20780,
+      "sha256": "a7e136b3f096fbd7023678346cc0336c435c2796cce88d7b137b39ff978c1828"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A21.png",
+      "bytes": 11144,
+      "sha256": "f26a77cfb72f6a188c6f509a428203013962b4cc1d410a96dee06f67d4160f2a"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A22.svg",
+      "bytes": 620,
+      "sha256": "ad07b2697e6334c81953dc9408c27bdc784434c639dc5bb810494bed022c2fec"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A23.png",
+      "bytes": 34531,
+      "sha256": "0453a834292ba63819a63a0b240a09c79766c3ff84c6be97320b03a6e5043543"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A24.svg",
+      "bytes": 769,
+      "sha256": "7c991284336672f18deab83bff4f030528cb094378ae5789a433274e357ff8c3"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A25.png",
+      "bytes": 20302,
+      "sha256": "8fab806d880e49de91a8802a6e38cbb6dae386d909ddaaa4a863a298b14df811"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A26.png",
+      "bytes": 13766,
+      "sha256": "6512c73236d90cb7998007ff31f95eb0d9cb8566620dc91e56b1173adfacf43b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A27.png",
+      "bytes": 11289,
+      "sha256": "7c92dae5402e6edf25043da813a5d7922e944a6193cfdc5f9577eda3e1ced0ff"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A28.png",
+      "bytes": 24747,
+      "sha256": "875154983fdfc3194c7acb732494d7da0caf07ba8b4c14302feb575db382ffcb"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A29.png",
+      "bytes": 14923,
+      "sha256": "cf52695571507c818d141e1467f650b658594915f9cc02e69e0c0569a73e22d0"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A30.png",
+      "bytes": 16542,
+      "sha256": "9dfde9bf7f878282f86426be3c982a7d866ae3aa764ba5bb092bb3920f712d17"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A31.png",
+      "bytes": 30111,
+      "sha256": "420fdc74d32a68a8d6eeddce1e8951b8dca5bf85b84fcd8c8015c8a9cffb950b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A32.svg",
+      "bytes": 853,
+      "sha256": "e87b526ad5dda1d06d7ca6582e7ef8477c7634ca57457eb0516d0578eab1bbd7"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A33.svg",
+      "bytes": 536,
+      "sha256": "f3176d274a77f91a84c2fd01e2dfc55ce2fd1cf7c97ca738f921193821a78509"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A34.png",
+      "bytes": 13988,
+      "sha256": "5926aade6ded4addf21ae529b693d1fbbf9c5ff56aaa7cb647522dfd6522ec5f"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A35.png",
+      "bytes": 18158,
+      "sha256": "da62e15db2514e7f27a351133fd5a13edeaead8fa7b13b3c6fc5b65929902977"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A36.png",
+      "bytes": 27082,
+      "sha256": "46795266eb187dd69e83ab84c76b39b75036bd9a735b9fc10add7d154f84eaa4"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A37.png",
+      "bytes": 15575,
+      "sha256": "4bb795fc39c4f594e70835a8d8fac57dae46a84a1615cb316c5c572b9058d71a"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A38.svg",
+      "bytes": 886,
+      "sha256": "29f1652fa1faa2a8afc674cca492015d3ce13255e42e06ba28fe35d2e3071cf7"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A39.png",
+      "bytes": 9692,
+      "sha256": "3367205c0e39e85e3787432d4888621e9981bb88d4b07b630470edda04c429ef"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A40.png",
+      "bytes": 29450,
+      "sha256": "b87548d3b7690cf98c2963d22b6c2cfa066e1edbf47ef14b5179461a0cd0fafa"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A41.svg",
+      "bytes": 879,
+      "sha256": "4986d66ab88b8dd986184480489c718529b1266d13152b1d2140ce51dbfc8851"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A42.svg",
+      "bytes": 852,
+      "sha256": "bc7ff13fae3bcb2e62cb5d5688534cd61f5fbc225a4764d11c11383547a18341"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A43.png",
+      "bytes": 26281,
+      "sha256": "185480cabc95717dec4f2ee83f9b3c974066d3e58063b5419189896f039109a6"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A44.svg",
+      "bytes": 827,
+      "sha256": "ce4945f11f8936423e81448e9ef058423718a4b3ace90a7014119f13499cc2ce"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A45.svg",
+      "bytes": 1883,
+      "sha256": "bd9db6c234c521a8b6160770b34da6d6ff43cff9571580a0a7d7f7714b48e58e"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A46.png",
+      "bytes": 22144,
+      "sha256": "5d5081aa0382a45dfcaccf46d4bac96352b73fce9b9327de9f92342f8275a571"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A47.svg",
+      "bytes": 709,
+      "sha256": "0cb3d95edea91944daf7172d38055edcc4f09d3bb611fa91a0d355bee223eeb9"
+    },
+    {
+      "ruta": "assets/pictogramas/P_A48.svg",
+      "bytes": 925,
+      "sha256": "1ed0c0fd686a6116bc5426114f6a779be370ad4c65eeb9cb3aba345ca98cdb55"
+    },
+    {
+      "ruta": "assets/pictogramas/P_AGENTE.svg",
+      "bytes": 594,
+      "sha256": "cadc1d310f98d6a44f30df1918234bef40b45b709d5b632aeb051d18d65d4aab"
+    },
+    {
+      "ruta": "assets/pictogramas/P_AGUA_DULCE.svg",
+      "bytes": 509,
+      "sha256": "9d1a2c8039e0d105702f822962d746d392848371117b33564ed63af58eaf299e"
+    },
+    {
+      "ruta": "assets/pictogramas/P_AGUA_SALADA.svg",
+      "bytes": 538,
+      "sha256": "70dd7bc35c966f78652c4038d76ea0efa9b76b23dc3414385f2ebc3891ef2028"
+    },
+    {
+      "ruta": "assets/pictogramas/P_ARBOLES_SEPARADOS.svg",
+      "bytes": 828,
+      "sha256": "74c12696707b9f1f16103e9e08563bcf350acab383b15adbaa19737dc5c19b14"
+    },
+    {
+      "ruta": "assets/pictogramas/P_AYUDA.svg",
+      "bytes": 442,
+      "sha256": "112feec83b4950c8f02b35d23f1fec76fd6de2ead81c597d368cc73be7c0abe0"
+    },
+    {
+      "ruta": "assets/pictogramas/P_BOSQUE.svg",
+      "bytes": 1041,
+      "sha256": "51d72492938de970abf57f365f77498dbcec3f72bb6ef4934dd82e3295dbf301"
+    },
+    {
+      "ruta": "assets/pictogramas/P_BUSCAR.svg",
+      "bytes": 437,
+      "sha256": "288162f7b7abe66c05074981c44245c64bca8e349a086408f03729eb06f79f61"
+    },
+    {
+      "ruta": "assets/pictogramas/P_CALOR.svg",
+      "bytes": 514,
+      "sha256": "d2eabba81b7d15b9d7611783fc833e60cd29e1af4f1720aad6de7a46ae51ef0b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_CLIMA_TEMPLADO.svg",
+      "bytes": 521,
+      "sha256": "050119a709621347d773a66a2a957410d1dde71553e196f9079605aa42d5b9fe"
+    },
+    {
+      "ruta": "assets/pictogramas/P_CONFIRMAR.svg",
+      "bytes": 391,
+      "sha256": "c5e4787d85fa851a7310df4c7037e0f2b68af3119398a82dfc9215e5081139cf"
+    },
+    {
+      "ruta": "assets/pictogramas/P_CONTINUAR.svg",
+      "bytes": 317,
+      "sha256": "70e8f54667a34be74aa489495d78c5a3d1aa7f36a6e5a72029bead1cf32947bc"
+    },
+    {
+      "ruta": "assets/pictogramas/P_ELEGIR.svg",
+      "bytes": 464,
+      "sha256": "763989761b9d2f10917e35c99e9e6aeb4bd3f2a3bd79fa93bcf20188a03abe72"
+    },
+    {
+      "ruta": "assets/pictogramas/P_EXPLORAR.svg",
+      "bytes": 439,
+      "sha256": "3f51719e80db54fef277903fd729e09470ebe025f1c530905568ce507f52b48d"
+    },
+    {
+      "ruta": "assets/pictogramas/P_FIN.svg",
+      "bytes": 410,
+      "sha256": "45b8f0545c89deb251fd8bc1c626a9341a3a935a2e75a4ad8db0e4b82138c94c"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H01.svg",
+      "bytes": 1468,
+      "sha256": "6d111417eb30bc48ddfcccb1a69014577197dafbd323801d9f2735280d513457"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H02.svg",
+      "bytes": 1006,
+      "sha256": "e553415cc02eedbdb0210dcf483610861c3250bedebe5ae8b22e669690e445a0"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H03.svg",
+      "bytes": 806,
+      "sha256": "36a637abc17d9d2a6e94dcdf552d3d572e6316d2fad038a97535d83ea672f2ce"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H04.svg",
+      "bytes": 766,
+      "sha256": "4e9403e57a6dd1b2f6e4e03d703d013cbf66374ce36e85d7a251480353537aa5"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H05.svg",
+      "bytes": 1100,
+      "sha256": "3d3a0a0dcec5a64841998d0eca8009f1f0e69d440d74464e579d5e8f65e3b4f7"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H06.svg",
+      "bytes": 727,
+      "sha256": "2c29770452609702897debce0987a9b1d0f73af5ba1be523b82a9a2656bf0a9b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H07.svg",
+      "bytes": 645,
+      "sha256": "5f92dc940f249eb9830d4618244b445f69a86d1acc6eae5838540939247626e7"
+    },
+    {
+      "ruta": "assets/pictogramas/P_H08.svg",
+      "bytes": 429,
+      "sha256": "ed6e668e20ea1d4d9e8752f75d77cd555997d336978440509ace0586e58d5abb"
+    },
+    {
+      "ruta": "assets/pictogramas/P_HUMEDAD.svg",
+      "bytes": 581,
+      "sha256": "4dfd7dc84e02738a41b9b54a584544410107702690e6189b7082248f8e0b6ab6"
+    },
+    {
+      "ruta": "assets/pictogramas/P_INICIAR.svg",
+      "bytes": 300,
+      "sha256": "7daab6f5415e32b4d16afe214ed6245fb17ac9f886d99407cac32a01ae0a1a19"
+    },
+    {
+      "ruta": "assets/pictogramas/P_JUGADOR.svg",
+      "bytes": 621,
+      "sha256": "0fe73d6f5860e6f3b3df8d4d85b2c458d3d0c1cda3c47ec2a480074d5a2c0889"
+    },
+    {
+      "ruta": "assets/pictogramas/P_LUGAR_ABIERTO.svg",
+      "bytes": 382,
+      "sha256": "11465180ebe327b8cd1aa333fdb1f31599441ead9671f62dd5bf54beb452c095"
+    },
+    {
+      "ruta": "assets/pictogramas/P_MONTANAS_ALTAS.svg",
+      "bytes": 431,
+      "sha256": "e4a257668dc87df10a9596c34dd21b823a096d5edbaf92b1fb84281bfaa6927f"
+    },
+    {
+      "ruta": "assets/pictogramas/P_MUCHA_AGUA.svg",
+      "bytes": 417,
+      "sha256": "b71ee43c96bdc7a0803588a7bd2476c59d4e775bf163632095ceac98679fc2de"
+    },
+    {
+      "ruta": "assets/pictogramas/P_MUCHOS_ARBOLES.svg",
+      "bytes": 1050,
+      "sha256": "79e4b136434b77cc2582e613cfa6c7b0eab2618777ca9a536fc4a1c3c9ecab47"
+    },
+    {
+      "ruta": "assets/pictogramas/P_OPCION.svg",
+      "bytes": 469,
+      "sha256": "a59dc349e790232e263647071265b60f76e3aa8814496d2ccfd74f3304d5afdc"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PAISAJE_FRIO.svg",
+      "bytes": 642,
+      "sha256": "730a40ba0282efdc243a9c445632fee0e6c36202d4dbcbea1248274293562d0d"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PASTO_ABUNDANTE.svg",
+      "bytes": 779,
+      "sha256": "8a563981b6537f60fdec18940cfab15423b0622615f954cf8ed9579fa1eee60a"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PAUSAR.svg",
+      "bytes": 384,
+      "sha256": "2c5fc5e66f152016e843d19444dfba479d0674d6772a25d4a0d963d51cbbd9f6"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PLANETA.svg",
+      "bytes": 513,
+      "sha256": "e351fecccb5facbeda668d50ca23af35c60fb4480147991dc1ddc1cfb7cc1e1a"
+    },
+    {
+      "ruta": "assets/pictogramas/P_POCAS_PLANTAS.svg",
+      "bytes": 487,
+      "sha256": "cf24706578e568ec3e3da76eb9e9d0b92cbe41bea58f4678c737346618337f20"
+    },
+    {
+      "ruta": "assets/pictogramas/P_POLOS.svg",
+      "bytes": 615,
+      "sha256": "4e733ab5eb9f41257f3b62a0e2290e24025fd903640248def896d266f33d6743"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PREGUNTAR.svg",
+      "bytes": 445,
+      "sha256": "01ae5ac5bffc24f7ee5c1f4841b60c79e7bee9929e95d3a72f4fb0654482fde1"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PROBAR.svg",
+      "bytes": 400,
+      "sha256": "c71028d5584a589de7300a983813cdac24a6dd37f43c1c65bd208326a1823a34"
+    },
+    {
+      "ruta": "assets/pictogramas/P_QUE_LUGAR.svg",
+      "bytes": 447,
+      "sha256": "8c94db588e7b1c09b74de9d92db9a2f7cb7ef402f2a6a4fef9f7098c57999b1c"
+    },
+    {
+      "ruta": "assets/pictogramas/P_REANUDAR.svg",
+      "bytes": 301,
+      "sha256": "2fcbbd72ddf161dc4ce876bd8b8d6012bcc0c1a8a202f4d6fd6c3a0e236c9a8b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_REPETIR.svg",
+      "bytes": 388,
+      "sha256": "eb4394ba2f22168d883d97da328e16d59fbfc815a3565908688a8ab6fdf9b866"
+    },
+    {
+      "ruta": "assets/pictogramas/P_RIO.svg",
+      "bytes": 721,
+      "sha256": "6f416eb3dd73357ad80fce6e0c037256f0e381ffdce866d02571f5ee4a9febaa"
+    },
+    {
+      "ruta": "assets/pictogramas/P_SALIR.svg",
+      "bytes": 381,
+      "sha256": "47528f8382ed0495728b0b94afee9f8d4c24406505fbbf78188f348c51af2a75"
+    },
+    {
+      "ruta": "assets/pictogramas/P_SECO.svg",
+      "bytes": 396,
+      "sha256": "8d1677a8da7589a7f553390e7da606a310af062bde45d051634bb63b7bbab1cc"
+    },
+    {
+      "ruta": "assets/pictogramas/P_SENALAR.svg",
+      "bytes": 423,
+      "sha256": "1a5f73acb47e45f72485a5c22ae8a36363d4a7bae0b79e047b6eff51bd85b9aa"
+    },
+    {
+      "ruta": "assets/pictogramas/P_TOCAR.svg",
+      "bytes": 420,
+      "sha256": "9559602feed0b5893b5d1544156f8d8cb42e22fd27e189ca13563c0b07e67353"
+    },
+    {
+      "ruta": "assets/pictogramas/P_VIVIR.svg",
+      "bytes": 705,
+      "sha256": "395e93dda4f326ab0edd85c060dbbd5213d1324dddfdf5e5359bfc27afbe0664"
+    },
+    {
+      "ruta": "codigo/__init__.py",
+      "bytes": 35,
+      "sha256": "6c804c1b591dc704778b909cf3e409b376f07de888b11033754492f3ec227ad6"
+    },
+    {
+      "ruta": "codigo/entrenamiento/__init__.py",
+      "bytes": 60,
+      "sha256": "98ce07833d7885c8fb93121a8bbabf6733bfea89f38b15878932b862bfeb4a75"
+    },
+    {
+      "ruta": "codigo/entrenamiento/auditar.py",
+      "bytes": 5127,
+      "sha256": "843312c94f99099db9c40e374ec4c41d45d7c87001f25b6ab2235fc1149302f0"
+    },
+    {
+      "ruta": "codigo/entrenamiento/bayes.py",
+      "bytes": 4767,
+      "sha256": "9c50349aac6e4cd64eb6325237b2f2879cb6793aae50f08b7407ea65917b0a84"
+    },
+    {
+      "ruta": "codigo/entrenamiento/experimento.py",
+      "bytes": 21376,
+      "sha256": "123ccfcf31cd7c8a218521a8fcb135b20011ad00b6c15e77cabfdb9014695af8"
+    },
+    {
+      "ruta": "codigo/entrenamiento/grafico.py",
+      "bytes": 3227,
+      "sha256": "c3b674a7400d2ee218771b31ab9468e2f363573cae75559426ec7d52facb1994"
+    },
+    {
+      "ruta": "codigo/entrenamiento/simulador.py",
+      "bytes": 11856,
+      "sha256": "567c30f9a3b7eb43cbe17543b83745389a90916c5d85eafd57dc32061604f196"
+    },
+    {
+      "ruta": "codigo/interfaz/__init__.py",
+      "bytes": 50,
+      "sha256": "f2e63c0a78ce24245e8a534cf975b8f74a8da8abcef089ccc3dc0041ef64b2d8"
+    },
+    {
+      "ruta": "codigo/interfaz/crear_svg.py",
+      "bytes": 14590,
+      "sha256": "20ab04850498110c73a5fa26d03e3ee607aae441eec640716c839542243a7a1f"
+    },
+    {
+      "ruta": "codigo/interfaz/preparar_recursos.py",
+      "bytes": 4565,
+      "sha256": "6fcb4617dd00c7e96ed42b1e97120a504a0ce301aca47687632992edf0401bbd"
+    },
+    {
+      "ruta": "codigo/interfaz/servicio.py",
+      "bytes": 6053,
+      "sha256": "b01dce476159c60825d9a652e622a405c5037915dd7f46d56a42d12c74484298"
+    },
+    {
+      "ruta": "codigo/interfaz/servidor.py",
+      "bytes": 6796,
+      "sha256": "b1d5a44c7cdb675137d97b240b11c0282571e95130de4fc015e4e2d206aa7b52"
+    },
+    {
+      "ruta": "codigo/interfaz/web/app.js",
+      "bytes": 8917,
+      "sha256": "77a5c5507c7c25f118dbe03ff32baeca26a000c75e82ff1812f36f10b7cea2f0"
+    },
+    {
+      "ruta": "codigo/interfaz/web/estilos.css",
+      "bytes": 7698,
+      "sha256": "304bdf583f30f60ee24ba74fca5ab9340efba7e0407830151021d6fdc6c77e34"
+    },
+    {
+      "ruta": "codigo/interfaz/web/index.html",
+      "bytes": 1869,
+      "sha256": "a6dc4776059823e8f985bc3737bb4c304e728e0a8d003fbd2dd2f0c2ce0f5deb"
+    },
+    {
+      "ruta": "codigo/interfaz/web/revision.html",
+      "bytes": 766,
+      "sha256": "cdd956c449d115870d0fd85f855b41251e18b46915a15480a6d622c3bc734d1c"
+    },
+    {
+      "ruta": "codigo/interfaz/web/revision.js",
+      "bytes": 726,
+      "sha256": "9e59771dd0b7d06df475ce0e1d1d5d43ca06f5ef022ac30a27f75932eddfcdb0"
+    },
+    {
+      "ruta": "codigo/motores/__init__.py",
+      "bytes": 35,
+      "sha256": "6c804c1b591dc704778b909cf3e409b376f07de888b11033754492f3ec227ad6"
+    },
+    {
+      "ruta": "codigo/motores/guia.py",
+      "bytes": 6327,
+      "sha256": "09b1781d543ccc65633e454631cbe4f1e335e0c107e2351d7a793662c838f959"
+    },
+    {
+      "ruta": "codigo/motores/id3.py",
+      "bytes": 4231,
+      "sha256": "a91127ac615d2fc19cf9d6fc1e8f2c831c6e92a5a895b069de04b74ea0c92a81"
+    },
+    {
+      "ruta": "codigo/nucleo/__init__.py",
+      "bytes": 35,
+      "sha256": "6c804c1b591dc704778b909cf3e409b376f07de888b11033754492f3ec227ad6"
+    },
+    {
+      "ruta": "codigo/nucleo/datos.py",
+      "bytes": 5680,
+      "sha256": "efbbde068592003cc1d3d8fe29278942e05b71de42cd0c150e7187de78bbfea3"
+    },
+    {
+      "ruta": "codigo/nucleo/estado.py",
+      "bytes": 1607,
+      "sha256": "a404c832e5da9e9c08dd7ef40479c98521b65f0e79cbf6f09fbf486755d8146f"
+    },
+    {
+      "ruta": "codigo/nucleo/gestor.py",
+      "bytes": 17234,
+      "sha256": "e487f33041ff3de2961ad4bb572f87d9e7fe5d90cb95f94f0d7cda3e84a929d8"
+    },
+    {
+      "ruta": "codigo/nucleo/registro.py",
+      "bytes": 713,
+      "sha256": "538bd6636d843f7d8bd16b804825cb6ec84e534a629824862341ee3b34571e1d"
+    },
+    {
+      "ruta": "codigo/poc/__init__.py",
+      "bytes": 35,
+      "sha256": "6c804c1b591dc704778b909cf3e409b376f07de888b11033754492f3ec227ad6"
+    },
+    {
+      "ruta": "codigo/poc/aceptacion.py",
+      "bytes": 4471,
+      "sha256": "8767f3bb4ad72e6116aa60b64d6c7d60c274e59135fe025788269b4e9df35835"
+    },
+    {
+      "ruta": "codigo/poc/consola.py",
+      "bytes": 6359,
+      "sha256": "ee42055828253d43828956e4487f6f7f4f7f4099b0f3b00f2ee327e08e5313e5"
+    },
+    {
+      "ruta": "codigo/poc/demo.py",
+      "bytes": 3775,
+      "sha256": "860f4acebcebe9c62011da7392506f8ee153c1361127d958b95ceee608889df9"
+    },
+    {
+      "ruta": "codigo/respuestas/__init__.py",
+      "bytes": 35,
+      "sha256": "6c804c1b591dc704778b909cf3e409b376f07de888b11033754492f3ec227ad6"
+    },
+    {
+      "ruta": "codigo/respuestas/generador.py",
+      "bytes": 2277,
+      "sha256": "0ac0197f74d0e91728ffef2ecd860fd0bb0626bda3c34499c99a5bad6efcac91"
+    },
+    {
+      "ruta": "datos/animales.json",
+      "bytes": 17008,
+      "sha256": "d63e1247e6d657fc9fd3cd3caf6dcab4fa23d1c716fb1cac0457bae4de11db63"
+    },
+    {
+      "ruta": "datos/asociaciones.json",
+      "bytes": 96430,
+      "sha256": "879aac177ab1e3f8bced0a14849c23dbe158b3d4e59b7603785b9e69ea896a67"
+    },
+    {
+      "ruta": "datos/casos_aceptacion.json",
+      "bytes": 14726,
+      "sha256": "a448f1f2ee534eb4da5a375a102296e60df703edfb7b408f32cd0d939cc086b2"
+    },
+    {
+      "ruta": "datos/configuracion_experimentos.json",
+      "bytes": 703,
+      "sha256": "fc2a75d0bab248a0714ae2947573d1ce3e3e4bdffcc86287c04e9aeb16a916ed"
+    },
+    {
+      "ruta": "datos/configuracion_poc.json",
+      "bytes": 2102,
+      "sha256": "5896d5f7140df8bf6b0a108ff8bf001a0f1d0bfe27365029d687ba23237dc51f"
+    },
+    {
+      "ruta": "datos/configuracion_simulador.json",
+      "bytes": 1776,
+      "sha256": "17ea279f2ed9e73a27d520df2a389c4beb87e7969dda3e08773f65be5cb718c3"
+    },
+    {
+      "ruta": "datos/escenarios.json",
+      "bytes": 45713,
+      "sha256": "db18ee34acdb94e5983b6aa8d050d4a5a07b9d0034ad8d976107bfefa4858eff"
+    },
+    {
+      "ruta": "datos/fuentes.json",
+      "bytes": 16324,
+      "sha256": "77103b145a82635dc0bdf11c15532252da584659873b6ea098e02007dbc66bfb"
+    },
+    {
+      "ruta": "datos/fuentes_pictogramas.json",
+      "bytes": 42065,
+      "sha256": "ad9d0a8a9ea6bfbe8a44aa02d0f51f18e86e0cbe8d32f807c31ed5210423e550"
+    },
+    {
+      "ruta": "datos/habitats.json",
+      "bytes": 2813,
+      "sha256": "e80c98b7f9309ddfa1307f8e506188adf93eaffbfcbfbab6f27af86f36e9fef5"
+    },
+    {
+      "ruta": "datos/mensajes_sistema.json",
+      "bytes": 4714,
+      "sha256": "288c27a92adede57e229421532a4ac6917d44f30c1ab5ce8f0c6bb6cc3ec8954"
+    },
+    {
+      "ruta": "datos/parametros_iniciales.json",
+      "bytes": 32955,
+      "sha256": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca"
+    },
+    {
+      "ruta": "datos/perfiles_id3.json",
+      "bytes": 2404,
+      "sha256": "34b40ca54961a229500cb3e2de992fa02978873f29fa38e3b6e593f08cfcbf8e"
+    },
+    {
+      "ruta": "datos/pictogramas.json",
+      "bytes": 81595,
+      "sha256": "0c0fbe14038601ffcf89629d4d833de5bea9ef166b1ff4c1f9adbc309c971573"
+    },
+    {
+      "ruta": "datos/pistas_originales.json",
+      "bytes": 60240,
+      "sha256": "a52fb73cb2bd6d476eb585b4b8570de71db57ffc39efb1f89164380434dd1362"
+    },
+    {
+      "ruta": "datos/variantes_ayuda.json",
+      "bytes": 65481,
+      "sha256": "ce85a545f8602e98389fa814781b00794c1adbf3a17264f062f4b035d268652b"
+    },
+    {
+      "ruta": "docs/creditos_pictogramas.md",
+      "bytes": 1479,
+      "sha256": "a7226772d7797ad89cf19471f0f7af0c7106f9e1516f7865541a02af0818b373"
+    },
+    {
+      "ruta": "docs/datos/fuentes/baseline_id3_animales_habitats.md",
+      "bytes": 17626,
+      "sha256": "faaa2ce9f79d321ca437ef36e0946cc567d875b259378d8ff3f1f4608d56fe2e"
+    },
+    {
+      "ruta": "docs/datos/fuentes/matriz_animales_habitats_48.md",
+      "bytes": 23443,
+      "sha256": "f03cd0076f78cb74f85ac3c853f56d48d78d490732ba66b49a2ca2bd578b4b16"
+    },
+    {
+      "ruta": "docs/datos/fuentes/pistas_progresivas_animales_48.md",
+      "bytes": 26232,
+      "sha256": "8a55c848c07606a4d4d89cf048e37313354b511fcac8347a224bfc733d4b11dc"
+    },
+    {
+      "ruta": "docs/datos/guia_datos_poc.md",
+      "bytes": 14924,
+      "sha256": "ac43635c73c5112d2c7b4434e069aefc275f99e646748292c0d6af616a08818b"
+    },
+    {
+      "ruta": "docs/datos/revision_integridad.md",
+      "bytes": 990,
+      "sha256": "4ec1288ce8af0bc524bb707376764a56076622bf95db69f5cc3a60935f6e4df1"
+    },
+    {
+      "ruta": "docs/diseno/arquitectura_sistema_animales_habitats.md",
+      "bytes": 22150,
+      "sha256": "237b06f475fa58d14760a0b563d34fa0bbe37674adbbfe41231dc3d343783899"
+    },
+    {
+      "ruta": "docs/diseno/diagrama_arquitectura_animales_habitats.png",
+      "bytes": 384048,
+      "sha256": "5077c803c75fa718ca24f3ceb098056fc9982baad055e6c20d593f4c5efaceb1"
+    },
+    {
+      "ruta": "docs/diseno/formalizacion_agente_animales_habitats.md",
+      "bytes": 18848,
+      "sha256": "0fc3816fd9e3b6bf30222d5248514a802d7d5d7659415fa665a9e7e69a688a0b"
+    },
+    {
+      "ruta": "docs/diseno/modelo_principal_probabilistico_animales_habitats.md",
+      "bytes": 26544,
+      "sha256": "b97b691be5f61d8f9c7bcc4d01c82bccd157222f05941e984d7104139368ae5a"
+    },
+    {
+      "ruta": "docs/experimentos/comparacion_politicas_animales_habitats.png",
+      "bytes": 263165,
+      "sha256": "f135811df9ccc1e43991ca755fb7a69434b6909037e529877cbd31216cd89818"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R01_ID3.json",
+      "bytes": 31952,
+      "sha256": "141751ac610ddc762133ddb59ecbfc3f52db795cf86fe2f049e67d40d29ca791"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R01_PROBABILISTICO.json",
+      "bytes": 44069,
+      "sha256": "efb548dbba55bd96de2e0fd35274f429ca9db4ea8b9e643b6537aa186a6c52fe"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R01_ROTACION.json",
+      "bytes": 53722,
+      "sha256": "df6d358b044263edd3b32cd792b550030ba984df99b557f359f19c48ec24cc52"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R02_ID3.json",
+      "bytes": 31941,
+      "sha256": "8984a03111ef8ce7c1378b58439af70a56e885e4a2ab06151f5d5bd11addc176"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R02_PROBABILISTICO.json",
+      "bytes": 44264,
+      "sha256": "0a5ea5c045f4b45284ff3a510d650d890448aec2252734ddc0e831eb14104bc1"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R02_ROTACION.json",
+      "bytes": 53088,
+      "sha256": "534f2a610d5b90b729d317aa7aec7866dffdef0321f6cb7dd5865f9461e768c2"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R03_ID3.json",
+      "bytes": 31945,
+      "sha256": "42ffec9d6131dec6d3913f7c1a5c2b552f08015b4e0a82e137258066b885964d"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R03_PROBABILISTICO.json",
+      "bytes": 44551,
+      "sha256": "fce393cc1971536e666ec3b43a03e5afdbfceab1193b1aa483c6444aab6dd8be"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R03_ROTACION.json",
+      "bytes": 54022,
+      "sha256": "a5c88ca4133939638994445be4274cf98843e80ce29eae9474c2ff88284c3cf4"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R04_ID3.json",
+      "bytes": 31936,
+      "sha256": "55a2ab329cdcaa4bd05781226ec76991c85d637002c608eeebe968b07045edd4"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R04_PROBABILISTICO.json",
+      "bytes": 44504,
+      "sha256": "2a270dd7d3d476696193fc85ae38bcb2b4983818b7e48f20bcf301225c33f6d6"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R04_ROTACION.json",
+      "bytes": 53779,
+      "sha256": "3c4712c6bb1d92be178218a51e17bef3b71c28f48a075a5c806119679ed098a0"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R05_ID3.json",
+      "bytes": 31966,
+      "sha256": "ea558c01b016c8d6aa8c3be47b4234b580141b6b1425d4dfc6a9c360716cd81e"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R05_PROBABILISTICO.json",
+      "bytes": 44145,
+      "sha256": "a35d417b55828773c7e3c5b4b8d8730c4318e9d2d8a6d7be6cb7f5afdafea368"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R05_ROTACION.json",
+      "bytes": 53323,
+      "sha256": "5867667c4b03b7ec7985170b20ae0319fab9d257ea803c43264d0e7840ec8784"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R06_ID3.json",
+      "bytes": 31955,
+      "sha256": "79bdbee3133e9ad547d0cd002af721eea750dc10cbeb798d71b8b3018f38025e"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO.json",
+      "bytes": 44506,
+      "sha256": "78be48e92b2bee48ca36b7ba58cefce1d9558ecd8253069a324a88c45830dff0"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_CONTEXTUAL_R06_ROTACION.json",
+      "bytes": 53505,
+      "sha256": "0acb65972cc1ced0ccdb062c331287965ffd5029ba36009865f4ec22cc845e70"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R01_ID3.json",
+      "bytes": 32007,
+      "sha256": "f10967f06cb764794dead9aa05c71a83333d8dba8c98f062be4ceabc8bbbdb9b"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R01_PROBABILISTICO.json",
+      "bytes": 44475,
+      "sha256": "12bb19f3fbe35323a7cad1ff917aec75d51cd84089c7eeb942a9f28963c40362"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R01_ROTACION.json",
+      "bytes": 52968,
+      "sha256": "10cc62124ae7ab675417297be82a0ce551a163c4f43890f8f0f8b4949bc5a407"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R02_ID3.json",
+      "bytes": 32001,
+      "sha256": "f45ee322ea2d3082946fe619ba75539340a461d3c58c754656f21e6ef31ac19e"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R02_PROBABILISTICO.json",
+      "bytes": 44149,
+      "sha256": "9d52818d60cb5e5f47439f91d06f2982e8efac7766e764645ddc443c45caf4eb"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R02_ROTACION.json",
+      "bytes": 52883,
+      "sha256": "527194355b1d576d9f7eda7ff9b243104ce2326ba167f36a38df6b2d6a6f9a58"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R03_ID3.json",
+      "bytes": 31994,
+      "sha256": "cedb72bd53462dabbee98bb1aa957ab406d9c2265f782d30ff68350e05f0d6fb"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R03_PROBABILISTICO.json",
+      "bytes": 44591,
+      "sha256": "b8747b6184668e5befb6922ab1bcc55a5d185759312d7ecacfe35af9a1f38d26"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R03_ROTACION.json",
+      "bytes": 54077,
+      "sha256": "e659e0f0042861e0eefefdd6ceb52371761a0e8d3a43c540eba1be60a9d682cb"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R04_ID3.json",
+      "bytes": 31999,
+      "sha256": "58049f88a73bd8bc4615683ecc5d85762dfdcc1ee62c45dc60bad3cfbf8be1cf"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R04_PROBABILISTICO.json",
+      "bytes": 44684,
+      "sha256": "48ff828a64b10918b54818af64bd46a359cb3d3aebcbfb86cb7c39883b8c302a"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R04_ROTACION.json",
+      "bytes": 54027,
+      "sha256": "9dd4200d4a923cbbc5255730f34f6a515c195aa3b99edea0477b6ea468f8f394"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R05_ID3.json",
+      "bytes": 32000,
+      "sha256": "903cd698a039bdd73e19b70414d2bd3ac1d2539e193fc0fb9444cfed41389a13"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R05_PROBABILISTICO.json",
+      "bytes": 44610,
+      "sha256": "23bedb3ace9df2318fceb8ad505899bbb8fbb131ff2de98087bd095dea6f2fc0"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R05_ROTACION.json",
+      "bytes": 53401,
+      "sha256": "5026ab03c7ac017410f5ba01fefde1b5d33481b0e63e9f6bccc50fcae79df68e"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R06_ID3.json",
+      "bytes": 31988,
+      "sha256": "f639d28844e7defc1008e2c9e1a8e6876aa9a9d28f5e30df2b9a4d77179a410d"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R06_PROBABILISTICO.json",
+      "bytes": 44498,
+      "sha256": "eb1762bf564cd9c454e2043a8bc9fc3a4d8ce395187a4af4c173c4a0852b5fe2"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_DIFERENCIAS_R06_ROTACION.json",
+      "bytes": 53564,
+      "sha256": "95550616ef806ae49e577ec24858146fe76fb529ff519c63bd2305ee19dd497c"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R01_ID3.json",
+      "bytes": 31722,
+      "sha256": "eecd9ef3762283053348cf7f7ae81c9e760762047c24c839f8e5d8bd90e5db64"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R01_PROBABILISTICO.json",
+      "bytes": 44252,
+      "sha256": "dd3fa503f329173ac41dd0894a3d24e16191b508e1ac5dea06cf1b2e4a82c846"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R01_ROTACION.json",
+      "bytes": 53460,
+      "sha256": "2aba9c12286eabe06e962c1675f8f511468cbb70c93cdf864df39b696a401f07"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R02_ID3.json",
+      "bytes": 31738,
+      "sha256": "a2d0b81bcd644f03cd71454782f9d838e2d64161284ba2cb0f978965550f411b"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R02_PROBABILISTICO.json",
+      "bytes": 44201,
+      "sha256": "70d576747e53042bf270f750b22c480541b40050913ddc3c4cf963c1da02a46c"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R02_ROTACION.json",
+      "bytes": 53375,
+      "sha256": "296398a4ad693a7e58cf6d50e8d51600e33b8701af29ab71dae49206e07914e4"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R03_ID3.json",
+      "bytes": 31728,
+      "sha256": "9dd7a2444eeb7de9ab0d6689a07d93dd92f3d5db1525d577ace13c6870d74bf4"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R03_PROBABILISTICO.json",
+      "bytes": 44125,
+      "sha256": "022fbe143c71840a811288f5171543874b15a26a738ef045d77a35b47406f950"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R03_ROTACION.json",
+      "bytes": 53359,
+      "sha256": "f17fe632a3e8f039f879e6eccd0cae8a1245e7248515f45532a02e7a7752fe5c"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R04_ID3.json",
+      "bytes": 31745,
+      "sha256": "1010b71dbc9e42be82a3d71bcaa7e6d36aef0118fe6567f48bc6eeb553fb4ddc"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R04_PROBABILISTICO.json",
+      "bytes": 44127,
+      "sha256": "48abcd9b6cbfaab9b1e713b50ca5ddc681bc9e1fab701c94fa07b94dbda9c0d0"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R04_ROTACION.json",
+      "bytes": 53379,
+      "sha256": "ecc90ba9a0aba8db6cae5429563aebce0365af7433042bfed0c785d6adb30cae"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R05_ID3.json",
+      "bytes": 31718,
+      "sha256": "6401fe4c61b4451d52ddf54f3f096ff0153d2368079c5921a3529d9a109ec150"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R05_PROBABILISTICO.json",
+      "bytes": 44197,
+      "sha256": "fec380d8ca48b9ecb35dc11af486cd4e88ee86b7d08ebdc832971150a82cd430"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R05_ROTACION.json",
+      "bytes": 53399,
+      "sha256": "c674fc015602ba98f566cf007ca5c96d67edf69cda5b03bcf203e2450c23d151"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R06_ID3.json",
+      "bytes": 31742,
+      "sha256": "79bf6fd65653ff6088999236309ea94aceade94d0904ffa565f203502f19c638"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R06_PROBABILISTICO.json",
+      "bytes": 44139,
+      "sha256": "565b535a61ecc43c5a02e8e12d2b52558af0bef9da4b7cecd522bb3aeed4306c"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/EVAL_SIM_UNIFORME_R06_ROTACION.json",
+      "bytes": 53586,
+      "sha256": "e337e04bca769fe780e6a4e3d615d0812cd3b80262d2cf33083e8528f1fa8154"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_CONTEXTUAL_R01.json",
+      "bytes": 53586,
+      "sha256": "287f7b4de9f68fb21243d888a6461f2daff68d99be8648e5c74f28bb5f2fb86a"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_CONTEXTUAL_R02.json",
+      "bytes": 53603,
+      "sha256": "15da02452d32b3b7a212bffa6587995ffd3862c0c6eb926f2e6f330e2aee4f3b"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_CONTEXTUAL_R03.json",
+      "bytes": 53602,
+      "sha256": "249c96c0b835a7030be06b83aeaf6adf90d573e7908d6d2e59d351d0837de8de"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_CONTEXTUAL_R04.json",
+      "bytes": 53590,
+      "sha256": "bb9d42df10b972acfae886b49deba874db0f834ddf8a987a46805126a05ec437"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_CONTEXTUAL_R05.json",
+      "bytes": 53700,
+      "sha256": "98b44069d3d739bb98be9502f00a78a4565fde45b83a426f8a78744aaaffba34"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_CONTEXTUAL_R06.json",
+      "bytes": 53551,
+      "sha256": "5090f5ce55d4f101e748e0a3e2fbfd941b317c0a0c507015ce73820bba69516e"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_DIFERENCIAS_R01.json",
+      "bytes": 53755,
+      "sha256": "270247b009f7611b30413b66b4c0d25a2d45ffb1b1f1d33f5331cfe8b6e11547"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_DIFERENCIAS_R02.json",
+      "bytes": 53776,
+      "sha256": "6e5fe7f968e852133d602645c96e11c96f2a1d780da02cbee045467d55dff460"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_DIFERENCIAS_R03.json",
+      "bytes": 53742,
+      "sha256": "68ce97f58285d598dbc736c289ec6a1ebc61a3f395cb49444a54b8a0cc91b2e9"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_DIFERENCIAS_R04.json",
+      "bytes": 53711,
+      "sha256": "cecffcf67fe3e59bb92e6cd4d67bb0490e79fd4214ba9ec0b8900fec18580bc4"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_DIFERENCIAS_R05.json",
+      "bytes": 53758,
+      "sha256": "7d04e006cbb1869b3ad368b42c68e32c86ed09727b6eba54be9cf78215e5d5ba"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_DIFERENCIAS_R06.json",
+      "bytes": 53700,
+      "sha256": "fc4953edcc01475a6796a748ad58f2c8ab2ba72ba14b610ffa1284a9a91d6330"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_UNIFORME_R01.json",
+      "bytes": 53209,
+      "sha256": "f2670363e6b15ce191333a84f19e677973c9c419a7f14c69fdc0d19340b61022"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_UNIFORME_R02.json",
+      "bytes": 53248,
+      "sha256": "7b355e9b0e01aafc82195db0cb489fa8908a17c5a0400f7fb833cafa1944ee73"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_UNIFORME_R03.json",
+      "bytes": 53263,
+      "sha256": "6bb23bc4304dcd6739eba0197cd84393d6424af6e103bf5fd3fa9d733cdbf5a3"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_UNIFORME_R04.json",
+      "bytes": 53250,
+      "sha256": "b21ebcacfa5ab2e19448291a819cd2e15672120f340fee08fc3b00afc1ae0fec"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_UNIFORME_R05.json",
+      "bytes": 53241,
+      "sha256": "04986e49adbbdd0e6712f6da60adabbae62f130ca079125449141dbca2f3e1be"
+    },
+    {
+      "ruta": "docs/experimentos/corridas/TRAIN_SIM_UNIFORME_R06.json",
+      "bytes": 53218,
+      "sha256": "78f67c8de29fdbc8757b8e2a1d185fb7b3251e4b560edb32f79c0e57ce4c5878"
+    },
+    {
+      "ruta": "docs/experimentos/informe_comparacion.md",
+      "bytes": 9644,
+      "sha256": "67f54411907f395dc2829477345167872232f8c74a1709053985c71425b5947e"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_CONTEXTUAL_R01.json",
+      "bytes": 40809,
+      "sha256": "ee2bcd397ae18de09f5b4ed83c3244ceacc0c757146276a7b086534c62cc05e9"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_CONTEXTUAL_R02.json",
+      "bytes": 40800,
+      "sha256": "f16197bbe750c632d9921ab8913cc12d62b911c33f5ae596fa164d5c7c785693"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_CONTEXTUAL_R03.json",
+      "bytes": 40817,
+      "sha256": "e6b37bc4c3c719e0b7de38723e1348f9cf9878f969536f3b9d0f729a0c57ec34"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_CONTEXTUAL_R04.json",
+      "bytes": 40797,
+      "sha256": "4832b046eda2d5b9ad1e88fa7e65f2fe7bce42ee6f29be9c24bd1273428690e7"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_CONTEXTUAL_R05.json",
+      "bytes": 40806,
+      "sha256": "fda1ccf5d6eb0e796b5e89cdbc47a0faf99e3195d869e72f5cc8e055728a5d38"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_CONTEXTUAL_R06.json",
+      "bytes": 40797,
+      "sha256": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_DIFERENCIAS_R01.json",
+      "bytes": 40831,
+      "sha256": "78ba9f283a0320e7c555ac4da816a2c743eaf55c6495eecf1e3154a26bfdfca0"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_DIFERENCIAS_R02.json",
+      "bytes": 40810,
+      "sha256": "9d7e05a19635e82976225247067ad077f093f97672b00828f0a83944e1e0760d"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_DIFERENCIAS_R03.json",
+      "bytes": 40844,
+      "sha256": "510518c25e7ffa4008ea6d6b342d06256cb6a135bd9ecb47c837afd86484702f"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_DIFERENCIAS_R04.json",
+      "bytes": 40849,
+      "sha256": "5ad9f638017ac40760cdf6460687bc58f9ef64660418761a904975128fc5086f"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_DIFERENCIAS_R05.json",
+      "bytes": 40821,
+      "sha256": "4055a201b6daf78ba927f16515495615fc2bd5b4fb20b27b4f5139a8494c98cd"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_DIFERENCIAS_R06.json",
+      "bytes": 40825,
+      "sha256": "31531ba8bc6897d212f65b090ea614391e8869557a034be62966fa8d2cab3f6c"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_UNIFORME_R01.json",
+      "bytes": 40871,
+      "sha256": "d290b1e3d6e98c3b5b4ec0a51ef6461964de984e4a349d5187a805c0920754a5"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_UNIFORME_R02.json",
+      "bytes": 40852,
+      "sha256": "d683e9f2717d984f18d1932209b5e53408c3d643f9c26c492591f0574ed18635"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_UNIFORME_R03.json",
+      "bytes": 40859,
+      "sha256": "c714a0b948ddd8edd1c7f6a4e533c8c832ab52a2b1f5f9d493225db717c03787"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_UNIFORME_R04.json",
+      "bytes": 40852,
+      "sha256": "4a16e513426ef7b377fc606efb06356ae43a6047da3d95c6068061605b53da99"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_UNIFORME_R05.json",
+      "bytes": 40874,
+      "sha256": "41ce1810f041b8d441dcc83624e8165a046b3a72f676d462bf6815673a0623da"
+    },
+    {
+      "ruta": "docs/experimentos/modelos/SIM_UNIFORME_R06.json",
+      "bytes": 40855,
+      "sha256": "43ed7a453538412d44a50c5176b66eaa066434fa53e76b40fa2e6af63ed26cfc"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R01_ID3.jsonl.gz",
+      "bytes": 40373,
+      "sha256": "1d1cf13c94f42dccb0b874b2d9e15454c7eb75a6c69b40cd0848d9b1d8e3d140"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R01_PROBABILISTICO.jsonl.gz",
+      "bytes": 56366,
+      "sha256": "5ce00655d011c8c249fcafffa4e53585503dbccd10c180149030c0f743230b89"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R01_ROTACION.jsonl.gz",
+      "bytes": 47284,
+      "sha256": "8206bfd790bba96aff4ed5cb6587c6740408a8a8b5527fe27ccb210077ca03df"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R02_ID3.jsonl.gz",
+      "bytes": 39023,
+      "sha256": "66afc0191e70147b10cb66b1651f9c148798a1fcdeac175f94aa978bcffbf670"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R02_PROBABILISTICO.jsonl.gz",
+      "bytes": 55787,
+      "sha256": "10f838ba2efb54a0bbaa32fb144706e2d6613e5b60901ac4788879f70b91d32d"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R02_ROTACION.jsonl.gz",
+      "bytes": 47400,
+      "sha256": "7ebd69e1a3dd354439f8d7f50c83a89aa6e4ee54506027428faca1e590cc1813"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R03_ID3.jsonl.gz",
+      "bytes": 40285,
+      "sha256": "4c7dc2944c02b4d56189ce50888ef8b81dcd8ffa403ab963c158b2d96c7baea1"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R03_PROBABILISTICO.jsonl.gz",
+      "bytes": 54941,
+      "sha256": "545c828d83e5efa7e04713d28c9d6c879ea1d5e61321abe87f8a695448972587"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R03_ROTACION.jsonl.gz",
+      "bytes": 48175,
+      "sha256": "ed7a7e78d6b2bdbd393e1cc56f5a9c78ebe2262b4eb9e9d63454c05ae6a26c4c"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R04_ID3.jsonl.gz",
+      "bytes": 39285,
+      "sha256": "351318ec63ab8d2776c71238311bcdc6ff432ead1b599cf1b1d0dadc165d70e9"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R04_PROBABILISTICO.jsonl.gz",
+      "bytes": 55016,
+      "sha256": "f93e00bf5a894cc0bccb3069e6ab09c3e670d01af58cda062f4be2debd494017"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R04_ROTACION.jsonl.gz",
+      "bytes": 46820,
+      "sha256": "ce094dcdcf5c1789cb3b8807792f450d5be08c8ffb157e4c301b5829521c4358"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R05_ID3.jsonl.gz",
+      "bytes": 39007,
+      "sha256": "20013ec61032977519e9c8dfce3addcf7489e489809b0ffddd0253de57b8bf42"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R05_PROBABILISTICO.jsonl.gz",
+      "bytes": 54408,
+      "sha256": "9b5e25db2f0478c645492897a87cf8b791cbf6570605e65461356c1451572aa3"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R05_ROTACION.jsonl.gz",
+      "bytes": 45529,
+      "sha256": "a63f13293a05e96e1f1e9882cf082bbd9e406a01da2d78eefc6cb59acf50fdb7"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R06_ID3.jsonl.gz",
+      "bytes": 39456,
+      "sha256": "cce63a6e860db93dca3163646893894580174ff722ff82d55c5f82f2e2026879"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO.jsonl.gz",
+      "bytes": 55012,
+      "sha256": "e36bc266ecca0e0124da321d3078c743191fabefdfd696ba479b64b788cad173"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_CONTEXTUAL_R06_ROTACION.jsonl.gz",
+      "bytes": 46857,
+      "sha256": "455eb988ab3f4f34abbce13b758323f713a64ee5fe443c6543d7291826b1043e"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R01_ID3.jsonl.gz",
+      "bytes": 35419,
+      "sha256": "95e3f3a7297f57f9feaf4c627dcc2d69bc60f02f78e1431cb0df98a936c204e5"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R01_PROBABILISTICO.jsonl.gz",
+      "bytes": 58098,
+      "sha256": "63e688c0c1023969faaa39ad63944d803b61d4a2a00cceb9af8442191bc7ba8f"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R01_ROTACION.jsonl.gz",
+      "bytes": 45113,
+      "sha256": "10f24eec85da5ff858d529b4a4dd876a66374fff168b084cab4edce9b61bbc89"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R02_ID3.jsonl.gz",
+      "bytes": 35625,
+      "sha256": "a6263a70617327ce7a141bb9b510d55cfaa2e1df4638d5c563cb5378b40cf8da"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R02_PROBABILISTICO.jsonl.gz",
+      "bytes": 56621,
+      "sha256": "d49163d6d472f97f2889c4cd951022b65062bb18d34ae5ac68438989f2ce4412"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R02_ROTACION.jsonl.gz",
+      "bytes": 45599,
+      "sha256": "a3143a3c57d62d1ee89f582f0c5f6279396018684150e31fc861a8f106bf8016"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R03_ID3.jsonl.gz",
+      "bytes": 36170,
+      "sha256": "42cf86d3dfed9c16371d8d1eaf17548e6c7d498b7457a7a93a12c0272cee372f"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R03_PROBABILISTICO.jsonl.gz",
+      "bytes": 57766,
+      "sha256": "96067aea8995992a3d00d58071f74eaf4720e358d66f59ea87e3c2ea9975a667"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R03_ROTACION.jsonl.gz",
+      "bytes": 46787,
+      "sha256": "88ef6a1e963bf47497f4e7b3121badfb8802c572eb4670f5341b8558ad0d7d66"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R04_ID3.jsonl.gz",
+      "bytes": 35355,
+      "sha256": "3be478b30c607c117aec8fcccfc6e7d289bcf84d53ddb28c661c61b4c8782ed8"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R04_PROBABILISTICO.jsonl.gz",
+      "bytes": 56313,
+      "sha256": "44db93a5ec9130cf18141d1556f293e4bb2e34ddcebe156daab81e729dc77253"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R04_ROTACION.jsonl.gz",
+      "bytes": 45521,
+      "sha256": "29d3aa9c05e9eecf637d972548d87158c27c92eab5fb0be8a533c70baab7359e"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R05_ID3.jsonl.gz",
+      "bytes": 35282,
+      "sha256": "9c1b2fc8f117e0c0afc768cd192e7bc82c4ea7c97cf4453ccf89cfd0f9718122"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R05_PROBABILISTICO.jsonl.gz",
+      "bytes": 56059,
+      "sha256": "c64aa5223a286bd454e8679ccb16177ba5dfd79d1f1a156d02f9cb3a2ecd82d3"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R05_ROTACION.jsonl.gz",
+      "bytes": 44757,
+      "sha256": "b65730c63231ef398c78dfb6f568246875c02c82dead6a488a0e5b0cb8eed3d1"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R06_ID3.jsonl.gz",
+      "bytes": 35435,
+      "sha256": "bfd2fcbe2a47f1845a642d032d9508e64a9a7180f4809f417ae18a5e20f63231"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R06_PROBABILISTICO.jsonl.gz",
+      "bytes": 57228,
+      "sha256": "bcf56987adfd3585c82cd033793348fa3c9f81f1c7ad0e79c1d2131073bab05f"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_DIFERENCIAS_R06_ROTACION.jsonl.gz",
+      "bytes": 45783,
+      "sha256": "86bdafaa45538801bdde6dee35c52d97e79aab69ee6ec779688dcca8239432f0"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R01_ID3.jsonl.gz",
+      "bytes": 40359,
+      "sha256": "7629cd68bfe6b29dd73712a3433d31c05fa4a740f5a411da5daacf144f3ed552"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R01_PROBABILISTICO.jsonl.gz",
+      "bytes": 60467,
+      "sha256": "bf6e5644ee3bd90bfd6a3b4b6f745f8d9d14e52c193d78a4a4b3867f26ddc002"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R01_ROTACION.jsonl.gz",
+      "bytes": 45244,
+      "sha256": "2492c48c7aad9f6851dc63621d146a58706cd7d79dd3c668f299e82563a0aac0"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R02_ID3.jsonl.gz",
+      "bytes": 40325,
+      "sha256": "7c803230c306e5c4e4bf7aee5b014c0e50def9b8c4f2a5b393557851c7245485"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R02_PROBABILISTICO.jsonl.gz",
+      "bytes": 60618,
+      "sha256": "270e6316a8c5ba92d3db3cb83613ba436beb6bc061c61498af0578a88cf8118f"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R02_ROTACION.jsonl.gz",
+      "bytes": 45220,
+      "sha256": "87688aa9655e37fc6f350e6fcbcf1f3720fb2b98149f9ddf729fbc4d217f3803"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R03_ID3.jsonl.gz",
+      "bytes": 40416,
+      "sha256": "8c0af6a46a399f0d02431a604ddc2f2887d36a3d490c5d1b6f0b35535a29c771"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R03_PROBABILISTICO.jsonl.gz",
+      "bytes": 61369,
+      "sha256": "367fac93819de17a303948fef9b0905f9d38ce18b33a37c80073ef16305a8073"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R03_ROTACION.jsonl.gz",
+      "bytes": 45376,
+      "sha256": "cbaa62205969fdf12b4d5e169d4eced1128ca763da3e3f24dd5d8a3b9e1ed956"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R04_ID3.jsonl.gz",
+      "bytes": 39568,
+      "sha256": "9a35b2b9b253dab6ed65e2f09e1ebca623962b501a324fbd687b9f01a59def13"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R04_PROBABILISTICO.jsonl.gz",
+      "bytes": 58608,
+      "sha256": "953584afd523495eb1f1e88f5083e9d95edf942cb243ccedd3891756f0feea63"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R04_ROTACION.jsonl.gz",
+      "bytes": 44476,
+      "sha256": "98c4782e6b0b7f26bd43e7f1790c42f1f82848fb2e3e23f1ca797a903af1c07a"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R05_ID3.jsonl.gz",
+      "bytes": 39228,
+      "sha256": "31f13847c733d5a39617e38ee0534e6b96806c71abe38d67ad43fd53b4b36495"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R05_PROBABILISTICO.jsonl.gz",
+      "bytes": 59294,
+      "sha256": "b47db3457accf3b0e63e066bdcf4da8b50915ba47c47d110f23f037696a6ccf8"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R05_ROTACION.jsonl.gz",
+      "bytes": 43894,
+      "sha256": "a98127cd5028065761654ad8cf8a77dc83dec696ba7745915e54d8d54a1378d4"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R06_ID3.jsonl.gz",
+      "bytes": 40013,
+      "sha256": "d403b79dff216fa27a0e9ad0c5b553451b9eab251ff5529452698717e69e93bb"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R06_PROBABILISTICO.jsonl.gz",
+      "bytes": 59781,
+      "sha256": "a7fbb4d84c6cd589e19a3f1fff4bbc01e3ef4f4899dc724ea80a40e470a2d695"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_EVAL_SIM_UNIFORME_R06_ROTACION.jsonl.gz",
+      "bytes": 44827,
+      "sha256": "df9e121c69a465bf6c493cdfd62878c8883ae7556e7fbe1ebd7b577201cf7065"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_CONTEXTUAL_R01.jsonl.gz",
+      "bytes": 130753,
+      "sha256": "6a887fb560f2037685efa0c3559a91efd7f76274fe829eebe68f26848cc79e39"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_CONTEXTUAL_R02.jsonl.gz",
+      "bytes": 128734,
+      "sha256": "14a4609f53de3dfc8852ff779dd19c4dccfa04e3d3471ce989fd75cabf0baa19"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_CONTEXTUAL_R03.jsonl.gz",
+      "bytes": 132500,
+      "sha256": "f360b3908ecca7542bed361d4c6d5be7585ea438bfea65a9cabe77abcae55e37"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_CONTEXTUAL_R04.jsonl.gz",
+      "bytes": 130236,
+      "sha256": "a5d7ce1d88db81107de8b4d5c08d9351b8557e62dff593af9ebe53cbedcac6ea"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_CONTEXTUAL_R05.jsonl.gz",
+      "bytes": 130579,
+      "sha256": "6ef16190d8ac39d8ef5da495149c2106b8af5d234db11b62a149ee078c09bb16"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_CONTEXTUAL_R06.jsonl.gz",
+      "bytes": 126805,
+      "sha256": "dfe467241b97818df92c56bef6cf7798d6f339e739af6d296133d03aa16458e0"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_DIFERENCIAS_R01.jsonl.gz",
+      "bytes": 132252,
+      "sha256": "c62c27461c3629daba103b9527d8e42a7f6ff42f3dd687081779bd95e49d6c07"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_DIFERENCIAS_R02.jsonl.gz",
+      "bytes": 129534,
+      "sha256": "6c8d3b2793abe4b13fa3e095920959aaeae611949772fed1c65ea7069a96fa55"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_DIFERENCIAS_R03.jsonl.gz",
+      "bytes": 133450,
+      "sha256": "e5fd63af79eae6f3ddb02b7b71373b4c302743bea470d913e463d44515104fbb"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_DIFERENCIAS_R04.jsonl.gz",
+      "bytes": 132403,
+      "sha256": "cf55a0a833c958ef34dcf64fbe7e063f21b9da83e8a6303ad0112ed0c0c45df3"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_DIFERENCIAS_R05.jsonl.gz",
+      "bytes": 131601,
+      "sha256": "1c5bf42c887bc5e32f8f47cb1c89992527d219bf6d1de8c8e9a4f100ba1457fb"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_DIFERENCIAS_R06.jsonl.gz",
+      "bytes": 128517,
+      "sha256": "1ea76bfa94d745d4426111d99417953abded9f6fd2120d5164486cb065e44613"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_UNIFORME_R01.jsonl.gz",
+      "bytes": 131989,
+      "sha256": "8033125fe6587d9cffbd6a6576da0698b92ad103babbc4cae75969e928bf19d6"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_UNIFORME_R02.jsonl.gz",
+      "bytes": 132610,
+      "sha256": "10f32416f7dae160bf42f6185db583b02196057f0354996df740141f92ecb80a"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_UNIFORME_R03.jsonl.gz",
+      "bytes": 133350,
+      "sha256": "6467649989d3cddb46c9d47991c328682a7c3db887668ba7330e8b33382f710d"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_UNIFORME_R04.jsonl.gz",
+      "bytes": 133609,
+      "sha256": "dece6848616b0271279d679d3a8d2e7a2a1c51df5ea1d2489e83e7ae9f446215"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_UNIFORME_R05.jsonl.gz",
+      "bytes": 134977,
+      "sha256": "2bb729a46932d4801b94d5d750d0c0819ed2ba5d58dcde365a51febcca87e5b5"
+    },
+    {
+      "ruta": "docs/experimentos/observaciones_TRAIN_SIM_UNIFORME_R06.jsonl.gz",
+      "bytes": 131329,
+      "sha256": "0ca400aac49558449000920512934720a5115fbf61a2619ce7013a7e9c197c2a"
+    },
+    {
+      "ruta": "docs/experimentos/pruebas_automaticas.txt",
+      "bytes": 3360,
+      "sha256": "97850ef3c3f48d34cd93ef5fa926b9c93a96057b60cd8c053e90208d66e7e3a9"
+    },
+    {
+      "ruta": "docs/experimentos/resumen_experimentos.json",
+      "bytes": 26817,
+      "sha256": "2aa7e12f0cbe02dc5b213507747386e0497370728d9aa0643e1bb1fd8a1d3a19"
+    },
+    {
+      "ruta": "docs/experimentos/revision_experimentos.json",
+      "bytes": 281,
+      "sha256": "a6d48d0240c27ebff5b1885dfdc7718c082df4834059c63f0ff1699ed36ea635"
+    },
+    {
+      "ruta": "docs/guia_aprendizaje.md",
+      "bytes": 5311,
+      "sha256": "123d9748f79a77b64a2d0d758c206f411dbcd1bae96adcb6436574d66d25e3f7"
+    },
+    {
+      "ruta": "docs/guia_interfaz.md",
+      "bytes": 10963,
+      "sha256": "89140a0474cc8e6c53104ac4930ad3e2598891503da76659a931450faf375b55"
+    },
+    {
+      "ruta": "docs/guia_poc_consola.md",
+      "bytes": 11833,
+      "sha256": "6dd1caf4228ac151b9c4accf9d15d0d26a9d49255c4695838034292e6b30a9fe"
+    },
+    {
+      "ruta": "docs/interfaz/01_inicio.png",
+      "bytes": 71358,
+      "sha256": "b360da09d0df3625d296bb43a1fc6298e0405e2d6483bca0ae9dd41b72a6025e"
+    },
+    {
+      "ruta": "docs/interfaz/02_catalogo.png",
+      "bytes": 504569,
+      "sha256": "024eebfd8cef6351c6f847d2f5120c0d1b3b8bc304627435c630abb9751a29dd"
+    },
+    {
+      "ruta": "docs/interfaz/03_reto_escritorio.png",
+      "bytes": 129193,
+      "sha256": "9b7a1607abd8d94837b7642cfbe1b76d0f4177435faa96c2f5733852c0433b61"
+    },
+    {
+      "ruta": "docs/interfaz/04_revision_animales.png",
+      "bytes": 495389,
+      "sha256": "70ea40294d21ff5a6070145959e0d9f68f0f48fc136e9d4db190ef321e51367d"
+    },
+    {
+      "ruta": "docs/interfaz/05_reto_movil.png",
+      "bytes": 116354,
+      "sha256": "3ec8b225156533f9f2da4a45aa30316773cbe7fec2c55b416213167a108e0d93"
+    },
+    {
+      "ruta": "docs/interfaz/revision_integracion.json",
+      "bytes": 1940,
+      "sha256": "36e64fddbd1f7fc74bfb6143d2516c328ee7076b65c42284af108542cf425bd0"
+    },
+    {
+      "ruta": "docs/interfaz/revision_navegador.json",
+      "bytes": 1117,
+      "sha256": "bedc8edd53ec1e74ddf1d503077c0e3a13d74c810414fe8d115381d7e3d9deca"
+    },
+    {
+      "ruta": "docs/resultados/arbol_id3.json",
+      "bytes": 4255,
+      "sha256": "6ace42e286ff0125f45623726768c9c28e60aeb4558ea35d088b5317206272db"
+    },
+    {
+      "ruta": "docs/resultados/casos_ejecutados.json",
+      "bytes": 119454,
+      "sha256": "adc25004787302926da4139ce23506098aa929b6b090f65079eb9a9aac023e64"
+    },
+    {
+      "ruta": "docs/resultados/demo_consola.txt",
+      "bytes": 10280,
+      "sha256": "f83a34d8b35707e3c559498eadb316cb4290d5e8a86fc0e306cf88266d159c03"
+    },
+    {
+      "ruta": "docs/resultados/eventos_demo.jsonl",
+      "bytes": 196644,
+      "sha256": "5fb84cd98f4eca30345d7aa242ef6f0a2529c9d28553f3460a0ab92fd512d2c6"
+    },
+    {
+      "ruta": "docs/resultados/revision_poc.md",
+      "bytes": 2339,
+      "sha256": "f9588c62daf1656dd5985e8e4a8bca1602ca1d0d8fd6f84420239f1632239929"
+    },
+    {
+      "ruta": "iniciar_juego.bat",
+      "bytes": 72,
+      "sha256": "dc1f3130b5c17dace036914e14c29efdf7a800231091800122446aaed27da562"
+    },
+    {
+      "ruta": "iniciar_juego.sh",
+      "bytes": 98,
+      "sha256": "b003ff364742be9c7e7a527e1a5151f10bdc8fc98a2db17bcd49e0f2425e738e"
+    },
+    {
+      "ruta": "tests/__init__.py",
+      "bytes": 35,
+      "sha256": "6c804c1b591dc704778b909cf3e409b376f07de888b11033754492f3ec227ad6"
+    },
+    {
+      "ruta": "tests/ejecutar_navegador.py",
+      "bytes": 930,
+      "sha256": "9e8626032700980eebc573dc7ce65509e8107d5e8089539800f6eed88b37d594"
+    },
+    {
+      "ruta": "tests/test_aprendizaje.py",
+      "bytes": 7898,
+      "sha256": "d1e45e5dcb2559f1c208b8c7d3bdbcd213897012449cf27501c80d7328e1c1bf"
+    },
+    {
+      "ruta": "tests/test_interfaz.py",
+      "bytes": 5719,
+      "sha256": "e6d63da1d14081427948af1a96065ee04769b23350b15738af54b02d22d282d7"
+    },
+    {
+      "ruta": "tests/test_nucleo.py",
+      "bytes": 15650,
+      "sha256": "0f1099a425982c868caf92bf4d6c97dd68ba9c797766af69a0dd8a801dc1912c"
+    },
+    {
+      "ruta": "tests/verificar_interfaz.cjs",
+      "bytes": 8995,
+      "sha256": "46d852180127649b55835ab2f3058feea32cbe87947a74259afe03a9259c4cf1"
+    }
+  ],
+  "nombre_proyecto": "Zoonauta"
+}

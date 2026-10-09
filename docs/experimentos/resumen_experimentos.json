@@ -1,0 +1,853 @@
+{
+  "schema_version": "1.0.0",
+  "origen": "EXPERIMENTOS_SINTETICOS",
+  "configuracion": {
+    "schema_version": "1.0.0",
+    "origen": "CONFIGURACION_SINTETICA_DECLARADA",
+    "replicas": 6,
+    "retos_entrenamiento_por_condicion_replica": 1920,
+    "retos_evaluacion_por_condicion_replica_politica": 960,
+    "semilla_entrenamiento_base": 11001,
+    "semilla_thompson_base": 21001,
+    "semilla_evaluacion_base": 91001,
+    "paso_entre_semillas": 101,
+    "prob_repetir_pregunta": 0.4,
+    "prob_repetir_ayuda": 0.15,
+    "prob_pausa": 0.08,
+    "prob_salida": 0.02,
+    "prob_pendiente": 0.04,
+    "max_ayudas_solo_simulador": 30,
+    "intervalo_historia": 320,
+    "nota": "El tope de 30 ayudas protege la ejecución del experimento sintético; no limita al jugador en la consola ni convierte una interrupción en y=0."
+  },
+  "condiciones": [
+    {
+      "id": "SIM_UNIFORME",
+      "descripcion": "Todas las variantes tienen igual probabilidad sintética.",
+      "probabilidades": {
+        "b0": {
+          "V1": 0.6,
+          "V2": 0.6,
+          "V3": 0.6
+        },
+        "b1": {
+          "V1": 0.6,
+          "V2": 0.6,
+          "V3": 0.6
+        }
+      }
+    },
+    {
+      "id": "SIM_DIFERENCIAS",
+      "descripcion": "Diferencias sintéticas constantes entre variantes.",
+      "probabilidades": {
+        "b0": {
+          "V1": 0.75,
+          "V2": 0.55,
+          "V3": 0.45
+        },
+        "b1": {
+          "V1": 0.75,
+          "V2": 0.55,
+          "V3": 0.45
+        }
+      }
+    },
+    {
+      "id": "SIM_CONTEXTUAL",
+      "descripcion": "La variante más favorable cambia con la señal b.",
+      "probabilidades": {
+        "b0": {
+          "V1": 0.75,
+          "V2": 0.55,
+          "V3": 0.45
+        },
+        "b1": {
+          "V1": 0.55,
+          "V2": 0.75,
+          "V3": 0.45
+        }
+      }
+    }
+  ],
+  "semillas_entrenamiento": [
+    11001,
+    11102,
+    11203,
+    11304,
+    11405,
+    11506
+  ],
+  "semillas_evaluacion": [
+    91001,
+    91102,
+    91203,
+    91304,
+    91405,
+    91506
+  ],
+  "recursos_sha256": {
+    "animales.json": "d63e1247e6d657fc9fd3cd3caf6dcab4fa23d1c716fb1cac0457bae4de11db63",
+    "habitats.json": "e80c98b7f9309ddfa1307f8e506188adf93eaffbfcbfbab6f27af86f36e9fef5",
+    "escenarios.json": "db18ee34acdb94e5983b6aa8d050d4a5a07b9d0034ad8d976107bfefa4858eff",
+    "variantes_ayuda.json": "ce85a545f8602e98389fa814781b00794c1adbf3a17264f062f4b035d268652b",
+    "pictogramas.json": "0f705553a4868a42df785d3f7afe1508846efd3826e9b985d6a10d644e524e21",
+    "mensajes_sistema.json": "288c27a92adede57e229421532a4ac6917d44f30c1ab5ce8f0c6bb6cc3ec8954",
+    "asociaciones.json": "879aac177ab1e3f8bced0a14849c23dbe158b3d4e59b7603785b9e69ea896a67",
+    "perfiles_id3.json": "34b40ca54961a229500cb3e2de992fa02978873f29fa38e3b6e593f08cfcbf8e",
+    "configuracion_poc.json": "5896d5f7140df8bf6b0a108ff8bf001a0f1d0bfe27365029d687ba23237dc51f",
+    "configuracion_experimentos.json": "fc2a75d0bab248a0714ae2947573d1ce3e3e4bdffcc86287c04e9aeb16a916ed",
+    "configuracion_simulador.json": "17ea279f2ed9e73a27d520df2a389c4beb87e7969dda3e08773f65be5cb718c3",
+    "parametros_iniciales.json": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca"
+  },
+  "modelos": [
+    {
+      "condicion": "SIM_UNIFORME",
+      "replica": 1,
+      "ruta": "modelos/SIM_UNIFORME_R01.json",
+      "sha256": "d290b1e3d6e98c3b5b4ec0a51ef6461964de984e4a349d5187a805c0920754a5",
+      "actualizaciones": 3099,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "replica": 2,
+      "ruta": "modelos/SIM_UNIFORME_R02.json",
+      "sha256": "d683e9f2717d984f18d1932209b5e53408c3d643f9c26c492591f0574ed18635",
+      "actualizaciones": 3109,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "replica": 3,
+      "ruta": "modelos/SIM_UNIFORME_R03.json",
+      "sha256": "c714a0b948ddd8edd1c7f6a4e533c8c832ab52a2b1f5f9d493225db717c03787",
+      "actualizaciones": 3146,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "replica": 4,
+      "ruta": "modelos/SIM_UNIFORME_R04.json",
+      "sha256": "4a16e513426ef7b377fc606efb06356ae43a6047da3d95c6068061605b53da99",
+      "actualizaciones": 3123,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "replica": 5,
+      "ruta": "modelos/SIM_UNIFORME_R05.json",
+      "sha256": "41ce1810f041b8d441dcc83624e8165a046b3a72f676d462bf6815673a0623da",
+      "actualizaciones": 3165,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "replica": 6,
+      "ruta": "modelos/SIM_UNIFORME_R06.json",
+      "sha256": "43ed7a453538412d44a50c5176b66eaa066434fa53e76b40fa2e6af63ed26cfc",
+      "actualizaciones": 3064,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "replica": 1,
+      "ruta": "modelos/SIM_DIFERENCIAS_R01.json",
+      "sha256": "78ba9f283a0320e7c555ac4da816a2c743eaf55c6495eecf1e3154a26bfdfca0",
+      "actualizaciones": 3025,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "replica": 2,
+      "ruta": "modelos/SIM_DIFERENCIAS_R02.json",
+      "sha256": "9d7e05a19635e82976225247067ad077f093f97672b00828f0a83944e1e0760d",
+      "actualizaciones": 2960,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "replica": 3,
+      "ruta": "modelos/SIM_DIFERENCIAS_R03.json",
+      "sha256": "510518c25e7ffa4008ea6d6b342d06256cb6a135bd9ecb47c837afd86484702f",
+      "actualizaciones": 3083,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "replica": 4,
+      "ruta": "modelos/SIM_DIFERENCIAS_R04.json",
+      "sha256": "5ad9f638017ac40760cdf6460687bc58f9ef64660418761a904975128fc5086f",
+      "actualizaciones": 3028,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "replica": 5,
+      "ruta": "modelos/SIM_DIFERENCIAS_R05.json",
+      "sha256": "4055a201b6daf78ba927f16515495615fc2bd5b4fb20b27b4f5139a8494c98cd",
+      "actualizaciones": 3013,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "replica": 6,
+      "ruta": "modelos/SIM_DIFERENCIAS_R06.json",
+      "sha256": "31531ba8bc6897d212f65b090ea614391e8869557a034be62966fa8d2cab3f6c",
+      "actualizaciones": 2936,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "replica": 1,
+      "ruta": "modelos/SIM_CONTEXTUAL_R01.json",
+      "sha256": "ee2bcd397ae18de09f5b4ed83c3244ceacc0c757146276a7b086534c62cc05e9",
+      "actualizaciones": 2958,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "replica": 2,
+      "ruta": "modelos/SIM_CONTEXTUAL_R02.json",
+      "sha256": "f16197bbe750c632d9921ab8913cc12d62b911c33f5ae596fa164d5c7c785693",
+      "actualizaciones": 2908,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "replica": 3,
+      "ruta": "modelos/SIM_CONTEXTUAL_R03.json",
+      "sha256": "e6b37bc4c3c719e0b7de38723e1348f9cf9878f969536f3b9d0f729a0c57ec34",
+      "actualizaciones": 3036,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 2
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "replica": 4,
+      "ruta": "modelos/SIM_CONTEXTUAL_R04.json",
+      "sha256": "4832b046eda2d5b9ad1e88fa7e65f2fe7bce42ee6f29be9c24bd1273428690e7",
+      "actualizaciones": 2954,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "replica": 5,
+      "ruta": "modelos/SIM_CONTEXTUAL_R05.json",
+      "sha256": "fda1ccf5d6eb0e796b5e89cdbc47a0faf99e3195d869e72f5cc8e055728a5d38",
+      "actualizaciones": 2948,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "replica": 6,
+      "ruta": "modelos/SIM_CONTEXTUAL_R06.json",
+      "sha256": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "actualizaciones": 2868,
+      "distribuciones_con_etiquetas": 144,
+      "etiquetas_minimas_por_distribucion": 1
+    }
+  ],
+  "agregado": [
+    {
+      "condicion": "SIM_UNIFORME",
+      "politica": "ID3",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.6011579088039537,
+        "desviacion_entre_semillas": 0.00826123184001884
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.05913331210019527,
+        "desviacion_entre_semillas": 0.008068408066496868
+      },
+      "proporcion_retos_completados": {
+        "media": 0.9659722222222222,
+        "desviacion_entre_semillas": 0.005880267536115706
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.7077583714574114,
+        "desviacion_entre_semillas": 0.03023433344405625
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.7081597222222222,
+        "desviacion_entre_semillas": 0.025245467369117678
+      },
+      "tasa_repeticion_automatica": {
+        "media": 1.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 5.813321387242444,
+        "desviacion_entre_semillas": 0.22810253611569062
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.6,
+        "desviacion_entre_semillas": 0.0
+      },
+      "coste_variedad_medio": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "brecha_elegibles_media": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5564,
+      "etiquetadas": 9257,
+      "y0": 3693,
+      "y1": 5564,
+      "sin_etiqueta": 582,
+      "ayudas": 9839,
+      "salidas_voluntarias": 196,
+      "selecciones_pendientes": 386,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "politica": "ROTACION",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.6011579088039537,
+        "desviacion_entre_semillas": 0.00826123184001884
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.05913331210019527,
+        "desviacion_entre_semillas": 0.008068408066496868
+      },
+      "proporcion_retos_completados": {
+        "media": 0.9659722222222222,
+        "desviacion_entre_semillas": 0.005880267536115706
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.7077583714574114,
+        "desviacion_entre_semillas": 0.03023433344405625
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.7081597222222222,
+        "desviacion_entre_semillas": 0.025245467369117678
+      },
+      "tasa_repeticion_automatica": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 6.9118396459546325,
+        "desviacion_entre_semillas": 0.29044296235477557
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.6,
+        "desviacion_entre_semillas": 0.0
+      },
+      "coste_variedad_medio": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "brecha_elegibles_media": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5564,
+      "etiquetadas": 9257,
+      "y0": 3693,
+      "y1": 5564,
+      "sin_etiqueta": 582,
+      "ayudas": 9839,
+      "salidas_voluntarias": 196,
+      "selecciones_pendientes": 386,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "politica": "PROBABILISTICO",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.6011579088039537,
+        "desviacion_entre_semillas": 0.00826123184001884
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.05913331210019527,
+        "desviacion_entre_semillas": 0.008068408066496868
+      },
+      "proporcion_retos_completados": {
+        "media": 0.9659722222222222,
+        "desviacion_entre_semillas": 0.005880267536115706
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.7077583714574114,
+        "desviacion_entre_semillas": 0.03023433344405625
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.7081597222222222,
+        "desviacion_entre_semillas": 0.025245467369117678
+      },
+      "tasa_repeticion_automatica": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 6.673608321075079,
+        "desviacion_entre_semillas": 1.0102437853220239
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.6,
+        "desviacion_entre_semillas": 0.0
+      },
+      "coste_variedad_medio": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "brecha_elegibles_media": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5564,
+      "etiquetadas": 9257,
+      "y0": 3693,
+      "y1": 5564,
+      "sin_etiqueta": 582,
+      "ayudas": 9839,
+      "salidas_voluntarias": 196,
+      "selecciones_pendientes": 386,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "politica": "ID3",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.7481870062148306,
+        "desviacion_entre_semillas": 0.009556800439841594
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.05942073472441392,
+        "desviacion_entre_semillas": 0.008063063498457444
+      },
+      "proporcion_retos_completados": {
+        "media": 0.9727430555555555,
+        "desviacion_entre_semillas": 0.0042906889393283095
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.3819235465333408,
+        "desviacion_entre_semillas": 0.015261825986149929
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.3824652777777777,
+        "desviacion_entre_semillas": 0.015329379396609139
+      },
+      "tasa_repeticion_automatica": {
+        "media": 1.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 5.966687261440188,
+        "desviacion_entre_semillas": 0.3773888995361655
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.75,
+        "desviacion_entre_semillas": 0.0
+      },
+      "coste_variedad_medio": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "brecha_elegibles_media": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5603,
+      "etiquetadas": 7490,
+      "y0": 1887,
+      "y1": 5603,
+      "sin_etiqueta": 473,
+      "ayudas": 7963,
+      "salidas_voluntarias": 157,
+      "selecciones_pendientes": 316,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "politica": "ROTACION",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.6121756836841712,
+        "desviacion_entre_semillas": 0.01233427485177105
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.05947100162622286,
+        "desviacion_entre_semillas": 0.0071207955867638425
+      },
+      "proporcion_retos_completados": {
+        "media": 0.9664930555555555,
+        "desviacion_entre_semillas": 0.004536535072383209
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.6790049088947803,
+        "desviacion_entre_semillas": 0.0292180976064209
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.6791666666666667,
+        "desviacion_entre_semillas": 0.031395494634315485
+      },
+      "tasa_repeticion_automatica": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 6.698597336888482,
+        "desviacion_entre_semillas": 0.3514822615779102
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.6064002745920932,
+        "desviacion_entre_semillas": 0.0010844656659874262
+      },
+      "coste_variedad_medio": {
+        "media": 0.06538101675497678,
+        "desviacion_entre_semillas": 0.0006435225961364417
+      },
+      "brecha_elegibles_media": {
+        "media": 0.07821870865293004,
+        "desviacion_entre_semillas": 0.0011097186612469168
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5567,
+      "etiquetadas": 9097,
+      "y0": 3530,
+      "y1": 5567,
+      "sin_etiqueta": 575,
+      "ayudas": 9672,
+      "salidas_voluntarias": 193,
+      "selecciones_pendientes": 382,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "politica": "PROBABILISTICO",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.6489943443977659,
+        "desviacion_entre_semillas": 0.007604904074437812
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.0596938398963129,
+        "desviacion_entre_semillas": 0.006126957129949057
+      },
+      "proporcion_retos_completados": {
+        "media": 0.96875,
+        "desviacion_entre_semillas": 0.00395284707521046
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.5876332313900123,
+        "desviacion_entre_semillas": 0.020588657981878568
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.5876736111111112,
+        "desviacion_entre_semillas": 0.02051228318774082
+      },
+      "tasa_repeticion_automatica": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 6.228645927338658,
+        "desviacion_entre_semillas": 0.30091496749152746
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.6443998302263167,
+        "desviacion_entre_semillas": 0.004470567942615822
+      },
+      "coste_variedad_medio": {
+        "media": 0.08460196328785351,
+        "desviacion_entre_semillas": 0.001844852879182593
+      },
+      "brecha_elegibles_media": {
+        "media": 0.020998206485829743,
+        "desviacion_entre_semillas": 0.006137377550640583
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5580,
+      "etiquetadas": 8599,
+      "y0": 3019,
+      "y1": 5580,
+      "sin_etiqueta": 546,
+      "ayudas": 9145,
+      "salidas_voluntarias": 180,
+      "selecciones_pendientes": 366,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "politica": "ID3",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.6445152401879577,
+        "desviacion_entre_semillas": 0.015668228678122138
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.058596877542474404,
+        "desviacion_entre_semillas": 0.006702856779140988
+      },
+      "proporcion_retos_completados": {
+        "media": 0.9690972222222223,
+        "desviacion_entre_semillas": 0.004096633667709105
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.5958610667045647,
+        "desviacion_entre_semillas": 0.034740251232271153
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.5979166666666667,
+        "desviacion_entre_semillas": 0.0341819071699895
+      },
+      "tasa_repeticion_automatica": {
+        "media": 1.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 6.145360493261052,
+        "desviacion_entre_semillas": 0.6610338727961484
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.6478698285831355,
+        "desviacion_entre_semillas": 0.004184641732877738
+      },
+      "coste_variedad_medio": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "brecha_elegibles_media": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5582,
+      "etiquetadas": 8665,
+      "y0": 3083,
+      "y1": 5582,
+      "sin_etiqueta": 539,
+      "ayudas": 9204,
+      "salidas_voluntarias": 178,
+      "selecciones_pendientes": 361,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "politica": "ROTACION",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.5994894701882963,
+        "desviacion_entre_semillas": 0.014450812121389689
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.059250115244697484,
+        "desviacion_entre_semillas": 0.0072927289430373115
+      },
+      "proporcion_retos_completados": {
+        "media": 0.965625,
+        "desviacion_entre_semillas": 0.004973890160963904
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.7117003804781017,
+        "desviacion_entre_semillas": 0.040568011343735506
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.7130208333333332,
+        "desviacion_entre_semillas": 0.03995304318474656
+      },
+      "tasa_repeticion_automatica": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 7.133205782152378,
+        "desviacion_entre_semillas": 0.613255398767189
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.5985750144489833,
+        "desviacion_entre_semillas": 0.0012709454958568448
+      },
+      "coste_variedad_medio": {
+        "media": 0.056519270219627674,
+        "desviacion_entre_semillas": 0.002227329244209179
+      },
+      "brecha_elegibles_media": {
+        "media": 0.09490571533138903,
+        "desviacion_entre_semillas": 0.002120160637188665
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5562,
+      "etiquetadas": 9282,
+      "y0": 3720,
+      "y1": 5562,
+      "sin_etiqueta": 585,
+      "ayudas": 9867,
+      "salidas_voluntarias": 198,
+      "selecciones_pendientes": 387,
+      "cortes_simulador": 0
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "politica": "PROBABILISTICO",
+      "replicas": 6,
+      "tasa_y1_etiquetadas": {
+        "media": 0.6696393396934218,
+        "desviacion_entre_semillas": 0.006813923830545541
+      },
+      "proporcion_sin_etiqueta": {
+        "media": 0.06001856207799412,
+        "desviacion_entre_semillas": 0.007862067692474418
+      },
+      "proporcion_retos_completados": {
+        "media": 0.9699652777777777,
+        "desviacion_entre_semillas": 0.004239809405656857
+      },
+      "ayudas_por_reto_completado": {
+        "media": 1.5400320441617583,
+        "desviacion_entre_semillas": 0.017645508455892984
+      },
+      "ayudas_por_reto_iniciado": {
+        "media": 1.5411458333333334,
+        "desviacion_entre_semillas": 0.016147513353454785
+      },
+      "tasa_repeticion_automatica": {
+        "media": 0.0,
+        "desviacion_entre_semillas": 0.0
+      },
+      "tiempo_decision_medio_us": {
+        "media": 6.477518375495853,
+        "desviacion_entre_semillas": 0.19044021274630496
+      },
+      "probabilidad_configurada_media": {
+        "media": 0.6672694593914941,
+        "desviacion_entre_semillas": 0.002770849425612435
+      },
+      "coste_variedad_medio": {
+        "media": 0.06781511967712849,
+        "desviacion_entre_semillas": 0.0014399359402566913
+      },
+      "brecha_elegibles_media": {
+        "media": 0.014915420931377455,
+        "desviacion_entre_semillas": 0.003039840573838704
+      },
+      "retos_iniciados": 5760,
+      "retos_completados": 5587,
+      "etiquetadas": 8344,
+      "y0": 2757,
+      "y1": 5587,
+      "sin_etiqueta": 533,
+      "ayudas": 8877,
+      "salidas_voluntarias": 173,
+      "selecciones_pendientes": 360,
+      "cortes_simulador": 0
+    }
+  ],
+  "diferencias_pareadas": [
+    {
+      "condicion": "SIM_UNIFORME",
+      "comparador": "ID3",
+      "diferencia_media_puntos_porcentuales": 0.0,
+      "desviacion_diferencias_puntos_porcentuales": 0.0,
+      "diferencias_por_semilla": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "condicion": "SIM_UNIFORME",
+      "comparador": "ROTACION",
+      "diferencia_media_puntos_porcentuales": 0.0,
+      "desviacion_diferencias_puntos_porcentuales": 0.0,
+      "diferencias_por_semilla": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "comparador": "ID3",
+      "diferencia_media_puntos_porcentuales": -9.919266181706472,
+      "desviacion_diferencias_puntos_porcentuales": 0.8174489922595759,
+      "diferencias_por_semilla": [
+        -0.10582828303301783,
+        -0.09644247650298976,
+        -0.09179333127931266,
+        -0.09063754265301038,
+        -0.09883397953164463,
+        -0.11162035790241309
+      ]
+    },
+    {
+      "condicion": "SIM_DIFERENCIAS",
+      "comparador": "ROTACION",
+      "diferencia_media_puntos_porcentuales": 3.6818660713594706,
+      "desviacion_diferencias_puntos_porcentuales": 0.7959551997465918,
+      "diferencias_por_semilla": [
+        0.027412911708245336,
+        0.03978424414478354,
+        0.04791408400395014,
+        0.04260195418781043,
+        0.029541113551714293,
+        0.033657656685064485
+      ]
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "comparador": "ID3",
+      "diferencia_media_puntos_porcentuales": 2.5124099505464166,
+      "desviacion_diferencias_puntos_porcentuales": 1.359498204985658,
+      "diferencias_por_semilla": [
+        0.04287168647831063,
+        0.0038328255459683103,
+        0.0346875222128088,
+        0.02283538079178027,
+        0.028365692103343276,
+        0.018151489900573692
+      ]
+    },
+    {
+      "condicion": "SIM_CONTEXTUAL",
+      "comparador": "ROTACION",
+      "diferencia_media_puntos_porcentuales": 7.014986950512549,
+      "desviacion_diferencias_puntos_porcentuales": 0.865588263706317,
+      "diferencias_por_semilla": [
+        0.07580243497509687,
+        0.07158520053291895,
+        0.08371753866121823,
+        0.06529360896404568,
+        0.060233299029479936,
+        0.06426713486799329
+      ]
+    }
+  ],
+  "evaluacion_congelada_verificada": true,
+  "total_retos_entrenamiento": 34560,
+  "total_retos_evaluacion": 51840
+}

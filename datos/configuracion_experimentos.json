@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "origen": "CONFIGURACION_SINTETICA_DECLARADA",
+  "replicas": 6,
+  "retos_entrenamiento_por_condicion_replica": 1920,
+  "retos_evaluacion_por_condicion_replica_politica": 960,
+  "semilla_entrenamiento_base": 11001,
+  "semilla_thompson_base": 21001,
+  "semilla_evaluacion_base": 91001,
+  "paso_entre_semillas": 101,
+  "prob_repetir_pregunta": 0.4,
+  "prob_repetir_ayuda": 0.15,
+  "prob_pausa": 0.08,
+  "prob_salida": 0.02,
+  "prob_pendiente": 0.04,
+  "max_ayudas_solo_simulador": 30,
+  "intervalo_historia": 320,
+  "nota": "El tope de 30 ayudas protege la ejecución del experimento sintético; no limita al jugador en la consola ni convierte una interrupción en y=0."
+}

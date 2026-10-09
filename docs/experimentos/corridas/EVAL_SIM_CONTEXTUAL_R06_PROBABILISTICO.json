@@ -1,0 +1,1752 @@
+{
+  "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+  "origen": "SIMULACION_EVALUACION",
+  "condicion": "SIM_CONTEXTUAL",
+  "politica": "PROBABILISTICO",
+  "semilla_entorno": 91506,
+  "retos_iniciados": 960,
+  "retos_JUGADOR": 473,
+  "retos_completados": 935,
+  "repeticiones_manuales": 611,
+  "pausas": 139,
+  "salidas_voluntarias": 25,
+  "retos_AGENTE": 487,
+  "selecciones_pendientes": 64,
+  "ayudas": 1487,
+  "y1": 935,
+  "oportunidades_repeticion_automatica": 1069,
+  "repeticiones_automaticas": 0,
+  "y0": 463,
+  "sin_etiqueta": 89,
+  "etiquetadas": 1398,
+  "tasa_y1_etiquetadas": 0.6688125894134478,
+  "proporcion_sin_etiqueta": 0.05985205110961668,
+  "proporcion_retos_completados": 0.9739583333333334,
+  "ayudas_por_reto_completado": 1.5454545454545454,
+  "ayudas_por_reto_iniciado": 1.5489583333333334,
+  "tasa_repeticion_automatica": 0.0,
+  "tiempo_decision_medio_us": 6.453263618022865,
+  "probabilidad_configurada_media": 0.6662071284465366,
+  "coste_variedad_medio": 0.06993947545393409,
+  "brecha_elegibles_media": 0.013853396099529253,
+  "modelo_evaluacion_invariable": true,
+  "por_contexto": [
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 9,
+      "y1": 27,
+      "sin_etiqueta": 3,
+      "etiquetadas": 36,
+      "total": 39
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 10,
+      "y1": 14,
+      "sin_etiqueta": 3,
+      "etiquetadas": 24,
+      "total": 27
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 11,
+      "y1": 10,
+      "sin_etiqueta": 1,
+      "etiquetadas": 21,
+      "total": 22
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 7,
+      "y1": 21,
+      "sin_etiqueta": 4,
+      "etiquetadas": 28,
+      "total": 32
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 1,
+      "y1": 6,
+      "sin_etiqueta": 0,
+      "etiquetadas": 7,
+      "total": 7
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 5,
+      "y1": 4,
+      "sin_etiqueta": 1,
+      "etiquetadas": 9,
+      "total": 10
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 10,
+      "y1": 8,
+      "sin_etiqueta": 2,
+      "etiquetadas": 18,
+      "total": 20
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 3,
+      "y1": 5,
+      "sin_etiqueta": 0,
+      "etiquetadas": 8,
+      "total": 8
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 5,
+      "sin_etiqueta": 0,
+      "etiquetadas": 7,
+      "total": 7
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V3",
+      "y0": 0,
+      "y1": 1,
+      "sin_etiqueta": 0,
+      "etiquetadas": 1,
+      "total": 1
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 5,
+      "y1": 10,
+      "sin_etiqueta": 4,
+      "etiquetadas": 15,
+      "total": 19
+    },
+    {
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V3",
+      "y0": 4,
+      "y1": 4,
+      "sin_etiqueta": 1,
+      "etiquetadas": 8,
+      "total": 9
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 11,
+      "y1": 31,
+      "sin_etiqueta": 1,
+      "etiquetadas": 42,
+      "total": 43
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 16,
+      "y1": 14,
+      "sin_etiqueta": 3,
+      "etiquetadas": 30,
+      "total": 33
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 9,
+      "y1": 7,
+      "sin_etiqueta": 1,
+      "etiquetadas": 16,
+      "total": 17
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 2,
+      "y1": 25,
+      "sin_etiqueta": 0,
+      "etiquetadas": 27,
+      "total": 27
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 8,
+      "y1": 10,
+      "sin_etiqueta": 1,
+      "etiquetadas": 18,
+      "total": 19
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 2,
+      "y1": 8,
+      "sin_etiqueta": 0,
+      "etiquetadas": 10,
+      "total": 10
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 0,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 2,
+      "total": 2
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 9,
+      "sin_etiqueta": 0,
+      "etiquetadas": 10,
+      "total": 10
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 0,
+      "y1": 8,
+      "sin_etiqueta": 0,
+      "etiquetadas": 8,
+      "total": 8
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 1,
+      "sin_etiqueta": 0,
+      "etiquetadas": 2,
+      "total": 2
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 4,
+      "total": 4
+    },
+    {
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 1,
+      "sin_etiqueta": 0,
+      "etiquetadas": 2,
+      "total": 2
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 10,
+      "y1": 32,
+      "sin_etiqueta": 4,
+      "etiquetadas": 42,
+      "total": 46
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 12,
+      "y1": 17,
+      "sin_etiqueta": 2,
+      "etiquetadas": 29,
+      "total": 31
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 7,
+      "y1": 6,
+      "sin_etiqueta": 1,
+      "etiquetadas": 13,
+      "total": 14
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 4,
+      "y1": 23,
+      "sin_etiqueta": 2,
+      "etiquetadas": 27,
+      "total": 29
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 3,
+      "y1": 12,
+      "sin_etiqueta": 1,
+      "etiquetadas": 15,
+      "total": 16
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 4,
+      "sin_etiqueta": 0,
+      "etiquetadas": 5,
+      "total": 5
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 1,
+      "sin_etiqueta": 0,
+      "etiquetadas": 3,
+      "total": 3
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 4,
+      "y1": 12,
+      "sin_etiqueta": 0,
+      "etiquetadas": 16,
+      "total": 16
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 3,
+      "sin_etiqueta": 0,
+      "etiquetadas": 5,
+      "total": 5
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V3",
+      "y0": 1,
+      "y1": 0,
+      "sin_etiqueta": 0,
+      "etiquetadas": 1,
+      "total": 1
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 1,
+      "y1": 2,
+      "sin_etiqueta": 1,
+      "etiquetadas": 3,
+      "total": 4
+    },
+    {
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 4,
+      "y1": 4,
+      "sin_etiqueta": 0,
+      "etiquetadas": 8,
+      "total": 8
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 10,
+      "y1": 32,
+      "sin_etiqueta": 3,
+      "etiquetadas": 42,
+      "total": 45
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 6,
+      "y1": 19,
+      "sin_etiqueta": 1,
+      "etiquetadas": 25,
+      "total": 26
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 6,
+      "y1": 10,
+      "sin_etiqueta": 1,
+      "etiquetadas": 16,
+      "total": 17
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 11,
+      "y1": 20,
+      "sin_etiqueta": 1,
+      "etiquetadas": 31,
+      "total": 32
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 8,
+      "sin_etiqueta": 1,
+      "etiquetadas": 10,
+      "total": 11
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V3",
+      "y0": 1,
+      "y1": 1,
+      "sin_etiqueta": 0,
+      "etiquetadas": 2,
+      "total": 2
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 4,
+      "total": 4
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 6,
+      "y1": 12,
+      "sin_etiqueta": 0,
+      "etiquetadas": 18,
+      "total": 18
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 3,
+      "y1": 1,
+      "sin_etiqueta": 0,
+      "etiquetadas": 4,
+      "total": 4
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 3,
+      "total": 3
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 0,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 2,
+      "total": 2
+    },
+    {
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 6,
+      "sin_etiqueta": 1,
+      "etiquetadas": 7,
+      "total": 8
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 9,
+      "y1": 26,
+      "sin_etiqueta": 2,
+      "etiquetadas": 35,
+      "total": 37
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 6,
+      "y1": 18,
+      "sin_etiqueta": 2,
+      "etiquetadas": 24,
+      "total": 26
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 6,
+      "y1": 16,
+      "sin_etiqueta": 1,
+      "etiquetadas": 22,
+      "total": 23
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 8,
+      "y1": 25,
+      "sin_etiqueta": 1,
+      "etiquetadas": 33,
+      "total": 34
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 5,
+      "y1": 6,
+      "sin_etiqueta": 0,
+      "etiquetadas": 11,
+      "total": 11
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V3",
+      "y0": 2,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 4,
+      "total": 4
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 4,
+      "total": 4
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 2,
+      "y1": 9,
+      "sin_etiqueta": 2,
+      "etiquetadas": 11,
+      "total": 13
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 2,
+      "y1": 0,
+      "sin_etiqueta": 1,
+      "etiquetadas": 2,
+      "total": 3
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 3,
+      "y1": 5,
+      "sin_etiqueta": 0,
+      "etiquetadas": 8,
+      "total": 8
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 1,
+      "y1": 2,
+      "sin_etiqueta": 0,
+      "etiquetadas": 3,
+      "total": 3
+    },
+    {
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 0,
+      "y1": 6,
+      "sin_etiqueta": 1,
+      "etiquetadas": 6,
+      "total": 7
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 8,
+      "y1": 37,
+      "sin_etiqueta": 1,
+      "etiquetadas": 45,
+      "total": 46
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 9,
+      "y1": 19,
+      "sin_etiqueta": 0,
+      "etiquetadas": 28,
+      "total": 28
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 13,
+      "y1": 15,
+      "sin_etiqueta": 2,
+      "etiquetadas": 28,
+      "total": 30
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V3",
+      "y0": 10,
+      "y1": 5,
+      "sin_etiqueta": 1,
+      "etiquetadas": 15,
+      "total": 16
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 0,
+      "y1": 5,
+      "sin_etiqueta": 1,
+      "etiquetadas": 5,
+      "total": 6
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 4,
+      "y1": 4,
+      "sin_etiqueta": 0,
+      "etiquetadas": 8,
+      "total": 8
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 2,
+      "y1": 17,
+      "sin_etiqueta": 0,
+      "etiquetadas": 19,
+      "total": 19
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V3",
+      "y0": 3,
+      "y1": 8,
+      "sin_etiqueta": 0,
+      "etiquetadas": 11,
+      "total": 11
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 3,
+      "y1": 1,
+      "sin_etiqueta": 1,
+      "etiquetadas": 4,
+      "total": 5
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 3,
+      "y1": 0,
+      "sin_etiqueta": 0,
+      "etiquetadas": 3,
+      "total": 3
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 1,
+      "y1": 4,
+      "sin_etiqueta": 0,
+      "etiquetadas": 5,
+      "total": 5
+    },
+    {
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 5,
+      "sin_etiqueta": 1,
+      "etiquetadas": 6,
+      "total": 7
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 10,
+      "y1": 28,
+      "sin_etiqueta": 4,
+      "etiquetadas": 38,
+      "total": 42
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 12,
+      "y1": 20,
+      "sin_etiqueta": 0,
+      "etiquetadas": 32,
+      "total": 32
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 5,
+      "y1": 9,
+      "sin_etiqueta": 5,
+      "etiquetadas": 14,
+      "total": 19
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 7,
+      "y1": 20,
+      "sin_etiqueta": 0,
+      "etiquetadas": 27,
+      "total": 27
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 0,
+      "y1": 3,
+      "sin_etiqueta": 2,
+      "etiquetadas": 3,
+      "total": 5
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 6,
+      "y1": 5,
+      "sin_etiqueta": 2,
+      "etiquetadas": 11,
+      "total": 13
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 3,
+      "y1": 6,
+      "sin_etiqueta": 1,
+      "etiquetadas": 9,
+      "total": 10
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 4,
+      "y1": 10,
+      "sin_etiqueta": 0,
+      "etiquetadas": 14,
+      "total": 14
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 3,
+      "y1": 5,
+      "sin_etiqueta": 0,
+      "etiquetadas": 8,
+      "total": 8
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 0,
+      "y1": 3,
+      "sin_etiqueta": 0,
+      "etiquetadas": 3,
+      "total": 3
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 3,
+      "y1": 5,
+      "sin_etiqueta": 1,
+      "etiquetadas": 8,
+      "total": 9
+    },
+    {
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V3",
+      "y0": 2,
+      "y1": 4,
+      "sin_etiqueta": 0,
+      "etiquetadas": 6,
+      "total": 6
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 12,
+      "y1": 21,
+      "sin_etiqueta": 3,
+      "etiquetadas": 33,
+      "total": 36
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 21,
+      "y1": 12,
+      "sin_etiqueta": 2,
+      "etiquetadas": 33,
+      "total": 35
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 9,
+      "y1": 12,
+      "sin_etiqueta": 1,
+      "etiquetadas": 21,
+      "total": 22
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 7,
+      "y1": 18,
+      "sin_etiqueta": 2,
+      "etiquetadas": 25,
+      "total": 27
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 6,
+      "y1": 12,
+      "sin_etiqueta": 1,
+      "etiquetadas": 18,
+      "total": 19
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "repeticion_previa": 0,
+      "variante_id": "V3",
+      "y0": 4,
+      "y1": 6,
+      "sin_etiqueta": 0,
+      "etiquetadas": 10,
+      "total": 10
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V1",
+      "y0": 7,
+      "y1": 7,
+      "sin_etiqueta": 1,
+      "etiquetadas": 14,
+      "total": 15
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 5,
+      "y1": 4,
+      "sin_etiqueta": 1,
+      "etiquetadas": 9,
+      "total": 10
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V1",
+      "y0": 1,
+      "y1": 5,
+      "sin_etiqueta": 1,
+      "etiquetadas": 6,
+      "total": 7
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "repeticion_previa": 0,
+      "variante_id": "V2",
+      "y0": 1,
+      "y1": 1,
+      "sin_etiqueta": 0,
+      "etiquetadas": 2,
+      "total": 2
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V2",
+      "y0": 7,
+      "y1": 11,
+      "sin_etiqueta": 1,
+      "etiquetadas": 18,
+      "total": 19
+    },
+    {
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "repeticion_previa": 1,
+      "variante_id": "V3",
+      "y0": 5,
+      "y1": 7,
+      "sin_etiqueta": 0,
+      "etiquetadas": 12,
+      "total": 12
+    }
+  ],
+  "historia_entrenamiento": [],
+  "ejemplos": [
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O001",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R01",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A01",
+      "habitat_guia_id": "H01",
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "contenido_id": "AY_H01_L1_V1",
+      "variantes_elegibles": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": null,
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000004",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000005",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 0,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.75,
+        "V2": 0.55,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": null,
+        "estimaciones": {
+          "V1": 0.7777777777777778,
+          "V2": 0.4473684210526316,
+          "V3": 0.4230769230769231
+        },
+        "variantes_elegibles": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O002",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R02",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A02",
+      "habitat_guia_id": "H01",
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "contenido_id": "AY_H01_L1_V2",
+      "variantes_elegibles": [
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": "V1",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000010",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000012",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 1,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V1",
+        "estimaciones": {
+          "V2": 0.7090909090909091,
+          "V3": 0.2857142857142857
+        },
+        "variantes_elegibles": [
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O003",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R03",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A03",
+      "habitat_guia_id": "H01",
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "contenido_id": "AY_H01_L1_V1",
+      "variantes_elegibles": [
+        "V1",
+        "V3"
+      ],
+      "variante_anterior": "V2",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000016",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000017",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 2,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.75,
+        "V2": 0.55,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V2",
+        "estimaciones": {
+          "V1": 0.7777777777777778,
+          "V3": 0.4230769230769231
+        },
+        "variantes_elegibles": [
+          "V1",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O004",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R04",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A04",
+      "habitat_guia_id": "H01",
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "contenido_id": "AY_H01_L1_V2",
+      "variantes_elegibles": [
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": "V1",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000022",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000023",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 3,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V1",
+        "estimaciones": {
+          "V2": 0.7090909090909091,
+          "V3": 0.2857142857142857
+        },
+        "variantes_elegibles": [
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O005",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R05",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A05",
+      "habitat_guia_id": "H01",
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "contenido_id": "AY_H01_L1_V1",
+      "variantes_elegibles": [
+        "V1",
+        "V3"
+      ],
+      "variante_anterior": "V2",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000028",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000031",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 4,
+      "probabilidad_sintetica_elegida": 0.55,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V2",
+        "estimaciones": {
+          "V1": 0.5,
+          "V3": 0.2857142857142857
+        },
+        "variantes_elegibles": [
+          "V1",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.19999999999999996,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O006",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R06",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A06",
+      "habitat_guia_id": "H01",
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "contenido_id": "AY_H01_L1_V2",
+      "variantes_elegibles": [
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": "V1",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000035",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000037",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 5,
+      "probabilidad_sintetica_elegida": 0.55,
+      "probabilidades_sinteticas": {
+        "V1": 0.75,
+        "V2": 0.55,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V1",
+        "estimaciones": {
+          "V2": 0.4473684210526316,
+          "V3": 0.4230769230769231
+        },
+        "variantes_elegibles": [
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.19999999999999996,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O007",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R07",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A07",
+      "habitat_guia_id": "H02",
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "contenido_id": "AY_H02_L1_V2",
+      "variantes_elegibles": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": null,
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000042",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000046",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 6,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": null,
+        "estimaciones": {
+          "V1": 0.631578947368421,
+          "V2": 0.7446808510638298,
+          "V3": 0.3333333333333333
+        },
+        "variantes_elegibles": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O008",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R08",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A08",
+      "habitat_guia_id": "H02",
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "contenido_id": "AY_H02_L1_V1",
+      "variantes_elegibles": [
+        "V1",
+        "V3"
+      ],
+      "variante_anterior": "V2",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000051",
+      "resultado": 0,
+      "etiqueta_disponible": true,
+      "evento_cierre": "NUEVA_AYUDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000052",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 7,
+      "probabilidad_sintetica_elegida": 0.55,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V2",
+        "estimaciones": {
+          "V1": 0.631578947368421,
+          "V3": 0.3333333333333333
+        },
+        "variantes_elegibles": [
+          "V1",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.19999999999999996,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O009",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R08",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A08",
+      "habitat_guia_id": "H02",
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "contenido_id": "AY_H02_L2_V2",
+      "variantes_elegibles": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": null,
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000052",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000055",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 7,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": null,
+        "estimaciones": {
+          "V1": 0.6666666666666666,
+          "V2": 0.8260869565217391,
+          "V3": 0.42857142857142855
+        },
+        "variantes_elegibles": [
+          "V1",
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O010",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R09",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A09",
+      "habitat_guia_id": "H02",
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "contenido_id": "AY_H02_L1_V2",
+      "variantes_elegibles": [
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": "V1",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000060",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000061",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 8,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V1",
+        "estimaciones": {
+          "V2": 0.7446808510638298,
+          "V3": 0.3333333333333333
+        },
+        "variantes_elegibles": [
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O011",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R10",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A10",
+      "habitat_guia_id": "H02",
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "contenido_id": "AY_H02_L1_V1",
+      "variantes_elegibles": [
+        "V1",
+        "V3"
+      ],
+      "variante_anterior": "V2",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000065",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000066",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 9,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.75,
+        "V2": 0.55,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V2",
+        "estimaciones": {
+          "V1": 0.6944444444444444,
+          "V3": 0.2727272727272727
+        },
+        "variantes_elegibles": [
+          "V1",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    },
+    {
+      "tipo_registro": "OBSERVACION_CERRADA",
+      "observacion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-O012",
+      "sesion_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001",
+      "reto_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-S00001-R11",
+      "origen": "SIMULACION_EVALUACION",
+      "animal_id": "A11",
+      "habitat_guia_id": "H02",
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "contenido_id": "AY_H02_L1_V2",
+      "variantes_elegibles": [
+        "V2",
+        "V3"
+      ],
+      "variante_anterior": "V1",
+      "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf",
+      "politica": "PROBABILISTICO",
+      "evento_apertura": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000071",
+      "resultado": 1,
+      "etiqueta_disponible": true,
+      "evento_cierre": "SELECCION_VALIDA",
+      "evento_cierre_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO-EV00000072",
+      "modelo_actualizado": false,
+      "experimento_id": "EVAL_SIM_CONTEXTUAL_R06_PROBABILISTICO",
+      "condicion": "SIM_CONTEXTUAL",
+      "reto_planificado": 10,
+      "probabilidad_sintetica_elegida": 0.75,
+      "probabilidades_sinteticas": {
+        "V1": 0.55,
+        "V2": 0.75,
+        "V3": 0.45
+      },
+      "decision": {
+        "metodo": "MEDIA_POSTERIOR",
+        "variante_anterior": "V1",
+        "estimaciones": {
+          "V2": 0.7446808510638298,
+          "V3": 0.3333333333333333
+        },
+        "variantes_elegibles": [
+          "V2",
+          "V3"
+        ],
+        "parametros_congelados": true,
+        "modelo_version": "24978ab2c06735b70bbdb623968be87c2f9c5c574936ee6c34d38614e4babcbf"
+      },
+      "coste_restriccion_variedad": 0.0,
+      "brecha_entre_elegibles": 0.0
+    }
+  ],
+  "replica": 6
+}

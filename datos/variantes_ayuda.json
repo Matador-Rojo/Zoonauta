@@ -1,0 +1,2336 @@
+{
+  "schema_version": "1.0.0",
+  "fecha_preparacion": "2026-10-09",
+  "contenido": "DATOS_POC",
+  "documentos_origen": [
+    "baseline_id3_animales_habitats.md",
+    "modelo_principal_probabilistico_animales_habitats.md"
+  ],
+  "items": [
+    {
+      "id": "AY_H01_L1_V1",
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un lugar con muchos árboles.",
+      "texto_voz": "Busca un lugar con muchos árboles.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ARBOLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L1_V2",
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un lugar con muchos árboles.",
+      "texto_voz": "Este animal puede vivir en un lugar con muchos árboles.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ARBOLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L1_V3",
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene muchos árboles?",
+      "texto_voz": "¿Qué lugar tiene muchos árboles?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ARBOLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L2_V1",
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un bosque cálido y húmedo.",
+      "texto_voz": "Busca un bosque cálido y húmedo.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_HUMEDAD"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "temperatura",
+        "valor": "CALIDO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L2_V2",
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un bosque cálido y húmedo.",
+      "texto_voz": "Este animal puede vivir en un bosque cálido y húmedo.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_HUMEDAD"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "temperatura",
+        "valor": "CALIDO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L2_V3",
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué bosque es cálido y húmedo?",
+      "texto_voz": "¿Qué bosque es cálido y húmedo?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_HUMEDAD"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "temperatura",
+        "valor": "CALIDO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L3_V1",
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Una opción es la selva tropical. Toca su pictograma.",
+      "texto_voz": "Una opción es la selva tropical. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H01"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L3_V2",
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en la selva tropical. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en la selva tropical. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H01"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H01_L3_V3",
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar la selva tropical?",
+      "texto_voz": "¿Puedes señalar la selva tropical?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H01"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L1_V1",
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un lugar abierto y cálido.",
+      "texto_voz": "Busca un lugar abierto y cálido.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "LLANURA_CALIDA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L1_V2",
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un lugar abierto y cálido.",
+      "texto_voz": "Este animal puede vivir en un lugar abierto y cálido.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "LLANURA_CALIDA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L1_V3",
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar es abierto y cálido?",
+      "texto_voz": "¿Qué lugar es abierto y cálido?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "LLANURA_CALIDA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L2_V1",
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca mucho pasto y árboles separados.",
+      "texto_voz": "Busca mucho pasto y árboles separados.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_ARBOLES_SEPARADOS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "vegetacion",
+        "valor": "ABUNDANTE"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L2_V2",
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un lugar con mucho pasto y árboles separados.",
+      "texto_voz": "Este animal puede vivir en un lugar con mucho pasto y árboles separados.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_ARBOLES_SEPARADOS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "vegetacion",
+        "valor": "ABUNDANTE"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L2_V3",
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene mucho pasto y árboles separados?",
+      "texto_voz": "¿Qué lugar tiene mucho pasto y árboles separados?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_ARBOLES_SEPARADOS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "vegetacion",
+        "valor": "ABUNDANTE"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L3_V1",
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Una opción es la sabana. Toca su pictograma.",
+      "texto_voz": "Una opción es la sabana. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H02"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L3_V2",
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en la sabana. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en la sabana. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H02"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H02_L3_V3",
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar la sabana?",
+      "texto_voz": "¿Puedes señalar la sabana?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H02"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L1_V1",
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un lugar abierto y cálido.",
+      "texto_voz": "Busca un lugar abierto y cálido.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "LLANURA_CALIDA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L1_V2",
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un lugar abierto y cálido.",
+      "texto_voz": "Este animal puede vivir en un lugar abierto y cálido.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "LLANURA_CALIDA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L1_V3",
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar es abierto y cálido?",
+      "texto_voz": "¿Qué lugar es abierto y cálido?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "LLANURA_CALIDA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L2_V1",
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un lugar seco, con pocas plantas.",
+      "texto_voz": "Busca un lugar seco, con pocas plantas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POCAS_PLANTAS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "vegetacion",
+        "valor": "ESCASA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L2_V2",
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un lugar seco, con pocas plantas.",
+      "texto_voz": "Este animal puede vivir en un lugar seco, con pocas plantas.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POCAS_PLANTAS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "vegetacion",
+        "valor": "ESCASA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L2_V3",
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar es seco y tiene pocas plantas?",
+      "texto_voz": "¿Qué lugar es seco y tiene pocas plantas?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POCAS_PLANTAS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "vegetacion",
+        "valor": "ESCASA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L3_V1",
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Una opción es el desierto cálido. Toca su pictograma.",
+      "texto_voz": "Una opción es el desierto cálido. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H03"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L3_V2",
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en el desierto cálido. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en el desierto cálido. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H03"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H03_L3_V3",
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar el desierto cálido?",
+      "texto_voz": "¿Puedes señalar el desierto cálido?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H03"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L1_V1",
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un lugar con mucha agua.",
+      "texto_voz": "Busca un lugar con mucha agua.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ACUATICO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L1_V2",
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un entorno con mucha agua.",
+      "texto_voz": "Este animal puede vivir en un entorno con mucha agua.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ACUATICO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L1_V3",
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene mucha agua?",
+      "texto_voz": "¿Qué lugar tiene mucha agua?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ACUATICO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L2_V1",
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca agua salada.",
+      "texto_voz": "Busca agua salada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "agua",
+        "valor": "SALADA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L2_V2",
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un entorno con agua salada.",
+      "texto_voz": "Este animal puede vivir en un entorno con agua salada.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "agua",
+        "valor": "SALADA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L2_V3",
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene agua salada?",
+      "texto_voz": "¿Qué lugar tiene agua salada?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "agua",
+        "valor": "SALADA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L3_V1",
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Una opción es el mar. Toca su pictograma.",
+      "texto_voz": "Una opción es el mar. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H04"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L3_V2",
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en el mar. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en el mar. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H04"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H04_L3_V3",
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar el mar?",
+      "texto_voz": "¿Puedes señalar el mar?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H04"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L1_V1",
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un lugar con muchos árboles.",
+      "texto_voz": "Busca un lugar con muchos árboles.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ARBOLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L1_V2",
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un lugar con muchos árboles.",
+      "texto_voz": "Este animal puede vivir en un lugar con muchos árboles.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ARBOLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L1_V3",
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene muchos árboles?",
+      "texto_voz": "¿Qué lugar tiene muchos árboles?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ARBOLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L2_V1",
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un bosque de clima templado.",
+      "texto_voz": "Busca un bosque de clima templado.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CLIMA_TEMPLADO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "temperatura",
+        "valor": "TEMPLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L2_V2",
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un bosque de clima templado.",
+      "texto_voz": "Este animal puede vivir en un bosque de clima templado.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CLIMA_TEMPLADO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "temperatura",
+        "valor": "TEMPLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L2_V3",
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué bosque tiene un clima templado?",
+      "texto_voz": "¿Qué bosque tiene un clima templado?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CLIMA_TEMPLADO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "temperatura",
+        "valor": "TEMPLADO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L3_V1",
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Una opción es el bosque templado. Toca su pictograma.",
+      "texto_voz": "Una opción es el bosque templado. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H05"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L3_V2",
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un bosque templado. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en un bosque templado. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H05"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H05_L3_V3",
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar el bosque templado?",
+      "texto_voz": "¿Puedes señalar el bosque templado?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H05"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L1_V1",
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un lugar con mucha agua.",
+      "texto_voz": "Busca un lugar con mucha agua.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ACUATICO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L1_V2",
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un entorno con mucha agua.",
+      "texto_voz": "Este animal puede vivir en un entorno con mucha agua.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ACUATICO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L1_V3",
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene mucha agua?",
+      "texto_voz": "¿Qué lugar tiene mucha agua?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "ACUATICO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L2_V1",
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca agua dulce, como la de un río.",
+      "texto_voz": "Busca agua dulce, como la de un río.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "agua",
+        "valor": "DULCE"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L2_V2",
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un entorno de agua dulce, como un río.",
+      "texto_voz": "Este animal puede vivir en un entorno de agua dulce, como un río.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "agua",
+        "valor": "DULCE"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L2_V3",
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene agua dulce, como la de un río?",
+      "texto_voz": "¿Qué lugar tiene agua dulce, como la de un río?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "agua",
+        "valor": "DULCE"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L3_V1",
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Una opción es el agua dulce. Toca su pictograma.",
+      "texto_voz": "Una opción es el agua dulce. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H06"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L3_V2",
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un entorno de agua dulce. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en un entorno de agua dulce. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H06"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H06_L3_V3",
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar el agua dulce?",
+      "texto_voz": "¿Puedes señalar el agua dulce?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H06"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L1_V1",
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un paisaje muy frío.",
+      "texto_voz": "Busca un paisaje muy frío.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "PAISAJE_FRIO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L1_V2",
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un paisaje muy frío.",
+      "texto_voz": "Este animal puede vivir en un paisaje muy frío.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "PAISAJE_FRIO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L1_V3",
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué paisaje es muy frío?",
+      "texto_voz": "¿Qué paisaje es muy frío?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "PAISAJE_FRIO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L2_V1",
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca el extremo norte o sur del planeta.",
+      "texto_voz": "Busca el extremo norte o sur del planeta.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PLANETA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POLOS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "ubicacion",
+        "valor": "POLAR"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L2_V2",
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en el extremo norte o sur del planeta.",
+      "texto_voz": "Este animal puede vivir en el extremo norte o sur del planeta.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PLANETA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POLOS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "ubicacion",
+        "valor": "POLAR"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L2_V3",
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar está en el extremo norte o sur del planeta?",
+      "texto_voz": "¿Qué lugar está en el extremo norte o sur del planeta?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PLANETA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POLOS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "ubicacion",
+        "valor": "POLAR"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L3_V1",
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Las regiones polares son una opción. Toca su pictograma.",
+      "texto_voz": "Las regiones polares son una opción. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H07"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L3_V2",
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en regiones polares. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en regiones polares. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H07"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H07_L3_V3",
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar las regiones polares?",
+      "texto_voz": "¿Puedes señalar las regiones polares?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H07"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L1_V1",
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca un paisaje muy frío.",
+      "texto_voz": "Busca un paisaje muy frío.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "PAISAJE_FRIO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L1_V2",
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en un paisaje muy frío.",
+      "texto_voz": "Este animal puede vivir en un paisaje muy frío.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "PAISAJE_FRIO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L1_V3",
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué paisaje es muy frío?",
+      "texto_voz": "¿Qué paisaje es muy frío?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "entorno",
+        "valor": "PAISAJE_FRIO"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L2_V1",
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Busca montañas altas.",
+      "texto_voz": "Busca montañas altas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BUSCAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "ubicacion",
+        "valor": "MONTANA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L2_V2",
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en montañas altas.",
+      "texto_voz": "Este animal puede vivir en montañas altas.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "ubicacion",
+        "valor": "MONTANA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L2_V3",
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Qué lugar tiene montañas altas?",
+      "texto_voz": "¿Qué lugar tiene montañas altas?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_QUE_LUGAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ],
+      "atributo_guia": {
+        "nombre": "ubicacion",
+        "valor": "MONTANA"
+      },
+      "revela_habitat_explicito": false,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L3_V1",
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "variante_id": "V1",
+      "tipo": "DESCRIPCION",
+      "texto": "Una opción es la alta montaña. Toca su pictograma.",
+      "texto_voz": "Una opción es la alta montaña. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_OPCION"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H08"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L3_V2",
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "variante_id": "V2",
+      "tipo": "RELACION",
+      "texto": "Este animal puede vivir en la alta montaña. Toca su pictograma.",
+      "texto_voz": "Este animal puede vivir en la alta montaña. Toca su pictograma.",
+      "pictogramas": [
+        {
+          "tipo": "SLOT",
+          "nombre": "animal_actual"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_VIVIR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H08"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_TOCAR"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    },
+    {
+      "id": "AY_H08_L3_V3",
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "variante_id": "V3",
+      "tipo": "PREGUNTA",
+      "texto": "¿Puedes señalar la alta montaña?",
+      "texto_voz": "¿Puedes señalar la alta montaña?",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PREGUNTAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H08"
+        }
+      ],
+      "atributo_guia": null,
+      "revela_habitat_explicito": true,
+      "estado_contenido": "PREPARADO_PARA_POC_TEXTO",
+      "coherencia_con_perfil": "REVISADA_ESTRUCTURALMENTE",
+      "validacion_con_jugadores": "NO_REALIZADA",
+      "habilitada_poc_texto": true,
+      "habilitada_poc_visual": false
+    }
+  ],
+  "variantes_permitidas": [
+    "V1",
+    "V2",
+    "V3"
+  ],
+  "slots_permitidos": [
+    "animal_actual"
+  ],
+  "nota": "La disponibilidad visual se activará al incorporar y revisar los recursos gráficos."
+}
