@@ -7,6 +7,7 @@ from pathlib import Path
 from threading import RLock
 from uuid import uuid4
 
+from codigo.interfaz import idiomas
 from codigo.motores.guia import MotorGuia
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import Evento, TERMINALES
@@ -30,6 +31,7 @@ class SesionWeb:
         self.parametros = parametros
         self.lock = RLock()
         self.revision = 0
+        self.idioma = "es"
         self._recibos: dict[str, str] = {}
         self.gestor = self._nuevo(8)
         self.respuesta = asdict(self.gestor.generador.mensaje("MSG_INICIO"))
@@ -53,7 +55,29 @@ class SesionWeb:
             vista["revision"] = self.revision
             vista["pictogramas"] = {k: {"etiqueta": v["etiqueta"],
                 "imagen": f"/media/{k}"} for k, v in self.banco.pictogramas.items()}
-            return vista
+            return idiomas.vista(vista, self.idioma)
+
+    def cambiar_idioma(self, entrada: dict) -> dict:
+        with self.lock:
+            self._comprobar_vista(entrada)
+            self.idioma = idiomas.validar_idioma(entrada.get("idioma"))
+            return self.vista()
+
+    def _comprobar_vista(self, entrada: dict) -> None:
+        if (type(entrada.get("revision")) is not int or entrada["revision"] != self.revision
+                or entrada.get("sesion_id") != self.gestor.sesion_id
+                or entrada.get("reto_id") != self.gestor.estado.reto_id):
+            raise ConflictoVista("La pantalla ha cambiado. Se recuperó la vista actual.")
+
+    def texto_voz(self, entrada: dict) -> str:
+        with self.lock:
+            self._comprobar_vista(entrada)
+            if entrada.get("idioma") != self.idioma:
+                raise ConflictoVista("La pantalla ha cambiado. Se recuperó la vista actual.")
+            if type(entrada.get("prueba", False)) is not bool:
+                raise ValueError("La entrada debe ser un objeto JSON.")
+            return (idiomas.saludo(self.idioma) if entrada.get("prueba")
+                    else idiomas.texto(self.respuesta["texto_voz"], self.idioma))
 
     def actuar(self, entrada: dict) -> dict:
         with self.lock:
@@ -69,10 +93,7 @@ class SesionWeb:
                     raise ValueError("El identificador ya pertenece a otra acción.")
                 return {"aceptada": False, "motivo": "EVENTO_DUPLICADO",
                         "vista": self.vista(), "respuesta_emitida": None}
-            if (type(entrada.get("revision")) is not int or entrada["revision"] != self.revision
-                    or entrada.get("sesion_id") != self.gestor.sesion_id
-                    or entrada.get("reto_id") != self.gestor.estado.reto_id):
-                raise ConflictoVista("La pantalla ha cambiado. Se recuperó la vista actual.")
+            self._comprobar_vista(entrada)
             tipo = entrada.get("tipo")
             payload = entrada.get("payload", {})
             if not isinstance(payload, dict):
@@ -107,13 +128,13 @@ class SesionWeb:
                 self.respuesta = asdict(emitida)
             self.revision += 1
             resultado = {"aceptada": aceptada, "motivo": motivo,
-                "vista": self.vista(), "respuesta_emitida": asdict(emitida) if emitida else None}
+                "vista": self.vista(), "respuesta_emitida": idiomas.respuesta(asdict(emitida) if emitida else None, self.idioma)}
             self._recibos[eid] = firma
             return resultado
 
     def revision_tecnica(self) -> dict:
         with self.lock:
-            return {"sesion_id": self.gestor.sesion_id, "origen": "INTERFAZ_MANUAL",
+            return {"sesion_id": self.gestor.sesion_id, "idioma": self.idioma, "origen": "INTERFAZ_MANUAL",
                 "politica": self.politica, "modelo_version": self.gestor.motor.modelo_version,
                 "parametros_congelados": self.gestor.motor.parametros_congelados,
                 "estado": self.gestor.estado.serializar(),

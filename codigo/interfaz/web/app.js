@@ -1,11 +1,33 @@
 "use strict";
 let vista = null, ocupado = false, voces = [], vozElegida = "", locucion = null;
+let diccionarios={es:{},"pt-BR":{}}, catalogoVoces=[], pedidoVoz=null, turnoVoz=0, audioURL=null;
+const eleccionesVoz={};
 let carrusel = null, temporizadorPaisaje = null;
-let vozManual=false;
+
 const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
 const $ = id => document.getElementById(id);
 const juego = $("juego"), aviso = $("aviso");
-function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=texto; return n; }
+function t(texto, valores={}) {
+  let salida=diccionarios[vista?.idioma||"es"]?.[texto]||texto;
+  for(const [k,v] of Object.entries(valores))salida=salida.replaceAll(`{${k}}`,String(v));
+  return salida;
+}
+const textosFijos=[], atributosFijos=[];
+const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+while(walker.nextNode()) {
+  const n=walker.currentNode;
+  if(!n.parentElement.closest("script,#juego,#voces,#idioma,#estado-voz" )&&n.textContent.trim())textosFijos.push([n,n.textContent]);
+}
+for(const n of document.querySelectorAll("[aria-label],[placeholder],[title]"))for(const a of ["aria-label","placeholder","title"])if(n.hasAttribute(a))atributosFijos.push([n,a,n.getAttribute(a)]);
+function idiomaPantalla() {
+  document.documentElement.lang=vista.idioma;
+  document.title="Zoonauta · "+t("Animales y hábitats");
+  for(const [n,original] of textosFijos)n.textContent=original.replace(original.trim(),t(original.trim()));
+  for(const [n,a,original] of atributosFijos)n.setAttribute(a,t(original));
+  $("idioma").value=vista.idioma;
+  $("etiqueta-voces").textContent=t(vista.idioma==="pt-BR"?"Voz en portugués brasileño":"Voz en español");
+}
+function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=t(texto); return n; }
 function imagen(id, clase="") { const im=nodo("img",clase); im.src=vista.pictogramas[id].imagen; im.alt=""; im.draggable=false; return im; }
 function icono(nombre,clase="") {
   const caminos={
@@ -31,7 +53,7 @@ function icono(nombre,clase="") {
 }
 function boton(texto,tipo,payload={},clase="accion",picto=null) {
   const b=nodo("button",clase); b.type="button"; b.dataset.clave=tipo+JSON.stringify(payload);
-  if(texto)b.setAttribute("aria-label",texto);
+  if(texto)b.setAttribute("aria-label",t(texto));
   if(picto)b.append(imagen(picto)); if(texto)b.append(nodo("span","",texto));
   b.addEventListener("click",()=>accion(tipo,payload)); return b;
 }
@@ -39,12 +61,12 @@ function respuesta(r) {
   const bloque=nodo("section","respuesta "+(r.tipo_respuesta==="CONFIRMACION"?"confirmacion":r.tipo_respuesta==="NEUTRAL"?"neutral":""));
   const guia=nodo("div","guia-cabecera"); guia.append(imagen("P_AGENTE"),nodo("span","","Tu guía")); bloque.append(guia);
   const titulo=nodo("h2","",r.texto_apoyo); titulo.id="mensaje"; titulo.tabIndex=-1; bloque.append(titulo);
-  const sec=nodo("div","secuencia"); sec.setAttribute("aria-label","Secuencia de pictogramas");
+  const sec=nodo("div","secuencia"); sec.setAttribute("aria-label",t("Secuencia de pictogramas"));
   for(const id of r.pictogramas) {const f=nodo("figure","simbolo"); f.append(imagen(id),nodo("figcaption","",vista.pictogramas[id].etiqueta)); sec.append(f);}
   bloque.append(sec); return bloque;
 }
 function controles() {
-  const a=nodo("nav","acciones"); a.setAttribute("aria-label","Controles de la partida");
+  const a=nodo("nav","acciones"); a.setAttribute("aria-label",t("Controles de la partida"));
   const etiquetas={ayuda:["Ayuda","P_AYUDA"],repetir:["Repetir","P_REPETIR"],pausar:["Pausar","P_PAUSAR"],reanudar:["Reanudar","P_REANUDAR"],continuar:["Continuar","P_CONTINUAR"],salir:["Salir","P_SALIR"]};
   for(const t of vista.controles_disponibles) if(etiquetas[t]) {
     const [texto,p]=etiquetas[t]; a.append(boton(texto,t,{},"accion "+(t==="ayuda"?"destacada":t==="continuar"?"continuar":t==="salir"?"salir":""),p));
@@ -56,9 +78,9 @@ function titulo(texto,sub,etiqueta="Tu expedición") {
   const h=nodo("h1","",texto); h.id="titulo-pantalla"; h.tabIndex=-1; izq.append(h);
   if(sub)izq.append(nodo("p","subtitulo",sub));
   const progreso=nodo("div","progreso");
-  progreso.append(nodo("span","",`${vista.progreso.completados} de ${vista.progreso.total} completados`));
+  progreso.append(nodo("span","",t("{n} de {total} completados",{n:vista.progreso.completados,total:vista.progreso.total})));
   const barra=nodo("progress"); barra.max=vista.progreso.total; barra.value=vista.progreso.completados;
-  barra.setAttribute("aria-label","Progreso de la partida"); progreso.append(barra);
+  barra.setAttribute("aria-label",t("Progreso de la partida")); progreso.append(barra);
   fila.append(izq,progreso); return fila;
 }
 function paisaje(habitat,clase="") {
@@ -78,8 +100,8 @@ function cambiarPaisaje(paso) {
   c.foto.src=src; c.foto.dataset.habitat=h.id;
   c.numero.textContent=`${String(c.indice+1).padStart(2,"0")} / ${String(c.paisajes.length).padStart(2,"0")}`;
   c.nombre.textContent=h.nombre;
-  c.navegacion.setAttribute("aria-label",`Paisajes: ${h.nombre}, ${c.indice+1} de ${c.paisajes.length}`);
-  c.pausa.setAttribute("aria-label",c.pausado?"Reanudar paisajes":"Pausar paisajes");
+  c.navegacion.setAttribute("aria-label",t("Paisajes: {nombre}, {n} de {total}",{nombre:h.nombre,n:c.indice+1,total:c.paisajes.length}));
+  c.pausa.setAttribute("aria-label",t(c.pausado?"Reanudar paisajes":"Pausar paisajes"));
   c.pausa.replaceChildren(icono(c.pausado?"reproducir":"pausa"));
   // Cargar solo la siguiente fotografía. Las ocho imágenes son locales.
   const siguiente=c.paisajes[(c.indice+1)%c.paisajes.length];
@@ -95,16 +117,16 @@ function inicio() {
   texto.append(h,nodo("p","introduccion","48 animales. 8 hábitats. Descubre dónde viven con pictogramas y una guía que te acompaña."));
   const entrada=nodo("div","entrada"); entrada.append(nodo("h2","pregunta-inicio","¿Quién elige el animal?"));
   const modos=nodo("div","modalidades");
-  for(const [m,i,t] of [["JUGADOR","persona","Yo elijo"],["AGENTE","brujula","El agente elige"]]) {
-    const btn=boton("", "iniciar",{modalidad:m},"modalidad"); btn.setAttribute("aria-label",t);
-    btn.append(icono(i,"modo-icono"),nodo("span","",t),icono("flecha","flecha")); modos.append(btn);
+  for(const [m,i,etiqueta] of [["JUGADOR","persona","Yo elijo"],["AGENTE","brujula","El agente elige"]]) {
+    const btn=boton("", "iniciar",{modalidad:m},"modalidad"); btn.setAttribute("aria-label",t(etiqueta));
+    btn.append(icono(i,"modo-icono"),nodo("span","",etiqueta),icono("flecha","flecha")); modos.append(btn);
   }
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
   entrada.append(modos,nota); texto.append(entrada); layout.append(texto);
   const ficha=nodo("div","hero-ficha"),numero=nodo("span","ficha-numero"),nombre=nodo("strong");
   ficha.append(numero,nombre);
   const navegacion=nodo("nav","paisaje-controles");
-  const control=(etiqueta,icon,fn)=>{const btn=nodo("button","paisaje-control");btn.type="button";btn.setAttribute("aria-label",etiqueta);btn.append(icono(icon));btn.addEventListener("click",fn);return btn;};
+  const control=(etiqueta,icon,fn)=>{const btn=nodo("button","paisaje-control");btn.type="button";btn.setAttribute("aria-label",t(etiqueta));btn.append(icono(icon));btn.addEventListener("click",fn);return btn;};
   const manual=paso=>{carrusel.pausado=true;cambiarPaisaje(paso);ritmoCarrusel();};
   const anterior=control("Paisaje anterior","anterior",()=>manual(-1));
   const pausa=control("Pausar paisajes","pausa",()=>{carrusel.pausado=!carrusel.pausado;cambiarPaisaje(0);ritmoCarrusel();});
@@ -119,13 +141,13 @@ function inicio() {
   cambiarPaisaje(0);ritmoCarrusel();return [b];
 }
 function catalogoAnimales() {
-  const barra=nodo("div","catalogo-barra"),total=nodo("p","catalogo-total",`${vista.catalogo_animales.length} animales para explorar`);
+  const barra=nodo("div","catalogo-barra"),total=nodo("p","catalogo-total",t("{n} animales para explorar",{n:vista.catalogo_animales.length}));
   total.setAttribute("aria-live","polite"); total.setAttribute("aria-atomic","true");
   const buscar=nodo("label","busqueda"),input=nodo("input");
-  input.type="search"; input.placeholder="Busca un animal…"; input.setAttribute("aria-label","Buscar animal"); input.autocomplete="off";
+  input.type="search"; input.placeholder=t("Busca un animal…"); input.setAttribute("aria-label",t("Buscar animal")); input.autocomplete="off";
   buscar.append(icono("buscar"),input); barra.append(total,buscar);
-  const catalogo=nodo("div","catalogo"); catalogo.setAttribute("aria-label","48 animales disponibles");
-  const normalizar=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("es").trim();
+  const catalogo=nodo("div","catalogo"); catalogo.setAttribute("aria-label",t("48 animales disponibles"));
+  const normalizar=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase(vista.idioma).trim();
   for(const a of vista.catalogo_animales) {
     const tarjeta=boton(a.nombre,"elegir_animal",{animal_id:a.id},"tarjeta",a.pictograma_id);
     tarjeta.dataset.busqueda=normalizar(a.nombre); catalogo.append(tarjeta);
@@ -134,16 +156,17 @@ function catalogoAnimales() {
   input.addEventListener("input",()=>{
     const consulta=normalizar(input.value); let cantidad=0;
     for(const b of catalogo.children) {b.hidden=!b.dataset.busqueda.includes(consulta); if(!b.hidden)cantidad++;}
-    total.textContent=consulta?`${cantidad} de ${vista.catalogo_animales.length} animales`:`${vista.catalogo_animales.length} animales para explorar`;
+    total.textContent=consulta?t("{n} de {total} animales",{n:cantidad,total:vista.catalogo_animales.length}):t("{n} animales para explorar",{n:vista.catalogo_animales.length});
     vacia.hidden=cantidad!==0;
   });
   return [barra,catalogo,vacia];
 }
-function render(enfocar=false) {
-  detenerCarrusel(); carrusel=null;
+function render(enfocar=false,conservarPaisaje=false) {
+  const previo=conservarPaisaje&&carrusel?{indice:carrusel.indice,pausado:carrusel.pausado}:null;
+  detenerCarrusel(); carrusel=null;idiomaPantalla();
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
   const f=vista.fase; document.body.dataset.fase=f;
-  if(f==="INICIO") juego.append(...inicio());
+  if(f==="INICIO") {juego.append(...inicio());if(previo){Object.assign(carrusel,previo);cambiarPaisaje(0);ritmoCarrusel();}}
   else if(f==="SELECCION_ANIMAL") {
     juego.append(titulo("Elige un animal","Toca el animal con el que quieres jugar.","Explora los animales"),...catalogoAnimales(),controles());
   } else if(f==="PAUSADA"||f==="COMPLETADA"||f==="ABANDONADA") {
@@ -160,7 +183,7 @@ function render(enfocar=false) {
     companero.append(animal,nodo("p","companero-nota","Puedes pedir una pista, repetirla o tomar una pausa."));
     const mesa=nodo("div","mesa"); mesa.append(respuesta(vista.respuesta));
     if(f==="ESPERANDO_RESPUESTA")mesa.append(nodo("p","instruccion","Toca un lugar donde pueda vivir."));
-    const hab=nodo("div","habitats"); hab.setAttribute("aria-label","Ocho hábitats");
+    const hab=nodo("div","habitats"); hab.setAttribute("aria-label",t("Ocho hábitats"));
     for(const h of vista.opciones_habitat) {
       const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta",h.pictograma_id);
       b.prepend(paisaje(h.id)); b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
@@ -174,47 +197,75 @@ function render(enfocar=false) {
   }
 }
 function pararVoz() {
-  locucion=null;
-  if("speechSynthesis" in window)window.speechSynthesis.cancel();
+  turnoVoz++;pedidoVoz?.abort();pedidoVoz=null;
+  if(locucion){locucion.pause();locucion.removeAttribute("src");locucion=null;}
+  if(audioURL){URL.revokeObjectURL(audioURL);audioURL=null;}
 }
 function notaVoz() {
-  $("estado-voz").textContent=voces.length?"Lectura en español. Elige una voz y escucha una muestra.":"No hay una voz en español disponible. Puedes seguir con los pictogramas y el texto.";
-  $("probar-voz").disabled=!voces.length;
+  const disponible=voces.some(v=>v.disponible);
+  $("estado-voz").textContent=t(disponible?"Las voces se reproducen en este equipo, sin conexión después de preparar los modelos.":"No hay voces preparadas para este idioma. Abre iniciar_juego.bat para descargar los modelos.");
+  $("probar-voz").disabled=!disponible;
 }
 function cargarVoces() {
-  voces=("speechSynthesis" in window?window.speechSynthesis.getVoices():[]).filter(v=>/^es(?:-|$)/i.test(v.lang));
-  const sel=$("voces"),anterior=sel.value||vozElegida;sel.replaceChildren();
-  for(const v of voces){const o=nodo("option","",`${v.name} (${v.lang})`);o.value=v.voiceURI;sel.append(o);}
-  if(!voces.length){const o=nodo("option","","Sin voz española disponible");o.value="";sel.append(o);}
-  sel.disabled=!voces.length;
-  const anteriorValida=vozManual&&voces.some(v=>v.voiceURI===anterior);
-  const predeterminada=(voces.find(v=>/google.*espa[ñn]ol|google.*spanish/i.test(v.name))||voces.find(v=>/google|natural|online/i.test(v.name))||voces[0])?.voiceURI||"";
-  sel.value=anteriorValida?anterior:predeterminada;vozElegida=sel.value;notaVoz();
+  const idioma=vista?.idioma||"es";
+  voces=catalogoVoces.filter(v=>v.idioma===idioma);
+  const sel=$("voces");sel.replaceChildren();
+  for(const motor of ["piper","kokoro"]){
+    const grupo=nodo("optgroup");grupo.label=motor==="piper"?"Piper":"Kokoro";
+    for(const v of voces.filter(v=>v.motor===motor)){
+      const calidad=v.calidad?" · "+t({high:"Calidad alta",medium:"Calidad media",low:"Calidad baja",x_low:"Ligera"}[v.calidad]):"";
+      const region=t({MX:"México",AR:"Argentina",ES:"España",BR:"Brasil"}[v.region]);
+      const o=nodo("option","",`${v.nombre} · ${region}${calidad}`);o.value=v.id;o.disabled=!v.disponible;grupo.append(o);
+    }
+    if(grupo.children.length)sel.append(grupo);
+  }
+  const recordada=eleccionesVoz[idioma];
+  const candidata=voces.find(v=>v.id===recordada&&v.disponible)||voces.find(v=>v.disponible);
+  vozElegida=candidata?.id||"";sel.value=vozElegida||voces[0]?.id||"";sel.disabled=!vozElegida;notaVoz();
 }
-function hablar(texto) {
-  if(!$("voz").checked)return;
+async function hablar(prueba=false) {
+  if(!vista||!$("voz").checked)return;
   pararVoz();
-  if(!("speechSynthesis" in window)||!voces.length){aviso.textContent="No hay voz en español disponible. Puedes seguir con los pictogramas y el texto.";return;}
-  const u=new SpeechSynthesisUtterance(texto);locucion=u;
-  u.voice=voces.find(v=>v.voiceURI===$("voces").value)||voces[0];
-  u.lang=u.voice.lang;u.rate=Number($("velocidad").value);u.pitch=1;
-  u.onend=()=>{if(locucion===u)locucion=null;};
-  u.onerror=e=>{if(locucion===u){locucion=null;if(!["canceled","interrupted"].includes(e.error))aviso.textContent="No se pudo reproducir la voz. Puedes volver a pulsar Repetir.";}};
-  window.speechSynthesis.speak(u);
+  if(!vozElegida){notaVoz();return;}
+  const turno=turnoVoz,control=new AbortController();pedidoVoz=control;
+  const entrada={voz:vozElegida,idioma:vista.idioma,prueba,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
+  $("estado-voz").textContent=t("Preparando la lectura…");
+  try {
+    const r=await fetch("/api/voz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada),signal:control.signal});
+    if(!r.ok){const d=await r.json();throw Error(d.error||t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."));}
+    const blob=await r.blob();if(turno!==turnoVoz)return;
+    audioURL=URL.createObjectURL(blob);const audio=new Audio(audioURL);locucion=audio;
+    audio.playbackRate=Number($("velocidad").value);audio.preservesPitch=true;
+    audio.onended=()=>{if(turno===turnoVoz){pararVoz();notaVoz();}};
+    audio.onerror=()=>{if(turno===turnoVoz){pararVoz();aviso.textContent=t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir.");notaVoz();}};
+    await audio.play();if(turno===turnoVoz)notaVoz();
+  }catch(e){if(e.name!=="AbortError"&&turno===turnoVoz){pararVoz();aviso.textContent=e.message;notaVoz();}}
+}
+async function cambiarIdioma() {
+  if(ocupado||!vista){$("idioma").value=vista?.idioma||"es";return;}
+  ocupado=true;pararVoz();aviso.textContent="";$("idioma").disabled=true;
+  for(const b of juego.querySelectorAll("button"))b.disabled=true;
+  const entrada={idioma:$("idioma").value,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
+  try{
+    const r=await fetch("/api/idioma",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada)}),d=await r.json();
+    if(d.vista){vista=d.vista;render(false,true);cargarVoces();}
+    if(!r.ok)aviso.textContent=d.error||t("No se pudo cambiar el idioma.");
+  }catch{aviso.textContent=t("No se pudo cambiar el idioma.");render(false,true);}
+  finally{ocupado=false;$("idioma").disabled=false;$("idioma").value=vista.idioma;}
 }
 async function accion(tipo,payload) {
   if(ocupado||!vista)return; ocupado=true; aviso.textContent=""; const antes=vista.fase;
-  if(tipo==="iniciar") {const n=Number($("retos").value);if(!Number.isInteger(n)||n<1||n>48){aviso.textContent="Selecciona entre 1 y 48 retos en Preferencias.";ocupado=false;return;} payload={...payload,retos:n};}
+  if(tipo==="iniciar") {const n=Number($("retos").value);if(!Number.isInteger(n)||n<1||n>48){aviso.textContent=t("Selecciona entre 1 y 48 retos en Preferencias.");ocupado=false;return;} payload={...payload,retos:n};}
   pararVoz();
   for(const b of juego.querySelectorAll("button"))b.disabled=true;
   juego.setAttribute("aria-busy","true");
   const entrada={tipo,payload,evento_id:crypto.randomUUID(),revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
   try {
     const r=await fetch("/api/accion",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada)}),d=await r.json();
-    if(d.vista){vista=d.vista;render(true);} if(!r.ok){aviso.textContent=d.error||"No se pudo aplicar la acción.";return;}
-    if(d.aceptada&&d.respuesta_emitida&&tipo!=="pausar")hablar(d.respuesta_emitida.texto_voz);
+    if(d.vista){vista=d.vista;render(true);} if(!r.ok){aviso.textContent=d.error||t("No se pudo aplicar la acción.");return;}
+    if(d.aceptada&&d.respuesta_emitida&&tipo!=="pausar")hablar();
     if(antes!==vista.fase)window.scrollTo({top:0,behavior:"instant"});
-  } catch(e) {aviso.textContent="No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida.";juego.setAttribute("aria-busy","false");}
+  } catch(e) {aviso.textContent=t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida.");juego.setAttribute("aria-busy","false");}
   finally {ocupado=false;}
 }
 $("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();ritmoCarrusel();});
@@ -224,9 +275,11 @@ $("preferencias").addEventListener("close",ritmoCarrusel);
 document.addEventListener("visibilitychange",ritmoCarrusel);
 movimientoReducido.addEventListener("change",e=>{if(carrusel&&e.matches){carrusel.pausado=true;cambiarPaisaje(0);}ritmoCarrusel();});
 $("voz").addEventListener("change",()=>{if(!$("voz").checked)pararVoz();});
-$("voces").addEventListener("change",()=>{pararVoz();vozManual=true;vozElegida=$("voces").value;notaVoz();});
+$("voces").addEventListener("change",()=>{pararVoz();vozElegida=$("voces").value;eleccionesVoz[vista.idioma]=vozElegida;notaVoz();});
 $("velocidad").addEventListener("change",pararVoz);
-$("probar-voz").addEventListener("click",()=>hablar("Hola. Vamos a descubrir dónde viven los animales."));
-window.addEventListener("pagehide",()=>{pararVoz();detenerCarrusel();});cargarVoces();
-if("speechSynthesis" in window)window.speechSynthesis.addEventListener("voiceschanged",cargarVoces);
-fetch("/api/vista").then(r=>{if(!r.ok)throw Error();return r.json();}).then(v=>{vista=v;render();}).catch(()=>{juego.replaceChildren(nodo("p","introduccion","No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página."));juego.setAttribute("aria-busy","false");});
+$("probar-voz").addEventListener("click",()=>hablar(true));
+$("idioma").addEventListener("change",cambiarIdioma);
+window.addEventListener("pagehide",()=>{pararVoz();detenerCarrusel();});
+Promise.all([fetch("/api/vista"),fetch("/api/idiomas"),fetch("/api/voz/config")].map(async p=>{const r=await p;if(!r.ok)throw Error();return r.json();}))
+.then(([v,d,c])=>{vista=v;diccionarios=d;catalogoVoces=c.voces;render();cargarVoces();})
+.catch(()=>{juego.replaceChildren(nodo("p","introduccion","No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página."));juego.setAttribute("aria-busy","false");});

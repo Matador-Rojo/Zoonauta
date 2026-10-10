@@ -7,12 +7,30 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.INTERFAZ_URL||'http://127.0.0.1:8000';
 const out=path.resolve(__dirname,'../docs/interfaz');fs.mkdirSync(out,{recursive:true});
 const resultados=[];
-async function mockVoz(context){
+async function mockVoz(context,disponibles=true){
+  await context.route('**/api/voz/config',async route=>{
+    const r=await route.fetch(),d=await r.json();d.voces.forEach(v=>v.disponible=disponibles);await route.fulfill({json:d});
+  });
+  await context.route('**/api/voz',async route=>{
+    const b=Buffer.alloc(244);b.write('RIFF');b.writeUInt32LE(236,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(22050,24);b.writeUInt32LE(44100,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(200,40);
+    await route.fulfill({contentType:'audio/wav',body:b});
+  });
   await context.addInitScript(()=>{
-    window.__voz=[];window.__cancelaciones=0;
-    const voz={voiceURI:'prueba-es',name:'Español de prueba',lang:'es-PE',localService:true};
-    Object.defineProperty(window,'speechSynthesis',{value:{getVoices:()=>[voz],addEventListener:()=>{},cancel:()=>window.__cancelaciones++,speak:u=>window.__voz.push({texto:u.text,lang:u.lang,rate:u.rate})},configurable:true});
-    window.SpeechSynthesisUtterance=class{constructor(text){this.text=text;}};
+    window.__voz=[];window.__cancelaciones=0;window.__pedido=null;
+    const original=window.fetch.bind(window);
+    window.fetch=async(url,opciones)=>{
+      const r=await original(url,opciones);
+      if(url==='/api/voz'&&r.ok){
+        const e=JSON.parse(opciones.body),v=await (await original('/api/vista')).json();
+        window.__pedido={...e,lang:e.idioma,texto:e.prueba?(e.idioma==='es'?'Hola. Vamos a descubrir dónde viven los animales.':'Olá. Vamos descobrir onde os animais vivem.'):v.respuesta.texto_voz};
+      }return r;
+    };
+    window.Audio=class{
+      constructor(url){this.src=url;}
+      async play(){window.__voz.push({...window.__pedido,rate:this.playbackRate});}
+      pause(){window.__cancelaciones++;}
+      removeAttribute(){this.src='';}
+    };
   });
 }
 async function vista(page){return page.evaluate(async()=>await (await fetch('/api/vista')).json());}
@@ -28,7 +46,12 @@ async function clicar(page,texto,fase){
   await page.waitForFunction(async rev=>(await (await fetch('/api/vista')).json()).revision>rev,antes);
   if(fase)await page.waitForFunction(async f=>(await (await fetch('/api/vista')).json()).fase===f,fase);
   await page.waitForFunction(()=>document.getElementById('juego').getAttribute('aria-busy')==='false');
+  if(!['Pausar'].includes(texto))await page.waitForFunction(async()=>{
+    if(!document.getElementById('voz').checked||document.getElementById('probar-voz').disabled)return true;
+    const v=await (await fetch('/api/vista')).json();return window.__voz.at(-1)?.revision===v.revision;
+  });
 }
+
 (async()=>{
  const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{})});
  try{
@@ -63,7 +86,7 @@ async function clicar(page,texto,fase){
   await captura(page,'08_inicio_panoramico.png');await page.setViewportSize({width:1280,height:1080});
   await page.getByRole('button',{name:'Preferencias'}).click();
   await page.locator('#retos').fill('1');await page.getByRole('button',{name:'Probar voz',exact:true}).click();
-  assert.equal((await page.evaluate(()=>window.__voz.at(-1))).lang,'es-PE');
+  await page.waitForFunction(()=>window.__voz.length>0);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).lang,'es');
   await page.getByRole('button',{name:'Volver al juego',exact:true}).click();
   await clicar(page,'Yo elijo','SELECCION_ANIMAL');
   assert.equal(await page.locator('.catalogo button').count(),48);
@@ -82,7 +105,7 @@ async function clicar(page,texto,fase){
   const textoVoz=(await page.evaluate(()=>window.__voz.at(-1))).texto;assert.equal(textoVoz,ayuda.texto_voz);
   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).texto,textoVoz);
   const r=(await vista(page)).revision;await page.reload();await page.getByRole('button',{name:'Ayuda',exact:true}).waitFor();assert.equal((await vista(page)).revision,r);assert.equal(await page.evaluate(()=>window.__voz.length),0);
-  await clicar(page,'Pausar','PAUSADA');assert.equal(await page.locator('.habitats').count(),0);assert.ok(await page.evaluate(()=>window.__cancelaciones)>0);
+  await clicar(page,'Repetir');await clicar(page,'Pausar','PAUSADA');assert.equal(await page.locator('.habitats').count(),0);assert.ok(await page.evaluate(()=>window.__cancelaciones)>0);
   await clicar(page,'Reanudar','ESPERANDO_RESPUESTA');assert.deepEqual((await vista(page)).respuesta,ayuda);
   await clicar(page,'Desierto cálido');assert.equal((await vista(page)).respuesta.tipo_respuesta,'NEUTRAL');assert.equal((await vista(page)).progreso.completados,0);
   await clicar(page,'Selva tropical','RETO_RESUELTO');assert.equal((await vista(page)).progreso.completados,1);assert.equal(await page.locator('.habitats button:enabled').count(),0);
@@ -91,7 +114,7 @@ async function clicar(page,texto,fase){
   await clicar(page,'Salir','ABANDONADA');
   resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
-  resultados.push({caso:'Voz española: texto exacto, repetición y cancelación',resultado:'OK',alcance:'Síntesis simulada en navegador; no certifica sonido audible ni comprensión.'});
+  resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
   await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Ayuda');
@@ -135,47 +158,79 @@ async function clicar(page,texto,fase){
   for(const ancho of [320,768,1024,1280]){await pt.setViewportSize({width:ancho,height:900});assert.equal(await pt.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);}
   resultados.push({caso:'Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido',resultado:'OK'});
   resultados.push({caso:'Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal',resultado:'OK'});
-  // Ausencia de voces: la interfaz debe explicar la limitación y seguir funcionando.
-  const sinvoz=await browser.newContext();await sinvoz.addInitScript(()=>Object.defineProperty(window,'speechSynthesis',{value:{getVoices:()=>[],addEventListener:()=>{},cancel:()=>{}},configurable:true}));
-  const pv=await sinvoz.newPage();pv.on('pageerror',e=>errores.push(e.message));await pv.goto(base);await pv.getByRole('button',{name:'El agente elige'}).waitFor();await clicar(pv,'El agente elige','ESPERANDO_RESPUESTA');assert.match(await pv.locator('#aviso').textContent(),/No hay voz en español/);assert.equal(await pv.locator('.habitats button:enabled').count(),8);
-  resultados.push({caso:'Dispositivo sin voz española: aviso visible, texto y pictogramas operativos',resultado:'OK'});
-  // Selección automática de Google español cuando existe junto a voces locales.
-  const google=await browser.newContext();await mockVoz(google);
-  await google.addInitScript(()=>{window.speechSynthesis.getVoices=()=>[{voiceURI:'local',name:'Microsoft español',lang:'es-ES',localService:true},{voiceURI:'google',name:'Google español',lang:'es-ES',localService:false}];});
-  const pg=await google.newPage();await pg.goto(base);await pg.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();
-  assert.equal(await pg.locator('#voces').inputValue(),'google');
-  resultados.push({caso:'Google español tiene prioridad sobre otras voces españolas disponibles',resultado:'OK'});
-  // La elección manual y el ritmo deben mantenerse sin un servicio de voz del servidor.
+  // Modelos ausentes: se informa de la preparación, sin recurrir a voces del navegador.
+  const sinvoz=await browser.newContext();await mockVoz(sinvoz,false);
+  const pv=await sinvoz.newPage();pv.on('pageerror',e=>errores.push(e.message));await pv.goto(base);await pv.getByRole('button',{name:'El agente elige'}).waitFor();
+  await pv.getByRole('button',{name:'Preferencias'}).click();assert.match(await pv.locator('#estado-voz').textContent(),/No hay voces preparadas/);assert.equal(await pv.locator('#probar-voz').isDisabled(),true);
+  await pv.getByRole('button',{name:'Volver al juego',exact:true}).click();await clicar(pv,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await pv.locator('.habitats button:enabled').count(),8);
+  resultados.push({caso:'Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos',resultado:'OK'});
+  const bilingue=await browser.newContext();await mockVoz(bilingue);
+  const pg=await bilingue.newPage();pg.on('pageerror',e=>errores.push(e.message));await pg.goto(base);await pg.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();
   await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
-  await pg.locator('#voces').selectOption('local');await pg.locator('#velocidad').selectOption('0.8');
-  await pg.getByRole('button',{name:'Probar voz',exact:true}).click();
-  assert.equal((await pg.evaluate(()=>window.__voz.at(-1))).rate,0.8);
+  const revisionIdioma=(await vista(pg)).revision;
+  for(const idioma of ['es','pt-BR']){
+    await pg.locator('#idioma').selectOption(idioma);await pg.waitForFunction(i=>document.documentElement.lang===i,idioma);
+    assert.equal(await pg.locator('#voces option').count(),7);
+    for(const id of await pg.locator('#voces option').evaluateAll(os=>os.map(o=>o.value))){
+      await pg.locator('#voces').selectOption(id);const antes=await pg.evaluate(()=>window.__voz.length);
+      await pg.locator('#probar-voz').click();await pg.waitForFunction(n=>window.__voz.length>n,antes);
+      const voz=await pg.evaluate(()=>window.__voz.at(-1));assert.equal(voz.voz,id);assert.equal(voz.idioma,idioma);
+      assert.equal(voz.texto,idioma==='es'?'Hola. Vamos a descubrir dónde viven los animales.':'Olá. Vamos descobrir onde os animais vivem.');
+    }
+  }
+  assert.equal((await vista(pg)).revision,revisionIdioma);
+  assert.equal(await pg.getByRole('button',{name:'Preferências',exact:true}).isVisible(),true);
+  assert.equal(await pg.locator('#etiqueta-voces').textContent(),'Voz em português brasileiro');
+  assert.equal(await pg.evaluate(()=>document.documentElement.scrollHeight<=innerHeight),true);
+  await captura(pg,'09_preferencias_portugues.png',false);
+  await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();
+  for(const [width,height] of [[320,568],[390,844],[650,390],[844,390],[768,900],[1024,600],[1024,768],[1280,720],[1920,1080]]){
+    await pg.setViewportSize({width,height});assert.equal(await pg.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);
+    for(const nome of ['Eu escolho','O agente escolhe']){const b=await pg.getByRole('button',{name:nome,exact:true}).boundingBox();assert.ok(b.y>=0&&b.y+b.height<=height);}
+  }
+  await pg.setViewportSize({width:390,height:844});await captura(pg,'11_inicio_portugues_movil.png');
+  await pg.getByRole('button',{name:'Preferências',exact:true}).click();await captura(pg,'12_preferencias_portugues_movil.png',false);
+  await pg.setViewportSize({width:1280,height:900});
+  await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();
+  await clicar(pg,'Eu escolho','SELECCION_ANIMAL');
+  assert.equal(await pg.locator('.catalogo button').count(),48);
+  const buscarPT=pg.getByRole('searchbox',{name:'Buscar animal'});await buscarPT.fill('PINGUIM');
+  assert.equal(await pg.locator('.catalogo button:visible').count(),1);
+  await clicar(pg,'Pinguim-imperador','ESPERANDO_RESPUESTA');
+  await clicar(pg,'Ajuda');const ajuda=(await vista(pg)).respuesta;
+  await clicar(pg,'Repetir');assert.deepEqual((await vista(pg)).respuesta,ajuda);
+  assert.equal((await pg.evaluate(()=>window.__voz.at(-1))).lang,'pt-BR');
+  const tecnicaAntes=await pg.evaluate(async()=>await (await fetch('/api/revision')).json());
+  await pg.getByRole('button',{name:'Preferências',exact:true}).click();
+  await pg.locator('#idioma').selectOption('es');await pg.waitForFunction(()=>document.documentElement.lang==='es');
+  assert.equal(await pg.locator('#voces').inputValue(),'kokoro:em_santa');
+  await pg.locator('#voces').selectOption('piper:es_AR-daniela-high');await pg.locator('#velocidad').selectOption('0.8');
+  await pg.locator('#probar-voz').click();await pg.waitForFunction(()=>window.__voz.at(-1)?.rate===0.8);
   await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
-  await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
-  assert.equal(await pg.locator('#voces').inputValue(),'local');
-  await pg.evaluate(()=>cargarVoces());assert.equal(await pg.locator('#voces').inputValue(),'local');
-  assert.equal(await pg.locator('#voces option:disabled').count(),0);
-  assert.equal(await pg.locator('#voces option').count(),2);
-  await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
-  await clicar(pg,'El agente elige','ESPERANDO_RESPUESTA');
-  const textoAntes=(await vista(pg)).respuesta.texto_voz;
-  assert.equal((await pg.evaluate(()=>window.__voz.at(-1))).texto,textoAntes);
-  const cancelaciones=await pg.evaluate(()=>window.__cancelaciones);
-  await clicar(pg,'Pausar','PAUSADA');
-  assert.ok(await pg.evaluate(n=>window.__cancelaciones>n,cancelaciones));
-  await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
-  await pg.locator('#voz').uncheck();
-  await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
-  const lecturas=await pg.evaluate(()=>window.__voz.length);
-  await clicar(pg,'Reanudar','ESPERANDO_RESPUESTA');
-  assert.equal(await pg.evaluate(()=>window.__voz.length),lecturas);
-  resultados.push({caso:'Preferencias de voz: selección manual conservada, ritmo, lectura exacta, cancelación al pausar y guía silenciada',resultado:'OK',alcance:'Síntesis simulada en navegador; no certifica sonido audible.'});
+  const tecnicaDespues=await pg.evaluate(async()=>await (await fetch('/api/revision')).json());tecnicaDespues.idioma=tecnicaAntes.idioma;assert.deepEqual(tecnicaDespues,tecnicaAntes);
+  await pg.getByRole('button',{name:'Preferencias',exact:true}).click();assert.equal(await pg.locator('#voces').inputValue(),'piper:es_AR-daniela-high');
+  await pg.locator('#idioma').selectOption('pt-BR');await pg.waitForFunction(()=>document.documentElement.lang==='pt-BR');
+  assert.equal(await pg.locator('#voces').inputValue(),'kokoro:pm_santa');
+  await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();
+  await captura(pg,'10_reto_portugues.png');
+  await clicar(pg,'Repetir');const cancelaciones=await pg.evaluate(()=>window.__cancelaciones);
+  await clicar(pg,'Pausar','PAUSADA');assert.ok(await pg.evaluate(n=>window.__cancelaciones>n,cancelaciones));
+  await pg.getByRole('button',{name:'Preferências',exact:true}).click();await pg.locator('#voz').uncheck();
+  await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();const lecturas=await pg.evaluate(()=>window.__voz.length);
+  await clicar(pg,'Retomar','ESPERANDO_RESPUESTA');assert.equal(await pg.evaluate(()=>window.__voz.length),lecturas);
+  const revisionRecarga=(await vista(pg)).revision;
+  await pg.reload();await pg.getByRole('button',{name:'Ajuda',exact:true}).waitFor();assert.equal((await vista(pg)).revision,revisionRecarga);assert.equal(await pg.evaluate(()=>window.__voz.length),0);
+  resultados.push({caso:'14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio',resultado:'OK',alcance:'API WAV y reproductor controlados.'});
+  resultados.push({caso:'Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; cambio en una partida sin alterar estado, registros o modelo',resultado:'OK'});
+  await pg.goto(base+'/revision');await pg.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
+  assert.equal(await pg.getByRole('button',{name:'Atualizar registro',exact:true}).isVisible(),true);
+  resultados.push({caso:'Revisión técnica con encabezados en portugués y registros originales conservados',resultado:'OK'});
   // Página técnica de la misma cookie: solo lectura, modelo congelado.
   await page.goto(base+'/revision');await page.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
   const tecnicos=JSON.parse(await page.locator('#datos').textContent());assert.equal(tecnicos.parametros_congelados,true);
   resultados.push({caso:'Consulta técnica separada y modelo congelado',resultado:'OK'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.3.1',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.4.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -12,6 +12,8 @@ from uuid import uuid4
 import webbrowser
 
 from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, SesionWeb
+from codigo.interfaz import idiomas
+from codigo.interfaz.voz import MotorVoz, VozNoDisponible
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import TERMINALES
 
@@ -27,6 +29,7 @@ class Servidor(ThreadingHTTPServer):
             if not archivo or not (RAIZ_PROYECTO / archivo).is_file():
                 raise ValueError(f"Falta el recurso visual {p['id']}.")
         self.sesiones = {}
+        self.voz = MotorVoz()
         self.lock = RLock()
         self.registros, self.politica, self.parametros = registros, politica, parametros
         super().__init__(direccion, Manejador)
@@ -63,11 +66,15 @@ class Manejador(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(contenido)))
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
-        self.send_header("Content-Security-Policy", "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'")
+        self.send_header("Content-Security-Policy", "default-src 'self'; img-src 'self'; media-src 'self' blob:; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'")
         if getattr(self, "nueva_cookie", None):
             self.send_header("Set-Cookie", self.nueva_cookie)
         self.end_headers()
-        self.wfile.write(contenido)
+        try:
+            self.wfile.write(contenido)
+        except (BrokenPipeError, ConnectionResetError):
+            # El navegador puede cancelar una descarga al pausar la lectura.
+            pass
 
     def do_GET(self):
         ruta = urlsplit(self.path).path
@@ -88,6 +95,10 @@ class Manejador(BaseHTTPRequestHandler):
             self._enviar(self._sesion().vista())
         elif ruta == "/api/revision":
             self._enviar(self._sesion().revision_tecnica())
+        elif ruta == "/api/idiomas":
+            self._enviar({"es": {}, "pt-BR": idiomas.PORTUGUES["interfaz"]})
+        elif ruta == "/api/voz/config":
+            self._enviar(self.server.voz.configuracion())
         elif ruta.startswith("/media/"):
             picto = self.server.banco.pictogramas.get(ruta.removeprefix("/media/"))
             if not picto:
@@ -102,7 +113,7 @@ class Manejador(BaseHTTPRequestHandler):
 
     def do_POST(self):
         ruta = urlsplit(self.path).path
-        if ruta != "/api/accion":
+        if ruta not in {"/api/accion", "/api/idioma", "/api/voz"}:
             return self._enviar({"error": "Ruta no encontrada."}, codigo=404)
         origin = self.headers.get("Origin")
         if origin and origin != f"http://{self.headers.get('Host')}":
@@ -117,11 +128,26 @@ class Manejador(BaseHTTPRequestHandler):
             entrada = json.loads(self.rfile.read(longitud))
             if not isinstance(entrada, dict):
                 raise ValueError("La entrada debe ser un objeto JSON.")
-            self._enviar(sesion.actuar(entrada))
+            if ruta == "/api/idioma":
+                self._enviar({"vista": sesion.cambiar_idioma(entrada)})
+            elif ruta == "/api/voz":
+                if "texto" in entrada or "texto_voz" in entrada:
+                    raise ValueError("La voz solo puede leer contenido de la partida.")
+                texto = sesion.texto_voz(entrada)
+                audio = self.server.voz.sintetizar(entrada.get("voz"), texto, entrada.get("idioma"))
+                # La inferencia no mantiene el bloqueo de la partida. Comprobar
+                # de nuevo evita entregar audio de una pantalla ya abandonada.
+                sesion.texto_voz(entrada)
+                self._enviar(audio, "audio/wav")
+            else:
+                self._enviar(sesion.actuar(entrada))
         except ConflictoVista as e:
-            self._enviar({"error": str(e), "vista": sesion.vista()}, codigo=409)
+            self._enviar({"error": idiomas.error(str(e), sesion.idioma), "vista": sesion.vista()}, codigo=409)
+        except VozNoDisponible as e:
+            mensaje = idiomas.PORTUGUES["interfaz"].get(str(e), str(e)) if sesion.idioma == "pt-BR" else str(e)
+            self._enviar({"error": mensaje}, codigo=503)
         except (ValueError, TypeError, KeyError) as e:
-            self._enviar({"error": str(e), "vista": sesion.vista()}, codigo=400)
+            self._enviar({"error": idiomas.error(str(e), sesion.idioma), "vista": sesion.vista()}, codigo=400)
 
 
 def main():
@@ -135,7 +161,7 @@ def main():
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
                          politica=args.politica, parametros=args.parametros)
     url = f"http://127.0.0.1:{servidor.server_port}"
-    print(f"Zoonauta 3.3.1: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
+    print(f"Zoonauta 3.4.0: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:
         webbrowser.open(url)
     try:

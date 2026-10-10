@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.venv-voz/
+/modelos_voz/
+*.part
 .pytest_cache/
 
 # Dependencias opcionales de las pruebas de navegador

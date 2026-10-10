@@ -1,0 +1,33 @@
+{
+  "version": "3.4.0",
+  "fecha": "2026-10-10",
+  "navegador": "145.0.7632.6",
+  "alcance": "Síntesis local, descarga WAV, decodificación y avance de reproducción nativa en Chromium. No acredita escucha humana en otro dispositivo.",
+  "resultados": [
+    {
+      "idioma": "es",
+      "voz": "piper:es_AR-daniela-high",
+      "bytes_wav": 112172,
+      "reproductor": {
+        "duracion": 2.542585,
+        "tiempo": 0.004538,
+        "ritmo": 0.8,
+        "conserva_tono": true
+      },
+      "resultado": "OK"
+    },
+    {
+      "idioma": "pt-BR",
+      "voz": "kokoro:pf_dora",
+      "bytes_wav": 129068,
+      "reproductor": {
+        "duracion": 2.688,
+        "tiempo": 0.012714,
+        "ritmo": 0.8,
+        "conserva_tono": true
+      },
+      "resultado": "OK"
+    }
+  ],
+  "errores_js": []
+}
