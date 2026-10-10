@@ -82,6 +82,7 @@ class Manejador(BaseHTTPRequestHandler):
             "/app.js": ("app.js", "text/javascript; charset=utf-8"),
             "/estilos.css": ("estilos.css", "text/css; charset=utf-8"),
             "/mundo.svg": ("mundo.svg", "image/svg+xml"),
+            "/zoonauta-logo.svg": ("zoonauta-logo.svg", "image/svg+xml"),
             "/portada-selva.webp": ("portada-selva.webp", "image/webp"),
             "/paisajes.webp": ("paisajes.webp", "image/webp"),
             "/revision": ("revision.html", "text/html; charset=utf-8"),
