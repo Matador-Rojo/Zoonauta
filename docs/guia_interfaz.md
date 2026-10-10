@@ -117,9 +117,11 @@ La versión 3.3 muestra una sola portada que ocupa la altura de la pantalla, sin
 sección inferior ni scroll vertical. Ocho fotografías locales cambian cada 10 segundos,
 con nombre y contador sincronizados. El paisaje inicial de selva se sustituyó por
 una escena sin animales, coherente con los otros siete. Hay controles para avanzar,
-retroceder y pausar; la navegación manual pausa el cambio automático. El carrusel
-se detiene con Preferencias abierta o con la pestaña oculta. Si el dispositivo pide
-movimiento reducido, empieza pausado. Este cambio decorativo no emite eventos del juego.
+retroceder y pausar; play o cualquiera de las flechas reanuda el cambio automático
+y reinicia el intervalo de 10 segundos. La pausa solo se activa con el botón central.
+El carrusel empieza en marcha, incluso con movimiento reducido, que elimina las animaciones.
+Se detiene temporalmente con Preferencias abierta o con la pestaña oculta.
+Este cambio decorativo no emite eventos del juego.
 
 Los botones de modalidad usan formas redondeadas e iconos lineales. Preferencias
 comparte el verde oscuro, las líneas suaves y los acentos lima. Los créditos visuales

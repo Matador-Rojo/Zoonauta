@@ -8,8 +8,11 @@ el guacamayo. Los botones de modalidad son compactos, con bordes redondeados e
 iconos lineales. Preferencias comparte la paleta oscura y el acento lima.
 El tablero conserva sus pictogramas originales sobre superficies claras.
 No se usan vídeos, GIF, escenas WebGL ni fuentes externas. Las fotografías aparentes
-son imágenes generadas con IA. El carrusel respeta movimiento reducido y se pausa
-al abrir Preferencias o dejar la pestaña.
+son imágenes generadas con IA. El carrusel empieza en marcha y solo el botón central
+activa la pausa manual. Play o cualquiera de las flechas reanuda la rotación y reinicia
+los 10 segundos. Movimiento reducido elimina las animaciones, conservando el cambio
+de fotografías estáticas. Preferencias abierta o la pestaña oculta suspenden temporalmente
+la rotación.
 
 ## Referencias de composición
 
