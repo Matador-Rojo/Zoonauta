@@ -10,9 +10,11 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 
 | Elemento | Comportamiento disponible |
 |---|---|
-| Inicio del jugador | Muestra los 48 animales, todos seleccionables. |
+| Inicio del jugador | Muestra seis animales por página; ocho páginas permiten elegir cualquiera de los 48. |
 | Inicio del agente | Prepara automáticamente el escenario siguiente. |
 | Búsqueda | Filtra los 48 animales por nombre, sin distinguir mayúsculas o tildes. |
+| Páginas | Anteriores y Siguientes recorren los resultados sin modificar el reto ni el progreso. Buscar vuelve a la primera página; pausar y reanudar conservan la página. |
+| Pictogramas educativos | Preguntas y pistas usan los recursos originales; las tarjetas y retratos conservan los animales fotorrealistas. Los símbolos de hábitat son grandes y centrados. |
 | Reto | Muestra el animal, la pregunta o pista y los ocho hábitats. |
 | Progreso | Indica retos completados mediante texto y una barra accesible. |
 | Ayuda | Solicita una nueva pista: niveles 1, 2 y 3; después conserva 3. |
