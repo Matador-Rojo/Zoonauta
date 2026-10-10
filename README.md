@@ -115,3 +115,10 @@ La portada y los ocho paisajes son imágenes decorativas generadas con IA,
 incluidas en nueve archivos WebP: ocho fondos de inicio y un atlas para el tablero. No forman parte de los 95 pictogramas educativos.
 Las referencias visuales, los prompts y las rutas están en
 `docs/interfaz/diseno_visual.md`. El mapa SVG anterior se conserva como antecedente.
+
+## Continuar en Codex
+
+Las instrucciones del proyecto están en [AGENTS.md](AGENTS.md).
+Lee [CONTEXTO_CODEX.md](CONTEXTO_CODEX.md) para recuperar las decisiones
+del juego, la interfaz, los idiomas y las voces, los comandos de ejecución
+y lo que sigue pendiente de la entrega académica.
