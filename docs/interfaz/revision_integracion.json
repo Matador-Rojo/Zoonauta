@@ -1,15 +1,20 @@
 {
-  "version": "3.0.0",
-  "fecha": "2026-10-09",
+  "version": "3.1.0",
+  "fecha": "2026-10-10",
   "python": {
     "total": 35,
     "correctas": 35,
     "fallidas": 0
   },
   "navegador": {
-    "fecha": "2026-10-09",
+    "fecha": "2026-10-10",
+    "version": "3.1.0",
     "navegador": "145.0.7632.6",
     "resultados": [
+      {
+        "caso": "Búsqueda de 48 animales: mayúsculas y tildes, sin resultados, restauración y sin cambiar la partida",
+        "resultado": "OK"
+      },
       {
         "caso": "Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida",
         "resultado": "OK"
@@ -28,7 +33,15 @@
         "resultado": "OK"
       },
       {
-        "caso": "Pantalla móvil 390 × 844: ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+        "caso": "Pantalla móvil 390 × 844: inicio, preferencias y partida, ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Inicio y partida entre 320 y 1280 px sin desbordamiento horizontal",
         "resultado": "OK"
       },
       {
@@ -59,5 +72,15 @@
     "adaptador": "Web Speech API",
     "prueba_texto_idioma_y_cancelacion": "CORRECTA_SINTESIS_CONTROLADA",
     "audio_audible_en_dispositivo_usuario_verificado": false
+  },
+  "interfaz": {
+    "inicio": "mapa_decorativo_estatico",
+    "busqueda_catalogo": true,
+    "seleccion_por_teclado": true,
+    "ancho_minimo_comprobado_px": 320,
+    "ancho_maximo_comprobado_px": 1280,
+    "videos_y_gif": false,
+    "animaciones_automaticas": false,
+    "ilustracion_decorativa": "codigo/interfaz/web/mundo.svg"
   }
 }

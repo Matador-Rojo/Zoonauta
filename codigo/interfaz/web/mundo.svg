@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 590">
+  <title>Ilustración decorativa de una isla con diferentes paisajes</title>
+  <defs>
+    <linearGradient id="suelo" x2=".8" y2="1"><stop stop-color="#c5d591"/><stop offset="1" stop-color="#8faf69"/></linearGradient>
+    <linearGradient id="tierra" x2="0" y2="1"><stop stop-color="#a7b279"/><stop offset="1" stop-color="#758a52"/></linearGradient>
+    <linearGradient id="agua" x2=".8" y2="1"><stop stop-color="#a6d8cd"/><stop offset="1" stop-color="#7bb8b4"/></linearGradient>
+    <linearGradient id="arena" x2=".9" y2=".8"><stop stop-color="#f5da9e"/><stop offset="1" stop-color="#d4ba7c"/></linearGradient>
+    <linearGradient id="montana" x2="1" y2="1"><stop stop-color="#bbc3ac"/><stop offset="1" stop-color="#758872"/></linearGradient>
+    <radialGradient id="luz"><stop stop-color="#f9f9e7"/><stop offset="1" stop-color="#eaf0df"/></radialGradient>
+    <filter id="sombra" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+    <g id="pino"><path d="M-3 0h6v-30h-6Z" fill="#746848"/><path d="m0-98-24 47h12l-23 34h70L12-51h12Z" fill="#527e57"/><path d="m0-98 24 47H12l23 34H0Z" fill="#416b48"/></g>
+    <g id="arbol"><path d="M-3 0h6v-38h-6Z" fill="#756047"/><ellipse cy="-54" rx="26" ry="35" fill="#6e985d"/><path d="M0-89c37 0 38 69 0 70Z" fill="#4f794b"/><path d="M-11-59 0-49l12-14M0-39v-30" fill="none" stroke="#476a40" stroke-width="2" opacity=".5"/></g>
+    <g id="palmera"><path d="M-4 0 0-68 6-70 4 0Z" fill="#8d7950"/><path d="M3-68c-7-40-41-27-48-7 23-13 37-10 48 7Z" fill="#4f8152"/><path d="M3-68c14-37 44-31 48-6-23-15-33-6-48 6Z" fill="#668f55"/><path d="M3-68c-38-18-53 8-50 23 12-20 28-25 50-23Z" fill="#6b9857"/><path d="M3-68c30-11 46 7 45 21-22-20-35-24-45-21Z" fill="#416e49"/></g>
+    <g id="pasto" fill="none" stroke="#77995a" stroke-width="2" stroke-linecap="round"><path d="m-6 0-4-8M0 0v-13M6 0l4-8"/></g>
+  </defs>
+  <ellipse cx="320" cy="282" rx="283" ry="230" fill="url(#luz)"/>
+  <g fill="#fff" opacity=".7"><ellipse cx="151" cy="156" rx="31" ry="9"/><ellipse cx="177" cy="151" rx="24" ry="13"/><ellipse cx="469" cy="138" rx="36" ry="10"/><ellipse cx="443" cy="133" rx="23" ry="15"/></g>
+  <circle cx="453" cy="185" r="24" fill="#f3d58d"/>
+  <ellipse cx="322" cy="446" rx="216" ry="35" fill="#344d30" opacity=".19" filter="url(#sombra)"/>
+  <path d="M80 318c0-62 114-124 242-124s237 60 237 124v42c0 69-114 107-237 107S80 429 80 360Z" fill="url(#tierra)"/>
+  <path d="M80 333c64 71 174 71 242 71s175-1 237-71v21c-56 65-167 82-237 82S137 419 80 354Z" fill="#97a76e" opacity=".6"/>
+  <ellipse cx="320" cy="313" rx="240" ry="118" fill="url(#suelo)"/>
+  <path d="M331 202c108 3 194 45 213 80 5 18-6 42-34 61-63 26-97 10-112-6-25-28-66-29-82-41-34-25-31-66 15-94Z" fill="url(#arena)"/>
+  <path d="M374 276c21-32 73-26 111-15 19 6 45 16 58 26-22-13-45-8-63-2-25 9-61 16-106-9Z" fill="#e9cb8d"/>
+  <path d="M401 317c22-33 68-35 111-25 8 2 19 9 29 12-32 8-53 30-74 33-23 4-39-7-66-20Z" fill="#e1c083"/>
+  <path d="M193 237c-65 14-96 57-74 83 21 32 102 39 174 13 39-14 68-48 49-68-26-37-91-48-149-28Z" fill="#9ebe75"/>
+  <path d="M323 204c-15 38-24 62-6 88 30 31 72 40 80 67 8 23-35 40-67 54 44 1 79-18 95-39 13-24-23-47-48-61-31-21-70-35-58-64 10-22 12-34 4-45Z" fill="#659f98"/>
+  <path d="M318 214c-13 41-20 56-1 78 30 31 72 40 80 67 8 23-35 40-67 54l17-2c37-15 63-31 62-48-2-23-38-40-66-57-29-18-43-36-36-55 10-25 16-26 11-37Z" fill="#a7d4c6"/>
+  <path d="M82 321c43 15 78 28 106 29 47-6 60 9 89 33 51 16 78 22 119 13 57-10 90-9 122-27-43 44-137 69-207 67-103 0-206-53-229-115Z" fill="url(#agua)"/>
+  <path d="M107 337c49 13 66 24 101 21 31-4 55 21 75 33 38 13 75 22 112 14 46-10 79-9 101-20" fill="none" stroke="#d4ece0" stroke-width="3" stroke-linecap="round"/>
+  <g fill="none" stroke="#d0ebe0" stroke-width="2" opacity=".7" stroke-linecap="round"><path d="M137 382q22 11 40 6M213 407q18 9 35 8M320 424h27M421 416l28-8"/></g>
+  <path d="m231 249 70-125 78 147c-67 26-123 9-148-22Z" fill="url(#montana)"/>
+  <path d="m301 124 78 147c-29 12-57 16-78 13Z" fill="#859882"/>
+  <path d="m265 189 36-65 38 71-25-12-13 13-13-16Z" fill="#f6f7ee"/>
+  <path d="m336 281 48-99 55 110c-29 18-77 5-103-11Z" fill="#9ba98e"/>
+  <path d="m384 182 55 110-55 9Z" fill="#87967e"/>
+  <path d="m359 234 25-52 26 53-19-6-7 12-11-15Z" fill="#f6f7ee"/>
+  <g fill="#e7eccf"><ellipse cx="243" cy="286" rx="16" ry="6"/><ellipse cx="279" cy="299" rx="12" ry="4"/><ellipse cx="384" cy="309" rx="12" ry="5"/></g>
+  <use href="#arbol" transform="translate(166 288) scale(.81)"/>
+  <use href="#arbol" transform="translate(133 308) scale(.67)"/>
+  <use href="#arbol" transform="translate(197 313) scale(.94)"/>
+  <use href="#arbol" transform="translate(242 335) scale(.64)"/>
+  <use href="#pino" transform="translate(241 267) scale(.68)"/>
+  <use href="#pino" transform="translate(271 291) scale(.6)"/>
+  <use href="#pino" transform="translate(219 290) scale(.86)"/>
+  <use href="#palmera" transform="translate(455 308) scale(.65)"/>
+  <use href="#palmera" transform="translate(492 335) scale(.64)"/>
+  <g fill="none" stroke="#839b59" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"><path d="M427 349v-31m0 10h-9v-10m9 20h9v-11"/><path d="M467 371v-19m0 8h7v-5"/></g>
+  <use href="#pasto" transform="translate(207 342)"/>
+  <use href="#pasto" transform="translate(259 358)"/>
+  <use href="#pasto" transform="translate(145 332) scale(.7)"/>
+  <g fill="#eff3df" opacity=".7"><circle cx="277" cy="369" r="3"/><circle cx="302" cy="382" r="2"/><circle cx="213" cy="351" r="2"/><circle cx="394" cy="333" r="2"/></g>
+  <g fill="none" stroke="#627d58" stroke-width="2" stroke-linecap="round"><path d="m189 196 8-4 8 4M397 157l6-3 6 3"/></g>
+</svg>

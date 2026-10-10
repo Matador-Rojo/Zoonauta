@@ -1,7 +1,12 @@
 {
-  "fecha": "2026-10-09",
+  "fecha": "2026-10-10",
+  "version": "3.1.0",
   "navegador": "145.0.7632.6",
   "resultados": [
+    {
+      "caso": "Búsqueda de 48 animales: mayúsculas y tildes, sin resultados, restauración y sin cambiar la partida",
+      "resultado": "OK"
+    },
     {
       "caso": "Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida",
       "resultado": "OK"
@@ -20,7 +25,15 @@
       "resultado": "OK"
     },
     {
-      "caso": "Pantalla móvil 390 × 844: ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+      "caso": "Pantalla móvil 390 × 844: inicio, preferencias y partida, ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Inicio y partida entre 320 y 1280 px sin desbordamiento horizontal",
       "resultado": "OK"
     },
     {

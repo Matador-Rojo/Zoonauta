@@ -73,6 +73,7 @@ class Manejador(BaseHTTPRequestHandler):
         fijos = {"/": ("index.html", "text/html; charset=utf-8"),
             "/app.js": ("app.js", "text/javascript; charset=utf-8"),
             "/estilos.css": ("estilos.css", "text/css; charset=utf-8"),
+            "/mundo.svg": ("mundo.svg", "image/svg+xml"),
             "/revision": ("revision.html", "text/html; charset=utf-8"),
             "/revision.js": ("revision.js", "text/javascript; charset=utf-8")}
         if ruta in fijos:

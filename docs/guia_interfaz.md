@@ -1,6 +1,6 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
-Versión 3.0.0 · 9 de octubre de 2026.
+Versión 3.1.0.
 
 ## 1. Qué está implementado
 
@@ -12,7 +12,9 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 |---|---|
 | Inicio del jugador | Muestra los 48 animales, todos seleccionables. |
 | Inicio del agente | Prepara automáticamente el escenario siguiente. |
+| Búsqueda | Filtra los 48 animales por nombre, sin distinguir mayúsculas o tildes. |
 | Reto | Muestra el animal, la pregunta o pista y los ocho hábitats. |
+| Progreso | Indica retos completados mediante texto y una barra accesible. |
 | Ayuda | Solicita una nueva pista: niveles 1, 2 y 3; después conserva 3. |
 | Repetir | Recupera la misma respuesta educativa, su secuencia y su texto de voz. |
 | Pausar y reanudar | Suspende la interacción, detiene la voz y conserva el reto. |
@@ -28,8 +30,9 @@ competitivos, reloj ni tope de ayudas para jugar.
 
 ## 2. Ejecutarlo
 
-Extrae `poc_interfaz_animales_habitats_v3.zip` y abre una terminal en la carpeta
+Descarga y extrae el ZIP actual de GitHub, o clona el repositorio. Abre una terminal en la carpeta
 que contiene `codigo`, `datos`, `docs`, `assets` y `tests`. Utiliza Python 3.10 o superior.
+En Windows puede ser necesario entrar en una segunda carpeta `Zoonauta-main`.
 
 ```console
 python -m codigo.interfaz.servidor --abrir
@@ -44,7 +47,15 @@ La aplicación usa la biblioteca estándar de Python y HTML/CSS/JavaScript.
 Esta elección concreta la propuesta de interfaz: no utiliza Streamlit.
 Todos los recursos visuales están incluidos; no se descargan durante la partida.
 
-Si el puerto está ocupado, añade `--puerto 8001`. Para comparar variantes:
+Si el puerto está ocupado o Windows muestra `WinError 10013`, prueba otro puerto:
+
+```console
+py -m codigo.interfaz.servidor --abrir --puerto 8765
+```
+
+La dirección será http://127.0.0.1:8765. Una copia ZIP anterior no recibe cambios:
+detén el servidor y descarga y extrae la versión actual para ver el rediseño.
+Para comparar variantes:
 
 ```console
 python -m codigo.interfaz.servidor --politica ID3 --puerto 8001
@@ -94,6 +105,15 @@ diálogo de preferencias. En escritorio los hábitats tienen cuatro columnas; en
 pantallas estrechas pasan a dos y se recorren desplazando la página.
 No se elimina ninguna opción para adaptar la interfaz al móvil.
 
+La versión 3.1 incorpora una identidad verde y crema, un mapa decorativo estático
+en el inicio y tarjetas con mayor separación visual. El tablero distingue el animal,
+la guía y la elección del hábitat. La búsqueda del catálogo solo filtra la pantalla:
+no emite eventos, cambia el modelo ni modifica el estado de la partida. Limpiar el
+campo restaura los 48 animales. Hay un enlace para saltar directamente al juego.
+No se usan vídeos, GIF ni animaciones automáticas; el movimiento reducido del sistema
+también desactiva las transiciones de interacción. El mapa se incluye como SVG propio
+adicional a los 95 pictogramas y no representa una clasificación geográfica exacta.
+
 ## 5. Estado y registros
 
 Una cookie vincula el navegador con el gestor en memoria. Recargar conserva la
@@ -130,15 +150,18 @@ Actualizar allí solo consulta el registro.
 ## 7. Verificación realizada
 
 Pasaron 35 pruebas de Python: 19 del núcleo, siete de aprendizaje y nueve del
-adaptador web. Se ejecutaron siete casos en Chromium 145.0.7632.6.
+adaptador web. Se ejecutaron diez casos en Chromium 145.0.7632.6.
 
 | Comprobación en navegador | Resultado |
 |---|---|
 | Ambos inicios, 48 animales, ocho opciones y recorrido completo | Correcto |
+| Búsqueda, tildes, caso vacío y restauración sin cambiar el estado | Correcto |
 | Recarga sin repetir eventos ni audio | Correcto |
 | Texto exacto para voz, idioma español y cancelación | Correcto con síntesis controlada |
 | Decodificación de los 95 PNG/SVG | Correcto |
-| Móvil 390 × 844, ocho opciones y sin desbordamiento horizontal | Correcto |
+| Móvil 390 × 844: inicio, preferencias y partida | Correcto |
+| Teclado, barra de progreso y movimiento reducido | Correcto |
+| Inicio y partida entre 320 y 1280 px sin desbordamiento horizontal | Correcto |
 | Ausencia de voz española: aviso y juego operativo | Correcto |
 | Revisión técnica separada y modelo congelado | Correcto |
 
@@ -146,8 +169,9 @@ La prueba de voz intercepta el sintetizador para comprobar qué se reproduce;
 no verifica sonido audible ni comprensión en otro dispositivo. La inspección
 de las capturas no constituye una certificación de accesibilidad.
 
-Evidencias: `docs/interfaz/revision_navegador.json` y cinco capturas de inicio,
-catálogo, reto de escritorio, revisión de animales y reto móvil.
+Evidencias: `docs/interfaz/revision_navegador.json` y siete capturas de inicio,
+catálogo, reto de escritorio, revisión de animales, reto móvil, inicio móvil y
+preferencias en móvil.
 
 ```console
 python -m unittest discover -s tests -v
@@ -171,6 +195,7 @@ Referencia: [Playwright Library](https://playwright.dev/docs/library).
 | `codigo/interfaz/servicio.py` | Eventos y vistas sobre el gestor compartido. |
 | `codigo/interfaz/servidor.py` | Servidor local y entrega de recursos. |
 | `codigo/interfaz/web/` | Pantallas, estilos, captura y adaptador de voz. |
+| `codigo/interfaz/web/mundo.svg` | Ilustración decorativa estática del inicio. |
 | `codigo/interfaz/crear_svg.py` | Fuente editable de las ilustraciones propias. |
 | `codigo/interfaz/preparar_recursos.py` | Regeneración de recursos; innecesaria para jugar. |
 | `assets/pictogramas/` | 28 PNG y 67 SVG listos para presentar. |
