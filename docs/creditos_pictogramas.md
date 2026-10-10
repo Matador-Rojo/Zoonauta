@@ -25,6 +25,14 @@ bajo CC BY-NC-SA 4.0. No deriva de imágenes ARASAAC ni forma parte del conjunto
 95 pictogramas educativos. La marca de brújula y los iconos de navegación se dibujaron
 como SVG en el código de la interfaz, con la misma autoría y licencia.
 
+La versión 3.2 utiliza `codigo/interfaz/web/portada-selva.webp` y
+`codigo/interfaz/web/paisajes.webp`: imágenes decorativas generadas con la herramienta
+integrada imagegen de Codex, mediante prompts propios. Son una escena de selva con
+guacamayo y un atlas de ocho paisajes. Los prompts y las rutas se documentan en
+`docs/interfaz/diseno_visual.md`. No se copiaron imágenes ni código de las galerías
+de referencia. Estos dos archivos se ofrecen junto al material visual del prototipo
+bajo CC BY-NC-SA 4.0 y no forman parte de los 95 pictogramas educativos.
+
 Los símbolos genéricos representan la clase del animal; la etiqueta mantiene la
 especie del banco. Las ilustraciones propias son esquemáticas. Hay revisión
 técnica de carga y legibilidad; la comprensión CAA de las secuencias aún requiere

@@ -17,6 +17,7 @@ async function mockVoz(context){
 }
 async function vista(page){return page.evaluate(async()=>await (await fetch('/api/vista')).json());}
 async function captura(page,archivo,fullPage=true){
+  await page.mouse.move(0,0);
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
   await page.evaluate(async()=>await Promise.all(document.getAnimations().map(a=>a.finished.catch(()=>{}))));
   await page.screenshot({path:path.join(out,archivo),fullPage});
@@ -34,7 +35,12 @@ async function clicar(page,texto,fase){
   const contexto=await browser.newContext({viewport:{width:1280,height:1080}});await mockVoz(contexto);
   const page=await contexto.newPage(),errores=[];page.on('pageerror',e=>errores.push(e.message));
   await page.goto(base);await page.getByRole('button',{name:'Yo elijo'}).waitFor();
+  assert.equal(await page.locator('.paisaje-tarjeta').count(),8);
+  assert.equal(await page.locator('video,canvas').count(),0);
   await captura(page,'01_inicio.png');
+  await page.setViewportSize({width:1920,height:1080});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+  await captura(page,'08_inicio_panoramico.png');await page.setViewportSize({width:1280,height:1080});
   await page.getByRole('button',{name:'Preferencias'}).click();
   await page.locator('#retos').fill('1');await page.getByRole('button',{name:'Probar voz',exact:true}).click();
   assert.equal((await page.evaluate(()=>window.__voz.at(-1))).lang,'es-PE');
@@ -73,8 +79,9 @@ async function clicar(page,texto,fase){
   // Los 95 recursos se decodifican en el navegador (PNG y SVG).
   const assetTest=await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();
-    const fallos=[];await Promise.all(Object.values(v.pictogramas).map(p=>new Promise(resolve=>{const i=new Image();i.onload=()=>{if(!i.naturalWidth)fallos.push(p.imagen);resolve();};i.onerror=()=>{fallos.push(p.imagen);resolve();};i.src=p.imagen;})));return fallos;
-  });assert.deepEqual(assetTest,[]);resultados.push({caso:'95 recursos visuales decodificados sin errores',resultado:'OK'});
+    const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/portada-selva.webp','/paisajes.webp'];
+    await Promise.all(rutas.map(ruta=>new Promise(resolve=>{const i=new Image();i.onload=()=>{if(!i.naturalWidth)fallos.push(ruta);resolve();};i.onerror=()=>{fallos.push(ruta);resolve();};i.src=ruta;})));return fallos;
+  });assert.deepEqual(assetTest,[]);resultados.push({caso:'95 pictogramas y dos imágenes decorativas decodificados sin errores; portada con ocho paisajes y sin vídeo ni canvas',resultado:'OK'});
   // Revisar las representaciones de animales en una plancha para inspección visual.
   await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();const main=document.getElementById('juego');main.replaceChildren();
@@ -116,7 +123,7 @@ async function clicar(page,texto,fase){
   const tecnicos=JSON.parse(await page.locator('#datos').textContent());assert.equal(tecnicos.parametros_congelados,true);
   resultados.push({caso:'Consulta técnica separada y modelo congelado',resultado:'OK'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.1.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.2.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
