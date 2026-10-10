@@ -1,0 +1,25 @@
+{
+  "fecha": "2026-10-10",
+  "version": "3.4.0",
+  "navegador": "155.0.4283.45",
+  "alcance": "Síntesis y disponibilidad controladas. No certifica disponibilidad de proveedores ni escucha humana en otro equipo.",
+  "resultados": [
+    {
+      "caso": "Microsoft y Google en español latinoamericano y portugués brasileño: región real, saludo, ritmo, selección por idioma y modelo inmutable",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Silencio, errores de voz localizados, eventos cancelados antiguos y recarga sin lectura automática",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Voces que aparecen tarde o desaparecen, restauración de selección y partida con voz del navegador sin modelos locales",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Cambio de una lectura WAV pendiente a Google: cancela la cola local y lee con el navegador",
+      "resultado": "OK"
+    }
+  ],
+  "errores_js": []
+}
