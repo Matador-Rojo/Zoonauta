@@ -6,13 +6,31 @@ No existe una sección inferior ni desplazamiento vertical en el inicio. Los och
 fondos comparten un estilo de fotografía de naturaleza; la selva se renovó sin
 el guacamayo. Los botones de modalidad son compactos, con bordes redondeados e
 iconos lineales. Preferencias comparte la paleta oscura y el acento lima.
-El tablero conserva sus pictogramas originales sobre superficies claras.
+El tablero conserva los pictogramas de hábitat y apoyo; los animales usan recortes fotorrealistas.
 No se usan vídeos, GIF, escenas WebGL ni fuentes externas. Las fotografías aparentes
 son imágenes generadas con IA. El carrusel empieza en marcha y solo el botón central
 activa la pausa manual. Play o cualquiera de las flechas reanuda la rotación y reinicia
 los 10 segundos. Movimiento reducido elimina las animaciones, conservando el cambio
 de fotografías estáticas. Preferencias abierta o la pestaña oculta suspenden temporalmente
 la rotación.
+
+## Catálogo, tablero y cierre
+
+El catálogo conserva sus 48 opciones y la búsqueda sin tildes. Las tarjetas oscuras
+dan protagonismo a los animales, sin cajas blancas detrás de sus recortes. El tablero
+separa un retrato grande, la guía y ocho tarjetas fotográficas con etiquetas legibles
+y pictogramas pequeños. Los controles usan iconos vectoriales y botones con texto.
+
+La pantalla de pausa conserva el retrato del animal; los cierres completado y de salida
+presentan el progreso real junto a una composición de animales y la acción de reiniciar.
+El diseño mantiene cuatro columnas de hábitats en escritorio y dos en móvil. Catálogo
+y partida pueden desplazarse para que todas las opciones permanezcan disponibles.
+
+Hay 48 imágenes fotorrealistas generadas individualmente con la herramienta integrada
+imagegen, con fondo alfa transparente. Los prompts y la procedencia se registran en
+`datos/imagenes_animales_ia.json`. Se optimizaron como WebP para servirlas localmente.
+No son fotografías de ejemplares reales ni evidencia biológica. Se mantienen los 95
+pictogramas originales, sus archivos y créditos, así como las reglas, ayudas y modelo de IA.
 
 ## Símbolo de Zoonauta
 
