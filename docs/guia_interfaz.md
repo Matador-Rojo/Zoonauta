@@ -22,7 +22,7 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 | Repetir | Recupera la misma respuesta educativa, su secuencia y su texto de voz. |
 | Pausar y reanudar | Suspende la interacción, detiene la voz y conserva el reto. |
 | Selección confirmada | Acepta cualquiera de los hábitats confirmados del animal. |
-| Selección pendiente | Da una respuesta neutral y conserva el reto. |
+| Selección pendiente | Da una respuesta neutral con una nueva pista automática, sin penalización; conserva el reto y permite repetir esa pista. |
 | Continuar | Abre otro reto o presenta el cierre cuando se completó N. |
 | Preferencias | Permite N entre 1 y 48 antes del inicio, idioma, voz y velocidad. |
 | Revisión técnica | Página aparte con modelo, estado, decisiones y exportación JSON. |
@@ -120,9 +120,11 @@ de subespecie. Se mantiene el nombre preciso del banco. Los SVG son esquemático
 La revisión técnica comprobó carga, legibilidad y correspondencia de etiquetas.
 La comprensión CAA de las secuencias requiere validación posterior con usuarios.
 
-Las tarjetas combinan imagen y nombre; los botones son grandes. Los paneles de
-ayuda y los nombres de hábitats tienen texto oscuro sobre fondos claros; el catálogo
-y los controles usan texto claro sobre fondos oscuros. Hay foco visible para teclado, botones nativos y un
+Las tarjetas combinan el pictograma original, el recorte fotorrealista y el nombre.
+Los controles incorporan pictogramas de 56 px sobre una superficie blanca.
+Las preguntas y pistas usan símbolos de 96 px en escritorio y 84 px en móvil;
+los hábitats, de 96–112 px. Los paneles usan texto claro sobre verde oscuro,
+con fondo blanco en cada pictograma. Hay foco visible para teclado, botones nativos y un
 diálogo de preferencias. En escritorio los hábitats tienen cuatro columnas; en
 pantallas estrechas pasan a dos y se recorren desplazando la página.
 No se elimina ninguna opción para adaptar la interfaz al móvil.
@@ -137,17 +139,19 @@ El carrusel empieza en marcha, incluso con movimiento reducido, que elimina las 
 Se detiene temporalmente con Preferencias abierta o con la pestaña oculta.
 Este cambio decorativo no emite eventos del juego.
 
-Los botones de modalidad usan formas redondeadas e iconos lineales. Preferencias
+Los botones de modalidad usan formas redondeadas y los pictogramas de jugador y agente. Preferencias
 comparte el verde oscuro, las líneas suaves y los acentos lima. Los créditos visuales
 están disponibles en Preferencias y en el pie de las pantallas del juego.
 El catálogo mantiene la búsqueda por nombre sin cambiar el modelo o la partida.
 El catálogo, el tablero y el cierre comparten la paleta y el cuidado visual de la portada.
 Los 48 animales se muestran mediante recortes fotorrealistas con transparencia, generados
-con IA, tanto en el catálogo como en el retrato y en las secuencias donde aparece un animal.
+con IA, en catálogo, retratos y decoración del cierre. Cada tarjeta de selección añade el
+pictograma original correspondiente. Las secuencias educativas usan únicamente los pictogramas originales.
 El tablero conserva los ocho hábitats con fotografías locales y sus pictogramas identificadores.
 La pausa conserva el animal; el cierre muestra los retos realmente completados, también
-cuando se sale antes de terminar. Los 95 pictogramas originales se conservan en el banco.
-Las pantallas con 48 animales y los
+cuando se sale antes de terminar. Pausa, cierre completo y salida anticipada muestran
+las secuencias emitidas por el sistema. Los 95 pictogramas originales se conservan en el banco.
+Las páginas con seis animales y los
 retos pueden desplazarse verticalmente para conservar todas sus opciones.
 
 No se usan vídeos, GIF ni canvas. Los ocho fondos y el atlas se generaron con la
@@ -175,6 +179,13 @@ El adaptador serializa las acciones de una sesión. Un duplicado no ejecuta otra
 acción; una entrada de una vista antigua devuelve la pantalla actual.
 Consultar el estado no llama al motor ni abre otra observación.
 
+La interfaz activa `ayuda_en_pendiente` en el gestor compartido. Una selección
+pendiente cierra la observación anterior sin etiqueta, elige la siguiente pista
+y abre su observación. El nivel llega hasta 3; posteriores selecciones pendientes
+pueden presentar otra variante de ese nivel. No incrementa progreso ni actualiza
+el modelo. Repetir y reanudar conservan la respuesta completa, incluido el mensaje
+neutral. Consola y simulador conservan el protocolo anterior de ayuda explícita.
+
 Los registros se guardan en `registros/interfaz/`, separados por sesión, con origen
 `INTERFAZ_MANUAL`. No se solicitan datos personales. Se puede cambiar la carpeta
 con `--registros RUTA`. El servidor se ejecuta solo en el equipo local.
@@ -190,7 +201,8 @@ Actualizar allí solo consulta el registro.
 3. Busca Capibara o ronsoco y selecciónala. Aparecen los ocho hábitats.
 4. Pulsa Ayuda y Repetir. Se conserva la pista, secuencia y texto de voz.
 5. Pulsa Pausar y Reanudar. El reto y la ayuda siguen vigentes.
-6. Selecciona Desierto cálido: aparece una respuesta neutral por asociación pendiente.
+6. Selecciona Desierto cálido: aparece una respuesta neutral y la siguiente pista
+   automáticamente. Pulsa Repetir para escuchar el mismo contenido.
 7. Selecciona Selva tropical: es una asociación adicional confirmada y resuelve el reto,
    aunque el hábitat de guía de la capibara sea Agua dulce.
 8. Pulsa Continuar para cerrar. Comienza otra partida con Comenzar y después El agente elige.
@@ -198,10 +210,14 @@ Actualizar allí solo consulta el registro.
 
 ## 7. Verificación realizada
 
-Pasaron 49 pruebas de Python: 19 del núcleo, siete de aprendizaje, nueve del
-adaptador web y 14 de idioma, voz y HTTP. Se ejecutaron 14 casos de interfaz en
-Chromium 145.0.7632.6, con API WAV y reproductor controlados, además de dos pruebas
-con síntesis y reproducción nativa reales.
+La revisión actual pasó 68 pruebas Python y 21 casos de navegador en Edge
+155.0.4283.45: 17 de interfaz y cuatro de voces Microsoft/Google controladas.
+Incluye las 315 asociaciones pendientes: producen una pista automática sin
+resolver el reto ni penalizar, con parámetros congelados. También comprueba
+duplicados, repetición, pausa, niveles 1–3 y traducción de la respuesta compuesta.
+Los ocho casos de aceptación de consola siguen pasando con su protocolo original.
+Las pruebas anteriores de síntesis real de 14 voces y reproducción nativa se
+conservan como evidencia de esa etapa; no se repitieron en este ajuste.
 
 | Comprobación | Resultado |
 |---|---|
@@ -221,7 +237,8 @@ con síntesis y reproducción nativa reales.
 | Audio real de Piper español y Kokoro portugués: WAV, decodificación y avance de reproducción nativa | Correcto |
 | Preparación aislada y resolución de paquetes para Windows x64/Python 3.12 | Correcto; ejecución de preparación en Linux, disponibilidad de ruedas Windows |
 
-Evidencias: `interfaz/revision_navegador.json`,
+Evidencia actual y capturas: `interfaz/revisiones/2026-10-10-apoyos/`.
+Evidencias anteriores: `interfaz/revision_navegador.json`,
 `interfaz/revision_voces_locales.json`, `interfaz/revision_audio_navegador.json`
 y doce capturas, incluidas las pantallas en portugués. Las pruebas de PCM y del
 reproductor no certifican pronunciación ni escucha humana en otro equipo.
@@ -277,7 +294,8 @@ núcleo compartido de la consola y el simulador. La interfaz presenta 48 animale
 ocho hábitats y ambas modalidades de inicio. Las respuestas preparadas se muestran
 como secuencias de pictogramas con texto de apoyo y síntesis de voz en español
 o portugués brasileño.
-Se permite pedir ayuda, repetir el contenido, pausar, reanudar y continuar,
+Las selecciones no confirmadas ofrecen una pista automática sin castigo; se
+permite pedir más ayuda, repetir el contenido, pausar, reanudar y continuar,
 sin puntos competitivos ni límites de tiempo o intentos.
 
 El adaptador web transmite eventos identificados por sesión, reto y revisión,
