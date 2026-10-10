@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "version_proyecto": "3.2.0",
+  "version_proyecto": "3.3.0",
   "fecha_preparacion": "2026-10-10",
   "paquete": "poc_interfaz_animales_habitats_v3",
   "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
@@ -24,8 +24,8 @@
     "fuentes_referenciadas": 55,
     "imagenes_png_arasaac": 28,
     "imagenes_svg_originales": 67,
-    "ilustraciones_decorativas_adicionales": 3,
-    "imagenes_decorativas_utilizadas": 2
+    "ilustraciones_decorativas_adicionales": 10,
+    "imagenes_decorativas_utilizadas": 9
   },
   "documentos_consultados": [
     {
@@ -61,7 +61,7 @@
   ],
   "estado": "INTERFAZ_DIGITAL_PICTOGRAMAS_Y_ADAPTADOR_VOZ_IMPLEMENTADOS",
   "validacion": {
-    "pruebas_automaticas_correctas": 35,
+    "pruebas_automaticas_correctas": 40,
     "casos_aceptacion_correctos": 8,
     "aprendizaje_bayesiano_ejecutado": true,
     "modelos_aprendidos": 18,
@@ -78,10 +78,11 @@
       "semillas_separadas": true
     },
     "evaluacion_con_jugadores": false,
-    "casos_navegador_correctos": 10,
+    "casos_navegador_correctos": 13,
     "validacion_caa_con_usuarios": false,
-    "voz_prueba": "SINTESIS_CONTROLADA_EN_NAVEGADOR",
-    "audio_audible_en_dispositivo_usuario_verificado": false
+    "voz_prueba": "SINTESIS_API_Y_REPRODUCTOR_CONTROLADOS",
+    "audio_audible_en_dispositivo_usuario_verificado": false,
+    "api_voz_openai_real_ejecutada": false
   },
   "archivos": [
     {
@@ -96,8 +97,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 4564,
-      "sha256": "33fb5f82c90d206718573ce042e8eb4557c1a05b30e4daccbf4be9caeb3e7878"
+      "bytes": 5610,
+      "sha256": "172bac95a7a9c3687a486625459f2bbbd56234db67e206af48c3ee1250224d63"
     },
     {
       "ruta": "assets/pictogramas/P_A01.svg",
@@ -631,23 +632,63 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 7064,
-      "sha256": "e94dfb016d5420ec24bbf5ec5d316b4d1e48285612debedf8dc2e39288585bf5"
+      "bytes": 9014,
+      "sha256": "63fecb3d0f1f571b6c2fa54feef18af8e04b421db9c26ce02c7939861a65a60b"
+    },
+    {
+      "ruta": "codigo/interfaz/voz.py",
+      "bytes": 4557,
+      "sha256": "6ca6abfc556463e5ffa52f11c7bea86771901572f607ad22879fe8b54d47966b"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 14319,
-      "sha256": "006c75cc956fe4c54b06ded049a923cf0435867abf0c367c924bf543110cef6c"
+      "bytes": 19106,
+      "sha256": "06dcf9d54c465f19c80f642479020d0edb125ad94fa9ce1929879af52ddbd37a"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
-      "bytes": 24616,
-      "sha256": "1eb155db8ebc78241153f3a1c5ddbbfa169209cd76cf5351a6deb1e2bd5cad5e"
+      "bytes": 27559,
+      "sha256": "5a903aeba49bbb0459aefca885bd191a329801d960d4f5c30e57df402c46c94a"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/H02.webp",
+      "bytes": 264058,
+      "sha256": "f5773c1b28f3ed9527776b3f37604ab876651399fad72aa3ee8193e47c8ed1cc"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/H03.webp",
+      "bytes": 141158,
+      "sha256": "41c36e9bf61abb67e8a5435dfdf34dc8698c42654e876f03be8565348cde3846"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/H04.webp",
+      "bytes": 290934,
+      "sha256": "ba9d33f0eb50bd1d532202d2af1ed510061002286ba0ebe24b20b4f4af745502"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/H05.webp",
+      "bytes": 406724,
+      "sha256": "8c782b9d5cc38cf368fba49faabab0ddb672e5c086183f717fa1d89c1c810e8e"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/H06.webp",
+      "bytes": 211124,
+      "sha256": "5dabf254ffdcf6d3adacf0ae246a11478f9af2cf1183ff586a36673d6cf609fb"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/H07.webp",
+      "bytes": 222226,
+      "sha256": "af750be42a17462e6b90c773ba7b7a27b87b28b2bea6d4e9bf4494119ba622c3"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/H08.webp",
+      "bytes": 229206,
+      "sha256": "6621e21fc7d6ca21f6d51f94ee1a834ea15e2ffe062417c0553c0b2551e515c0"
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 2792,
-      "sha256": "74883110901c8522b5c4f6c9aa1adf6c492eb27e9184f024ab9fac6826abf89d"
+      "bytes": 3908,
+      "sha256": "86e5a3ac35aeafb7ec2719abd7d75aac5a9a2b075118935136c5c7a44d63da5d"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -661,8 +702,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/portada-selva.webp",
-      "bytes": 306380,
-      "sha256": "5f1faf559e233890f300014b654e2e8a4b0876e8564b82b25551215c9c3b09b7"
+      "bytes": 344412,
+      "sha256": "d8297c15b8e95ed485c4feb65baae2de2b00cf51dd1e7f1a0c098dfcea31e2a1"
     },
     {
       "ruta": "codigo/interfaz/web/revision.html",
@@ -826,8 +867,8 @@
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
-      "bytes": 2454,
-      "sha256": "47d64e7ef328bed452bf703e6e60539df6760dc53d00c35fa6bf3954ed70e57c"
+      "bytes": 2673,
+      "sha256": "932515d00f63894fcefb525b388e4232ddb3e843e30b7ed0b82ac07091ad0fd0"
     },
     {
       "ruta": "docs/datos/fuentes/baseline_id3_animales_habitats.md",
@@ -1716,8 +1757,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 13458,
-      "sha256": "f71e3ad959fbd156458eaa85eeeb50247f3741af3cfe953dd0aa71c026a32f98"
+      "bytes": 17237,
+      "sha256": "46041ae7af385896b2743bba8ca54a386a2e72c7a7c2461cc0f7d5b047f9683b"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1726,58 +1767,63 @@
     },
     {
       "ruta": "docs/interfaz/01_inicio.png",
-      "bytes": 1812493,
-      "sha256": "05272e11dfd2546782024a6e818afe8e44edf44e5817f339593739cd11c67c53"
+      "bytes": 1810622,
+      "sha256": "0777eed38cdb4fe2eef02aac9ba95d57ad53ecaa9fcfc75f903538d8a9ac50b0"
     },
     {
       "ruta": "docs/interfaz/02_catalogo.png",
-      "bytes": 694556,
-      "sha256": "b5d076d427294f3edcb070720d59cd059b5b6ee4202e7bf7e6584adda7a9b38c"
+      "bytes": 694561,
+      "sha256": "10133bc1140d4897fc18fa5eb854d50036bed43146cdb367b4c57f095064e377"
     },
     {
       "ruta": "docs/interfaz/03_reto_escritorio.png",
-      "bytes": 699155,
-      "sha256": "5744b94223a0a833f9cd48e0a27ff80790c43675fe7cd67338973a85a80076b7"
+      "bytes": 699156,
+      "sha256": "6e98040cd3b98c0bab779f4a37532d5d0912f4c0f72b30f58609c7a7d26dad03"
     },
     {
       "ruta": "docs/interfaz/04_revision_animales.png",
-      "bytes": 625504,
-      "sha256": "17b5248cbf6c12cff2b788f57857ad2900fefdad85f8b7f2f17c02cc6cc794d0"
+      "bytes": 625509,
+      "sha256": "f77c0e1b88fe5562d20a91f4ed83079bd4e0ba17b8cb7ff16c6094e7a6929e79"
     },
     {
       "ruta": "docs/interfaz/05_reto_movil.png",
-      "bytes": 460415,
-      "sha256": "08b10cbe732db667add0a88e10054f61f793429e442a5372ce6d9060220a1cb1"
+      "bytes": 460420,
+      "sha256": "7076dc6b9f847b1a30334600580f0bbd83b9aa79cffda2035fe53c892cc0b28c"
     },
     {
       "ruta": "docs/interfaz/06_inicio_movil.png",
-      "bytes": 741208,
-      "sha256": "8af02957bcca918d5ab3251ea635004ee6978969857dc7beeb79604a7ff9aee8"
+      "bytes": 424118,
+      "sha256": "602c37a7deae2936842f44c76846a3f7d9d6e3fee451e7794f04d6edde5a1570"
     },
     {
       "ruta": "docs/interfaz/07_preferencias_movil.png",
-      "bytes": 55479,
-      "sha256": "dd3ff25fe4b936fc4e49aaf137174b7f96643b57fb6fd0333955033c3ae3b0ae"
+      "bytes": 164699,
+      "sha256": "dd24d16a6302018f4fbb6c708154eebf59665b1ecbcf8e0866f24e354aba92db"
     },
     {
       "ruta": "docs/interfaz/08_inicio_panoramico.png",
-      "bytes": 2684531,
-      "sha256": "f06f0e3582040b9dcaac611955cfa515285182cc3f176a8478d8186bbb2654f0"
+      "bytes": 2581798,
+      "sha256": "280ec408a40e928e72874849169af3893937f305d7a3cebc354917f6f57979a1"
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 4817,
-      "sha256": "c214fb371dea04ec709c680749e28a6774388f2e51169ee413348769a6f2b04c"
+      "bytes": 5897,
+      "sha256": "12163d7236c121f73405772429bb76589f2731af1ead72514f858adc3e324a63"
+    },
+    {
+      "ruta": "docs/interfaz/fondos_generados.json",
+      "bytes": 9410,
+      "sha256": "797d7bfb180ef7d32586f7141c43898a1a9bc6fb8cf1b9dc16c4395ee68c467d"
     },
     {
       "ruta": "docs/interfaz/revision_integracion.json",
-      "bytes": 3129,
-      "sha256": "cd9ffc6619a85007da313c57d273a6d7060343f34ff79e4e1da26638191d2c6e"
+      "bytes": 4766,
+      "sha256": "2f6e5cd61db6d8804f32b29607f3df96af6231344ef95683d91dd382485b7c33"
     },
     {
       "ruta": "docs/interfaz/revision_navegador.json",
-      "bytes": 1676,
-      "sha256": "6480697067632ab0b8be50c3f9dcd5fbe29ef796d8ff5ebc84858f5c19e59966"
+      "bytes": 2344,
+      "sha256": "2fa49ddc7670b50ffe23c6b748321eb23f5f8b6cd253571d994709edca9beaaf"
     },
     {
       "ruta": "docs/resultados/arbol_id3.json",
@@ -1840,9 +1886,14 @@
       "sha256": "0f1099a425982c868caf92bf4d6c97dd68ba9c797766af69a0dd8a801dc1912c"
     },
     {
+      "ruta": "tests/test_voz.py",
+      "bytes": 5101,
+      "sha256": "d85f603897ede3ebcd9f37c401a0934cdc195038314f267a57f216b64175e862"
+    },
+    {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 13180,
-      "sha256": "c6262d930139d695e61d8c2a8f97a08de1430e05761abee6271585f8f4079f41"
+      "bytes": 19817,
+      "sha256": "50423a73c657d756f778aaaae59860cba5cba55b76c65a35d9d8e0d7e040af7a"
     }
   ],
   "nombre_proyecto": "Zoonauta"

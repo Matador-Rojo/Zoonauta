@@ -1,5 +1,9 @@
 "use strict";
 let vista = null, ocupado = false, voces = [], vozElegida = "", locucion = null;
+let carrusel = null, temporizadorPaisaje = null;
+let vozManual=false;
+let vozServidor={disponible:false,voces:[]},peticionVoz=null,audioVoz=null,urlAudio=null,turnoVoz=0;
+const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
 const $ = id => document.getElementById(id);
 const juego = $("juego"), aviso = $("aviso");
 function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=texto; return n; }
@@ -7,6 +11,11 @@ function imagen(id, clase="") { const im=nodo("img",clase); im.src=vista.pictogr
 function icono(nombre,clase="") {
   const caminos={
     flecha:"M5 12h14m-6-6 6 6-6 6",
+    anterior:"M19 12H5m6-6-6 6 6 6",
+    pausa:"M9 5v14M15 5v14",
+    reproducir:"m8 5 11 7-11 7V5",
+    persona:"M8 6a4 4 0 1 0 8 0 4 4 0 0 0-8 0M4 22v-3a8 8 0 0 1 16 0v3",
+    brujula:"M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20m5-15-3 7-7 3 3-7 7-3",
     buscar:"M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0",
     mapa:"M3 5l6-3 6 3 6-3v17l-6 3-6-3-6 3V5m6-3v17m6-14v17",
     reloj:"M12 8v5l3 2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0",
@@ -57,9 +66,29 @@ function paisaje(habitat,clase="") {
   const p=nodo("div","paisaje "+clase); p.dataset.habitat=habitat;
   p.setAttribute("aria-hidden","true"); return p;
 }
+function detenerCarrusel() { clearInterval(temporizadorPaisaje); temporizadorPaisaje=null; }
+function ritmoCarrusel() {
+  detenerCarrusel();
+  if(carrusel&&!carrusel.pausado&&!document.hidden&&!$("preferencias").open&&vista?.fase==="INICIO")
+    temporizadorPaisaje=setInterval(()=>cambiarPaisaje(1),10000);
+}
+function cambiarPaisaje(paso) {
+  if(!carrusel)return;
+  const c=carrusel; c.indice=(c.indice+paso+c.paisajes.length)%c.paisajes.length;
+  const h=c.paisajes[c.indice],src=h.id==="H01"?"/portada-selva.webp":`/fondos/${h.id}.webp`;
+  c.foto.src=src; c.foto.dataset.habitat=h.id;
+  c.numero.textContent=`${String(c.indice+1).padStart(2,"0")} / ${String(c.paisajes.length).padStart(2,"0")}`;
+  c.nombre.textContent=h.nombre;
+  c.navegacion.setAttribute("aria-label",`Paisajes: ${h.nombre}, ${c.indice+1} de ${c.paisajes.length}`);
+  c.pausa.setAttribute("aria-label",c.pausado?"Reanudar paisajes":"Pausar paisajes");
+  c.pausa.replaceChildren(icono(c.pausado?"reproducir":"pausa"));
+  // Cargar solo la siguiente fotografía. Las ocho imágenes son locales.
+  const siguiente=c.paisajes[(c.indice+1)%c.paisajes.length];
+  const precarga=new Image(); precarga.src=siguiente.id==="H01"?"/portada-selva.webp":`/fondos/${siguiente.id}.webp`;
+}
 function inicio() {
   const b=nodo("section","bienvenida"),foto=nodo("img","hero-paisaje");
-  foto.src="/portada-selva.webp"; foto.alt=""; foto.setAttribute("aria-hidden","true"); foto.draggable=false;
+  foto.alt=""; foto.setAttribute("aria-hidden","true"); foto.draggable=false;
   const layout=nodo("div","hero-layout"),texto=nodo("div","hero-texto");
   texto.append(nodo("p","etiqueta","El mundo está esperando"));
   const h=nodo("h1"); h.id="titulo-pantalla"; h.tabIndex=-1;
@@ -67,29 +96,28 @@ function inicio() {
   texto.append(h,nodo("p","introduccion","48 animales. 8 hábitats. Descubre dónde viven con pictogramas y una guía que te acompaña."));
   const entrada=nodo("div","entrada"); entrada.append(nodo("h2","pregunta-inicio","¿Quién elige el animal?"));
   const modos=nodo("div","modalidades");
-  for(const [m,p,t,s] of [["JUGADOR","P_JUGADOR","Yo elijo","Explorar los 48 animales"],["AGENTE","P_AGENTE","El agente elige","Recibir un nuevo reto"]]) {
+  for(const [m,i,t] of [["JUGADOR","persona","Yo elijo"],["AGENTE","brujula","El agente elige"]]) {
     const btn=boton("", "iniciar",{modalidad:m},"modalidad"); btn.setAttribute("aria-label",t);
-    const copia=nodo("div","modalidad-copia"); copia.append(nodo("strong","",t),nodo("span","modalidad-detalle",s));
-    btn.append(imagen(p),copia,icono("flecha","flecha")); modos.append(btn);
+    btn.append(icono(i,"modo-icono"),nodo("span","",t),icono("flecha","flecha")); modos.append(btn);
   }
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
   entrada.append(modos,nota); texto.append(entrada); layout.append(texto);
-  const ficha=nodo("div","hero-ficha"); ficha.setAttribute("aria-hidden","true");
-  ficha.append(nodo("span","ficha-numero","01 / 08"),nodo("strong","","Selva tropical"),nodo("p","","Un vistazo a los lugares que vas a descubrir."));
-  layout.append(ficha);
+  const ficha=nodo("div","hero-ficha"),numero=nodo("span","ficha-numero"),nombre=nodo("strong");
+  ficha.append(numero,nombre);
+  const navegacion=nodo("nav","paisaje-controles");
+  const control=(etiqueta,icon,fn)=>{const btn=nodo("button","paisaje-control");btn.type="button";btn.setAttribute("aria-label",etiqueta);btn.append(icono(icon));btn.addEventListener("click",fn);return btn;};
+  const manual=paso=>{carrusel.pausado=true;cambiarPaisaje(paso);ritmoCarrusel();};
+  const anterior=control("Paisaje anterior","anterior",()=>manual(-1));
+  const pausa=control("Pausar paisajes","pausa",()=>{carrusel.pausado=!carrusel.pausado;cambiarPaisaje(0);ritmoCarrusel();});
+  const siguiente=control("Siguiente paisaje","flecha",()=>manual(1));
+  navegacion.append(anterior,pausa,siguiente);ficha.append(navegacion);layout.append(ficha);
   const resumen=nodo("div","resumen-inicio");
-  for(const [t,s] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Ayuda, repetición y pausa"]]) {
-    const item=nodo("div","resumen-item"); item.append(nodo("strong","",t),nodo("span","",s)); resumen.append(item);
+  for(const [t,sub] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Ayuda, repetición y pausa"]]) {
+    const item=nodo("div","resumen-item");item.append(nodo("strong","",t),nodo("span","",sub));resumen.append(item);
   }
   b.append(foto,nodo("div","hero-sombra"),layout,resumen);
-  const lugares=nodo("section","lugares"),cabecera=nodo("div","lugares-cabecera");
-  const copia=nodo("div"); copia.append(nodo("p","etiqueta","Elige. Explora. Conecta."),nodo("h2","","Ocho paisajes. Muchos hogares."));
-  cabecera.append(copia,nodo("p","","En cada reto podrás elegir entre los ocho hábitats."));
-  const galeria=nodo("div","paisajes");
-  for(const habitat of vista.opciones_habitat) {
-    const tarjeta=nodo("div","paisaje-tarjeta"); tarjeta.append(paisaje(habitat.id),nodo("span","",habitat.nombre)); galeria.append(tarjeta);
-  }
-  lugares.append(cabecera,galeria); return [b,lugares];
+  carrusel={foto,numero,nombre,navegacion,pausa,paisajes:vista.opciones_habitat,indice:0,pausado:movimientoReducido.matches};
+  cambiarPaisaje(0);ritmoCarrusel();return [b];
 }
 function catalogoAnimales() {
   const barra=nodo("div","catalogo-barra"),total=nodo("p","catalogo-total",`${vista.catalogo_animales.length} animales para explorar`);
@@ -113,6 +141,7 @@ function catalogoAnimales() {
   return [barra,catalogo,vacia];
 }
 function render(enfocar=false) {
+  detenerCarrusel(); carrusel=null;
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
   const f=vista.fase; document.body.dataset.fase=f;
   if(f==="INICIO") juego.append(...inicio());
@@ -145,26 +174,63 @@ function render(enfocar=false) {
     if(f==="PAUSADA")juego.querySelector("button")?.focus();
   }
 }
-function pararVoz(){ if("speechSynthesis" in window) window.speechSynthesis.cancel(); locucion=null; }
+function pararVoz() {
+  turnoVoz++;peticionVoz?.abort();peticionVoz=null;
+  if(audioVoz){audioVoz.pause();audioVoz.removeAttribute("src");audioVoz.load();audioVoz=null;}
+  if(urlAudio){URL.revokeObjectURL(urlAudio);urlAudio=null;}
+  if("speechSynthesis" in window)window.speechSynthesis.cancel();locucion=null;
+}
+function notaVoz() {
+  const natural=$("voces").value.startsWith("openai:");
+  $("estado-voz").textContent=natural?"Voz generada con IA por OpenAI. Necesita conexión; las locuciones se reutilizan durante esta ejecución.":vozServidor.disponible?"Voz del dispositivo. Puedes elegir una voz de OpenAI en la lista.":"Voz del dispositivo. OpenAI estará disponible al activar la clave de API en este equipo.";
+}
 function cargarVoces() {
   voces=("speechSynthesis" in window?window.speechSynthesis.getVoices():[]).filter(v=>/^es(?:-|$)/i.test(v.lang));
-  const sel=$("voces"), anterior=sel.value||vozElegida; sel.replaceChildren();
-  if(!voces.length){const o=nodo("option","","Sin voz española disponible");o.value="";sel.append(o);$("estado-voz").textContent="La voz requiere una voz en español instalada en este dispositivo. El juego conserva texto y pictogramas.";}
-  else {for(const v of voces){const o=nodo("option","",`${v.name} (${v.lang})`);o.value=v.voiceURI;sel.append(o);}sel.value=voces.some(v=>v.voiceURI===anterior)?anterior:(voces.find(v=>v.localService)||voces[0]).voiceURI;$("estado-voz").textContent="La disponibilidad y el sonido de la voz dependen del dispositivo.";}
-  vozElegida=sel.value;
+  const sel=$("voces"),anterior=sel.value||vozElegida;sel.replaceChildren();
+  const naturales=nodo("optgroup");naturales.label="Voces de OpenAI";
+  for(const v of vozServidor.voces){const o=nodo("option","",`${v.nombre} · OpenAI`);o.value=`openai:${v.id}`;o.disabled=!vozServidor.disponible;naturales.append(o);}
+  if(!vozServidor.disponible){const o=nodo("option","","OpenAI · pendiente de activación");o.value="";o.disabled=true;naturales.append(o);}
+  sel.append(naturales);
+  const dispositivo=nodo("optgroup");dispositivo.label="Voces de este dispositivo";
+  for(const v of voces){const o=nodo("option","",`${v.name} (${v.lang})`);o.value=v.voiceURI;dispositivo.append(o);}
+  if(!voces.length){const o=nodo("option","","Sin voz española en el dispositivo");o.value="";dispositivo.append(o);}
+  sel.append(dispositivo);
+  const anteriorValida=vozManual&&[...sel.options].some(o=>o.value===anterior&&!o.disabled&&o.value);
+  const predeterminada=vozServidor.disponible?`openai:${vozServidor.voces[0]?.id}`:(voces.find(v=>/google.*espa[ñn]ol|google.*spanish/i.test(v.name))||voces.find(v=>/google|natural|online/i.test(v.name))||voces[0])?.voiceURI||"";
+  sel.value=anteriorValida?anterior:predeterminada;vozElegida=sel.value;notaVoz();
 }
-function hablar(texto) {
-  if(!$("voz").checked)return;
+function hablarDispositivo(texto) {
   if(!("speechSynthesis" in window)||!voces.length){aviso.textContent="No hay voz en español disponible. Puedes seguir con los pictogramas y el texto.";return;}
-  pararVoz(); const u=new SpeechSynthesisUtterance(texto); locucion=u;
-  u.voice=voces.find(v=>v.voiceURI===$("voces").value)||voces[0];u.lang=u.voice.lang;u.rate=Number($("velocidad").value);u.pitch=1;
+  const u=new SpeechSynthesisUtterance(texto);locucion=u;
+  u.voice=voces.find(v=>v.voiceURI===$("voces").value)||voces.find(v=>/google/i.test(v.name))||voces[0];
+  u.lang=u.voice.lang;u.rate=Number($("velocidad").value);u.pitch=1;
   u.onerror=e=>{if(!["canceled","interrupted"].includes(e.error))aviso.textContent="No se pudo reproducir la voz. Puedes volver a pulsar Repetir.";};
   window.speechSynthesis.speak(u);
+}
+async function hablar(texto,prueba=false) {
+  if(!$("voz").checked)return;
+  pararVoz();const turno=turnoVoz;
+  if(!$("voces").value.startsWith("openai:")){hablarDispositivo(texto);return;}
+  const voz=$("voces").value.slice(7),revision=vista.revision;
+  let respaldoUsado=false;
+  const respaldo=mensaje=>{if(turno!==turnoVoz||respaldoUsado)return;respaldoUsado=true;$("estado-voz").textContent=mensaje;aviso.textContent=mensaje+" Se usará la voz del dispositivo.";hablarDispositivo(texto);};
+  peticionVoz=new AbortController();$("estado-voz").textContent="Preparando la lectura…";
+  try {
+    const r=await fetch("/api/voz",{method:"POST",headers:{"Content-Type":"application/json"},signal:peticionVoz.signal,body:JSON.stringify({voz,revision,prueba})});
+    if(!r.ok){const d=await r.json();throw Error(d.error||"No se pudo preparar la voz.");}
+    const blob=await r.blob();if(turno!==turnoVoz)return;
+    urlAudio=URL.createObjectURL(blob);audioVoz=new Audio(urlAudio);audioVoz.playbackRate=Number($("velocidad").value);
+    audioVoz.onerror=()=>respaldo("No se pudo reproducir la voz de OpenAI.");
+    await audioVoz.play();if(turno===turnoVoz)notaVoz();
+  } catch(e) {
+    if(turno!==turnoVoz||e.name==="AbortError")return;
+    respaldo(e.message);
+  } finally {if(turno===turnoVoz)peticionVoz=null;}
 }
 async function accion(tipo,payload) {
   if(ocupado||!vista)return; ocupado=true; aviso.textContent=""; const antes=vista.fase;
   if(tipo==="iniciar") {const n=Number($("retos").value);if(!Number.isInteger(n)||n<1||n>48){aviso.textContent="Selecciona entre 1 y 48 retos en Preferencias.";ocupado=false;return;} payload={...payload,retos:n};}
-  if(["pausar","salir","nueva_partida"].includes(tipo))pararVoz();
+  pararVoz();
   for(const b of juego.querySelectorAll("button"))b.disabled=true;
   juego.setAttribute("aria-busy","true");
   const entrada={tipo,payload,evento_id:crypto.randomUUID(),revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
@@ -176,11 +242,17 @@ async function accion(tipo,payload) {
   } catch(e) {aviso.textContent="No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida.";juego.setAttribute("aria-busy","false");}
   finally {ocupado=false;}
 }
-$("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();});
+$("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();ritmoCarrusel();});
 $("cerrar-preferencias").addEventListener("click",()=>$("preferencias").close());
+$("cerrar-ajustes").addEventListener("click",()=>$("preferencias").close());
+$("preferencias").addEventListener("close",ritmoCarrusel);
+document.addEventListener("visibilitychange",ritmoCarrusel);
+movimientoReducido.addEventListener("change",e=>{if(carrusel&&e.matches){carrusel.pausado=true;cambiarPaisaje(0);}ritmoCarrusel();});
 $("voz").addEventListener("change",()=>{if(!$("voz").checked)pararVoz();});
-$("voces").addEventListener("change",()=>vozElegida=$("voces").value);
-$("probar-voz").addEventListener("click",()=>hablar("Hola. Vamos a descubrir dónde viven los animales."));
-window.addEventListener("pagehide",pararVoz);cargarVoces();
+$("voces").addEventListener("change",()=>{pararVoz();vozManual=true;vozElegida=$("voces").value;notaVoz();});
+$("velocidad").addEventListener("change",pararVoz);
+$("probar-voz").addEventListener("click",()=>hablar("Hola. Vamos a descubrir dónde viven los animales.",true));
+window.addEventListener("pagehide",()=>{pararVoz();detenerCarrusel();});cargarVoces();
+fetch("/api/voz/config").then(r=>r.json()).then(c=>{vozServidor=c;cargarVoces();}).catch(()=>{});
 if("speechSynthesis" in window)window.speechSynthesis.addEventListener("voiceschanged",cargarVoces);
 fetch("/api/vista").then(r=>{if(!r.ok)throw Error();return r.json();}).then(v=>{vista=v;render();}).catch(()=>{juego.replaceChildren(nodo("p","introduccion","No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página."));juego.setAttribute("aria-busy","false");});

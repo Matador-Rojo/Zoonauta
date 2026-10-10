@@ -1,0 +1,87 @@
+{
+  "herramienta": "imagegen integrada",
+  "modo": "builtin",
+  "fecha": "2026-10-10",
+  "fondos": [
+    {
+      "id": "H01",
+      "ruta": "codigo/interfaz/web/portada-selva.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: lush tropical rainforest at early morning, layered emerald jungle valley with ancient trees and natural hanging vines, a beautiful waterfall flowing down moss-covered rock on the RIGHT, distant green rainforest mountains, mist and soft golden shafts of sunlight, rich leafy textures. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition, matching a collection of wilderness landscapes. Keep realistic colors with rich shadows and restrained highlights. Constraints: NO animals, no macaw, no bird, no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-a57dbd5e-5b66-4d87-b4ca-99930eadab9b.png"
+    },
+    {
+      "id": "H02",
+      "ruta": "codigo/interfaz/web/fondos/H02.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: African savanna at golden hour, an elegant acacia on the RIGHT, gently rolling tall golden grasses, distant hills, warm sunlight and dramatic clouds. No animals. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition. Keep realistic colors with rich shadows and restrained highlights. Constraints: no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-d3d6de36-cc1c-4137-a539-17e7a6afba02.png"
+    },
+    {
+      "id": "H03",
+      "ruta": "codigo/interfaz/web/fondos/H03.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: vast Sahara sand dunes, sweeping amber ridges on the RIGHT with detailed wind ripples in the sand, terracotta cliffs far away, low sun and restrained cinematic golden light. No animals. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition. Keep realistic colors with rich shadows and restrained highlights. Constraints: no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-7723cad3-a5a7-4409-ab44-8a6f02c5ac2b.png"
+    },
+    {
+      "id": "H04",
+      "ruta": "codigo/interfaz/web/fondos/H04.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: ocean from just beneath the surface, clear turquoise seawater, vibrant natural coral reef concentrated on the RIGHT, sunbeams through the surface, deep open blue negative space on the left. No animals. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition. Keep realistic colors with rich shadows and restrained highlights. Constraints: no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-0aa94c7a-6c47-4921-8371-150f49c9d673.png"
+    },
+    {
+      "id": "H05",
+      "ruta": "codigo/interfaz/web/fondos/H05.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: temperate forest at early autumn, tall oak and maple trunks on the RIGHT, rich green and copper foliage, soft mist, lush mossy forest floor, a distant stream and warm shafts of sunlight. No animals. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition. Keep realistic colors with rich shadows and restrained highlights. Constraints: no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-f4696be9-a7f5-4c1d-9748-47a6d9f4761a.png"
+    },
+    {
+      "id": "H06",
+      "ruta": "codigo/interfaz/web/fondos/H06.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: peaceful freshwater river at dawn with a curved riverbank on the RIGHT, reeds and lily pads, lush green trees reflecting in still water, mountains in the background, luminous soft mist. No animals. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition. Keep realistic colors with rich shadows and restrained highlights. Constraints: no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-b9252a02-c77e-457d-b513-ee532da4e3e9.png"
+    },
+    {
+      "id": "H07",
+      "ruta": "codigo/interfaz/web/fondos/H07.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: Antarctic coastline, monumental blue glacier on the RIGHT, snow-covered rock and ice floes, glassy dark teal water, luminous white mountains and subtle sunlight. No animals. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition. Keep realistic colors with rich shadows and restrained highlights. Constraints: no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-ba71e271-6247-40ac-b4f6-cf766abc8d92.png"
+    },
+    {
+      "id": "H08",
+      "ruta": "codigo/interfaz/web/fondos/H08.webp",
+      "dimensiones": [
+        1536,
+        1024
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: full-screen photographic background for Zoonauta educational animal habitats app, landscape 1536x1024. Scene: majestic high Andes mountain range, jagged snow-capped peaks on the RIGHT, dark mossy rocks and mountain grass in foreground, wisps of clouds below peaks, cinematic alpine sunrise. No animals. Composition: single continuous wide natural landscape, detailed realistic main features on right half. Left 45 percent must be visually quiet, naturally darker and with gentle low detail for overlaid white typography. Camera: premium cinematic landscape photography, subtle atmospheric depth, natural texture, elegant calm composition. Keep realistic colors with rich shadows and restrained highlights. Constraints: no text, no typography, no UI, no logos, no watermark, no collage or panels, no illustration.",
+      "original_generado": "/workspace/scratch/3596042fb9c5/generated_images/exec-afb69778-df27-479f-8a17-87dfa2185e7b.png"
+    }
+  ]
+}

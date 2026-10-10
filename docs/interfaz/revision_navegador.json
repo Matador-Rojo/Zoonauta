@@ -1,8 +1,12 @@
 {
   "fecha": "2026-10-10",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "navegador": "145.0.7632.6",
   "resultados": [
+    {
+      "caso": "Ocho fondos rotan cada 10 segundos con nombre y contador sincronizados; pausa, navegación manual y Preferencias sin alterar la partida",
+      "resultado": "OK"
+    },
     {
       "caso": "Búsqueda de 48 animales: mayúsculas y tildes, sin resultados, restauración y sin cambiar la partida",
       "resultado": "OK"
@@ -21,7 +25,7 @@
       "alcance": "Síntesis simulada en navegador; no certifica sonido audible ni comprensión."
     },
     {
-      "caso": "95 pictogramas y dos imágenes decorativas decodificados sin errores; portada con ocho paisajes y sin vídeo ni canvas",
+      "caso": "95 pictogramas y nueve imágenes decorativas decodificados sin errores; ocho fondos sin vídeo ni canvas",
       "resultado": "OK"
     },
     {
@@ -33,12 +37,21 @@
       "resultado": "OK"
     },
     {
-      "caso": "Inicio y partida entre 320 y 1280 px sin desbordamiento horizontal",
+      "caso": "Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal",
       "resultado": "OK"
     },
     {
       "caso": "Dispositivo sin voz española: aviso visible, texto y pictogramas operativos",
       "resultado": "OK"
+    },
+    {
+      "caso": "Google español tiene prioridad sobre voces locales; OpenAI sin clave permanece pendiente de activación",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Audio de OpenAI: ritmo, petición sin texto arbitrario, cancelación de audio tardío al pausar y respaldo del dispositivo ante fallo",
+      "resultado": "OK",
+      "alcance": "Servicio y reproductor simulados; no certifica voz real ni calidad audible."
     },
     {
       "caso": "Consulta técnica separada y modelo congelado",

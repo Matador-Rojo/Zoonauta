@@ -1,16 +1,20 @@
 {
-  "version": "3.2.0",
+  "version": "3.3.0",
   "fecha": "2026-10-10",
   "python": {
-    "total": 35,
-    "correctas": 35,
+    "total": 40,
+    "correctas": 40,
     "fallidas": 0
   },
   "navegador": {
     "fecha": "2026-10-10",
-    "version": "3.2.0",
+    "version": "3.3.0",
     "navegador": "145.0.7632.6",
     "resultados": [
+      {
+        "caso": "Ocho fondos rotan cada 10 segundos con nombre y contador sincronizados; pausa, navegación manual y Preferencias sin alterar la partida",
+        "resultado": "OK"
+      },
       {
         "caso": "Búsqueda de 48 animales: mayúsculas y tildes, sin resultados, restauración y sin cambiar la partida",
         "resultado": "OK"
@@ -29,7 +33,7 @@
         "alcance": "Síntesis simulada en navegador; no certifica sonido audible ni comprensión."
       },
       {
-        "caso": "95 pictogramas y dos imágenes decorativas decodificados sin errores; portada con ocho paisajes y sin vídeo ni canvas",
+        "caso": "95 pictogramas y nueve imágenes decorativas decodificados sin errores; ocho fondos sin vídeo ni canvas",
         "resultado": "OK"
       },
       {
@@ -41,12 +45,21 @@
         "resultado": "OK"
       },
       {
-        "caso": "Inicio y partida entre 320 y 1280 px sin desbordamiento horizontal",
+        "caso": "Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal",
         "resultado": "OK"
       },
       {
         "caso": "Dispositivo sin voz española: aviso visible, texto y pictogramas operativos",
         "resultado": "OK"
+      },
+      {
+        "caso": "Google español tiene prioridad sobre voces locales; OpenAI sin clave permanece pendiente de activación",
+        "resultado": "OK"
+      },
+      {
+        "caso": "Audio de OpenAI: ritmo, petición sin texto arbitrario, cancelación de audio tardío al pausar y respaldo del dispositivo ante fallo",
+        "resultado": "OK",
+        "alcance": "Servicio y reproductor simulados; no certifica voz real ni calidad audible."
       },
       {
         "caso": "Consulta técnica separada y modelo congelado",
@@ -69,12 +82,21 @@
     "criterio": "primera replica predefinida"
   },
   "voz": {
-    "adaptador": "Web Speech API",
+    "adaptador": "Web Speech API y GPT-Audio-1.5 opcional",
     "prueba_texto_idioma_y_cancelacion": "CORRECTA_SINTESIS_CONTROLADA",
-    "audio_audible_en_dispositivo_usuario_verificado": false
+    "audio_audible_en_dispositivo_usuario_verificado": false,
+    "voces_openai": [
+      "marin",
+      "cedar",
+      "coral"
+    ],
+    "prueba_api_cache_transcripcion_y_limites_http": "CORRECTA_CON_SERVICIO_SIMULADO",
+    "prueba_reproductor_ritmo_cancelacion_y_respaldo": "CORRECTA_CON_REPRODUCTOR_SIMULADO",
+    "llamada_real_api_openai_ejecutada": false,
+    "clave_api_en_navegador_o_repositorio": false
   },
   "interfaz": {
-    "inicio": "escena_de_selva_estatica_a_todo_el_ancho",
+    "inicio": "una_pantalla_con_ocho_fotografias_de_paisaje",
     "busqueda_catalogo": true,
     "seleccion_por_teclado": true,
     "ancho_minimo_comprobado_px": 320,
@@ -83,13 +105,26 @@
     "animaciones_automaticas": false,
     "imagenes_decorativas": [
       "codigo/interfaz/web/portada-selva.webp",
-      "codigo/interfaz/web/paisajes.webp"
+      "codigo/interfaz/web/paisajes.webp",
+      "codigo/interfaz/web/fondos/H02.webp",
+      "codigo/interfaz/web/fondos/H03.webp",
+      "codigo/interfaz/web/fondos/H04.webp",
+      "codigo/interfaz/web/fondos/H05.webp",
+      "codigo/interfaz/web/fondos/H06.webp",
+      "codigo/interfaz/web/fondos/H07.webp",
+      "codigo/interfaz/web/fondos/H08.webp"
     ],
     "pictogramas_educativos_conservados": 95,
-    "capturas": 8
+    "capturas": 8,
+    "scroll_vertical_inicio": false,
+    "carrusel_automatico_imagenes": true,
+    "intervalo_carrusel_segundos": 10,
+    "navegacion_y_pausa_paisajes": true,
+    "preferencias_pausa_carrusel": true,
+    "movimiento_reducido_pausa_carrusel": true
   },
   "servidor": {
-    "inicio_y_version_3_2": "OK",
+    "inicio_y_version_3_3": "OK",
     "sesion_http": "OK",
     "cierre_ctrl_c_con_sesion_activa": "OK"
   }

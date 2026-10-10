@@ -13,18 +13,19 @@
   </header>
   <main id="juego" aria-busy="true" tabindex="-1"><p class="cargando" role="status">Preparando tu expedición…</p></main>
   <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
-  <footer class="creditos"><span class="pie-lema">Zoonauta <span class="version">3.2</span></span><p>Pictogramas ARASAAC: Sergio Palao · Gobierno de Aragón · CC BY-NC-SA. SVG del prototipo: elaboración propia. Paisajes decorativos generados con IA.</p></footer>
+  <footer class="creditos"><span class="pie-lema">Zoonauta <span class="version">3.3</span></span><p>Pictogramas ARASAAC: Sergio Palao · Gobierno de Aragón · CC BY-NC-SA. SVG del prototipo: elaboración propia. Paisajes decorativos generados con IA.</p></footer>
   <dialog id="preferencias" aria-labelledby="titulo-preferencias">
-    <h2 id="titulo-preferencias">Preferencias</h2>
-    <p class="subtitulo">Elige el ritmo que te resulte más cómodo.</p>
-    <label class="campo">Retos por partida <input id="retos" type="number" min="1" max="48" value="8"></label>
-    <p class="detalle">Se aplica al comenzar una partida. Todos los animales siguen disponibles.</p>
-    <label class="campo horizontal"><input id="voz" type="checkbox" checked> Leer las respuestas en voz alta</label>
-    <label class="campo">Voz en español <select id="voces"><option value="">Buscando voces…</option></select></label>
-    <label class="campo">Velocidad <select id="velocidad"><option value="0.8">Despacio</option><option value="0.95" selected>Normal</option><option value="1.1">Más rápido</option></select></label>
-    <p id="estado-voz" class="detalle"></p>
-    <button id="probar-voz" class="secundario">Probar voz</button>
-    <button id="cerrar-preferencias" class="primario">Volver al juego</button>
+    <div class="ajustes-cabecera"><div><p class="etiqueta">Tu expedición</p><h2 id="titulo-preferencias">A tu manera.</h2></div><button id="cerrar-ajustes" class="cerrar-dialogo" aria-label="Cerrar Preferencias">×</button></div>
+    <p class="subtitulo">Un ritmo cómodo. Una voz que te acompañe.</p>
+    <section class="ajustes-seccion" aria-labelledby="ajustes-partida"><div class="ajuste-fila"><div><h3 id="ajustes-partida">La partida</h3><p class="detalle">¿Cuántos animales quieres explorar?</p></div><label class="numero-retos"><span class="solo-lectura">Retos por partida</span><input id="retos" type="number" min="1" max="48" value="8"></label></div><p class="nota-ajustes">De 1 a 48. Se aplica al comenzar; todos los animales siguen disponibles.</p></section>
+    <section class="ajustes-seccion" aria-labelledby="ajustes-voz">
+      <label class="ajuste-fila voz-interruptor"><span><span id="ajustes-voz" class="ajuste-titulo">Una guía con voz</span><span class="detalle">Leer las respuestas en voz alta.</span></span><input id="voz" type="checkbox" checked></label>
+      <label class="campo">Voz en español <select id="voces"><option value="">Buscando voces…</option></select></label>
+      <label class="campo">Ritmo de lectura <select id="velocidad"><option value="0.8">Despacio</option><option value="0.95" selected>Natural</option><option value="1.1">Más ágil</option></select></label>
+      <p id="estado-voz" class="nota-ajustes" role="status"></p>
+      <button id="probar-voz" class="secundario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7V5Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Probar voz</button>
+    </section>
+    <div class="ajustes-pie"><details class="creditos-ajustes"><summary>Créditos visuales</summary><p>Pictogramas ARASAAC: Sergio Palao · Gobierno de Aragón · CC BY-NC-SA. SVG del prototipo: elaboración propia. Paisajes decorativos generados con IA.</p></details><button id="cerrar-preferencias" class="primario">Volver al juego <span aria-hidden="true">↗</span></button></div>
   </dialog>
   <noscript><p>Activa JavaScript para seleccionar pictogramas y escuchar las respuestas.</p></noscript>
 </body></html>
