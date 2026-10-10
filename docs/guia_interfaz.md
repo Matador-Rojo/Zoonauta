@@ -1,6 +1,6 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
-Versión 3.3.0.
+Versión 3.3.1.
 
 ## 1. Qué está implementado
 
@@ -70,62 +70,29 @@ Las selecciones manuales se registran y no actualizan α o β.
 
 ## 3. Voz
 
-La lectura ofrece dos fuentes. Las voces del dispositivo usan Web Speech API,
-filtradas a español. Google español tiene prioridad sobre las voces locales cuando
-está disponible. Preferencias permite elegir otra voz, cambiar el ritmo, silenciar
-la guía y escuchar una muestra. La disponibilidad de estas voces depende del navegador
-y del sistema. El ZIP no instala voces ni incluye grabaciones.
+La lectura usa las voces españolas disponibles mediante Web Speech API. Google
+español tiene prioridad cuando está disponible. Preferencias permite elegir otra
+voz, cambiar el ritmo, silenciar la guía y escuchar una muestra. La elección manual
+se conserva cuando el navegador actualiza la lista de voces.
 
-La fuente opcional de OpenAI usa `gpt-audio-1.5` mediante Chat Completions con
-salida de audio MP3. Se ofrecen Marin, Cedar y Coral. Para activarla en Windows:
+No se solicitan claves de API ni cuentas adicionales. El servidor local no genera
+locuciones ni envía textos a un proveedor de voz. Algunas voces ofrecidas por el
+navegador pueden utilizar un servicio remoto; su disponibilidad y calidad dependen
+del navegador y del sistema. El ZIP no instala voces ni incluye grabaciones.
 
-```console
-py -m codigo.interfaz.servidor --abrir --puerto 8766 --voz-openai
-```
+Se lee exactamente el texto de voz de la respuesta del agente. Repetir conserva
+ese texto. Pausar, Salir, cambiar de voz o de ritmo e iniciar otra acción cancela la
+lectura anterior. Recargar conserva la partida mientras exista la sesión y no
+reproduce audio automáticamente. Si no existe una voz española, se muestra un
+aviso y el juego continúa con texto y pictogramas.
 
-Introduce una clave de API de tu cuenta en la terminal, en la entrada oculta.
-No se guarda en archivos ni se envía al navegador. También puede configurarse
-`OPENAI_API_KEY` antes de iniciar el servidor; sin la variable o la entrada privada,
-las opciones de OpenAI permanecen pendientes de activación y se usa el dispositivo.
-Para otros sistemas sustituye `py` por `python`.
-Puedes crear la clave en https://platform.openai.com/api-keys.
-La API necesita conexión, acceso al modelo y saldo, y factura el uso en la cuenta.
+La comprobación automatizada sustituye el sintetizador para verificar el texto,
+idioma, ritmo, selección, repetición, silencio y cancelación. La naturalidad y
+pronunciación se deben comprobar escuchando una voz real en el equipo del usuario.
 
-El servidor toma el texto de la respuesta vigente o la muestra fija de Probar voz;
-el navegador no puede solicitar locuciones de texto arbitrario. Las instrucciones
-piden una lectura cálida en español latinoamericano. La transcripción devuelta debe
-conservar las mismas palabras; se permiten diferencias de puntuación y mayúsculas.
-Si cambia las palabras, se descarta el audio y se recurre al dispositivo. Esta
-comprobación utiliza la transcripción del proveedor y no una auditoría independiente
-del sonido generado.
-
-Las locuciones válidas se conservan en memoria por modelo, voz y texto (hasta 128
-entradas y 32 MB). Repetir reutiliza los mismos bytes mientras sigan en esa caché;
-reiniciar el servidor o expulsar una entrada exige generar de nuevo. Cambiar el ritmo
-modifica la reproducción, sin otra petición de generación.
-Pausar, Salir, cambiar de voz o iniciar otra acción cancela la lectura y la petición
-del navegador. Una respuesta tardía no comienza a sonar. Una petición que ya llegó
-al proveedor puede terminar y consumir API aunque se haya cancelado su reproducción.
-Recargar conserva la partida mientras exista la sesión y no reproduce audio automáticamente.
-Ante un fallo de OpenAI se indica el problema y se intenta la voz española del dispositivo.
-
-GPT-Live-1 sirve para conversaciones continuas, escuchando y hablando simultáneamente.
-Esta actividad usa respuestas preparadas y una selección de pictogramas; la integración
-de audio se limita a narrarlas. No solicita micrófono ni modifica el agente del curso.
-La documentación oficial anuncia la retirada de los modelos TTS anteriores el
-6 de enero de 2027; esta integración usa GPT-Audio-1.5, sin esa dependencia.
-
-Documentación oficial consultada el 10 de octubre de 2026:
-
-- [GPT-Live-1](https://developers.openai.com/api/docs/models/gpt-live-1).
-- [GPT-Audio-1.5](https://developers.openai.com/api/docs/models/gpt-audio-1.5).
-- [Audio en Chat Completions](https://developers.openai.com/api/docs/guides/audio-chat-completions).
-- [Referencia de Chat Completions](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create).
-- [Deprecaciones](https://developers.openai.com/api/docs/deprecations).
-
-La prueba automatizada usa API, audio y síntesis simulados. No se realizó una llamada
-real a OpenAI porque este entorno no tiene una clave configurada. La naturalidad,
-pronunciación y calidad audible deben probarse en el equipo del usuario.
+Se investigaron Piper y Kokoro como posibles motores locales. La comparación y
+las fuentes están en [Alternativas de voz](interfaz/alternativas_voz.md).
+Estos motores todavía no se han instalado ni integrado.
 
 ## 4. Recursos visuales y presentación
 
@@ -167,7 +134,7 @@ herramienta integrada imagegen y se codificaron como WebP sin alterar su conteni
 Son elementos decorativos adicionales a los 95 pictogramas, sin autoridad para validar
 asociaciones del banco. El mapa SVG anterior se conserva como antecedente.
 Las referencias, los prompts y las rutas están en `docs/interfaz/diseno_visual.md`
-y `docs/interfaz/fondos_generados.json`. La terminal y el pie del juego indican 3.3.
+y `docs/interfaz/fondos_generados.json`. La terminal indica 3.3.1; el pie del juego identifica la familia 3.3.
 
 ## 5. Estado y registros
 
@@ -204,8 +171,8 @@ Actualizar allí solo consulta el registro.
 
 ## 7. Verificación realizada
 
-Pasaron 40 pruebas de Python: 19 del núcleo, siete de aprendizaje, nueve del
-adaptador web y cinco de voz. Se ejecutaron trece casos en Chromium 145.0.7632.6.
+Pasaron 35 pruebas de Python: 19 del núcleo, siete de aprendizaje y nueve del
+adaptador web. Se ejecutaron trece casos en Chromium 145.0.7632.6.
 
 | Comprobación en navegador | Resultado |
 |---|---|
@@ -219,11 +186,11 @@ adaptador web y cinco de voz. Se ejecutaron trece casos en Chromium 145.0.7632.6
 | Inicio en una pantalla: 320 × 568, 390 × 844, 650 × 390, 844 × 390, 768 × 900, 1024 × 600, 1024 × 768, 1280 × 720 y 1920 × 1080 | Correcto |
 | Carrusel de ocho fondos: contador, pausa, navegación y Preferencias | Correcto |
 | Prioridad de Google español sobre voces locales | Correcto |
-| Audio OpenAI: reproducción, ritmo, cancelación tardía y respaldo | Correcto con servicio y reproductor simulados |
+| Preferencias de voz: selección manual, ritmo, silencio y cancelación | Correcto con síntesis controlada |
 | Ausencia de voz española: aviso y juego operativo | Correcto |
 | Revisión técnica separada y modelo congelado | Correcto |
 
-La prueba de voz intercepta el sintetizador y simula el proveedor y el reproductor;
+La prueba de voz intercepta el sintetizador;
 no verifica sonido audible ni comprensión en otro dispositivo. La inspección
 de las capturas no constituye una certificación de accesibilidad.
 
@@ -257,14 +224,13 @@ Referencia: [Playwright Library](https://playwright.dev/docs/library).
 | `codigo/interfaz/web/mundo.svg` | Antecedente: mapa decorativo de la versión 3.1. |
 | `codigo/interfaz/web/portada-selva.webp` | Selva renovada del carrusel de la versión 3.3. |
 | `codigo/interfaz/web/fondos/` | Siete fondos adicionales del carrusel. |
-| `codigo/interfaz/voz.py` | Voz OpenAI opcional, lectura verificada y caché. |
 | `codigo/interfaz/web/paisajes.webp` | Atlas estático de los ocho paisajes decorativos. |
 | `codigo/interfaz/crear_svg.py` | Fuente editable de las ilustraciones propias. |
 | `codigo/interfaz/preparar_recursos.py` | Regeneración de recursos; innecesaria para jugar. |
 | `assets/pictogramas/` | 28 PNG y 67 SVG listos para presentar. |
 | `datos/pictogramas.json` | IDs simbólicos, imágenes y créditos. |
 | `datos/fuentes_pictogramas.json` | Metadatos y descargas ARASAAC usadas. |
-| `tests/test_voz.py` | Límites HTTP, fidelidad, caché y fallos de voz sin API real. |
+| `docs/interfaz/alternativas_voz.md` | Comparación de motores locales todavía no integrados. |
 | `tests/test_interfaz.py` | Concurrencia, repetición, límites y congelación. |
 | `tests/ejecutar_navegador.py` | Servidor de prueba y ejecución de Playwright. |
 | `tests/verificar_interfaz.cjs` | Recorridos de navegador y capturas. |
@@ -291,8 +257,8 @@ sin actualizar sus parámetros. La revisión técnica se realiza en una página 
 Se incorporaron 95 recursos visuales con rutas, créditos y huellas de integridad.
 Las pruebas de Python y los recorridos en navegador verificaron el funcionamiento,
 incluidos repetición, pausa, respuesta neutral y vista móvil. La voz depende de
-las voces españolas del dispositivo o de una configuración opcional de OpenAI.
-Se probó con un sintetizador, un proveedor y un reproductor controlados; no se
-verificó la calidad audible de una voz real de OpenAI.
+las voces españolas disponibles en el navegador.
+Se probó con un sintetizador controlado; no se verificó la calidad audible
+en el equipo del usuario.
 La comprensión CAA y la eficacia pedagógica requieren evaluación con usuarios;
 los experimentos de aprendizaje siguen siendo exclusivamente sintéticos.

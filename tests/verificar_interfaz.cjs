@@ -144,37 +144,38 @@ async function clicar(page,texto,fase){
   await google.addInitScript(()=>{window.speechSynthesis.getVoices=()=>[{voiceURI:'local',name:'Microsoft español',lang:'es-ES',localService:true},{voiceURI:'google',name:'Google español',lang:'es-ES',localService:false}];});
   const pg=await google.newPage();await pg.goto(base);await pg.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();
   assert.equal(await pg.locator('#voces').inputValue(),'google');
-  resultados.push({caso:'Google español tiene prioridad sobre voces locales; OpenAI sin clave permanece pendiente de activación',resultado:'OK'});
-  // Ruta de audio de OpenAI simulada: recepción, ritmo, fallo y cancelación tardía.
-  const natural=await browser.newContext();await mockVoz(natural);
-  await natural.addInitScript(()=>{window.__audio=[];window.Audio=class{constructor(src){this.src=src;window.__audio.push(this);}play(){this.reproducido=true;return Promise.resolve();}pause(){this.pausado=true;}removeAttribute(){}load(){}};});
-  const pn=await natural.newPage();pn.on('pageerror',e=>errores.push(e.message));
-  await pn.route('**/api/voz/config',route=>route.fulfill({json:{disponible:true,voces:[{id:'marin',nombre:'Marin'},{id:'cedar',nombre:'Cedar'}]}}));
-  let liberar,solicitudes=0;const entradas=[];
-  await pn.route('**/api/voz',async route=>{entradas.push(route.request().postDataJSON());solicitudes++;if(solicitudes===3)await new Promise(resolve=>liberar=resolve);await route.fulfill({status:200,contentType:'audio/mpeg',body:Buffer.from('ID3audio-simulado')}).catch(()=>{});});
-  await pn.goto(base);await pn.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();
-  await pn.waitForFunction(()=>[...document.getElementById('voces').options].some(o=>o.value==='openai:marin'&&!o.disabled));
-  await pn.getByRole('button',{name:'Preferencias',exact:true}).click();await pn.locator('#voces').selectOption('openai:marin');await pn.locator('#velocidad').selectOption('0.8');await pn.getByRole('button',{name:'Volver al juego',exact:true}).click();
-  await clicar(pn,'El agente elige','ESPERANDO_RESPUESTA');await pn.waitForFunction(()=>window.__audio.length===1&&window.__audio[0].reproducido);
-  await clicar(pn,'Ayuda');await pn.waitForFunction(()=>window.__audio.length===2&&window.__audio[1].reproducido);
-  assert.equal(await pn.evaluate(()=>window.__audio[1].playbackRate),0.8);assert.equal(entradas[1].voz,'marin');assert.equal('texto' in entradas[1],false);
-  await clicar(pn,'Repetir');while(!liberar)await pn.waitForTimeout(10);
-  await clicar(pn,'Pausar','PAUSADA');liberar();await pn.waitForTimeout(40);assert.equal(await pn.evaluate(()=>window.__audio.length),2);assert.ok(await pn.evaluate(()=>window.__audio.every(a=>a.pausado)));
-  await pn.unroute('**/api/voz');await pn.route('**/api/voz',route=>route.fulfill({status:503,json:{error:'Servicio temporalmente no disponible.'}}));
-  await clicar(pn,'Reanudar','ESPERANDO_RESPUESTA');await pn.waitForFunction(()=>window.__voz.length>0);assert.equal((await pn.evaluate(()=>window.__voz.at(-1))).texto,(await vista(pn)).respuesta.texto_voz);
-  // Un error del reproductor y el rechazo de play no deben duplicar el respaldo.
-  await pn.unroute('**/api/voz');await pn.route('**/api/voz',route=>route.fulfill({status:200,contentType:'audio/mpeg',body:Buffer.from('ID3audio-simulado')}));
-  const vocesAntes=await pn.evaluate(()=>window.__voz.length);
-  await pn.evaluate(()=>{window.Audio.prototype.play=function(){this.onerror();return Promise.reject(new Error('Audio no decodificable.'));};});
-  await clicar(pn,'Repetir');await pn.waitForFunction(n=>window.__voz.length>n,vocesAntes);await pn.waitForTimeout(30);
-  assert.equal(await pn.evaluate(()=>window.__voz.length),vocesAntes+1);
-  resultados.push({caso:'Audio de OpenAI: ritmo, petición sin texto arbitrario, cancelación de audio tardío al pausar y respaldo del dispositivo ante fallo',resultado:'OK',alcance:'Servicio y reproductor simulados; no certifica voz real ni calidad audible.'});
+  resultados.push({caso:'Google español tiene prioridad sobre otras voces españolas disponibles',resultado:'OK'});
+  // La elección manual y el ritmo deben mantenerse sin un servicio de voz del servidor.
+  await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
+  await pg.locator('#voces').selectOption('local');await pg.locator('#velocidad').selectOption('0.8');
+  await pg.getByRole('button',{name:'Probar voz',exact:true}).click();
+  assert.equal((await pg.evaluate(()=>window.__voz.at(-1))).rate,0.8);
+  await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
+  await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
+  assert.equal(await pg.locator('#voces').inputValue(),'local');
+  await pg.evaluate(()=>cargarVoces());assert.equal(await pg.locator('#voces').inputValue(),'local');
+  assert.equal(await pg.locator('#voces option:disabled').count(),0);
+  assert.equal(await pg.locator('#voces option').count(),2);
+  await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
+  await clicar(pg,'El agente elige','ESPERANDO_RESPUESTA');
+  const textoAntes=(await vista(pg)).respuesta.texto_voz;
+  assert.equal((await pg.evaluate(()=>window.__voz.at(-1))).texto,textoAntes);
+  const cancelaciones=await pg.evaluate(()=>window.__cancelaciones);
+  await clicar(pg,'Pausar','PAUSADA');
+  assert.ok(await pg.evaluate(n=>window.__cancelaciones>n,cancelaciones));
+  await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
+  await pg.locator('#voz').uncheck();
+  await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
+  const lecturas=await pg.evaluate(()=>window.__voz.length);
+  await clicar(pg,'Reanudar','ESPERANDO_RESPUESTA');
+  assert.equal(await pg.evaluate(()=>window.__voz.length),lecturas);
+  resultados.push({caso:'Preferencias de voz: selección manual conservada, ritmo, lectura exacta, cancelación al pausar y guía silenciada',resultado:'OK',alcance:'Síntesis simulada en navegador; no certifica sonido audible.'});
   // Página técnica de la misma cookie: solo lectura, modelo congelado.
   await page.goto(base+'/revision');await page.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
   const tecnicos=JSON.parse(await page.locator('#datos').textContent());assert.equal(tecnicos.parametros_congelados,true);
   resultados.push({caso:'Consulta técnica separada y modelo congelado',resultado:'OK'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.3.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.3.1',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

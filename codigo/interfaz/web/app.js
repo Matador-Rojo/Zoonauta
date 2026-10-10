@@ -2,7 +2,6 @@
 let vista = null, ocupado = false, voces = [], vozElegida = "", locucion = null;
 let carrusel = null, temporizadorPaisaje = null;
 let vozManual=false;
-let vozServidor={disponible:false,voces:[]},peticionVoz=null,audioVoz=null,urlAudio=null,turnoVoz=0;
 const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
 const $ = id => document.getElementById(id);
 const juego = $("juego"), aviso = $("aviso");
@@ -175,57 +174,33 @@ function render(enfocar=false) {
   }
 }
 function pararVoz() {
-  turnoVoz++;peticionVoz?.abort();peticionVoz=null;
-  if(audioVoz){audioVoz.pause();audioVoz.removeAttribute("src");audioVoz.load();audioVoz=null;}
-  if(urlAudio){URL.revokeObjectURL(urlAudio);urlAudio=null;}
-  if("speechSynthesis" in window)window.speechSynthesis.cancel();locucion=null;
+  locucion=null;
+  if("speechSynthesis" in window)window.speechSynthesis.cancel();
 }
 function notaVoz() {
-  const natural=$("voces").value.startsWith("openai:");
-  $("estado-voz").textContent=natural?"Voz generada con IA por OpenAI. Necesita conexión; las locuciones se reutilizan durante esta ejecución.":vozServidor.disponible?"Voz del dispositivo. Puedes elegir una voz de OpenAI en la lista.":"Voz del dispositivo. OpenAI estará disponible al activar la clave de API en este equipo.";
+  $("estado-voz").textContent=voces.length?"Lectura en español. Elige una voz y escucha una muestra.":"No hay una voz en español disponible. Puedes seguir con los pictogramas y el texto.";
+  $("probar-voz").disabled=!voces.length;
 }
 function cargarVoces() {
   voces=("speechSynthesis" in window?window.speechSynthesis.getVoices():[]).filter(v=>/^es(?:-|$)/i.test(v.lang));
   const sel=$("voces"),anterior=sel.value||vozElegida;sel.replaceChildren();
-  const naturales=nodo("optgroup");naturales.label="Voces de OpenAI";
-  for(const v of vozServidor.voces){const o=nodo("option","",`${v.nombre} · OpenAI`);o.value=`openai:${v.id}`;o.disabled=!vozServidor.disponible;naturales.append(o);}
-  if(!vozServidor.disponible){const o=nodo("option","","OpenAI · pendiente de activación");o.value="";o.disabled=true;naturales.append(o);}
-  sel.append(naturales);
-  const dispositivo=nodo("optgroup");dispositivo.label="Voces de este dispositivo";
-  for(const v of voces){const o=nodo("option","",`${v.name} (${v.lang})`);o.value=v.voiceURI;dispositivo.append(o);}
-  if(!voces.length){const o=nodo("option","","Sin voz española en el dispositivo");o.value="";dispositivo.append(o);}
-  sel.append(dispositivo);
-  const anteriorValida=vozManual&&[...sel.options].some(o=>o.value===anterior&&!o.disabled&&o.value);
-  const predeterminada=vozServidor.disponible?`openai:${vozServidor.voces[0]?.id}`:(voces.find(v=>/google.*espa[ñn]ol|google.*spanish/i.test(v.name))||voces.find(v=>/google|natural|online/i.test(v.name))||voces[0])?.voiceURI||"";
+  for(const v of voces){const o=nodo("option","",`${v.name} (${v.lang})`);o.value=v.voiceURI;sel.append(o);}
+  if(!voces.length){const o=nodo("option","","Sin voz española disponible");o.value="";sel.append(o);}
+  sel.disabled=!voces.length;
+  const anteriorValida=vozManual&&voces.some(v=>v.voiceURI===anterior);
+  const predeterminada=(voces.find(v=>/google.*espa[ñn]ol|google.*spanish/i.test(v.name))||voces.find(v=>/google|natural|online/i.test(v.name))||voces[0])?.voiceURI||"";
   sel.value=anteriorValida?anterior:predeterminada;vozElegida=sel.value;notaVoz();
 }
-function hablarDispositivo(texto) {
+function hablar(texto) {
+  if(!$("voz").checked)return;
+  pararVoz();
   if(!("speechSynthesis" in window)||!voces.length){aviso.textContent="No hay voz en español disponible. Puedes seguir con los pictogramas y el texto.";return;}
   const u=new SpeechSynthesisUtterance(texto);locucion=u;
-  u.voice=voces.find(v=>v.voiceURI===$("voces").value)||voces.find(v=>/google/i.test(v.name))||voces[0];
+  u.voice=voces.find(v=>v.voiceURI===$("voces").value)||voces[0];
   u.lang=u.voice.lang;u.rate=Number($("velocidad").value);u.pitch=1;
-  u.onerror=e=>{if(!["canceled","interrupted"].includes(e.error))aviso.textContent="No se pudo reproducir la voz. Puedes volver a pulsar Repetir.";};
+  u.onend=()=>{if(locucion===u)locucion=null;};
+  u.onerror=e=>{if(locucion===u){locucion=null;if(!["canceled","interrupted"].includes(e.error))aviso.textContent="No se pudo reproducir la voz. Puedes volver a pulsar Repetir.";}};
   window.speechSynthesis.speak(u);
-}
-async function hablar(texto,prueba=false) {
-  if(!$("voz").checked)return;
-  pararVoz();const turno=turnoVoz;
-  if(!$("voces").value.startsWith("openai:")){hablarDispositivo(texto);return;}
-  const voz=$("voces").value.slice(7),revision=vista.revision;
-  let respaldoUsado=false;
-  const respaldo=mensaje=>{if(turno!==turnoVoz||respaldoUsado)return;respaldoUsado=true;$("estado-voz").textContent=mensaje;aviso.textContent=mensaje+" Se usará la voz del dispositivo.";hablarDispositivo(texto);};
-  peticionVoz=new AbortController();$("estado-voz").textContent="Preparando la lectura…";
-  try {
-    const r=await fetch("/api/voz",{method:"POST",headers:{"Content-Type":"application/json"},signal:peticionVoz.signal,body:JSON.stringify({voz,revision,prueba})});
-    if(!r.ok){const d=await r.json();throw Error(d.error||"No se pudo preparar la voz.");}
-    const blob=await r.blob();if(turno!==turnoVoz)return;
-    urlAudio=URL.createObjectURL(blob);audioVoz=new Audio(urlAudio);audioVoz.playbackRate=Number($("velocidad").value);
-    audioVoz.onerror=()=>respaldo("No se pudo reproducir la voz de OpenAI.");
-    await audioVoz.play();if(turno===turnoVoz)notaVoz();
-  } catch(e) {
-    if(turno!==turnoVoz||e.name==="AbortError")return;
-    respaldo(e.message);
-  } finally {if(turno===turnoVoz)peticionVoz=null;}
 }
 async function accion(tipo,payload) {
   if(ocupado||!vista)return; ocupado=true; aviso.textContent=""; const antes=vista.fase;
@@ -251,8 +226,7 @@ movimientoReducido.addEventListener("change",e=>{if(carrusel&&e.matches){carruse
 $("voz").addEventListener("change",()=>{if(!$("voz").checked)pararVoz();});
 $("voces").addEventListener("change",()=>{pararVoz();vozManual=true;vozElegida=$("voces").value;notaVoz();});
 $("velocidad").addEventListener("change",pararVoz);
-$("probar-voz").addEventListener("click",()=>hablar("Hola. Vamos a descubrir dónde viven los animales.",true));
+$("probar-voz").addEventListener("click",()=>hablar("Hola. Vamos a descubrir dónde viven los animales."));
 window.addEventListener("pagehide",()=>{pararVoz();detenerCarrusel();});cargarVoces();
-fetch("/api/voz/config").then(r=>r.json()).then(c=>{vozServidor=c;cargarVoces();}).catch(()=>{});
 if("speechSynthesis" in window)window.speechSynthesis.addEventListener("voiceschanged",cargarVoces);
 fetch("/api/vista").then(r=>{if(!r.ok)throw Error();return r.json();}).then(v=>{vista=v;render();}).catch(()=>{juego.replaceChildren(nodo("p","introduccion","No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página."));juego.setAttribute("aria-busy","false");});
