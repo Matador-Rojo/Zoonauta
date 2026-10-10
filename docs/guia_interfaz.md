@@ -127,12 +127,23 @@ Los botones de modalidad usan formas redondeadas e iconos lineales. Preferencias
 comparte el verde oscuro, las líneas suaves y los acentos lima. Los créditos visuales
 están disponibles en Preferencias y en el pie de las pantallas del juego.
 El catálogo mantiene la búsqueda por nombre sin cambiar el modelo o la partida.
-El tablero conserva los ocho hábitats y los pictogramas originales sobre superficies
-claras, separados de sus fondos decorativos. Las pantallas con 48 animales y los
+El catálogo, el tablero y el cierre comparten la paleta y el cuidado visual de la portada.
+Los 48 animales se muestran mediante recortes fotorrealistas con transparencia, generados
+con IA, tanto en el catálogo como en el retrato y en las secuencias donde aparece un animal.
+El tablero conserva los ocho hábitats con fotografías locales y sus pictogramas identificadores.
+La pausa conserva el animal; el cierre muestra los retos realmente completados, también
+cuando se sale antes de terminar. Los 95 pictogramas originales se conservan en el banco.
+Las pantallas con 48 animales y los
 retos pueden desplazarse verticalmente para conservar todas sus opciones.
 
 No se usan vídeos, GIF ni canvas. Los ocho fondos y el atlas se generaron con la
 herramienta integrada imagegen y se codificaron como WebP sin alterar su contenido.
+Los recortes nuevos se generaron individualmente con la misma herramienta; sus prompts,
+archivos, dimensiones, transparencia y huellas están en `datos/imagenes_animales_ia.json`.
+Son imágenes sintéticas, no fotografías reales, y no modifican las asociaciones o el modelo.
+La revisión del rediseño está en `docs/interfaz/revisiones/2026-10-10-redisenio/`:
+55 pruebas Python, ocho casos de aceptación, 19 recorridos de interfaz y transparencia
+comprobada en los 48 recortes. Las verificaciones previas permanecen en sus archivos originales.
 Son elementos decorativos adicionales a los 95 pictogramas, sin autoridad para validar
 asociaciones del banco. El mapa SVG anterior se conserva como antecedente.
 Las referencias, los prompts y las rutas están en `docs/interfaz/diseno_visual.md`

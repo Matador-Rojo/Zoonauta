@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-10-10",
+  "python": 55,
+  "aceptacion": 8,
+  "interfaz": 19,
+  "animales": 48,
+  "transparencia_real": true,
+  "modelo_conservado": true,
+  "portada_conservada": true,
+  "contenido": "Catálogo, tablero, pausa y cierre rediseñados. Recortes fotorrealistas generados con image_gen integrada, sin fondo.",
+  "limites": "Revisión visual y funcional; no validación pedagógica con usuarios ni certificación biológica de los recortes sintéticos."
+}
