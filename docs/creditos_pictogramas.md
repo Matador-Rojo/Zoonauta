@@ -19,6 +19,12 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/.
 Autoría: elaboración original del prototipo con asistencia de Codex.
 La misma licencia se aplica a las composiciones y capturas con estos recursos.
 
+En la versión 3.1 se añadió `codigo/interfaz/web/mundo.svg`, una ilustración
+decorativa original de paisajes realizada mediante código con asistencia de Codex,
+bajo CC BY-NC-SA 4.0. No deriva de imágenes ARASAAC ni forma parte del conjunto de
+95 pictogramas educativos. La marca de brújula y los iconos de navegación se dibujaron
+como SVG en el código de la interfaz, con la misma autoría y licencia.
+
 Los símbolos genéricos representan la clase del animal; la etiqueta mantiene la
 especie del banco. Las ilustraciones propias son esquemáticas. Hay revisión
 técnica de carga y legibilidad; la comprensión CAA de las secuencias aún requiere
