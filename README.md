@@ -87,7 +87,10 @@ pausar con el botón central; play o cualquiera de las flechas reanuda el cambio
 reinicia los 10 segundos. El carrusel empieza en marcha. Preferencias y la pestaña
 inactiva suspenden temporalmente el cambio; movimiento reducido elimina las animaciones.
 La selva es ahora un paisaje sin el guacamayo y comparte el estilo de los otros siete.
-Los botones de inicio y el diálogo usan la misma paleta oscura con acentos lima.
+La portada tiene un único botón Comenzar; después se elige Yo elijo o El agente elige
+en un diálogo con pictogramas. Ambos diálogos usan la misma paleta oscura con acentos lima.
+Puedes ver la [portada con Comenzar](docs/interfaz/revisiones/2026-10-10-inicio/inicio.webp)
+y la [elección de modalidad](docs/interfaz/revisiones/2026-10-10-inicio/selector.webp).
 El catálogo muestra los 48 animales fotorrealistas generados con IA y recortados sin fondo,
 en ocho páginas de seis animales. Permite buscar en todo el catálogo, incluso sin tildes.
 Las preguntas y pistas conservan los pictogramas originales del catálogo educativo;
