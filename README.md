@@ -2,7 +2,7 @@
 
 Juego de animales y hábitats con pictogramas y guía de inteligencia artificial.
 
-Versión 3.3.1. Python 3.10 o superior.
+Versión 3.4.0. Español y portugués brasileño. Voces locales Piper y Kokoro.
 
 ![Inicio con paisajes de Zoonauta](docs/interfaz/01_inicio.png)
 
@@ -10,34 +10,54 @@ Clona este repositorio o descarga y extrae su ZIP. Abre la terminal en la carpet
 que contiene `codigo`, `datos`, `docs`, `assets` y `tests`. Al extraer el ZIP en
 Windows, esa carpeta puede quedar dentro de otra `Zoonauta-main`. Para jugar:
 
-```console
-python -m codigo.interfaz.servidor --abrir
-```
-
-En Windows puedes usar `py` en lugar de `python`. Si el navegador no se abre,
-entra en http://127.0.0.1:8000. Mantén la terminal abierta; Ctrl+C detiene el servidor.
-No necesitas instalar paquetes de Python para jugar.
-
-Si Windows muestra `WinError 10013` o el puerto 8000 no está disponible, usa otro puerto:
+En Windows abre **iniciar_juego.bat**. En Linux/macOS ejecuta
+`bash iniciar_juego.sh`. También puedes iniciarlo desde una terminal:
 
 ```console
-py -m codigo.interfaz.servidor --abrir --puerto 8765
+py -3 -m codigo.interfaz.iniciar
 ```
 
-En ese caso abre http://127.0.0.1:8765. Para actualizar una copia descargada como
-ZIP, detén el servidor, descarga el ZIP actual del repositorio y extrae la nueva
-versión en otra carpeta. Un ZIP anterior no se actualiza automáticamente.
+En Linux/macOS utiliza `python3` en lugar de `py -3`. El iniciador prepara un
+entorno aislado con Python 3.12, los motores y los modelos, y abre
+http://127.0.0.1:8766. Puedes conservar tu Python 3.14: el juego prepara su propia
+versión compatible. Mantén la terminal abierta; Ctrl+C detiene el servidor.
 
-Abre `docs/guia_interfaz.md` para los comandos, alcance y evidencias actuales.
-La pantalla incluye selección por clic/toque, 95 imágenes, texto, síntesis de voz,
-Ayuda, Repetir, Pausar, Reanudar, Continuar y Salir. Preferencias permite elegir
-de 1 a 48 retos antes del inicio y ajustar la voz. Sin configuración adicional,
-elige primero Google español cuando está disponible y después otras voces españolas.
+La primera preparación requiere Internet y descarga unos **656 MB de modelos**,
+además de Python y las dependencias que falten. Las descargas se verifican por
+huella y tamaño. Si se interrumpen, vuelve a abrir el iniciador: conserva los
+archivos completos comprobados. Después puedes jugar y escuchar las voces sin
+conexión, claves de API ni cuentas adicionales.
 
-La voz no necesita claves de API ni una cuenta adicional. Usa las voces españolas
-que ofrece el navegador; su calidad y disponibilidad dependen del equipo.
-Las alternativas locales investigadas están en
-[Alternativas de voz](docs/interfaz/alternativas_voz.md). Todavía no están integradas.
+Para usar otro puerto:
+
+```console
+iniciar_juego.bat --puerto 8767
+```
+
+Para actualizar una copia descargada como ZIP, detén el servidor, descarga el ZIP
+actual y extrae la nueva versión. Puedes copiar la carpeta `modelos_voz` de la
+versión anterior para evitar descargarla otra vez; el iniciador la comprobará.
+Un ZIP anterior no se actualiza automáticamente.
+
+Abre **Preferencias → Idioma** para elegir Español o Português (Brasil). Cambian
+los controles, los 48 nombres de animales, los ocho hábitats, las etiquetas de
+pictogramas, las pistas, las confirmaciones y las voces. Puedes cambiar durante
+una partida conservando su estado y progreso. El selector muestra siete opciones
+por idioma, agrupadas por motor; **Probar voz** reproduce una muestra. La selección
+manual se conserva por idioma mientras la página está abierta. Las voces anteriores
+del navegador se sustituyeron por estos motores locales.
+
+| Idioma | Motor | Opciones |
+|---|---|---|
+| Español | Piper | Claude (México), Ald (México, media y ligera), Daniela (Argentina) |
+| Español | Kokoro | Dora, Alex, Santa |
+| Português (Brasil) | Piper | Cadu, Edresson, Faber, Jeff |
+| Português (Brasil) | Kokoro | Dora, Alex, Santa |
+
+Ald ofrece dos variantes del mismo hablante. El ZIP contiene el catálogo y el
+instalador; los pesos grandes se descargan al preparar el juego. Consulta
+[la guía de voces](docs/interfaz/alternativas_voz.md) y
+[la guía de interfaz](docs/guia_interfaz.md).
 
 El inicio ocupa una sola pantalla, sin desplazamiento vertical. Sus ocho fotografías
 cambian cada 10 segundos; el nombre y el contador acompañan a cada fondo. Puedes
@@ -55,7 +75,7 @@ Puedes ver el [tablero de juego](docs/interfaz/03_reto_escritorio.png) y el
 
 La interfaz carga el modelo sintético contextual R01, congelado, elegido por su
 posición como primera réplica y no por su rendimiento. Para revisar los registros
-de la sesión abre http://127.0.0.1:8000/revision en el mismo navegador.
+de la sesión abre http://127.0.0.1:8766/revision en el mismo navegador.
 
 Otros comandos desde esta carpeta, que contiene codigo, datos, docs, assets y tests:
 
@@ -73,7 +93,8 @@ El núcleo conserva 48 animales, ocho opciones por reto y ambas modalidades.
 No hay puntos competitivos ni límite de tiempo o intentos. ID3 construye el árbol
 calculando ganancias. Se ejecutó aprendizaje probabilístico con interacciones
 sintéticas y evaluación separada: 34 560 retos de entrenamiento, 51 840 de
-evaluación. Ahora hay 35 pruebas de Python y trece casos de navegador correctos.
+evaluación. Las evidencias actuales están en `docs/interfaz/revision_navegador.json` y
+`docs/interfaz/revision_voces_locales.json`.
 
 La consola utiliza los priors originales salvo que indiques un modelo con
 --parametros; conserva sus parámetros congelados durante la sesión.
@@ -81,8 +102,9 @@ El simulador y el informe no requieren paquetes externos. Volver a exportar
 el PNG mediante --grafico requiere matplotlib; el gráfico ya está incluido.
 
 Esta versión contiene el código, los datos, los modelos, la interfaz y sus imágenes.
-La voz se probó con síntesis, API y reproductor controlados; no certifica sonido audible
-en otros dispositivos. La comprensión CAA de las secuencias requiere validación
+Se comprobó síntesis real de las 14 opciones con WAV PCM no silencioso y
+repetición idéntica desde caché. Esa prueba no certifica pronunciación ni sonido
+audible en otros dispositivos. La comprensión CAA de las secuencias requiere validación
 con usuarios. Los documentos V1/V2 son antecedentes; esta guía y la de interfaz
 describen el estado actual. Los experimentos conservan su procedencia sintética.
 

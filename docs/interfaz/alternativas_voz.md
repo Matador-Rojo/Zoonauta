@@ -1,34 +1,96 @@
-# Alternativas de voz para Zoonauta
+# Voces locales de Zoonauta 3.4
 
-Revisión de documentación oficial: 10 de octubre de 2026. La interfaz actual
-utiliza las voces españolas del navegador. Los motores de esta comparación aún
-no están instalados ni integrados; no se ha evaluado su sonido en Zoonauta.
+Piper y Kokoro están integrados. El servidor del equipo genera WAV a partir de
+la respuesta preparada por la guía; no utiliza un proveedor remoto de voz.
 
-| Opción | Uso en Zoonauta | Preparación | Estado |
+## Catálogo incluido
+
+| Idioma | Motor | Nombre | Modelo / identificador |
 |---|---|---|---|
-| Voces del navegador | Leen cualquier respuesta preparada; Google español se elige primero cuando existe. | Ninguna instalación del proyecto; las voces dependen del navegador y del sistema. | Integrada. |
-| Piper | Motor neuronal local con modelos para español de España, México y Argentina; permite trabajar sin conexión tras descargar la voz. | Instalar el motor y descargar un modelo ONNX y su configuración. | Candidata recomendada para la primera prueba. |
-| Kokoro-82M | Modelo abierto que ofrece las voces españolas Dora, Alex y Santa; puede ejecutarse localmente. | Instalar motor, dependencias y pesos del modelo. | Candidata para comparar con Piper. |
-| Grabaciones humanas | Permiten controlar la pronunciación y el tono de cada frase de la guía. | Grabar y revisar todo el repertorio; añadir audios cuando cambien los textos. | Alternativa de diseño. |
+| Español, México | Piper | Claude | es_MX-claude-high |
+| Español, México | Piper | Ald, calidad media | es_MX-ald-medium |
+| Español, México | Piper | Ald, ligera | es_MX-ald-x_low |
+| Español, Argentina | Piper | Daniela | es_AR-daniela-high |
+| Español | Kokoro | Dora | ef_dora |
+| Español | Kokoro | Alex | em_alex |
+| Español | Kokoro | Santa | em_santa |
+| Português (Brasil) | Piper | Cadu | pt_BR-cadu-medium |
+| Português (Brasil) | Piper | Edresson | pt_BR-edresson-low |
+| Português (Brasil) | Piper | Faber | pt_BR-faber-medium |
+| Português (Brasil) | Piper | Jeff | pt_BR-jeff-medium |
+| Português (Brasil) | Kokoro | Dora | pf_dora |
+| Português (Brasil) | Kokoro | Alex | pm_alex |
+| Português (Brasil) | Kokoro | Santa | pm_santa |
 
-Piper y Kokoro ejecutados localmente no necesitan una clave ni cobran por solicitud.
-Consumirán recursos del equipo. Esto no equivale a contratar un servicio hospedado
-por otra empresa. La distribución de una voz Piper requiere revisar su ficha de
-licencia; el motor usa GPL-3.0 y las voces tienen licencias propias. Kokoro-82M
-publica los pesos bajo Apache-2.0.
+Son 14 opciones: siete por idioma. Ald media y ligera son variantes del mismo
+hablante. Se incorporaron todos los modelos MX/AR y BR del índice Piper fijado en
+`datos/voces_locales.json`, y las tres voces de cada idioma del pack Kokoro v1.0.
+El catálogo fija revisiones, tamaños y huellas; no cambia al actualizarse un índice
+externo. Las voces del navegador se retiraron del selector y del reproductor.
 
-La primera prueba propuesta es Piper, por su ejecución local y sus variantes de
-español. La selección definitiva debe basarse en muestras de las respuestas del
-juego, escuchando pronunciación de los animales, claridad y tiempo de preparación.
-No se garantiza que cualquiera de estos motores resulte más natural que Google
-español sin esa comparación. La ficha de Kokoro también advierte que las frases
-muy cortas y algunos idiomas pueden presentar limitaciones.
+## Preparación y uso
 
-Fuentes del proyecto:
+Abre `iniciar_juego.bat` en Windows o `bash iniciar_juego.sh` en Linux/macOS.
+Se crea `.venv-voz` con Python 3.12 y los paquetes de `requirements_voz.txt`.
+El iniciador usa uv para preparar una versión compatible aunque el Python
+principal sea 3.14. Después descarga y verifica 26 archivos, unos 656 MB de
+modelos y fichas, en `modelos_voz`. Las dependencias y Python se descargan aparte
+si faltan. La carpeta de modelos y el entorno no se suben a GitHub.
 
-- [Piper: repositorio oficial](https://github.com/OHF-Voice/piper1-gpl).
-- [Piper: modelos, idiomas y licencias](https://github.com/OHF-Voice/piper1-gpl/blob/main/docs/VOICES.md).
-- [Piper: ejecución e instalación](https://github.com/OHF-Voice/piper1-gpl/blob/main/docs/CLI.md).
-- [Kokoro-82M: ficha del modelo](https://huggingface.co/hexgrad/Kokoro-82M).
-- [Kokoro-82M: voces españolas](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md).
-- [Kokoro: repositorio del motor](https://github.com/hexgrad/kokoro).
+La primera preparación requiere Internet. Después la generación es local y
+funciona sin conexión ni claves. Los archivos completos verificados se conservan
+si una descarga se interrumpe. Para preparar sin abrir el navegador:
+
+```console
+py -3 -m codigo.interfaz.iniciar --solo-preparar
+```
+
+En Preferencias selecciona el idioma, una voz y Probar voz. El ritmo modifica
+la reproducción conservando el tono. Silenciar, pausar, salir, cambiar de voz o
+idioma y comenzar otra acción detienen el audio anterior. Repetir reutiliza el
+mismo texto y, mientras esté en la caché, el mismo WAV. Cambiar de idioma o probar
+una voz no registra una acción del agente ni modifica su modelo.
+
+Si se inicia directamente el servidor con un Python sin estos paquetes, el juego
+con texto y pictogramas sigue disponible; Preferencias indica cómo preparar las
+voces. Para jugar con voz utiliza el iniciador o el Python de `.venv-voz`.
+
+## Implementación y verificación
+
+Piper usa piper-tts 1.3.0. Kokoro usa kokoro-onnx 0.4.9 y el modelo ONNX int8 v1.0
+con pack voices-v1.0. La generación se serializa, mantiene como máximo dos modelos
+cargados y limita la caché de WAV a 128 respuestas y 32 MiB. Se adaptan los tipos
+de entrada al contrato ONNX: este modelo requiere speed float32 y el motor
+kokoro-onnx lo entrega como int32 en exportaciones input_ids.
+
+La API solo lee la respuesta actual o el saludo fijo; comprueba sesión, reto,
+revisión e idioma. No acepta texto libre del navegador. Una respuesta de audio
+que llega después de pausar o cambiar de pantalla se descarta.
+
+`tests/verificar_voces_reales.py` generó muestras de las 14 opciones con los motores
+reales en Linux/Python 3.12, comprobó WAV PCM mono no silencioso y repetición
+idéntica. Resultados: `revision_voces_locales.json`. También se resolvieron y
+descargaron los 32 paquetes binarios compatibles con Windows x64/Python 3.12;
+esto comprueba disponibilidad de paquetes, no una ejecución nativa en Windows.
+Edresson emitió un aviso por el fonema de nasalización en la muestra; produjo
+un WAV no silencioso. Las pruebas no certifican naturalidad ni pronunciación.
+
+Para repetir la comprobación real en Windows:
+
+```console
+.venv-voz\Scripts\python.exe -m tests.verificar_voces_reales
+```
+
+## Fuentes y licencias
+
+Las fichas MODEL_CARD de las ocho voces Piper se descargan junto a los modelos;
+conservan la procedencia y licencia del corpus de cada voz. El motor Piper publica
+GPL-3.0. Kokoro-82M publica los pesos con Apache-2.0; el motor kokoro-onnx publica
+MIT. Las licencias de motores, modelos y pictogramas son independientes.
+
+- [Piper: motor oficial y API](https://github.com/OHF-Voice/piper1-gpl).
+- [Piper: modelos y fichas](https://huggingface.co/rhasspy/piper-voices).
+- [Kokoro-82M: modelo y voces](https://huggingface.co/hexgrad/Kokoro-82M).
+- [Kokoro: motor ONNX](https://github.com/thewh1teagle/kokoro-onnx).
+- [Kokoro: release fijado de modelos](https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.1).
+- [uv: Python gestionado](https://docs.astral.sh/uv/guides/install-python/).

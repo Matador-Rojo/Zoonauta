@@ -1,0 +1,332 @@
+{
+  "version": "1.0.0",
+  "fecha_consulta": "2026-10-10",
+  "piper_revision": "c10ece1aade47bb51c153c893d14e5bf8e5b7117",
+  "voces": [
+    {
+      "id": "piper:es_MX-claude-high",
+      "motor": "piper",
+      "nombre": "Claude",
+      "idioma": "es",
+      "region": "MX",
+      "calidad": "high",
+      "modelo": "es_MX-claude-high.onnx",
+      "configuracion": "es_MX-claude-high.onnx.json"
+    },
+    {
+      "id": "piper:es_MX-ald-medium",
+      "motor": "piper",
+      "nombre": "Ald",
+      "idioma": "es",
+      "region": "MX",
+      "calidad": "medium",
+      "modelo": "es_MX-ald-medium.onnx",
+      "configuracion": "es_MX-ald-medium.onnx.json"
+    },
+    {
+      "id": "piper:es_MX-ald-x_low",
+      "motor": "piper",
+      "nombre": "Ald",
+      "idioma": "es",
+      "region": "MX",
+      "calidad": "x_low",
+      "modelo": "es_MX-ald-x_low.onnx",
+      "configuracion": "es_MX-ald-x_low.onnx.json"
+    },
+    {
+      "id": "piper:es_AR-daniela-high",
+      "motor": "piper",
+      "nombre": "Daniela",
+      "idioma": "es",
+      "region": "AR",
+      "calidad": "high",
+      "modelo": "es_AR-daniela-high.onnx",
+      "configuracion": "es_AR-daniela-high.onnx.json"
+    },
+    {
+      "id": "piper:pt_BR-cadu-medium",
+      "motor": "piper",
+      "nombre": "Cadu",
+      "idioma": "pt-BR",
+      "region": "BR",
+      "calidad": "medium",
+      "modelo": "pt_BR-cadu-medium.onnx",
+      "configuracion": "pt_BR-cadu-medium.onnx.json"
+    },
+    {
+      "id": "piper:pt_BR-edresson-low",
+      "motor": "piper",
+      "nombre": "Edresson",
+      "idioma": "pt-BR",
+      "region": "BR",
+      "calidad": "low",
+      "modelo": "pt_BR-edresson-low.onnx",
+      "configuracion": "pt_BR-edresson-low.onnx.json"
+    },
+    {
+      "id": "piper:pt_BR-faber-medium",
+      "motor": "piper",
+      "nombre": "Faber",
+      "idioma": "pt-BR",
+      "region": "BR",
+      "calidad": "medium",
+      "modelo": "pt_BR-faber-medium.onnx",
+      "configuracion": "pt_BR-faber-medium.onnx.json"
+    },
+    {
+      "id": "piper:pt_BR-jeff-medium",
+      "motor": "piper",
+      "nombre": "Jeff",
+      "idioma": "pt-BR",
+      "region": "BR",
+      "calidad": "medium",
+      "modelo": "pt_BR-jeff-medium.onnx",
+      "configuracion": "pt_BR-jeff-medium.onnx.json"
+    },
+    {
+      "id": "kokoro:ef_dora",
+      "motor": "kokoro",
+      "nombre": "Dora",
+      "idioma": "es",
+      "region": "ES",
+      "modelo": "kokoro-v1.0.int8.onnx",
+      "pack": "voices-v1.0.bin",
+      "voz": "ef_dora"
+    },
+    {
+      "id": "kokoro:em_alex",
+      "motor": "kokoro",
+      "nombre": "Alex",
+      "idioma": "es",
+      "region": "ES",
+      "modelo": "kokoro-v1.0.int8.onnx",
+      "pack": "voices-v1.0.bin",
+      "voz": "em_alex"
+    },
+    {
+      "id": "kokoro:em_santa",
+      "motor": "kokoro",
+      "nombre": "Santa",
+      "idioma": "es",
+      "region": "ES",
+      "modelo": "kokoro-v1.0.int8.onnx",
+      "pack": "voices-v1.0.bin",
+      "voz": "em_santa"
+    },
+    {
+      "id": "kokoro:pf_dora",
+      "motor": "kokoro",
+      "nombre": "Dora",
+      "idioma": "pt-BR",
+      "region": "BR",
+      "modelo": "kokoro-v1.0.int8.onnx",
+      "pack": "voices-v1.0.bin",
+      "voz": "pf_dora"
+    },
+    {
+      "id": "kokoro:pm_alex",
+      "motor": "kokoro",
+      "nombre": "Alex",
+      "idioma": "pt-BR",
+      "region": "BR",
+      "modelo": "kokoro-v1.0.int8.onnx",
+      "pack": "voices-v1.0.bin",
+      "voz": "pm_alex"
+    },
+    {
+      "id": "kokoro:pm_santa",
+      "motor": "kokoro",
+      "nombre": "Santa",
+      "idioma": "pt-BR",
+      "region": "BR",
+      "modelo": "kokoro-v1.0.int8.onnx",
+      "pack": "voices-v1.0.bin",
+      "voz": "pm_santa"
+    }
+  ],
+  "archivos": [
+    {
+      "archivo": "piper/es_MX-claude-high.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/claude/high/es_MX-claude-high.onnx",
+      "bytes": 63122309,
+      "hash_tipo": "md5",
+      "hash": "cb1966e0ff20ca3aa010f6c9a0ce296a"
+    },
+    {
+      "archivo": "piper/es_MX-claude-high.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/claude/high/es_MX-claude-high.onnx.json",
+      "bytes": 4963,
+      "hash_tipo": "md5",
+      "hash": "36882201922fabb409f18d284af3eddd"
+    },
+    {
+      "archivo": "piper/es_MX-claude-high-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/claude/high/MODEL_CARD",
+      "bytes": 247,
+      "hash_tipo": "md5",
+      "hash": "bca99dc9b9a6c8f2f8563d73d52c4a3b"
+    },
+    {
+      "archivo": "piper/es_MX-ald-medium.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/ald/medium/es_MX-ald-medium.onnx",
+      "bytes": 63201294,
+      "hash_tipo": "md5",
+      "hash": "86374058e59b41ac3b7fe4181e1daad6"
+    },
+    {
+      "archivo": "piper/es_MX-ald-medium.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/ald/medium/es_MX-ald-medium.onnx.json",
+      "bytes": 4878,
+      "hash_tipo": "md5",
+      "hash": "aedc07cd37e61360144f04aebb05f7dd"
+    },
+    {
+      "archivo": "piper/es_MX-ald-medium-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/ald/medium/MODEL_CARD",
+      "bytes": 320,
+      "hash_tipo": "md5",
+      "hash": "a858af3698e0c7cda6c9ad5d0d11b651"
+    },
+    {
+      "archivo": "piper/es_MX-ald-x_low.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/ald/x_low/es_MX-ald-x_low.onnx",
+      "bytes": 20986952,
+      "hash_tipo": "md5",
+      "hash": "b463f8c0972f28f89494961137cd2dc1"
+    },
+    {
+      "archivo": "piper/es_MX-ald-x_low.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/ald/x_low/es_MX-ald-x_low.onnx.json",
+      "bytes": 4877,
+      "hash_tipo": "md5",
+      "hash": "0e53a2c435987374e7ad3cee27e6f4f2"
+    },
+    {
+      "archivo": "piper/es_MX-ald-x_low-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_MX/ald/x_low/MODEL_CARD",
+      "bytes": 589,
+      "hash_tipo": "md5",
+      "hash": "35f4d2959d779232c948c1049ae30c08"
+    },
+    {
+      "archivo": "piper/es_AR-daniela-high.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_AR/daniela/high/es_AR-daniela-high.onnx",
+      "bytes": 114199011,
+      "hash_tipo": "md5",
+      "hash": "e373fb657c93877dbc438badeadff4cb"
+    },
+    {
+      "archivo": "piper/es_AR-daniela-high.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_AR/daniela/high/es_AR-daniela-high.onnx.json",
+      "bytes": 7248,
+      "hash_tipo": "md5",
+      "hash": "b68d699a1779d98ee94c0cd9a08ba95b"
+    },
+    {
+      "archivo": "piper/es_AR-daniela-high-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/es/es_AR/daniela/high/MODEL_CARD",
+      "bytes": 353,
+      "hash_tipo": "md5",
+      "hash": "1e357c5feb1d21ab92edad22503244ac"
+    },
+    {
+      "archivo": "piper/pt_BR-cadu-medium.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx",
+      "bytes": 62950044,
+      "hash_tipo": "md5",
+      "hash": "6f3a6e23694c9088e3696a15191af2cc"
+    },
+    {
+      "archivo": "piper/pt_BR-cadu-medium.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx.json",
+      "bytes": 5040,
+      "hash_tipo": "md5",
+      "hash": "3d35f13df6a2f7dc9b7b7924befbe7bb"
+    },
+    {
+      "archivo": "piper/pt_BR-cadu-medium-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/cadu/medium/MODEL_CARD",
+      "bytes": 278,
+      "hash_tipo": "md5",
+      "hash": "bcaec1511b99a55333e87ec46b338154"
+    },
+    {
+      "archivo": "piper/pt_BR-edresson-low.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/edresson/low/pt_BR-edresson-low.onnx",
+      "bytes": 63104526,
+      "hash_tipo": "md5",
+      "hash": "53e365c040dd07890fe1855b64c7cc58"
+    },
+    {
+      "archivo": "piper/pt_BR-edresson-low.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/edresson/low/pt_BR-edresson-low.onnx.json",
+      "bytes": 4168,
+      "hash_tipo": "md5",
+      "hash": "806966b457e27c01d9b8eed2bc76a185"
+    },
+    {
+      "archivo": "piper/pt_BR-edresson-low-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/edresson/low/MODEL_CARD",
+      "bytes": 283,
+      "hash_tipo": "md5",
+      "hash": "62cde47b9a3214109e601f90eeadea11"
+    },
+    {
+      "archivo": "piper/pt_BR-faber-medium.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx",
+      "bytes": 63201294,
+      "hash_tipo": "md5",
+      "hash": "e0724a2f07965f6523d2a1e96b488a4c"
+    },
+    {
+      "archivo": "piper/pt_BR-faber-medium.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json",
+      "bytes": 4855,
+      "hash_tipo": "md5",
+      "hash": "a1258e1e113c47d9a1486a9bef1daab4"
+    },
+    {
+      "archivo": "piper/pt_BR-faber-medium-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium/MODEL_CARD",
+      "bytes": 279,
+      "hash_tipo": "md5",
+      "hash": "f636a9f4c8b0e5107a1255ebcd4bc6c5"
+    },
+    {
+      "archivo": "piper/pt_BR-jeff-medium.onnx",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx",
+      "bytes": 62950044,
+      "hash_tipo": "md5",
+      "hash": "dfb93e9da48638f9efa6b63fdb0b7030"
+    },
+    {
+      "archivo": "piper/pt_BR-jeff-medium.onnx.json",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx.json",
+      "bytes": 5041,
+      "hash_tipo": "md5",
+      "hash": "e7d673d946db4d9e9d8644babf347ea9"
+    },
+    {
+      "archivo": "piper/pt_BR-jeff-medium-MODEL_CARD",
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/jeff/medium/MODEL_CARD",
+      "bytes": 278,
+      "hash_tipo": "md5",
+      "hash": "667b7ebeb9143c415c10ec4209fc9fdf"
+    },
+    {
+      "archivo": "kokoro/kokoro-v1.0.int8.onnx",
+      "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.int8.onnx",
+      "bytes": 114119327,
+      "hash_tipo": "sha256",
+      "hash": "ae315a79b623f244700e4afb9246c46a26066782e049ba174bf3ba433970ee9c"
+    },
+    {
+      "archivo": "kokoro/voices-v1.0.bin",
+      "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin",
+      "bytes": 28214398,
+      "hash_tipo": "sha256",
+      "hash": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d"
+    }
+  ],
+  "bytes_descarga": 656092896
+}

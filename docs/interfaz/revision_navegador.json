@@ -1,6 +1,6 @@
 {
   "fecha": "2026-10-10",
-  "version": "3.3.1",
+  "version": "3.4.0",
   "navegador": "145.0.7632.6",
   "resultados": [
     {
@@ -20,9 +20,9 @@
       "resultado": "OK"
     },
     {
-      "caso": "Voz española: texto exacto, repetición y cancelación",
+      "caso": "Audio local español: texto exacto, repetición y cancelación",
       "resultado": "OK",
-      "alcance": "Síntesis simulada en navegador; no certifica sonido audible ni comprensión."
+      "alcance": "API WAV y reproductor controlados; no certifica sonido audible ni comprensión."
     },
     {
       "caso": "95 pictogramas y nueve imágenes decorativas decodificados sin errores; ocho fondos sin vídeo ni canvas",
@@ -41,17 +41,21 @@
       "resultado": "OK"
     },
     {
-      "caso": "Dispositivo sin voz española: aviso visible, texto y pictogramas operativos",
+      "caso": "Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos",
       "resultado": "OK"
     },
     {
-      "caso": "Google español tiene prioridad sobre otras voces españolas disponibles",
-      "resultado": "OK"
-    },
-    {
-      "caso": "Preferencias de voz: selección manual conservada, ritmo, lectura exacta, cancelación al pausar y guía silenciada",
+      "caso": "14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio",
       "resultado": "OK",
-      "alcance": "Síntesis simulada en navegador; no certifica sonido audible."
+      "alcance": "API WAV y reproductor controlados."
+    },
+    {
+      "caso": "Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; cambio en una partida sin alterar estado, registros o modelo",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Revisión técnica con encabezados en portugués y registros originales conservados",
+      "resultado": "OK"
     },
     {
       "caso": "Consulta técnica separada y modelo congelado",

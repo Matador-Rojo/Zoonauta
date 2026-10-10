@@ -1,6 +1,6 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
-Versión 3.3.1.
+Versión 3.4.0.
 
 ## 1. Qué está implementado
 
@@ -21,7 +21,7 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 | Selección confirmada | Acepta cualquiera de los hábitats confirmados del animal. |
 | Selección pendiente | Da una respuesta neutral y conserva el reto. |
 | Continuar | Abre otro reto o presenta el cierre cuando se completó N. |
-| Preferencias | Permite N entre 1 y 48 antes del inicio, voz y velocidad. |
+| Preferencias | Permite N entre 1 y 48 antes del inicio, idioma, voz y velocidad. |
 | Revisión técnica | Página aparte con modelo, estado, decisiones y exportación JSON. |
 
 Los ocho hábitats permanecen en los retos activos. Tras resolver se ven desactivados
@@ -30,69 +30,64 @@ competitivos, reloj ni tope de ayudas para jugar.
 
 ## 2. Ejecutarlo
 
-Descarga y extrae el ZIP actual de GitHub, o clona el repositorio. Abre una terminal en la carpeta
-que contiene `codigo`, `datos`, `docs`, `assets` y `tests`. Utiliza Python 3.10 o superior.
-En Windows puede ser necesario entrar en una segunda carpeta `Zoonauta-main`.
+Descarga y extrae el ZIP actual de GitHub, o clona el repositorio. En Windows
+abre `iniciar_juego.bat` desde la carpeta que contiene `codigo`, `datos`, `docs`,
+`assets` y `tests`. Al extraer el ZIP puede haber dos carpetas Zoonauta-main.
+En Linux/macOS ejecuta `bash iniciar_juego.sh`.
 
 ```console
-python -m codigo.interfaz.servidor --abrir
+py -3 -m codigo.interfaz.iniciar
 ```
 
-Abre http://127.0.0.1:8000 si el navegador no se abre automáticamente. En Windows
-puedes usar `py` en lugar de `python`. Mantén la terminal abierta mientras juegas.
-Ctrl+C detiene el servidor y cierra las observaciones abiertas sin etiqueta.
-También se incluyen `iniciar_juego.bat` y `iniciar_juego.sh`.
+En Linux/macOS usa `python3` en lugar de `py -3`. El iniciador prepara Python 3.12,
+las dependencias y los modelos de voz. Después abre http://127.0.0.1:8766.
+Mantén la terminal abierta; Ctrl+C detiene el servidor y cierra las observaciones
+abiertas sin etiqueta. Puedes pasar `--puerto 8767` si necesitas otro puerto.
 
-La aplicación usa la biblioteca estándar de Python y HTML/CSS/JavaScript.
-Esta elección concreta la propuesta de interfaz: no utiliza Streamlit.
-Todos los recursos visuales están incluidos; no se descargan durante la partida.
+El núcleo y el servidor HTTP usan la biblioteca estándar; la síntesis local añade
+las dependencias ONNX de `requirements_voz.txt`. La interfaz utiliza HTML/CSS/JS,
+sin Streamlit. Todos los recursos visuales están incluidos. La preparación inicial
+de voz requiere Internet; durante la partida no se descargan recursos externos.
 
-Si el puerto está ocupado o Windows muestra `WinError 10013`, prueba otro puerto:
+Para comparar políticas con el entorno ya preparado, utiliza su ejecutable Python:
 
 ```console
-py -m codigo.interfaz.servidor --abrir --puerto 8765
+.venv-voz\Scripts\python.exe -m codigo.interfaz.servidor --abrir --politica ID3 --puerto 8767
+.venv-voz\Scripts\python.exe -m codigo.interfaz.servidor --abrir --politica ROTACION --puerto 8768
 ```
 
-La dirección será http://127.0.0.1:8765. Una copia ZIP anterior no recibe cambios:
-detén el servidor y descarga y extrae la versión actual para ver el rediseño.
-Para comparar variantes:
-
-```console
-python -m codigo.interfaz.servidor --politica ID3 --puerto 8001
-python -m codigo.interfaz.servidor --politica ROTACION --puerto 8002
-python -m codigo.interfaz.servidor --politica PROBABILISTICO --puerto 8003
-```
-
-Para cargar otro modelo congelado utiliza `--parametros RUTA`. El predeterminado
-es `docs/experimentos/modelos/SIM_CONTEXTUAL_R01.json`: primera réplica contextual
+En Linux/macOS usa `.venv-voz/bin/python`. Para cargar otro modelo congelado
+utiliza `--parametros RUTA`. El predeterminado es
+`docs/experimentos/modelos/SIM_CONTEXTUAL_R01.json`: primera réplica contextual
 del entrenamiento sintético, sin escoger una réplica por su rendimiento.
 Las selecciones manuales se registran y no actualizan α o β.
 
-## 3. Voz
+## 3. Idiomas y voces locales
 
-La lectura usa las voces españolas disponibles mediante Web Speech API. Google
-español tiene prioridad cuando está disponible. Preferencias permite elegir otra
-voz, cambiar el ritmo, silenciar la guía y escuchar una muestra. La elección manual
-se conserva cuando el navegador actualiza la lista de voces.
+Preferencias permite elegir español o portugués brasileño. Se traducen los
+controles, los 48 animales, los ocho hábitats, las 95 etiquetas de pictogramas,
+las 72 variantes de pistas y los mensajes, incluidos los contextos de confirmación.
+Los identificadores de recursos, las asociaciones y los registros originales
+siguen siendo los del núcleo. El cambio no modifica la revisión de la partida,
+las observaciones, el progreso ni los parámetros del modelo.
 
-No se solicitan claves de API ni cuentas adicionales. El servidor local no genera
-locuciones ni envía textos a un proveedor de voz. Algunas voces ofrecidas por el
-navegador pueden utilizar un servicio remoto; su disponibilidad y calidad dependen
-del navegador y del sistema. El ZIP no instala voces ni incluye grabaciones.
+Hay siete opciones de voz por idioma. Piper: Claude y Ald (media/ligera) de México,
+Daniela de Argentina; Cadu, Edresson, Faber y Jeff de Brasil. Kokoro: Dora, Alex y
+Santa para cada idioma. Las voces del navegador se sustituyeron por audio WAV
+local generado con el texto preparado por la guía. Probar voz lee un saludo fijo.
+El selector conserva la elección manual por idioma mientras la página esté abierta.
 
-Se lee exactamente el texto de voz de la respuesta del agente. Repetir conserva
-ese texto. Pausar, Salir, cambiar de voz o de ritmo e iniciar otra acción cancela la
-lectura anterior. Recargar conserva la partida mientras exista la sesión y no
-reproduce audio automáticamente. Si no existe una voz española, se muestra un
-aviso y el juego continúa con texto y pictogramas.
+Abre `iniciar_juego.bat` o `bash iniciar_juego.sh`. Se prepara Python 3.12 en un
+entorno aislado, compatible aunque tengas Python 3.14, y se descargan unos 656 MB
+de modelos además de las dependencias. Después funciona sin conexión, claves ni
+cuentas adicionales. El puerto predeterminado del iniciador es 8766.
+Detalles, versiones, licencias y catálogo: [Voces locales](interfaz/alternativas_voz.md).
 
-La comprobación automatizada sustituye el sintetizador para verificar el texto,
-idioma, ritmo, selección, repetición, silencio y cancelación. La naturalidad y
-pronunciación se deben comprobar escuchando una voz real en el equipo del usuario.
-
-Se investigaron Piper y Kokoro como posibles motores locales. La comparación y
-las fuentes están en [Alternativas de voz](interfaz/alternativas_voz.md).
-Estos motores todavía no se han instalado ni integrado.
+Pausar, Salir, cambiar de voz, ritmo o idioma y comenzar otra acción cancelan
+la lectura anterior. Repetir conserva el texto y reutiliza su WAV en caché.
+Recargar conserva el idioma y la partida mientras exista la sesión, y no
+reproduce audio automáticamente. Sin modelos preparados se indica cómo
+instalarlos; el juego continúa con texto y pictogramas.
 
 ## 4. Recursos visuales y presentación
 
@@ -134,7 +129,7 @@ herramienta integrada imagegen y se codificaron como WebP sin alterar su conteni
 Son elementos decorativos adicionales a los 95 pictogramas, sin autoridad para validar
 asociaciones del banco. El mapa SVG anterior se conserva como antecedente.
 Las referencias, los prompts y las rutas están en `docs/interfaz/diseno_visual.md`
-y `docs/interfaz/fondos_generados.json`. La terminal indica 3.3.1; el pie del juego identifica la familia 3.3.
+y `docs/interfaz/fondos_generados.json`. La terminal indica 3.4.0; el pie del juego identifica la familia 3.4.
 
 ## 5. Estado y registros
 
@@ -152,7 +147,7 @@ Los registros se guardan en `registros/interfaz/`, separados por sesión, con or
 `INTERFAZ_MANUAL`. No se solicitan datos personales. Se puede cambiar la carpeta
 con `--registros RUTA`. El servidor se ejecuta solo en el equipo local.
 
-Abre http://127.0.0.1:8000/revision en el mismo navegador para inspeccionar y
+Abre http://127.0.0.1:8766/revision en el mismo navegador para inspeccionar y
 descargar el JSON de la sesión. Esta página no aparece en el recorrido del jugador.
 Actualizar allí solo consulta el registro.
 
@@ -171,45 +166,48 @@ Actualizar allí solo consulta el registro.
 
 ## 7. Verificación realizada
 
-Pasaron 35 pruebas de Python: 19 del núcleo, siete de aprendizaje y nueve del
-adaptador web. Se ejecutaron trece casos en Chromium 145.0.7632.6.
+Pasaron 49 pruebas de Python: 19 del núcleo, siete de aprendizaje, nueve del
+adaptador web y 14 de idioma, voz y HTTP. Se ejecutaron 14 casos de interfaz en
+Chromium 145.0.7632.6, con API WAV y reproductor controlados, además de dos pruebas
+con síntesis y reproducción nativa reales.
 
-| Comprobación en navegador | Resultado |
+| Comprobación | Resultado |
 |---|---|
-| Ambos inicios, 48 animales, ocho opciones y recorrido completo | Correcto |
-| Búsqueda, tildes, caso vacío y restauración sin cambiar el estado | Correcto |
-| Recarga sin repetir eventos ni audio | Correcto |
-| Texto exacto para voz, idioma español y cancelación | Correcto con síntesis controlada |
-| Decodificación de los 95 PNG/SVG y los nueve WebP decorativos | Correcto |
-| Móvil 390 × 844: inicio, preferencias y partida | Correcto |
-| Teclado, barra de progreso y movimiento reducido | Correcto |
-| Inicio en una pantalla: 320 × 568, 390 × 844, 650 × 390, 844 × 390, 768 × 900, 1024 × 600, 1024 × 768, 1280 × 720 y 1920 × 1080 | Correcto |
-| Carrusel de ocho fondos: contador, pausa, navegación y Preferencias | Correcto |
-| Prioridad de Google español sobre voces locales | Correcto |
-| Preferencias de voz: selección manual, ritmo, silencio y cancelación | Correcto con síntesis controlada |
-| Ausencia de voz española: aviso y juego operativo | Correcto |
-| Revisión técnica separada y modelo congelado | Correcto |
+| Ambas modalidades, 48 animales, ocho opciones, repetición, pausa y cierre | Correcto |
+| Traducción de mensajes, 72 pistas y contextos de las 69 asociaciones confirmadas | Correcto |
+| Cambio de idioma sin modificar estado, observaciones, registros o modelo | Correcto |
+| Búsqueda de nombres en ambos idiomas, sin distinguir tildes o mayúsculas | Correcto |
+| Recarga sin repetir acciones o audio, idioma de sesión conservado | Correcto |
+| 14 opciones locales, muestras, elección por idioma, ritmo y silencio | Correcto con API y reproductor controlados |
+| Modelos ausentes, idiomas inválidos y descarte de audio obsoleto | Correcto |
+| 95 pictogramas y nueve WebP decorativos decodificados | Correcto |
+| Móvil, teclado, progreso accesible y movimiento reducido | Correcto |
+| Inicio español y portugués, de 320 × 568 a 1920 × 1080, sin scroll vertical | Correcto |
+| Ocho fondos: contador, cambio cada 10 segundos, pausa y Preferencias | Correcto |
+| Encabezados de revisión técnica localizados, registros originales conservados | Correcto |
+| Síntesis real de las 14 opciones: WAV mono PCM no silencioso, repetición en caché | Correcto |
+| Audio real de Piper español y Kokoro portugués: WAV, decodificación y avance de reproducción nativa | Correcto |
+| Preparación aislada y resolución de paquetes para Windows x64/Python 3.12 | Correcto; ejecución de preparación en Linux, disponibilidad de ruedas Windows |
 
-La prueba de voz intercepta el sintetizador;
-no verifica sonido audible ni comprensión en otro dispositivo. La inspección
-de las capturas no constituye una certificación de accesibilidad.
-
-Evidencias: `docs/interfaz/revision_navegador.json` y ocho capturas de inicio,
-catálogo, reto de escritorio, revisión de animales, reto móvil, inicio móvil y
-preferencias en móvil, incluido un inicio panorámico a 1920 px de ancho.
-También se comprobó el inicio del servidor, una sesión HTTP y su cierre con Ctrl+C.
+Evidencias: `interfaz/revision_navegador.json`,
+`interfaz/revision_voces_locales.json`, `interfaz/revision_audio_navegador.json`
+y doce capturas, incluidas las pantallas en portugués. Las pruebas de PCM y del
+reproductor no certifican pronunciación ni escucha humana en otro equipo.
+Las capturas tampoco constituyen certificación de accesibilidad o comprensión CAA.
 
 ```console
 python -m unittest discover -s tests -v
 ```
 
-La prueba de navegador es opcional y requiere Node, Playwright y Chromium.
-No son dependencias necesarias para jugar. Para preparar y ejecutar esa prueba:
+Las pruebas de navegador requieren Node, Playwright y Chromium, que no son
+necesarios para jugar:
 
 ```console
 npm install --no-save playwright
 npx playwright install chromium
 python -m tests.ejecutar_navegador
+.venv-voz\Scripts\python.exe -m tests.verificar_voces_reales
+.venv-voz\Scripts\python.exe -m tests.ejecutar_navegador --audio-real
 ```
 
 Referencia: [Playwright Library](https://playwright.dev/docs/library).
@@ -230,7 +228,7 @@ Referencia: [Playwright Library](https://playwright.dev/docs/library).
 | `assets/pictogramas/` | 28 PNG y 67 SVG listos para presentar. |
 | `datos/pictogramas.json` | IDs simbólicos, imágenes y créditos. |
 | `datos/fuentes_pictogramas.json` | Metadatos y descargas ARASAAC usadas. |
-| `docs/interfaz/alternativas_voz.md` | Comparación de motores locales todavía no integrados. |
+| `docs/interfaz/alternativas_voz.md` | Catálogo, preparación y verificación de las voces locales. |
 | `tests/test_interfaz.py` | Concurrencia, repetición, límites y congelación. |
 | `tests/ejecutar_navegador.py` | Servidor de prueba y ejecución de Playwright. |
 | `tests/verificar_interfaz.cjs` | Recorridos de navegador y capturas. |
@@ -244,7 +242,8 @@ repitieron ni se atribuyeron a jugadores por construir esta interfaz.
 Se implementó un prototipo digital de selección por clic o toque, conectado al
 núcleo compartido de la consola y el simulador. La interfaz presenta 48 animales,
 ocho hábitats y ambas modalidades de inicio. Las respuestas preparadas se muestran
-como secuencias de pictogramas con texto de apoyo y síntesis de voz española.
+como secuencias de pictogramas con texto de apoyo y síntesis de voz en español
+o portugués brasileño.
 Se permite pedir ayuda, repetir el contenido, pausar, reanudar y continuar,
 sin puntos competitivos ni límites de tiempo o intentos.
 
@@ -256,9 +255,8 @@ sin actualizar sus parámetros. La revisión técnica se realiza en una página 
 
 Se incorporaron 95 recursos visuales con rutas, créditos y huellas de integridad.
 Las pruebas de Python y los recorridos en navegador verificaron el funcionamiento,
-incluidos repetición, pausa, respuesta neutral y vista móvil. La voz depende de
-las voces españolas disponibles en el navegador.
-Se probó con un sintetizador controlado; no se verificó la calidad audible
-en el equipo del usuario.
+incluidos repetición, pausa, respuesta neutral, idiomas y vista móvil. La voz se
+genera en el equipo mediante Piper y Kokoro. Se comprobaron WAV reales de las
+14 opciones; la calidad audible en el equipo del usuario requiere escucharlas.
 La comprensión CAA y la eficacia pedagógica requieren evaluación con usuarios;
 los experimentos de aprendizaje siguen siendo exclusivamente sintéticos.
