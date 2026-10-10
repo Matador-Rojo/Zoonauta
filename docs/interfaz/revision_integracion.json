@@ -1,5 +1,5 @@
 {
-  "version": "3.1.0",
+  "version": "3.2.0",
   "fecha": "2026-10-10",
   "python": {
     "total": 35,
@@ -8,7 +8,7 @@
   },
   "navegador": {
     "fecha": "2026-10-10",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "navegador": "145.0.7632.6",
     "resultados": [
       {
@@ -29,7 +29,7 @@
         "alcance": "Síntesis simulada en navegador; no certifica sonido audible ni comprensión."
       },
       {
-        "caso": "95 recursos visuales decodificados sin errores",
+        "caso": "95 pictogramas y dos imágenes decorativas decodificados sin errores; portada con ocho paisajes y sin vídeo ni canvas",
         "resultado": "OK"
       },
       {
@@ -74,13 +74,23 @@
     "audio_audible_en_dispositivo_usuario_verificado": false
   },
   "interfaz": {
-    "inicio": "mapa_decorativo_estatico",
+    "inicio": "escena_de_selva_estatica_a_todo_el_ancho",
     "busqueda_catalogo": true,
     "seleccion_por_teclado": true,
     "ancho_minimo_comprobado_px": 320,
-    "ancho_maximo_comprobado_px": 1280,
+    "ancho_maximo_comprobado_px": 1920,
     "videos_y_gif": false,
     "animaciones_automaticas": false,
-    "ilustracion_decorativa": "codigo/interfaz/web/mundo.svg"
+    "imagenes_decorativas": [
+      "codigo/interfaz/web/portada-selva.webp",
+      "codigo/interfaz/web/paisajes.webp"
+    ],
+    "pictogramas_educativos_conservados": 95,
+    "capturas": 8
+  },
+  "servidor": {
+    "inicio_y_version_3_2": "OK",
+    "sesion_http": "OK",
+    "cierre_ctrl_c_con_sesion_activa": "OK"
   }
 }

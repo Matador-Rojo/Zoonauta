@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "version_proyecto": "3.1.0",
+  "version_proyecto": "3.2.0",
   "fecha_preparacion": "2026-10-10",
   "paquete": "poc_interfaz_animales_habitats_v3",
   "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
@@ -24,7 +24,8 @@
     "fuentes_referenciadas": 55,
     "imagenes_png_arasaac": 28,
     "imagenes_svg_originales": 67,
-    "ilustraciones_decorativas_adicionales": 1
+    "ilustraciones_decorativas_adicionales": 3,
+    "imagenes_decorativas_utilizadas": 2
   },
   "documentos_consultados": [
     {
@@ -95,8 +96,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 4269,
-      "sha256": "11fffe38ac51802645839827d3a303afc8dcfe3a7a220ff02d244176b616d94c"
+      "bytes": 4564,
+      "sha256": "33fb5f82c90d206718573ce042e8eb4557c1a05b30e4daccbf4be9caeb3e7878"
     },
     {
       "ruta": "assets/pictogramas/P_A01.svg",
@@ -630,28 +631,38 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 6854,
-      "sha256": "ee79bdf72ddc5583effd55f0ebb6ffde1dea24f56b682549098f02671adbd664"
+      "bytes": 7064,
+      "sha256": "e94dfb016d5420ec24bbf5ec5d316b4d1e48285612debedf8dc2e39288585bf5"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 13897,
-      "sha256": "9b9941cc34b9385a815931586925b0cbe47d76d34db74298a97a6fa7e09dacd6"
+      "bytes": 14319,
+      "sha256": "006c75cc956fe4c54b06ded049a923cf0435867abf0c367c924bf543110cef6c"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
-      "bytes": 21734,
-      "sha256": "50dc81d75096c2f0c73445314506d5e14ee9a4a789d2486c11d0315d8ac83b9f"
+      "bytes": 24616,
+      "sha256": "1eb155db8ebc78241153f3a1c5ddbbfa169209cd76cf5351a6deb1e2bd5cad5e"
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 2696,
-      "sha256": "43d1189e7310e627d17615f7d2531a58a1eaa3f18919b3f4bfe63c7a2b123dd7"
+      "bytes": 2792,
+      "sha256": "74883110901c8522b5c4f6c9aa1adf6c492eb27e9184f024ab9fac6826abf89d"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
       "bytes": 5758,
       "sha256": "3284f3bfc062a9c7842c04db07a48c00db894deedbed2d50ff9432d0e04a52ea"
+    },
+    {
+      "ruta": "codigo/interfaz/web/paisajes.webp",
+      "bytes": 529756,
+      "sha256": "6385a390ab5ba78a35933f04fb7ffb9e38692b4e7edeb3400f1ab5843437ba0f"
+    },
+    {
+      "ruta": "codigo/interfaz/web/portada-selva.webp",
+      "bytes": 306380,
+      "sha256": "5f1faf559e233890f300014b654e2e8a4b0876e8564b82b25551215c9c3b09b7"
     },
     {
       "ruta": "codigo/interfaz/web/revision.html",
@@ -815,8 +826,8 @@
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
-      "bytes": 1891,
-      "sha256": "1eb7c80467fd333abc8db4008adc5d983097439735aea0b35ce2f472bedcd97c"
+      "bytes": 2454,
+      "sha256": "47d64e7ef328bed452bf703e6e60539df6760dc53d00c35fa6bf3954ed70e57c"
     },
     {
       "ruta": "docs/datos/fuentes/baseline_id3_animales_habitats.md",
@@ -1705,8 +1716,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 12492,
-      "sha256": "7f20f2ffb5ec4934c7feb2c214845485c5cf51fedcb22d12ef9997e8bf135827"
+      "bytes": 13458,
+      "sha256": "f71e3ad959fbd156458eaa85eeeb50247f3741af3cfe953dd0aa71c026a32f98"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1715,48 +1726,58 @@
     },
     {
       "ruta": "docs/interfaz/01_inicio.png",
-      "bytes": 217800,
-      "sha256": "1cce6b97023cbeae7baef4f2c931157cfcc506d617edcaf68484351a4126837f"
+      "bytes": 1812493,
+      "sha256": "05272e11dfd2546782024a6e818afe8e44edf44e5817f339593739cd11c67c53"
     },
     {
       "ruta": "docs/interfaz/02_catalogo.png",
-      "bytes": 481054,
-      "sha256": "23515297f87f496f245e25f55012349cd7a52a7055dabe90100083bbe9e55253"
+      "bytes": 694556,
+      "sha256": "b5d076d427294f3edcb070720d59cd059b5b6ee4202e7bf7e6584adda7a9b38c"
     },
     {
       "ruta": "docs/interfaz/03_reto_escritorio.png",
-      "bytes": 146812,
-      "sha256": "b75fae8e34e735b5243827f8b9a181fb0dddb65a95216e8631b38d5b4dae4d0c"
+      "bytes": 699155,
+      "sha256": "5744b94223a0a833f9cd48e0a27ff80790c43675fe7cd67338973a85a80076b7"
     },
     {
       "ruta": "docs/interfaz/04_revision_animales.png",
-      "bytes": 462024,
-      "sha256": "d1c0a1bfecbc5db0cc8cc1b5e7ec704b55b938620b725cf9f0555da3e695a586"
+      "bytes": 625504,
+      "sha256": "17b5248cbf6c12cff2b788f57857ad2900fefdad85f8b7f2f17c02cc6cc794d0"
     },
     {
       "ruta": "docs/interfaz/05_reto_movil.png",
-      "bytes": 120801,
-      "sha256": "b7fb39ece70c226c4d606620e5a99135ddb1d0207406ee1df121a0d09f12e0a9"
+      "bytes": 460415,
+      "sha256": "08b10cbe732db667add0a88e10054f61f793429e442a5372ce6d9060220a1cb1"
     },
     {
       "ruta": "docs/interfaz/06_inicio_movil.png",
-      "bytes": 139101,
-      "sha256": "daee3947593ddc23da8cb3faafb55796f5d19939b0c2edce8817a0455be368db"
+      "bytes": 741208,
+      "sha256": "8af02957bcca918d5ab3251ea635004ee6978969857dc7beeb79604a7ff9aee8"
     },
     {
       "ruta": "docs/interfaz/07_preferencias_movil.png",
-      "bytes": 64618,
-      "sha256": "2ed9db4f4b9cb0a2149d9c8dd3814550bff65b3f5618222eabb82e11e448c1c6"
+      "bytes": 55479,
+      "sha256": "dd3ff25fe4b936fc4e49aaf137174b7f96643b57fb6fd0333955033c3ae3b0ae"
+    },
+    {
+      "ruta": "docs/interfaz/08_inicio_panoramico.png",
+      "bytes": 2684531,
+      "sha256": "f06f0e3582040b9dcaac611955cfa515285182cc3f176a8478d8186bbb2654f0"
+    },
+    {
+      "ruta": "docs/interfaz/diseno_visual.md",
+      "bytes": 4817,
+      "sha256": "c214fb371dea04ec709c680749e28a6774388f2e51169ee413348769a6f2b04c"
     },
     {
       "ruta": "docs/interfaz/revision_integracion.json",
-      "bytes": 2788,
-      "sha256": "f1c96e91f8f420e2ba0e7845a9328f285be30baa31447281c921953ef0d3f670"
+      "bytes": 3129,
+      "sha256": "cd9ffc6619a85007da313c57d273a6d7060343f34ff79e4e1da26638191d2c6e"
     },
     {
       "ruta": "docs/interfaz/revision_navegador.json",
-      "bytes": 1604,
-      "sha256": "51e10a150d90dacbf7ee44585b4df8da7ade8f7d1e1916de4daa57a412a8409b"
+      "bytes": 1676,
+      "sha256": "6480697067632ab0b8be50c3f9dcd5fbe29ef796d8ff5ebc84858f5c19e59966"
     },
     {
       "ruta": "docs/resultados/arbol_id3.json",
@@ -1820,8 +1841,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 12626,
-      "sha256": "a2ea2f5950149c7458a7e76bcf796b34bd8c76e677bb27bb9db660f2dfcee719"
+      "bytes": 13180,
+      "sha256": "c6262d930139d695e61d8c2a8f97a08de1430e05761abee6271585f8f4079f41"
     }
   ],
   "nombre_proyecto": "Zoonauta"

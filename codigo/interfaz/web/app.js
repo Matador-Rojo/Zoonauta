@@ -53,34 +53,43 @@ function titulo(texto,sub,etiqueta="Tu expedición") {
   barra.setAttribute("aria-label","Progreso de la partida"); progreso.append(barra);
   fila.append(izq,progreso); return fila;
 }
+function paisaje(habitat,clase="") {
+  const p=nodo("div","paisaje "+clase); p.dataset.habitat=habitat;
+  p.setAttribute("aria-hidden","true"); return p;
+}
 function inicio() {
-  const b=nodo("section","bienvenida"), grid=nodo("div","inicio-grid"), texto=nodo("div","inicio-texto");
-  texto.append(nodo("p","etiqueta","Una aventura entre animales"));
-  const h=nodo("h1","","Descubre dónde "); h.id="titulo-pantalla"; h.tabIndex=-1;
-  h.append(nodo("em","","vive cada animal.")); texto.append(h,nodo("p","introduccion","Explora 8 hábitats con 48 animales. Elige, descubre y aprende con pictogramas y una guía que te acompaña."));
-  texto.append(nodo("h2","pregunta-inicio","¿Quién elige el animal?"));
+  const b=nodo("section","bienvenida"),foto=nodo("img","hero-paisaje");
+  foto.src="/portada-selva.webp"; foto.alt=""; foto.setAttribute("aria-hidden","true"); foto.draggable=false;
+  const layout=nodo("div","hero-layout"),texto=nodo("div","hero-texto");
+  texto.append(nodo("p","etiqueta","El mundo está esperando"));
+  const h=nodo("h1"); h.id="titulo-pantalla"; h.tabIndex=-1;
+  h.append(nodo("span","","Cada animal."),nodo("em","","Su mundo."));
+  texto.append(h,nodo("p","introduccion","48 animales. 8 hábitats. Descubre dónde viven con pictogramas y una guía que te acompaña."));
+  const entrada=nodo("div","entrada"); entrada.append(nodo("h2","pregunta-inicio","¿Quién elige el animal?"));
   const modos=nodo("div","modalidades");
-  for(const [m,p,t,s] of [["JUGADOR","P_JUGADOR","Yo elijo","Escoge el animal que quieres descubrir."],["AGENTE","P_AGENTE","El agente elige","Déjate sorprender con un nuevo animal."]]) {
+  for(const [m,p,t,s] of [["JUGADOR","P_JUGADOR","Yo elijo","Explorar los 48 animales"],["AGENTE","P_AGENTE","El agente elige","Recibir un nuevo reto"]]) {
     const btn=boton("", "iniciar",{modalidad:m},"modalidad"); btn.setAttribute("aria-label",t);
     const copia=nodo("div","modalidad-copia"); copia.append(nodo("strong","",t),nodo("span","modalidad-detalle",s));
     btn.append(imagen(p),copia,icono("flecha","flecha")); modos.append(btn);
   }
-  const nota=nodo("p","inicio-nota"); nota.append(icono("hoja"),nodo("span","","Pide ayuda, repite o pausa cuando lo necesites."));
-  texto.append(modos,nota);
-  const mundo=nodo("div","mundo"); mundo.setAttribute("aria-hidden","true");
-  const arte=nodo("img","mundo-arte"); arte.src="/mundo.svg"; arte.alt=""; arte.draggable=false;
-  mundo.append(arte,nodo("p","mundo-titulo","Tu mapa de exploración"),nodo("span","mundo-sello","8 hábitats"));
-  for(const [clase,id,nombre] of [["jaguar","P_A01","Jaguar"],["jirafa","P_A08","Jirafa"]]) {
-    const animal=nodo("div","animal-flotante "+clase); animal.append(imagen(id),nodo("span","",nombre)); mundo.append(animal);
-  }
-  const pie=nodo("div","mundo-pie"),puntos=nodo("div","mundo-puntos");
-  for(let i=0;i<8;i++)puntos.append(nodo("span"));
-  pie.append(nodo("strong","","Mucho por descubrir"),puntos); mundo.append(pie); grid.append(texto,mundo);
+  const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
+  entrada.append(modos,nota); texto.append(entrada); layout.append(texto);
+  const ficha=nodo("div","hero-ficha"); ficha.setAttribute("aria-hidden","true");
+  ficha.append(nodo("span","ficha-numero","01 / 08"),nodo("strong","","Selva tropical"),nodo("p","","Un vistazo a los lugares que vas a descubrir."));
+  layout.append(ficha);
   const resumen=nodo("div","resumen-inicio");
-  for(const [ic,t,s] of [["animales","48 animales","Un mundo para descubrir"],["mapa","8 hábitats","Diferentes lugares para vivir"],["reloj","A tu ritmo","Sin tiempo límite"]]) {
-    const item=nodo("div","resumen-item"),copia=nodo("div"); copia.append(nodo("strong","",t),nodo("span","",s)); item.append(icono(ic,"resumen-icono"),copia); resumen.append(item);
+  for(const [t,s] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Ayuda, repetición y pausa"]]) {
+    const item=nodo("div","resumen-item"); item.append(nodo("strong","",t),nodo("span","",s)); resumen.append(item);
   }
-  b.append(grid,resumen); return b;
+  b.append(foto,nodo("div","hero-sombra"),layout,resumen);
+  const lugares=nodo("section","lugares"),cabecera=nodo("div","lugares-cabecera");
+  const copia=nodo("div"); copia.append(nodo("p","etiqueta","Elige. Explora. Conecta."),nodo("h2","","Ocho paisajes. Muchos hogares."));
+  cabecera.append(copia,nodo("p","","En cada reto podrás elegir entre los ocho hábitats."));
+  const galeria=nodo("div","paisajes");
+  for(const habitat of vista.opciones_habitat) {
+    const tarjeta=nodo("div","paisaje-tarjeta"); tarjeta.append(paisaje(habitat.id),nodo("span","",habitat.nombre)); galeria.append(tarjeta);
+  }
+  lugares.append(cabecera,galeria); return [b,lugares];
 }
 function catalogoAnimales() {
   const barra=nodo("div","catalogo-barra"),total=nodo("p","catalogo-total",`${vista.catalogo_animales.length} animales para explorar`);
@@ -105,8 +114,8 @@ function catalogoAnimales() {
 }
 function render(enfocar=false) {
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
-  const f=vista.fase;
-  if(f==="INICIO") juego.append(inicio());
+  const f=vista.fase; document.body.dataset.fase=f;
+  if(f==="INICIO") juego.append(...inicio());
   else if(f==="SELECCION_ANIMAL") {
     juego.append(titulo("Elige un animal","Toca el animal con el que quieres jugar.","Explora los animales"),...catalogoAnimales(),controles());
   } else if(f==="PAUSADA"||f==="COMPLETADA"||f==="ABANDONADA") {
@@ -126,7 +135,7 @@ function render(enfocar=false) {
     const hab=nodo("div","habitats"); hab.setAttribute("aria-label","Ocho hábitats");
     for(const h of vista.opciones_habitat) {
       const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta",h.pictograma_id);
-      b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
+      b.prepend(paisaje(h.id)); b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
     }
     mesa.append(hab); tablero.append(companero,mesa); juego.append(tablero,controles());
   }

@@ -1,6 +1,6 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
-Versión 3.1.0.
+Versión 3.2.0.
 
 ## 1. Qué está implementado
 
@@ -99,20 +99,28 @@ de subespecie. Se mantiene el nombre preciso del banco. Los SVG son esquemático
 La revisión técnica comprobó carga, legibilidad y correspondencia de etiquetas.
 La comprensión CAA de las secuencias requiere validación posterior con usuarios.
 
-Las tarjetas combinan imagen y nombre; los botones son grandes y el texto oscuro
-contrasta con fondos claros. Hay foco visible para teclado, botones nativos y un
+Las tarjetas combinan imagen y nombre; los botones son grandes. Los paneles de
+ayuda y los nombres de hábitats tienen texto oscuro sobre fondos claros; el catálogo
+y los controles usan texto claro sobre fondos oscuros. Hay foco visible para teclado, botones nativos y un
 diálogo de preferencias. En escritorio los hábitats tienen cuatro columnas; en
 pantallas estrechas pasan a dos y se recorren desplazando la página.
 No se elimina ninguna opción para adaptar la interfaz al móvil.
 
-La versión 3.1 incorpora una identidad verde y crema, un mapa decorativo estático
-en el inicio y tarjetas con mayor separación visual. El tablero distingue el animal,
-la guía y la elección del hábitat. La búsqueda del catálogo solo filtra la pantalla:
+La versión 3.2 usa una escena de selva a todo el ancho del inicio, tipografía amplia
+y una composición oscura con acentos lima. Una galería muestra los ocho paisajes
+que aparecen también como fondos en las opciones de hábitat. Los pictogramas
+originales siguen presentes sobre superficies claras y separados de las imágenes
+decorativas. El tablero distingue el animal, la guía y la elección del hábitat.
+La búsqueda del catálogo solo filtra la pantalla:
 no emite eventos, cambia el modelo ni modifica el estado de la partida. Limpiar el
 campo restaura los 48 animales. Hay un enlace para saltar directamente al juego.
-No se usan vídeos, GIF ni animaciones automáticas; el movimiento reducido del sistema
-también desactiva las transiciones de interacción. El mapa se incluye como SVG propio
-adicional a los 95 pictogramas y no representa una clasificación geográfica exacta.
+No se usan vídeos, GIF, canvas ni animaciones automáticas. La portada y el atlas
+de paisajes se generaron con la herramienta integrada imagegen y se codificaron
+como WebP sin cambiar el contenido. Son composiciones decorativas, adicionales
+a los 95 pictogramas. No se usan para validar las asociaciones del banco de datos.
+El mapa SVG de la versión anterior se conserva como antecedente.
+Las referencias, los prompts y las rutas están en `docs/interfaz/diseno_visual.md`.
+El pie de página y la terminal indican 3.2 para distinguir la copia ejecutada.
 
 ## 5. Estado y registros
 
@@ -158,7 +166,7 @@ adaptador web. Se ejecutaron diez casos en Chromium 145.0.7632.6.
 | Búsqueda, tildes, caso vacío y restauración sin cambiar el estado | Correcto |
 | Recarga sin repetir eventos ni audio | Correcto |
 | Texto exacto para voz, idioma español y cancelación | Correcto con síntesis controlada |
-| Decodificación de los 95 PNG/SVG | Correcto |
+| Decodificación de los 95 PNG/SVG y los dos WebP decorativos | Correcto |
 | Móvil 390 × 844: inicio, preferencias y partida | Correcto |
 | Teclado, barra de progreso y movimiento reducido | Correcto |
 | Inicio y partida entre 320 y 1280 px sin desbordamiento horizontal | Correcto |
@@ -169,9 +177,10 @@ La prueba de voz intercepta el sintetizador para comprobar qué se reproduce;
 no verifica sonido audible ni comprensión en otro dispositivo. La inspección
 de las capturas no constituye una certificación de accesibilidad.
 
-Evidencias: `docs/interfaz/revision_navegador.json` y siete capturas de inicio,
+Evidencias: `docs/interfaz/revision_navegador.json` y ocho capturas de inicio,
 catálogo, reto de escritorio, revisión de animales, reto móvil, inicio móvil y
-preferencias en móvil.
+preferencias en móvil, incluido un inicio panorámico a 1920 px de ancho.
+También se comprobó el inicio del servidor, una sesión HTTP y su cierre con Ctrl+C.
 
 ```console
 python -m unittest discover -s tests -v
@@ -195,7 +204,9 @@ Referencia: [Playwright Library](https://playwright.dev/docs/library).
 | `codigo/interfaz/servicio.py` | Eventos y vistas sobre el gestor compartido. |
 | `codigo/interfaz/servidor.py` | Servidor local y entrega de recursos. |
 | `codigo/interfaz/web/` | Pantallas, estilos, captura y adaptador de voz. |
-| `codigo/interfaz/web/mundo.svg` | Ilustración decorativa estática del inicio. |
+| `codigo/interfaz/web/mundo.svg` | Antecedente: mapa decorativo de la versión 3.1. |
+| `codigo/interfaz/web/portada-selva.webp` | Escena decorativa de portada de la versión 3.2. |
+| `codigo/interfaz/web/paisajes.webp` | Atlas estático de los ocho paisajes decorativos. |
 | `codigo/interfaz/crear_svg.py` | Fuente editable de las ilustraciones propias. |
 | `codigo/interfaz/preparar_recursos.py` | Regeneración de recursos; innecesaria para jugar. |
 | `assets/pictogramas/` | 28 PNG y 67 SVG listos para presentar. |

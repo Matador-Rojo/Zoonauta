@@ -1,6 +1,6 @@
 {
   "fecha": "2026-10-10",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "navegador": "145.0.7632.6",
   "resultados": [
     {
@@ -21,7 +21,7 @@
       "alcance": "Síntesis simulada en navegador; no certifica sonido audible ni comprensión."
     },
     {
-      "caso": "95 recursos visuales decodificados sin errores",
+      "caso": "95 pictogramas y dos imágenes decorativas decodificados sin errores; portada con ocho paisajes y sin vídeo ni canvas",
       "resultado": "OK"
     },
     {

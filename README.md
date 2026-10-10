@@ -2,7 +2,7 @@
 
 Juego de animales y hábitats con pictogramas y guía de inteligencia artificial.
 
-Versión 3.1.0. Python 3.10 o superior.
+Versión 3.2.0. Python 3.10 o superior.
 
 ![Inicio ilustrado de Zoonauta](docs/interfaz/01_inicio.png)
 
@@ -35,9 +35,11 @@ de 1 a 48 retos antes del inicio y ajustar la voz. La voz requiere una voz espa�
 disponible en el dispositivo; si falta, se muestra un aviso y continúa el juego.
 El ZIP no contiene voces instalables ni audio grabado.
 
-El inicio tiene una ilustración estática de exploración. El catálogo permite buscar
+El inicio tiene una escena estática de selva a todo el ancho, tipografía amplia
+y un recorrido visual por los ocho paisajes. El catálogo permite buscar
 animales por nombre, incluso sin tildes. El tablero separa el animal, la guía y los
-ocho hábitats; el progreso indica retos completados. Se adapta a móvil y admite
+ocho hábitats, que combinan paisajes decorativos y sus pictogramas originales;
+el progreso indica retos completados. Se adapta a móvil y admite
 selección con teclado. No necesita vídeos, GIF ni recursos visuales externos.
 Puedes ver el [tablero de juego](docs/interfaz/03_reto_escritorio.png) y el
 [inicio en móvil](docs/interfaz/06_inicio_movil.png).
@@ -78,5 +80,7 @@ describen el estado actual. Los experimentos conservan su procedencia sintética
 Créditos: 28 PNG ARASAAC sin modificación, Sergio Palao, Gobierno de Aragón,
 CC BY-NC-SA; 67 SVG originales del prototipo, CC BY-NC-SA 4.0.
 Consulta `docs/creditos_pictogramas.md` y `datos/fuentes_pictogramas.json`.
-El mapa decorativo `codigo/interfaz/web/mundo.svg` es una ilustración propia
-adicional; no forma parte de los 95 pictogramas educativos.
+La portada y los ocho paisajes son imágenes decorativas generadas con IA,
+incluidas en dos archivos WebP. No forman parte de los 95 pictogramas educativos.
+Las referencias visuales, los prompts y las rutas están en
+`docs/interfaz/diseno_visual.md`. El mapa SVG anterior se conserva como antecedente.

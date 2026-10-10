@@ -13,6 +13,7 @@ import webbrowser
 
 from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, SesionWeb
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
+from codigo.nucleo.estado import TERMINALES
 
 
 class Servidor(ThreadingHTTPServer):
@@ -74,6 +75,8 @@ class Manejador(BaseHTTPRequestHandler):
             "/app.js": ("app.js", "text/javascript; charset=utf-8"),
             "/estilos.css": ("estilos.css", "text/css; charset=utf-8"),
             "/mundo.svg": ("mundo.svg", "image/svg+xml"),
+            "/portada-selva.webp": ("portada-selva.webp", "image/webp"),
+            "/paisajes.webp": ("paisajes.webp", "image/webp"),
             "/revision": ("revision.html", "text/html; charset=utf-8"),
             "/revision.js": ("revision.js", "text/javascript; charset=utf-8")}
         if ruta in fijos:
@@ -127,7 +130,7 @@ def main():
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
                          politica=args.politica, parametros=args.parametros)
     url = f"http://127.0.0.1:{servidor.server_port}"
-    print(f"Zoonauta: {url}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
+    print(f"Zoonauta 3.2: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:
         webbrowser.open(url)
     try:
