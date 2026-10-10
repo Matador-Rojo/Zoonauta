@@ -1,0 +1,32 @@
+[
+  {
+    "navegador": "Chrome",
+    "voces": [
+      {
+        "nombre": "Microsoft Raul - Spanish (Mexico)",
+        "idioma": "es-MX",
+        "local": true
+      },
+      {
+        "nombre": "Microsoft Sabina - Spanish (Mexico)",
+        "idioma": "es-MX",
+        "local": true
+      }
+    ]
+  },
+  {
+    "navegador": "Edge",
+    "voces": [
+      {
+        "nombre": "Microsoft Raul - Spanish (Mexico)",
+        "idioma": "es-MX",
+        "local": true
+      },
+      {
+        "nombre": "Microsoft Sabina - Spanish (Mexico)",
+        "idioma": "es-MX",
+        "local": true
+      }
+    ]
+  }
+]

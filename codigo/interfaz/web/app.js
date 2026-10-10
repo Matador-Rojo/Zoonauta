@@ -1,7 +1,9 @@
 "use strict";
 let vista = null, ocupado = false, voces = [], vozElegida = "", locucion = null;
 let diccionarios={es:{},"pt-BR":{}}, catalogoVoces=[], pedidoVoz=null, turnoVoz=0, audioURL=null;
+let locucionNativa=null;
 const eleccionesVoz={};
+const canalVoz=crypto.randomUUID();
 let carrusel = null, temporizadorPaisaje = null;
 
 const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
@@ -197,43 +199,98 @@ function render(enfocar=false,conservarPaisaje=false) {
   }
 }
 function pararVoz() {
-  turnoVoz++;pedidoVoz?.abort();pedidoVoz=null;
+  const pendiente=pedidoVoz;
+  turnoVoz++;pendiente?.abort();pedidoVoz=null;
+  if(pendiente)fetch("/api/voz/cancelar",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({canal_voz:canalVoz,turno_voz:turnoVoz}),keepalive:true}).catch(()=>{});
   if(locucion){locucion.pause();locucion.removeAttribute("src");locucion=null;}
+  if(locucionNativa){locucionNativa=null;window.speechSynthesis?.cancel();}
   if(audioURL){URL.revokeObjectURL(audioURL);audioURL=null;}
+}
+function vocesNavegador() {
+  if(!window.speechSynthesis||typeof window.SpeechSynthesisUtterance!=="function")return [];
+  const regiones=new Set(["419","AR","BO","CL","CO","CR","CU","DO","EC","GT","HN","MX","NI","PA","PE","PR","PY","SV","UY","VE","US"]);
+  const resultado=[],vistos=new Set();
+  for(const voz of window.speechSynthesis.getVoices()) {
+    const idioma=voz.lang.replaceAll("_","-");
+    const partes=idioma.split("-"),lengua=partes[0].toLowerCase();
+    const region=partes.find(p=>/^(?:[A-Z]{2}|419)$/.test(p.toUpperCase())&&p!==partes[0])?.toUpperCase();
+    if(!(lengua==="es"&&regiones.has(region)||lengua==="pt"&&region==="BR"))continue;
+    const nombre=voz.name+" "+voz.voiceURI;
+    const motor=/\bmicrosoft\b/i.test(nombre)?"microsoft":/\bgoogle\b/i.test(nombre)?"google":null;
+    if(!motor)continue;
+    const id="navegador:"+encodeURIComponent([voz.voiceURI,voz.name,idioma].join("|"));
+    if(vistos.has(id))continue;vistos.add(id);
+    resultado.push({id,nombre:voz.name,motor,idioma:lengua==="es"?"es":"pt-BR",region,
+      disponible:true,nativa:voz,idioma_voz:idioma,local:voz.localService});
+  }
+  return resultado.sort((a,b)=>a.nombre.localeCompare(b.nombre));
+}
+function nombreRegion(region) {
+  if(region==="419")return t("Latinoamérica");
+  try{return new Intl.DisplayNames([vista?.idioma||"es"],{type:"region"}).of(region);}
+  catch{return t({MX:"México",AR:"Argentina",ES:"España",BR:"Brasil",US:"Estados Unidos"}[region]||region);}
 }
 function notaVoz() {
   const disponible=voces.some(v=>v.disponible);
-  $("estado-voz").textContent=t(disponible?"Las voces se reproducen en este equipo, sin conexión después de preparar los modelos.":"No hay voces preparadas para este idioma. Abre iniciar_juego.bat para descargar los modelos.");
+  const seleccionada=voces.find(v=>v.id===vozElegida);
+  const mensaje=seleccionada?.nativa?(seleccionada.local?
+    "Voz del navegador instalada en este equipo. No requiere descargar modelos.":
+    "Voz del navegador. Puede necesitar Internet; no requiere descargar modelos."):
+    disponible?"Las voces se reproducen en este equipo, sin conexión después de preparar los modelos.":
+    "No hay voces preparadas para este idioma. Abre iniciar_juego.bat para descargar los modelos.";
+  $("estado-voz").textContent=t(mensaje);
+  $("disponibilidad-voces-navegador").textContent=t(voces.some(v=>v.nativa)?
+    "Microsoft y Google: se muestran las voces compatibles que ofrece tu navegador.":
+    "Este navegador no ofrece voces de Microsoft o Google para esta región. Puedes usar Piper o Kokoro.");
   $("probar-voz").disabled=!disponible;
 }
 function cargarVoces() {
   const idioma=vista?.idioma||"es";
-  voces=catalogoVoces.filter(v=>v.idioma===idioma);
+  const anterior=vozElegida;
+  voces=[...catalogoVoces,...vocesNavegador()].filter(v=>v.idioma===idioma);
   const sel=$("voces");sel.replaceChildren();
-  for(const motor of ["piper","kokoro"]){
-    const grupo=nodo("optgroup");grupo.label=motor==="piper"?"Piper":"Kokoro";
+  for(const motor of ["google","microsoft","piper","kokoro"]){
+    const grupo=nodo("optgroup");grupo.label={google:"Google",microsoft:"Microsoft",piper:"Piper",kokoro:"Kokoro"}[motor];
     for(const v of voces.filter(v=>v.motor===motor)){
       const calidad=v.calidad?" · "+t({high:"Calidad alta",medium:"Calidad media",low:"Calidad baja",x_low:"Ligera"}[v.calidad]):"";
-      const region=t({MX:"México",AR:"Argentina",ES:"España",BR:"Brasil"}[v.region]);
+      const region=nombreRegion(v.region);
       const o=nodo("option","",`${v.nombre} · ${region}${calidad}`);o.value=v.id;o.disabled=!v.disponible;grupo.append(o);
     }
     if(grupo.children.length)sel.append(grupo);
   }
   const recordada=eleccionesVoz[idioma];
-  const candidata=voces.find(v=>v.id===recordada&&v.disponible)||voces.find(v=>v.disponible);
+  const candidata=voces.find(v=>v.id===recordada&&v.disponible)||voces.find(v=>v.id===anterior&&v.disponible)||voces.find(v=>v.disponible);
   vozElegida=candidata?.id||"";sel.value=vozElegida||voces[0]?.id||"";sel.disabled=!vozElegida;notaVoz();
+  if(anterior&&anterior!==vozElegida)pararVoz();
+}
+function hablarNavegador(voz,prueba) {
+  const turno=turnoVoz;
+  const texto=prueba?t("Hola. Vamos a descubrir dónde viven los animales."):vista.respuesta.texto_voz;
+  const lectura=new SpeechSynthesisUtterance(texto);
+  lectura.voice=voz.nativa;lectura.lang=voz.idioma_voz;
+  lectura.rate=Number($("velocidad").value);lectura.pitch=1;lectura.volume=1;
+  locucionNativa=lectura;
+  lectura.onend=()=>{if(turno===turnoVoz&&locucionNativa===lectura){locucionNativa=null;notaVoz();}};
+  lectura.onerror=()=>{if(turno===turnoVoz&&locucionNativa===lectura){pararVoz();aviso.textContent=t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir.");notaVoz();}};
+  try{window.speechSynthesis.speak(lectura);notaVoz();}
+  catch{pararVoz();aviso.textContent=t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir.");notaVoz();}
 }
 async function hablar(prueba=false) {
   if(!vista||!$("voz").checked)return;
   pararVoz();
   if(!vozElegida){notaVoz();return;}
+  const seleccionada=voces.find(v=>v.id===vozElegida);
+  if(seleccionada?.nativa){hablarNavegador(seleccionada,prueba);return;}
   const turno=turnoVoz,control=new AbortController();pedidoVoz=control;
-  const entrada={voz:vozElegida,idioma:vista.idioma,prueba,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
+  const entrada={voz:vozElegida,idioma:vista.idioma,prueba,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id,
+    canal_voz:canalVoz,turno_voz:turno};
   $("estado-voz").textContent=t("Preparando la lectura…");
   try {
     const r=await fetch("/api/voz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada),signal:control.signal});
     if(!r.ok){const d=await r.json();throw Error(d.error||t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."));}
     const blob=await r.blob();if(turno!==turnoVoz)return;
+    pedidoVoz=null;
     audioURL=URL.createObjectURL(blob);const audio=new Audio(audioURL);locucion=audio;
     audio.playbackRate=Number($("velocidad").value);audio.preservesPitch=true;
     audio.onended=()=>{if(turno===turnoVoz){pararVoz();notaVoz();}};
@@ -279,6 +336,7 @@ $("voces").addEventListener("change",()=>{pararVoz();vozElegida=$("voces").value
 $("velocidad").addEventListener("change",pararVoz);
 $("probar-voz").addEventListener("click",()=>hablar(true));
 $("idioma").addEventListener("change",cambiarIdioma);
+window.speechSynthesis?.addEventListener("voiceschanged",()=>{if(vista)cargarVoces();});
 window.addEventListener("pagehide",()=>{pararVoz();detenerCarrusel();});
 Promise.all([fetch("/api/vista"),fetch("/api/idiomas"),fetch("/api/voz/config")].map(async p=>{const r=await p;if(!r.ok)throw Error();return r.json();}))
 .then(([v,d,c])=>{vista=v;diccionarios=d;catalogoVoces=c.voces;render();cargarVoces();})

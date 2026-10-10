@@ -1,0 +1,16 @@
+{
+  "fecha": "2026-10-10",
+  "base_git": "efb4fe2ffba0172e002ace045d7dd45c9784c30c",
+  "version_base": "3.4.0",
+  "python_correctas": 55,
+  "aceptacion_correctos": 8,
+  "navegador_correctos": 15,
+  "motores_reales_medidos": "Tres voces Piper en Windows/Python 3.12; una corrida por versión, sin escucha humana.",
+  "vuelta_a_voz_con_texto_nuevo_segundos": {
+    "antes": 5.593475699999544,
+    "despues": 0.13491120000253431
+  },
+  "modelo_educativo_conservado": true,
+  "evidencias_originales_conservadas": true,
+  "limites": "La primera carga sigue siendo necesaria. Una inferencia ONNX ya iniciada no se interrumpe; las peticiones canceladas en cola se omiten. Hasta cuatro modelos en RAM."
+}

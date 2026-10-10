@@ -1,4 +1,4 @@
-# Voces locales de Zoonauta 3.4
+# Voces locales y del navegador de Zoonauta 3.4
 
 Piper y Kokoro están integrados. El servidor del equipo genera WAV a partir de
 la respuesta preparada por la guía; no utiliza un proveedor remoto de voz.
@@ -26,7 +26,37 @@ Son 14 opciones: siete por idioma. Ald media y ligera son variantes del mismo
 hablante. Se incorporaron todos los modelos MX/AR y BR del índice Piper fijado en
 `datos/voces_locales.json`, y las tres voces de cada idioma del pack Kokoro v1.0.
 El catálogo fija revisiones, tamaños y huellas; no cambia al actualizarse un índice
-externo. Las voces del navegador se retiraron del selector y del reproductor.
+externo. Estas opciones locales conviven con Microsoft y Google del navegador.
+
+## Microsoft y Google
+
+El selector consulta `speechSynthesis.getVoices()` y se actualiza con
+`voiceschanged`. Solo incorpora voces identificadas como Microsoft o Google
+con una región latinoamericana del español, es-419, es-US o pt-BR. Las voces
+de España y de Portugal no se presentan como latinoamericanas o brasileñas.
+Cada opción muestra su nombre y región, agrupada por proveedor.
+
+Estas voces utilizan Web Speech API, sin descargar pesos, cuentas adicionales
+ni claves de API. Su disponibilidad depende del navegador y del sistema.
+Las voces con `localService=false` pueden utilizar un servicio remoto y necesitar
+Internet; la interfaz lo indica para la opción elegida. No se agregan opciones
+ficticias cuando el navegador no dispone de ellas.
+
+Probar voz lee el mismo saludo fijo; las preguntas, pistas y confirmaciones
+utilizan el texto educativo preparado. Repetir conserva ese texto. Pausar,
+salir o cambiar idioma, voz o velocidad cancela la lectura anterior, incluida
+una descarga WAV pendiente al pasar a una voz del navegador. La elección manual
+se conserva por idioma y recargar no inicia audio. No cambia el modelo educativo.
+
+La comprobación del catálogo real en este equipo Windows encontró Microsoft
+Raúl y Sabina, es-MX, tanto en Chrome como en Edge con perfiles de prueba.
+No aparecieron voces Google ni pt-BR en esos perfiles; eso no demuestra que
+estén disponibles o ausentes en otros navegadores o instalaciones.
+Las pruebas adicionales se guardan por separado en `resultados_nuevos/voces_navegador`.
+
+Referencias: [Web Speech API en Microsoft Edge](https://learn.microsoft.com/en-us/microsoft-edge/dev-guide/multimedia/web-speech-api),
+[getVoices](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices),
+[localService](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice/localService).
 
 ## Preparación y uso
 
@@ -58,7 +88,7 @@ voces. Para jugar con voz utiliza el iniciador o el Python de `.venv-voz`.
 ## Implementación y verificación
 
 Piper usa piper-tts 1.3.0. Kokoro usa kokoro-onnx 0.4.9 y el modelo ONNX int8 v1.0
-con pack voices-v1.0. La generación se serializa, mantiene como máximo dos modelos
+con pack voices-v1.0. La generación se serializa, mantiene como máximo cuatro modelos
 cargados y limita la caché de WAV a 128 respuestas y 32 MiB. Se adaptan los tipos
 de entrada al contrato ONNX: este modelo requiere speed float32 y el motor
 kokoro-onnx lo entrega como int32 en exportaciones input_ids.
@@ -66,6 +96,13 @@ kokoro-onnx lo entrega como int32 en exportaciones input_ids.
 La API solo lee la respuesta actual o el saludo fijo; comprueba sesión, reto,
 revisión e idioma. No acepta texto libre del navegador. Una respuesta de audio
 que llega después de pausar o cambiar de pantalla se descarta.
+
+Al cancelar una lectura, el navegador también avisa al servidor. Las peticiones
+que aún esperan se descartan antes de cargar el modelo o sintetizar; una inferencia
+ONNX ya iniciada termina, pero su respuesta no se reproduce. Los WAV en caché se
+recuperan sin esperar otra síntesis. Piper y Kokoro utilizan dos hilos internos
+por sesión ONNX. Un fallo de una voz no elimina los otros modelos cargados.
+La primera lectura de una voz todavía requiere cargar su modelo y generar audio.
 
 `tests/verificar_voces_reales.py` generó muestras de las 14 opciones con los motores
 reales en Linux/Python 3.12, comprobó WAV PCM mono no silencioso y repetición

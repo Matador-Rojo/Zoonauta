@@ -1,0 +1,65 @@
+{
+  "plataforma": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.14",
+  "original": true,
+  "alcance": "Síntesis real en Windows; no certifica escucha humana ni tiempos en otro equipo.",
+  "cargas": [
+    {
+      "voz": "piper:es_MX-ald-x_low",
+      "carga": true,
+      "segundos": 4.8804186999987
+    },
+    {
+      "voz": "piper:es_MX-ald-medium",
+      "carga": true,
+      "segundos": 4.61606230000325
+    },
+    {
+      "voz": "piper:es_MX-claude-high",
+      "carga": true,
+      "segundos": 3.5032526000068174
+    },
+    {
+      "voz": "piper:es_MX-ald-x_low",
+      "carga": true,
+      "segundos": 5.4837272000004305
+    }
+  ],
+  "mediciones": [
+    {
+      "voz": "piper:es_MX-ald-x_low",
+      "texto": "Hola. Vamos a descubrir dónde viven los animales.",
+      "segundos": 6.618204300000798,
+      "bytes": 155180,
+      "frames": 77568
+    },
+    {
+      "voz": "piper:es_MX-ald-medium",
+      "texto": "Hola. Vamos a descubrir dónde viven los animales.",
+      "segundos": 4.804917399997066,
+      "bytes": 167980,
+      "frames": 83968
+    },
+    {
+      "voz": "piper:es_MX-claude-high",
+      "texto": "Hola. Vamos a descubrir dónde viven los animales.",
+      "segundos": 3.650385600005393,
+      "bytes": 140332,
+      "frames": 70144
+    },
+    {
+      "voz": "piper:es_MX-ald-x_low",
+      "texto": "Exploremos el hogar de los animales.",
+      "segundos": 5.593475699999544,
+      "bytes": 108076,
+      "frames": 54016
+    },
+    {
+      "voz": "piper:es_MX-ald-x_low",
+      "texto": "Exploremos el hogar de los animales.",
+      "segundos": 3.0000002880115062e-05,
+      "bytes": 108076,
+      "frames": 54016
+    }
+  ]
+}
