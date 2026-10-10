@@ -2,7 +2,7 @@
 
 Juego de animales y hábitats con pictogramas y guía de inteligencia artificial.
 
-Versión 3.3.0. Python 3.10 o superior.
+Versión 3.3.1. Python 3.10 o superior.
 
 ![Inicio con paisajes de Zoonauta](docs/interfaz/01_inicio.png)
 
@@ -34,18 +34,10 @@ Ayuda, Repetir, Pausar, Reanudar, Continuar y Salir. Preferencias permite elegir
 de 1 a 48 retos antes del inicio y ajustar la voz. Sin configuración adicional,
 elige primero Google español cuando está disponible y después otras voces españolas.
 
-Para usar las voces de OpenAI (Marin, Cedar y Coral):
-
-```console
-py -m codigo.interfaz.servidor --abrir --puerto 8766 --voz-openai
-```
-
-Introduce tu clave de API en la terminal cuando se solicite; la entrada está oculta
-y no se guarda en archivos. También se admite `OPENAI_API_KEY` como variable de entorno.
-Esta opción usa GPT-Audio-1.5 y requiere conexión, acceso al modelo y saldo en la API;
-el uso se factura en tu cuenta. El juego funciona también sin esa configuración.
-La integración se comprobó con un servicio simulado; falta probar y escuchar la voz real.
-Consulta [la guía de interfaz](docs/guia_interfaz.md#3-voz) para los detalles.
+La voz no necesita claves de API ni una cuenta adicional. Usa las voces españolas
+que ofrece el navegador; su calidad y disponibilidad dependen del equipo.
+Las alternativas locales investigadas están en
+[Alternativas de voz](docs/interfaz/alternativas_voz.md). Todavía no están integradas.
 
 El inicio ocupa una sola pantalla, sin desplazamiento vertical. Sus ocho fotografías
 cambian cada 10 segundos; el nombre y el contador acompañan a cada fondo. Puedes
@@ -81,7 +73,7 @@ El núcleo conserva 48 animales, ocho opciones por reto y ambas modalidades.
 No hay puntos competitivos ni límite de tiempo o intentos. ID3 construye el árbol
 calculando ganancias. Se ejecutó aprendizaje probabilístico con interacciones
 sintéticas y evaluación separada: 34 560 retos de entrenamiento, 51 840 de
-evaluación. Ahora hay 40 pruebas de Python y trece casos de navegador correctos.
+evaluación. Ahora hay 35 pruebas de Python y trece casos de navegador correctos.
 
 La consola utiliza los priors originales salvo que indiques un modelo con
 --parametros; conserva sus parámetros congelados durante la sesión.

@@ -1,6 +1,6 @@
 {
   "fecha": "2026-10-10",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "navegador": "145.0.7632.6",
   "resultados": [
     {
@@ -45,13 +45,13 @@
       "resultado": "OK"
     },
     {
-      "caso": "Google español tiene prioridad sobre voces locales; OpenAI sin clave permanece pendiente de activación",
+      "caso": "Google español tiene prioridad sobre otras voces españolas disponibles",
       "resultado": "OK"
     },
     {
-      "caso": "Audio de OpenAI: ritmo, petición sin texto arbitrario, cancelación de audio tardío al pausar y respaldo del dispositivo ante fallo",
+      "caso": "Preferencias de voz: selección manual conservada, ritmo, lectura exacta, cancelación al pausar y guía silenciada",
       "resultado": "OK",
-      "alcance": "Servicio y reproductor simulados; no certifica voz real ni calidad audible."
+      "alcance": "Síntesis simulada en navegador; no certifica sonido audible."
     },
     {
       "caso": "Consulta técnica separada y modelo congelado",

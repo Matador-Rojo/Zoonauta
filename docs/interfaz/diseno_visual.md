@@ -59,7 +59,7 @@ del atlas. El atlas anterior se mantiene en las tarjetas de hábitat del tablero
 ## Revisión
 
 Se inspeccionaron los ocho fondos y las capturas de portada, catálogo, tablero,
-Preferencias y móvil. Se comprobaron 40 pruebas de Python y trece casos de navegador.
+Preferencias y móvil. Se comprobaron 35 pruebas de Python y trece casos de navegador.
 La interfaz conserva 48 animales, ocho hábitats y ambas modalidades. Las pruebas
 de voz usan síntesis, API y reproductor controlados; no certifican voz real ni
 sonido audible en el dispositivo del usuario.

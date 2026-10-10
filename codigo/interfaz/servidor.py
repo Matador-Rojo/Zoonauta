@@ -2,9 +2,7 @@
 from __future__ import annotations
 
 import argparse
-import getpass
 import json
-import os
 from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -16,7 +14,6 @@ import webbrowser
 from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, SesionWeb
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import TERMINALES
-from codigo.interfaz.voz import VozNatural, VozNoDisponible, SALUDO
 
 
 class Servidor(ThreadingHTTPServer):
@@ -30,7 +27,6 @@ class Servidor(ThreadingHTTPServer):
             if not archivo or not (RAIZ_PROYECTO / archivo).is_file():
                 raise ValueError(f"Falta el recurso visual {p['id']}.")
         self.sesiones = {}
-        self.voz = VozNatural()
         self.lock = RLock()
         self.registros, self.politica, self.parametros = registros, politica, parametros
         super().__init__(direccion, Manejador)
@@ -67,7 +63,7 @@ class Manejador(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(contenido)))
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
-        self.send_header("Content-Security-Policy", "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; media-src 'self' blob:; frame-ancestors 'none'")
+        self.send_header("Content-Security-Policy", "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'")
         if getattr(self, "nueva_cookie", None):
             self.send_header("Set-Cookie", self.nueva_cookie)
         self.end_headers()
@@ -88,8 +84,6 @@ class Manejador(BaseHTTPRequestHandler):
             self._enviar((Path(__file__).parent / "web" / archivo).read_bytes(), mime)
         elif ruta.startswith("/fondos/") and ruta.removeprefix("/fondos/") in {f"H0{i}.webp" for i in range(2, 9)}:
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
-        elif ruta == "/api/voz/config":
-            self._enviar(self.server.voz.configuracion())
         elif ruta == "/api/vista":
             self._enviar(self._sesion().vista())
         elif ruta == "/api/revision":
@@ -108,7 +102,7 @@ class Manejador(BaseHTTPRequestHandler):
 
     def do_POST(self):
         ruta = urlsplit(self.path).path
-        if ruta not in {"/api/accion", "/api/voz"}:
+        if ruta != "/api/accion":
             return self._enviar({"error": "Ruta no encontrada."}, codigo=404)
         origin = self.headers.get("Origin")
         if origin and origin != f"http://{self.headers.get('Host')}":
@@ -123,21 +117,7 @@ class Manejador(BaseHTTPRequestHandler):
             entrada = json.loads(self.rfile.read(longitud))
             if not isinstance(entrada, dict):
                 raise ValueError("La entrada debe ser un objeto JSON.")
-            if ruta == "/api/voz":
-                # El navegador no puede enviar texto arbitrario ni cambiar las pistas.
-                with sesion.lock:
-                    v = sesion.vista()
-                    if type(entrada.get("revision")) is not int or entrada["revision"] != v["revision"]:
-                        raise ConflictoVista("La respuesta de voz ya cambió.")
-                    if type(entrada.get("prueba", False)) is not bool:
-                        raise ValueError("Prueba de voz no válida.")
-                    texto = SALUDO if entrada.get("prueba") else v["respuesta"]["texto_voz"]
-                audio = self.server.voz.generar(texto, entrada.get("voz"))
-                self._enviar(audio, "audio/mpeg")
-            else:
-                self._enviar(sesion.actuar(entrada))
-        except VozNoDisponible as e:
-            self._enviar({"error": str(e)}, codigo=503)
+            self._enviar(sesion.actuar(entrada))
         except ConflictoVista as e:
             self._enviar({"error": str(e), "vista": sesion.vista()}, codigo=409)
         except (ValueError, TypeError, KeyError) as e:
@@ -148,19 +128,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--puerto", type=int, default=8000)
     parser.add_argument("--abrir", action="store_true")
-    parser.add_argument("--voz-openai", action="store_true",
-                        help="Solicitar la clave de API de forma privada para esta ejecución.")
     parser.add_argument("--politica", choices=["ID3", "ROTACION", "PROBABILISTICO"], default="PROBABILISTICO")
     parser.add_argument("--parametros", type=Path, default=MODELO_DEMO)
     parser.add_argument("--registros", type=Path, default=RAIZ_PROYECTO / "registros/interfaz")
     args = parser.parse_args()
-    if args.voz_openai and not os.environ.get("OPENAI_API_KEY"):
-        print("Voz de OpenAI: usa la API con facturación de tu cuenta. La clave no se guardará en archivos.")
-        os.environ["OPENAI_API_KEY"] = getpass.getpass("Clave de API (entrada oculta; Enter para usar la voz del dispositivo): ").strip()
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
                          politica=args.politica, parametros=args.parametros)
     url = f"http://127.0.0.1:{servidor.server_port}"
-    print(f"Zoonauta 3.3: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
+    print(f"Zoonauta 3.3.1: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:
         webbrowser.open(url)
     try:
