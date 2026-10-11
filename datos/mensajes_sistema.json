@@ -111,6 +111,16 @@
       "texto_voz": "Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista."
     },
     {
+      "id": "MSG_APOYO_AUTO",
+      "tipo": "NEUTRAL",
+      "texto": "Vamos a buscar otro lugar.",
+      "pictogramas": [
+        {"tipo": "PICTOGRAMA", "id": "P_EXPLORAR"}
+      ],
+      "modifica_u": true,
+      "texto_voz": "Vamos a buscar otro lugar."
+    },
+    {
       "id": "MSG_INCORRECTA_VALIDADA",
       "tipo": "INVITACION",
       "texto": "Probemos otra opción.",
