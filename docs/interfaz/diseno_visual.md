@@ -96,7 +96,20 @@ completos, las rutas de origen y las rutas finales están en
 Cada fondo tiene su propia imagen completa para evitar ampliar una celda pequeña
 del atlas. El atlas anterior se mantiene en las tarjetas de hábitat del tablero.
 
-## Revisión
+## Apoyos pictográficos actuales
+
+El catálogo presenta el pictograma original junto al recorte fotorrealista;
+en móvil se distribuyen verticalmente para conservar ambos. Continúan siendo
+seis animales por página, con búsqueda global. Los controles de partida usan
+pictogramas originales de 56 px; las consultas, pistas y secuencias de pausa y
+cierre usan 84–96 px. Los hábitats conservan símbolos de 96–112 px.
+
+Las capturas y verificaciones actuales están en `revisiones/2026-10-10-apoyos/`.
+Pasaron 68 pruebas Python y 21 casos de navegador. Las asociaciones y los
+recursos originales no se modificaron. La comprensión CAA debe validarse con
+usuarios del perfil definido; las pruebas técnicas no demuestran aprendizaje.
+
+## Revisión anterior
 
 Se inspeccionaron los ocho fondos y las capturas de portada, catálogo, tablero,
 Preferencias y móvil. En la versión 3.4.0 se añadieron capturas de tablero,

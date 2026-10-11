@@ -16,7 +16,8 @@ class GestorPartida:
     def __init__(self, banco: BancoDatos, retos: int | None = None, politica: str = "ID3",
                  orden_escenarios: list[str] | None = None, origen: str = "CONSOLA_MANUAL",
                  sesion_id: str | None = None, registro: Registro | None = None,
-                 motor: MotorGuia | None = None, traza_completa: bool = True):
+                 motor: MotorGuia | None = None, traza_completa: bool = True,
+                 ayuda_en_pendiente: bool = False):
         self.banco = banco
         self.N = banco.configuracion["retos_por_partida"] if retos is None else retos
         if type(self.N) is not int or not 1 <= self.N <= 48:
@@ -30,6 +31,9 @@ class GestorPartida:
         self.orden_escenarios = tuple(orden_escenarios)
         self.origen = origen
         self.traza_completa = traza_completa
+        # La interfaz activa el acompañamiento automático; las simulaciones
+        # conservan su protocolo original de solicitud explícita de ayuda.
+        self.ayuda_en_pendiente = ayuda_en_pendiente
         self.sesion_id = sesion_id or f"S-{uuid4().hex}"
         self.estado = Estado()
         self.motor = motor if motor is not None else MotorGuia(banco, politica)
@@ -136,9 +140,14 @@ class GestorPartida:
                 s.fase = "RETO_RESUELTO"
                 self._guardar_contenido(respuesta)
             elif resultado == "PENDIENTE":
-                respuesta = self.generador.mensaje("MSG_PENDIENTE", s.animal_id)
-                self._cerrar_observacion(None, "SELECCION_PENDIENTE", evento)
-                self._guardar_contenido(respuesta)
+                if self.ayuda_en_pendiente:
+                    prefijo = self.generador.mensaje("MSG_APOYO_AUTO")
+                    respuesta, traza = self._ayuda(evento, "SELECCION_PENDIENTE", prefijo,
+                                                   resultado_cierre=None)
+                else:
+                    respuesta = self.generador.mensaje("MSG_PENDIENTE", s.animal_id)
+                    self._cerrar_observacion(None, "SELECCION_PENDIENTE", evento)
+                    self._guardar_contenido(respuesta)
             else:
                 prefijo = self.generador.mensaje("MSG_INCORRECTA_VALIDADA")
                 respuesta, traza = self._ayuda(evento, "SELECCION_INCORRECTA_VALIDADA", prefijo)
@@ -205,12 +214,13 @@ class GestorPartida:
         s.fase = "PRESENTACION"
 
     def _ayuda(self, evento: Evento, motivo_cierre: str,
-               prefijo: Respuesta | None = None) -> tuple[Respuesta, dict]:
+               prefijo: Respuesta | None = None,
+               resultado_cierre: int | None = 0) -> tuple[Respuesta, dict]:
         s = self.estado
         nivel = min(s.nivel + 1, 3)
         # Cerrar primero permite que el entrenamiento externo incorpore y=0
         # antes de elegir la nueva variante. La evaluación no actualiza parámetros.
-        self._cerrar_observacion(0, motivo_cierre, evento)
+        self._cerrar_observacion(resultado_cierre, motivo_cierre, evento)
         plantilla, nodo_id, traza = self.motor.decidir(s.habitat_guia_id, nivel,
                                                        s.repeticion_previa, s.variantes_anteriores)
         respuesta = self.generador.ayuda(plantilla, s.animal_id, prefijo)

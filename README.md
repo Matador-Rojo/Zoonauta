@@ -91,17 +91,21 @@ La portada tiene un único botón Comenzar; después se elige Yo elijo o El agen
 en un diálogo con pictogramas. Ambos diálogos usan la misma paleta oscura con acentos lima.
 Puedes ver la [portada con Comenzar](docs/interfaz/revisiones/2026-10-10-inicio/inicio.webp)
 y la [elección de modalidad](docs/interfaz/revisiones/2026-10-10-inicio/selector.webp).
-El catálogo muestra los 48 animales fotorrealistas generados con IA y recortados sin fondo,
-en ocho páginas de seis animales. Permite buscar en todo el catálogo, incluso sin tildes.
+El catálogo muestra el pictograma original de cada animal junto a su recorte fotorrealista
+generado con IA y sin fondo, en ocho páginas de seis animales. Permite buscar en todo el catálogo, incluso sin tildes.
 Las preguntas y pistas conservan los pictogramas originales del catálogo educativo;
 los recortes fotorrealistas se usan en tarjetas, retratos y cierres. Los ocho hábitats
 presentan pictogramas grandes y centrados, con los paisajes como apoyo de fondo.
+Una selección sin asociación confirmada recibe un mensaje amable y una pista nueva
+automáticamente, sin castigo. Repetir conserva esa pista. Los controles muestran los
+pictogramas originales y las pantallas de pausa y cierre incluyen sus secuencias.
+Las preguntas y pistas usan símbolos de 84–96 px; los hábitats, de 96–112 px.
 El cierre presenta el progreso real y permite comenzar otra partida.
 El progreso indica retos completados. Se adapta a móvil y admite
 selección con teclado. No necesita vídeos, GIF ni recursos visuales externos.
-Puedes ver el [tablero actualizado](docs/interfaz/revisiones/2026-10-10-caa/tablero.webp),
-el [catálogo](docs/interfaz/revisiones/2026-10-10-caa/catalogo.webp) y
-el [cierre](docs/interfaz/revisiones/2026-10-10-redisenio/cierre.webp).
+Puedes ver la [pista automática](docs/interfaz/revisiones/2026-10-10-apoyos/pista.webp),
+el [catálogo](docs/interfaz/revisiones/2026-10-10-apoyos/catalogo.webp) y
+el [cierre](docs/interfaz/revisiones/2026-10-10-apoyos/cierre.webp).
 Los archivos y prompts de los animales están en
 [imagenes_animales_ia.json](datos/imagenes_animales_ia.json). Son imágenes sintéticas,
 no fotografías de ejemplares reales. Los 95 pictogramas originales se conservan con sus créditos.
@@ -126,11 +130,15 @@ El núcleo conserva 48 animales, ocho opciones por reto y ambas modalidades.
 No hay puntos competitivos ni límite de tiempo o intentos. ID3 construye el árbol
 calculando ganancias. Se ejecutó aprendizaje probabilístico con interacciones
 sintéticas y evaluación separada: 34 560 retos de entrenamiento, 51 840 de
-evaluación. Las evidencias actuales están en `docs/interfaz/revision_navegador.json` y
-`docs/interfaz/revision_voces_locales.json`.
+evaluación. La revisión actual de accesibilidad está en
+`docs/interfaz/revisiones/2026-10-10-apoyos/`: 68 pruebas Python, ocho casos de
+aceptación del protocolo de consola y 21 casos de navegador, con voces controladas.
+Las evidencias de síntesis real permanecen en `docs/interfaz/revision_voces_locales.json`.
 
 La consola utiliza los priors originales salvo que indiques un modelo con
 --parametros; conserva sus parámetros congelados durante la sesión.
+La interfaz activa la ayuda automática ante selecciones pendientes; consola y
+simulador conservan su protocolo de ayuda explícita para reproducir los experimentos anteriores.
 El simulador y el informe no requieren paquetes externos. Volver a exportar
 el PNG mediante --grafico requiere matplotlib; el gráfico ya está incluido.
 

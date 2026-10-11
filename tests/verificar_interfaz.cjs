@@ -47,6 +47,15 @@ async function comprobarPictogramas(page){
   const v=await vista(page);
   assert.deepEqual(await page.locator('.secuencia img').evaluateAll(imgs=>imgs.map(i=>i.getAttribute('src'))),v.respuesta.pictogramas.map(id=>v.pictogramas[id].imagen));
   assert.equal(await page.locator('.secuencia .animal-foto').count(),0);
+  assert.ok((await page.locator('.secuencia img').evaluateAll(imgs=>imgs.map(i=>i.getBoundingClientRect().width))).every(w=>w>=84));
+}
+async function comprobarControles(page){
+  const v=await vista(page),ids={Ayuda:'P_AYUDA',Repetir:'P_REPETIR',Pausar:'P_PAUSAR',Reanudar:'P_REANUDAR',Continuar:'P_CONTINUAR',Salir:'P_SALIR'};
+  for(const b of await page.locator('.acciones button').all()){
+    const nombre=await b.getAttribute('aria-label');
+    assert.equal(await b.locator('img').getAttribute('src'),v.pictogramas[ids[nombre]].imagen);
+    assert.ok(await b.locator('img').evaluate(i=>i.getBoundingClientRect().width>=56));
+  }
 }
 async function captura(page,archivo,fullPage=true){
   await page.mouse.move(0,0);
@@ -142,6 +151,12 @@ async function clicar(page,texto,fase){
     assert.equal(await page.locator('.catalogo-pagina').textContent(),`Página ${pagina} de 8`);
     const nombres=await page.locator('.catalogo button').evaluateAll(btns=>btns.map(b=>b.getAttribute('aria-label')));
     assert.equal(nombres.length,6);encontrados.push(...nombres);
+    const v=await vista(page);
+    for(const b of await page.locator('.catalogo button').all()){
+      const nombre=await b.getAttribute('aria-label'),animal=v.catalogo_animales.find(a=>a.nombre===nombre);
+      assert.equal(await b.locator('.animal-pictograma').getAttribute('src'),v.pictogramas[animal.pictograma_id].imagen);
+      assert.equal(await b.locator('.animal-foto').getAttribute('src'),`/animales/${animal.id}.webp`);
+    }
     if(pagina<8)await page.getByRole('button',{name:'Siguientes',exact:true}).click();
   }
   assert.equal(new Set(encontrados).size,48);
@@ -162,8 +177,19 @@ async function clicar(page,texto,fase){
   assert.equal((await vista(page)).revision,revisionBusqueda);
   resultados.push({caso:'Catálogo de seis por página: acceso a los 48 animales sin duplicados, límites, retroceso, pausa conserva página, búsqueda global con tildes y sin resultados; navegar y buscar no cambia la partida',resultado:'OK'});
   await busqueda.fill('capibara');
+  for(const ancho of [320,390,768,1024,1280]){
+    await page.setViewportSize({width:ancho,height:1080});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    const posiciones=await page.locator('.catalogo .animal-imagenes img').evaluateAll(imgs=>imgs.map(i=>{
+      const r=i.getBoundingClientRect(),p=i.closest('button').getBoundingClientRect(),nombre=i.closest('button').querySelector('span:not(.animal-numero)').getBoundingClientRect();
+      return {ancho:r.width,dentro:r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<nombre.top};
+    }));
+    assert.ok(posiciones.every(m=>m.ancho>=96&&m.dentro));
+  }
+  await page.setViewportSize({width:1280,height:1080});
   await clicar(page,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
   await comprobarPictogramas(page);
+  await comprobarControles(page);
   assert.match(await page.locator('.animal-retrato img').getAttribute('src'),/^\/animales\/A31\.webp$/);
   assert.equal(await page.locator('.habitats button').count(),8);
   for(const ancho of [320,390,768,1024,1280]){
@@ -180,17 +206,26 @@ async function clicar(page,texto,fase){
   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).texto,textoVoz);
   const r=(await vista(page)).revision;await page.reload();await page.getByRole('button',{name:'Ayuda',exact:true}).waitFor();assert.equal((await vista(page)).revision,r);assert.equal(await page.evaluate(()=>window.__voz.length),0);
   await clicar(page,'Repetir');await clicar(page,'Pausar','PAUSADA');assert.equal(await page.locator('.habitats').count(),0);assert.ok(await page.evaluate(()=>window.__cancelaciones)>0);
+  await comprobarPictogramas(page);await comprobarControles(page);await captura(page,'16_pausa_pictogramas.png');
   await clicar(page,'Reanudar','ESPERANDO_RESPUESTA');assert.deepEqual((await vista(page)).respuesta,ayuda);
   await clicar(page,'Desierto cálido');assert.equal((await vista(page)).respuesta.tipo_respuesta,'NEUTRAL');assert.equal((await vista(page)).progreso.completados,0);
+  const automatica=(await vista(page)).respuesta;
+  assert.equal(automatica.nivel,2);assert.ok(automatica.texto_voz.startsWith('Vamos a buscar otro lugar.'));
+  await comprobarPictogramas(page);await captura(page,'17_pista_automatica.png');
+  await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,automatica);
   await clicar(page,'Selva tropical','RETO_RESUELTO');assert.equal((await vista(page)).progreso.completados,1);assert.equal(await page.locator('.habitats button:enabled').count(),0);
   await clicar(page,'Continuar','COMPLETADA');
+  await comprobarPictogramas(page);
+  assert.equal(await page.getByRole('button',{name:'Comenzar otra partida',exact:true}).locator('img').getAttribute('src'),(await vista(page)).pictogramas.P_INICIAR.imagen);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'1 / 1');
   await captura(page,'13_cierre_completado.png');await clicar(page,'Comenzar otra partida','INICIO');
   await clicar(page,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await page.locator('.habitats button').count(),8);
   await clicar(page,'Salir','ABANDONADA');
+  await comprobarPictogramas(page);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
   await captura(page,'14_cierre_salida.png');
   resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; consulta y ayuda usan pictogramas originales y los ocho símbolos de hábitat miden al menos 96 px sin desbordamiento entre 320 y 1280 px',resultado:'OK'});
+  resultados.push({caso:'Apoyo pictográfico completo: catálogo con pictograma original y recorte, controles de 56 px, pregunta/pistas de al menos 84 px, pausa/cierre con secuencias, selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   assert.deepEqual(errores,[]);
