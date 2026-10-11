@@ -1,4 +1,17 @@
 /* Catálogo, retos y cierre. La portada conserva su composición. */
+.selector-modalidad { width:min(580px,calc(100% - 32px)); padding:28px; text-align:center; }
+.selector-modalidad h2 { font-size:clamp(24px,4vw,32px); font-weight:400; line-height:1.2; margin-bottom:22px; }
+.opciones-modalidad { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.opcion-modalidad { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; min-height:170px; padding:18px 12px; background:#172d24; color:#f2f5e9; border:1px solid #ffffff35; border-radius:22px; font-size:18px; }
+.opcion-modalidad:hover { background:#25452c; border-color:#d2ee8b; }
+.opcion-modalidad img { width:88px; height:88px; object-fit:contain; background:#fff; border-radius:18px; padding:7px; }
+.selector-modalidad .volver-inicio { display:inline-flex; align-items:center; justify-content:center; margin-top:22px; min-height:48px; }
+@media (max-width:600px) {
+  .selector-modalidad { padding:22px; }
+  .opciones-modalidad { gap:12px; }
+  .opcion-modalidad { font-size:15px; min-height:150px; padding:14px 8px; }
+  .opcion-modalidad img { width:72px; height:72px; }
+}
 body:not([data-fase="INICIO"]) {
   background:radial-gradient(ellipse at 12% 0,#29453680,transparent 55%),
     radial-gradient(ellipse at 100% 65%,#203d2d60,transparent 55%),#0c1c17;
