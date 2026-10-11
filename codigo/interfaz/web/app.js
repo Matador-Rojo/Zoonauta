@@ -242,14 +242,15 @@ function render(enfocar=false,conservarPaisaje=false) {
     animal.append(nodo("p","etiqueta","Tu animal"),retrato,nodo("strong","",vista.animal.nombre));
     companero.append(animal,nodo("p","companero-nota","Puedes pedir una pista, repetirla o tomar una pausa."));
     const mesa=nodo("div","mesa"); mesa.append(respuesta(vista.respuesta));
-    if(f==="ESPERANDO_RESPUESTA")mesa.append(nodo("p","instruccion","Toca un lugar donde pueda vivir."));
+    const opciones=nodo("div","habitats-panel");
+    if(f==="ESPERANDO_RESPUESTA")opciones.append(nodo("p","instruccion","Toca un lugar donde pueda vivir."));
     const hab=nodo("div","habitats"); hab.setAttribute("aria-label",t("Ocho hábitats"));
     for(const h of vista.opciones_habitat) {
       const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta");
       b.prepend(paisaje(h.id));
       b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
     }
-    mesa.append(hab); tablero.append(companero,mesa); juego.append(tablero,controles());
+    opciones.append(hab); tablero.append(companero,mesa,opciones); juego.append(tablero,controles());
   }
   if(enfocar) {
     const igual=[...juego.querySelectorAll("button")].find(b=>b.dataset.clave===foco&&!b.disabled);

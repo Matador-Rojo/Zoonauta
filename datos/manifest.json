@@ -24,12 +24,13 @@
     "fuentes_referenciadas": 55,
     "imagenes_png_arasaac": 0,
     "imagenes_svg_originales": 33,
-    "ilustraciones_decorativas_adicionales": 10,
-    "imagenes_decorativas_utilizadas": 9,
+    "ilustraciones_decorativas_adicionales": 18,
+    "imagenes_decorativas_utilizadas": 17,
     "imagenes_caricatura_ia": 48,
     "imagenes_modalidad_ia": 2,
     "imagenes_habitats_ia": 8,
-    "imagenes_controles_ia": 4
+    "imagenes_controles_ia": 4,
+    "imagenes_tarjetas_habitat_ia": 8
   },
   "documentos_consultados": [
     {
@@ -113,8 +114,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 10217,
-      "sha256": "cc87b8863924dee3dedf3e5a154cc449b8475b00c469f55e1d00f3c44f3931ab"
+      "bytes": 10515,
+      "sha256": "e34b030d624de47958eb27890f14863a57df3865d493e9d587207d601167b3b6"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -593,8 +594,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 10492,
-      "sha256": "328d1230339b79d1c907f9a0fae9128292c3b61d15b534718923156c799d4bdd"
+      "bytes": 10739,
+      "sha256": "cda3d94b531a4549d046b82a7d881042ba434911c0c0f20a634c1be3250508f1"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -603,8 +604,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 27651,
-      "sha256": "58d59152e5f0fca4a0fcdda65839141cb42d407ef1954fd091e600e2a389ed2a"
+      "bytes": 27717,
+      "sha256": "b8dc5fbbff0bd877619931b3af80fca19472764122fcfce099cf0d55b3d8beae"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -613,8 +614,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 12369,
-      "sha256": "ada9e3d260a429208f7735f759068ba0f997afa6bb9268151ee1f3dde84929b9"
+      "bytes": 12920,
+      "sha256": "7da6091b5468b78400ea0bf6292fecc019ea824c18fea97a198e9c959e9466f0"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -853,8 +854,8 @@
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
-      "bytes": 4093,
-      "sha256": "9f6a8c316a222c329ed9624b9fb8433659be98348f10f53a962e933133e34e91"
+      "bytes": 4415,
+      "sha256": "ac7d8005365568cc1f85f54ee95ed97acc496712e4cdbe8989131053c2006e1f"
     },
     {
       "ruta": "docs/datos/fuentes/baseline_id3_animales_habitats.md",
@@ -1743,8 +1744,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 20129,
-      "sha256": "dae47fd5bbcdabeeb225638da78fcce0ec11ceef5407846738ea101542c2dffa"
+      "bytes": 20281,
+      "sha256": "fd446531852665377be1ff20dc4f9803e52d5cb47fce27f6bc25d592c1db8be4"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2128,8 +2129,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 35925,
-      "sha256": "acb35f2613f3d4059946082e72ebedb87d5a1406f9ae39cf0d38198ca36fe538"
+      "bytes": 36477,
+      "sha256": "62f81a2e29f0a6c4184e87cd6b414d17767a4c1f2d985191a34bdeedecde26a5"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
@@ -2230,6 +2231,51 @@
       "ruta": "assets/pictogramas/P_SALIR.webp",
       "bytes": 323480,
       "sha256": "ae121141233f42c2dbdf67ca0db5db65a222b8a0d728aef050ff9e08f94574e0"
+    },
+    {
+      "ruta": "datos/imagenes_paisajes_tarjetas_ia.json",
+      "bytes": 13485,
+      "sha256": "a1661b66308ace3f2819caa43d091fddb3227b5ac39de348a3fd6c76741bba42"
+    },
+    {
+      "ruta": "assets/paisajes/H01.webp",
+      "bytes": 798336,
+      "sha256": "d5e951b8b6c3860050d143d2bf8edce77cc09a57e1bed7f7b41b42ce7f70415c"
+    },
+    {
+      "ruta": "assets/paisajes/H02.webp",
+      "bytes": 384966,
+      "sha256": "4690c4e26d5decfb5d5cb9cbb77625b4ce16d6158aba84d9302880f1442836ba"
+    },
+    {
+      "ruta": "assets/paisajes/H03.webp",
+      "bytes": 243474,
+      "sha256": "d7bf6ed2638ce1a1ccac3d06882160df9d7ad14df931b740fe81b1065522ed90"
+    },
+    {
+      "ruta": "assets/paisajes/H04.webp",
+      "bytes": 346170,
+      "sha256": "1b7ca539d68d73295dac64a48782e8e755fea32a544b5e2b71bd7477c272c820"
+    },
+    {
+      "ruta": "assets/paisajes/H05.webp",
+      "bytes": 781538,
+      "sha256": "435f3eb9babd6bf1bd49537e3c557ae6e28faf275a6929d3e745069741a0b672"
+    },
+    {
+      "ruta": "assets/paisajes/H06.webp",
+      "bytes": 518494,
+      "sha256": "10a17b66d3c54b0f8d0071f7e76564081035e027bfab29c12e705c922afae194"
+    },
+    {
+      "ruta": "assets/paisajes/H07.webp",
+      "bytes": 317968,
+      "sha256": "391f8b8bb1d473c4bc3b51c32d77ab10bfeedfe2685c0885eebe7890e015cd80"
+    },
+    {
+      "ruta": "assets/paisajes/H08.webp",
+      "bytes": 502294,
+      "sha256": "2246f6282e74a278b38e6405af0a184a081fa5b9610c7c0ee14409d5754cfe4f"
     }
   ],
   "nombre_proyecto": "Zoonauta"

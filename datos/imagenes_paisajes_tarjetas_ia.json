@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-11",
+  "contenido": "Ocho paisajes realistas originales exclusivos de las tarjetas de hábitat.",
+  "presentacion": "Composición central. Cuadrícula a todo el ancho debajo del animal y la guía. Los fondos de portada se conservan.",
+  "naturaleza": "Imágenes generadas con IA; no fotografías de lugares específicos.",
+  "items": [
+    {
+      "id": "H01",
+      "nombre": "Selva tropical",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: Humid tropical rainforest: a centered dense group of tall broadleaf trees with layered lush green canopies, large tropical leaves, understory ferns and small vines. Clear distinction from temperate woodland. Eye-level viewpoint, green foliage fills frame, no dramatic cliff or waterfall.",
+      "archivo": "assets/paisajes/H01.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 798336,
+      "sha256": "d5e951b8b6c3860050d143d2bf8edce77cc09a57e1bed7f7b41b42ce7f70415c",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "H02",
+      "nombre": "Sabana",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: African savanna: a single iconic flat-topped acacia tree exactly centered, entire crown visible with generous margin on both sides. Wide open golden grassland around it, a few distant small trees on the horizon, pale blue sky. Avoid the main tree at either edge.",
+      "archivo": "assets/paisajes/H02.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 384966,
+      "sha256": "4690c4e26d5decfb5d5cb9cbb77625b4ce16d6158aba84d9302880f1442836ba",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "H03",
+      "nombre": "Desierto cálido",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: Hot sandy desert: a softly curved dune crest centered in the image with several clear golden sand dunes behind, small centered cactus as a secondary identifying cue, bright pale blue sky. Dry sand with clean natural textures; no mountains dominating the frame.",
+      "archivo": "assets/paisajes/H03.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 243474,
+      "sha256": "d7bf6ed2638ce1a1ccac3d06882160df9d7ad14df931b740fe81b1065522ed90",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "H04",
+      "nombre": "Mar",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: Tropical open ocean seascape, viewed just above sea level toward a centered horizon. Clear turquoise and blue sea filling lower two thirds with one gentle wave crest centered in foreground, bright blue sky with a few white clouds. No shore or boats. The water is the central unmistakable subject, not a submerged coral scene.",
+      "archivo": "assets/paisajes/H04.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 346170,
+      "sha256": "1b7ca539d68d73295dac64a48782e8e755fea32a544b5e2b71bd7477c272c820",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "H05",
+      "nombre": "Bosque templado",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: Temperate deciduous woodland: a centered group of broadleaf trees with green, ochre and orange autumn foliage, slender visible trunks, leafy ground and clear daylight. Eye-level viewpoint through a balanced woodland opening. No tropical leaves, no dense jungle vines.",
+      "archivo": "assets/paisajes/H05.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 781538,
+      "sha256": "435f3eb9babd6bf1bd49537e3c557ae6e28faf275a6929d3e745069741a0b672",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "H06",
+      "nombre": "Agua dulce",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: Freshwater river: a calm bright blue freshwater river running from bottom center toward image center, flanked symmetrically by green grassy banks, reeds and small broadleaf trees. The centered river is the dominant feature, no sea, no snowy mountains, no houses.",
+      "archivo": "assets/paisajes/H06.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 518494,
+      "sha256": "10a17b66d3c54b0f8d0071f7e76564081035e027bfab29c12e705c922afae194",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "H07",
+      "nombre": "Regiones polares",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: Polar region: a large white-blue iceberg centered in cold blue water, floating ice in foreground and low snowy glacier in background. Clean bright daytime light and clear blue sky, no trees or grass. The centered ice mass is the dominant unmistakable feature.",
+      "archivo": "assets/paisajes/H07.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 317968,
+      "sha256": "391f8b8bb1d473c4bc3b51c32d77ab10bfeedfe2685c0885eebe7890e015cd80",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    },
+    {
+      "id": "H08",
+      "nombre": "Alta montaña",
+      "prompt": "Use case: scientific-educational. Asset type: one realistic square landscape image for a habitat selection card in Zoonauta, an accessible educational game. Create exactly one photorealistic natural scene, not a collage, with a clear simple centered composition. The defining habitat feature must be centered horizontally and vertically in the middle 60% of the square, readable when cropped to portrait or landscape small cards. Balanced scene on both sides, no empty side reserved for text. Natural bright diffuse daytime light, clear colors and detail, calm mood, no dramatic sunset, no darkness, no fog obscuring the subject. Keep bottom 15% visually quiet for a UI label, but do not draw any text or UI. Full opaque scenic background. No animals, people, buildings, icons, logos, watermark, letters, numbers, borders or text. Subject: High mountain: one prominent rocky snow-capped summit exactly centered and fully visible with margins, smaller rugged ridges on both sides, sparse alpine rocky foreground, clear bright blue daytime sky. Land mountain habitat, no ocean or iceberg.",
+      "archivo": "assets/paisajes/H08.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia": false,
+      "composicion": "Elemento principal centrado, escena realista con luz diurna.",
+      "bytes": 502294,
+      "sha256": "2246f6282e74a278b38e6405af0a184a081fa5b9610c7c0ee14409d5754cfe4f",
+      "licencia_propuesta": "CC BY-NC-SA 4.0"
+    }
+  ]
+}

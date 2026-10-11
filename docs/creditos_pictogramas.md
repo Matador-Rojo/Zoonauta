@@ -13,7 +13,11 @@ bajo CC BY-NC-SA 4.0. Los prompts y huellas están en
 También se renovaron los ocho símbolos de hábitat y los controles Pista, Repetir,
 Pausar y Salir con ilustraciones originales transparentes bajo CC BY-NC-SA 4.0.
 Se documentan en `datos/imagenes_habitats_controles_ia.json`. Los paisajes realistas
-locales siguen siendo la imagen principal de las tarjetas de hábitat.
+locales siguen siendo la imagen principal de las tarjetas de hábitat. Estas tarjetas
+usan ocho paisajes nuevos con composición central, generados con image_gen integrada
+y ofrecidos bajo CC BY-NC-SA 4.0. Son representaciones realistas generadas con IA,
+no fotografías de lugares específicos. Se documentan en
+`datos/imagenes_paisajes_tarjetas_ia.json`; los fondos de portada se conservan.
 Las caricaturas no derivan de los PNG de ARASAAC. Sus prompts y huellas se encuentran
 en `datos/imagenes_animales_ia.json`; se ofrecen con el material original del prototipo
 bajo CC BY-NC-SA 4.0. La comprensión CAA sigue pendiente de evaluación con usuarios.

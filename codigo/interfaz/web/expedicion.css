@@ -50,11 +50,12 @@ body:not([data-fase="INICIO"]) {
 .tablero { grid-template-columns:310px minmax(0,1fr); gap:26px; }
 .companero { background:radial-gradient(ellipse at 50% 42%,#55794d40,transparent 70%),#172d24; border:1px solid #ffffff25; border-radius:26px; padding:24px; }
 .companero::after { width:380px; height:380px; right:-210px; bottom:-230px; }
-.animal-actual { padding:2px 0 24px; gap:15px; }
+.animal-actual { display:grid; grid-template-columns:100px minmax(0,1fr); padding:0 0 16px; gap:10px 14px; text-align:left; }
+.animal-actual .etiqueta { grid-column:2; align-self:end; }
 .animal-actual .etiqueta { color:#c6e890; }
-.animal-retrato { aspect-ratio:1; padding:0; background:none; box-shadow:none; border-radius:0; }
+.animal-retrato { grid-column:1; grid-row:1/3; width:100px; height:130px; aspect-ratio:auto; padding:0; background:none; box-shadow:none; border-radius:0; }
 .animal-actual img { max-width:none; max-height:none; filter:drop-shadow(0 20px 14px #00000035); }
-.animal-actual strong { font-size:32px; font-weight:400; letter-spacing:-1px; }
+.animal-actual strong { grid-column:2; align-self:start; font-size:24px; font-weight:400; letter-spacing:-1px; }
 .companero-nota { color:#b6cbb9; font-size:13px; border-top-color:#ffffff20; }
 .respuesta { background:#182f26; border:1px solid #ffffff25; border-radius:24px; color:#f2f5e9; padding:22px 24px; margin-bottom:20px; }
 .respuesta.confirmacion { background:#25452c; border-color:#9bb866; }
@@ -67,17 +68,18 @@ body:not([data-fase="INICIO"]) {
 .simbolo img { width:96px; height:96px; border-radius:16px; padding:5px; }
 .simbolo figcaption { color:#e0ebd7; font-size:11px; font-weight:400; }
 .instruccion { color:#bccfc0; font-size:14px; margin-bottom:14px; }
+.habitats-panel { grid-column:1/-1; min-width:0; }
 .habitats { gap:14px; }
-.habitats .tarjeta { min-height:214px; border-radius:20px; background:#1b3628; border-color:#ffffff28; transition:transform .18s ease; }
+.habitats .tarjeta { width:100%; min-width:0; min-height:190px; aspect-ratio:4/3; border-radius:20px; background:#1b3628; border-color:#ffffff28; transition:transform .18s ease; }
 .habitats .tarjeta .paisaje { height:100%; background-size:cover; background-position:center; opacity:1; }
-.habitats .paisaje[data-habitat="H01"] { background-image:url('/portada-selva.webp'); }
-.habitats .paisaje[data-habitat="H02"] { background-image:url('/fondos/H02.webp'); }
-.habitats .paisaje[data-habitat="H03"] { background-image:url('/fondos/H03.webp'); }
-.habitats .paisaje[data-habitat="H04"] { background-image:url('/fondos/H04.webp'); }
-.habitats .paisaje[data-habitat="H05"] { background-image:url('/fondos/H05.webp'); }
-.habitats .paisaje[data-habitat="H06"] { background-image:url('/fondos/H06.webp'); }
-.habitats .paisaje[data-habitat="H07"] { background-image:url('/fondos/H07.webp'); }
-.habitats .paisaje[data-habitat="H08"] { background-image:url('/fondos/H08.webp'); }
+.habitats .paisaje[data-habitat="H01"] { background-image:url('/habitats/H01.webp'); }
+.habitats .paisaje[data-habitat="H02"] { background-image:url('/habitats/H02.webp'); }
+.habitats .paisaje[data-habitat="H03"] { background-image:url('/habitats/H03.webp'); }
+.habitats .paisaje[data-habitat="H04"] { background-image:url('/habitats/H04.webp'); }
+.habitats .paisaje[data-habitat="H05"] { background-image:url('/habitats/H05.webp'); }
+.habitats .paisaje[data-habitat="H06"] { background-image:url('/habitats/H06.webp'); }
+.habitats .paisaje[data-habitat="H07"] { background-image:url('/habitats/H07.webp'); }
+.habitats .paisaje[data-habitat="H08"] { background-image:url('/habitats/H08.webp'); }
 .habitats .tarjeta::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#061d16ed 0%,#061d1640 40%,transparent 70%); pointer-events:none; }
 .habitats .tarjeta>span { position:absolute; bottom:0; left:0; min-height:0; background:transparent; border:0; padding:18px 16px; justify-content:flex-start; color:#fff; font-size:17px; font-weight:600; text-align:left; text-shadow:0 2px 8px #0009; }
 .habitats .tarjeta:hover:not(:disabled) { transform:translateY(-2px); }
@@ -112,7 +114,9 @@ body:not([data-fase="INICIO"]) {
   .catalogo { grid-template-columns:repeat(3,minmax(0,1fr)); }
   .tablero { grid-template-columns:245px minmax(0,1fr); gap:20px; }
   .companero { padding:18px; }
-  .animal-actual strong { font-size:27px; }
+  .animal-actual { grid-template-columns:75px minmax(0,1fr); }
+  .animal-retrato { width:75px; height:115px; }
+  .animal-actual strong { font-size:22px; }
   .habitats .tarjeta>span { font-size:15px; }
   .cierre { gap:24px; padding:24px; }
 }
@@ -120,10 +124,9 @@ body:not([data-fase="INICIO"]) {
   .catalogo { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .tablero { grid-template-columns:1fr; }
   .companero { padding:18px 24px; }
-  .animal-actual { gap:20px; }
-  .animal-retrato { width:140px; height:120px; }
-  .animal-actual strong { font-size:30px; }
-  .companero-nota { max-width:170px; }
+  .animal-actual { grid-template-columns:110px minmax(0,1fr); gap:10px 20px; }
+  .animal-retrato { width:110px; height:120px; }
+  .animal-actual strong { grid-row:1/3; align-self:center; font-size:26px; }
   .cierre { grid-template-columns:1fr; gap:0; padding:24px 35px 35px; }
   .cierre-visual { height:260px; max-width:420px; width:100%; margin:auto; }
   .cierre-contenido { padding:12px 0 0; text-align:center; }
@@ -145,16 +148,16 @@ body:not([data-fase="INICIO"]) {
   .catalogo .tarjeta .animal-numero { font-size:9px; left:14px; top:12px; }
   .animal-flecha { display:none; }
   .companero { padding:14px 18px; }
-  .animal-retrato { width:110px; height:105px; }
-  .animal-actual { gap:14px; }
-  .animal-actual strong { font-size:26px; }
+  .animal-retrato { width:90px; height:105px; }
+  .animal-actual { grid-template-columns:90px minmax(0,1fr); gap:10px 14px; }
+  .animal-actual strong { font-size:24px; }
   .respuesta { padding:19px; border-radius:22px; }
   .respuesta h2 { font-size:22px; }
   .secuencia { gap:10px 6px; }
   .simbolo { width:90px; flex-basis:90px; }
   .simbolo img { width:84px; height:84px; }
   .habitats { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .habitats .tarjeta { min-height:196px; }
+  .habitats .tarjeta { min-height:130px; aspect-ratio:1; }
   .habitats .tarjeta>span { font-size:15px; padding:16px 12px; }
   .acciones { gap:10px; }
   .accion { padding:11px 14px; min-height:50px; }

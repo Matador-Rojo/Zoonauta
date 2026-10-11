@@ -197,7 +197,9 @@ async function clicar(page,texto,fase){
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     assert.equal(await page.locator('.habitats .tarjeta img,.habitats .habitat-numero').count(),0);
     const medidas=await page.locator('.habitats .tarjeta .paisaje').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right,fondo:getComputedStyle(i).backgroundImage};}));
-    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=190&&m.dentro&&m.fondo!=='none'));
+    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=125&&m.dentro&&m.fondo.includes('/habitats/')));
+    const ubicacion=await page.locator('.habitats').evaluate(e=>{const r=e.getBoundingClientRect(),p=e.closest('.tablero').getBoundingClientRect(),a=e.closest('.tablero').querySelector('.companero').getBoundingClientRect();return {centrada:Math.abs((r.left+r.right)-(p.left+p.right))<2,debajo:r.top>=a.bottom};});
+    assert.ok(ubicacion.centrada&&ubicacion.debajo);
   }
   await page.setViewportSize({width:1280,height:1080});
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
@@ -236,9 +238,11 @@ async function clicar(page,texto,fase){
   // Los 95 recursos activos se decodifican en el navegador (WebP y SVG).
   const assetTest=await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();
-    const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
+    const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:8},(_,i)=>`/habitats/H0${i+1}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
     await Promise.all(rutas.map(ruta=>new Promise(resolve=>{const i=new Image();i.onload=()=>{if(!i.naturalWidth)fallos.push(ruta);resolve();};i.onerror=()=>{fallos.push(ruta);resolve();};i.src=ruta;})));return fallos;
-  });assert.deepEqual(assetTest,[]);resultados.push({caso:'48 caricaturas, logo, 95 recursos educativos y nueve paisajes decodificados sin errores; ocho fondos sin vídeo ni canvas',resultado:'OK'});
+  });assert.deepEqual(assetTest,[]);
+  assert.equal(await page.evaluate(async()=>(await fetch('/habitats/H09.webp')).status),404);
+  resultados.push({caso:'48 caricaturas, logo, 95 recursos educativos, nueve paisajes de portada y ocho paisajes exclusivos de tarjetas decodificados sin errores',resultado:'OK'});
   // Revisar las representaciones de animales en una plancha para inspección visual.
   await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();const main=document.getElementById('juego');main.replaceChildren();

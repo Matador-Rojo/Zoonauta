@@ -95,6 +95,8 @@ class Manejador(BaseHTTPRequestHandler):
             self._enviar((RAIZ_PROYECTO / "assets" / "animales" / ruta.removeprefix("/animales/")).read_bytes(), "image/webp")
         elif ruta.startswith("/fondos/") and ruta.removeprefix("/fondos/") in {f"H0{i}.webp" for i in range(2, 9)}:
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
+        elif ruta.startswith("/habitats/") and ruta.removeprefix("/habitats/") in {f"H0{i}.webp" for i in range(1, 9)}:
+            self._enviar((RAIZ_PROYECTO / "assets" / "paisajes" / ruta.removeprefix("/habitats/")).read_bytes(), "image/webp")
         elif ruta == "/api/vista":
             self._enviar(self._sesion().vista())
         elif ruta == "/api/revision":
