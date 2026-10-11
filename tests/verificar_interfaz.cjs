@@ -31,7 +31,7 @@ async function mockVoz(context,disponibles=true,vocesNativas=[]){
       const r=await original(url,opciones);
       if(url==='/api/voz'&&r.ok){
         const e=JSON.parse(opciones.body),v=await (await original('/api/vista')).json();
-        window.__pedido={...e,lang:e.idioma,texto:e.prueba?(e.idioma==='es'?'Hola. Vamos a descubrir dónde viven los animales.':'Olá. Vamos descobrir onde os animais vivem.'):v.respuesta.texto_voz};
+        window.__pedido={...e,lang:e.idioma,texto:e.prueba?(e.idioma==='es'?'Hola. Vamos a descubrir dónde viven los animales.':'Olá. Vamos descobrir onde os animais vivem.'):e.contexto==='modalidad'?(e.idioma==='es'?'¿Quién elige el animal?':'Quem escolhe o animal?'):v.respuesta.texto_voz};
       }return r;
     };
     window.Audio=class{
@@ -63,6 +63,28 @@ async function comprobarControles(page){
     assert.ok(await b.locator('img').evaluate(i=>i.getBoundingClientRect().width>=56));
     await comprobarTransparencia(b.locator('img'));
   }
+}
+async function comprobarCierre(page){
+  const v=await vista(page),anterior=page.viewportSize();
+  assert.equal(await page.locator('.cierre-animal').count(),1);
+  assert.equal(await page.locator('.cierre-animal').getAttribute('src'),v.pictogramas[v.animal?.pictograma_id||'P_AGENTE'].imagen);
+  assert.equal(await page.locator('.cierre-resumen progress').getAttribute('value'),String(v.progreso.completados));
+  assert.equal(await page.locator('.cierre-resumen progress').getAttribute('max'),String(v.progreso.total));
+  for(const [width,height] of [[1920,988],[1366,768],[1280,720],[1024,768],[390,844]]){
+    await page.setViewportSize({width,height});
+    const m=await page.evaluate(()=>{
+      const rect=s=>document.querySelector(s).getBoundingClientRect(),c=rect('.cierre'),i=rect('.cierre-animal'),n=rect('.cierre-nombre'),v=rect('.cierre-visual'),t=rect('.cierre-contenido'),b=rect('.cierre-contenido>.accion');
+      return {sinDesborde:document.documentElement.scrollWidth<=innerWidth,
+       completa:i.left>=v.left&&i.right<=v.right&&i.bottom<=n.top&&n.bottom<=v.bottom,
+       proporciones:getComputedStyle(document.querySelector('.cierre-animal')).objectFit==='contain',
+       separados:innerWidth>850?v.right<=t.left:v.bottom<=t.top,
+       control:b.height>=44&&b.left>=c.left&&b.right<=c.right,
+       escritorio:innerWidth<=850||document.documentElement.scrollHeight<=innerHeight,
+       centrado:innerWidth<=850||Math.abs(c.top+c.height/2-innerHeight/2)<2};
+    });assert.ok(Object.values(m).every(Boolean),JSON.stringify({width,height,...m}));
+    if(width===390)await captura(page,'cierre_'+v.fase.toLowerCase()+'_movil.png');
+  }
+  await page.setViewportSize(anterior);
 }
 async function comprobarTablero(page){
   const anterior=page.viewportSize();
@@ -111,7 +133,7 @@ async function clicar(page,texto,fase){
   assert.equal(await page.locator('.cabecera').isVisible(),inicio);
   assert.equal(await page.locator('.creditos').evaluate(e=>e.hidden),!inicio);
   if(!inicio)assert.equal(await page.locator('.creditos').isVisible(),false);
-  if(!['Pausar'].includes(texto))await page.waitForFunction(async()=>{
+  if(!['Pausar','Comenzar otra partida','Começar outra partida'].includes(texto))await page.waitForFunction(async()=>{
     if(!document.getElementById('voz').checked||document.getElementById('probar-voz').disabled)return true;
     const v=await (await fetch('/api/vista')).json();return window.__voz.at(-1)?.revision===v.revision;
   });
@@ -128,6 +150,8 @@ async function clicar(page,texto,fase){
   const antesSelector=await vista(page);
   await page.getByRole('button',{name:'Comenzar',exact:true}).click();
   assert.equal(await page.getByRole('dialog',{name:'¿Quién elige el animal?',exact:true}).isVisible(),true);
+  await page.waitForFunction(()=>window.__voz.at(-1)?.contexto==='modalidad');
+  assert.equal(await page.evaluate(()=>window.__voz.at(-1).texto),'¿Quién elige el animal?');
   await captura(page,'15_selector_modalidad.png',false);
   assert.deepEqual(await vista(page),antesSelector);
   const paisajeSelector=await page.locator('.ficha-numero').textContent();
@@ -269,15 +293,25 @@ async function clicar(page,texto,fase){
   assert.equal(await page.getByRole('button',{name:'Comenzar otra partida',exact:true}).locator('img').getAttribute('src'),(await vista(page)).pictogramas.P_INICIAR.imagen);
   await comprobarTransparencia(page.getByRole('button',{name:'Comenzar otra partida',exact:true}).locator('img'));
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'1 / 1');
-  await captura(page,'13_cierre_completado.png');await clicar(page,'Comenzar otra partida','INICIO');
+  await comprobarCierre(page);await captura(page,'13_cierre_completado.png');
+  const antesReinicio=await page.evaluate(()=>window.__voz.length);
+  await clicar(page,'Comenzar otra partida','INICIO');
+  await page.clock.runFor(1000);assert.equal(await page.evaluate(()=>window.__voz.length),antesReinicio);
+  await page.getByRole('button',{name:'Comenzar',exact:true}).click();
+  await page.waitForFunction(n=>window.__voz.length===n+1,antesReinicio);
+  assert.equal(await page.evaluate(()=>window.__voz.at(-1).texto),'¿Quién elige el animal?');
+  const cancelacionesModal=await page.evaluate(()=>window.__cancelaciones);
+  await page.keyboard.press('Escape');await page.waitForFunction(n=>window.__cancelaciones>n,cancelacionesModal);
   await clicar(page,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await page.locator('.habitats button').count(),8);
   await clicar(page,'Salir','ABANDONADA');
   await comprobarPictogramas(page);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
-  await captura(page,'14_cierre_salida.png');
+  await comprobarCierre(page);await captura(page,'14_cierre_salida.png');
+  resultados.push({caso:'Cierre completado y abandonado: animal actual único, progreso real accesible, centrado sin scroll en cuatro escritorios y contenido completo sin desborde en móvil',resultado:'OK'});
   resultados.push({caso:'Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; tablero de ancho completo que ocupa la altura disponible, animal de al menos 200 × 180 px con nombre debajo y sin recorte, fondo continuo, hábitats alineados con la guía, controles bajo el animal en dos filas y números 01–08. Pregunta, pista, apoyo neutral y confirmación sin scroll en seis resoluciones de 1024 × 768 a 1920 × 1080; cabecera y Preferencias solo en inicio',resultado:'OK'});
   resultados.push({caso:'Apoyo pictográfico: controles de 56 px, preguntas/pistas de al menos 84 px, secuencias de pausa/cierre e Iniciar sin fondos ni bordes; una selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
+  resultados.push({caso:'Nueva partida vuelve a la portada sin voz; abrir el selector lee su pregunta exacta y cerrarlo cancela la lectura, sin cambiar el estado del juego',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
@@ -435,7 +469,7 @@ async function clicar(page,texto,fase){
   assert.deepEqual(await vista(pc),antesCambio);
   resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'3.8.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.0.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

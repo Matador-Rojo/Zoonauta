@@ -94,6 +94,22 @@ class Idiomas(unittest.TestCase):
             self.s.cambiar_idioma(e)
         self.assertEqual("es", self.s.idioma)
 
+    def test_pregunta_de_modalidad_se_lee_sin_alterar_la_partida(self):
+        for idioma, pregunta in [("es", "¿Quién elige el animal?"), ("pt-BR", "Quem escolhe o animal?")]:
+            self.s.cambiar_idioma(self.entrada(idioma=idioma))
+            antes = deepcopy(self.s.revision_tecnica())
+            self.assertEqual(pregunta, self.s.texto_voz(self.entrada(idioma=idioma, contexto="modalidad")))
+            self.assertEqual(antes, self.s.revision_tecnica())
+
+    def test_contexto_de_modalidad_fuera_de_inicio_se_rechaza(self):
+        with self.assertRaises(ValueError):
+            self.s.texto_voz(self.entrada(idioma="es", contexto="inventado"))
+        with self.assertRaises(ConflictoVista):
+            self.s.texto_voz(self.entrada(idioma="es", contexto="modalidad", prueba=True))
+        self.actuar("iniciar", modalidad="AGENTE")
+        with self.assertRaises(ConflictoVista):
+            self.s.texto_voz(self.entrada(idioma="es", contexto="modalidad"))
+
     def test_lectura_previa_y_cambio_de_idioma_se_rechazan(self):
         e = self.entrada(idioma="es", prueba=True)
         self.assertEqual(idiomas.saludo("es"), self.s.texto_voz(e))

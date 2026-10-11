@@ -88,6 +88,14 @@ class SesionWeb:
                 raise ConflictoVista("La pantalla ha cambiado. Se recuperó la vista actual.")
             if type(entrada.get("prueba", False)) is not bool:
                 raise ValueError("La entrada debe ser un objeto JSON.")
+            contexto = entrada.get("contexto", "respuesta")
+            if contexto not in ("respuesta", "modalidad"):
+                raise ValueError("Contexto de lectura no válido.")
+            if contexto == "modalidad":
+                if entrada.get("prueba") or self.gestor.estado.fase != "INICIO":
+                    raise ConflictoVista("La pantalla ha cambiado. Se recuperó la vista actual.")
+                pregunta = "¿Quién elige el animal?"
+                return pregunta if self.idioma == "es" else idiomas.PORTUGUES["interfaz"][pregunta]
             return (idiomas.saludo(self.idioma) if entrada.get("prueba")
                     else idiomas.texto(self.respuesta["texto_voz"], self.idioma))
 

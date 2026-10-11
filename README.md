@@ -1,4 +1,4 @@
-# Zoonauta 3.8.0
+# Zoonauta 4.0.0
 
 Juego de animales y hábitats con pictogramas y una guía de inteligencia artificial.
 Disponible en español y portugués brasileño, con voces locales Piper y Kokoro
@@ -9,6 +9,9 @@ y voces compatibles de Microsoft y Google del navegador.
 ## Cómo se juega
 
 Pulsa **Comenzar** y escoge **Yo elijo** o **El agente elige**.
+La guía lee «¿Quién elige el animal?» al abrir ese diálogo; al volver a la
+portada o comenzar otra partida no se reproduce esa pregunta. Cerrar el diálogo
+cancela la lectura.
 El catálogo permite elegir cualquiera de los 48 animales, en ocho páginas de seis,
 con búsqueda global por nombre. En modo agente, cada partida mezcla los 48 animales
 y presenta tantos como hayas elegido en Preferencias (de 1 a 48; ocho por defecto).
@@ -21,7 +24,10 @@ número del **01 al 08**. Las preguntas y pistas conservan sus secuencias de pic
 con texto de apoyo y lectura en voz alta. Una selección pendiente ofrece una pista
 nueva automáticamente, sin castigo. **Pista** usa un foco; **Repetir** conserva el
 contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
-El cierre muestra los retos realmente completados y permite comenzar otra partida.
+El cierre presenta el animal de la partida en un panel claro, grande y sin
+superponer otras especies. Muestra los retos realmente completados y una barra de
+progreso; **Comenzar otra partida** vuelve a la portada. Si sales antes de elegir
+un animal, aparece el agente como guía.
 No hay puntos competitivos ni límite de tiempo o intentos.
 
 En computadora, el tablero aprovecha el ancho y la altura disponibles, con un
@@ -150,10 +156,12 @@ y 51 840 de evaluación. Los resultados se conservan en `docs/experimentos`.
 La ayuda automática ante selecciones pendientes está activa en la interfaz;
 consola y simulador conservan su protocolo de ayuda explícita.
 
-La versión 3.8 pasó 70 pruebas Python, ocho casos de aceptación de consola y
-21 casos de navegador (17 de interfaz y cuatro de voces controladas). Comprueban
+La versión 4.0 pasó 72 pruebas Python, ocho casos de aceptación de consola y
+24 casos de navegador (19 de interfaz y cinco de voces controladas). Comprueban
 transiciones, repetición, pausa, duplicados, traducciones, transparencia y recorridos
-completos del agente sin repetir los 48 animales. [Revisión](docs/interfaz/3.8/revision.json).
+completos del agente sin repetir los 48 animales. También verifican el cierre en
+escritorio y móvil, el progreso real y la pregunta de modalidad solo cuando
+el diálogo está abierto. [Revisión 4.0](docs/interfaz/4.0/revision.json).
 Las evidencias anteriores de síntesis real de las 14 voces permanecen en
 `docs/interfaz/revision_voces_locales.json`; no certifican pronunciación o escucha
 en otros dispositivos. Los documentos V1/V2 y sus resultados son antecedentes.
