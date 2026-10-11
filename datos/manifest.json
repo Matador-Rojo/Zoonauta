@@ -104,8 +104,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 6943,
-      "sha256": "fe2eb6aede8ae4b0416938d6a44851f433da1710ab16a18cd6c2878378b11839"
+      "bytes": 7027,
+      "sha256": "3ca705b93a33277d7a7cd8a37638643d00d7a4e5a59bfc4c30e8c51c6d120a7a"
     },
     {
       "ruta": "assets/pictogramas/P_A01.svg",
@@ -664,8 +664,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 23886,
-      "sha256": "fd55f17cb0628d55e4a83ad1c5e233a5494b78e21d7388041bdfe850077e350f"
+      "bytes": 23657,
+      "sha256": "3a07504542eae93913ce693a628b5b594e6d7f371a6d0b45698d8209ca848916"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -1789,8 +1789,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 15917,
-      "sha256": "a661c4b6c7d2d009ff9ddd17def4c194b115ba7e3f9d8c0d3c342c06c1c8f8d2"
+      "bytes": 16050,
+      "sha256": "ccbc49ca8c3bbf27d160637e0254df002314be367c8775291b613c79752bea2c"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1864,8 +1864,8 @@
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 6085,
-      "sha256": "140fbb2d7ce760ca551033575d347b4a69089f5af65dfc233b248fc1f9500098"
+      "bytes": 6327,
+      "sha256": "e085c13e09d21361b322da13ac5cdec2e9a3d6695ec15110e3274fac88aaf56c"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -1891,6 +1891,11 @@
       "ruta": "docs/interfaz/revision_voces_locales.json",
       "bytes": 6543,
       "sha256": "ecc2b5de3ed8ca4cfba188179024e70560a60cd6cf1553643fd2b33c1e2e5a68"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-carrusel/interfaz.json",
+      "bytes": 2749,
+      "sha256": "d04bb807bd1564e7a9274a706c84f1897f58613f8561b86e9b61e02fc920ae1c"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/aceptacion.json",
@@ -2019,8 +2024,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 25937,
-      "sha256": "a2e9dc6b1421321b18fa4e3b7e945195e80ba1be653ac944f95a0689ef0a02ee"
+      "bytes": 27304,
+      "sha256": "9f8d3b43a9e96d03b28edb07c45685665adc132aad43ceef46e73552e1193116"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",

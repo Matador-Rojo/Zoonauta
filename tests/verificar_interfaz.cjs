@@ -77,17 +77,27 @@ async function clicar(page,texto,fase){
     assert.equal(await page.locator('.ficha-numero').textContent(),`${String(i%8+1).padStart(2,'0')} / 08`);
   }
   assert.equal((await vista(page)).revision,revisionInicial);
-  await page.getByRole('button',{name:'Siguiente paisaje',exact:true}).click();
-  await page.clock.runFor(20000);assert.equal(await page.locator('.ficha-numero').textContent(),'02 / 08');
-  await page.getByRole('button',{name:'Paisaje anterior',exact:true}).click();
-  await page.getByRole('button',{name:'Reanudar paisajes',exact:true}).click();
-  await page.getByRole('button',{name:'Preferencias',exact:true}).click();
+  await page.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
   await page.clock.runFor(20000);assert.equal(await page.locator('.ficha-numero').textContent(),'01 / 08');
+  await page.getByRole('button',{name:'Reanudar paisajes',exact:true}).click();
+  await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'02 / 08');
+  await page.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
+  await page.getByRole('button',{name:'Siguiente paisaje',exact:true}).click();
+  assert.equal(await page.locator('.ficha-numero').textContent(),'03 / 08');
+  await page.getByRole('button',{name:'Pausar paisajes',exact:true}).waitFor();
+  await page.clock.runFor(9999);assert.equal(await page.locator('.ficha-numero').textContent(),'03 / 08');
+  await page.clock.runFor(2);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
+  await page.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
+  await page.getByRole('button',{name:'Paisaje anterior',exact:true}).click();
+  await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
+  await page.getByRole('button',{name:'Preferencias',exact:true}).click();
+  await page.clock.runFor(20000);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
   const dialogoCerrado=page.evaluate(()=>new Promise(resolve=>document.getElementById('preferencias').addEventListener('close',()=>resolve(),{once:true})));
   await page.getByRole('button',{name:'Volver al juego',exact:true}).click();await dialogoCerrado;
-  await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'02 / 08');
+  await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'05 / 08');
   await page.getByRole('button',{name:'Paisaje anterior',exact:true}).click();
-  resultados.push({caso:'Ocho fondos rotan cada 10 segundos con nombre y contador sincronizados; pausa, navegación manual y Preferencias sin alterar la partida',resultado:'OK'});
+  assert.equal((await vista(page)).revision,revisionInicial);
+  resultados.push({caso:'Ocho fondos rotan cada 10 segundos; pausa solo por botón, play y ambas flechas reanudan y reinician el intervalo; Preferencias suspende sin alterar la partida',resultado:'OK'});
   assert.equal(await page.locator('video,canvas').count(),0);
   await captura(page,'01_inicio.png');
   await page.setViewportSize({width:1920,height:1080});
@@ -156,9 +166,14 @@ async function clicar(page,texto,fase){
   const teclado=await browser.newContext({viewport:{width:1280,height:900},reducedMotion:'reduce'});await mockVoz(teclado);
   const pt=await teclado.newPage();await pt.clock.install();pt.on('pageerror',e=>errores.push(e.message));await pt.goto(base);await pt.getByRole('button',{name:'Yo elijo'}).waitFor();
   assert.equal(await pt.locator('.bienvenida').evaluate(el=>getComputedStyle(el).animationName),'none');
-  await pt.clock.runFor(20000);assert.equal(await pt.locator('.ficha-numero').textContent(),'01 / 08');
+  await pt.clock.runFor(20001);assert.equal(await pt.locator('.ficha-numero').textContent(),'03 / 08');
+  await pt.emulateMedia({reducedMotion:'no-preference'});await pt.emulateMedia({reducedMotion:'reduce'});
+  await pt.clock.runFor(10001);assert.equal(await pt.locator('.ficha-numero').textContent(),'04 / 08');
+  await pt.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
+  await pt.clock.runFor(20000);assert.equal(await pt.locator('.ficha-numero').textContent(),'04 / 08');
   for(const [width,height] of [[320,568],[390,844],[650,390],[844,390],[768,900],[1024,600],[1024,768],[1280,720],[1920,1080]]){await pt.setViewportSize({width,height});assert.equal(await pt.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);for(const nombre of ['Yo elijo','El agente elige','Paisaje anterior','Siguiente paisaje']){const b=await pt.getByRole('button',{name:nombre,exact:true}).boundingBox();assert.ok(b.y>=0&&b.y+b.height<=height,`${nombre} fuera de pantalla ${width}x${height}`);}}
   await pt.setViewportSize({width:1280,height:900});
+  await pt.getByRole('button',{name:'Preferencias',exact:true}).focus();
   for(let i=0;i<6;i++){await pt.keyboard.press('Tab');if(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')==='Yo elijo'))break;}
   assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Yo elijo');await pt.keyboard.press('Enter');
   await pt.getByRole('searchbox',{name:'Buscar animal'}).waitFor();await pt.getByRole('searchbox',{name:'Buscar animal'}).focus();await pt.keyboard.type('jaguar');await pt.keyboard.press('Tab');

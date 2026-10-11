@@ -68,8 +68,9 @@ instalador; los pesos grandes se descargan al preparar el juego. Consulta
 
 El inicio ocupa una sola pantalla, sin desplazamiento vertical. Sus ocho fotografías
 cambian cada 10 segundos; el nombre y el contador acompañan a cada fondo. Puedes
-pausar o recorrer los paisajes con los controles inferiores. Preferencias y la pestaña
-inactiva detienen temporalmente el cambio; con movimiento reducido empieza pausado.
+pausar con el botón central; play o cualquiera de las flechas reanuda el cambio y
+reinicia los 10 segundos. El carrusel empieza en marcha. Preferencias y la pestaña
+inactiva suspenden temporalmente el cambio; movimiento reducido elimina las animaciones.
 La selva es ahora un paisaje sin el guacamayo y comparte el estilo de los otros siete.
 Los botones de inicio y el diálogo usan la misma paleta oscura con acentos lima.
 El catálogo permite buscar

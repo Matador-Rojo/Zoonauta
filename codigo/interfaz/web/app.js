@@ -6,7 +6,6 @@ const eleccionesVoz={};
 const canalVoz=crypto.randomUUID();
 let carrusel = null, temporizadorPaisaje = null;
 
-const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
 const $ = id => document.getElementById(id);
 const juego = $("juego"), aviso = $("aviso");
 function t(texto, valores={}) {
@@ -129,7 +128,7 @@ function inicio() {
   ficha.append(numero,nombre);
   const navegacion=nodo("nav","paisaje-controles");
   const control=(etiqueta,icon,fn)=>{const btn=nodo("button","paisaje-control");btn.type="button";btn.setAttribute("aria-label",t(etiqueta));btn.append(icono(icon));btn.addEventListener("click",fn);return btn;};
-  const manual=paso=>{carrusel.pausado=true;cambiarPaisaje(paso);ritmoCarrusel();};
+  const manual=paso=>{carrusel.pausado=false;cambiarPaisaje(paso);ritmoCarrusel();};
   const anterior=control("Paisaje anterior","anterior",()=>manual(-1));
   const pausa=control("Pausar paisajes","pausa",()=>{carrusel.pausado=!carrusel.pausado;cambiarPaisaje(0);ritmoCarrusel();});
   const siguiente=control("Siguiente paisaje","flecha",()=>manual(1));
@@ -139,7 +138,7 @@ function inicio() {
     const item=nodo("div","resumen-item");item.append(nodo("strong","",t),nodo("span","",sub));resumen.append(item);
   }
   b.append(foto,nodo("div","hero-sombra"),layout,resumen);
-  carrusel={foto,numero,nombre,navegacion,pausa,paisajes:vista.opciones_habitat,indice:0,pausado:movimientoReducido.matches};
+  carrusel={foto,numero,nombre,navegacion,pausa,paisajes:vista.opciones_habitat,indice:0,pausado:false};
   cambiarPaisaje(0);ritmoCarrusel();return [b];
 }
 function catalogoAnimales() {
@@ -330,7 +329,6 @@ $("cerrar-preferencias").addEventListener("click",()=>$("preferencias").close())
 $("cerrar-ajustes").addEventListener("click",()=>$("preferencias").close());
 $("preferencias").addEventListener("close",ritmoCarrusel);
 document.addEventListener("visibilitychange",ritmoCarrusel);
-movimientoReducido.addEventListener("change",e=>{if(carrusel&&e.matches){carrusel.pausado=true;cambiarPaisaje(0);}ritmoCarrusel();});
 $("voz").addEventListener("change",()=>{if(!$("voz").checked)pararVoz();});
 $("voces").addEventListener("change",()=>{pararVoz();vozElegida=$("voces").value;eleccionesVoz[vista.idioma]=vozElegida;notaVoz();});
 $("velocidad").addEventListener("change",pararVoz);
