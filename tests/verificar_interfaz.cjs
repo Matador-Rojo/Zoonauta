@@ -43,6 +43,11 @@ async function mockVoz(context,disponibles=true,vocesNativas=[]){
   },vocesNativas);
 }
 async function vista(page){return page.evaluate(async()=>await (await fetch('/api/vista')).json());}
+async function comprobarPictogramas(page){
+  const v=await vista(page);
+  assert.deepEqual(await page.locator('.secuencia img').evaluateAll(imgs=>imgs.map(i=>i.getAttribute('src'))),v.respuesta.pictogramas.map(id=>v.pictogramas[id].imagen));
+  assert.equal(await page.locator('.secuencia .animal-foto').count(),0);
+}
 async function captura(page,archivo,fullPage=true){
   await page.mouse.move(0,0);
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
@@ -109,19 +114,52 @@ async function clicar(page,texto,fase){
   await page.waitForFunction(()=>window.__voz.length>0);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).lang,'es');
   await page.getByRole('button',{name:'Volver al juego',exact:true}).click();
   await clicar(page,'Yo elijo','SELECCION_ANIMAL');
-  assert.equal(await page.locator('.catalogo button').count(),48);
+  assert.equal(await page.locator('.catalogo button').count(),6);
+  assert.equal(await page.getByRole('button',{name:'Anteriores',exact:true}).isDisabled(),true);
   await captura(page,'02_catalogo.png');
+  await page.setViewportSize({width:390,height:844});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+  await captura(page,'02_catalogo_movil.png');await page.setViewportSize({width:1280,height:1080});
   const revisionCatalogo=(await vista(page)).revision,busqueda=page.getByRole('searchbox',{name:'Buscar animal'});
-  await busqueda.fill('  PINGUINO  ');assert.equal(await page.locator('.catalogo button:visible').count(),1);
-  assert.equal(await page.getByRole('button',{name:'Pingüino emperador',exact:true}).isVisible(),true);
-  await busqueda.fill('animal inexistente');assert.equal(await page.locator('.catalogo button:visible').count(),0);assert.equal(await page.locator('.busqueda-vacia').isVisible(),true);
-  await busqueda.fill('');assert.equal(await page.locator('.catalogo button:visible').count(),48);assert.equal(await page.locator('.busqueda-vacia').isVisible(),false);
+  const encontrados=[];
+  for(let pagina=1;pagina<=8;pagina++){
+    assert.equal(await page.locator('.catalogo-pagina').textContent(),`Página ${pagina} de 8`);
+    const nombres=await page.locator('.catalogo button').evaluateAll(btns=>btns.map(b=>b.getAttribute('aria-label')));
+    assert.equal(nombres.length,6);encontrados.push(...nombres);
+    if(pagina<8)await page.getByRole('button',{name:'Siguientes',exact:true}).click();
+  }
+  assert.equal(new Set(encontrados).size,48);
+  assert.deepEqual(encontrados,(await vista(page)).catalogo_animales.map(a=>a.nombre));
   assert.equal((await vista(page)).revision,revisionCatalogo);
-  resultados.push({caso:'Búsqueda de 48 animales: mayúsculas y tildes, sin resultados, restauración y sin cambiar la partida',resultado:'OK'});
+  assert.equal(await page.getByRole('button',{name:'Siguientes',exact:true}).isDisabled(),true);
+  await page.getByRole('button',{name:'Anteriores',exact:true}).click();
+  assert.equal(await page.locator('.catalogo-pagina').textContent(),'Página 7 de 8');
+  await clicar(page,'Pausar','PAUSADA');await clicar(page,'Reanudar','SELECCION_ANIMAL');
+  assert.equal(await page.locator('.catalogo-pagina').textContent(),'Página 7 de 8');
+  const revisionBusqueda=(await vista(page)).revision;
+  await busqueda.fill('  PINGUINO  ');assert.equal(await page.locator('.catalogo button:visible').count(),1);
+  assert.equal(await page.locator('.catalogo-pagina').textContent(),'Página 1 de 1');
+  assert.equal(await page.getByRole('button',{name:'Pingüino emperador',exact:true}).isVisible(),true);
+  await busqueda.fill('animal inexistente');assert.equal(await page.locator('.catalogo button:visible').count(),0);assert.equal(await page.locator('.busqueda-vacia').isVisible(),true);assert.equal(await page.locator('.catalogo-paginacion').isVisible(),false);
+  await busqueda.fill('');assert.equal(await page.locator('.catalogo button:visible').count(),6);assert.equal(await page.locator('.busqueda-vacia').isVisible(),false);
+  assert.equal(await page.locator('.catalogo-pagina').textContent(),'Página 1 de 8');
+  assert.equal((await vista(page)).revision,revisionBusqueda);
+  resultados.push({caso:'Catálogo de seis por página: acceso a los 48 animales sin duplicados, límites, retroceso, pausa conserva página, búsqueda global con tildes y sin resultados; navegar y buscar no cambia la partida',resultado:'OK'});
+  await busqueda.fill('capibara');
   await clicar(page,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
+  await comprobarPictogramas(page);
+  assert.match(await page.locator('.animal-retrato img').getAttribute('src'),/^\/animales\/A31\.webp$/);
   assert.equal(await page.locator('.habitats button').count(),8);
+  for(const ancho of [320,390,768,1024,1280]){
+    await page.setViewportSize({width:ancho,height:1080});
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    const medidas=await page.locator('.habitats .tarjeta img').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right};}));
+    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=96&&m.alto>=96&&m.dentro));
+  }
+  await page.setViewportSize({width:1280,height:1080});
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
   await clicar(page,'Ayuda');const ayuda=(await vista(page)).respuesta;
+  await comprobarPictogramas(page);
   const textoVoz=(await page.evaluate(()=>window.__voz.at(-1))).texto;assert.equal(textoVoz,ayuda.texto_voz);
   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).texto,textoVoz);
   const r=(await vista(page)).revision;await page.reload();await page.getByRole('button',{name:'Ayuda',exact:true}).waitFor();assert.equal((await vista(page)).revision,r);assert.equal(await page.evaluate(()=>window.__voz.length),0);
@@ -136,12 +174,12 @@ async function clicar(page,texto,fase){
   await clicar(page,'Salir','ABANDONADA');
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
   await captura(page,'14_cierre_salida.png');
-  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida',resultado:'OK'});
+  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; consulta y ayuda usan pictogramas originales y los ocho símbolos de hábitat miden al menos 96 px sin desbordamiento entre 320 y 1280 px',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
-  await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Ayuda');
+  await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await page.getByRole('searchbox',{name:'Buscar animal'}).fill('jirafa');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Ayuda');
   await captura(page,'03_reto_escritorio.png');
   // Los 95 recursos se decodifican en el navegador (PNG y SVG).
   const assetTest=await page.evaluate(async()=>{
@@ -222,7 +260,10 @@ async function clicar(page,texto,fase){
   await pg.setViewportSize({width:1280,height:900});
   await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();
   await clicar(pg,'Eu escolho','SELECCION_ANIMAL');
-  assert.equal(await pg.locator('.catalogo button').count(),48);
+  assert.equal(await pg.locator('.catalogo button').count(),6);
+  assert.equal(await pg.locator('.catalogo-pagina').textContent(),'Página 1 de 8');
+  await pg.getByRole('button',{name:'Próximos',exact:true}).click();
+  assert.equal(await pg.locator('.catalogo-pagina').textContent(),'Página 2 de 8');
   const buscarPT=pg.getByRole('searchbox',{name:'Buscar animal'});await buscarPT.fill('PINGUIM');
   assert.equal(await pg.locator('.catalogo button:visible').count(),1);
   await clicar(pg,'Pinguim-imperador','ESPERANDO_RESPUESTA');
