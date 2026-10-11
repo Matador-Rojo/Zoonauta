@@ -1,5 +1,18 @@
 # Créditos y alcance de los recursos visuales
 
+## Caricaturas seleccionadas el 10 de octubre de 2026
+
+La interfaz usa una única caricatura original por animal: 48 ilustraciones generadas
+con la herramienta integrada image_gen, siguiendo el estilo de la segunda capibara
+seleccionada por el usuario. Las mismas imágenes se utilizan en catálogo, preguntas,
+pistas, retratos y cierres. Los 47 SVG de hábitats, apoyos y controles permanecen.
+Las caricaturas no derivan de los PNG de ARASAAC. Sus prompts y huellas se encuentran
+en `datos/imagenes_animales_ia.json`; se ofrecen con el material original del prototipo
+bajo CC BY-NC-SA 4.0. La comprensión CAA sigue pendiente de evaluación con usuarios.
+
+Los recursos anteriores y sus metadatos se conservaron en un respaldo local antes
+de la sustitución. La información siguiente documenta esas versiones históricas.
+
 9 de octubre de 2026.
 
 Los símbolos pictográficos ARASAAC incluidos son propiedad del Gobierno de Aragón

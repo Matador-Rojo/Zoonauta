@@ -30,10 +30,10 @@ function idiomaPantalla() {
   $("etiqueta-voces").textContent=t(vista.idioma==="pt-BR"?"Voz en portugués brasileño":"Voz en español");
 }
 function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=t(texto); return n; }
-function imagen(id, clase="", fotografia=false) {
-  const im=nodo("img",clase); const animal=fotografia&&/^P_A\d{2}$/.test(id);
-  im.src=animal?`/animales/${id.slice(2)}.webp`:vista.pictogramas[id].imagen;
-  if(animal)im.classList.add("animal-foto");
+function imagen(id, clase="") {
+  const im=nodo("img",clase);
+  im.src=vista.pictogramas[id].imagen;
+  if(/^P_A\d{2}$/.test(id))im.classList.add("animal-ilustracion");
   im.alt=""; im.draggable=false; im.decoding="async"; return im;
 }
 function icono(nombre,clase="") {
@@ -61,10 +61,10 @@ function icono(nombre,clase="") {
   if(clase)svg.setAttribute("class",clase);
   const path=document.createElementNS(svg.namespaceURI,"path"); path.setAttribute("d",caminos[nombre]); svg.append(path); return svg;
 }
-function boton(texto,tipo,payload={},clase="accion",picto=null,fotografia=false) {
+function boton(texto,tipo,payload={},clase="accion",picto=null) {
   const b=nodo("button",clase); b.type="button"; b.dataset.clave=tipo+JSON.stringify(payload);
   if(texto)b.setAttribute("aria-label",t(texto));
-  if(picto)b.append(imagen(picto,"",fotografia)); if(texto)b.append(nodo("span","",texto));
+  if(picto)b.append(imagen(picto)); if(texto)b.append(nodo("span","",texto));
   b.addEventListener("click",()=>accion(tipo,payload)); return b;
 }
 function respuesta(r) {
@@ -195,7 +195,7 @@ function catalogoAnimales() {
     for(const a of animales.slice(estadoCatalogo.pagina*6,(estadoCatalogo.pagina+1)*6)) {
       const tarjeta=boton(a.nombre,"elegir_animal",{animal_id:a.id},"tarjeta");
       const visual=nodo("div","animal-imagenes");
-      visual.append(imagen(a.pictograma_id,"animal-pictograma"),imagen(a.pictograma_id,"",true));
+      visual.append(imagen(a.pictograma_id));
       tarjeta.prepend(visual);
       tarjeta.prepend(nodo("span","animal-numero",a.id.slice(1)));
       tarjeta.append(icono("flecha","animal-flecha")); catalogo.append(tarjeta);
@@ -213,7 +213,7 @@ function cierre(fase) {
   const b=nodo("section","centro cierre"),visual=nodo("div","cierre-visual"),contenido=nodo("div","cierre-contenido");
   visual.setAttribute("aria-hidden","true");
   const ids=fase==="PAUSADA"&&vista.animal?[vista.animal.pictograma_id]:["P_A05","P_A31","P_A01"];
-  ids.forEach((id,i)=>visual.append(imagen(id,`cierre-animal cierre-animal-${i}`,true)));
+  ids.forEach((id,i)=>visual.append(imagen(id,`cierre-animal cierre-animal-${i}`)));
   const h=nodo("h1","",fase==="PAUSADA"?"Tomamos una pausa":fase==="COMPLETADA"?"¡Terminamos!":"Partida terminada");h.id="titulo-pantalla";h.tabIndex=-1;
   contenido.append(nodo("p","etiqueta","Tu expedición"),h,nodo("p","introduccion",vista.respuesta.texto_apoyo),secuencia(vista.respuesta));
   const resumen=nodo("div","cierre-resumen");
@@ -237,7 +237,7 @@ function render(enfocar=false,conservarPaisaje=false) {
   } else {
     juego.append(titulo(f==="RETO_RESUELTO"?"¡Encontraste un lugar!":"Elige un hábitat",null,"Encuentra su hábitat"));
     const tablero=nodo("div","tablero"),companero=nodo("aside","companero"),animal=nodo("div","animal-actual"),retrato=nodo("div","animal-retrato");
-    retrato.append(imagen(vista.animal.pictograma_id,"",true));
+    retrato.append(imagen(vista.animal.pictograma_id));
     animal.append(nodo("p","etiqueta","Tu animal"),retrato,nodo("strong","",vista.animal.nombre));
     companero.append(animal,nodo("p","companero-nota","Puedes pedir una pista, repetirla o tomar una pausa."));
     const mesa=nodo("div","mesa"); mesa.append(respuesta(vista.respuesta));
