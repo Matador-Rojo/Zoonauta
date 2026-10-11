@@ -45,6 +45,7 @@ class GeneradorRespuestas:
         if prefijo:
             texto = prefijo.texto_apoyo + " " + texto
             simbolos = prefijo.pictogramas + simbolos
-        return Respuesta(plantilla["id"], "AYUDA", simbolos, texto, texto,
+        tipo = "NEUTRAL" if prefijo and prefijo.tipo_respuesta == "NEUTRAL" else "AYUDA"
+        return Respuesta(plantilla["id"], tipo, simbolos, texto, texto,
                          plantilla["nivel"], plantilla["variante_id"])
 

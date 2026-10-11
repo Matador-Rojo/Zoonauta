@@ -86,12 +86,54 @@ class PruebasInterfaz(unittest.TestCase):
         self.actuar("ayuda")
         r = self.actuar("seleccionar_habitat", habitat_id="H03")
         self.assertEqual("NEUTRAL", r["respuesta_emitida"]["tipo_respuesta"])
-        self.assertEqual(1, self.s.gestor.estado.nivel)
+        self.assertEqual(2, self.s.gestor.estado.nivel)
+        self.assertEqual(2, r["respuesta_emitida"]["nivel"])
+        self.assertTrue(r["respuesta_emitida"]["texto_voz"].startswith("Vamos a buscar otro lugar."))
         self.assertIsNone(self.s.gestor.observaciones_cerradas[-1]["resultado"])
         r = self.actuar("seleccionar_habitat", habitat_id="H01")
         self.assertEqual("RETO_RESUELTO", r["vista"]["fase"])
         self.assertEqual(1, r["vista"]["progreso"]["completados"])
         self.assertEqual("COMPLETADA", self.actuar("continuar")["vista"]["fase"])
+
+    def test_ayuda_automatica_no_penaliza_ni_duplica_y_se_puede_repetir(self):
+        self.actuar("iniciar", modalidad="JUGADOR", retos=1)
+        self.actuar("elegir_animal", animal_id="A31")
+        parametros = dict(self.s.gestor.motor.parametros)
+        for nivel in (1, 2, 3, 3):
+            e = self.entrada("seleccionar_habitat", habitat_id="H03")
+            r = self.s.actuar(e)
+            self.assertEqual(nivel, self.s.gestor.estado.nivel)
+            self.assertEqual("PENDIENTE", self.s.gestor.estado.resultado)
+            self.assertEqual(0, r["vista"]["progreso"]["completados"])
+            self.assertIn("P_EXPLORAR", r["respuesta_emitida"]["pictogramas"])
+            observacion = copy.deepcopy(self.s.gestor.estado.observacion)
+            self.assertFalse(self.s.actuar(e)["aceptada"])
+            self.assertEqual(observacion, self.s.gestor.estado.observacion)
+            self.assertEqual(r["respuesta_emitida"], self.actuar("repetir")["respuesta_emitida"])
+            self.actuar("pausar")
+            self.assertEqual(r["respuesta_emitida"], self.actuar("reanudar")["respuesta_emitida"])
+        cierres = self.s.gestor.observaciones_cerradas
+        self.assertEqual(3, len(cierres))
+        self.assertTrue(all(o["resultado"] is None and not o["etiqueta_disponible"] for o in cierres))
+        self.assertEqual(parametros, dict(self.s.gestor.motor.parametros))
+        self.actuar("seleccionar_habitat", habitat_id="H01")
+        self.assertEqual(1, self.s.gestor.observaciones_cerradas[-1]["resultado"])
+        self.assertEqual(1, self.s.gestor.estado.completados)
+
+    def test_ayuda_automatica_en_las_315_relaciones_pendientes(self):
+        banco = self.s.banco
+        for (animal, habitat), fila in banco.asociaciones.items():
+            if fila["estado"] != "PENDIENTE":
+                continue
+            with self.subTest(animal=animal, habitat=habitat):
+                self.s = SesionWeb(banco)
+                self.actuar("iniciar", modalidad="JUGADOR", retos=1)
+                self.actuar("elegir_animal", animal_id=animal)
+                r = self.actuar("seleccionar_habitat", habitat_id=habitat)
+                self.assertEqual(1, r["respuesta_emitida"]["nivel"])
+                self.assertEqual("NEUTRAL", r["respuesta_emitida"]["tipo_respuesta"])
+                self.assertEqual("ESPERANDO_RESPUESTA", r["vista"]["fase"])
+                self.assertEqual(0, self.s.gestor.estado.completados)
 
     def test_modelo_aprendido_permanece_congelado(self):
         antes = hashlib.sha256(MODELO_DEMO.read_bytes()).hexdigest()

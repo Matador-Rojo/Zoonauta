@@ -17,10 +17,10 @@
     "pistas_originales": 144,
     "pictogramas_definidos": 95,
     "imagenes_incluidas": 95,
-    "mensajes_sistema": 9,
+    "mensajes_sistema": 10,
     "distribuciones_iniciales": 144,
     "condiciones_simulador": 3,
-    "casos_aceptacion_no_ejecutados": 8,
+    "casos_aceptacion_no_ejecutados": 0,
     "fuentes_referenciadas": 55,
     "imagenes_png_arasaac": 28,
     "imagenes_svg_originales": 67,
@@ -61,7 +61,7 @@
   ],
   "estado": "INTERFAZ_BILINGUE_Y_VOCES_LOCALES_PIPER_KOKORO_IMPLEMENTADAS",
   "validacion": {
-    "pruebas_automaticas_correctas": 49,
+    "pruebas_automaticas_correctas": 68,
     "casos_aceptacion_correctos": 8,
     "aprendizaje_bayesiano_ejecutado": true,
     "modelos_aprendidos": 18,
@@ -78,7 +78,7 @@
       "semillas_separadas": true
     },
     "evaluacion_con_jugadores": false,
-    "casos_navegador_correctos": 14,
+    "casos_navegador_correctos": 21,
     "validacion_caa_con_usuarios": false,
     "voz_prueba": "SINTESIS_REAL_14_VOCES_Y_REPRODUCTOR_NATIVO_2_IDIOMAS",
     "audio_audible_en_dispositivo_usuario_verificado": false,
@@ -89,7 +89,10 @@
       "es",
       "pt-BR"
     ],
-    "dependencias_windows_x64_python312_disponibles": 32
+    "dependencias_windows_x64_python312_disponibles": 32,
+    "revision_actual": "docs/interfaz/revisiones/2026-10-10-apoyos/resumen.md",
+    "ayuda_automatica_interfaz": true,
+    "relaciones_pendientes_probadas_interfaz": 315
   },
   "archivos": [
     {
@@ -104,8 +107,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 8260,
-      "sha256": "12416fdb76bdbcc418d2815f4cb0a926b56c7cfbe03c564400fa8aae648de35d"
+      "bytes": 9430,
+      "sha256": "f5ec0d404815d12827582d2f85f8dd130002355199628168e0d276bee5ba30bb"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -889,8 +892,8 @@
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
-      "bytes": 7160,
-      "sha256": "f53e0c11ca2b1218f15f22fbd985626f06da2798e733a2de0c98f8d2281a2a79"
+      "bytes": 7214,
+      "sha256": "0c8f8738a9e0698dec8f0570c9a9db0b567d326e886bca3a1a05e769dd188c35"
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
@@ -904,8 +907,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 24982,
-      "sha256": "7599b20ead29d3b9fd30f9f74c97a265f9af59acc41353cfc0d8a03e2d60b1c4"
+      "bytes": 27795,
+      "sha256": "cbcba65a865152be975f736081c6f11dceb5eea9e5c8a125ff356956d2a96c1a"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -914,8 +917,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 10941,
-      "sha256": "e8d8c43d0afb7379cabda07413b5ac998bcf039574aa767e75e85730e7ba2f1e"
+      "bytes": 13686,
+      "sha256": "2e2304fc45b70a38497df349cf07fc770bf259b8a115dad7722cbcc3983ec940"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -1019,8 +1022,8 @@
     },
     {
       "ruta": "codigo/nucleo/gestor.py",
-      "bytes": 17234,
-      "sha256": "e487f33041ff3de2961ad4bb572f87d9e7fe5d90cb95f94f0d7cda3e84a929d8"
+      "bytes": 17870,
+      "sha256": "32650f0e0fd9fea26904ab5311f26fe1a05202bb20c83819d810b4778134f1e2"
     },
     {
       "ruta": "codigo/nucleo/registro.py",
@@ -1054,8 +1057,8 @@
     },
     {
       "ruta": "codigo/respuestas/generador.py",
-      "bytes": 2277,
-      "sha256": "0ac0197f74d0e91728ffef2ecd860fd0bb0626bda3c34499c99a5bad6efcac91"
+      "bytes": 2363,
+      "sha256": "6d5b39bdfae391d3056082444e15e65f44544aafdb43edb62beb5e3827a55178"
     },
     {
       "ruta": "datos/animales.json",
@@ -1114,8 +1117,8 @@
     },
     {
       "ruta": "datos/mensajes_sistema.json",
-      "bytes": 4714,
-      "sha256": "288c27a92adede57e229421532a4ac6917d44f30c1ab5ce8f0c6bb6cc3ec8954"
+      "bytes": 4984,
+      "sha256": "015d31bb7b10cae04f06498fb2932833da66919cf4a9284483709ce86f6185f5"
     },
     {
       "ruta": "datos/parametros_iniciales.json",
@@ -1139,8 +1142,8 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 26209,
-      "sha256": "233a8dd4a8e3a9a9db3209d31f0c5f0fb720f2bf0047408c2590277bb5c7c6be"
+      "bytes": 26584,
+      "sha256": "5637c7a3a67074f4f5196a913855d19d1531297bcc0a5ba0e26438bcce987da1"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
@@ -2044,8 +2047,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 17797,
-      "sha256": "1b38e7a340b0e41e20e1b9e615e5ade7b945c4a673ff115bd24ead14021c94b5"
+      "bytes": 19912,
+      "sha256": "2adb689e575bab38f010ab96986d0acaca4601cd13333de449f32f3611d7c6a0"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2119,8 +2122,8 @@
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 8113,
-      "sha256": "6f62a41a34666efcb25d2257db523230ece264351c17aabb6caf5019b3b13aa3"
+      "bytes": 9342,
+      "sha256": "12ac74af351d739d21595b3d4752ee55b7908653addd792761e578c1c42b6cc4"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -2148,9 +2151,109 @@
       "sha256": "ecc2b5de3ed8ca4cfba188179024e70560a60cd6cf1553643fd2b33c1e2e5a68"
     },
     {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/catalogo.webp",
+      "bytes": 77470,
+      "sha256": "03cd32babf6aa336d6716db639ea6128c6bd562f861dff46d03064190bc31141"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/catalogo_movil.webp",
+      "bytes": 56488,
+      "sha256": "e1649c49cf49806a2b6aede5c22366ac883a3f7b98918a837b3fc543aa6135be"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/cierre.webp",
+      "bytes": 67094,
+      "sha256": "c4ac353ef7274b2e592d5b5fdea9925dd53c4b1ece3d8e8cd3cce9efd86a2143"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/pausa.webp",
+      "bytes": 60042,
+      "sha256": "2f6c9138339f94142c34f82bfd874198e334e24f579c93edb3ae0230c20ba2cb"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/pista.webp",
+      "bytes": 111592,
+      "sha256": "df4e97fd9bdd305d87db3faba151cd649d4b757aa8650bb1d25b3524b0b7bab9"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/resumen.md",
+      "bytes": 2180,
+      "sha256": "85b210057e242e71e3dcdb62053f8acc7009fd6f2488733c7150909c58269ace"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/revision_navegador.json",
+      "bytes": 3563,
+      "sha256": "ae5a8866f28623351c52b27676a5307325680adc545275d9e1f7f4a6f4d4a3c7"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-apoyos/revision_voces_navegador.json",
+      "bytes": 925,
+      "sha256": "8cf6fb9faa4388a983af8918eecb3d13a96cbf95a961971805bc663f33ea86f3"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caa/catalogo.webp",
+      "bytes": 79476,
+      "sha256": "4836122579f680ce242770552947bb5287cf3e24530bfe5174766933fd79d272"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caa/catalogo_movil.webp",
+      "bytes": 55180,
+      "sha256": "ab59d19f25e41fd45dbaef4dbcef28b2b445382ba4c38828e3afb7e126da7052"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caa/movil.webp",
+      "bytes": 78136,
+      "sha256": "a085e75350d7428fcbda10fabda05ef7e9814ad47d1733021c057b5f09d17863"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caa/resumen.md",
+      "bytes": 1360,
+      "sha256": "d805696069f925a053985c84c397b76b48842593281b766f571bb55742dc8f74"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caa/revision_navegador.json",
+      "bytes": 3018,
+      "sha256": "7cc8513396869aa599a68f4d4013f1b352481eec262b29e6ff3d9f01fa58087f"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caa/tablero.webp",
+      "bytes": 100524,
+      "sha256": "e2adf4b271ee40d4bbe29014ea0a09c1bbe4ad71471d7de6aed80a3db9d40cbb"
+    },
+    {
       "ruta": "docs/interfaz/revisiones/2026-10-10-carrusel/interfaz.json",
       "bytes": 2749,
       "sha256": "d04bb807bd1564e7a9274a706c84f1897f58613f8561b86e9b61e02fc920ae1c"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-inicio/inicio.webp",
+      "bytes": 156984,
+      "sha256": "28f678862c86309aedb6293b7dc4c1560921c01fa4f0bf6effc28da88fa950dd"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-inicio/resumen.md",
+      "bytes": 1086,
+      "sha256": "78d9ea83a8e41fc3f0ff39542404e6fc4c7230b80745e55d90a687215dafc929"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-inicio/revision_navegador.json",
+      "bytes": 3272,
+      "sha256": "38047118e5b4f192635ce6a082412a5620c7868fa8749336e036502cad78076b"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-inicio/revision_voces_navegador.json",
+      "bytes": 925,
+      "sha256": "8cf6fb9faa4388a983af8918eecb3d13a96cbf95a961971805bc663f33ea86f3"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-inicio/selector.webp",
+      "bytes": 19654,
+      "sha256": "272d60af6b97606cb30418f91250a6180c838fb47ddaf3f6437db68fc9ce5ff0"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-inicio/selector_movil.webp",
+      "bytes": 8678,
+      "sha256": "ad96e383dc59d5c9adc5b423f6ced7c5fd696b8b25c477b118d261a8dc0984fa"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-logo/interfaz.json",
@@ -2309,8 +2412,8 @@
     },
     {
       "ruta": "tests/test_idiomas_voz.py",
-      "bytes": 11518,
-      "sha256": "c73f3982966c3582837f8c2454b229eab886c0939f2a05894227b77b061f6363"
+      "bytes": 11776,
+      "sha256": "62ed6036024c8b472a77017e0fb9ba3b84413ff8fc3110f7460ae217053d9397"
     },
     {
       "ruta": "tests/test_inicio.py",
@@ -2319,8 +2422,8 @@
     },
     {
       "ruta": "tests/test_interfaz.py",
-      "bytes": 5719,
-      "sha256": "e6d63da1d14081427948af1a96065ee04769b23350b15738af54b02d22d282d7"
+      "bytes": 8333,
+      "sha256": "b4dff361e2f9dcecc50e8dd3c3edca1459455b872b001c9fbeba02de2b4474c5"
     },
     {
       "ruta": "tests/test_nucleo.py",
@@ -2339,13 +2442,13 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 27783,
-      "sha256": "a1646e2030fd2ac5b31dfec0fc49e8b7a9a584f6722afccb7737ca3e6cd597ac"
+      "bytes": 35802,
+      "sha256": "344bfb5dd601424b56c33d7332b01835a0af907a2819dc35ee0cfee00e302d9a"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
-      "bytes": 10224,
-      "sha256": "616a18c317956658ca361bc7cf8a3eace0ad4ea3351b637dccf741017d0e867a"
+      "bytes": 10514,
+      "sha256": "17f1094dbb3335210e2d502bfa5eac93c2e822beb2391cf53eb174ff43aa0c79"
     },
     {
       "ruta": "tests/verificar_voces_reales.py",
