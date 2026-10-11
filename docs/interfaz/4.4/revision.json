@@ -1,0 +1,232 @@
+{
+  "version": "4.4.0",
+  "fecha": "2026-10-11",
+  "navegador": "154.0.8037.98",
+  "pruebas_python": 72,
+  "casos_aceptacion": 8,
+  "casos_interfaz": 20,
+  "casos_voces_controladas": 5,
+  "imagenes": {
+    "cierre": "assets/ilustraciones/robot_despedida.webp",
+    "pausa": "assets/ilustraciones/robot_pausa.webp",
+    "ultima_especie_en_cierre_o_pausa": false,
+    "webp_sin_perdida": true,
+    "alpha_conservado": true,
+    "prompts_y_huellas": "datos/imagenes_cierre_pausa_ia.json",
+    "recursos_pictograficos_banco": 95,
+    "ilustraciones_adicionales_robot": 2
+  },
+  "cierre_y_pausa": {
+    "progreso_real_accesible": true,
+    "imagenes_completas": true,
+    "proporciones": "contain",
+    "etiquetas_es_y_pt_BR_verificadas": true,
+    "centrado_sin_scroll_en_escritorio": [
+      [
+        1920,
+        988
+      ],
+      [
+        1366,
+        768
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        1024,
+        768
+      ]
+    ],
+    "movil_sin_desborde": [
+      390,
+      844
+    ],
+    "fases_probadas": {
+      "es": [
+        "PAUSADA",
+        "COMPLETADA",
+        "ABANDONADA"
+      ],
+      "pt-BR": [
+        "PAUSADA",
+        "ABANDONADA"
+      ]
+    },
+    "reanudar_conserva_reto_y_respuesta": true,
+    "secuencias_educativas_conservadas": true
+  },
+  "voz_modalidad": {
+    "solo_al_abrir_dialogo": true,
+    "cancelada_al_cerrar": true,
+    "nueva_partida_sin_lectura_en_portada": true
+  },
+  "resultados_interfaz": [
+    {
+      "caso": "Un solo botón Comenzar en la portada; después se elige jugador o agente en diálogo con pictogramas. Abrir, volver y Escape no crean una partida; el selector suspende el carrusel y devuelve el foco",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Ocho fondos rotan cada 10 segundos; pausa solo por botón, play y ambas flechas reanudan y reinician el intervalo; Preferencias suspende sin alterar la partida",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Catálogo de seis por página: acceso a los 48 animales sin duplicados, límites, retroceso, pausa conserva página, búsqueda global con tildes y sin resultados; navegar y buscar no cambia la partida",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Robot de despedida en cierre completado/abandonado y robot sentado en pausa; etiquetas en español y portugués, progreso real accesible, imágenes completas, centrado sin scroll en cuatro escritorios y contenido completo sin desborde en móvil",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; tablero de ancho completo que ocupa la altura disponible, animal de al menos 200 × 180 px con nombre debajo y sin recorte, fondo continuo, hábitats alineados con la guía, controles bajo el animal en dos filas y números 01–08. Pregunta, pista, apoyo neutral y confirmación sin scroll en seis resoluciones de 1024 × 768 a 1920 × 1080; cabecera y Preferencias solo en inicio",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Apoyo pictográfico: controles de 56 px, preguntas/pistas de al menos 84 px, secuencias de pausa/cierre e Iniciar sin fondos ni bordes; una selección pendiente ofrece pista automática y Repetir conserva el contenido",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Actualización del navegador conserva sesión sin repetir eventos ni audio",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Nueva partida vuelve a la portada sin voz; abrir el selector lee su pregunta exacta y cerrarlo cancela la lectura, sin cambiar el estado del juego",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Audio local español: texto exacto, repetición y cancelación",
+      "resultado": "OK",
+      "alcance": "API WAV y reproductor controlados; no certifica sonido audible ni comprensión."
+    },
+    {
+      "caso": "Notificaciones de hasta 260 px: fondo oscuro y bordes por tipo, nuevas debajo de anteriores sin superposición, ocho segundos independientes, cierre circular sobre la esquina por X y teclado; accesibles sobre Preferencias, sin bloquear controles del fondo; validación entera 1–48 antes de modalidad, español/portugués, escritorio/móvil y versión visible en créditos",
+      "resultado": "OK"
+    },
+    {
+      "caso": "48 caricaturas, logo, 95 recursos educativos, dos ilustraciones de robot, nueve paisajes de portada y ocho paisajes exclusivos de tarjetas decodificados sin errores",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Pantalla móvil 390 × 844: inicio, preferencias y partida, ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos",
+      "resultado": "OK"
+    },
+    {
+      "caso": "14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio",
+      "resultado": "OK",
+      "alcance": "API WAV y reproductor controlados."
+    },
+    {
+      "caso": "Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; adaptador de idioma sobre una sesión activa sin alterar estado, registros o modelo. Preferencias visible solo en inicio",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Revisión técnica con encabezados en portugués y registros originales conservados",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Consulta técnica separada y modelo congelado",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida",
+      "resultado": "OK",
+      "alcance": "Descarga de WAV y reproductor controlados."
+    }
+  ],
+  "resultados_voces": [
+    {
+      "caso": "Microsoft y Google en español latinoamericano y portugués brasileño: región real, saludo, ritmo, selección por idioma y modelo inmutable",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Silencio, errores de voz localizados, eventos cancelados antiguos y recarga sin lectura automática",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Voces que aparecen tarde o desaparecen, restauración de selección y partida con voz del navegador sin modelos locales",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Cambio de una lectura WAV pendiente a Google: cancela la cola local y lee con el navegador",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Portada silenciosa al reiniciar; pregunta exacta solo al abrir modalidad y cancelación al cerrar, en español y portugués con voz del navegador",
+      "resultado": "OK"
+    }
+  ],
+  "errores_js": [],
+  "alcance": "Verificación técnica de renderizado, validación, temporizadores, transiciones y voces controladas; no certifica escucha audible en otros equipos, comprensión CAA ni aprendizaje con usuarios. La síntesis real de 14 voces pertenece a revisiones anteriores y no se repitió para esta actualización.",
+  "notificaciones": {
+    "posicion": "inferior derecha",
+    "ancho_maximo_tarjeta_px": 260,
+    "fondo": "#14201e",
+    "bordes_por_tipo": {
+      "advertencia": "#edbd68",
+      "error": "#f09090",
+      "informacion": "#90c9eb"
+    },
+    "tipo_distinguido_por_titulo": true,
+    "orden": "nuevas abajo y anteriores hacia arriba sin superposición",
+    "duracion_independiente_ms": 8000,
+    "cierre_circular_sobre_esquina_superior_derecha": true,
+    "area_cierre_px": [
+      44,
+      44
+    ],
+    "cierre_con_x_y_teclado": true,
+    "cerrar_una_conserva_las_demas": true,
+    "sobre_preferencias": true,
+    "sin_desplazar_portada": true,
+    "controles_tras_zonas_transparentes_operativos": true,
+    "cola_larga_probada_con_8_avisos_en_320_568": true,
+    "version_en_creditos": "4.4",
+    "idiomas": [
+      "es",
+      "pt-BR"
+    ],
+    "pantallas_probadas": [
+      [
+        1366,
+        768
+      ],
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "validacion_retos": {
+      "enteros_inclusivos": [
+        1,
+        48
+      ],
+      "rechazados": [
+        "50",
+        "0",
+        "-1",
+        "",
+        "1.5"
+      ],
+      "antes_de_modalidad": true,
+      "intento_invalido_sin_voz_ni_cambio_de_partida": true
+    }
+  }
+}

@@ -12,8 +12,8 @@
     <button id="ajustes" class="boton-texto" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M9 4v6M15 14v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Preferencias</button>
   </header>
   <main id="juego" aria-busy="true" tabindex="-1"><p class="cargando" role="status">Preparando tu expedición…</p></main>
-  <div id="aviso" class="aviso" popover="manual" hidden><p id="aviso-texto" role="status" aria-live="polite" aria-atomic="true"></p><button id="cerrar-aviso" type="button" aria-label="Cerrar notificación">×</button></div>
-  <footer class="creditos"><span class="pie-lema">Zoonauta <span class="version">4.3</span></span><p>Ilustraciones de animales, pictogramas y paisajes originales generados con IA.</p></footer>
+  <div id="aviso" class="avisos" role="region" aria-label="Notificaciones" popover="manual" hidden></div>
+  <footer class="creditos"><span class="pie-lema">Zoonauta <span class="version">4.4</span></span><p>Ilustraciones de animales, pictogramas y paisajes originales generados con IA.</p></footer>
   <dialog id="preferencias" aria-labelledby="titulo-preferencias">
     <div class="ajustes-cabecera"><div><p class="etiqueta">Tu expedición</p><h2 id="titulo-preferencias">A tu manera.</h2></div><button id="cerrar-ajustes" class="cerrar-dialogo" aria-label="Cerrar Preferencias">×</button></div>
     <p class="subtitulo">Un ritmo cómodo. Una voz que te acompañe.</p>
@@ -27,7 +27,7 @@
       <p id="disponibilidad-voces-navegador" class="nota-ajustes" role="status"></p>
       <button id="probar-voz" class="secundario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7V5Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Probar voz</button>
     </section>
-    <div class="ajustes-pie"><details class="creditos-ajustes"><summary>Créditos visuales</summary><p>Ilustraciones de animales, pictogramas y paisajes originales generados con IA.</p></details><button id="cerrar-preferencias" class="primario">Volver al juego <span aria-hidden="true">↗</span></button></div>
+    <div class="ajustes-pie"><details class="creditos-ajustes"><summary>Créditos visuales</summary><p class="creditos-version">Zoonauta <span>4.4</span></p><p>Ilustraciones de animales, pictogramas y paisajes originales generados con IA.</p></details><button id="cerrar-preferencias" class="primario">Volver al juego <span aria-hidden="true">↗</span></button></div>
   </dialog>
   <noscript><p>Activa JavaScript para seleccionar pictogramas y escuchar las respuestas.</p></noscript>
 </body></html>

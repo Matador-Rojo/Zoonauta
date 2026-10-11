@@ -31,36 +31,54 @@ function idiomaPantalla() {
 }
 function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=t(texto); return n; }
 
-let temporizadorAviso=null, focoAntesAviso=null;
+const avisosActivos=new Map();
 function ubicarAviso() {
   if(aviso.hidden)return;
   const destino=document.querySelector('dialog[open]')||document.body;
   if(aviso.parentElement!==destino)destino.append(aviso);
-  if(typeof aviso.showPopover==='function'&&!aviso.matches(':popover-open'))aviso.showPopover();
+  if(typeof aviso.showPopover==="function"&&!aviso.matches(":popover-open"))aviso.showPopover();
 }
-function cerrarAviso() {
-  clearTimeout(temporizadorAviso);temporizadorAviso=null;
-  if(aviso.contains(document.activeElement)&&focoAntesAviso?.isConnected)focoAntesAviso.focus({preventScroll:true});
-  if(typeof aviso.hidePopover==='function'&&aviso.matches(':popover-open'))aviso.hidePopover();
-  aviso.hidden=true;$("aviso-texto").textContent="";delete aviso.dataset.origen;
+function cerrarAviso(tarjeta) {
+  const datos=avisosActivos.get(tarjeta);
+  if(!datos)return;
+  clearTimeout(datos.temporizador);
+  if(tarjeta.contains(document.activeElement)){
+    const otro=tarjeta.nextElementSibling||tarjeta.previousElementSibling;
+    const foco=otro?.querySelector("button")||datos.foco;
+    if(foco?.isConnected&&!foco.closest('dialog:not([open])'))foco.focus({preventScroll:true});
+  }
+  avisosActivos.delete(tarjeta);tarjeta.remove();
+  if(!avisosActivos.size){
+    if(typeof aviso.hidePopover==="function"&&aviso.matches(":popover-open"))aviso.hidePopover();
+    aviso.hidden=true;
+  }
 }
-function notificar(texto,origen="general") {
-  cerrarAviso();focoAntesAviso=document.activeElement;
-  $("cerrar-aviso").setAttribute("aria-label",t("Cerrar notificación"));
-  aviso.dataset.origen=origen;aviso.hidden=false;ubicarAviso();
-  $("aviso-texto").textContent=texto;
-  temporizadorAviso=setTimeout(cerrarAviso,8000);
+function cerrarAvisos(origen=null) {
+  for(const tarjeta of avisosActivos.keys())if(origen===null||tarjeta.dataset.origen===origen)cerrarAviso(tarjeta);
+}
+function notificar(texto,origen="general",tipo="error") {
+  if(!texto)return;
+  const tipos={advertencia:"Revisa los retos",error:"No se pudo completar",informacion:"Información"};
+  if(!Object.hasOwn(tipos,tipo))tipo="informacion";
+  const tarjeta=nodo("article","notificacion");tarjeta.dataset.origen=origen;tarjeta.dataset.tipo=tipo;
+  tarjeta.setAttribute("role","status");tarjeta.setAttribute("aria-atomic","true");
+  const contenido=nodo("div","notificacion-contenido");
+  contenido.append(nodo("strong","notificacion-titulo",tipos[tipo]),nodo("p","notificacion-texto",texto));
+  const cerrar=nodo("button","notificacion-cerrar");cerrar.append(nodo("span","","×"));cerrar.type="button";cerrar.setAttribute("aria-label",t("Cerrar notificación"));
+  cerrar.addEventListener("click",()=>cerrarAviso(tarjeta));tarjeta.append(contenido,cerrar);
+  const foco=document.activeElement;
+  aviso.append(tarjeta);aviso.hidden=false;aviso.setAttribute("aria-label",t("Notificaciones"));ubicarAviso();
+  avisosActivos.set(tarjeta,{foco,temporizador:setTimeout(()=>cerrarAviso(tarjeta),8000)});
+  aviso.scrollTop=aviso.scrollHeight;
 }
 function validarRetos(alComenzar=false) {
   const campo=$("retos"),n=Number(campo.value);
   if(campo.value.trim()&&Number.isInteger(n)&&n>=1&&n<=48&&campo.validity.valid){
-    if(aviso.dataset.origen==="retos")cerrarAviso();
-    return n;
+    cerrarAvisos("retos");return n;
   }
-  notificar(t(alComenzar?"Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.":"Escribe un número entero del 1 al 48."),"retos");
+  notificar(t(alComenzar?"Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.":"Escribe un número entero del 1 al 48."),"retos","advertencia");
   return null;
 }
-$("cerrar-aviso").addEventListener("click",cerrarAviso);
 function imagen(id, clase="") {
   const im=nodo("img",clase);
   im.src=vista.pictogramas[id].imagen;
@@ -175,7 +193,7 @@ function inicio() {
   }
   const volver=nodo("button","accion volver-inicio","Volver al inicio");volver.type="button";volver.addEventListener("click",()=>selector.close());
   selector.append(encabezado,modos,volver);
-  comenzar.addEventListener("click",()=>{if(validarRetos(true)===null)return;cerrarAviso();selector.showModal();ritmoCarrusel();hablar(false,"modalidad");});
+  comenzar.addEventListener("click",()=>{if(validarRetos(true)===null)return;selector.showModal();ubicarAviso();ritmoCarrusel();hablar(false,"modalidad");});
   selector.addEventListener("close",()=>{ubicarAviso();if(vista.fase==="INICIO")pararVoz();comenzar.focus({preventScroll:true});ritmoCarrusel();});
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
   entrada.append(comenzar,nota); texto.append(entrada); layout.append(texto);
@@ -294,6 +312,7 @@ function render(enfocar=false,conservarPaisaje=false) {
     const lateral=nodo("div","panel-animal"); lateral.append(companero,controles());
     opciones.append(hab); tablero.append(lateral,mesa,opciones); juego.append(tablero);
   }
+  ubicarAviso();
   if(enfocar) {
     const igual=[...juego.querySelectorAll("button")].find(b=>b.dataset.clave===foco&&!b.disabled);
     (igual||$("titulo-pantalla")||juego.querySelector("h1")||juego.querySelector("button"))?.focus({preventScroll:true});
@@ -403,7 +422,7 @@ async function hablar(prueba=false,contexto="respuesta") {
 }
 async function cambiarIdioma() {
   if(ocupado||!vista){$("idioma").value=vista?.idioma||"es";return;}
-  ocupado=true;pararVoz();cerrarAviso();$("idioma").disabled=true;
+  ocupado=true;pararVoz();cerrarAvisos();$("idioma").disabled=true;
   for(const b of juego.querySelectorAll("button"))b.disabled=true;
   const entrada={idioma:$("idioma").value,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
   try{
@@ -414,7 +433,7 @@ async function cambiarIdioma() {
   finally{ocupado=false;$("idioma").disabled=false;$("idioma").value=vista.idioma;}
 }
 async function accion(tipo,payload) {
-  if(ocupado||!vista)return; ocupado=true; cerrarAviso(); const antes=vista.fase;
+  if(ocupado||!vista)return; ocupado=true; const antes=vista.fase;
   if(tipo==="iniciar") {const n=validarRetos(true);if(n===null){ocupado=false;return;} payload={...payload,retos:n};}
   pararVoz();
   for(const b of juego.querySelectorAll("button"))b.disabled=true;
