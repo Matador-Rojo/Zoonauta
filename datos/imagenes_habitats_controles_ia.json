@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-11",
+  "contenido": "Ocho símbolos de hábitat y cuatro controles originales.",
+  "presentacion": "Paisajes realistas como imagen principal de cada tarjeta; pictograma pequeño como apoyo. Pista sustituye a Ayuda y utiliza un foco.",
+  "items": [
+    {
+      "id": "P_H01",
+      "nombre": "Selva tropical",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: a small dense cluster of tropical broadleaf trees with lush rounded green canopies, broad banana leaves and a vine, humid rainforest, simple green ground patch. Distinguish tropical plants clearly. No animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H01.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 1026240,
+      "sha256": "8d3da32999354ca4a34dbc1ff211836f43cf7a4c5cf6e8686ccc116bb92f24de",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_H02",
+      "nombre": "Sabana",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: one recognizable flat topped acacia tree standing over golden grass tufts on a small sandy ground patch, warm African savanna. Keep a broad open silhouette, no animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H02.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 477676,
+      "sha256": "d37a670ddfe06c23caa437c6ab5c4d3edde7d7ea66afd75ce8699255a68a28e6",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_H03",
+      "nombre": "Desierto cálido",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: two rolling golden sand dunes and one simple upright branching cactus, a small warm yellow sun above, hot desert. Sparse clear shapes, no animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H03.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 351956,
+      "sha256": "fc015a3e71ea90a4150e9fdae7391424f634e759267ae9170f8c234b0177ddcc",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_H04",
+      "nombre": "Mar",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: two broad blue ocean waves, small white wave crests, simple turquoise water base and a small sun above. Sea only, no land, no river, no animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H04.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 448926,
+      "sha256": "5406d4142ffbb0d5586479343960aab4e6e370f7f7a03fa89dc0476e9a1925b5",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_H05",
+      "nombre": "Bosque templado",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: a small cluster of temperate deciduous trees with rounded green, ochre and orange foliage on a small earth patch. Simple sturdy tree trunks. No tropical leaves, no animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H05.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 678430,
+      "sha256": "39ad32ebefe4f0a063494b55fdba62a28537655e152a3a7d7f5f5248faef6b20",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_H06",
+      "nombre": "Agua dulce",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: a winding calm blue river curving between two simple grassy green banks, a few reeds at the shore and one small rounded tree. River is dominant. No ocean waves, no animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H06.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 697060,
+      "sha256": "ca2bb00390f2cb6be2c38017c12a326225e890238cb5d8d3e4b17935e9540f98",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_H07",
+      "nombre": "Regiones polares",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: three angular white and pale cyan icebergs floating on a small icy blue water patch, one bold simple snowflake above. Frozen polar region, no sun, no animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H07.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 499750,
+      "sha256": "8355a246abc9e761e3605e612c6876c7f4789de2a74dfd6e4305834dd7eced05",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_H08",
+      "nombre": "Alta montaña",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: two high angular gray blue mountain peaks with bold white snowcaps and a small green rocky foothill base. Clearly towering mountains with snow, no water, no animals.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_H08.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 520300,
+      "sha256": "aeed559e89dee537472ab04a44e6ecc1d06f9d7a7e45c98a30a6d59643c291a6",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_AYUDA",
+      "nombre": "Pista",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: one recognizable upright light bulb, warm yellow glowing glass with a simple cream highlight, dark forest green outline and a short cream screw base, three short yellow idea rays. Universal hint symbol, no question mark.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_AYUDA.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 325346,
+      "sha256": "4a015ed6f79a5acea52ec098c4b69e3545526990eb68ae119983a681baabf398",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_REPETIR",
+      "nombre": "Repetir",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: one thick clockwise circular repeat arrow, clearly curling around an empty transparent center, one unmistakable triangular arrowhead at upper right. Light lime green arrow with dark forest green outline and subtle flat shading. Single continuous open circular arrow.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_REPETIR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 387636,
+      "sha256": "e551002b452f7bf8dce45f3f3957349ddba166feb7e91be1f71046f6d9f380ac",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_PAUSAR",
+      "nombre": "Pausar",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: the universally recognized pause symbol: exactly TWO bold parallel vertical rounded bars of equal height, light lime green fill, dark forest green outlines, subtle flat shading. Symmetric, large gap between the two bars, no enclosing shape.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_PAUSAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 239196,
+      "sha256": "c1b302bc11b7a1765d2b6e65ecef3aca42b3091fff9aeb0b9ef8a8fe7bbb4d6e",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_SALIR",
+      "nombre": "Salir",
+      "prompt": "Use case: scientific-educational. Asset type: single transparent cartoon pictogram for an accessible animal habitat learning game, Zoonauta.\nInput image 1 is STYLE REFERENCE ONLY: match the clean 2D cartoon look, dark smooth contours, simple readable color shapes and restrained flat shading of the capybara. Do not depict a capybara.\nSubject: one simple open cream door with forest green door frame and a large lime green arrow pointing outward to the RIGHT across the door opening. Recognizable exit symbol, no person, no letters.\nComposition: exactly one compact self-contained illustration, centered in a square canvas with 10% transparent margin all around. Every element completely inside canvas. Clear distinctive silhouette at 96px. Few large simple shapes, low visual complexity, calm welcoming style suitable for diverse ages.\nMedium: polished 2D cartoon, bold smooth dark contours, natural bright but restrained colors, minimal interior lines and very subtle flat shading. No detailed photographic textures or 3D.\nBackground: genuine transparent alpha around and between shapes. No white rectangle, no card, no border frame, no enclosing circle, no vignette, no backdrop, no drop shadow.\nNo words, numbers, labels, text, logos, watermark, humans, decorative clutter or unrelated objects.",
+      "archivo": "assets/pictogramas/P_SALIR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 323480,
+      "sha256": "ae121141233f42c2dbdf67ca0db5db65a222b8a0d728aef050ff9e08f94574e0",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    }
+  ]
+}

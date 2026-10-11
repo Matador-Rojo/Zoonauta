@@ -109,7 +109,11 @@ el [cierre](docs/interfaz/revisiones/2026-10-10-apoyos/cierre.webp).
 Los archivos y prompts de los animales están en
 [imagenes_animales_ia.json](datos/imagenes_animales_ia.json). Son imágenes sintéticas,
 no fotografías de ejemplares reales. El conjunto activo contiene 48 caricaturas de animales
-y dos ilustraciones de modalidad y 45 pictogramas SVG de hábitat, apoyos y controles.
+y dos ilustraciones de modalidad, ocho símbolos de hábitat, cuatro controles
+ilustrados y 33 pictogramas SVG de apoyo.
+Las tarjetas muestran paisajes realistas como imagen principal y un símbolo pequeño
+en una esquina. El botón «Pista» utiliza un foco; sus recursos y los de hábitats están
+en [imagenes_habitats_controles_ia.json](datos/imagenes_habitats_controles_ia.json).
 La persona y el robot guía se documentan en
 [imagenes_modalidad_ia.json](datos/imagenes_modalidad_ia.json).
 Los recursos anteriores conservan sus

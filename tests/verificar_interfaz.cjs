@@ -50,7 +50,7 @@ async function comprobarPictogramas(page){
   assert.ok((await page.locator('.secuencia img').evaluateAll(imgs=>imgs.map(i=>i.getBoundingClientRect().width))).every(w=>w>=84));
 }
 async function comprobarControles(page){
-  const v=await vista(page),ids={Ayuda:'P_AYUDA',Repetir:'P_REPETIR',Pausar:'P_PAUSAR',Reanudar:'P_REANUDAR',Continuar:'P_CONTINUAR',Salir:'P_SALIR'};
+  const v=await vista(page),ids={Pista:'P_AYUDA',Repetir:'P_REPETIR',Pausar:'P_PAUSAR',Reanudar:'P_REANUDAR',Continuar:'P_CONTINUAR',Salir:'P_SALIR'};
   for(const b of await page.locator('.acciones button').all()){
     const nombre=await b.getAttribute('aria-label');
     assert.equal(await b.locator('img').getAttribute('src'),v.pictogramas[ids[nombre]].imagen);
@@ -196,15 +196,15 @@ async function clicar(page,texto,fase){
     await page.setViewportSize({width:ancho,height:1080});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     const medidas=await page.locator('.habitats .tarjeta img').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right};}));
-    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=96&&m.alto>=96&&m.dentro));
+    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=48&&m.dentro));
   }
   await page.setViewportSize({width:1280,height:1080});
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
-  await clicar(page,'Ayuda');const ayuda=(await vista(page)).respuesta;
+  await clicar(page,'Pista');const ayuda=(await vista(page)).respuesta;
   await comprobarPictogramas(page);
   const textoVoz=(await page.evaluate(()=>window.__voz.at(-1))).texto;assert.equal(textoVoz,ayuda.texto_voz);
   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).texto,textoVoz);
-  const r=(await vista(page)).revision;await page.reload();await page.getByRole('button',{name:'Ayuda',exact:true}).waitFor();assert.equal((await vista(page)).revision,r);assert.equal(await page.evaluate(()=>window.__voz.length),0);
+  const r=(await vista(page)).revision;await page.reload();await page.getByRole('button',{name:'Pista',exact:true}).waitFor();assert.equal((await vista(page)).revision,r);assert.equal(await page.evaluate(()=>window.__voz.length),0);
   await clicar(page,'Repetir');await clicar(page,'Pausar','PAUSADA');assert.equal(await page.locator('.habitats').count(),0);assert.ok(await page.evaluate(()=>window.__cancelaciones)>0);
   await comprobarPictogramas(page);await comprobarControles(page);await captura(page,'16_pausa_pictogramas.png');
   await clicar(page,'Reanudar','ESPERANDO_RESPUESTA');assert.deepEqual((await vista(page)).respuesta,ayuda);
@@ -230,7 +230,7 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
-  await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await page.getByRole('searchbox',{name:'Buscar animal'}).fill('jirafa');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Ayuda');
+  await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await page.getByRole('searchbox',{name:'Buscar animal'}).fill('jirafa');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Pista');
   await captura(page,'03_reto_escritorio.png');
   // Los 95 recursos activos se decodifican en el navegador (WebP y SVG).
   const assetTest=await page.evaluate(async()=>{
@@ -252,7 +252,7 @@ async function clicar(page,texto,fase){
   await captura(pm,'07_preferencias_movil.png',false);await pm.getByRole('button',{name:'Volver al juego',exact:true}).click();
   await pm.getByRole('button',{name:'Comenzar',exact:true}).click();
   await captura(pm,'16_selector_modalidad_movil.png',false);
-  await clicar(pm,'El agente elige','ESPERANDO_RESPUESTA');await clicar(pm,'Ayuda');
+  await clicar(pm,'El agente elige','ESPERANDO_RESPUESTA');await clicar(pm,'Pista');
   assert.equal(await pm.locator('.habitats button').count(),8);
   assert.equal(await pm.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await captura(pm,'05_reto_movil.png');
@@ -274,7 +274,7 @@ async function clicar(page,texto,fase){
   assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Comenzar');await pt.keyboard.press('Enter');
   assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Yo elijo');await pt.keyboard.press('Enter');
   await pt.getByRole('searchbox',{name:'Buscar animal'}).waitFor();await pt.getByRole('searchbox',{name:'Buscar animal'}).focus();await pt.keyboard.type('jaguar');await pt.keyboard.press('Tab');
-  assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Jaguar');await pt.keyboard.press('Enter');await pt.getByRole('button',{name:'Ayuda',exact:true}).waitFor();
+  assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Jaguar');await pt.keyboard.press('Enter');await pt.getByRole('button',{name:'Pista',exact:true}).waitFor();
   assert.equal(await pt.locator('.habitats button').count(),8);assert.equal(await pt.getByRole('progressbar',{name:'Progreso de la partida'}).evaluate(el=>el.value),0);
   for(const ancho of [320,768,1024,1280]){await pt.setViewportSize({width:ancho,height:900});assert.equal(await pt.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);}
   resultados.push({caso:'Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido',resultado:'OK'});
@@ -321,7 +321,7 @@ async function clicar(page,texto,fase){
   const buscarPT=pg.getByRole('searchbox',{name:'Buscar animal'});await buscarPT.fill('PINGUIM');
   assert.equal(await pg.locator('.catalogo button:visible').count(),1);
   await clicar(pg,'Pinguim-imperador','ESPERANDO_RESPUESTA');
-  await clicar(pg,'Ajuda');const ajuda=(await vista(pg)).respuesta;
+  await clicar(pg,'Dica');const ajuda=(await vista(pg)).respuesta;
   await clicar(pg,'Repetir');assert.deepEqual((await vista(pg)).respuesta,ajuda);
   assert.equal((await pg.evaluate(()=>window.__voz.at(-1))).lang,'pt-BR');
   const tecnicaAntes=await pg.evaluate(async()=>await (await fetch('/api/revision')).json());
@@ -343,7 +343,7 @@ async function clicar(page,texto,fase){
   await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();const lecturas=await pg.evaluate(()=>window.__voz.length);
   await clicar(pg,'Retomar','ESPERANDO_RESPUESTA');assert.equal(await pg.evaluate(()=>window.__voz.length),lecturas);
   const revisionRecarga=(await vista(pg)).revision;
-  await pg.reload();await pg.getByRole('button',{name:'Ajuda',exact:true}).waitFor();assert.equal((await vista(pg)).revision,revisionRecarga);assert.equal(await pg.evaluate(()=>window.__voz.length),0);
+  await pg.reload();await pg.getByRole('button',{name:'Dica',exact:true}).waitFor();assert.equal((await vista(pg)).revision,revisionRecarga);assert.equal(await pg.evaluate(()=>window.__voz.length),0);
   resultados.push({caso:'14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio',resultado:'OK',alcance:'API WAV y reproductor controlados.'});
   resultados.push({caso:'Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; cambio en una partida sin alterar estado, registros o modelo',resultado:'OK'});
   await pg.goto(base+'/revision');await pg.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
