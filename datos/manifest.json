@@ -104,7 +104,10 @@
     "agente_48_sin_repeticiones_verificado": true,
     "transparencia_apoyos_verificada": true,
     "tablero_escritorio_sin_scroll_verificado": true,
-    "preferencias_solo_inicio": true
+    "preferencias_solo_inicio": true,
+    "tablero_ancho_y_altura_disponibles_verificados": true,
+    "animal_grande_sin_recorte_verificado": true,
+    "fondo_continuo_verificado": true
   },
   "archivos": [
     {
@@ -119,8 +122,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 9606,
-      "sha256": "5119ec754e9d2438a0371b3572e02c9146eb08c67c63247f760172f8b4794374"
+      "bytes": 9893,
+      "sha256": "a432bf0d92aebd4ab378b47c82f38be5e9d0bfc0ea91c619233bab7480387c2e"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -719,8 +722,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 28031,
-      "sha256": "486f450bb59b40e481b21b1c59da7a501aa58f54cddec2c5591a7b0898c67431"
+      "bytes": 27949,
+      "sha256": "4681d7d604835b734a30c18b026d8d0a57f451961b7f56af1030f93775326aec"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -729,8 +732,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 16665,
-      "sha256": "f4aff1670c7fc4887a4c64e880e7a7976e51617ab89504c801db7d8b07b3f6f5"
+      "bytes": 18383,
+      "sha256": "e96b6662fcb350376fac351e2132fccfb8813d546843eba41e38eb21d83f75b4"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -1879,8 +1882,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 18831,
-      "sha256": "c51a7ddef679de1b3cc62cb1d665d244a273d744643a825218aa13548e6812b3"
+      "bytes": 19391,
+      "sha256": "17277ca94b73214d8fdda5636bb1de4463619cd17148f316bd28bf587dbbd42d"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1949,8 +1952,8 @@
     },
     {
       "ruta": "docs/interfaz/3.8/revision_tablero.json",
-      "bytes": 6010,
-      "sha256": "c6a3b939ec9b43797d9190e12a453f5fc8df5e37a5833ddf00c3d8b0d2369679"
+      "bytes": 7118,
+      "sha256": "59b2cbf4104f6e0a0ac41585e28d14fda5a32e319be433c8208df110ccb25b7b"
     },
     {
       "ruta": "docs/interfaz/alternativas_voz.md",
@@ -1959,8 +1962,8 @@
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 10585,
-      "sha256": "2dbb72bb513591d119f58ef041d38b02910f71bc466b09e709a5da25c535b567"
+      "bytes": 11450,
+      "sha256": "07e7088bdd82ba186f6f9aae6c43ddaa162641e61d175612bf063e9d54632f4e"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -2289,8 +2292,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 39496,
-      "sha256": "c2c27c750f07e10aefc074348314f68074ab673195114ded27658fea21a95954"
+      "bytes": 41099,
+      "sha256": "c97e56632d2b425a911eb252b8aa8e819175d99ce2ad1baec398f4a551e83b30"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",

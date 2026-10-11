@@ -242,7 +242,7 @@ function render(enfocar=false,conservarPaisaje=false) {
     const tablero=nodo("div","tablero"),companero=nodo("aside","companero"),animal=nodo("div","animal-actual"),retrato=nodo("div","animal-retrato");
     retrato.append(imagen(vista.animal.pictograma_id));
     animal.append(nodo("p","etiqueta","Tu animal"),retrato,nodo("strong","",vista.animal.nombre));
-    companero.append(animal,nodo("p","companero-nota","Puedes pedir una pista, repetirla o tomar una pausa."));
+    companero.append(animal);
     const mesa=nodo("div","mesa"); mesa.append(respuesta(vista.respuesta));
     const opciones=nodo("div","habitats-panel");
     if(f==="ESPERANDO_RESPUESTA")opciones.append(nodo("p","instruccion","Toca un lugar donde pueda vivir."));

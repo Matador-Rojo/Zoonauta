@@ -13,8 +13,11 @@
   .opcion-modalidad img { width:min(104px,100%); height:104px; }
 }
 body:not([data-fase="INICIO"]) {
+  min-height:100dvh;
   background:radial-gradient(ellipse at 12% 0,#29453680,transparent 55%),
     radial-gradient(ellipse at 100% 65%,#203d2d60,transparent 55%),#0c1c17;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
 }
 .titulo-fila { margin:4px 0 30px; gap:24px; }
 .titulo-fila h1 { font-weight:400; font-size:clamp(34px,4vw,54px); letter-spacing:-2px; }
@@ -173,62 +176,81 @@ body:not([data-fase="INICIO"]) {
   .catalogo .tarjeta:hover,.habitats .tarjeta:hover:not(:disabled) { transform:none; }
 }
 
-/* La partida concentra animal, guía y opciones en una pantalla de escritorio. */
+/* El tablero aprovecha la pantalla y da prioridad al reconocimiento del animal. */
 body:not([data-fase="INICIO"]) #juego { padding-top:24px; padding-bottom:24px; }
-.tablero { grid-template-areas:"animal guia" "animal habitats"; grid-template-columns:260px minmax(0,1fr); gap:18px 24px; }
+body:has(.tablero) #juego { max-width:none; padding:24px clamp(20px,2.5vw,48px); }
+.tablero { grid-template-areas:"animal guia" "animal habitats"; grid-template-columns:clamp(280px,26vw,380px) minmax(0,1fr); grid-template-rows:auto minmax(0,1fr); align-items:stretch; gap:20px 24px; }
 .panel-animal { grid-area:animal; min-width:0; display:flex; flex-direction:column; gap:18px; }
 .mesa { grid-area:guia; }
 .mesa .respuesta { margin:0; }
-.habitats-panel { grid-area:habitats; grid-column:2; }
-.panel-animal .acciones { display:flex; flex-direction:column; align-items:stretch; margin:0; padding:0; border:0; gap:10px; }
-.panel-animal .accion { width:100%; min-height:72px; padding:8px 16px; justify-content:flex-start; gap:14px; }
+.habitats-panel { grid-area:habitats; grid-column:2; display:flex; flex-direction:column; min-height:0; }
+.panel-animal .acciones { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:stretch; margin:0; padding:0; border:0; gap:12px; }
+.panel-animal .accion { width:100%; min-width:0; min-height:98px; padding:8px; flex-direction:column; justify-content:center; gap:6px; font-size:17px; line-height:1.2; }
 .panel-animal .accion.salir { margin-left:0; }
-.tablero .habitats { gap:12px; }
-.tablero .habitats .tarjeta { min-height:0; height:clamp(120px,18vh,190px); aspect-ratio:auto; }
-.tablero .habitats .tarjeta>span:not(.habitat-numero) { font-size:15px; padding:13px 12px; }
-.tablero .companero { padding:20px; }
-.tablero .animal-actual { grid-template-columns:88px minmax(0,1fr); gap:10px; }
-.tablero .animal-retrato { width:88px; height:112px; }
-.tablero .animal-actual strong { font-size:22px; }
+.tablero .habitats { flex:1; grid-template-rows:repeat(2,minmax(120px,1fr)); gap:16px; }
+.tablero .habitats .tarjeta { min-height:120px; height:100%; aspect-ratio:auto; }
+.tablero .habitats .tarjeta>span:not(.habitat-numero) { font-size:clamp(16px,1.2vw,20px); padding:16px; }
+.tablero .instruccion { font-size:16px; }
+.tablero .companero { flex:1; min-height:0; display:flex; flex-direction:column; padding:20px; }
+.tablero .animal-actual { flex:1; min-height:0; display:flex; flex-direction:column; align-items:center; gap:12px; padding:0; text-align:center; }
+.tablero .animal-actual .etiqueta { align-self:center; font-size:12px; }
+.tablero .animal-retrato { position:relative; flex:1 1 0; width:100%; height:auto; min-height:180px; }
+.tablero .animal-retrato img { position:absolute; inset:0; }
+.tablero .animal-actual strong { align-self:center; flex-shrink:0; font-size:clamp(24px,1.8vw,30px); line-height:1.2; font-weight:500; letter-spacing:-.5px; }
 body:has(.tablero) .titulo-fila { margin:0 0 20px; }
 body:has(.tablero) .titulo-fila h1 { font-size:clamp(34px,3.3vw,48px); }
-.tablero .respuesta { padding:18px 20px; }
-.tablero .respuesta h2 { font-size:22px; margin-bottom:14px; }
+.tablero .respuesta { --tam-apoyo:clamp(104px,8vw,148px); padding:20px 24px; }
+.tablero .respuesta h2 { font-size:clamp(22px,1.7vw,28px); margin-bottom:16px; text-align:center; }
+.tablero .guia-cabecera { font-size:12px; }
+.tablero .secuencia { justify-content:center; gap:12px clamp(12px,1.4vw,24px); }
+.tablero .simbolo { width:var(--tam-apoyo); flex-basis:var(--tam-apoyo); }
+.tablero .simbolo img { width:calc(var(--tam-apoyo) - 8px); height:calc(var(--tam-apoyo) - 8px); }
+.tablero .simbolo figcaption { font-size:14px; line-height:1.25; }
+
+@media (min-width:851px) {
+  body:has(.tablero) #juego { height:100dvh; min-height:0; display:flex; flex-direction:column; }
+  .tablero { flex:1; min-height:0; }
+}
 
 @media (min-width:851px) and (max-height:740px) {
   body:has(.tablero) .titulo-fila { margin-bottom:16px; }
-  .tablero { row-gap:14px; }
-  .tablero .respuesta { padding:16px 20px; }
+  .tablero { row-gap:16px; }
+  .tablero .respuesta { --tam-apoyo:104px; padding:16px 20px; }
   .tablero .respuesta h2 { font-size:20px; margin-bottom:12px; }
-  .tablero .habitats .tarjeta { height:clamp(120px,17vh,170px); }
-  .panel-animal .accion { min-height:64px; padding-top:4px; padding-bottom:4px; }
+  .tablero .animal-retrato { min-height:180px; }
+  .panel-animal .accion { min-height:94px; gap:4px; padding-top:6px; padding-bottom:6px; }
 }
 
 @media (min-width:851px) and (max-width:1150px) {
-  .tablero { grid-template-columns:220px minmax(0,1fr); gap:16px; }
-  .tablero .simbolo { width:90px; flex-basis:90px; }
+  .tablero { grid-template-columns:280px minmax(0,1fr); gap:16px; }
+  .tablero .respuesta { --tam-apoyo:90px; padding:18px; }
   .tablero .simbolo img { width:84px; height:84px; }
   .tablero .secuencia { gap:10px 6px; }
   .tablero .companero { padding:16px; }
-  .tablero .animal-actual { grid-template-columns:70px minmax(0,1fr); }
-  .tablero .animal-retrato { width:70px; height:100px; }
-  .tablero .animal-actual strong { font-size:20px; }
+  .tablero .animal-actual strong { font-size:24px; }
+}
+/* Si el zoom o una ventana baja reducen el espacio, conservar contenido completo. */
+@media (min-width:851px) and (max-height:659px) {
+  body:has(.tablero) #juego { height:auto; min-height:100dvh; }
+  .tablero { flex:none; min-height:640px; }
 }
 @media (max-width:850px) {
-  .tablero { grid-template-areas:"animal" "guia" "controles" "habitats"; grid-template-columns:minmax(0,1fr); gap:18px; }
+  .tablero { grid-template-areas:"animal" "guia" "controles" "habitats"; grid-template-columns:minmax(0,1fr); grid-template-rows:auto; gap:18px; }
   .panel-animal { display:contents; }
   .tablero .companero { grid-area:animal; }
-  .panel-animal .acciones { grid-area:controles; flex-direction:row; flex-wrap:wrap; }
-  .panel-animal .accion { width:auto; flex:1 1 145px; }
+  .panel-animal .acciones { grid-area:controles; }
   .habitats-panel { grid-column:1; }
-  .tablero .animal-actual { grid-template-columns:88px minmax(0,1fr); }
-  .tablero .animal-actual strong { grid-row:1/3; align-self:center; }
-  .tablero .habitats .tarjeta { height:160px; }
+  .tablero .animal-retrato { flex:none; height:240px; max-width:380px; }
+  .tablero .habitats { grid-auto-rows:180px; grid-template-rows:none; }
+  .tablero .respuesta { --tam-apoyo:104px; }
 }
 @media (max-width:600px) {
-  body:not([data-fase="INICIO"]) #juego { padding:20px 18px; }
+  body:not([data-fase="INICIO"]) #juego,body:has(.tablero) #juego { padding:20px 18px; }
   .tablero .respuesta { padding:17px; }
   .tablero .respuesta h2 { font-size:20px; }
-  .tablero .habitats .tarjeta { height:150px; }
-  .panel-animal .accion { gap:8px; padding:8px 12px; flex-basis:125px; }
+  .tablero .habitats { grid-auto-rows:160px; gap:12px; }
+  .tablero .animal-retrato { height:220px; }
+  .tablero .animal-actual strong { font-size:26px; }
+  .tablero .respuesta { --tam-apoyo:90px; }
+  .tablero .simbolo img { width:84px; height:84px; }
 }

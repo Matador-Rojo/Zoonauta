@@ -66,19 +66,30 @@ async function comprobarControles(page){
 }
 async function comprobarTablero(page){
   const anterior=page.viewportSize();
-  for(const [width,height] of [[1024,768],[1280,720],[1366,768],[1440,900],[1920,1080]]){
+  for(const [width,height] of [[1024,768],[1280,720],[1366,768],[1440,900],[1920,988],[1920,1080]]){
     await page.setViewportSize({width,height});
     const m=await page.evaluate(()=>{
       const guia=document.querySelector('.mesa').getBoundingClientRect();
       const habitats=document.querySelector('.habitats').getBoundingClientRect();
       const animal=document.querySelector('.companero').getBoundingClientRect();
       const controles=document.querySelector('.panel-animal .acciones').getBoundingClientRect();
+      const retrato=document.querySelector('.animal-retrato').getBoundingClientRect();
+      const nombre=document.querySelector('.animal-actual strong').getBoundingClientRect();
+      const tablero=document.querySelector('.tablero').getBoundingClientRect();
+      const fondo=getComputedStyle(document.body);
       return {sinScroll:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,
         alineados:Math.abs(guia.left-habitats.left)<1&&Math.abs(guia.right-habitats.right)<1,
         lateral:controles.top>=animal.bottom&&controles.right<=habitats.left,
+        espacio:document.querySelector('#juego').getBoundingClientRect().width>=innerWidth-1&&Math.abs(tablero.bottom-(innerHeight-24))<1,
+        animalGrande:retrato.width>=200&&retrato.height>=180&&nombre.top>=retrato.bottom&&nombre.bottom<=animal.bottom&&getComputedStyle(document.querySelector('.animal-retrato img')).objectFit==='contain',
+        fondoContinuo:document.body.getBoundingClientRect().height>=innerHeight&&fondo.backgroundRepeat.split(',').every(v=>v.trim()==='no-repeat')&&fondo.backgroundAttachment.split(',').every(v=>v.trim()==='fixed'),
         visibles:[...document.querySelectorAll('.habitats button,.panel-animal button')].every(b=>{const r=b.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight&&r.height>=44;})};
     });
-    assert.ok(m.sinScroll&&m.alineados&&m.lateral&&m.visibles,`Tablero fuera de pantalla ${width}x${height}: ${JSON.stringify(m)}`);
+    assert.ok(Object.values(m).every(Boolean),`Tablero fuera de pantalla ${width}x${height}: ${JSON.stringify(m)}`);
+  }
+  for(const [width,height] of [[1024,600],[900,500]]){
+    await page.setViewportSize({width,height});
+    assert.equal(await page.evaluate(()=>{const a=document.querySelector('.companero').getBoundingClientRect(),i=document.querySelector('.animal-retrato').getBoundingClientRect(),n=document.querySelector('.animal-actual strong').getBoundingClientRect();return document.documentElement.scrollWidth<=innerWidth&&i.height>=180&&n.top>=i.bottom&&n.bottom<=a.bottom;}),true,'Una ventana baja debe permitir scroll sin recortar el animal o su nombre');
   }
   await page.setViewportSize(anterior);
 }
@@ -264,7 +275,7 @@ async function clicar(page,texto,fase){
   await comprobarPictogramas(page);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
   await captura(page,'14_cierre_salida.png');
-  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; hábitats alineados con la guía, controles bajo el animal, números 01–08 y cabecera/pie solo en inicio. Pregunta, pista, apoyo neutral y confirmación sin scroll entre 1024 × 768 y 1920 × 1080',resultado:'OK'});
+  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; tablero de ancho completo que ocupa la altura disponible, animal de al menos 200 × 180 px con nombre debajo y sin recorte, fondo continuo, hábitats alineados con la guía, controles bajo el animal en dos filas y números 01–08. Pregunta, pista, apoyo neutral y confirmación sin scroll en seis resoluciones de 1024 × 768 a 1920 × 1080; cabecera y Preferencias solo en inicio',resultado:'OK'});
   resultados.push({caso:'Apoyo pictográfico: controles de 56 px, preguntas/pistas de al menos 84 px, secuencias de pausa/cierre e Iniciar sin fondos ni bordes; una selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});

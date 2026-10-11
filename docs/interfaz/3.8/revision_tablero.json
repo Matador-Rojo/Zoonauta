@@ -5,9 +5,10 @@
   "casos_interfaz": 17,
   "casos_voces_controladas": 4,
   "errores_js": [],
-  "distribucion": "Animal y controles debajo a la izquierda; guía y ocho hábitats del mismo ancho a la derecha.",
+  "distribucion": "Tablero de ancho completo y altura de pantalla: animal grande con nombre debajo y controles en dos filas a la izquierda; guía con pictogramas centrados y ocho hábitats que reparten la altura restante a la derecha.",
   "cabecera_y_preferencias": "Solo en inicio",
   "pie_durante_juego": false,
+  "fondo": "Altura mínima del visor, fijo y sin repetición; continuidad hasta el borde inferior.",
   "numeros_habitat": [
     "01",
     "02",
@@ -19,10 +20,19 @@
     "08"
   ],
   "revision_geometria": {
-    "alcance": "Renderizado de vistas de prueba del banco real: pregunta en cada idioma, 72 pistas automáticas en cada idioma y 48 nombres de animal en cada idioma. Verificación de dimensiones; no simula aprendizaje ni evalúa comprensión.",
+    "alcance": "Renderizado de vistas de prueba del banco real: pregunta en cada idioma, 72 pistas automáticas en cada idioma y 48 nombres de animal en cada idioma. Comprobación de dimensiones y nombres completos dentro del panel; no evalúa aprendizaje ni comprensión.",
     "casos_por_resolucion": 242,
-    "pictogramas_minimos_px": 84,
+    "area_imagen_animal_minima_px": {
+      "ancho": 200,
+      "alto": 180
+    },
+    "proporciones_animal": "contain",
+    "nombre_debajo_sin_recorte": true,
+    "texto_nombre_px": "24–30",
+    "imagenes_apoyo_px": "84–140",
+    "etiquetas_apoyo_px": 14,
     "imagenes_control_px": 56,
+    "texto_control_px": 17,
     "resoluciones": [
       {
         "width": 1024,
@@ -50,11 +60,31 @@
       },
       {
         "width": 1920,
+        "height": 988,
+        "casos": 242,
+        "fallos": []
+      },
+      {
+        "width": 1920,
         "height": 1080,
         "casos": 242,
         "fallos": []
       }
     ],
+    "ventanas_bajas": {
+      "resoluciones": [
+        {
+          "width": 1024,
+          "height": 600
+        },
+        {
+          "width": 900,
+          "height": 500
+        }
+      ],
+      "desplazamiento_permitido": true,
+      "animal_y_nombre_sin_recorte": true
+    },
     "movil": {
       "anchos": [
         320,
@@ -63,6 +93,7 @@
       ],
       "sin_desbordamiento_horizontal": true,
       "opciones_habitat": 8,
+      "animal_grande": true,
       "contenido_apilado_con_scroll": true
     }
   },
@@ -80,7 +111,7 @@
       "resultado": "OK"
     },
     {
-      "caso": "Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; hábitats alineados con la guía, controles bajo el animal, números 01–08 y cabecera/pie solo en inicio. Pregunta, pista, apoyo neutral y confirmación sin scroll entre 1024 × 768 y 1920 × 1080",
+      "caso": "Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; tablero de ancho completo que ocupa la altura disponible, animal de al menos 200 × 180 px con nombre debajo y sin recorte, fondo continuo, hábitats alineados con la guía, controles bajo el animal en dos filas y números 01–08. Pregunta, pista, apoyo neutral y confirmación sin scroll en seis resoluciones de 1024 × 768 a 1920 × 1080; cabecera y Preferencias solo en inicio",
       "resultado": "OK"
     },
     {
