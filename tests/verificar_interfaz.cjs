@@ -154,8 +154,8 @@ async function clicar(page,texto,fase){
     const v=await vista(page);
     for(const b of await page.locator('.catalogo button').all()){
       const nombre=await b.getAttribute('aria-label'),animal=v.catalogo_animales.find(a=>a.nombre===nombre);
-      assert.equal(await b.locator('.animal-pictograma').getAttribute('src'),v.pictogramas[animal.pictograma_id].imagen);
-      assert.equal(await b.locator('.animal-foto').getAttribute('src'),`/animales/${animal.id}.webp`);
+      assert.equal(await b.locator('img').count(),1);
+      assert.equal(await b.locator('.animal-ilustracion').getAttribute('src'),v.pictogramas[animal.pictograma_id].imagen);
     }
     if(pagina<8)await page.getByRole('button',{name:'Siguientes',exact:true}).click();
   }
@@ -190,7 +190,7 @@ async function clicar(page,texto,fase){
   await clicar(page,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
   await comprobarPictogramas(page);
   await comprobarControles(page);
-  assert.match(await page.locator('.animal-retrato img').getAttribute('src'),/^\/animales\/A31\.webp$/);
+  assert.equal(await page.locator('.animal-retrato img').getAttribute('src'),(await vista(page)).pictogramas.P_A31.imagen);
   assert.equal(await page.locator('.habitats button').count(),8);
   for(const ancho of [320,390,768,1024,1280]){
     await page.setViewportSize({width:ancho,height:1080});
@@ -224,20 +224,20 @@ async function clicar(page,texto,fase){
   await comprobarPictogramas(page);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
   await captura(page,'14_cierre_salida.png');
-  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; consulta y ayuda usan pictogramas originales y los ocho símbolos de hábitat miden al menos 96 px sin desbordamiento entre 320 y 1280 px',resultado:'OK'});
-  resultados.push({caso:'Apoyo pictográfico completo: catálogo con pictograma original y recorte, controles de 56 px, pregunta/pistas de al menos 84 px, pausa/cierre con secuencias, selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
+  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; la misma caricatura identifica cada animal y los ocho símbolos de hábitat miden al menos 96 px sin desbordamiento entre 320 y 1280 px',resultado:'OK'});
+  resultados.push({caso:'Apoyo pictográfico completo: catálogo con una caricatura por animal, controles de 56 px, pregunta/pistas de al menos 84 px, pausa/cierre con secuencias, selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
   await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await page.getByRole('searchbox',{name:'Buscar animal'}).fill('jirafa');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Ayuda');
   await captura(page,'03_reto_escritorio.png');
-  // Los 95 recursos se decodifican en el navegador (PNG y SVG).
+  // Los 95 recursos activos se decodifican en el navegador (WebP y SVG).
   const assetTest=await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();
     const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
     await Promise.all(rutas.map(ruta=>new Promise(resolve=>{const i=new Image();i.onload=()=>{if(!i.naturalWidth)fallos.push(ruta);resolve();};i.onerror=()=>{fallos.push(ruta);resolve();};i.src=ruta;})));return fallos;
-  });assert.deepEqual(assetTest,[]);resultados.push({caso:'48 animales fotorrealistas, logo, 95 pictogramas originales y nueve paisajes decodificados sin errores; ocho fondos sin vídeo ni canvas',resultado:'OK'});
+  });assert.deepEqual(assetTest,[]);resultados.push({caso:'48 caricaturas, logo, 95 recursos educativos y nueve paisajes decodificados sin errores; ocho fondos sin vídeo ni canvas',resultado:'OK'});
   // Revisar las representaciones de animales en una plancha para inspección visual.
   await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();const main=document.getElementById('juego');main.replaceChildren();
