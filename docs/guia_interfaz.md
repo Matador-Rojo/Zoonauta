@@ -50,6 +50,17 @@ sin Streamlit. Todos los recursos visuales están incluidos. La preparación ini
 de voz requiere Internet; los modelos y las imágenes están disponibles localmente
 durante la partida. Las voces remotas del navegador pueden necesitar conexión.
 
+Si falla la preparación de voz, el iniciador abre el juego con los recursos
+disponibles y conserva los archivos verificados. Para redes restringidas o equipos
+de la universidad, abre `iniciar_sin_descargas.bat` en Windows o ejecuta
+`py -3 -m codigo.interfaz.iniciar --sin-descargas` (`python3` en Linux/macOS).
+No instala paquetes ni descarga modelos: reutiliza el entorno local si existe,
+o el Python con el que se abrió el iniciador. Las voces que estén completas y las
+voces compatibles del navegador permanecen disponibles en Preferencias; el juego
+puede usarse con texto y pictogramas si no hay voces. Para completar las voces
+después, vuelve al iniciador normal con conexión. `--solo-preparar` requiere que
+la preparación termine correctamente y no abre el juego.
+
 Para comparar políticas con el entorno ya preparado, utiliza su ejecutable Python:
 
 ```console
