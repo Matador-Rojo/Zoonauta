@@ -1,6 +1,6 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
-Versión 4.0.0.
+Versión 4.2.0.
 
 ## 1. Qué está implementado
 
@@ -149,9 +149,10 @@ apila y puede desplazarse; se conservan los ocho hábitats y todos los controles
 Una ventana de menos de 660 px de alto permite desplazamiento para conservar el
 animal, su nombre y las opciones completos, también al aumentar el zoom.
 El catálogo conserva su paginación y puede desplazarse.
-La pausa conserva el animal y el orden. El cierre presenta un único animal de
-la partida en un panel claro, con su nombre y el progreso real mediante texto
-y barra accesible. Si aún no se ha elegido un animal, muestra al agente.
+La pausa conserva el animal y el orden del reto, y muestra al robot guía sentado
+en un banco. En el cierre, el robot se despide con su cuaderno; no se muestra el
+último animal. Ambas imágenes son WebP transparentes locales, independientes del
+banco de 95 pictogramas. El progreso real se muestra mediante texto y barra accesible.
 Comenzar otra partida vuelve a la portada en silencio. La pregunta «¿Quién
 elige el animal?» solo se lee al abrir la elección de modalidad, en el idioma
 seleccionado; cerrar ese diálogo cancela la lectura.
@@ -160,7 +161,7 @@ No se usan vídeos, GIF ni recursos externos para mostrar imágenes.
 Los paisajes se generan con IA y son decorativos; no validan asociaciones del banco.
 Los créditos y metadatos de ARASAAC y los SVG anteriores son históricos.
 La captura de portada actual está en `docs/interfaz/3.8/inicio.webp`.
-La terminal identifica la versión 4.0.0. El pie no ocupa espacio durante la partida.
+La terminal identifica la versión 4.2.0. El pie no ocupa espacio durante la partida.
 
 ## 5. Estado y registros
 
@@ -205,14 +206,14 @@ Actualizar allí solo consulta el registro.
 
 ## 7. Verificación realizada
 
-La versión 4.0 pasó 72 pruebas Python, 19 recorridos de interfaz y cinco casos
+La versión 4.2 pasó 72 pruebas Python, 19 recorridos de interfaz y cinco casos
 de voces Microsoft/Google controladas en Chrome. También pasaron los ocho casos
 de aceptación de consola. Se recorrieron dos partidas de 48 animales sin repetir
 y se comprobó que una nueva partida cambia el primero, mientras pausar conserva
 el orden. Los 95 recursos activos se verificaron como WebP con alpha real;
 los nuevos apoyos se revisaron sobre superficies claras y oscuras.
 Las secuencias y controles, incluido Iniciar, se muestran sin fondos ni bordes.
-La revisión actual está en `docs/interfaz/4.0/revision.json`. La captura de
+La revisión actual está en `docs/interfaz/4.2/revision.json`. La captura de
 portada conservada en `docs/interfaz/3.8/inicio.webp` sigue representando el inicio.
 Las evidencias de síntesis real de las 14 voces pertenecen a revisiones anteriores
 y no se repitieron para este cambio visual y de selección.

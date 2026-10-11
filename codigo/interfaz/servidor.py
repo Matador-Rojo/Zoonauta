@@ -97,6 +97,8 @@ class Manejador(BaseHTTPRequestHandler):
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
         elif ruta.startswith("/habitats/") and ruta.removeprefix("/habitats/") in {f"H0{i}.webp" for i in range(1, 9)}:
             self._enviar((RAIZ_PROYECTO / "assets" / "paisajes" / ruta.removeprefix("/habitats/")).read_bytes(), "image/webp")
+        elif ruta in ("/ilustraciones/robot_despedida.webp", "/ilustraciones/robot_pausa.webp"):
+            self._enviar((RAIZ_PROYECTO / "assets" / "ilustraciones" / ruta.removeprefix("/ilustraciones/")).read_bytes(), "image/webp")
         elif ruta == "/api/vista":
             self._enviar(self._sesion().vista())
         elif ruta == "/api/revision":
@@ -187,7 +189,7 @@ def main():
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
                          politica=args.politica, parametros=args.parametros)
     url = f"http://127.0.0.1:{servidor.server_port}"
-    print(f"Zoonauta 4.0.0: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
+    print(f"Zoonauta 4.2.0: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:
         webbrowser.open(url)
     try:

@@ -5,7 +5,7 @@
 La interfaz usa una única caricatura original por animal: 48 ilustraciones generadas
 con la herramienta integrada image_gen, siguiendo el estilo de la segunda capibara
 seleccionada por el usuario. Las mismas imágenes se utilizan en catálogo, preguntas,
-pistas, retratos y cierres. En la versión 3.8 se sustituyen los 33 SVG de apoyo
+pistas y retratos del tablero. En la versión 3.8 se sustituyen los 33 SVG de apoyo
 por 33 ilustraciones originales transparentes del mismo estilo de la capibara,
 generadas con image_gen integrada. Sus prompts y huellas están en
 `datos/imagenes_apoyos_ia.json`. Se ofrecen bajo CC BY-NC-SA 4.0.
@@ -24,6 +24,13 @@ no fotografías de lugares específicos. Se documentan en
 Las caricaturas no derivan de los PNG de ARASAAC. Sus prompts y huellas se encuentran
 en `datos/imagenes_animales_ia.json`; se ofrecen con el material original del prototipo
 bajo CC BY-NC-SA 4.0. La comprensión CAA sigue pendiente de evaluación con usuarios.
+
+En 4.2 se incorporan dos ilustraciones originales del robot guía: despedida
+con cuaderno y descanso sentado en un banco. Generadas con image_gen integrada,
+elegidas por el usuario y convertidas a WebP sin pérdida con alpha conservado.
+Se ofrecen bajo CC BY-NC-SA 4.0. Sus prompts, rutas y huellas se registran en
+`datos/imagenes_cierre_pausa_ia.json`. Son ilustraciones de pantalla adicionales
+al banco de 95 pictogramas y no sustituyen las secuencias de preguntas y pistas.
 
 Los recursos anteriores y sus metadatos se conservaron en un respaldo local antes
 de la sustitución. La información siguiente documenta esas versiones históricas.

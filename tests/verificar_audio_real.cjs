@@ -40,7 +40,7 @@ const base=process.env.INTERFAZ_URL;
   }
   const despues=await page.evaluate(async()=>await (await fetch('/api/revision')).json());despues.idioma=antes.idioma;assert.deepEqual(despues,antes);
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.resolve(__dirname,'../docs/interfaz/revision_audio_navegador.json'),JSON.stringify({version:'4.0.0',fecha:'2026-10-11',navegador:browser.version(),alcance:'Síntesis local, descarga WAV, decodificación y avance de reproducción nativa en Chromium. No acredita escucha humana en otro dispositivo.',resultados,errores_js:errores},null,2)+'\n');
+  fs.writeFileSync(path.resolve(__dirname,'../docs/interfaz/revision_audio_navegador.json'),JSON.stringify({version:'4.2.0',fecha:'2026-10-11',navegador:browser.version(),alcance:'Síntesis local, descarga WAV, decodificación y avance de reproducción nativa en Chromium. No acredita escucha humana en otro dispositivo.',resultados,errores_js:errores},null,2)+'\n');
   console.log(JSON.stringify({audio_real:resultados.length,resultado:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
