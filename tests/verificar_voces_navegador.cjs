@@ -105,8 +105,36 @@ async function actuar(p,nombre,fase){
   lectura=await probar(p);assert.equal(lectura.lang,'pt-BR');liberar();
   await p.waitForFunction(()=>document.getElementById('aviso').textContent==='');
   resultados.push({caso:'Cambio de una lectura WAV pendiente a Google: cancela la cola local y lee con el navegador',resultado:'OK'});
+
+  // La pregunta de modalidad solo se lee con el diálogo visible, en ambos idiomas.
+  for(const idioma of ['es','pt-BR']){
+   const cm=await contexto(browser,inventario,false),pm=await abrir(cm);
+   pm.on('pageerror',e=>errores.push(e.message));
+   await pm.getByRole('button',{name:'Preferencias',exact:true}).click();
+   if(idioma==='pt-BR'){await pm.locator('#idioma').selectOption(idioma);await pm.waitForFunction(()=>document.documentElement.lang==='pt-BR');}
+   await elegir(pm,idioma==='es'?'Microsoft Sabina':'Microsoft Antonio');
+   await pm.getByRole('button',{name:idioma==='es'?'Volver al juego':'Voltar ao jogo',exact:true}).click();
+   const iniciar=idioma==='es'?'Comenzar':'Começar',agente=idioma==='es'?'El agente elige':'O agente escolhe',salir=idioma==='es'?'Salir':'Sair',otra=idioma==='es'?'Comenzar otra partida':'Começar outra partida',pregunta=idioma==='es'?'¿Quién elige el animal?':'Quem escolhe o animal?';
+   await pm.getByRole('button',{name:iniciar,exact:true}).click();
+   await pm.waitForFunction(()=>window.__lecturas.length===1);
+   assert.equal((await pm.evaluate(()=>window.__lecturas.at(-1))).texto,pregunta);
+   const n=await pm.evaluate(()=>window.__cancelaciones);
+   await pm.keyboard.press('Escape');await pm.waitForFunction(n=>window.__cancelaciones>n,n);
+   assert.equal(await pm.evaluate(()=>window.__actual),null);
+   await actuar(pm,agente,'ESPERANDO_RESPUESTA');await actuar(pm,salir,'ABANDONADA');
+   const lecturas=await pm.evaluate(()=>window.__lecturas.length);
+   await pm.getByRole('button',{name:otra,exact:true}).click();
+   await pm.waitForFunction(()=>document.getElementById('juego').getAttribute('aria-busy')==='false');
+   assert.equal((await revision(pm)).estado.fase,'INICIO');
+   assert.equal(await pm.evaluate(()=>window.__lecturas.length),lecturas);
+   await pm.getByRole('button',{name:iniciar,exact:true}).click();
+   await pm.waitForFunction(n=>window.__lecturas.length===n+1,lecturas);
+   assert.equal((await pm.evaluate(()=>window.__lecturas.at(-1))).texto,pregunta);
+   assert.equal(await pm.evaluate(()=>window.__wav),0);await cm.close();
+  }
+  resultados.push({caso:'Portada silenciosa al reiniciar; pregunta exacta solo al abrir modalidad y cancelación al cerrar, en español y portugués con voz del navegador',resultado:'OK'});
   assert.deepEqual(errores,[]);
-  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'revision_voces_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'3.8.0',navegador:browser.version(),alcance:'Síntesis y disponibilidad controladas. No certifica disponibilidad de proveedores ni escucha humana en otro equipo.',resultados,errores_js:errores},null,2));
+  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'revision_voces_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.0.0',navegador:browser.version(),alcance:'Síntesis y disponibilidad controladas. No certifica disponibilidad de proveedores ni escucha humana en otro equipo.',resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -254,3 +254,56 @@ body:has(.tablero) .titulo-fila h1 { font-size:clamp(34px,3.3vw,48px); }
   .tablero .respuesta { --tam-apoyo:90px; }
   .tablero .simbolo img { width:84px; height:84px; }
 }
+
+/* Cierre: un solo animal de la partida, sin collage de especies superpuestas. */
+body:has(.cierre) #juego { max-width:none; min-height:100dvh; display:grid; place-items:center; padding:32px clamp(20px,3vw,56px); }
+.centro.cierre { width:100%; max-width:1360px; min-height:0; margin:0; padding:clamp(24px,3vw,44px); gap:clamp(28px,4vw,64px); grid-template-columns:minmax(0,.85fr) minmax(0,1fr); border-radius:36px; background:radial-gradient(ellipse at 85% 0,#55794928,transparent 70%),#172e25; box-shadow:0 24px 80px #0003; }
+.cierre-visual { margin:0; min-height:410px; height:auto; max-width:none; width:100%; align-self:stretch; padding:24px; display:flex; flex-direction:column; align-items:center; gap:18px; border-radius:28px; background:radial-gradient(ellipse at 50% 45%,#f5f8e8,#d6e5c7 75%); color:#213e2b; }
+.cierre-visual::before,.cierre-visual::after { content:none; }
+.cierre-visual .etiqueta { margin:0; color:#496138; font-size:12px; }
+.cierre-visual .etiqueta::before { display:none; }
+.cierre-marco { position:relative; flex:1; min-height:260px; width:100%; display:flex; align-items:center; justify-content:center; isolation:isolate; }
+.cierre-hoja { position:absolute; z-index:-1; width:100%; height:100%; color:#56784416; transform:rotate(-25deg); }
+.cierre-marco .cierre-animal { position:relative; inset:auto; width:100%; height:310px; max-height:100%; object-fit:contain; filter:drop-shadow(0 18px 16px #294d2925); }
+.cierre-nombre { font-size:clamp(24px,2vw,30px); line-height:1.25; font-weight:500; text-align:center; }
+.cierre-contenido { padding:10px 0; }
+.cierre h1 { font-size:clamp(36px,3.6vw,54px); font-weight:500; }
+.cierre .introduccion { font-size:18px; max-width:540px; line-height:1.6; }
+.cierre .secuencia { gap:20px; }
+.cierre .simbolo figcaption { font-size:14px; }
+.cierre-resumen { display:flex; flex-direction:column; align-items:stretch; gap:14px; padding:20px 24px; border:1px solid #ffffff20; border-radius:20px; background:#ffffff04; margin-bottom:24px; }
+.cierre-cifra { display:flex; align-items:center; gap:18px; }
+.cierre-resumen strong { font-size:42px; white-space:nowrap; }
+.cierre-resumen span { font-size:16px; }
+.cierre-resumen progress { height:8px; }
+.cierre-contenido>.accion { gap:16px; min-height:80px; font-size:17px; }
+.cierre-nota { font-size:14px; color:#c1d0bd; }
+@media (max-width:850px) {
+  .centro.cierre { grid-template-columns:1fr; max-width:640px; gap:24px; }
+  .cierre-visual { min-height:0; padding:20px; }
+  .cierre-marco { min-height:190px; }
+  .cierre-marco .cierre-animal { height:220px; }
+  .cierre-contenido { text-align:center; }
+  .cierre .etiqueta,.cierre .secuencia,.cierre-cifra { justify-content:center; }
+}
+@media (max-width:600px) {
+  body:has(.cierre) #juego { padding:20px 18px; }
+  .centro.cierre { padding:20px; border-radius:28px; }
+  .cierre .introduccion { font-size:17px; }
+  .cierre-resumen { padding:16px; }
+  .cierre-resumen strong { font-size:34px; }
+  .cierre-contenido>.accion { width:100%; justify-content:center; padding:10px 14px; }
+}
+
+@media (min-width:851px) and (max-height:800px) {
+  body:has(.cierre) #juego { padding-top:20px; padding-bottom:20px; }
+  .centro.cierre { padding:24px; gap:28px; }
+  .cierre-contenido { padding:0; }
+  .cierre-contenido .etiqueta { margin-bottom:12px; }
+  .cierre .introduccion { margin:16px 0; font-size:17px; }
+  .cierre .secuencia { margin-bottom:16px; }
+  .cierre-resumen { padding:16px 20px; margin-bottom:18px; gap:10px; }
+  .cierre-resumen strong { font-size:38px; }
+  .cierre-contenido>.accion { min-height:72px; }
+  .cierre-nota { margin-top:12px; }
+}

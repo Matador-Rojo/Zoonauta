@@ -1,4 +1,4 @@
-# Zoonauta: dirección visual 3.8
+# Zoonauta: dirección visual 4.0
 
 La portada ocupa una sola pantalla. Sus ocho paisajes cambian cada 10 segundos,
 con nombre y contador sincronizados, controles de pausa y navegación manual.
@@ -23,12 +23,13 @@ El catálogo conserva sus 48 opciones en ocho páginas de seis, con búsqueda gl
 sin tildes. Anteriores y Siguientes permiten recorrerlas; la pausa conserva la página.
 Las tarjetas oscuras
 dan protagonismo a los animales, sin cajas blancas detrás de sus recortes. El tablero
-presenta el retrato y la guía encima de ocho tarjetas de paisaje realista con
-composición central, nombre y número 01–08. Las tarjetas ocupan todo el ancho,
+presenta el animal y los controles a la izquierda, y la guía sobre ocho tarjetas
+de paisaje realista a la derecha, con composición central, nombre y número 01–08.
+Las tarjetas tienen el mismo ancho que la guía,
 sin dibujos superpuestos. Los controles usan caricaturas transparentes con texto.
 
 La pantalla de pausa conserva el retrato del animal; los cierres completado y de salida
-presentan el progreso real junto a una composición de animales y la acción de reiniciar.
+presentan el progreso real junto al único animal de la partida y la acción de reiniciar.
 El diseño mantiene cuatro columnas de hábitats en escritorio y dos en móvil. El catálogo
 usa tres columnas en escritorio y dos en móvil. Ambas pantallas permiten desplazamiento
 cuando el alto disponible lo requiere.
@@ -139,10 +140,27 @@ en las pantallas de juego. En móvil, las columnas se apilan y permiten scroll;
 ningún hábitat ni control se elimina. La revisión de este ajuste está en
 `docs/interfaz/3.8/revision_tablero.json`.
 
-La captura de portada y la revisión actual están en `docs/interfaz/3.8/`.
-La versión 3.8 pasó 70 pruebas Python y 21 casos de navegador: 17 de interfaz
-y cuatro de voces controladas. La comprensión CAA requiere evaluación con usuarios;
+La captura de portada está en `docs/interfaz/3.8/inicio.webp`; su composición se
+conserva. La revisión actual está en `docs/interfaz/4.0/revision.json`.
+La versión 4.0 pasó 72 pruebas Python y 24 casos de navegador: 19 de interfaz
+y cinco de voces controladas. La comprensión CAA requiere evaluación con usuarios;
 las pruebas técnicas no demuestran aprendizaje.
+
+## Cierre y voz en 4.0
+
+El cierre usa un único animal de la partida, grande y completo sobre una
+superficie clara, con su nombre debajo. Se retiró el collage fijo de especies
+superpuestas. Cuando no se eligió un animal, se muestra el agente. El panel de
+contenido mantiene la respuesta y la secuencia del banco, el progreso real
+mediante texto y barra accesible y el botón de nueva partida. La pausa mantiene
+sus controles y el mismo animal.
+
+El cierre se centra en escritorio; en móvil se apila y permite desplazamiento
+para mantener textos e imágenes completos. La lectura de «¿Quién elige el
+animal?» ocurre al abrir el diálogo de modalidad y se cancela al cerrarlo.
+Volver a la portada con Comenzar otra partida no dispara esa lectura. Se
+comprueba el comportamiento con voces locales controladas y voces del navegador
+en español y portugués brasileño, sin cambiar la política educativa.
 
 ## Revisión anterior
 

@@ -144,8 +144,8 @@ function inicio() {
   }
   const volver=nodo("button","accion volver-inicio","Volver al inicio");volver.type="button";volver.addEventListener("click",()=>selector.close());
   selector.append(encabezado,modos,volver);
-  comenzar.addEventListener("click",()=>{selector.showModal();ritmoCarrusel();});
-  selector.addEventListener("close",()=>{comenzar.focus({preventScroll:true});ritmoCarrusel();});
+  comenzar.addEventListener("click",()=>{selector.showModal();ritmoCarrusel();hablar(false,"modalidad");});
+  selector.addEventListener("close",()=>{if(vista.fase==="INICIO")pararVoz();comenzar.focus({preventScroll:true});ritmoCarrusel();});
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
   entrada.append(comenzar,nota); texto.append(entrada); layout.append(texto);
   const ficha=nodo("div","hero-ficha"),numero=nodo("span","ficha-numero"),nombre=nodo("strong");
@@ -211,18 +211,22 @@ function catalogoAnimales() {
   dibujar();return [barra,catalogo,paginas,vacia];
 }
 function cierre(fase) {
-  const b=nodo("section","centro cierre"),visual=nodo("div","cierre-visual"),contenido=nodo("div","cierre-contenido");
-  visual.setAttribute("aria-hidden","true");
-  const ids=fase==="PAUSADA"&&vista.animal?[vista.animal.pictograma_id]:["P_A05","P_A31","P_A01"];
-  ids.forEach((id,i)=>visual.append(imagen(id,`cierre-animal cierre-animal-${i}`)));
+  const b=nodo("section","centro cierre"),visual=nodo("figure","cierre-visual"),contenido=nodo("div","cierre-contenido");
+  b.dataset.estado=fase;
+  const marco=nodo("div","cierre-marco"),hoja=icono("hoja","cierre-hoja");
+  marco.append(hoja,imagen(vista.animal?.pictograma_id||"P_AGENTE","cierre-animal"));
+  visual.append(nodo("p","etiqueta",vista.animal?"Tu animal":"Tu guía"),marco,nodo("figcaption","cierre-nombre",vista.animal?.nombre||"A tu ritmo"));
   const h=nodo("h1","",fase==="PAUSADA"?"Tomamos una pausa":fase==="COMPLETADA"?"¡Terminamos!":"Partida terminada");h.id="titulo-pantalla";h.tabIndex=-1;
   contenido.append(nodo("p","etiqueta","Tu expedición"),h,nodo("p","introduccion",vista.respuesta.texto_apoyo),secuencia(vista.respuesta));
   const resumen=nodo("div","cierre-resumen");
-  resumen.append(nodo("strong","",`${vista.progreso.completados} / ${vista.progreso.total}`),nodo("span","","Retos completados"));
+  const cifra=nodo("div","cierre-cifra"),barra=nodo("progress");
+  cifra.append(nodo("strong","",`${vista.progreso.completados} / ${vista.progreso.total}`),nodo("span","","Retos completados"));
+  barra.max=vista.progreso.total;barra.value=vista.progreso.completados;barra.setAttribute("aria-label",t("Progreso de la partida"));
+  resumen.append(cifra,barra);
   contenido.append(resumen);
   if(fase==="PAUSADA")contenido.append(controles());
   else {const btn=boton("Comenzar otra partida","nueva_partida",{},"accion continuar","P_INICIAR");contenido.append(btn);}
-  contenido.append(nodo("p","cierre-nota","48 animales. Ocho mundos por descubrir."));
+  contenido.append(nodo("p","cierre-nota","Sin reloj. Con ayuda. A tu ritmo."));
   b.append(visual,contenido);return b;
 }
 function render(enfocar=false,conservarPaisaje=false) {
@@ -328,9 +332,9 @@ function cargarVoces() {
   vozElegida=candidata?.id||"";sel.value=vozElegida||voces[0]?.id||"";sel.disabled=!vozElegida;notaVoz();
   if(anterior&&anterior!==vozElegida)pararVoz();
 }
-function hablarNavegador(voz,prueba) {
+function hablarNavegador(voz,prueba,contexto) {
   const turno=turnoVoz;
-  const texto=prueba?t("Hola. Vamos a descubrir dónde viven los animales."):vista.respuesta.texto_voz;
+  const texto=prueba?t("Hola. Vamos a descubrir dónde viven los animales."):contexto==="modalidad"?t("¿Quién elige el animal?"):vista.respuesta.texto_voz;
   const lectura=new SpeechSynthesisUtterance(texto);
   lectura.voice=voz.nativa;lectura.lang=voz.idioma_voz;
   lectura.rate=Number($("velocidad").value);lectura.pitch=1;lectura.volume=1;
@@ -340,15 +344,16 @@ function hablarNavegador(voz,prueba) {
   try{window.speechSynthesis.speak(lectura);notaVoz();}
   catch{pararVoz();aviso.textContent=t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir.");notaVoz();}
 }
-async function hablar(prueba=false) {
+async function hablar(prueba=false,contexto="respuesta") {
   if(!vista||!$("voz").checked)return;
+  if(!prueba&&vista.fase==="INICIO"&&(contexto!=="modalidad"||!$("elegir-modalidad")?.open))return;
   pararVoz();
   if(!vozElegida){notaVoz();return;}
   const seleccionada=voces.find(v=>v.id===vozElegida);
-  if(seleccionada?.nativa){hablarNavegador(seleccionada,prueba);return;}
+  if(seleccionada?.nativa){hablarNavegador(seleccionada,prueba,contexto);return;}
   const turno=turnoVoz,control=new AbortController();pedidoVoz=control;
   const entrada={voz:vozElegida,idioma:vista.idioma,prueba,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id,
-    canal_voz:canalVoz,turno_voz:turno};
+    canal_voz:canalVoz,turno_voz:turno,contexto};
   $("estado-voz").textContent=t("Preparando la lectura…");
   try {
     const r=await fetch("/api/voz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada),signal:control.signal});
@@ -384,7 +389,7 @@ async function accion(tipo,payload) {
   try {
     const r=await fetch("/api/accion",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada)}),d=await r.json();
     if(d.vista){vista=d.vista;render(true);} if(!r.ok){aviso.textContent=d.error||t("No se pudo aplicar la acción.");return;}
-    if(d.aceptada&&d.respuesta_emitida&&tipo!=="pausar")hablar();
+    if(d.aceptada&&d.respuesta_emitida&&tipo!=="pausar"&&tipo!=="nueva_partida")hablar();
     if(antes!==vista.fase)window.scrollTo({top:0,behavior:"instant"});
   } catch(e) {aviso.textContent=t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida.");juego.setAttribute("aria-busy","false");}
   finally {ocupado=false;}
