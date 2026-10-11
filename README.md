@@ -2,7 +2,8 @@
 
 Juego de animales y hábitats con pictogramas y guía de inteligencia artificial.
 
-Versión 3.4.0. Español y portugués brasileño. Voces locales Piper y Kokoro.
+Versión 3.4.0. Español y portugués brasileño. Voces locales Piper y Kokoro,
+más voces Microsoft y Google disponibles en el navegador.
 
 ![Inicio con paisajes de Zoonauta](docs/interfaz/01_inicio.png)
 
@@ -25,7 +26,7 @@ versión compatible. Mantén la terminal abierta; Ctrl+C detiene el servidor.
 La primera preparación requiere Internet y descarga unos **656 MB de modelos**,
 además de Python y las dependencias que falten. Las descargas se verifican por
 huella y tamaño. Si se interrumpen, vuelve a abrir el iniciador: conserva los
-archivos completos comprobados. Después puedes jugar y escuchar las voces sin
+archivos completos comprobados. Después puedes jugar y escuchar las voces locales sin
 conexión, claves de API ni cuentas adicionales.
 
 Para usar otro puerto:
@@ -42,10 +43,14 @@ Un ZIP anterior no se actualiza automáticamente.
 Abre **Preferencias → Idioma** para elegir Español o Português (Brasil). Cambian
 los controles, los 48 nombres de animales, los ocho hábitats, las etiquetas de
 pictogramas, las pistas, las confirmaciones y las voces. Puedes cambiar durante
-una partida conservando su estado y progreso. El selector muestra siete opciones
-por idioma, agrupadas por motor; **Probar voz** reproduce una muestra. La selección
-manual se conserva por idioma mientras la página está abierta. Las voces anteriores
-del navegador se sustituyeron por estos motores locales.
+una partida conservando su estado y progreso. El selector conserva siete opciones
+locales por idioma y añade las voces compatibles de Microsoft y Google del navegador,
+agrupadas por proveedor; **Probar voz** reproduce una muestra. La selección
+manual se conserva por idioma mientras la página está abierta. Las voces del navegador
+no necesitan descargar modelos ni claves de API; algunas requieren Internet.
+Se aceptan las regiones latinoamericanas del español (incluidos es-419 y es-US)
+y pt-BR. No se presenta una voz es-ES como latinoamericana ni pt-PT como brasileña.
+Su disponibilidad depende del navegador y de las voces instaladas.
 
 | Idioma | Motor | Opciones |
 |---|---|---|
@@ -53,6 +58,8 @@ del navegador se sustituyeron por estos motores locales.
 | Español | Kokoro | Dora, Alex, Santa |
 | Português (Brasil) | Piper | Cadu, Edresson, Faber, Jeff |
 | Português (Brasil) | Kokoro | Dora, Alex, Santa |
+| Español latinoamericano | Microsoft / Google | Las voces regionales que expone el navegador |
+| Português (Brasil) | Microsoft / Google | Las voces pt-BR que expone el navegador |
 
 Ald ofrece dos variantes del mismo hablante. El ZIP contiene el catálogo y el
 instalador; los pesos grandes se descargan al preparar el juego. Consulta

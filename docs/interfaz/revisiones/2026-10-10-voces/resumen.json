@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-10-10",
+  "version_base": "3.4.0",
+  "python_correctas": 55,
+  "aceptacion_correctos": 8,
+  "navegador_correctos": 19,
+  "contenido": "Microsoft y Google del navegador para español latinoamericano y portugués brasileño, junto a las 14 opciones locales y las mejoras de rendimiento previas.",
+  "modelo_educativo_conservado": true,
+  "evidencias_originales_conservadas": true,
+  "disponibilidad": "Solo se muestran las voces que realmente expone el navegador. El inventario local de Chrome y Edge encontró Microsoft Raúl y Sabina es-MX; no Google ni pt-BR en los perfiles usados.",
+  "limites": "Los cuatro recorridos nuevos usan síntesis y catálogo controlados; no certifican pronunciación, escucha humana o disponibilidad de proveedores en otros equipos."
+}

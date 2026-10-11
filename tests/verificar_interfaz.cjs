@@ -5,9 +5,9 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.INTERFAZ_URL||'http://127.0.0.1:8000';
-const out=path.resolve(__dirname,'../docs/interfaz');fs.mkdirSync(out,{recursive:true});
+const out=process.env.INTERFAZ_SALIDA?path.resolve(process.env.INTERFAZ_SALIDA):path.resolve(__dirname,'../docs/interfaz');fs.mkdirSync(out,{recursive:true});
 const resultados=[];
-async function mockVoz(context,disponibles=true){
+async function mockVoz(context,disponibles=true,vocesNativas=[]){
   await context.route('**/api/voz/config',async route=>{
     const r=await route.fetch(),d=await r.json();d.voces.forEach(v=>v.disponible=disponibles);await route.fulfill({json:d});
   });
@@ -15,7 +15,16 @@ async function mockVoz(context,disponibles=true){
     const b=Buffer.alloc(244);b.write('RIFF');b.writeUInt32LE(236,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(22050,24);b.writeUInt32LE(44100,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(200,40);
     await route.fulfill({contentType:'audio/wav',body:b});
   });
-  await context.addInitScript(()=>{
+  await context.addInitScript(vocesNativas=>{
+    const sintesis=new EventTarget();
+    let lista=vocesNativas;
+    window.__vozNativa=[];window.__cancelacionesNativas=0;
+    sintesis.getVoices=()=>lista;
+    sintesis.speak=u=>{window.__nativaActual=u;window.__vozNativa.push({texto:u.text,voz:u.voice.name,lang:u.lang,rate:u.rate});};
+    sintesis.cancel=()=>{window.__cancelacionesNativas++;const antigua=window.__nativaActual;window.__nativaActual=null;queueMicrotask(()=>antigua?.onerror?.({error:'canceled'}));};
+    window.__actualizarVocesNativas=v=>{lista=v;sintesis.dispatchEvent(new Event('voiceschanged'));};
+    Object.defineProperty(window,'speechSynthesis',{value:sintesis,configurable:true});
+    window.SpeechSynthesisUtterance=class{constructor(texto){this.text=texto;}};
     window.__voz=[];window.__cancelaciones=0;window.__pedido=null;
     const original=window.fetch.bind(window);
     window.fetch=async(url,opciones)=>{
@@ -31,7 +40,7 @@ async function mockVoz(context,disponibles=true){
       pause(){window.__cancelaciones++;}
       removeAttribute(){this.src='';}
     };
-  });
+  },vocesNativas);
 }
 async function vista(page){return page.evaluate(async()=>await (await fetch('/api/vista')).json());}
 async function captura(page,archivo,fullPage=true){
@@ -229,6 +238,31 @@ async function clicar(page,texto,fase){
   await page.goto(base+'/revision');await page.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
   const tecnicos=JSON.parse(await page.locator('#datos').textContent());assert.equal(tecnicos.parametros_congelados,true);
   resultados.push({caso:'Consulta técnica separada y modelo congelado',resultado:'OK'});
+  // Una muestra que todavía se descarga no debe bloquear el cambio de voz.
+  const cambios=await browser.newContext();await mockVoz(cambios);
+  let listo,liberar,primera,peticiones=0;
+  const pendiente=new Promise(r=>listo=r),continuar=new Promise(r=>liberar=r);
+  await cambios.route('**/api/voz',async route=>{
+    if(++peticiones===1){primera=route.request().postDataJSON();listo();await continuar;}
+    const b=Buffer.alloc(244);b.write('RIFF');b.writeUInt32LE(236,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(22050,24);b.writeUInt32LE(44100,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(200,40);
+    await route.fulfill({contentType:'audio/wav',body:b}).catch(e=>{if(!route.request().failure())throw e;});
+  });
+  const pc=await cambios.newPage();pc.on('pageerror',e=>errores.push(e.message));
+  await pc.goto(base);await pc.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();
+  const antesCambio=await vista(pc);
+  await pc.getByRole('button',{name:'Preferencias',exact:true}).click();
+  await pc.locator('#probar-voz').click();await pendiente;
+  const cancelada=pc.waitForResponse(r=>r.url().endsWith('/api/voz/cancelar'));
+  await pc.locator('#voces').selectOption('piper:es_MX-ald-medium');
+  const cancelacion=await cancelada;
+  assert.equal(cancelacion.status(),200);
+  const corte=cancelacion.request().postDataJSON();
+  assert.equal(corte.canal_voz,primera.canal_voz);assert.ok(corte.turno_voz>primera.turno_voz);
+  liberar();await pc.locator('#probar-voz').click();
+  await pc.waitForFunction(()=>window.__voz.length===1);
+  assert.equal(await pc.evaluate(()=>window.__voz[0].voz),'piper:es_MX-ald-medium');
+  assert.deepEqual(await vista(pc),antesCambio);
+  resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
   assert.deepEqual(errores,[]);
   fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.4.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));

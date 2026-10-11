@@ -13,7 +13,7 @@ import webbrowser
 
 from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, SesionWeb
 from codigo.interfaz import idiomas
-from codigo.interfaz.voz import MotorVoz, VozNoDisponible
+from codigo.interfaz.voz import LecturaCancelada, MotorVoz, VozNoDisponible
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import TERMINALES
 
@@ -113,7 +113,7 @@ class Manejador(BaseHTTPRequestHandler):
 
     def do_POST(self):
         ruta = urlsplit(self.path).path
-        if ruta not in {"/api/accion", "/api/idioma", "/api/voz"}:
+        if ruta not in {"/api/accion", "/api/idioma", "/api/voz", "/api/voz/cancelar"}:
             return self._enviar({"error": "Ruta no encontrada."}, codigo=404)
         origin = self.headers.get("Origin")
         if origin and origin != f"http://{self.headers.get('Host')}":
@@ -128,19 +128,39 @@ class Manejador(BaseHTTPRequestHandler):
             entrada = json.loads(self.rfile.read(longitud))
             if not isinstance(entrada, dict):
                 raise ValueError("La entrada debe ser un objeto JSON.")
-            if ruta == "/api/idioma":
+            if ruta == "/api/voz/cancelar":
+                sesion.lecturas_voz.registrar(entrada.get("canal_voz"), entrada.get("turno_voz"))
+                self._enviar({"cancelada": True})
+            elif ruta == "/api/idioma":
                 self._enviar({"vista": sesion.cambiar_idioma(entrada)})
             elif ruta == "/api/voz":
                 if "texto" in entrada or "texto_voz" in entrada:
                     raise ValueError("La voz solo puede leer contenido de la partida.")
                 texto = sesion.texto_voz(entrada)
-                audio = self.server.voz.sintetizar(entrada.get("voz"), texto, entrada.get("idioma"))
+                argumentos = {}
+                if "canal_voz" in entrada or "turno_voz" in entrada:
+                    canal, turno = entrada.get("canal_voz"), entrada.get("turno_voz")
+                    sesion.lecturas_voz.registrar(canal, turno)
+                    def vigente():
+                        if not sesion.lecturas_voz.vigente(canal, turno):
+                            return False
+                        try:
+                            sesion.texto_voz(entrada)
+                        except ConflictoVista:
+                            return False
+                        return True
+                    argumentos["vigente"] = vigente
+                audio = self.server.voz.sintetizar(entrada.get("voz"), texto, entrada.get("idioma"), **argumentos)
                 # La inferencia no mantiene el bloqueo de la partida. Comprobar
                 # de nuevo evita entregar audio de una pantalla ya abandonada.
+                if argumentos and not vigente():
+                    raise LecturaCancelada()
                 sesion.texto_voz(entrada)
                 self._enviar(audio, "audio/wav")
             else:
                 self._enviar(sesion.actuar(entrada))
+        except LecturaCancelada:
+            self._enviar({"cancelada": True}, codigo=409)
         except ConflictoVista as e:
             self._enviar({"error": idiomas.error(str(e), sesion.idioma), "vista": sesion.vista()}, codigo=409)
         except VozNoDisponible as e:

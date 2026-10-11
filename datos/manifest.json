@@ -104,8 +104,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 6356,
-      "sha256": "91769e91ada62d1a6e7ecc46fbd6e805ab54fac8aa58d8cfc95cbd09f0789218"
+      "bytes": 6943,
+      "sha256": "fe2eb6aede8ae4b0416938d6a44851f433da1710ab16a18cd6c2878378b11839"
     },
     {
       "ruta": "assets/pictogramas/P_A01.svg",
@@ -649,23 +649,23 @@
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
-      "bytes": 7060,
-      "sha256": "078509bd6d0fbcbabd3d2a65931339080b38f092da457c59dbc67a08b8d058d7"
+      "bytes": 7160,
+      "sha256": "f53e0c11ca2b1218f15f22fbd985626f06da2798e733a2de0c98f8d2281a2a79"
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 8973,
-      "sha256": "d5243852919822a0482eb13e3bc4c4b5f520bf682ff2f6c0ea00a0d00e3bdeac"
+      "bytes": 10065,
+      "sha256": "787bce0b0c9905a2705dbd96ec47a7d04faf6455a4baab95ec9935d83f0c194c"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
-      "bytes": 5962,
-      "sha256": "3169743a0dcf0ddb396def2ae2ad516901212b8380449ba33cf59977ff07fbba"
+      "bytes": 8537,
+      "sha256": "7db93263a31b720a4d013b86acf30ed626b126153e675b90367cf801e58cb4c5"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 20194,
-      "sha256": "87ad797e06cfeddfafce17355a8092e9c15695a81250bbc6c7017e45a83a005f"
+      "bytes": 23886,
+      "sha256": "fd55f17cb0628d55e4a83ad1c5e233a5494b78e21d7388041bdfe850077e350f"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -709,8 +709,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 4108,
-      "sha256": "a6d94e6547e32fdd862f4346133cd8b65d498868d8904ad63d4c4a277ccd74c3"
+      "bytes": 4193,
+      "sha256": "f22139d192ad1f452374958708bbc3b2615596325bd3b7930c2de7b4b2420159"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -884,8 +884,8 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 24770,
-      "sha256": "fcbf23bec667cb936631c9f9d58423b6b6e4f2fcf3e564c92f92424bdfee3928"
+      "bytes": 25567,
+      "sha256": "2f59dfb629d229d9c87d161b3ce9a84b09aebed113aadb7e81ef1ff82cfebac7"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
@@ -1789,8 +1789,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 15469,
-      "sha256": "3961c216e1551f8b6b36430f147eff14636acf45850fdc36a9a9b5e17107fa0c"
+      "bytes": 15917,
+      "sha256": "a661c4b6c7d2d009ff9ddd17def4c194b115ba7e3f9d8c0d3c342c06c1c8f8d2"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1859,8 +1859,8 @@
     },
     {
       "ruta": "docs/interfaz/alternativas_voz.md",
-      "bytes": 5032,
-      "sha256": "c81b5642d388e35b9a150c3c27aecb67d861e6e66238d453403fb0fb261b90fa"
+      "bytes": 7405,
+      "sha256": "fb67fe098bb9589ba297d2bc0ecfe4e9bab731809733ffc289969da9c0b45425"
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
@@ -1891,6 +1891,51 @@
       "ruta": "docs/interfaz/revision_voces_locales.json",
       "bytes": 6543,
       "sha256": "ecc2b5de3ed8ca4cfba188179024e70560a60cd6cf1553643fd2b33c1e2e5a68"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/aceptacion.json",
+      "bytes": 124222,
+      "sha256": "3767d474823d794da4bbf4c72fd6fa49d76fc437f59acd735b71f13b8fe5ee32"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/interfaz.json",
+      "bytes": 2725,
+      "sha256": "e970b3a282227345806f65fdfa9322a3e098d41c076b4feaded0b4f82d07329b"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/inventario.json",
+      "bytes": 600,
+      "sha256": "6c7902eb2b0287fa20fcf80ce89ac3fb851e0fc5d1a6b5a8962e02e8bd0eb1a7"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/medicion_corregida.json",
+      "bytes": 1726,
+      "sha256": "463ce82d489f4e846ab580f451b8b812ba8ce998efb3d964a0dc8026a976ce32"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/medicion_original.json",
+      "bytes": 1718,
+      "sha256": "1d9e5eed4f3c17402d7610fa96c2d2a61cdc1077ddcedc3fcdda9af39186482c"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/pruebas_python.txt",
+      "bytes": 7535,
+      "sha256": "2ec709b4014037ef542380d01396e3f731d3c3008452a3351b3d98c90e2c78d7"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/rendimiento.json",
+      "bytes": 713,
+      "sha256": "f82551fa74cef3dde8a9fe7cc772947fe2e582a3b4fbd35cd746ba74f29ea244"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/resumen.json",
+      "bytes": 798,
+      "sha256": "6fc175ad98db443761f9570415dbd281f11afb29c24640268b7546b1f4a06c12"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-voces/voces_navegador.json",
+      "bytes": 925,
+      "sha256": "2df53ba9c790a596ffa6724ee7f6e4c9485ac153a728617f5312585efd6f1a3d"
     },
     {
       "ruta": "docs/resultados/arbol_id3.json",
@@ -1939,8 +1984,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 1251,
-      "sha256": "d857d1656a4176e4ebc602839d6b73002c1f6856996b01ca24dfeaa685442b95"
+      "bytes": 1484,
+      "sha256": "5afb9d9efa3e7cb9042d9c28d8501e883ce16f04fce497c61119fa0a881a4c91"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -1963,14 +2008,24 @@
       "sha256": "0f1099a425982c868caf92bf4d6c97dd68ba9c797766af69a0dd8a801dc1912c"
     },
     {
+      "ruta": "tests/test_rendimiento_voz.py",
+      "bytes": 9016,
+      "sha256": "0280a8cd0015793a3593533982032cecf65350bc67f9266c7caecadfbdaad289"
+    },
+    {
       "ruta": "tests/verificar_audio_real.cjs",
       "bytes": 3551,
       "sha256": "0b17609edecfe041da0ac0d8b0674888f6cf9e6cb636435db0f8beb0e33dcf98"
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 23074,
-      "sha256": "54bb9f908eb95528ac1f4667711b52283a497c7097dc8cf1675ae2bb081c8801"
+      "bytes": 25937,
+      "sha256": "a2e9dc6b1421321b18fa4e3b7e945195e80ba1be653ac944f95a0689ef0a02ee"
+    },
+    {
+      "ruta": "tests/verificar_voces_navegador.cjs",
+      "bytes": 10224,
+      "sha256": "616a18c317956658ca361bc7cf8a3eace0ad4ea3351b637dccf741017d0e867a"
     },
     {
       "ruta": "tests/verificar_voces_reales.py",
