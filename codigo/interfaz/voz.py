@@ -4,6 +4,7 @@ from __future__ import annotations
 from collections import OrderedDict
 import importlib.util
 import io
+import json
 from threading import RLock
 import wave
 
@@ -12,6 +13,34 @@ from codigo.interfaz.preparar_voces import catalogo, directorio_voces
 
 class VozNoDisponible(RuntimeError):
     pass
+
+
+class LecturaCancelada(RuntimeError):
+    """La lectura dejó de ser necesaria antes de terminar la síntesis."""
+
+
+class ControlLecturasVoz:
+    """Última lectura por página, independiente del estado educativo."""
+    def __init__(self):
+        self.lock = RLock()
+        self.turnos = OrderedDict()
+
+    def registrar(self, canal, turno):
+        if (not isinstance(canal, str) or not 1 <= len(canal) <= 120
+                or type(turno) is not int or not 0 <= turno < 2 ** 53):
+            raise ValueError("Identificador de lectura no válido.")
+        with self.lock:
+            anterior = self.turnos.get(canal, -1)
+            if turno < anterior:
+                raise LecturaCancelada()
+            self.turnos[canal] = turno
+            self.turnos.move_to_end(canal)
+            while len(self.turnos) > 8:
+                self.turnos.popitem(last=False)
+
+    def vigente(self, canal, turno):
+        with self.lock:
+            return self.turnos.get(canal) == turno
 
 
 class SesionONNXTipada:
@@ -38,12 +67,16 @@ class SesionONNXTipada:
 
 
 class MotorVoz:
-    def __init__(self, raiz=None, *, max_cache_bytes=32 * 1024 * 1024):
+    def __init__(self, raiz=None, *, max_cache_bytes=32 * 1024 * 1024, max_modelos=4):
+        if type(max_modelos) is not int or max_modelos < 1:
+            raise ValueError("El límite de modelos debe ser un entero positivo.")
         self.raiz = raiz or directorio_voces()
         self.catalogo = catalogo()
         self.voces = {v["id"]: v for v in self.catalogo["voces"]}
         self.archivos = {a["archivo"]: a for a in self.catalogo["archivos"]}
         self.lock = RLock()
+        self.lock_cache = RLock()
+        self.max_modelos = max_modelos
         self.modelos = OrderedDict()
         self.cache = OrderedDict()
         self.bytes_cache = 0
@@ -69,18 +102,24 @@ class MotorVoz:
         if clave in self.modelos:
             self.modelos.move_to_end(clave)
             return self.modelos[clave]
-        while len(self.modelos) >= 2:
+        while len(self.modelos) >= self.max_modelos:
             self.modelos.popitem(last=False)
+        import onnxruntime as ort
+        opciones = ort.SessionOptions()
+        # Cada modelo conserva su propio pool. Limitarlo evita la competencia
+        # entre decenas de hilos al conservar varias voces en CPU.
+        opciones.intra_op_num_threads = 2
+        opciones.inter_op_num_threads = 1
         if voz["motor"] == "piper":
             from piper import PiperVoice
-            modelo = PiperVoice.load(self.raiz / "piper" / voz["modelo"],
-                                     config_path=self.raiz / "piper" / voz["configuracion"])
+            from piper.config import PiperConfig
+            configuracion = json.loads((self.raiz / "piper" / voz["configuracion"]).read_text(encoding="utf-8"))
+            sesion = ort.InferenceSession(str(self.raiz / "piper" / voz["modelo"]),
+                                         sess_options=opciones, providers=["CPUExecutionProvider"])
+            # Constructor de piper-tts 1.3.0; load() no permite SessionOptions.
+            modelo = PiperVoice(session=sesion, config=PiperConfig.from_dict(configuracion))
         else:
             from kokoro_onnx import Kokoro
-            import onnxruntime as ort
-            opciones = ort.SessionOptions()
-            opciones.intra_op_num_threads = 2
-            opciones.inter_op_num_threads = 1
             sesion = ort.InferenceSession(str(self.raiz / "kokoro" / voz["modelo"]),
                                          sess_options=opciones, providers=["CPUExecutionProvider"])
             modelo = Kokoro.from_session(sesion, str(self.raiz / "kokoro" / voz["pack"]))
@@ -88,21 +127,40 @@ class MotorVoz:
         self.modelos[clave] = modelo
         return modelo
 
-    def sintetizar(self, voz_id: str, texto: str, idioma: str) -> bytes:
+    def _audio_cache(self, clave):
+        with self.lock_cache:
+            if clave in self.cache:
+                self.cache.move_to_end(clave)
+                return self.cache[clave]
+        return None
+
+    def sintetizar(self, voz_id: str, texto: str, idioma: str, *, vigente=None) -> bytes:
         voz = self.voces.get(voz_id) if isinstance(voz_id, str) else None
         if not voz or idioma != ("es" if voz["idioma"] == "es" else "pt-BR"):
             raise ValueError("Selecciona una voz válida para este idioma.")
         if not texto or len(texto) > 2000:
             raise ValueError("Texto de voz no válido.")
+        def comprobar():
+            if vigente is not None and not vigente():
+                raise LecturaCancelada()
+
+        comprobar()
+        clave = (voz_id, texto)
+        contenido = self._audio_cache(clave)
+        if contenido is not None:
+            return contenido
         with self.lock:
-            clave = (voz_id, texto)
-            if clave in self.cache:
-                self.cache.move_to_end(clave)
-                return self.cache[clave]
+            # Las peticiones canceladas mientras esperaban no cargan modelos
+            # ni generan WAV. Una inferencia ONNX ya iniciada debe terminar.
+            comprobar()
+            contenido = self._audio_cache(clave)
+            if contenido is not None:
+                return contenido
             if not self._disponible(voz):
                 raise VozNoDisponible("No hay voces preparadas para este idioma. Abre iniciar_juego.bat para descargar los modelos.")
             try:
                 modelo = self._modelo(voz)
+                comprobar()
                 archivo = io.BytesIO()
                 if voz["motor"] == "piper":
                     with wave.open(archivo, "wb") as wav:
@@ -116,13 +174,17 @@ class MotorVoz:
                         wav.setframerate(frecuencia)
                         wav.writeframes((np.clip(audio, -1, 1) * 32767).astype("<i2").tobytes())
                 contenido = archivo.getvalue()
+            except LecturaCancelada:
+                raise
             except Exception as exc:
-                self.modelos.clear()
+                self.modelos.pop((voz["motor"], voz["modelo"]), None)
                 raise VozNoDisponible("No se pudo generar la voz. Puedes volver a pulsar Repetir.") from exc
-            if len(contenido) <= self.max_cache_bytes:
-                self.cache[clave] = contenido
-                self.bytes_cache += len(contenido)
-                while self.bytes_cache > self.max_cache_bytes or len(self.cache) > 128:
-                    _, anterior = self.cache.popitem(last=False)
-                    self.bytes_cache -= len(anterior)
+            with self.lock_cache:
+                if len(contenido) <= self.max_cache_bytes:
+                    self.cache[clave] = contenido
+                    self.bytes_cache += len(contenido)
+                    while self.bytes_cache > self.max_cache_bytes or len(self.cache) > 128:
+                        _, anterior = self.cache.popitem(last=False)
+                        self.bytes_cache -= len(anterior)
+            comprobar()
             return contenido

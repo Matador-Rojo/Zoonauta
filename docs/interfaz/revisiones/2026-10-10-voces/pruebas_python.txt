@@ -1,0 +1,61 @@
+test_actualizacion_unica_y_sin_etiqueta (test_aprendizaje.PruebasAprendizaje.test_actualizacion_unica_y_sin_etiqueta) ... ok
+test_cortes_de_simulacion_no_crean_etiquetas_cero (test_aprendizaje.PruebasAprendizaje.test_cortes_de_simulacion_no_crean_etiquetas_cero) ... ok
+test_experimento_completo_con_cierres_y_modelos (test_aprendizaje.PruebasAprendizaje.test_experimento_completo_con_cierres_y_modelos) ... ok
+test_exportacion_y_evaluacion_inmutable (test_aprendizaje.PruebasAprendizaje.test_exportacion_y_evaluacion_inmutable) ... ok
+test_feedback_se_aplica_antes_de_nueva_decision (test_aprendizaje.PruebasAprendizaje.test_feedback_se_aplica_antes_de_nueva_decision) ... ok
+test_flujos_exogenos_no_dependen_de_politica (test_aprendizaje.PruebasAprendizaje.test_flujos_exogenos_no_dependen_de_politica) ... ok
+test_thompson_excluye_ultima_y_es_reproducible (test_aprendizaje.PruebasAprendizaje.test_thompson_excluye_ultima_y_es_reproducible) ... ok
+test_audio_generado_despues_de_cambiar_idioma_se_descarta (test_idiomas_voz.HTTP.test_audio_generado_despues_de_cambiar_idioma_se_descarta) ... ok
+test_cambio_y_error_localizados_voz_sin_modelos (test_idiomas_voz.HTTP.test_cambio_y_error_localizados_voz_sin_modelos) ... 127.0.0.1 - - [10/Oct/2026 00:51:45] "POST /api/voz HTTP/1.1" 503 -
+ok
+test_endpoint_solo_lee_texto_de_sesion (test_idiomas_voz.HTTP.test_endpoint_solo_lee_texto_de_sesion) ... ok
+test_origen_ajeno_bloqueado_y_catalogo_sin_rutas_locales (test_idiomas_voz.HTTP.test_origen_ajeno_bloqueado_y_catalogo_sin_rutas_locales) ... ok
+test_cambiar_idioma_conserva_estado_observacion_y_modelo (test_idiomas_voz.Idiomas.test_cambiar_idioma_conserva_estado_observacion_y_modelo) ... ok
+test_idioma_invalido_y_pantalla_antigua_no_alteran_idioma (test_idiomas_voz.Idiomas.test_idioma_invalido_y_pantalla_antigua_no_alteran_idioma) ... ok
+test_lectura_previa_y_cambio_de_idioma_se_rechazan (test_idiomas_voz.Idiomas.test_lectura_previa_y_cambio_de_idioma_se_rechazan) ... ok
+test_recorrido_portugues_pendiente_confirmacion_repetir_pausa (test_idiomas_voz.Idiomas.test_recorrido_portugues_pendiente_confirmacion_repetir_pausa) ... ok
+test_todas_las_respuestas_y_composiciones_tienen_traduccion (test_idiomas_voz.Idiomas.test_todas_las_respuestas_y_composiciones_tienen_traduccion) ... ok
+test_catalogo_completo_sin_voces_del_navegador (test_idiomas_voz.Voz.test_catalogo_completo_sin_voces_del_navegador) ... ok
+test_descarga_se_comprueba_con_tamano_y_huella (test_idiomas_voz.Voz.test_descarga_se_comprueba_con_tamano_y_huella) ... ok
+test_modelos_ausentes_error_y_juego_sigue_disponible (test_idiomas_voz.Voz.test_modelos_ausentes_error_y_juego_sigue_disponible) ... ok
+test_voz_invalida_o_idioma_incorrecto_no_cargan_modelos (test_idiomas_voz.Voz.test_voz_invalida_o_idioma_incorrecto_no_cargan_modelos) ... ok
+test_wav_repetible_cache_limitada_y_fallo_recuperable (test_idiomas_voz.Voz.test_wav_repetible_cache_limitada_y_fallo_recuperable) ... ok
+test_ambos_inicios_y_cantidad_48 (test_interfaz.PruebasInterfaz.test_ambos_inicios_y_cantidad_48) ... ok
+test_capibara_pendiente_y_asociacion_adicional (test_interfaz.PruebasInterfaz.test_capibara_pendiente_y_asociacion_adicional) ... ok
+test_catalogo_completo_y_api_sin_estimaciones (test_interfaz.PruebasInterfaz.test_catalogo_completo_y_api_sin_estimaciones) ... ok
+test_clic_duplicado_o_tardio_no_repite_ayuda (test_interfaz.PruebasInterfaz.test_clic_duplicado_o_tardio_no_repite_ayuda) ... ok
+test_clics_concurrentes_aplican_solo_una_accion (test_interfaz.PruebasInterfaz.test_clics_concurrentes_aplican_solo_una_accion) ... ok
+test_limites_y_eventos_internos_bloqueados (test_interfaz.PruebasInterfaz.test_limites_y_eventos_internos_bloqueados) ... ok
+test_modelo_aprendido_permanece_congelado (test_interfaz.PruebasInterfaz.test_modelo_aprendido_permanece_congelado) ... ok
+test_repetir_pausa_y_consulta_no_toman_nueva_decision (test_interfaz.PruebasInterfaz.test_repetir_pausa_y_consulta_no_toman_nueva_decision) ... ok
+test_todos_los_recursos_tienen_bytes_creditos_y_huella (test_interfaz.PruebasInterfaz.test_todos_los_recursos_tienen_bytes_creditos_y_huella) ... ok
+test_48_retos_automaticos_y_reinicio_local (test_nucleo.PruebasNucleo.test_48_retos_automaticos_y_reinicio_local) ... ok
+test_argmax_probabilistico_respeta_exclusion (test_nucleo.PruebasNucleo.test_argmax_probabilistico_respeta_exclusion) ... ok
+test_consola_agente_y_fin_de_entrada (test_nucleo.PruebasNucleo.test_consola_agente_y_fin_de_entrada) ... ok
+test_consola_jugador_recorrido_completo (test_nucleo.PruebasNucleo.test_consola_jugador_recorrido_completo) ... ok
+test_entrada_desconocida_y_sesion_distinta (test_nucleo.PruebasNucleo.test_entrada_desconocida_y_sesion_distinta) ... ok
+test_evento_duplicado_y_clic_tardio (test_nucleo.PruebasNucleo.test_evento_duplicado_y_clic_tardio) ... ok
+test_evento_ignorado_no_se_reactiva_en_otra_fase (test_nucleo.PruebasNucleo.test_evento_ignorado_no_se_reactiva_en_otra_fase) ... ok
+test_id3_calcula_arbol_y_rutas (test_nucleo.PruebasNucleo.test_id3_calcula_arbol_y_rutas) ... ok
+test_limites_y_eventos_internos (test_nucleo.PruebasNucleo.test_limites_y_eventos_internos) ... ok
+test_nueva_ayuda_cierra_un_resultado_y_usa_b_actual (test_nucleo.PruebasNucleo.test_nueva_ayuda_cierra_un_resultado_y_usa_b_actual) ... ok
+test_ocho_casos_especificados (test_nucleo.PruebasNucleo.test_ocho_casos_especificados) ... ok
+test_ocho_opciones_y_catalogo_sin_datos_tecnicos (test_nucleo.PruebasNucleo.test_ocho_opciones_y_catalogo_sin_datos_tecnicos) ... ok
+test_pausa_y_entrada_durante_pausa (test_nucleo.PruebasNucleo.test_pausa_y_entrada_durante_pausa) ... ok
+test_pendientes_conservan_ruta_y_no_son_errores (test_nucleo.PruebasNucleo.test_pendientes_conservan_ruta_y_no_son_errores) ... ok
+test_politicas_y_parametros_congelados (test_nucleo.PruebasNucleo.test_politicas_y_parametros_congelados) ... ok
+test_registro_jsonl_preserva_resultados_sin_etiqueta (test_nucleo.PruebasNucleo.test_registro_jsonl_preserva_resultados_sin_etiqueta) ... ok
+test_repetir_preserva_contenido_y_contexto_de_observacion (test_nucleo.PruebasNucleo.test_repetir_preserva_contenido_y_contexto_de_observacion) ... ok
+test_salir_cierra_sin_etiqueta_y_terminal_no_cambia (test_nucleo.PruebasNucleo.test_salir_cierra_sin_etiqueta_y_terminal_no_cambia) ... ok
+test_todas_las_asociaciones_confirmadas_resuelven (test_nucleo.PruebasNucleo.test_todas_las_asociaciones_confirmadas_resuelven) ... ok
+test_cambio_rapido_omite_la_voz_cancelada_en_cola (test_rendimiento_voz.ColaHTTP.test_cambio_rapido_omite_la_voz_cancelada_en_cola) ... ok
+test_alternar_tres_voces_reutiliza_modelos_y_limita_hilos (test_rendimiento_voz.RendimientoVoz.test_alternar_tres_voces_reutiliza_modelos_y_limita_hilos) ... ok
+test_cache_responde_mientras_otra_voz_esta_generando (test_rendimiento_voz.RendimientoVoz.test_cache_responde_mientras_otra_voz_esta_generando) ... ok
+test_cancelacion_adelantada_no_se_revierte_y_paginas_independientes (test_rendimiento_voz.RendimientoVoz.test_cancelacion_adelantada_no_se_revierte_y_paginas_independientes) ... ok
+test_cancelar_durante_carga_conserva_modelo_y_evade_sintesis (test_rendimiento_voz.RendimientoVoz.test_cancelar_durante_carga_conserva_modelo_y_evade_sintesis) ... ok
+test_fallo_de_una_voz_no_descarta_las_otras (test_rendimiento_voz.RendimientoVoz.test_fallo_de_una_voz_no_descarta_las_otras) ... ok
+
+----------------------------------------------------------------------
+Ran 55 tests in 3.078s
+
+OK

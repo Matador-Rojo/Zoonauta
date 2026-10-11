@@ -47,7 +47,8 @@ abiertas sin etiqueta. Puedes pasar `--puerto 8767` si necesitas otro puerto.
 El núcleo y el servidor HTTP usan la biblioteca estándar; la síntesis local añade
 las dependencias ONNX de `requirements_voz.txt`. La interfaz utiliza HTML/CSS/JS,
 sin Streamlit. Todos los recursos visuales están incluidos. La preparación inicial
-de voz requiere Internet; durante la partida no se descargan recursos externos.
+de voz requiere Internet; los modelos y las imágenes están disponibles localmente
+durante la partida. Las voces remotas del navegador pueden necesitar conexión.
 
 Para comparar políticas con el entorno ya preparado, utiliza su ejecutable Python:
 
@@ -62,7 +63,7 @@ utiliza `--parametros RUTA`. El predeterminado es
 del entrenamiento sintético, sin escoger una réplica por su rendimiento.
 Las selecciones manuales se registran y no actualizan α o β.
 
-## 3. Idiomas y voces locales
+## 3. Idiomas y voces
 
 Preferencias permite elegir español o portugués brasileño. Se traducen los
 controles, los 48 animales, los ocho hábitats, las 95 etiquetas de pictogramas,
@@ -71,10 +72,14 @@ Los identificadores de recursos, las asociaciones y los registros originales
 siguen siendo los del núcleo. El cambio no modifica la revisión de la partida,
 las observaciones, el progreso ni los parámetros del modelo.
 
-Hay siete opciones de voz por idioma. Piper: Claude y Ald (media/ligera) de México,
+Hay siete opciones locales de voz por idioma. Piper: Claude y Ald (media/ligera) de México,
 Daniela de Argentina; Cadu, Edresson, Faber y Jeff de Brasil. Kokoro: Dora, Alex y
-Santa para cada idioma. Las voces del navegador se sustituyeron por audio WAV
-local generado con el texto preparado por la guía. Probar voz lee un saludo fijo.
+Santa para cada idioma. También se agregan las voces de Microsoft y Google que
+el navegador ofrece en español latinoamericano o portugués brasileño. Se muestra
+su región real; no se mezclan es-ES ni pt-PT con esas opciones. No requieren
+descargas de modelos ni claves de API, pero algunas necesitan Internet.
+Piper y Kokoro generan WAV local; las voces del navegador utilizan Web Speech API.
+Todos leen el texto preparado por la guía. Probar voz lee un saludo fijo.
 El selector conserva la elección manual por idioma mientras la página esté abierta.
 
 Abre `iniciar_juego.bat` o `bash iniciar_juego.sh`. Se prepara Python 3.12 en un
@@ -206,6 +211,7 @@ necesarios para jugar:
 npm install --no-save playwright
 npx playwright install chromium
 python -m tests.ejecutar_navegador
+python -m tests.ejecutar_navegador --voces-navegador
 .venv-voz\Scripts\python.exe -m tests.verificar_voces_reales
 .venv-voz\Scripts\python.exe -m tests.ejecutar_navegador --audio-real
 ```
