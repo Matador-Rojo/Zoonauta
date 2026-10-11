@@ -103,9 +103,19 @@
       "sha256": "d6e6b21a1ccd94d7d2af93e0851b431679ae4bea1cb5a4e08eece555582255bf"
     },
     {
+      "ruta": "AGENTS.md",
+      "bytes": 3012,
+      "sha256": "293184921010e281f25aead5f3c4d32c087059f847ac7e773325ade4907e2710"
+    },
+    {
+      "ruta": "CONTEXTO_CODEX.md",
+      "bytes": 15781,
+      "sha256": "74eb18724c273ad9d6b499f9cc1bcfddcf2e1a7fad64dbc3836e199583ed4464"
+    },
+    {
       "ruta": "README.md",
-      "bytes": 6356,
-      "sha256": "91769e91ada62d1a6e7ecc46fbd6e805ab54fac8aa58d8cfc95cbd09f0789218"
+      "bytes": 6645,
+      "sha256": "355c2a79750de211456b04cefc07424defa3601b0815ffb0c4781622bfdf9147"
     },
     {
       "ruta": "assets/pictogramas/P_A01.svg",
