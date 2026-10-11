@@ -41,7 +41,7 @@ def descargar(ficha: dict, raiz: Path) -> None:
     for intento in range(3):
         try:
             print(f"Descargando: {destino.name} ({ficha['bytes'] / 1e6:.1f} MB)", flush=True)
-            req = Request(ficha["url"], headers={"User-Agent": "Zoonauta/4.2"})
+            req = Request(ficha["url"], headers={"User-Agent": "Zoonauta/4.3"})
             with urlopen(req, timeout=60) as respuesta, temporal.open("wb") as salida:
                 total = 0
                 for bloque in iter(lambda: respuesta.read(1024 * 1024), b""):

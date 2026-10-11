@@ -30,6 +30,37 @@ function idiomaPantalla() {
   $("etiqueta-voces").textContent=t(vista.idioma==="pt-BR"?"Voz en portugués brasileño":"Voz en español");
 }
 function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=t(texto); return n; }
+
+let temporizadorAviso=null, focoAntesAviso=null;
+function ubicarAviso() {
+  if(aviso.hidden)return;
+  const destino=document.querySelector('dialog[open]')||document.body;
+  if(aviso.parentElement!==destino)destino.append(aviso);
+  if(typeof aviso.showPopover==='function'&&!aviso.matches(':popover-open'))aviso.showPopover();
+}
+function cerrarAviso() {
+  clearTimeout(temporizadorAviso);temporizadorAviso=null;
+  if(aviso.contains(document.activeElement)&&focoAntesAviso?.isConnected)focoAntesAviso.focus({preventScroll:true});
+  if(typeof aviso.hidePopover==='function'&&aviso.matches(':popover-open'))aviso.hidePopover();
+  aviso.hidden=true;$("aviso-texto").textContent="";delete aviso.dataset.origen;
+}
+function notificar(texto,origen="general") {
+  cerrarAviso();focoAntesAviso=document.activeElement;
+  $("cerrar-aviso").setAttribute("aria-label",t("Cerrar notificación"));
+  aviso.dataset.origen=origen;aviso.hidden=false;ubicarAviso();
+  $("aviso-texto").textContent=texto;
+  temporizadorAviso=setTimeout(cerrarAviso,8000);
+}
+function validarRetos(alComenzar=false) {
+  const campo=$("retos"),n=Number(campo.value);
+  if(campo.value.trim()&&Number.isInteger(n)&&n>=1&&n<=48&&campo.validity.valid){
+    if(aviso.dataset.origen==="retos")cerrarAviso();
+    return n;
+  }
+  notificar(t(alComenzar?"Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.":"Escribe un número entero del 1 al 48."),"retos");
+  return null;
+}
+$("cerrar-aviso").addEventListener("click",cerrarAviso);
 function imagen(id, clase="") {
   const im=nodo("img",clase);
   im.src=vista.pictogramas[id].imagen;
@@ -144,8 +175,8 @@ function inicio() {
   }
   const volver=nodo("button","accion volver-inicio","Volver al inicio");volver.type="button";volver.addEventListener("click",()=>selector.close());
   selector.append(encabezado,modos,volver);
-  comenzar.addEventListener("click",()=>{selector.showModal();ritmoCarrusel();hablar(false,"modalidad");});
-  selector.addEventListener("close",()=>{if(vista.fase==="INICIO")pararVoz();comenzar.focus({preventScroll:true});ritmoCarrusel();});
+  comenzar.addEventListener("click",()=>{if(validarRetos(true)===null)return;cerrarAviso();selector.showModal();ritmoCarrusel();hablar(false,"modalidad");});
+  selector.addEventListener("close",()=>{ubicarAviso();if(vista.fase==="INICIO")pararVoz();comenzar.focus({preventScroll:true});ritmoCarrusel();});
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
   entrada.append(comenzar,nota); texto.append(entrada); layout.append(texto);
   const ficha=nodo("div","hero-ficha"),numero=nodo("span","ficha-numero"),nombre=nodo("strong");
@@ -233,6 +264,7 @@ function cierre(fase) {
 }
 function render(enfocar=false,conservarPaisaje=false) {
   const previo=conservarPaisaje&&carrusel?{indice:carrusel.indice,pausado:carrusel.pausado}:null;
+  if(aviso.parentElement?.closest("#juego"))document.body.append(aviso);
   detenerCarrusel(); carrusel=null;idiomaPantalla();
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
   const f=vista.fase; document.body.dataset.fase=f;
@@ -342,9 +374,9 @@ function hablarNavegador(voz,prueba,contexto) {
   lectura.rate=Number($("velocidad").value);lectura.pitch=1;lectura.volume=1;
   locucionNativa=lectura;
   lectura.onend=()=>{if(turno===turnoVoz&&locucionNativa===lectura){locucionNativa=null;notaVoz();}};
-  lectura.onerror=()=>{if(turno===turnoVoz&&locucionNativa===lectura){pararVoz();aviso.textContent=t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir.");notaVoz();}};
+  lectura.onerror=()=>{if(turno===turnoVoz&&locucionNativa===lectura){pararVoz();notificar(t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."));notaVoz();}};
   try{window.speechSynthesis.speak(lectura);notaVoz();}
-  catch{pararVoz();aviso.textContent=t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir.");notaVoz();}
+  catch{pararVoz();notificar(t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."));notaVoz();}
 }
 async function hablar(prueba=false,contexto="respuesta") {
   if(!vista||!$("voz").checked)return;
@@ -365,41 +397,42 @@ async function hablar(prueba=false,contexto="respuesta") {
     audioURL=URL.createObjectURL(blob);const audio=new Audio(audioURL);locucion=audio;
     audio.playbackRate=Number($("velocidad").value);audio.preservesPitch=true;
     audio.onended=()=>{if(turno===turnoVoz){pararVoz();notaVoz();}};
-    audio.onerror=()=>{if(turno===turnoVoz){pararVoz();aviso.textContent=t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir.");notaVoz();}};
+    audio.onerror=()=>{if(turno===turnoVoz){pararVoz();notificar(t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."));notaVoz();}};
     await audio.play();if(turno===turnoVoz)notaVoz();
-  }catch(e){if(e.name!=="AbortError"&&turno===turnoVoz){pararVoz();aviso.textContent=e.message;notaVoz();}}
+  }catch(e){if(e.name!=="AbortError"&&turno===turnoVoz){pararVoz();notificar(e.message);notaVoz();}}
 }
 async function cambiarIdioma() {
   if(ocupado||!vista){$("idioma").value=vista?.idioma||"es";return;}
-  ocupado=true;pararVoz();aviso.textContent="";$("idioma").disabled=true;
+  ocupado=true;pararVoz();cerrarAviso();$("idioma").disabled=true;
   for(const b of juego.querySelectorAll("button"))b.disabled=true;
   const entrada={idioma:$("idioma").value,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
   try{
     const r=await fetch("/api/idioma",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada)}),d=await r.json();
     if(d.vista){vista=d.vista;render(false,true);cargarVoces();}
-    if(!r.ok)aviso.textContent=d.error||t("No se pudo cambiar el idioma.");
-  }catch{aviso.textContent=t("No se pudo cambiar el idioma.");render(false,true);}
+    if(!r.ok)notificar(d.error||t("No se pudo cambiar el idioma."));
+  }catch{notificar(t("No se pudo cambiar el idioma."));render(false,true);}
   finally{ocupado=false;$("idioma").disabled=false;$("idioma").value=vista.idioma;}
 }
 async function accion(tipo,payload) {
-  if(ocupado||!vista)return; ocupado=true; aviso.textContent=""; const antes=vista.fase;
-  if(tipo==="iniciar") {const n=Number($("retos").value);if(!Number.isInteger(n)||n<1||n>48){aviso.textContent=t("Selecciona entre 1 y 48 retos en Preferencias.");ocupado=false;return;} payload={...payload,retos:n};}
+  if(ocupado||!vista)return; ocupado=true; cerrarAviso(); const antes=vista.fase;
+  if(tipo==="iniciar") {const n=validarRetos(true);if(n===null){ocupado=false;return;} payload={...payload,retos:n};}
   pararVoz();
   for(const b of juego.querySelectorAll("button"))b.disabled=true;
   juego.setAttribute("aria-busy","true");
   const entrada={tipo,payload,evento_id:crypto.randomUUID(),revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
   try {
     const r=await fetch("/api/accion",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada)}),d=await r.json();
-    if(d.vista){vista=d.vista;render(true);} if(!r.ok){aviso.textContent=d.error||t("No se pudo aplicar la acción.");return;}
+    if(d.vista){vista=d.vista;render(true);} if(!r.ok){notificar(d.error||t("No se pudo aplicar la acción."));return;}
     if(d.aceptada&&d.respuesta_emitida&&tipo!=="pausar"&&tipo!=="nueva_partida")hablar();
     if(antes!==vista.fase)window.scrollTo({top:0,behavior:"instant"});
-  } catch(e) {aviso.textContent=t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida.");juego.setAttribute("aria-busy","false");}
+  } catch(e) {notificar(t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida."));juego.setAttribute("aria-busy","false");}
   finally {ocupado=false;}
 }
-$("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();ritmoCarrusel();});
+$("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();ubicarAviso();ritmoCarrusel();});
 $("cerrar-preferencias").addEventListener("click",()=>$("preferencias").close());
 $("cerrar-ajustes").addEventListener("click",()=>$("preferencias").close());
-$("preferencias").addEventListener("close",ritmoCarrusel);
+$("preferencias").addEventListener("close",()=>{ubicarAviso();ritmoCarrusel();});
+$("retos").addEventListener("change",()=>validarRetos());
 document.addEventListener("visibilitychange",ritmoCarrusel);
 $("voz").addEventListener("change",()=>{if(!$("voz").checked)pararVoz();});
 $("voces").addEventListener("change",()=>{pararVoz();vozElegida=$("voces").value;eleccionesVoz[vista.idioma]=vozElegida;notaVoz();});
