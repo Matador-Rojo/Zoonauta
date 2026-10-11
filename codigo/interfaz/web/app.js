@@ -34,6 +34,7 @@ function imagen(id, clase="") {
   const im=nodo("img",clase);
   im.src=vista.pictogramas[id].imagen;
   if(/^P_A\d{2}$/.test(id))im.classList.add("animal-ilustracion");
+  if(["P_AYUDA","P_REPETIR","P_PAUSAR","P_SALIR"].includes(id))im.classList.add("control-ilustracion");
   im.alt=""; im.draggable=false; im.decoding="async"; return im;
 }
 function icono(nombre,clase="") {
@@ -81,7 +82,7 @@ function secuencia(r) {
 }
 function controles() {
   const a=nodo("nav","acciones"); a.setAttribute("aria-label",t("Controles de la partida"));
-  const etiquetas={ayuda:["Ayuda","P_AYUDA"],repetir:["Repetir","P_REPETIR"],pausar:["Pausar","P_PAUSAR"],reanudar:["Reanudar","P_REANUDAR"],continuar:["Continuar","P_CONTINUAR"],salir:["Salir","P_SALIR"]};
+  const etiquetas={ayuda:["Pista","P_AYUDA"],repetir:["Repetir","P_REPETIR"],pausar:["Pausar","P_PAUSAR"],reanudar:["Reanudar","P_REANUDAR"],continuar:["Continuar","P_CONTINUAR"],salir:["Salir","P_SALIR"]};
   for(const t of vista.controles_disponibles) if(etiquetas[t]) {
     const [texto,picto]=etiquetas[t],b=boton(texto,t,{},"accion "+(t==="ayuda"?"destacada":t==="continuar"?"continuar":t==="salir"?"salir":""),picto);
     a.append(b);
@@ -157,7 +158,7 @@ function inicio() {
   const siguiente=control("Siguiente paisaje","flecha",()=>manual(1));
   navegacion.append(anterior,pausa,siguiente);ficha.append(navegacion);layout.append(ficha);
   const resumen=nodo("div","resumen-inicio");
-  for(const [t,sub] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Ayuda, repetición y pausa"]]) {
+  for(const [t,sub] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Pistas, repetición y pausa"]]) {
     const item=nodo("div","resumen-item");item.append(nodo("strong","",t),nodo("span","",sub));resumen.append(item);
   }
   b.append(foto,nodo("div","hero-sombra"),layout,resumen,selector);

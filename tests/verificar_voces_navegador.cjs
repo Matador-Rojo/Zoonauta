@@ -89,7 +89,7 @@ async function actuar(p,nombre,fase){
   await pt.evaluate(()=>window.__actualizar([]));assert.equal(await pt.locator('#probar-voz').isDisabled(),true);
   await pt.evaluate(v=>window.__actualizar(v),inventario);assert.equal(await pt.locator('#voces').inputValue(),elegida);
   await pt.getByRole('button',{name:'Volver al juego',exact:true}).click();await actuar(pt,'Yo elijo','SELECCION_ANIMAL');await pt.getByRole('searchbox',{name:'Buscar animal'}).fill('capibara');await actuar(pt,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
-  await actuar(pt,'Ayuda');const ayuda=await pt.evaluate(()=>window.__lecturas.at(-1));await actuar(pt,'Repetir');assert.equal((await pt.evaluate(()=>window.__lecturas.at(-1))).texto,ayuda.texto);
+  await actuar(pt,'Pista');const ayuda=await pt.evaluate(()=>window.__lecturas.at(-1));await actuar(pt,'Repetir');assert.equal((await pt.evaluate(()=>window.__lecturas.at(-1))).texto,ayuda.texto);
   await actuar(pt,'Pausar','PAUSADA');await actuar(pt,'Reanudar','ESPERANDO_RESPUESTA');assert.equal((await pt.evaluate(()=>window.__lecturas.at(-1))).texto,ayuda.texto);
   await actuar(pt,'Desierto cálido');assert.equal((await revision(pt)).estado.resultado,'PENDIENTE');await actuar(pt,'Selva tropical','RETO_RESUELTO');assert.equal((await revision(pt)).estado.completados,1);
   assert.equal(await pt.evaluate(()=>window.__wav),0);assert.equal((await revision(pt)).parametros_congelados,true);
