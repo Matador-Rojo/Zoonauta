@@ -1,4 +1,4 @@
-# Zoonauta 4.0.0
+# Zoonauta 4.2.0
 
 Juego de animales y hábitats con pictogramas y una guía de inteligencia artificial.
 Disponible en español y portugués brasileño, con voces locales Piper y Kokoro
@@ -24,10 +24,11 @@ número del **01 al 08**. Las preguntas y pistas conservan sus secuencias de pic
 con texto de apoyo y lectura en voz alta. Una selección pendiente ofrece una pista
 nueva automáticamente, sin castigo. **Pista** usa un foco; **Repetir** conserva el
 contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
-El cierre presenta el animal de la partida en un panel claro, grande y sin
-superponer otras especies. Muestra los retos realmente completados y una barra de
-progreso; **Comenzar otra partida** vuelve a la portada. Si sales antes de elegir
-un animal, aparece el agente como guía.
+El cierre presenta al robot guía despidiéndose con su cuaderno; al pausar,
+el robot descansa sentado en un banco. Ambas imágenes mantienen el estilo de
+caricatura y la transparencia, sin mostrar el último animal. El progreso indica
+los retos realmente completados mediante texto y barra; **Comenzar otra partida**
+vuelve a la portada en silencio. **Reanudar** conserva el animal y el reto.
 No hay puntos competitivos ni límite de tiempo o intentos.
 
 En computadora, el tablero aprovecha el ancho y la altura disponibles, con un
@@ -156,12 +157,12 @@ y 51 840 de evaluación. Los resultados se conservan en `docs/experimentos`.
 La ayuda automática ante selecciones pendientes está activa en la interfaz;
 consola y simulador conservan su protocolo de ayuda explícita.
 
-La versión 4.0 pasó 72 pruebas Python, ocho casos de aceptación de consola y
+La versión 4.2 pasó 72 pruebas Python, ocho casos de aceptación de consola y
 24 casos de navegador (19 de interfaz y cinco de voces controladas). Comprueban
 transiciones, repetición, pausa, duplicados, traducciones, transparencia y recorridos
 completos del agente sin repetir los 48 animales. También verifican el cierre en
 escritorio y móvil, el progreso real y la pregunta de modalidad solo cuando
-el diálogo está abierto. [Revisión 4.0](docs/interfaz/4.0/revision.json).
+el diálogo está abierto. [Revisión 4.2](docs/interfaz/4.2/revision.json).
 Las evidencias anteriores de síntesis real de las 14 voces permanecen en
 `docs/interfaz/revision_voces_locales.json`; no certifican pronunciación o escucha
 en otros dispositivos. Los documentos V1/V2 y sus resultados son antecedentes.
@@ -174,12 +175,13 @@ Las rutas, prompts, transparencia y huellas de integridad se documentan en:
 
 - [Animales](datos/imagenes_animales_ia.json).
 - [Persona y agente](datos/imagenes_modalidad_ia.json).
+- [Robot de despedida y pausa](datos/imagenes_cierre_pausa_ia.json).
 - [Símbolos de hábitat y controles](datos/imagenes_habitats_controles_ia.json).
 - [Apoyos de preguntas y pistas, versión 3.8](datos/imagenes_apoyos_ia.json).
 - [Paisajes centrados de las tarjetas](datos/imagenes_paisajes_tarjetas_ia.json).
 
-Los 17 WebP decorativos utilizados (ocho fondos de inicio, un atlas y ocho paisajes
-de tarjetas) son adicionales al banco de 95 pictogramas.
+Los 19 WebP decorativos utilizados (ocho fondos de inicio, un atlas, ocho paisajes
+de tarjetas y dos ilustraciones del robot) son adicionales al banco de 95 pictogramas.
 Los créditos de ARASAAC y de los SVG del prototipo se mantienen como antecedentes;
 esos recursos no son las imágenes activas. Las ilustraciones originales se ofrecen
 bajo CC BY-NC-SA 4.0. Consulta [créditos](docs/creditos_pictogramas.md),

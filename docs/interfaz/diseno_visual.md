@@ -1,4 +1,4 @@
-# Zoonauta: dirección visual 4.0
+# Zoonauta: dirección visual 4.2
 
 La portada ocupa una sola pantalla. Sus ocho paisajes cambian cada 10 segundos,
 con nombre y contador sincronizados, controles de pausa y navegación manual.
@@ -28,8 +28,8 @@ de paisaje realista a la derecha, con composición central, nombre y número 01�
 Las tarjetas tienen el mismo ancho que la guía,
 sin dibujos superpuestos. Los controles usan caricaturas transparentes con texto.
 
-La pantalla de pausa conserva el retrato del animal; los cierres completado y de salida
-presentan el progreso real junto al único animal de la partida y la acción de reiniciar.
+La pausa muestra al robot sentado en un banco; los cierres completado y de salida
+muestran al robot despidiéndose, el progreso real y la acción de reiniciar.
 El diseño mantiene cuatro columnas de hábitats en escritorio y dos en móvil. El catálogo
 usa tres columnas en escritorio y dos en móvil. Ambas pantallas permiten desplazamiento
 cuando el alto disponible lo requiere.
@@ -141,19 +141,22 @@ ningún hábitat ni control se elimina. La revisión de este ajuste está en
 `docs/interfaz/3.8/revision_tablero.json`.
 
 La captura de portada está en `docs/interfaz/3.8/inicio.webp`; su composición se
-conserva. La revisión actual está en `docs/interfaz/4.0/revision.json`.
-La versión 4.0 pasó 72 pruebas Python y 24 casos de navegador: 19 de interfaz
+conserva. La revisión actual está en `docs/interfaz/4.2/revision.json`.
+La versión 4.2 pasó 72 pruebas Python y 24 casos de navegador: 19 de interfaz
 y cinco de voces controladas. La comprensión CAA requiere evaluación con usuarios;
 las pruebas técnicas no demuestran aprendizaje.
 
-## Cierre y voz en 4.0
+## Cierre y pausa en 4.2
 
-El cierre usa un único animal de la partida, grande y completo sobre una
-superficie clara, con su nombre debajo. Se retiró el collage fijo de especies
-superpuestas. Cuando no se eligió un animal, se muestra el agente. El panel de
-contenido mantiene la respuesta y la secuencia del banco, el progreso real
-mediante texto y barra accesible y el botón de nueva partida. La pausa mantiene
-sus controles y el mismo animal.
+El cierre usa al robot guía de cuerpo completo, despidiéndose con una mano y
+sosteniendo su cuaderno. La pausa muestra al mismo guía sentado en un banco.
+Las dos ilustraciones elegidas por el usuario siguen el estilo de caricatura
+aprobado y conservan transparencia. Se muestran grandes sobre un panel claro,
+con «Tu guía» y «Gracias por jugar» o «A tu ritmo», también en portugués.
+Los metadatos y prompts están en `datos/imagenes_cierre_pausa_ia.json`.
+El contenido conserva la respuesta y secuencia del banco, el progreso real
+mediante texto y barra accesible, y los controles de cada fase. Pausar conserva
+el animal y la respuesta del reto para reanudar, sin mostrarlo en esta pantalla.
 
 El cierre se centra en escritorio; en móvil se apila y permite desplazamiento
 para mantener textos e imágenes completos. La lectura de «¿Quién elige el

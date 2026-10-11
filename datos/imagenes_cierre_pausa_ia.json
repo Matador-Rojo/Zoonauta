@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-11",
+  "contenido": "Robot guía: despedida y descanso. Pareja seleccionada por el usuario.",
+  "items": [
+    {
+      "nombre": "robot_despedida",
+      "archivo": "assets/ilustraciones/robot_despedida.webp",
+      "pantallas": "COMPLETADA/ABANDONADA",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "prompt": "Use case: illustration-story. Asset type: proposed transparent illustration for accessible Zoonauta educational game, concept comparison only. Match the approved capybara cartoon reference: clean dark brown contours, natural colors, softly shaded 2D illustration, friendly readable forms, no photorealism, no 3D rendering. Palette cream, forest green, lime and warm tan. One centered coherent composition, entirely visible, ample transparent margin. Background must be genuine alpha transparency, not a white rectangle or checkerboard. No letters, captions, watermark, numbers, logos, trophies, medals or confetti. Few large objects, no clutter. Not a UI screenshot. Finish screen option 1: the exact friendly cream and forest-green robot guide from reference 1, rendered FULL BODY, standing, smiling gently, one open hand raised in a goodbye wave and the other holding a closed small green exploration notebook with a leaf embossed on its cover. Same rounded head, lime antenna bulb, dark green face and cream shell as reference. Communicate a warm farewell after a completed exploration, not a competition. No animals, no scenery.",
+      "dimensiones": [
+        1024,
+        1536
+      ],
+      "transparencia_real": true,
+      "conversion": "PNG a WebP sin pérdida; alpha conservado",
+      "sha256": "674f9a8ee35999ae7217ca28826441aa9aace22500a4b65e32af89d7bac2657e",
+      "bytes": 587522,
+      "referencias_estilo": [
+        "assets/pictogramas/P_AGENTE.webp",
+        "assets/animales/A31.webp"
+      ],
+      "licencia": "CC BY-NC-SA 4.0",
+      "uso": "Ilustración de pantalla; no sustituye secuencias pictográficas del banco",
+      "validacion_caa_con_usuarios": false
+    },
+    {
+      "nombre": "robot_pausa",
+      "archivo": "assets/ilustraciones/robot_pausa.webp",
+      "pantallas": "PAUSADA",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "prompt": "Use case: illustration-story. Asset type: proposed transparent illustration for accessible Zoonauta educational game, concept comparison only. Match the approved capybara cartoon reference: clean dark brown contours, natural colors, softly shaded 2D illustration, friendly readable forms, no photorealism, no 3D rendering. Palette cream, forest green, lime and warm tan. One centered coherent composition, entirely visible, ample transparent margin. Background must be genuine alpha transparency, not a white rectangle or checkerboard. No letters, captions, watermark, numbers, logos, trophies, medals or confetti. Few large objects, no clutter. Not a UI screenshot. Pause screen option 1: the exact friendly cream and forest-green robot guide from reference 1, rendered FULL BODY, sitting relaxed on one simple small tan wooden bench, eyes OPEN and gently smiling, hands resting on its knees, peaceful but awake. Same rounded head, lime antenna bulb, dark green face and cream shell as reference. Communicate a short comfortable rest before continuing, not sleeping or shutting down. No animals, no scenery, no sun, no bed.",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "conversion": "PNG a WebP sin pérdida; alpha conservado",
+      "sha256": "36b3690cfe5ed4dd8e6075ae2e2e6c061abb76df1ba1e1008aecd35447855214",
+      "bytes": 521030,
+      "referencias_estilo": [
+        "assets/pictogramas/P_AGENTE.webp",
+        "assets/animales/A31.webp"
+      ],
+      "licencia": "CC BY-NC-SA 4.0",
+      "uso": "Ilustración de pantalla; no sustituye secuencias pictográficas del banco",
+      "validacion_caa_con_usuarios": false
+    }
+  ]
+}

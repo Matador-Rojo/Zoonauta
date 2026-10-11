@@ -213,9 +213,11 @@ function catalogoAnimales() {
 function cierre(fase) {
   const b=nodo("section","centro cierre"),visual=nodo("figure","cierre-visual"),contenido=nodo("div","cierre-contenido");
   b.dataset.estado=fase;
-  const marco=nodo("div","cierre-marco"),hoja=icono("hoja","cierre-hoja");
-  marco.append(hoja,imagen(vista.animal?.pictograma_id||"P_AGENTE","cierre-animal"));
-  visual.append(nodo("p","etiqueta",vista.animal?"Tu animal":"Tu guía"),marco,nodo("figcaption","cierre-nombre",vista.animal?.nombre||"A tu ritmo"));
+  const marco=nodo("div","cierre-marco"),robot=nodo("img","cierre-ilustracion");
+  robot.src=`/ilustraciones/${fase==="PAUSADA"?"robot_pausa":"robot_despedida"}.webp`;
+  robot.alt=t("Tu guía");robot.draggable=false;
+  marco.append(robot);
+  visual.append(nodo("p","etiqueta","Tu guía"),marco,nodo("figcaption","cierre-leyenda",fase==="PAUSADA"?"A tu ritmo":"Gracias por jugar"));
   const h=nodo("h1","",fase==="PAUSADA"?"Tomamos una pausa":fase==="COMPLETADA"?"¡Terminamos!":"Partida terminada");h.id="titulo-pantalla";h.tabIndex=-1;
   contenido.append(nodo("p","etiqueta","Tu expedición"),h,nodo("p","introduccion",vista.respuesta.texto_apoyo),secuencia(vista.respuesta));
   const resumen=nodo("div","cierre-resumen");

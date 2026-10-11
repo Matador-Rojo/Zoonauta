@@ -66,23 +66,25 @@ async function comprobarControles(page){
 }
 async function comprobarCierre(page){
   const v=await vista(page),anterior=page.viewportSize();
-  assert.equal(await page.locator('.cierre-animal').count(),1);
-  assert.equal(await page.locator('.cierre-animal').getAttribute('src'),v.pictogramas[v.animal?.pictograma_id||'P_AGENTE'].imagen);
+  assert.equal(await page.locator('.cierre-ilustracion').count(),1);
+  assert.equal(await page.locator('.cierre-visual .etiqueta').textContent(),v.idioma==='es'?'Tu guía':'Seu guia');
+  assert.equal(await page.locator('.cierre-leyenda').textContent(),v.fase==='PAUSADA'?(v.idioma==='es'?'A tu ritmo':'No seu ritmo'):(v.idioma==='es'?'Gracias por jugar':'Obrigado por jogar'));
+  assert.equal(await page.locator('.cierre-ilustracion').getAttribute('src'),`/ilustraciones/${v.fase==='PAUSADA'?'robot_pausa':'robot_despedida'}.webp`);
   assert.equal(await page.locator('.cierre-resumen progress').getAttribute('value'),String(v.progreso.completados));
   assert.equal(await page.locator('.cierre-resumen progress').getAttribute('max'),String(v.progreso.total));
   for(const [width,height] of [[1920,988],[1366,768],[1280,720],[1024,768],[390,844]]){
     await page.setViewportSize({width,height});
     const m=await page.evaluate(()=>{
-      const rect=s=>document.querySelector(s).getBoundingClientRect(),c=rect('.cierre'),i=rect('.cierre-animal'),n=rect('.cierre-nombre'),v=rect('.cierre-visual'),t=rect('.cierre-contenido'),b=rect('.cierre-contenido>.accion');
+      const rect=s=>document.querySelector(s).getBoundingClientRect(),c=rect('.cierre'),i=rect('.cierre-ilustracion'),n=rect('.cierre-leyenda'),v=rect('.cierre-visual'),t=rect('.cierre-contenido'),b=rect('.cierre-contenido>.accion,.cierre-contenido .acciones button');
       return {sinDesborde:document.documentElement.scrollWidth<=innerWidth,
        completa:i.left>=v.left&&i.right<=v.right&&i.bottom<=n.top&&n.bottom<=v.bottom,
-       proporciones:getComputedStyle(document.querySelector('.cierre-animal')).objectFit==='contain',
+       proporciones:getComputedStyle(document.querySelector('.cierre-ilustracion')).objectFit==='contain',
        separados:innerWidth>850?v.right<=t.left:v.bottom<=t.top,
        control:b.height>=44&&b.left>=c.left&&b.right<=c.right,
        escritorio:innerWidth<=850||document.documentElement.scrollHeight<=innerHeight,
        centrado:innerWidth<=850||Math.abs(c.top+c.height/2-innerHeight/2)<2};
     });assert.ok(Object.values(m).every(Boolean),JSON.stringify({width,height,...m}));
-    if(width===390)await captura(page,'cierre_'+v.fase.toLowerCase()+'_movil.png');
+    if(width===390)await captura(page,'cierre_'+v.fase.toLowerCase()+'_'+v.idioma+'_movil.png');
   }
   await page.setViewportSize(anterior);
 }
@@ -278,7 +280,7 @@ async function clicar(page,texto,fase){
   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).texto,textoVoz);
   const r=(await vista(page)).revision;await page.reload();await page.getByRole('button',{name:'Pista',exact:true}).waitFor();assert.equal((await vista(page)).revision,r);assert.equal(await page.evaluate(()=>window.__voz.length),0);
   await clicar(page,'Repetir');await clicar(page,'Pausar','PAUSADA');assert.equal(await page.locator('.habitats').count(),0);assert.ok(await page.evaluate(()=>window.__cancelaciones)>0);
-  await comprobarPictogramas(page);await comprobarControles(page);await captura(page,'16_pausa_pictogramas.png');
+  await comprobarPictogramas(page);await comprobarControles(page);await comprobarCierre(page);await captura(page,'16_pausa_pictogramas.png');
   await clicar(page,'Reanudar','ESPERANDO_RESPUESTA');assert.deepEqual((await vista(page)).respuesta,ayuda);
   await clicar(page,'Desierto cálido');assert.equal((await vista(page)).respuesta.tipo_respuesta,'NEUTRAL');assert.equal((await vista(page)).progreso.completados,0);
   const automatica=(await vista(page)).respuesta;
@@ -307,7 +309,7 @@ async function clicar(page,texto,fase){
   await comprobarPictogramas(page);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
   await comprobarCierre(page);await captura(page,'14_cierre_salida.png');
-  resultados.push({caso:'Cierre completado y abandonado: animal actual único, progreso real accesible, centrado sin scroll en cuatro escritorios y contenido completo sin desborde en móvil',resultado:'OK'});
+  resultados.push({caso:'Robot de despedida en cierre completado/abandonado y robot sentado en pausa; etiquetas en español y portugués, progreso real accesible, imágenes completas, centrado sin scroll en cuatro escritorios y contenido completo sin desborde en móvil',resultado:'OK'});
   resultados.push({caso:'Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; tablero de ancho completo que ocupa la altura disponible, animal de al menos 200 × 180 px con nombre debajo y sin recorte, fondo continuo, hábitats alineados con la guía, controles bajo el animal en dos filas y números 01–08. Pregunta, pista, apoyo neutral y confirmación sin scroll en seis resoluciones de 1024 × 768 a 1920 × 1080; cabecera y Preferencias solo en inicio',resultado:'OK'});
   resultados.push({caso:'Apoyo pictográfico: controles de 56 px, preguntas/pistas de al menos 84 px, secuencias de pausa/cierre e Iniciar sin fondos ni bordes; una selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
@@ -320,11 +322,12 @@ async function clicar(page,texto,fase){
   // Los 95 recursos activos se decodifican en el navegador (WebP transparentes).
   const assetTest=await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();
-    const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:8},(_,i)=>`/habitats/H0${i+1}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
+    const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/ilustraciones/robot_despedida.webp','/ilustraciones/robot_pausa.webp','/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:8},(_,i)=>`/habitats/H0${i+1}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
     await Promise.all(rutas.map(ruta=>new Promise(resolve=>{const i=new Image();i.onload=()=>{if(!i.naturalWidth)fallos.push(ruta);resolve();};i.onerror=()=>{fallos.push(ruta);resolve();};i.src=ruta;})));return fallos;
   });assert.deepEqual(assetTest,[]);
   assert.equal(await page.evaluate(async()=>(await fetch('/habitats/H09.webp')).status),404);
-  resultados.push({caso:'48 caricaturas, logo, 95 recursos educativos, nueve paisajes de portada y ocho paisajes exclusivos de tarjetas decodificados sin errores',resultado:'OK'});
+  assert.equal(await page.evaluate(async()=>(await fetch('/ilustraciones/inexistente.webp')).status),404);
+  resultados.push({caso:'48 caricaturas, logo, 95 recursos educativos, dos ilustraciones de robot, nueve paisajes de portada y ocho paisajes exclusivos de tarjetas decodificados sin errores',resultado:'OK'});
   // Revisar las representaciones de animales en una plancha para inspección visual.
   await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();const main=document.getElementById('juego');main.replaceChildren();
@@ -429,6 +432,7 @@ async function clicar(page,texto,fase){
   await captura(pg,'10_reto_portugues.png');
   await clicar(pg,'Repetir');const cancelaciones=await pg.evaluate(()=>window.__cancelaciones);
   await clicar(pg,'Pausar','PAUSADA');assert.ok(await pg.evaluate(n=>window.__cancelaciones>n,cancelaciones));
+  await comprobarCierre(pg);await comprobarPictogramas(pg);await captura(pg,'pausa_portugues.png');
   await pg.locator('#ajustes').evaluate(b=>b.click());await pg.locator('#voz').uncheck();
   await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();const lecturas=await pg.evaluate(()=>window.__voz.length);
   await clicar(pg,'Retomar','ESPERANDO_RESPUESTA');assert.equal(await pg.evaluate(()=>window.__voz.length),lecturas);
@@ -436,6 +440,7 @@ async function clicar(page,texto,fase){
   await pg.reload();await pg.getByRole('button',{name:'Dica',exact:true}).waitFor();assert.equal((await vista(pg)).revision,revisionRecarga);assert.equal(await pg.evaluate(()=>window.__voz.length),0);
   resultados.push({caso:'14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio',resultado:'OK',alcance:'API WAV y reproductor controlados.'});
   resultados.push({caso:'Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; adaptador de idioma sobre una sesión activa sin alterar estado, registros o modelo. Preferencias visible solo en inicio',resultado:'OK'});
+  await clicar(pg,'Sair','ABANDONADA');await comprobarCierre(pg);await comprobarPictogramas(pg);await captura(pg,'cierre_portugues.png');
   await pg.goto(base+'/revision');await pg.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
   assert.equal(await pg.getByRole('button',{name:'Atualizar registro',exact:true}).isVisible(),true);
   resultados.push({caso:'Revisión técnica con encabezados en portugués y registros originales conservados',resultado:'OK'});
@@ -469,7 +474,7 @@ async function clicar(page,texto,fase){
   assert.deepEqual(await vista(pc),antesCambio);
   resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.0.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.2.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

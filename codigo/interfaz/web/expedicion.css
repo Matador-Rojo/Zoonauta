@@ -98,11 +98,6 @@ body:not([data-fase="INICIO"]) {
 .cierre-visual { height:390px; position:relative; isolation:isolate; }
 .cierre-visual::before { content:""; position:absolute; inset:24px; border:1px solid #d2ee8b35; border-radius:50%; transform:rotate(-16deg) scaleY(.8); }
 .cierre-visual::after { content:"✦"; position:absolute; right:5px; top:20px; color:#d2ee8b; font-size:28px; }
-.cierre-animal { position:absolute; object-fit:contain; filter:drop-shadow(0 15px 10px #00000025); }
-.cierre-animal-0 { width:32%; height:66%; top:0; left:0; }
-.cierre-animal-1 { width:64%; height:65%; bottom:0; left:0; }
-.cierre-animal-2 { width:66%; height:80%; top:15%; right:-8px; }
-.cierre-visual:has(img:only-child) img { inset:0; width:100%; height:100%; }
 .cierre-contenido { min-width:0; padding:25px 20px 25px 0; }
 .cierre-contenido .etiqueta { margin-bottom:18px; }
 .cierre h1 { margin:0; font-size:clamp(36px,4vw,52px); font-weight:400; letter-spacing:-1.8px; }
@@ -255,7 +250,7 @@ body:has(.tablero) .titulo-fila h1 { font-size:clamp(34px,3.3vw,48px); }
   .tablero .simbolo img { width:84px; height:84px; }
 }
 
-/* Cierre: un solo animal de la partida, sin collage de especies superpuestas. */
+/* El robot guía representa la despedida o una pausa; no el último animal. */
 body:has(.cierre) #juego { max-width:none; min-height:100dvh; display:grid; place-items:center; padding:32px clamp(20px,3vw,56px); }
 .centro.cierre { width:100%; max-width:1360px; min-height:0; margin:0; padding:clamp(24px,3vw,44px); gap:clamp(28px,4vw,64px); grid-template-columns:minmax(0,.85fr) minmax(0,1fr); border-radius:36px; background:radial-gradient(ellipse at 85% 0,#55794928,transparent 70%),#172e25; box-shadow:0 24px 80px #0003; }
 .cierre-visual { margin:0; min-height:410px; height:auto; max-width:none; width:100%; align-self:stretch; padding:24px; display:flex; flex-direction:column; align-items:center; gap:18px; border-radius:28px; background:radial-gradient(ellipse at 50% 45%,#f5f8e8,#d6e5c7 75%); color:#213e2b; }
@@ -263,9 +258,8 @@ body:has(.cierre) #juego { max-width:none; min-height:100dvh; display:grid; plac
 .cierre-visual .etiqueta { margin:0; color:#496138; font-size:12px; }
 .cierre-visual .etiqueta::before { display:none; }
 .cierre-marco { position:relative; flex:1; min-height:260px; width:100%; display:flex; align-items:center; justify-content:center; isolation:isolate; }
-.cierre-hoja { position:absolute; z-index:-1; width:100%; height:100%; color:#56784416; transform:rotate(-25deg); }
-.cierre-marco .cierre-animal { position:relative; inset:auto; width:100%; height:310px; max-height:100%; object-fit:contain; filter:drop-shadow(0 18px 16px #294d2925); }
-.cierre-nombre { font-size:clamp(24px,2vw,30px); line-height:1.25; font-weight:500; text-align:center; }
+.cierre-marco .cierre-ilustracion { position:relative; inset:auto; width:100%; height:380px; max-height:100%; object-fit:contain; }
+.cierre-leyenda { font-size:clamp(24px,2vw,30px); line-height:1.25; font-weight:500; text-align:center; }
 .cierre-contenido { padding:10px 0; }
 .cierre h1 { font-size:clamp(36px,3.6vw,54px); font-weight:500; }
 .cierre .introduccion { font-size:18px; max-width:540px; line-height:1.6; }
@@ -282,7 +276,7 @@ body:has(.cierre) #juego { max-width:none; min-height:100dvh; display:grid; plac
   .centro.cierre { grid-template-columns:1fr; max-width:640px; gap:24px; }
   .cierre-visual { min-height:0; padding:20px; }
   .cierre-marco { min-height:190px; }
-  .cierre-marco .cierre-animal { height:220px; }
+  .cierre-marco .cierre-ilustracion { height:220px; }
   .cierre-contenido { text-align:center; }
   .cierre .etiqueta,.cierre .secuencia,.cierre-cifra { justify-content:center; }
 }
