@@ -41,7 +41,7 @@ class Idiomas(unittest.TestCase):
                 r = asdict(g.mensaje(mensaje, "A01", habitat))
                 self.assertTrue(idiomas.respuesta(r, "pt-BR")["texto_voz"])
         for ayuda in self.banco.variantes.values():
-            for prefijo in (None, g.mensaje("MSG_INCORRECTA_VALIDADA")):
+            for prefijo in (None, g.mensaje("MSG_INCORRECTA_VALIDADA"), g.mensaje("MSG_APOYO_AUTO")):
                 r = asdict(g.ayuda(ayuda, "A01", prefijo))
                 pt = idiomas.respuesta(r, "pt-BR")
                 self.assertEqual(r["pictogramas"], pt["pictogramas"])
@@ -75,7 +75,11 @@ class Idiomas(unittest.TestCase):
         self.assertEqual(r, self.actuar("repetir")["respuesta_emitida"])
         self.actuar("pausar")
         self.assertEqual(r, self.actuar("reanudar")["respuesta_emitida"])
-        self.assertEqual("NEUTRAL", self.actuar("seleccionar_habitat", habitat_id="H03")["respuesta_emitida"]["tipo_respuesta"])
+        apoyo = self.actuar("seleccionar_habitat", habitat_id="H03")["respuesta_emitida"]
+        self.assertEqual("NEUTRAL", apoyo["tipo_respuesta"])
+        self.assertEqual(2, apoyo["nivel"])
+        self.assertTrue(apoyo["texto_voz"].startswith("Vamos procurar outro lugar."))
+        self.assertEqual(apoyo, self.actuar("repetir")["respuesta_emitida"])
         confirmacion = self.actuar("seleccionar_habitat", habitat_id="H01")
         self.assertIn("floresta tropical", confirmacion["respuesta_emitida"]["texto_voz"])
         self.assertEqual("COMPLETADA", self.actuar("continuar")["vista"]["fase"])

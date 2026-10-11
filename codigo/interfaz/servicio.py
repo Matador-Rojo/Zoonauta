@@ -43,7 +43,8 @@ class SesionWeb:
         registro = Registro(self.registros / f"{sid}.jsonl" if self.registros else None)
         motor = MotorGuia(self.banco, self.politica, parametros=self.parametros)
         return GestorPartida(self.banco, retos, self.politica, origen="INTERFAZ_MANUAL",
-                             sesion_id=sid, registro=registro, motor=motor)
+                             sesion_id=sid, registro=registro, motor=motor,
+                             ayuda_en_pendiente=True)
 
     def vista(self) -> dict:
         with self.lock:
