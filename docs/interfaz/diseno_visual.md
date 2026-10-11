@@ -113,6 +113,19 @@ Se eliminaron los fondos, bordes y rellenos blancos de cada imagen, incluidos
 Iniciar y Salir. Los pictogramas de hábitat permanecen en las secuencias educativas.
 Las tarjetas muestran paisaje y nombre, sin símbolos superpuestos.
 
+## Tablero compacto de escritorio
+
+La partida usa dos columnas: animal y controles debajo a la izquierda; guía y
+ocho paisajes debajo a la derecha. Guía y hábitats comparten el mismo ancho.
+Los botones mantienen imágenes de 56 px y los apoyos educativos, de 84–96 px.
+En pantallas de poca altura se reduce el espacio y la altura de los paisajes,
+conservando texto, números 01–08 y todas las opciones.
+
+El logo, la cabecera y Preferencias se reservan para inicio. El pie se oculta
+en las pantallas de juego. En móvil, las columnas se apilan y permiten scroll;
+ningún hábitat ni control se elimina. La revisión de este ajuste está en
+`docs/interfaz/3.8/revision_tablero.json`.
+
 La captura de portada y la revisión actual están en `docs/interfaz/3.8/`.
 La versión 3.8 pasó 70 pruebas Python y 21 casos de navegador: 17 de interfaz
 y cuatro de voces controladas. La comprensión CAA requiere evaluación con usuarios;

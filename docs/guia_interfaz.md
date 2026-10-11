@@ -24,7 +24,7 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 | Selección confirmada | Acepta cualquiera de los hábitats confirmados del animal. |
 | Selección pendiente | Da una respuesta neutral con una nueva pista automática, sin penalización; conserva el reto y permite repetir esa pista. |
 | Continuar | Abre otro reto o presenta el cierre cuando se completó N. |
-| Preferencias | Permite N entre 1 y 48 antes del inicio, idioma, voz y velocidad. |
+| Preferencias | Disponible solo en la portada: permite N entre 1 y 48 antes del inicio, idioma, voz y velocidad. |
 | Revisión técnica | Página aparte con modelo, estado, decisiones y exportación JSON. |
 
 Los ocho hábitats permanecen en los retos activos. Tras resolver se ven desactivados
@@ -79,7 +79,7 @@ Las selecciones manuales se registran y no actualizan α o β.
 
 ## 3. Idiomas y voces
 
-Preferencias permite elegir español o portugués brasileño. Se traducen los
+Preferencias, en la portada antes de comenzar, permite elegir español o portugués brasileño. Se traducen los
 controles, los 48 animales, los ocho hábitats, las 95 etiquetas de pictogramas,
 las 72 variantes de pistas y los mensajes, incluidos los contextos de confirmación.
 Los identificadores de recursos, las asociaciones y los registros originales
@@ -125,8 +125,11 @@ también conservan transparencia en el cierre y en los botones.
 Hay foco visible para teclado, botones nativos y un diálogo de preferencias.
 
 Las tarjetas de hábitat presentan ocho paisajes realistas propios, con el elemento
-principal centrado, nombre y número 01–08 arriba a la derecha. Ocupan todo el ancho
-debajo del animal y la guía: cuatro columnas en escritorio y dos en móvil.
+principal centrado, nombre y número 01–08 arriba a la derecha. En escritorio ocupan
+la columna derecha, debajo de la guía y con su mismo ancho: cuatro columnas y dos
+filas de tarjetas más pequeñas. El animal y los controles Pista, Repetir, Pausar y
+Salir ocupan la columna izquierda. La cabecera, el logo y Preferencias se muestran
+solo en inicio; el pie se oculta durante el juego.
 Los símbolos de hábitat se usan en las secuencias educativas, sin superponerse a
 las fotografías sintéticas de las tarjetas. No se elimina ninguna opción en móvil.
 
@@ -134,14 +137,18 @@ La portada conserva los ocho fondos locales, el logo y su composición. Cambia c
 diez segundos; la pausa se activa solo mediante el botón. Play o las flechas reanudan
 y reinician el intervalo. Preferencias y una pestaña inactiva suspenden el carrusel;
 movimiento reducido elimina las animaciones. Comenzar abre el diálogo de modalidad.
-La portada no requiere desplazamiento vertical; catálogo y retos pueden desplazarse.
+La portada no requiere desplazamiento vertical. El tablero de escritorio se
+verificó sin scroll en 1024 × 768, 1280 × 720, 1366 × 768, 1440 × 900 y 1920 × 1080,
+incluidas las pistas más largas. En móvil y pantallas estrechas, el contenido se
+apila y puede desplazarse; se conservan los ocho hábitats y todos los controles.
+El catálogo conserva su paginación y puede desplazarse.
 La pausa conserva el animal y el orden; el cierre muestra el progreso real.
 
 No se usan vídeos, GIF ni recursos externos para mostrar imágenes.
 Los paisajes se generan con IA y son decorativos; no validan asociaciones del banco.
 Los créditos y metadatos de ARASAAC y los SVG anteriores son históricos.
 La captura de portada actual está en `docs/interfaz/3.8/inicio.webp`.
-La terminal identifica la versión 3.8.0 y el pie del juego muestra 3.8.
+La terminal identifica la versión 3.8.0. El pie no ocupa espacio durante la partida.
 
 ## 5. Estado y registros
 

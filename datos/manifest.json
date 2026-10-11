@@ -96,13 +96,15 @@
       "pt-BR"
     ],
     "dependencias_windows_x64_python312_disponibles": 32,
-    "revision_actual": "docs/interfaz/3.8/revision.json",
+    "revision_actual": "docs/interfaz/3.8/revision_tablero.json",
     "ayuda_automatica_interfaz": true,
     "relaciones_pendientes_probadas_interfaz": 315,
     "animales_con_imagen_unica": 48,
     "transparencia_caricaturas_verificada": true,
     "agente_48_sin_repeticiones_verificado": true,
-    "transparencia_apoyos_verificada": true
+    "transparencia_apoyos_verificada": true,
+    "tablero_escritorio_sin_scroll_verificado": true,
+    "preferencias_solo_inicio": true
   },
   "archivos": [
     {
@@ -117,8 +119,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 9315,
-      "sha256": "338c9d0b016565b15d23e609340c7dad291ad336f2ab2cb6865b4a53212add97"
+      "bytes": 9606,
+      "sha256": "5119ec754e9d2438a0371b3572e02c9146eb08c67c63247f760172f8b4794374"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -717,8 +719,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 27842,
-      "sha256": "5e9b12e6cb28666b2ccdc5188c6aa00d69ff7e89938f6b3ddd08a2e75a114878"
+      "bytes": 28031,
+      "sha256": "486f450bb59b40e481b21b1c59da7a501aa58f54cddec2c5591a7b0898c67431"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -727,8 +729,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 13416,
-      "sha256": "b489250620275c9cff0ed0ee92d8ff52e95bb5beafb46dead270fe20f18b4b76"
+      "bytes": 16665,
+      "sha256": "f4aff1670c7fc4887a4c64e880e7a7976e51617ab89504c801db7d8b07b3f6f5"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -1877,8 +1879,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 18224,
-      "sha256": "eb577fd88eca5b8071d034606c67876a6f678ca7ae8be447ccbc4953a140d688"
+      "bytes": 18831,
+      "sha256": "c51a7ddef679de1b3cc62cb1d665d244a273d744643a825218aa13548e6812b3"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1946,14 +1948,19 @@
       "sha256": "b562f65f7f6c3e2e604a173748a2683d550f42ce3419a2d0536bedffd404ab15"
     },
     {
+      "ruta": "docs/interfaz/3.8/revision_tablero.json",
+      "bytes": 6010,
+      "sha256": "c6a3b939ec9b43797d9190e12a453f5fc8df5e37a5833ddf00c3d8b0d2369679"
+    },
+    {
       "ruta": "docs/interfaz/alternativas_voz.md",
       "bytes": 7405,
       "sha256": "fb67fe098bb9589ba297d2bc0ecfe4e9bab731809733ffc289969da9c0b45425"
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 9895,
-      "sha256": "e15a43cd1c708cf8581800626784b312b7eb65a736acc62d5437c6b83d55310f"
+      "bytes": 10585,
+      "sha256": "2dbb72bb513591d119f58ef041d38b02910f71bc466b09e709a5da25c535b567"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -2282,8 +2289,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 37491,
-      "sha256": "3e644e46257bf1878de9f7f7bbd576992964f10cf999fd68a49ab2c7c3230778"
+      "bytes": 39496,
+      "sha256": "c2c27c750f07e10aefc074348314f68074ab673195114ded27658fea21a95954"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",

@@ -24,6 +24,11 @@ contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
 El cierre muestra los retos realmente completados y permite comenzar otra partida.
 No hay puntos competitivos ni límite de tiempo o intentos.
 
+En computadora, el animal y los controles quedan a la izquierda; la guía y los
+ocho hábitats, alineados a la derecha. El tablero cabe sin scroll desde 1024 × 768
+y 1280 × 720. La cabecera, el logo y Preferencias quedan en el inicio; el pie se
+oculta durante el juego. En móvil, el contenido se apila sin perder opciones.
+
 Los 95 recursos educativos activos son ilustraciones originales con transparencia:
 48 animales, ocho símbolos de hábitat y 39 apoyos o controles. Cada animal tiene una
 única caricatura. Los 33 apoyos de comunicación renovados en 3.8 siguen el mismo estilo
@@ -87,10 +92,9 @@ actual y extrae la nueva versión. Puedes copiar la carpeta `modelos_voz` de la
 versión anterior para evitar descargarla otra vez; el iniciador la comprobará.
 Un ZIP anterior no se actualiza automáticamente.
 
-Abre **Preferencias → Idioma** para elegir Español o Português (Brasil). Cambian
+Antes de comenzar, abre **Preferencias → Idioma** en la portada para elegir Español o Português (Brasil). Cambian
 los controles, los 48 nombres de animales, los ocho hábitats, las etiquetas de
-pictogramas, las pistas, las confirmaciones y las voces. Puedes cambiar durante
-una partida conservando su estado y progreso. El selector conserva siete opciones
+pictogramas, las pistas, las confirmaciones y las voces. El selector conserva siete opciones
 locales por idioma y añade las voces compatibles de Microsoft y Google del navegador,
 agrupadas por proveedor; **Probar voz** reproduce una muestra. La selección
 manual se conserva por idioma mientras la página está abierta. Las voces del navegador

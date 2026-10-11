@@ -230,6 +230,8 @@ function render(enfocar=false,conservarPaisaje=false) {
   detenerCarrusel(); carrusel=null;idiomaPantalla();
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
   const f=vista.fase; document.body.dataset.fase=f;
+  document.querySelector('.cabecera').hidden=f!=="INICIO";
+  document.querySelector('.creditos').hidden=f!=="INICIO";
   if(f==="INICIO") {estadoCatalogo={consulta:"",pagina:0,idioma:vista.idioma};juego.append(...inicio());if(previo){Object.assign(carrusel,previo);cambiarPaisaje(0);ritmoCarrusel();}}
   else if(f==="SELECCION_ANIMAL") {
     juego.append(titulo("Elige un animal","Toca el animal con el que quieres jugar.","Explora los animales"),...catalogoAnimales(),controles());
@@ -251,7 +253,8 @@ function render(enfocar=false,conservarPaisaje=false) {
       const numero=nodo("span","habitat-numero",h.id.slice(1)); numero.setAttribute("aria-hidden","true"); b.append(numero);
       b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
     }
-    opciones.append(hab); tablero.append(companero,mesa,opciones); juego.append(tablero,controles());
+    const lateral=nodo("div","panel-animal"); lateral.append(companero,controles());
+    opciones.append(hab); tablero.append(lateral,mesa,opciones); juego.append(tablero);
   }
   if(enfocar) {
     const igual=[...juego.querySelectorAll("button")].find(b=>b.dataset.clave===foco&&!b.disabled);
