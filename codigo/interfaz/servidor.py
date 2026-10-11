@@ -110,7 +110,7 @@ class Manejador(BaseHTTPRequestHandler):
             archivo = (RAIZ_PROYECTO / picto["archivo_imagen"]).resolve()
             if not archivo.is_relative_to(RAIZ_PROYECTO / "assets"):
                 return self._enviar({"error": "Recurso no permitido."}, codigo=404)
-            mime = "image/svg+xml" if archivo.suffix == ".svg" else "image/png"
+            mime = {".svg": "image/svg+xml", ".png": "image/png", ".webp": "image/webp"}[archivo.suffix]
             self._enviar(archivo.read_bytes(), mime)
         else:
             self._enviar({"error": "Ruta no encontrada."}, codigo=404)

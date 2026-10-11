@@ -1,1064 +1,872 @@
 {
   "schema_version": "1.0.0",
   "fecha": "2026-10-10",
-  "contenido": "48 recortes fotorrealistas generados con IA; no fotografías de ejemplares reales.",
-  "alcance": "Presentación visual. Las asociaciones, pistas y parámetros del agente se conservan.",
+  "contenido": "48 caricaturas originales con fondo transparente generadas con IA.",
+  "alcance": "Una sola representación por animal en toda la interfaz. Estilo seleccionado por el usuario; comprensión CAA aún no evaluada.",
   "items": [
     {
       "id": "A01",
       "nombre": "Jaguar",
       "archivo": "assets/animales/A01.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: one isolated animal cutout for Zoonauta educational game. Subject: exactly one adult jaguar (Panthera onca), full body, walking calmly, three-quarter side view facing left. Species accurate robust muscular build, golden fur with large rosettes containing small central black dots, rounded ears, broad head, four legs and long tail visible. Real wildlife photography appearance with detailed natural fur, soft even daylight, neutral studio-like illumination. Center within a square with 12% transparent padding on every side, paws and tail fully in frame. True alpha transparent background, no landscape, no ground plane, no props, no shadow outside the animal, no text, no border, no collage, no duplicate animals. Friendly calm natural pose, anatomically credible, not illustration, not cartoon, not plush, not 3D.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: adult jaguar, muscular golden yellow body with sparse bold black rosettes containing central dots, rounded ears, broad head, four legs and long tail, walking in side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.623,
-      "limites_silueta": [
-        0,
-        0,
-        760,
-        768
-      ],
-      "bytes": 145152,
-      "sha256": "88f1340a5d62f8cee625104f938a3c0c6d4490aeb3694faf0a3cd1cf715ed4c7"
+      "fraccion_transparente_origen": 0.678,
+      "bytes": 628022,
+      "sha256": "b0e1c9ab13a7ed87a98622a1c87b5c811568ed08c88c63442b49dca0ac825e1e",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A02",
       "nombre": "Orangután de Borneo",
       "archivo": "assets/animales/A02.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Bornean orangutan, rich reddish orange hair, dark bare face, long arms, seated naturally, all fingers and feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Bornean orangutan, reddish orange body, dark bare face, long arms, naturally seated in three-quarter view facing left, short legs, no tail.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.4729,
-      "limites_silueta": [
-        0,
-        12,
-        759,
-        753
-      ],
-      "bytes": 168400,
-      "sha256": "ece276180023eb5459f93494bf6f0e1da0a806065f8f8fb460aa91a2edb5eb50"
+      "fraccion_transparente_origen": 0.5788,
+      "bytes": 543138,
+      "sha256": "8815437d671f1666a2f71f87c1fe626fede732e3b2b946f9f21d3674b5196f02",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A03",
       "nombre": "Gorila occidental",
       "archivo": "assets/animales/A03.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a western gorilla, adult silverback, grey silver back and black fur, broad nose and robust body, calmly knuckle-walking. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: western gorilla, robust dark gray body, broad bare dark face, short muzzle, long powerful arms, seated in three-quarter view facing left, no tail.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.4961,
-      "limites_silueta": [
-        0,
-        18,
-        745,
-        768
-      ],
-      "bytes": 143496,
-      "sha256": "179dd647ca2d3f64b11663a045c558b145b689ac030179f69d45c9a78718cf03"
+      "fraccion_transparente_origen": 0.5097,
+      "bytes": 545428,
+      "sha256": "eb8c028e348516f6bbdbb49979face5d9eebf8c031d2353f85041a9bafaa4d98",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A04",
       "nombre": "Perezoso de dos dedos de Hoffmann",
       "archivo": "assets/animales/A04.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Hoffmann's two-toed sloth, shaggy tan grey fur, two long curved claws per forefoot, complete body crawling calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Hoffmann's two-toed sloth, tan-brown rounded body, pale face with dark eye patches, long arms with two curved claws on each front hand, all four limbs visible, natural crouching side pose facing left, no branch or other prop.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5634,
-      "limites_silueta": [
-        0,
-        9,
-        767,
-        768
-      ],
-      "bytes": 176710,
-      "sha256": "a32cbcf17388e017502067c30aecaac33983b70e2d44bbce3a1d6d4bf3be2826"
+      "fraccion_transparente_origen": 0.6101,
+      "bytes": 464716,
+      "sha256": "6a3bd9e74060d47e552d942218d423075f1de836f92ec9c2a597a31e7afb13c5",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A05",
       "nombre": "Guacamayo rojo",
       "archivo": "assets/animales/A05.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a scarlet macaw, scarlet red body, yellow and blue wing feathers, white facial skin, hooked beak, perched standing with both feet and long tail entirely visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: scarlet macaw perched upright on its own feet without a perch, vivid red body, yellow and blue folded wing bands, white bare cheek patch, curved pale upper and dark lower beak, long red-blue tail, side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7949,
-      "limites_silueta": [
-        0,
-        10,
-        755,
-        768
-      ],
-      "bytes": 71422,
-      "sha256": "a21a81af9803f866f903a896445b560233ee9e7a5fb96dce8ed69ee09aaccae0"
+      "fraccion_transparente_origen": 0.7583,
+      "bytes": 413278,
+      "sha256": "09d9fb142c74fede43fcc11c15f9431324e1cc01073fb84b0ae7d21240bb6d90",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A06",
       "nombre": "Rana dardo azul",
       "archivo": "assets/animales/A06.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a blue poison dart frog, vivid cobalt blue skin with irregular black spots, realistic small amphibian, crouching, all limbs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: adult blue poison dart frog, vivid cobalt blue body with distinct scattered black spots, four visible bent frog limbs, sitting in three-quarter view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7148,
-      "limites_silueta": [
-        0,
-        10,
-        751,
-        768
-      ],
-      "bytes": 144596,
-      "sha256": "481012c02c3cbd65ee88b9c388b01dd5f9a865c93aa03bbd9559781a0aa16052"
+      "fraccion_transparente_origen": 0.6674,
+      "bytes": 527260,
+      "sha256": "62bf7335d06638d640f72d7a78245f0af1f6892d0f99298cb25d8eaf732bd9a9",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A07",
       "nombre": "León africano",
       "archivo": "assets/animales/A07.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an adult male African lion, tawny body and natural full mane, calmly standing, entire tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: adult male African lion, tawny gold body and full dark brown mane, broad feline muzzle, four legs and long thin tail with dark tuft, natural side profile standing facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5573,
-      "limites_silueta": [
-        0,
-        10,
-        758,
-        768
-      ],
-      "bytes": 151938,
-      "sha256": "6dc48ff3e52f7fd6c7f6de64dedc702dc7ccec87a6448b1dd4eb2c6dfd9e6be9"
+      "fraccion_transparente_origen": 0.634,
+      "bytes": 479462,
+      "sha256": "83c6c94e1655a2c4a41cc810d166400d2536d9abdf11345669327ea16c44ccfa",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A08",
       "nombre": "Jirafa reticulada",
       "archivo": "assets/animales/A08.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an adult reticulated giraffe, distinct polygonal reddish brown patches separated by fine white lines, tall neck and ossicones, four full legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: reticulated giraffe, tall long neck and long slender legs, short ossicones, large chestnut polygonal patches separated by cream net-like lines, complete full body side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.8154,
-      "limites_silueta": [
-        15,
-        9,
-        755,
-        768
-      ],
-      "bytes": 91978,
-      "sha256": "47160dae73afc96c5091e954f3a64b5afd1632d218bf285a483623ea7ff5f881"
+      "fraccion_transparente_origen": 0.783,
+      "bytes": 430280,
+      "sha256": "dededee5b7703cbaecb66f4f049fa839f97338a757d9989acf90897a84449341",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A09",
       "nombre": "Cebra de llanura",
       "archivo": "assets/animales/A09.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a plains zebra, natural black and white stripe pattern, short upright mane, calmly standing, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: plains zebra, white equine body with clear black stripes, short upright mane, four hooved legs and tufted tail, side profile standing facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6482,
-      "limites_silueta": [
-        41,
-        20,
-        729,
-        747
-      ],
-      "bytes": 114830,
-      "sha256": "2e2baa954186c35fc33fbc8832ab5bca641f5afcad6a2f884668d51f73f4342f"
+      "fraccion_transparente_origen": 0.6416,
+      "bytes": 585672,
+      "sha256": "3d07fe6cc820b05230bade2963f67efaafc2acf724b1f8c2d1b9c5930dce8b72",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A10",
       "nombre": "Elefante africano de sabana",
       "archivo": "assets/animales/A10.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an African savanna elephant, huge ears and curved tusks, wrinkled grey skin, complete trunk and four feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: African savanna elephant, gray body, very large fan-shaped ears, long trunk gently curved downward, two ivory tusks, four thick legs and short tufted tail, full body side view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5028,
-      "limites_silueta": [
-        0,
-        10,
-        758,
-        724
-      ],
-      "bytes": 173528,
-      "sha256": "d39d189e8f411f2c55545fb8c09a7e9e9c19707bd0834e8ee020b3fa1073d8e2"
+      "fraccion_transparente_origen": 0.5698,
+      "bytes": 520824,
+      "sha256": "2bf7c1719a2aa33d5e13c5cac6b3d45e19179b71a6ea2e2f92527d0948d32d17",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A11",
       "nombre": "Guepardo",
       "archivo": "assets/animales/A11.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a cheetah, slender athletic body, small solid black spots and black tear marks, tail visible, walking calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: cheetah, slender athletic gold body with round solid black spots instead of rosettes, small head with black tear marks down from eyes, long slender legs, long ringed tail, side profile standing facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6768,
-      "limites_silueta": [
-        0,
-        5,
-        760,
-        768
-      ],
-      "bytes": 135822,
-      "sha256": "8bbb0fa6b0c833d43d555d170f1f3d102db3718886e19c2c725716eda5c54104"
+      "fraccion_transparente_origen": 0.7204,
+      "bytes": 525624,
+      "sha256": "7b10737a2c64e7cf1c7aff5371e9fbc2a03e7f3456360824bacd9272fcf68027",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A12",
       "nombre": "Avestruz común",
       "archivo": "assets/animales/A12.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a male common ostrich, black body and white feathers, long bare neck and two strong legs, standing with entire feet in frame. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: adult male common ostrich, large black round body, white folded wing and tail feathers, long pale bare neck and legs, two-toed feet, short pale head and beak, standing side view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7713,
-      "limites_silueta": [
-        20,
-        10,
-        755,
-        753
-      ],
-      "bytes": 95458,
-      "sha256": "c64708096c3da0b64e67dcdcde22d716c543990d0ce4d002184a23698cbdfa65"
+      "fraccion_transparente_origen": 0.7532,
+      "bytes": 348026,
+      "sha256": "07f71508c303c669b2fd89184aae9925ca8ec9e6b7f3f5c0cb09dff247330e75",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A13",
       "nombre": "Dromedario",
       "archivo": "assets/animales/A13.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a dromedary camel with EXACTLY ONE hump, tan fur, long legs, full body standing calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: dromedary camel, sandy tan body, exactly ONE hump, long arched neck, long legs and broad padded feet, short tail, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.678,
-      "limites_silueta": [
-        19,
-        5,
-        754,
-        768
-      ],
-      "bytes": 123484,
-      "sha256": "1427072efac922e2bfc0bf3ca5f8589aa874ea6edf825c3cba68ac34846a8aba"
+      "fraccion_transparente_origen": 0.6614,
+      "bytes": 452190,
+      "sha256": "d723c3eb2606d28e0257aac741b5ec1156cffe40efa8740463ce1aca082f0ecc",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A14",
       "nombre": "Zorro fénec",
       "archivo": "assets/animales/A14.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a fennec fox, very large ears, pale sandy fur, small delicate body, fluffy tail entirely visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: fennec fox, small cream-sandy body, very large upright triangular ears, pointed muzzle, four short legs, bushy tail with dark tip, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5965,
-      "limites_silueta": [
-        15,
-        13,
-        756,
-        768
-      ],
-      "bytes": 129552,
-      "sha256": "7882a60a0f11873fbb2b5d96b1e822767cdf58c4eeff230f6c87a390402ac8a1"
+      "fraccion_transparente_origen": 0.6836,
+      "bytes": 428564,
+      "sha256": "48a638bd7c826ecee071418cafe612cb2cc1c73c17d500a4a42b9736f1e7e422",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A15",
       "nombre": "Suricata",
       "archivo": "assets/animales/A15.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a meerkat, sandy brown fur and dark eye markings, standing upright naturally on two hind feet with tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: meerkat standing upright naturally on two hind feet, slim tan body, dark patches around small eyes, small rounded ears, forepaws held near chest, long slim tail, three-quarter view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7879,
-      "limites_silueta": [
-        48,
-        23,
-        734,
-        768
-      ],
-      "bytes": 92014,
-      "sha256": "4138c77cb19ceac36a80b6e4e0ddc4db7c14cce62a25584c7d9c8f83ad102510"
+      "fraccion_transparente_origen": 0.7797,
+      "bytes": 314184,
+      "sha256": "5c8b1cdea4207f7d0474b7bbd6b5d59677a1943068f17a3a3fad4bdbcf07df7e",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A16",
       "nombre": "Tortuga del desierto de Mojave",
       "archivo": "assets/animales/A16.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Mojave desert tortoise, domed brown shell and stout scaly terrestrial legs, full body including head and all legs. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Mojave desert tortoise, high domed olive-brown shell with a few large polygonal scutes, tan head, four thick scaled land-tortoise legs with claws, no flippers, side three-quarter pose facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6373,
-      "limites_silueta": [
-        0,
-        20,
-        759,
-        747
-      ],
-      "bytes": 140606,
-      "sha256": "7078ceb92cd27fb4b85f77757bb7161aae43531cdbfb2a94de85ce9e22e80f70"
+      "fraccion_transparente_origen": 0.6428,
+      "bytes": 506690,
+      "sha256": "0c974339657d830b3b521b5bb013338737c330f806b091138430186ff6a520c8",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A17",
       "nombre": "Monstruo de Gila",
       "archivo": "assets/animales/A17.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Gila monster, orange pink and black beaded skin, broad heavy head, thick tail, all four legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Gila monster lizard, stout low black body with orange-pink bold irregular bands and patches, broad blunt head, four short clawed legs, short thick tail, side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7692,
-      "limites_silueta": [
-        0,
-        17,
-        768,
-        768
-      ],
-      "bytes": 112044,
-      "sha256": "ed5d5aeb28cfef19933147cc283cd8794ff131a9bd0dcc85c90ad9d8c93cf8cc"
+      "fraccion_transparente_origen": 0.7612,
+      "bytes": 422082,
+      "sha256": "e4c795f9845db31b2a1d168c98426eb65ff99fe456a22c4def674d8744f9b447",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A18",
       "nombre": "Jerbo egipcio menor",
       "archivo": "assets/animales/A18.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a lesser Egyptian jerboa, sandy fur, huge hind feet, short forelegs, very long tufted tail and proportionate ears, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: lesser Egyptian jerboa, small sandy brown rodent, short front paws, very long hind feet, big dark eye, moderately long ears, very long thin tail ending in black and white tuft, natural upright side pose facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7699,
-      "limites_silueta": [
-        0,
-        19,
-        756,
-        768
-      ],
-      "bytes": 120328,
-      "sha256": "45cf70ac82cf9a8356ad4d9782868ab94e699af4f18d64da92416408b94da3aa"
+      "fraccion_transparente_origen": 0.7977,
+      "bytes": 347048,
+      "sha256": "29953a79ab6a760801f616ec96431e26edea9839c6642fa4ac7772b0efa4bc93",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A19",
       "nombre": "Delfín nariz de botella",
       "archivo": "assets/animales/A19.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a bottlenose dolphin, sleek grey body, short bottle shaped beak, dorsal fin, both flippers and tail flukes visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: bottlenose dolphin, smooth gray streamlined body with lighter underside, short distinct beak, curved dorsal fin, two pectoral flippers and horizontal tail flukes, swimming side profile facing left, no water.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7439,
-      "limites_silueta": [
-        15,
-        14,
-        768,
-        768
-      ],
-      "bytes": 61182,
-      "sha256": "fde981d4eea91e09ac616d98590b73812a8a9274fb726ed2867515f85f4c45fb"
+      "fraccion_transparente_origen": 0.7776,
+      "bytes": 271168,
+      "sha256": "1f168fec187a9c5dba1b4cd037dec41b8a14940b3a3a9b870223bb22ce292ba5",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A20",
       "nombre": "Ballena azul",
       "archivo": "assets/animales/A20.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a blue whale, very long streamlined blue grey mottled body, small dorsal fin far back, broad tail flukes, complete whale in side view. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: blue whale, long huge blue-gray streamlined body, broad flat head, a few simple throat pleat lines, two small pectoral flippers, tiny dorsal fin near tail, horizontal tail flukes, swimming side profile facing left, no water.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.8642,
-      "limites_silueta": [
-        12,
-        25,
-        768,
-        768
-      ],
-      "bytes": 49140,
-      "sha256": "1eb0394526880723d58ac38fc34ab47e43b04020f4b1b673f8849fd656723f9b"
+      "fraccion_transparente_origen": 0.8202,
+      "bytes": 270812,
+      "sha256": "fa7554dfe8e80fd83dca111e7a3675618f6d2a8f2308655be659944819f7b4b3",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A21",
       "nombre": "Tiburón blanco",
       "archivo": "assets/animales/A21.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a great white shark, natural grey upper body and white belly, conical snout, all fins and tail visible, mouth closed. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: great white shark, robust gray upper body and white underside, pointed snout, five simple gill slits, triangular dorsal fin, pectoral fins and asymmetrical vertical tail, mouth closed, swimming side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7627,
-      "limites_silueta": [
-        15,
-        22,
-        763,
-        744
-      ],
-      "bytes": 68388,
-      "sha256": "924fff2a72ea49627477a3b3ca4d1e91a3904b51f0f346a9f40951eb3ae1226e"
+      "fraccion_transparente_origen": 0.7736,
+      "bytes": 307432,
+      "sha256": "40aec5d3b05f5483b639596c8b1f711401794e0995b8abe2fb61796410046e73",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A22",
       "nombre": "Mantarraya gigante",
       "archivo": "assets/animales/A22.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a giant oceanic manta ray, wide triangular pectoral fins and two cephalic lobes, dark upper body, overhead three-quarter view with full wings and tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: giant oceanic manta ray, broad dark blue diamond-shaped body, two wide triangular wing-like pectoral fins fully visible, paired curled cephalic lobes at front, thin long tail, dorsal top view with head toward top left, no water.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.711,
-      "limites_silueta": [
-        0,
-        14,
-        761,
-        743
-      ],
-      "bytes": 77714,
-      "sha256": "751ce38d9024e04bfadf7123f6084c3d200b901665634f2eb62feb5f6b69343d"
+      "fraccion_transparente_origen": 0.6616,
+      "bytes": 414068,
+      "sha256": "e308aedad755613c4e73a3a8b8707a239c87d523243e8776b0d0bb7a3ad3e100",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A23",
       "nombre": "Pulpo común",
       "archivo": "assets/animales/A23.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a common octopus, natural russet mottled skin, eight anatomically correct arms arranged clearly without knots, suckers visible, full animal. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: common octopus, warm rust-orange rounded mantle head, two modest eyes, exactly EIGHT clearly distinct curved arms with a few simple suction cup marks, spread naturally, no water or objects.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5907,
-      "limites_silueta": [
-        0,
-        13,
-        762,
-        768
-      ],
-      "bytes": 162672,
-      "sha256": "7c269a9b3c0696801c5336f841c4a5e62c45d27ded704ff129b6974f895643cf"
+      "fraccion_transparente_origen": 0.6046,
+      "bytes": 575870,
+      "sha256": "9787bf12bc2fec854d19d7f077593ca8ce9311a249b84160f04142d0c33418c9",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A24",
       "nombre": "Tortuga verde",
       "archivo": "assets/animales/A24.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a green sea turtle, oval olive brown shell, two long front flippers and short rear flippers, all limbs and head visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: green sea turtle, low rounded olive shell with simple scute pattern, small green head, exactly four broad swimming flippers and small tail, side three-quarter swimming pose facing left, no water.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.695,
-      "limites_silueta": [
-        0,
-        13,
-        758,
-        768
-      ],
-      "bytes": 125078,
-      "sha256": "19960843890b6518a6274ee59d1554ce1620d6af6c7d4aec7274a21f2e51e86d"
+      "fraccion_transparente_origen": 0.6762,
+      "bytes": 530138,
+      "sha256": "8a144f63bfc85b9cfde8a555ea1ba94a7cd4a6708e86ad4afd6dc89c66421130",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A25",
       "nombre": "Oso pardo",
       "archivo": "assets/animales/A25.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a brown bear, natural dense brown fur, robust full body walking calmly, all four paws visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: brown bear, stocky warm dark brown body, shoulder hump, rounded ears, long broad muzzle, four heavy paws and short tail, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.4945,
-      "limites_silueta": [
-        0,
-        0,
-        767,
-        768
-      ],
-      "bytes": 185888,
-      "sha256": "54c12d0f0907d403b974381e681e3c6596d81b52eabe9241a391143b44ded520"
+      "fraccion_transparente_origen": 0.567,
+      "bytes": 502786,
+      "sha256": "fa90c1e1e21dcf43b35fa5a74213ab11ed8851cb5e35ea142954fca2e612f66e",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A26",
       "nombre": "Lobo gris",
       "archivo": "assets/animales/A26.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a grey wolf, silver grey fur and natural wolf proportions, standing calmly, full tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: gray wolf, medium gray body with cream muzzle and underside, pointed upright ears, long muzzle, long legs and bushy tail held downward, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.556,
-      "limites_silueta": [
-        0,
-        0,
-        760,
-        768
-      ],
-      "bytes": 149674,
-      "sha256": "49caecff4f64ee624982e06e6ea9e285ddc0881b3dfcce8791f82bc322a915d9"
+      "fraccion_transparente_origen": 0.6617,
+      "bytes": 440438,
+      "sha256": "c8658d841bc7e0792db075ffb99ad961f43cadfe93f2354b633b484eb61eff0f",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A27",
       "nombre": "Zorro rojo",
       "archivo": "assets/animales/A27.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a red fox, rich russet coat, white chest and black lower legs, full bushy white tipped tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: red fox, orange-red slender body, white chest and muzzle, black lower legs and ear backs, large bushy tail with white tip, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6077,
-      "limites_silueta": [
-        0,
-        2,
-        766,
-        768
-      ],
-      "bytes": 131942,
-      "sha256": "7c6254baa47d94eff8b6c9babb44ea9e183c896f26eb0aa65ac7c9749605c18f"
+      "fraccion_transparente_origen": 0.712,
+      "bytes": 385214,
+      "sha256": "38d181fc7fcb89f64eea3bf0d88871c08820d0143140e5328a936d53db3128ed",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A28",
       "nombre": "Ardilla roja euroasiática",
       "archivo": "assets/animales/A28.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Eurasian red squirrel, rusty red fur, tufted ears and large bushy tail, seated naturally with full body visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Eurasian red squirrel, warm red-brown body, pale cream belly, tufted upright ears, large curled bushy tail, sitting naturally on hind feet with small front paws by chest, side view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.4269,
-      "limites_silueta": [
-        0,
-        0,
-        768,
-        768
-      ],
-      "bytes": 238808,
-      "sha256": "c083c8dc821af4b148df2dd3fd11f5f04ffd3a5fa4d13319ac00f99fca2662c5"
+      "fraccion_transparente_origen": 0.5443,
+      "bytes": 570818,
+      "sha256": "502ee6391040a52c7b8188605ac5f75d7861e3eeeb6efb473054df24bf7fa732",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A29",
       "nombre": "Corzo europeo",
       "archivo": "assets/animales/A29.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a European roe deer buck, reddish brown summer coat, small branched antlers, black nose, four slim legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: adult male European roe deer, small slender reddish tan deer, pale rump patch, short tail, short three-tined branched antlers, four delicate hooved legs, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.743,
-      "limites_silueta": [
-        0,
-        7,
-        754,
-        757
-      ],
-      "bytes": 107778,
-      "sha256": "ecaf3affcfef468e0e47fb3cf312fc5ffc2f0856a237dbe9d56556ad8bcc55c4"
+      "fraccion_transparente_origen": 0.7338,
+      "bytes": 381778,
+      "sha256": "7bcb14507b6bdaab9b7de2a850164a30211d2f14fada3f77dce042c01a0e3716",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A30",
       "nombre": "Jabalí",
       "archivo": "assets/animales/A30.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a wild boar, bristly brown grey coat, elongated snout and modest natural tusks, complete body standing. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: wild boar, stocky dark brown body, wedge-shaped head with long snout, small triangular ears, two restrained visible tusks, short sturdy hooved legs, short tail, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5319,
-      "limites_silueta": [
-        0,
-        5,
-        762,
-        768
-      ],
-      "bytes": 200302,
-      "sha256": "c4d7f9157f143ed3677bfc7183f22d57ee92159f3336bb3d9610768f6744bd5c"
+      "fraccion_transparente_origen": 0.6517,
+      "bytes": 393904,
+      "sha256": "b4999239646308210d4f497759d0bee0988d9be845ea854bb994df0321e73237",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A31",
       "nombre": "Capibara o ronsoco",
       "archivo": "assets/animales/A31.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a capybara, coarse warm brown fur, broad blunt snout and small rounded ears, stout natural body, all four feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Primary request: capybara in a friendly flat cartoon illustration style for an educational pictogram. Exactly one recognizable adult capybara, full body standing naturally, facing left in side profile. Stocky barrel-shaped warm brown body, broad blunt muzzle, small rounded ears, short sturdy legs, no visible tail. Centered square composition, entire animal visible with generous margins. Educational animal identification image for Zoonauta. Calm friendly natural expression. No words, letters, labels, logo, watermark, scenery, ground, cast shadow, frame, accessories or extra objects. Genuine transparent alpha background, no white panel and no baked-in checkerboard. Style: smooth rounded shapes, bold dark brown outline, two or three clearly separated FLAT brown color regions, compact clean silhouette, small simple dark eye, a very restrained friendly mouth line. Natural animal proportions without oversized head or eye. No gradients, no fur texture, no 3D, no realistic rendering. Cheerful approachable children’s educational illustration, still clearly a capybara.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5274,
-      "limites_silueta": [
-        0,
-        6,
-        751,
-        768
-      ],
-      "bytes": 187338,
-      "sha256": "673fd720fa1da2c0ae6c3f9b6101d69262109ec76a2ce27092dfa7fc69cb3ab6"
+      "fraccion_transparente_origen": 0.6378,
+      "bytes": 391002,
+      "sha256": "ebcb169aae26841e2e685046b2a0f7c126c999276718e7a128326910bfbceb8b",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A32",
       "nombre": "Ajolote mexicano",
       "archivo": "assets/animales/A32.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Mexican axolotl, pale pink leucistic animal, six feathery external gill branches, four small legs and long finned tail visible, natural anatomy. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Mexican axolotl, pale pink elongated salamander body, six clearly visible branching pink external gills (three on each side of head), wide flat head, tiny dark eyes, four small legs, long flattened finned tail, three-quarter view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7367,
-      "limites_silueta": [
-        0,
-        14,
-        763,
-        748
-      ],
-      "bytes": 91458,
-      "sha256": "3b4116a564efb18fe9bf19d2d81dea86e58f41566aa7ea6c9239535f46bd34b8"
+      "fraccion_transparente_origen": 0.7254,
+      "bytes": 461010,
+      "sha256": "7d358e22b5683778621fdbd3f1553169abbe61270ad361ca16d8da77b4c684cf",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A33",
       "nombre": "Delfín rosado amazónico",
       "archivo": "assets/animales/A33.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Amazon river dolphin, natural pale pink grey coloration, very long narrow beak, rounded forehead, low dorsal ridge, entire body and flukes visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Amazon river dolphin, soft pink body, very long slender beak, rounded forehead, low elongated dorsal ridge rather than triangular ocean-dolphin fin, broad flippers and horizontal tail flukes, side swimming profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7887,
-      "limites_silueta": [
-        18,
-        13,
-        756,
-        768
-      ],
-      "bytes": 53044,
-      "sha256": "d8c2c36e3cda54259eac8492d36e73cf7aa1a54c9194884b9509260bac5a0daa"
+      "fraccion_transparente_origen": 0.8278,
+      "bytes": 231520,
+      "sha256": "7cf8c20df2a1ccd1766140a8dd43c3831b7e8019671d322f769da251da9d390d",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A34",
       "nombre": "Nutria gigante",
       "archivo": "assets/animales/A34.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a giant river otter, elongated brown furred body, distinctive pale throat patch, rounded head and long flattened tail, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: giant river otter, elongated dark brown body, broad rounded head, small rounded ears, distinctive pale cream throat patch, four short webbed paws and long thick flattened tail, natural side pose facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7254,
-      "limites_silueta": [
-        10,
-        27,
-        762,
-        768
-      ],
-      "bytes": 101284,
-      "sha256": "6f9b9d2168039e87e152a310fb66f3a8497d409361bb6e94b493db0ebdbe0340"
+      "fraccion_transparente_origen": 0.7478,
+      "bytes": 314136,
+      "sha256": "7bfa09fce20b240ecb52baf0982e802532ec72e9560027f0c169036ab7cf71d8",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A35",
       "nombre": "Castor norteamericano",
       "archivo": "assets/animales/A35.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a North American beaver, brown fur, rounded body, prominent broad flat scaly tail clearly visible, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: North American beaver, stocky warm brown rodent, small rounded ears, short broad muzzle, four short legs, characteristic broad flat oval dark paddle tail fully visible, natural side three-quarter pose facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6301,
-      "limites_silueta": [
-        0,
-        14,
-        768,
-        768
-      ],
-      "bytes": 151520,
-      "sha256": "a82e3c55eb2ed255be6026f6669f19e0a9b5d013e5515e8a48d01de711563a60"
+      "fraccion_transparente_origen": 0.7125,
+      "bytes": 351352,
+      "sha256": "31d8ccff780143930d333fdca9e04abe2b78d74ea4144152c4c3cdfcdb95ff41",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A36",
       "nombre": "Cocodrilo del Nilo",
       "archivo": "assets/animales/A36.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Nile crocodile, natural green grey scaled skin, long broad snout, heavy tail, full body with all four feet visible, closed mouth. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Nile crocodile, olive-green long low body with broad tapered snout, eyes high on head, few simple back scutes, four short legs and long tapering ridged tail, mouth closed, side view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7823,
-      "limites_silueta": [
-        0,
-        19,
-        768,
-        753
-      ],
-      "bytes": 102310,
-      "sha256": "e7ceba58d5c51134066f2f365e6cf91924573e7dc9e746aeb13d1de8b4ede270"
+      "fraccion_transparente_origen": 0.8281,
+      "bytes": 274120,
+      "sha256": "766ef823cfa8200a2741b614502f2ada9180c3c70f0ea386310bd630ddbd5b24",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A37",
       "nombre": "Oso polar",
       "archivo": "assets/animales/A37.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a polar bear, natural creamy white dense fur, long neck and large black nose, complete body walking calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: polar bear, off-white long stocky body, elongated neck and broad muzzle, black nose, small rounded ears, four large paws, short tail, standing side profile facing left, dark outline makes white body visible.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5132,
-      "limites_silueta": [
-        0,
-        0,
-        765,
-        768
-      ],
-      "bytes": 112600,
-      "sha256": "f66892ea7a348bf19c2fc5b9b68febc53d6945edf5344ae5270befd0a1ffc9a0"
+      "fraccion_transparente_origen": 0.6096,
+      "bytes": 410694,
+      "sha256": "18ec277d616a4f96b2ac2e3c4ee4324dbb19bbcc8890a64da10b0506e8a4a3a9",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A38",
       "nombre": "Zorro ártico",
       "archivo": "assets/animales/A38.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Arctic fox in white winter coat, compact round ears, thick white fur and full fluffy tail, standing. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Arctic fox in winter coat, compact white fluffy body, small rounded ears, short muzzle, short legs, large bushy white tail, standing side profile facing left, gray-brown contour defines light silhouette.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5725,
-      "limites_silueta": [
-        0,
-        1,
-        766,
-        739
-      ],
-      "bytes": 88082,
-      "sha256": "72b408b7885295731d570a13a18245b89cbc2825b2770e4a76951e8da2823244"
+      "fraccion_transparente_origen": 0.6654,
+      "bytes": 405048,
+      "sha256": "d9131631371e6e2132d08c3c47ddae8069f3e8f3cad5bc67f90d9c19d922f0b8",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A39",
       "nombre": "Pingüino emperador",
       "archivo": "assets/animales/A39.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an emperor penguin, black back and head, white belly, warm yellow neck patches, upright adult with both feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: emperor penguin, black head and back, white belly, soft yellow-orange patches on sides of neck and upper chest, long dark narrow beak, two flippers and two feet visible, standing upright three-quarter view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7209,
-      "limites_silueta": [
-        45,
-        29,
-        751,
-        753
-      ],
-      "bytes": 73008,
-      "sha256": "d3d6de72245db3d134d2283b2cd47eec186657bfa8d414d16d25211b2e11a510"
+      "fraccion_transparente_origen": 0.6942,
+      "bytes": 358548,
+      "sha256": "aaa2ac5c5f7291b5127988e909cdbb49b96f22effe6fa70cf50324ef895851c2",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A40",
       "nombre": "Morsa",
       "archivo": "assets/animales/A40.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a walrus, wrinkled warm brown skin, two long ivory tusks, thick whiskers, full body with front and rear flippers. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: walrus, large rounded brown body, broad whiskered muzzle with a few simple whisker strokes, exactly two long downward ivory tusks, two front flippers and paired hind flippers, natural resting three-quarter view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6322,
-      "limites_silueta": [
-        0,
-        14,
-        761,
-        768
-      ],
-      "bytes": 122994,
-      "sha256": "b99a62d8d560db2b5c3257ee61d5f9ff479f07149de988311c640d3e934e93ba"
+      "fraccion_transparente_origen": 0.5826,
+      "bytes": 499258,
+      "sha256": "aa9e10b84a799bd13490b0369725057f7006b128ff0c41f1bc5cc31b6de724aa",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A41",
       "nombre": "Búho nival",
       "archivo": "assets/animales/A41.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a snowy owl, mainly white feathers with subtle dark barring, vivid yellow eyes, full body sitting upright with feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: snowy owl, white rounded body with sparse simple dark speckles, round white face, yellow eyes, small black beak, NO ear tufts, folded wings and two feathered feet, upright slightly three-quarter view.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5783,
-      "limites_silueta": [
-        0,
-        18,
-        711,
-        752
-      ],
-      "bytes": 92656,
-      "sha256": "63b704be821273d2022f172e189af94a24e3c28f3ada2ad2ba7a76319624227b"
+      "fraccion_transparente_origen": 0.5882,
+      "bytes": 559306,
+      "sha256": "f036597c25d5fce1e4666d5e7682cc083c96a82fc8c04cc7e03b89f7b3203ed4",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A42",
       "nombre": "Liebre ártica",
       "archivo": "assets/animales/A42.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Arctic hare in white winter coat, long ears with black tips, powerful hind legs, complete body sitting naturally. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Arctic hare in winter coat, white body, long upright ears with black tips, large hind feet, short round tail, seated naturally side view facing left, dark outline.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6546,
-      "limites_silueta": [
-        0,
-        0,
-        756,
-        768
-      ],
-      "bytes": 86402,
-      "sha256": "e8bd88df0d54aa5c993832a4a5ff2072592c93d5da40e4117422999c0c9c7d84"
+      "fraccion_transparente_origen": 0.6812,
+      "bytes": 374480,
+      "sha256": "9fe0b74078380cb09a78fc5b3ed5e615573512445b0d94e6e4b9d635d7162ffc",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A43",
       "nombre": "Vicuña",
       "archivo": "assets/animales/A43.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a vicuna, slender South American camelid, warm cinnamon back and white chest and belly, long neck, four slender legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: vicuna, slender golden tan camelid with cream underside and chest bib, long thin neck, upright pointed ears, short muzzle, slender legs, no hump, short tail, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.7637,
-      "limites_silueta": [
-        19,
-        6,
-        768,
-        756
-      ],
-      "bytes": 105036,
-      "sha256": "cfa18b4f634975df1c414731f282039a27ab2d8ce7286b058dfc4ef7017acd79"
+      "fraccion_transparente_origen": 0.7421,
+      "bytes": 379116,
+      "sha256": "bda87321b89d6995f1a5d71a4824e0c05e541a24d156aad7bb2e21fff49366fd",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A44",
       "nombre": "Yak salvaje",
       "archivo": "assets/animales/A44.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a wild yak, huge shaggy dark brown black coat, long curved horns, shoulder hump, full body and legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: wild yak, massive dark brown-black body, long hanging shaggy belly hair represented with a few clean shape edges, broad muzzle, two curved upward horns, short thick legs, bushy tail, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5329,
-      "limites_silueta": [
-        0,
-        11,
-        762,
-        768
-      ],
-      "bytes": 158860,
-      "sha256": "5690fbfff029760d61b2a37cb1874686c144f005840b709fca552ec468a05768"
+      "fraccion_transparente_origen": 0.5796,
+      "bytes": 478652,
+      "sha256": "f98e856a60143ae2e0bc25f2fce92a201899ee87a708062d97b3826b04bb4941",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A45",
       "nombre": "Leopardo de las nieves",
       "archivo": "assets/animales/A45.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a snow leopard, pale grey fur with dark rosettes, fluffy thick coat and exceptionally long thick tail, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: snow leopard, pale gray-cream thick body with sparse charcoal rosettes, small rounded ears, broad pale muzzle, four strong legs, very long thick ringed tail, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6153,
-      "limites_silueta": [
-        17,
-        13,
-        760,
-        768
-      ],
-      "bytes": 125660,
-      "sha256": "8a7e695ff2e1719b7a45024356d68032d730b14e8d7e9b7e2c4677957bc98528"
+      "fraccion_transparente_origen": 0.6417,
+      "bytes": 545234,
+      "sha256": "d8a3060ae2f235164402b5fc3bd1ce72dc51e9c6f3b513a24336a29b06f95eb7",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A46",
       "nombre": "Cóndor andino",
       "archivo": "assets/animales/A46.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Andean condor, black plumage, white neck ruff and white wing patches, male bald reddish head and comb, standing with folded wings and entire feet in frame. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: adult male Andean condor, black body and folded wings with clear white wing patch, white fluffy neck collar, bare reddish head with restrained comb, hooked gray beak, two sturdy feet, natural upright side view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.6509,
-      "limites_silueta": [
-        35,
-        12,
-        745,
-        764
-      ],
-      "bytes": 90684,
-      "sha256": "d17b90a10efea038fa2117545409c46e1dbc7cda53d35c0c012dfdac6f4e751d"
+      "fraccion_transparente_origen": 0.6829,
+      "bytes": 436376,
+      "sha256": "801d0d668e8fcf6f08035a641b5c90f57e032b09c3aba36ebad913ffdee28342",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A47",
       "nombre": "Cabra de las Rocosas",
       "archivo": "assets/animales/A47.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Rocky Mountain goat, white shaggy coat, short black pointed horns and beard, full body with all four hooves visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: Rocky Mountain goat, stocky white body with long shaggy coat represented by simple clean tufts, short pointed black horns curving slightly back, black nose and hooves, small beard, four legs, standing side profile facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5353,
-      "limites_silueta": [
-        0,
-        0,
-        761,
-        768
-      ],
-      "bytes": 142706,
-      "sha256": "1e4ff96184ce6c5e0dfa26f383e8c26f0cb38a4f6d1b327254b34be50c78bec7"
+      "fraccion_transparente_origen": 0.5783,
+      "bytes": 514834,
+      "sha256": "969d398437209d857506dd147e2e920277b758abf5a76d758c96663384c05d2c",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     },
     {
       "id": "A48",
       "nombre": "Chinchilla de cola corta",
       "archivo": "assets/animales/A48.webp",
-      "fuente": "Generada con IA",
+      "fuente": "Caricatura original generada con IA",
       "herramienta": "image_gen integrada",
-      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a short tailed chinchilla, dense grey fur, broad rounded ears, compact rodent body and relatively short bushy tail, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "prompt": "Use case: scientific-educational. Asset type: one original illustrated animal pictogram for Zoonauta.\nReference image role: STYLE REFERENCE ONLY. Match its friendly clean 2D cartoon style, restrained eye proportions, smooth dark brown contours, simple separated color areas and level of detail. Do not copy the capybara anatomy onto other species.\nPrimary subject: short-tailed chinchilla, rounded soft blue-gray rodent body, big rounded ears, pale cream underside, tiny dark eye, short bushy tail, small forepaws, large hind feet, sitting naturally in side three-quarter view facing left.\nComposition: exactly ONE animal, full body and every limb, fin, wing and tail inside a centered square canvas with at least 10% transparent margin. Natural calm pose; accurate characteristic anatomy and coloring despite simplification. Restrained friendly expression, no anthropomorphic pose.\nStyle: polished cartoon illustration, smooth rounded forms, bold clear contours, basic natural species colors, minimal clean internal lines, subtle flat color separation as in reference. No photographic fur texture, no 3D, no plush toy, no heavy shading, no large anime eyes, no elaborate decorative details.\nBackground: genuine transparent alpha. No landscape, ground plane, cast shadow, branch, perch, props, clothes, words, labels, logo, frame, collage or extra animals.",
       "dimensiones": [
-        768,
-        768
+        1254,
+        1254
       ],
       "transparencia_real": true,
-      "fraccion_transparente_origen": 0.5764,
-      "limites_silueta": [
-        0,
-        8,
-        762,
-        768
-      ],
-      "bytes": 153120,
-      "sha256": "316f3dfbff4ee1bedac3404c8f71bf34ff5efe04fdbb5810bc55df9d09e724d0"
+      "fraccion_transparente_origen": 0.6169,
+      "bytes": 494540,
+      "sha256": "0b73c93373c649f648c1d6458277716d848347c888eec8fe47b9912727969969",
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
     }
   ]
 }
