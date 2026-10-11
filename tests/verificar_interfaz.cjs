@@ -64,6 +64,24 @@ async function comprobarControles(page){
     await comprobarTransparencia(b.locator('img'));
   }
 }
+async function comprobarTablero(page){
+  const anterior=page.viewportSize();
+  for(const [width,height] of [[1024,768],[1280,720],[1366,768],[1440,900],[1920,1080]]){
+    await page.setViewportSize({width,height});
+    const m=await page.evaluate(()=>{
+      const guia=document.querySelector('.mesa').getBoundingClientRect();
+      const habitats=document.querySelector('.habitats').getBoundingClientRect();
+      const animal=document.querySelector('.companero').getBoundingClientRect();
+      const controles=document.querySelector('.panel-animal .acciones').getBoundingClientRect();
+      return {sinScroll:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,
+        alineados:Math.abs(guia.left-habitats.left)<1&&Math.abs(guia.right-habitats.right)<1,
+        lateral:controles.top>=animal.bottom&&controles.right<=habitats.left,
+        visibles:[...document.querySelectorAll('.habitats button,.panel-animal button')].every(b=>{const r=b.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight&&r.height>=44;})};
+    });
+    assert.ok(m.sinScroll&&m.alineados&&m.lateral&&m.visibles,`Tablero fuera de pantalla ${width}x${height}: ${JSON.stringify(m)}`);
+  }
+  await page.setViewportSize(anterior);
+}
 async function captura(page,archivo,fullPage=true){
   await page.mouse.move(0,0);
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
@@ -78,6 +96,10 @@ async function clicar(page,texto,fase){
   await page.waitForFunction(async rev=>(await (await fetch('/api/vista')).json()).revision>rev,antes);
   if(fase)await page.waitForFunction(async f=>(await (await fetch('/api/vista')).json()).fase===f,fase);
   await page.waitForFunction(()=>document.getElementById('juego').getAttribute('aria-busy')==='false');
+  const inicio=await page.evaluate(()=>document.body.dataset.fase==='INICIO');
+  assert.equal(await page.locator('.cabecera').isVisible(),inicio);
+  assert.equal(await page.locator('.creditos').evaluate(e=>e.hidden),!inicio);
+  if(!inicio)assert.equal(await page.locator('.creditos').isVisible(),false);
   if(!['Pausar'].includes(texto))await page.waitForFunction(async()=>{
     if(!document.getElementById('voz').checked||document.getElementById('probar-voz').disabled)return true;
     const v=await (await fetch('/api/vista')).json();return window.__voz.at(-1)?.revision===v.revision;
@@ -208,12 +230,14 @@ async function clicar(page,texto,fase){
     assert.ok(numeros.every(Boolean));
     const medidas=await page.locator('.habitats .tarjeta .paisaje').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right,fondo:getComputedStyle(i).backgroundImage};}));
     assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=125&&m.dentro&&m.fondo.includes('/habitats/')));
-    const ubicacion=await page.locator('.habitats').evaluate(e=>{const r=e.getBoundingClientRect(),p=e.closest('.tablero').getBoundingClientRect(),a=e.closest('.tablero').querySelector('.companero').getBoundingClientRect();return {centrada:Math.abs((r.left+r.right)-(p.left+p.right))<2,debajo:r.top>=a.bottom};});
-    assert.ok(ubicacion.centrada&&ubicacion.debajo);
+    const ubicacion=await page.locator('.habitats').evaluate(e=>{const r=e.getBoundingClientRect(),t=e.closest('.tablero'),g=t.querySelector('.mesa').getBoundingClientRect(),c=t.querySelector('.acciones').getBoundingClientRect();return innerWidth>850?Math.abs(r.left-g.left)<1&&Math.abs(r.right-g.right)<1&&c.right<=r.left:r.top>=c.bottom;});
+    assert.ok(ubicacion);
   }
+  await comprobarTablero(page);
   await page.setViewportSize({width:1280,height:1080});
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
   await clicar(page,'Pista');const ayuda=(await vista(page)).respuesta;
+  await comprobarTablero(page);
   await comprobarPictogramas(page);
   const textoVoz=(await page.evaluate(()=>window.__voz.at(-1))).texto;assert.equal(textoVoz,ayuda.texto_voz);
   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);assert.equal((await page.evaluate(()=>window.__voz.at(-1))).texto,textoVoz);
@@ -224,9 +248,11 @@ async function clicar(page,texto,fase){
   await clicar(page,'Desierto cálido');assert.equal((await vista(page)).respuesta.tipo_respuesta,'NEUTRAL');assert.equal((await vista(page)).progreso.completados,0);
   const automatica=(await vista(page)).respuesta;
   assert.equal(automatica.nivel,2);assert.ok(automatica.texto_voz.startsWith('Vamos a buscar otro lugar.'));
+  await comprobarTablero(page);
   await comprobarPictogramas(page);await captura(page,'17_pista_automatica.png');
   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,automatica);
   await clicar(page,'Selva tropical','RETO_RESUELTO');assert.equal((await vista(page)).progreso.completados,1);assert.equal(await page.locator('.habitats button:enabled').count(),0);
+  await comprobarTablero(page);
   await clicar(page,'Continuar','COMPLETADA');
   await comprobarPictogramas(page);
   assert.equal(await page.getByRole('button',{name:'Comenzar otra partida',exact:true}).locator('img').getAttribute('src'),(await vista(page)).pictogramas.P_INICIAR.imagen);
@@ -238,7 +264,7 @@ async function clicar(page,texto,fase){
   await comprobarPictogramas(page);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
   await captura(page,'14_cierre_salida.png');
-  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; una caricatura por animal, paisajes de hábitat a todo el ancho y números 01–08 sin desbordamiento entre 320 y 1280 px',resultado:'OK'});
+  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; hábitats alineados con la guía, controles bajo el animal, números 01–08 y cabecera/pie solo en inicio. Pregunta, pista, apoyo neutral y confirmación sin scroll entre 1024 × 768 y 1920 × 1080',resultado:'OK'});
   resultados.push({caso:'Apoyo pictográfico: controles de 56 px, preguntas/pistas de al menos 84 px, secuencias de pausa/cierre e Iniciar sin fondos ni bordes; una selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
@@ -341,27 +367,30 @@ async function clicar(page,texto,fase){
   await clicar(pg,'Repetir');assert.deepEqual((await vista(pg)).respuesta,ajuda);
   assert.equal((await pg.evaluate(()=>window.__voz.at(-1))).lang,'pt-BR');
   const tecnicaAntes=await pg.evaluate(async()=>await (await fetch('/api/revision')).json());
-  await pg.getByRole('button',{name:'Preferências',exact:true}).click();
+  // Preferencias solo tiene acceso visible en inicio. Invocación de prueba para
+  // conservar el contrato del adaptador de idioma/voz sobre una sesión activa.
+  assert.equal(await pg.locator('#ajustes').isVisible(),false);
+  await pg.locator('#ajustes').evaluate(b=>b.click());
   await pg.locator('#idioma').selectOption('es');await pg.waitForFunction(()=>document.documentElement.lang==='es');
   assert.equal(await pg.locator('#voces').inputValue(),'kokoro:em_santa');
   await pg.locator('#voces').selectOption('piper:es_AR-daniela-high');await pg.locator('#velocidad').selectOption('0.8');
   await pg.locator('#probar-voz').click();await pg.waitForFunction(()=>window.__voz.at(-1)?.rate===0.8);
   await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
   const tecnicaDespues=await pg.evaluate(async()=>await (await fetch('/api/revision')).json());tecnicaDespues.idioma=tecnicaAntes.idioma;assert.deepEqual(tecnicaDespues,tecnicaAntes);
-  await pg.getByRole('button',{name:'Preferencias',exact:true}).click();assert.equal(await pg.locator('#voces').inputValue(),'piper:es_AR-daniela-high');
+  await pg.locator('#ajustes').evaluate(b=>b.click());assert.equal(await pg.locator('#voces').inputValue(),'piper:es_AR-daniela-high');
   await pg.locator('#idioma').selectOption('pt-BR');await pg.waitForFunction(()=>document.documentElement.lang==='pt-BR');
   assert.equal(await pg.locator('#voces').inputValue(),'kokoro:pm_santa');
   await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();
   await captura(pg,'10_reto_portugues.png');
   await clicar(pg,'Repetir');const cancelaciones=await pg.evaluate(()=>window.__cancelaciones);
   await clicar(pg,'Pausar','PAUSADA');assert.ok(await pg.evaluate(n=>window.__cancelaciones>n,cancelaciones));
-  await pg.getByRole('button',{name:'Preferências',exact:true}).click();await pg.locator('#voz').uncheck();
+  await pg.locator('#ajustes').evaluate(b=>b.click());await pg.locator('#voz').uncheck();
   await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();const lecturas=await pg.evaluate(()=>window.__voz.length);
   await clicar(pg,'Retomar','ESPERANDO_RESPUESTA');assert.equal(await pg.evaluate(()=>window.__voz.length),lecturas);
   const revisionRecarga=(await vista(pg)).revision;
   await pg.reload();await pg.getByRole('button',{name:'Dica',exact:true}).waitFor();assert.equal((await vista(pg)).revision,revisionRecarga);assert.equal(await pg.evaluate(()=>window.__voz.length),0);
   resultados.push({caso:'14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio',resultado:'OK',alcance:'API WAV y reproductor controlados.'});
-  resultados.push({caso:'Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; cambio en una partida sin alterar estado, registros o modelo',resultado:'OK'});
+  resultados.push({caso:'Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; adaptador de idioma sobre una sesión activa sin alterar estado, registros o modelo. Preferencias visible solo en inicio',resultado:'OK'});
   await pg.goto(base+'/revision');await pg.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
   assert.equal(await pg.getByRole('button',{name:'Atualizar registro',exact:true}).isVisible(),true);
   resultados.push({caso:'Revisión técnica con encabezados en portugués y registros originales conservados',resultado:'OK'});

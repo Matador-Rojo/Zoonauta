@@ -1,0 +1,163 @@
+{
+  "version": "3.8.0",
+  "fecha": "2026-10-11",
+  "navegador": "154.0.8037.98",
+  "casos_interfaz": 17,
+  "casos_voces_controladas": 4,
+  "errores_js": [],
+  "distribucion": "Animal y controles debajo a la izquierda; guía y ocho hábitats del mismo ancho a la derecha.",
+  "cabecera_y_preferencias": "Solo en inicio",
+  "pie_durante_juego": false,
+  "numeros_habitat": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08"
+  ],
+  "revision_geometria": {
+    "alcance": "Renderizado de vistas de prueba del banco real: pregunta en cada idioma, 72 pistas automáticas en cada idioma y 48 nombres de animal en cada idioma. Verificación de dimensiones; no simula aprendizaje ni evalúa comprensión.",
+    "casos_por_resolucion": 242,
+    "pictogramas_minimos_px": 84,
+    "imagenes_control_px": 56,
+    "resoluciones": [
+      {
+        "width": 1024,
+        "height": 768,
+        "casos": 242,
+        "fallos": []
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "casos": 242,
+        "fallos": []
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "casos": 242,
+        "fallos": []
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "casos": 242,
+        "fallos": []
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "casos": 242,
+        "fallos": []
+      }
+    ],
+    "movil": {
+      "anchos": [
+        320,
+        390,
+        768
+      ],
+      "sin_desbordamiento_horizontal": true,
+      "opciones_habitat": 8,
+      "contenido_apilado_con_scroll": true
+    }
+  },
+  "recorridos_interfaz": [
+    {
+      "caso": "Un solo botón Comenzar en la portada; después se elige jugador o agente en diálogo con pictogramas. Abrir, volver y Escape no crean una partida; el selector suspende el carrusel y devuelve el foco",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Ocho fondos rotan cada 10 segundos; pausa solo por botón, play y ambas flechas reanudan y reinician el intervalo; Preferencias suspende sin alterar la partida",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Catálogo de seis por página: acceso a los 48 animales sin duplicados, límites, retroceso, pausa conserva página, búsqueda global con tildes y sin resultados; navegar y buscar no cambia la partida",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; hábitats alineados con la guía, controles bajo el animal, números 01–08 y cabecera/pie solo en inicio. Pregunta, pista, apoyo neutral y confirmación sin scroll entre 1024 × 768 y 1920 × 1080",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Apoyo pictográfico: controles de 56 px, preguntas/pistas de al menos 84 px, secuencias de pausa/cierre e Iniciar sin fondos ni bordes; una selección pendiente ofrece pista automática y Repetir conserva el contenido",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Actualización del navegador conserva sesión sin repetir eventos ni audio",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Audio local español: texto exacto, repetición y cancelación",
+      "resultado": "OK",
+      "alcance": "API WAV y reproductor controlados; no certifica sonido audible ni comprensión."
+    },
+    {
+      "caso": "48 caricaturas, logo, 95 recursos educativos, nueve paisajes de portada y ocho paisajes exclusivos de tarjetas decodificados sin errores",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Pantalla móvil 390 × 844: inicio, preferencias y partida, ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos",
+      "resultado": "OK"
+    },
+    {
+      "caso": "14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio",
+      "resultado": "OK",
+      "alcance": "API WAV y reproductor controlados."
+    },
+    {
+      "caso": "Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; adaptador de idioma sobre una sesión activa sin alterar estado, registros o modelo. Preferencias visible solo en inicio",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Revisión técnica con encabezados en portugués y registros originales conservados",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Consulta técnica separada y modelo congelado",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida",
+      "resultado": "OK",
+      "alcance": "Descarga de WAV y reproductor controlados."
+    }
+  ],
+  "voces_controladas": [
+    {
+      "caso": "Microsoft y Google en español latinoamericano y portugués brasileño: región real, saludo, ritmo, selección por idioma y modelo inmutable",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Silencio, errores de voz localizados, eventos cancelados antiguos y recarga sin lectura automática",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Voces que aparecen tarde o desaparecen, restauración de selección y partida con voz del navegador sin modelos locales",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Cambio de una lectura WAV pendiente a Google: cancela la cola local y lee con el navegador",
+      "resultado": "OK"
+    }
+  ],
+  "pruebas_python_repetidas_en_este_ajuste": false,
+  "voces_reales_repetidas_en_este_ajuste": false,
+  "validacion_caa_con_usuarios": false
+}
