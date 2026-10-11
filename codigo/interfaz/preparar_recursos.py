@@ -38,13 +38,13 @@ def main():
     documento = json.loads(ruta.read_text())
     fuentes = []
     for p in documento["items"]:
-        if p["tipo"] == "ANIMAL" and p.get("fuente_imagen") == "image_gen integrada":
+        if p.get("fuente_imagen") == "image_gen integrada":
             archivo = RAIZ_PROYECTO / p["archivo_imagen"]
             if not archivo.is_file():
-                raise ValueError(f"Falta la caricatura {p['id']}; restaurar el recurso incluido.")
+                raise ValueError(f"Falta la ilustración {p['id']}; restaurar el recurso incluido.")
             if hashlib.sha256(archivo.read_bytes()).hexdigest() != p["sha256_imagen"]:
-                raise ValueError(f"La caricatura {p['id']} no coincide con su huella.")
-            print(p["id"], "caricatura conservada", flush=True)
+                raise ValueError(f"La ilustración {p['id']} no coincide con su huella.")
+            print(p["id"], "ilustración conservada", flush=True)
             continue
         aid = p["referencia_id"]
         if p["tipo"] == "ANIMAL" and aid in ARASAAC:

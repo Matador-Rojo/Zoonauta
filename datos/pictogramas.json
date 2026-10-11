@@ -1590,16 +1590,16 @@
       "referencia_id": null,
       "etiqueta": "Inicia el agente",
       "requisito_visual": "Modalidad en la que el sistema elige el escenario.",
-      "archivo_imagen": "assets/pictogramas/P_AGENTE.svg",
-      "fuente_imagen": "codigo/interfaz/crear_svg.py",
+      "archivo_imagen": "assets/pictogramas/P_AGENTE.webp",
+      "fuente_imagen": "image_gen integrada",
       "licencia": "CC BY-NC-SA 4.0",
       "estado_asset": "DISPONIBLE_POC",
       "validacion_visual_caa": "PENDIENTE_CON_USUARIOS",
-      "autor_imagen": "Elaboración original del prototipo",
+      "autor_imagen": "Ilustración original de Zoonauta generada con IA",
       "propietario": null,
-      "adaptacion_imagen": "Vector original, no derivado de imágenes ARASAAC",
-      "precision_representacion": "Ilustración esquemática del concepto; requiere validación de comprensión CAA.",
-      "sha256_imagen": "cadc1d310f98d6a44f30df1918234bef40b45b709d5b632aeb051d18d65d4aab"
+      "adaptacion_imagen": "Caricatura original con transparencia; no derivada de ARASAAC",
+      "precision_representacion": "Persona o robot guía para indicar quién elige; comprensión CAA pendiente de validación.",
+      "sha256_imagen": "31cc65da0d7b29e0d321f8325c66481794526b1ac88b46539657c91e09f65500"
     },
     {
       "id": "P_JUGADOR",
@@ -1607,18 +1607,18 @@
       "referencia_id": null,
       "etiqueta": "Inicia el jugador",
       "requisito_visual": "Modalidad en la que la persona elige el animal.",
-      "archivo_imagen": "assets/pictogramas/P_JUGADOR.svg",
-      "fuente_imagen": "codigo/interfaz/crear_svg.py",
+      "archivo_imagen": "assets/pictogramas/P_JUGADOR.webp",
+      "fuente_imagen": "image_gen integrada",
       "licencia": "CC BY-NC-SA 4.0",
       "estado_asset": "DISPONIBLE_POC",
       "validacion_visual_caa": "PENDIENTE_CON_USUARIOS",
-      "autor_imagen": "Elaboración original del prototipo",
+      "autor_imagen": "Ilustración original de Zoonauta generada con IA",
       "propietario": null,
-      "adaptacion_imagen": "Vector original, no derivado de imágenes ARASAAC",
-      "precision_representacion": "Ilustración esquemática del concepto; requiere validación de comprensión CAA.",
-      "sha256_imagen": "0fe73d6f5860e6f3b3df8d4d85b2c458d3d0c1cda3c47ec2a480074d5a2c0889"
+      "adaptacion_imagen": "Caricatura original con transparencia; no derivada de ARASAAC",
+      "precision_representacion": "Persona o robot guía para indicar quién elige; comprensión CAA pendiente de validación.",
+      "sha256_imagen": "41eaaba9a83dd561698ce6140f75fb9b3db93a89a35c0d8e03a8be1e68c4619b"
     }
   ],
   "nota": "95 recursos educativos: 48 caricaturas y 47 pictogramas de hábitats, apoyos y controles.",
-  "nota_assets": "Una sola imagen activa por animal, compartida por catálogo, preguntas, pistas, retratos y cierres. Comprensión CAA pendiente de evaluación con usuarios."
+  "nota_assets": "95 imágenes activas: 48 caricaturas de animales, 2 ilustraciones de modalidad y 45 SVG de hábitat, apoyos y controles. Comprensión CAA pendiente de validación con usuarios."
 }

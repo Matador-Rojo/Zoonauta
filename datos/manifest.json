@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "version_proyecto": "3.4.0",
-  "fecha_preparacion": "2026-10-10",
+  "fecha_preparacion": "2026-10-11",
   "paquete": "poc_interfaz_animales_habitats_v3",
   "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
   "conteos_datos": {
@@ -23,10 +23,11 @@
     "casos_aceptacion_no_ejecutados": 0,
     "fuentes_referenciadas": 55,
     "imagenes_png_arasaac": 0,
-    "imagenes_svg_originales": 47,
+    "imagenes_svg_originales": 45,
     "ilustraciones_decorativas_adicionales": 10,
     "imagenes_decorativas_utilizadas": 9,
-    "imagenes_caricatura_ia": 48
+    "imagenes_caricatura_ia": 48,
+    "imagenes_modalidad_ia": 2
   },
   "documentos_consultados": [
     {
@@ -110,8 +111,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 9701,
-      "sha256": "0c9c345ec32e34202457075d5a003e420144cfd8709e70792bbfebe95ef1f328"
+      "bytes": 9847,
+      "sha256": "528c34994ddfd8a9d2c1a1452d4ad501bb0765f0be1456c7b1ef5c810e5495b4"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -354,11 +355,6 @@
       "sha256": "0b73c93373c649f648c1d6458277716d848347c888eec8fe47b9912727969969"
     },
     {
-      "ruta": "assets/pictogramas/P_AGENTE.svg",
-      "bytes": 594,
-      "sha256": "cadc1d310f98d6a44f30df1918234bef40b45b709d5b632aeb051d18d65d4aab"
-    },
-    {
       "ruta": "assets/pictogramas/P_AGUA_DULCE.svg",
       "bytes": 509,
       "sha256": "9d1a2c8039e0d105702f822962d746d392848371117b33564ed63af58eaf299e"
@@ -472,11 +468,6 @@
       "ruta": "assets/pictogramas/P_INICIAR.svg",
       "bytes": 300,
       "sha256": "7daab6f5415e32b4d16afe214ed6245fb17ac9f886d99407cac32a01ae0a1a19"
-    },
-    {
-      "ruta": "assets/pictogramas/P_JUGADOR.svg",
-      "bytes": 621,
-      "sha256": "0fe73d6f5860e6f3b3df8d4d85b2c458d3d0c1cda3c47ec2a480074d5a2c0889"
     },
     {
       "ruta": "assets/pictogramas/P_LUGAR_ABIERTO.svg",
@@ -645,8 +636,8 @@
     },
     {
       "ruta": "codigo/interfaz/preparar_recursos.py",
-      "bytes": 5126,
-      "sha256": "db4df53aa51dbe579d5ebbc69b6a3c210242e76a251be9c1878c45c993485b2d"
+      "bytes": 5106,
+      "sha256": "79f20ce2f80721e75fd5aaa57a9401da2a5e20f80c4aae28a8cb3f215b8dd5bb"
     },
     {
       "ruta": "codigo/interfaz/preparar_voces.py",
@@ -680,8 +671,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 12889,
-      "sha256": "0962030a58b563eba40da6df24555108879c593d04863ac2fc3bfd53332a95ca"
+      "bytes": 12905,
+      "sha256": "3d9f73b8dff0d4d63970499fa9aaa64658e153304d7065c119bb3f5c906432d7"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -895,8 +886,8 @@
     },
     {
       "ruta": "datos/pictogramas.json",
-      "bytes": 82809,
-      "sha256": "67fe37770f00e1ddf1d76436624b5c9c2dbf5bf35bfcfa27a01cf19f083f1a15"
+      "bytes": 81262,
+      "sha256": "a7cc065b716e74ab28e4dbebb97f023f57d6cd56839bc4985a6468a1eebc1935"
     },
     {
       "ruta": "datos/pistas_originales.json",
@@ -920,8 +911,8 @@
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
-      "bytes": 3497,
-      "sha256": "ff244fd7709766b919bba2cb46bfc6c8f214acfb066553d49516170a116598b5"
+      "bytes": 3796,
+      "sha256": "77f651c35425eed6cf9db1577695d1b8f53da523db092466be9f0ed98004cb64"
     },
     {
       "ruta": "docs/datos/fuentes/baseline_id3_animales_habitats.md",
@@ -2217,6 +2208,21 @@
       "ruta": "docs/interfaz/revisiones/2026-10-10-caricaturas/revision_navegador.json",
       "bytes": 3542,
       "sha256": "cad422d314dfea425313a1a91ddf740aedd86d3d8ac8c12831a20f592bae73d1"
+    },
+    {
+      "ruta": "datos/imagenes_modalidad_ia.json",
+      "bytes": 3873,
+      "sha256": "8cb7c6188f38b63557a6c19742800596003dca77b498551991b96e358d3b9be3"
+    },
+    {
+      "ruta": "assets/pictogramas/P_JUGADOR.webp",
+      "bytes": 505520,
+      "sha256": "41eaaba9a83dd561698ce6140f75fb9b3db93a89a35c0d8e03a8be1e68c4619b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_AGENTE.webp",
+      "bytes": 552474,
+      "sha256": "31cc65da0d7b29e0d321f8325c66481794526b1ac88b46539657c91e09f65500"
     }
   ],
   "nombre_proyecto": "Zoonauta"

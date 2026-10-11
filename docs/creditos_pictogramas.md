@@ -5,7 +5,11 @@
 La interfaz usa una única caricatura original por animal: 48 ilustraciones generadas
 con la herramienta integrada image_gen, siguiendo el estilo de la segunda capibara
 seleccionada por el usuario. Las mismas imágenes se utilizan en catálogo, preguntas,
-pistas, retratos y cierres. Los 47 SVG de hábitats, apoyos y controles permanecen.
+pistas, retratos y cierres. Se conservan 45 SVG de hábitats, apoyos y controles.
+El 11 de octubre se sustituyeron los símbolos de persona y agente por dos
+caricaturas originales transparentes, generadas con image_gen integrada y ofrecidas
+bajo CC BY-NC-SA 4.0. Los prompts y huellas están en
+`datos/imagenes_modalidad_ia.json`; su comprensión CAA está pendiente de evaluación.
 Las caricaturas no derivan de los PNG de ARASAAC. Sus prompts y huellas se encuentran
 en `datos/imagenes_animales_ia.json`; se ofrecen con el material original del prototipo
 bajo CC BY-NC-SA 4.0. La comprensión CAA sigue pendiente de evaluación con usuarios.
