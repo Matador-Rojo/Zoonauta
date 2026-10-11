@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import asdict
 import json
 from pathlib import Path
+from random import Random, SystemRandom
 from threading import RLock
 from uuid import uuid4
 
@@ -25,11 +26,13 @@ class ConflictoVista(ValueError):
 
 class SesionWeb:
     def __init__(self, banco: BancoDatos, registros: Path | None = None,
-                 politica: str = "PROBABILISTICO", parametros: Path | None = MODELO_DEMO):
+                 politica: str = "PROBABILISTICO", parametros: Path | None = MODELO_DEMO,
+                 aleatorio: Random | None = None):
         self.banco = banco
         self.registros = registros
         self.politica = politica
         self.parametros = parametros
+        self.aleatorio = aleatorio if aleatorio is not None else SystemRandom()
         self.lock = RLock()
         self.lecturas_voz = ControlLecturasVoz()
         self.revision = 0
@@ -42,9 +45,15 @@ class SesionWeb:
         sid = "WEB-" + uuid4().hex
         registro = Registro(self.registros / f"{sid}.jsonl" if self.registros else None)
         motor = MotorGuia(self.banco, self.politica, parametros=self.parametros)
+        # Una permutación completa por partida: todos los animales pueden aparecer
+        # y ninguno se repite. La consola y los experimentos conservan su orden.
+        orden = self.aleatorio.sample(list(self.banco.escenarios), len(self.banco.escenarios))
+        anterior = getattr(self, "gestor", None)
+        if anterior and orden[0] == anterior.orden_escenarios[0]:
+            orden[0], orden[1] = orden[1], orden[0]
         return GestorPartida(self.banco, retos, self.politica, origen="INTERFAZ_MANUAL",
                              sesion_id=sid, registro=registro, motor=motor,
-                             ayuda_en_pendiente=True)
+                             ayuda_en_pendiente=True, orden_escenarios=orden)
 
     def vista(self) -> dict:
         with self.lock:

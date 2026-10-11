@@ -1,11 +1,43 @@
-# Zoonauta
+# Zoonauta 3.8.0
 
-Juego de animales y hábitats con pictogramas y guía de inteligencia artificial.
+Juego de animales y hábitats con pictogramas y una guía de inteligencia artificial.
+Disponible en español y portugués brasileño, con voces locales Piper y Kokoro
+y voces compatibles de Microsoft y Google del navegador.
 
-Versión 3.4.0. Español y portugués brasileño. Voces locales Piper y Kokoro,
-más voces Microsoft y Google disponibles en el navegador.
+![Pantalla principal actual de Zoonauta](docs/interfaz/3.8/inicio.webp)
 
-![Inicio con paisajes de Zoonauta](docs/interfaz/01_inicio.png)
+## Cómo se juega
+
+Pulsa **Comenzar** y escoge **Yo elijo** o **El agente elige**.
+El catálogo permite elegir cualquiera de los 48 animales, en ocho páginas de seis,
+con búsqueda global por nombre. En modo agente, cada partida mezcla los 48 animales
+y presenta tantos como hayas elegido en Preferencias (de 1 a 48; ocho por defecto).
+No se repiten animales dentro de la partida y una nueva partida comienza con otro animal.
+Pausar, repetir o recargar conserva el orden de la partida en curso.
+
+Cada reto presenta el animal, una pregunta y ocho hábitats. Las tarjetas usan paisajes
+realistas generados específicamente para ellas, con composición central, nombre y
+número del **01 al 08**. Las preguntas y pistas conservan sus secuencias de pictogramas,
+con texto de apoyo y lectura en voz alta. Una selección pendiente ofrece una pista
+nueva automáticamente, sin castigo. **Pista** usa un foco; **Repetir** conserva el
+contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
+El cierre muestra los retos realmente completados y permite comenzar otra partida.
+No hay puntos competitivos ni límite de tiempo o intentos.
+
+Los 95 recursos educativos activos son ilustraciones originales con transparencia:
+48 animales, ocho símbolos de hábitat y 39 apoyos o controles. Cada animal tiene una
+única caricatura. Los 33 apoyos de comunicación renovados en 3.8 siguen el mismo estilo
+de la capibara aprobada: contornos definidos, colores naturales y sombreado suave.
+Explorar y Buscar tienen representaciones distintas. Los pictogramas de preguntas,
+pistas y controles se muestran sin recuadros blancos. Su comprensión CAA sigue
+pendiente de evaluación con usuarios de Kallpa.
+
+La portada conserva sus ocho paisajes y cambia de fondo cada diez segundos.
+Pausar actúa al pulsarlo; play o las flechas reanudan y reinician el intervalo.
+Preferencias y una pestaña inactiva suspenden temporalmente el carrusel.
+La interfaz se adapta a móvil y permite selección con teclado.
+
+## Ejecutar el juego
 
 Clona este repositorio o descarga y extrae su ZIP. Abre la terminal en la carpeta
 que contiene `codigo`, `datos`, `docs`, `assets` y `tests`. Al extraer el ZIP en
@@ -81,54 +113,16 @@ instalador; los pesos grandes se descargan al preparar el juego. Consulta
 [la guía de voces](docs/interfaz/alternativas_voz.md) y
 [la guía de interfaz](docs/guia_interfaz.md).
 
-El inicio ocupa una sola pantalla, sin desplazamiento vertical. Sus ocho fotografías
-cambian cada 10 segundos; el nombre y el contador acompañan a cada fondo. Puedes
-pausar con el botón central; play o cualquiera de las flechas reanuda el cambio y
-reinicia los 10 segundos. El carrusel empieza en marcha. Preferencias y la pestaña
-inactiva suspenden temporalmente el cambio; movimiento reducido elimina las animaciones.
-La selva es ahora un paisaje sin el guacamayo y comparte el estilo de los otros siete.
-La portada tiene un único botón Comenzar; después se elige Yo elijo o El agente elige
-en un diálogo con pictogramas. Ambos diálogos usan la misma paleta oscura con acentos lima.
-Puedes ver la [portada con Comenzar](docs/interfaz/revisiones/2026-10-10-inicio/inicio.webp)
-y la [elección de modalidad](docs/interfaz/revisiones/2026-10-10-inicio/selector.webp).
-El catálogo muestra una sola caricatura por animal, generada con IA y sin fondo,
-en ocho páginas de seis animales. Permite buscar en todo el catálogo, incluso sin tildes.
-La misma caricatura identifica al animal en preguntas, pistas, tarjetas, retratos y cierres.
-Los pictogramas de hábitat y los apoyos de comunicación se conservan. Los ocho hábitats
-presentan pictogramas grandes y centrados, con los paisajes como apoyo de fondo.
-Una selección sin asociación confirmada recibe un mensaje amable y una pista nueva
-automáticamente, sin castigo. Repetir conserva esa pista. Los controles muestran los
-pictogramas originales y las pantallas de pausa y cierre incluyen sus secuencias.
-Las preguntas y pistas usan símbolos de 84–96 px; los hábitats, de 96–112 px.
-El cierre presenta el progreso real y permite comenzar otra partida.
-El progreso indica retos completados. Se adapta a móvil y admite
-selección con teclado. No necesita vídeos, GIF ni recursos visuales externos.
-Puedes ver la [pista automática](docs/interfaz/revisiones/2026-10-10-apoyos/pista.webp),
-el [catálogo](docs/interfaz/revisiones/2026-10-10-apoyos/catalogo.webp) y
-el [cierre](docs/interfaz/revisiones/2026-10-10-apoyos/cierre.webp).
-Los archivos y prompts de los animales están en
-[imagenes_animales_ia.json](datos/imagenes_animales_ia.json). Son imágenes sintéticas,
-no fotografías de ejemplares reales. El conjunto activo contiene 48 caricaturas de animales
-y dos ilustraciones de modalidad, ocho símbolos de hábitat, cuatro controles
-ilustrados y 33 pictogramas SVG de apoyo.
-Las tarjetas de hábitat muestran el paisaje realista, el nombre y un número del
-01 al 08 en la esquina superior derecha. Los pictogramas siguen disponibles en preguntas y
-pistas. El botón «Pista» utiliza un foco; sus recursos y los de hábitats están
-en [imagenes_habitats_controles_ia.json](datos/imagenes_habitats_controles_ia.json).
-Las tarjetas usan ocho paisajes generados específicamente con composición central,
-distintos de los fondos de la portada. Se muestran a todo el ancho debajo del animal
-y de la guía. Sus prompts y archivos están en
-[imagenes_paisajes_tarjetas_ia.json](datos/imagenes_paisajes_tarjetas_ia.json).
-La persona y el robot guía se documentan en
-[imagenes_modalidad_ia.json](datos/imagenes_modalidad_ia.json).
-Los recursos anteriores conservan sus
-créditos como material histórico; no se muestran como segunda imagen de los animales.
-El estilo toma como referencia la capibara seleccionada. Su comprensión CAA sigue
-pendiente de revisión con usuarios de Kallpa.
+## Inteligencia artificial y revisión
 
-La interfaz carga el modelo sintético contextual R01, congelado, elegido por su
-posición como primera réplica y no por su rendimiento. Para revisar los registros
-de la sesión abre http://127.0.0.1:8766/revision en el mismo navegador.
+La interfaz carga el modelo sintético contextual R01, congelado, elegido como primera
+réplica y no por su rendimiento. El núcleo comparte las asociaciones y transiciones
+con consola y simulador. Las interacciones manuales se registran sin modificar los
+parámetros del modelo. La selección aleatoria del animal es independiente de la
+política que escoge las pistas. Consola y simulador conservan su orden reproducible.
+
+Para revisar y exportar los registros de la sesión, abre
+http://127.0.0.1:8766/revision en el mismo navegador.
 
 Otros comandos desde esta carpeta, que contiene codigo, datos, docs, assets y tests:
 
@@ -142,33 +136,35 @@ python -m codigo.poc.aceptacion
 python -m unittest discover -s tests -v
 ```
 
-El núcleo conserva 48 animales, ocho opciones por reto y ambas modalidades.
-No hay puntos competitivos ni límite de tiempo o intentos. ID3 construye el árbol
-calculando ganancias. Se ejecutó aprendizaje probabilístico con interacciones
-sintéticas y evaluación separada: 34 560 retos de entrenamiento, 51 840 de
-evaluación. La revisión actual de accesibilidad está en
-`docs/interfaz/revisiones/2026-10-10-apoyos/`: 68 pruebas Python, ocho casos de
-aceptación del protocolo de consola y 21 casos de navegador, con voces controladas.
-Las evidencias de síntesis real permanecen en `docs/interfaz/revision_voces_locales.json`.
+ID3 construye el árbol calculando ganancias. El aprendizaje probabilístico y su
+evaluación separada se realizaron con datos sintéticos: 34 560 retos de entrenamiento
+y 51 840 de evaluación. Los resultados se conservan en `docs/experimentos`.
+La ayuda automática ante selecciones pendientes está activa en la interfaz;
+consola y simulador conservan su protocolo de ayuda explícita.
 
-La consola utiliza los priors originales salvo que indiques un modelo con
---parametros; conserva sus parámetros congelados durante la sesión.
-La interfaz activa la ayuda automática ante selecciones pendientes; consola y
-simulador conservan su protocolo de ayuda explícita para reproducir los experimentos anteriores.
-El simulador y el informe no requieren paquetes externos. Volver a exportar
-el PNG mediante --grafico requiere matplotlib; el gráfico ya está incluido.
+La versión 3.8 pasó 70 pruebas Python, ocho casos de aceptación de consola y
+21 casos de navegador (17 de interfaz y cuatro de voces controladas). Comprueban
+transiciones, repetición, pausa, duplicados, traducciones, transparencia y recorridos
+completos del agente sin repetir los 48 animales. [Revisión](docs/interfaz/3.8/revision.json).
+Las evidencias anteriores de síntesis real de las 14 voces permanecen en
+`docs/interfaz/revision_voces_locales.json`; no certifican pronunciación o escucha
+en otros dispositivos. Los documentos V1/V2 y sus resultados son antecedentes.
 
-Esta versión contiene el código, los datos, los modelos, la interfaz y sus imágenes.
-Se comprobó síntesis real de las 14 opciones con WAV PCM no silencioso y
-repetición idéntica desde caché. Esa prueba no certifica pronunciación ni sonido
-audible en otros dispositivos. La comprensión CAA de las secuencias requiere validación
-con usuarios. Los documentos V1/V2 son antecedentes; esta guía y la de interfaz
-describen el estado actual. Los experimentos conservan su procedencia sintética.
+## Imágenes y documentación
 
-Créditos: 28 PNG ARASAAC sin modificación, Sergio Palao, Gobierno de Aragón,
-CC BY-NC-SA; 67 SVG originales del prototipo, CC BY-NC-SA 4.0.
-Consulta `docs/creditos_pictogramas.md` y `datos/fuentes_pictogramas.json`.
-La portada y los ocho paisajes son imágenes decorativas generadas con IA,
-incluidas en nueve archivos WebP: ocho fondos de inicio y un atlas para el tablero. No forman parte de los 95 pictogramas educativos.
-Las referencias visuales, los prompts y las rutas están en
-`docs/interfaz/diseno_visual.md`. El mapa SVG anterior se conserva como antecedente.
+Las ilustraciones y paisajes son imágenes sintéticas generadas con la herramienta
+integrada de imágenes, no fotografías de ejemplares o lugares específicos.
+Las rutas, prompts, transparencia y huellas de integridad se documentan en:
+
+- [Animales](datos/imagenes_animales_ia.json).
+- [Persona y agente](datos/imagenes_modalidad_ia.json).
+- [Símbolos de hábitat y controles](datos/imagenes_habitats_controles_ia.json).
+- [Apoyos de preguntas y pistas, versión 3.8](datos/imagenes_apoyos_ia.json).
+- [Paisajes centrados de las tarjetas](datos/imagenes_paisajes_tarjetas_ia.json).
+
+Los 17 WebP decorativos utilizados (ocho fondos de inicio, un atlas y ocho paisajes
+de tarjetas) son adicionales al banco de 95 pictogramas.
+Los créditos de ARASAAC y de los SVG del prototipo se mantienen como antecedentes;
+esos recursos no son las imágenes activas. Las ilustraciones originales se ofrecen
+bajo CC BY-NC-SA 4.0. Consulta [créditos](docs/creditos_pictogramas.md),
+[guía de interfaz](docs/guia_interfaz.md) y [diseño visual](docs/interfaz/diseno_visual.md).

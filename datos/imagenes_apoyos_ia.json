@@ -1,0 +1,539 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-11",
+  "version": "3.8.0",
+  "contenido": "33 apoyos originales de comunicación para preguntas, pistas y controles.",
+  "estilo": "Misma caricatura que los animales; referencia visual: assets/animales/A31.webp (capibara aprobada). Contornos definidos, colores naturales y sombreado suave.",
+  "herramienta": "image_gen integrada",
+  "modo": "built-in",
+  "items": [
+    {
+      "id": "P_BUSCAR",
+      "nombre": "Buscar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A large hand-held magnifying glass closely inspecting one green leaf. The magnifying glass is the dominant object, pale blue clear lens, warm cream hand gripping a dark green handle. This means focused searching, distinct from exploring a map.",
+      "archivo": "assets/pictogramas/P_BUSCAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 450974,
+      "sha256": "51e6dc449a6c8039369a2c7cc122e21f41603c930a0a18fe0d0f461dcb826894",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_VIVIR",
+      "nombre": "Vivir",
+      "prompt": "Use case: scientific-educational. Create one original transparent communication pictogram for the concept TO LIVE / NATURAL HOME in the Zoonauta animal habitat game. Attached capybara is STYLE REFERENCE ONLY: match the clean polished 2D animal cartoon, smooth dark brown contours, natural warm colors and subtle soft flat shading. Do NOT depict any animal, capybara or human. Subject: an inviting small natural EARTH BURROW shelter, one rounded brown earthen mound with a clearly visible arched entrance, its roof gently covered with a few large green leaves, and one small warm green heart centered inside the entrance to communicate living/home. Natural shelter, not a manmade brick house, cage or kennel. Only mound, doorway, green leaves, small heart and two tufts of grass. Compact recognizable silhouette at 96 pixels, few large shapes and restrained detail. This must be distinct from the forest, the search map and any animal portrait. Centered in a square canvas, complete drawing within 12 percent transparent margins. Genuine transparent alpha around and between the elements: no white tile, rectangle, card, enclosing circle, frame, vignette, backdrop scene or drop shadow. No text, letters, labels, numbers, logos or watermark. No photography, no 3D.",
+      "archivo": "assets/pictogramas/P_VIVIR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 450426,
+      "sha256": "8715ba0e467586680b3e2ed6949ab29eb56776ff8c47bcccd3abea71590ed664",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_QUE_LUGAR",
+      "nombre": "Qué lugar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A compact folded landscape map with two different green land patches and one large blue location pin whose center contains a simple cream question-mark symbol. This asks WHICH PLACE. No compass or magnifying glass.",
+      "archivo": "assets/pictogramas/P_QUE_LUGAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 495414,
+      "sha256": "3c12df299dd025e7e19f1e0fc580380c956c8d109aa6fb1e0758200d23f3ba27",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_PREGUNTAR",
+      "nombre": "Pregunta",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A friendly cream human face in three-quarter view with one teal outlined speech bubble containing a single clear yellow question-mark symbol. This depicts asking a question, not a place or search.",
+      "archivo": "assets/pictogramas/P_PREGUNTAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 569908,
+      "sha256": "ea8bfec649446bd82575d01e9887af3e9b309bd42d772051417ab200c5f05f7b",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_OPCION",
+      "nombre": "Una opción",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: Three small distinct rounded cards side by side, the center card clearly chosen with a lime green checkmark, side cards muted blue and cream, no writing. One selected alternative among several; no hand.",
+      "archivo": "assets/pictogramas/P_OPCION.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 348964,
+      "sha256": "de848824c918b1f10df924e2e8c4a6082810f85f502cefeb6b3cf2bbdbd3a054",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_TOCAR",
+      "nombre": "Tocar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A friendly cream hand with index fingertip pressing one small teal circular touch point, two short lime contact marks at fingertip. A clear tap action. No arrow or other cards.",
+      "archivo": "assets/pictogramas/P_TOCAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 334038,
+      "sha256": "8ccc98f7fd0b13f2e08f5d3cc68524dfa49fc826e003b5326859754b7dabdf0a",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_SENALAR",
+      "nombre": "Señalar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A cream hand seen from the side with index finger stretched horizontally pointing RIGHT toward one green leaf, with a visible gap between finger and leaf. Clear pointing without touching. No tap rings.",
+      "archivo": "assets/pictogramas/P_SENALAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 245076,
+      "sha256": "73d476904a25b2e0a0c5893020d12e6019e2d03c7c9217fdd345330eca23184d",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_MUCHOS_ARBOLES",
+      "nombre": "Muchos árboles",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A compact dense group of exactly seven broadleaf green trees with overlapping rounded canopies and visible brown trunks, filling a small grassy patch. Many trees, no climate symbols, no sun or thermometer.",
+      "archivo": "assets/pictogramas/P_MUCHOS_ARBOLES.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 741122,
+      "sha256": "6a3d8af272d8f00924c0274ddfcc129ec857569f9061c37bd69e1adb2fc224d2",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_LUGAR_ABIERTO",
+      "nombre": "Lugar abierto",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A wide gently curving green meadow patch with a low unobstructed horizon and a small pale-blue sky stroke, very few low grass tufts. Clearly wide open space with no trees, mountains or fences.",
+      "archivo": "assets/pictogramas/P_LUGAR_ABIERTO.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 381964,
+      "sha256": "b405461a23e93f1cc58d697ecea6c352e10db8d81dcf4c9ca55de7bcfe147ce5",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_CALOR",
+      "nombre": "Cálido",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A friendly stylized golden sun beside a clearly hot thermometer filled HIGH with coral red liquid, three small warm wavy heat lines. Easily readable hot weather, no numerals or text.",
+      "archivo": "assets/pictogramas/P_CALOR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 573670,
+      "sha256": "227a9dbfd52c984a9689a9428f40a045717cf03259b72cc5e058d24b2d1c0087",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_MUCHA_AGUA",
+      "nombre": "Mucha agua",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A broad large blue body of water as a self-contained wavy patch with three visible wave crests and one large blue water drop above it. Dominant abundant water, no salt crystals or reeds.",
+      "archivo": "assets/pictogramas/P_MUCHA_AGUA.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 361444,
+      "sha256": "4c1f16e8cd61017d14bef19ea5da9b761bf659875215a922049358af62308763",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_PAISAJE_FRIO",
+      "nombre": "Paisaje frío",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A small gently rolling snow-covered land patch with one bare tree and a large pale-blue snowflake. Cold landscape, no glacier iceberg, no globe, no high peaks.",
+      "archivo": "assets/pictogramas/P_PAISAJE_FRIO.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 536914,
+      "sha256": "7a8bf2137588228be93d372a8152e4fd0b7322b7bd43cbfc2ecd31abae9c0275",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_BOSQUE",
+      "nombre": "Bosque",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A small woodland with exactly three tall deciduous trees, some green and some warm ochre foliage, spaced trunks with a small leafy woodland opening between them. No dense seven-tree group, no climate symbols.",
+      "archivo": "assets/pictogramas/P_BOSQUE.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 677088,
+      "sha256": "ae489d0ea4c34acc96ac228e0e5330ab79c6a50a8e6d24eed50598965f129eb9",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_HUMEDAD",
+      "nombre": "Húmedo",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: Two large fresh green tropical leaves covered in several bright blue water droplets, one larger drop hanging from the leaf tip. Clearly moisture on foliage, no sun, ocean or thermometer.",
+      "archivo": "assets/pictogramas/P_HUMEDAD.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 541390,
+      "sha256": "bf0d695d28a2bda02177f8e722a3674ae665d3d5e2d4d2b4156cb7ec00ad8a99",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_PASTO_ABUNDANTE",
+      "nombre": "Mucho pasto",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A thick lush clump of many long green grass blades growing on a compact green ground patch. Grass fills most of the silhouette, no trees or flowers.",
+      "archivo": "assets/pictogramas/P_PASTO_ABUNDANTE.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 745546,
+      "sha256": "9bfbb3afae395f5703ea172c08078e0c80fe9ddff3c4d57b5141c0bc7be9c3f7",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_ARBOLES_SEPARADOS",
+      "nombre": "Árboles separados",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: Exactly three small green trees spaced widely apart on a slender grass patch, clear transparent gaps between canopies and trunks. Clearly dispersed trees, not a forest.",
+      "archivo": "assets/pictogramas/P_ARBOLES_SEPARADOS.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 351024,
+      "sha256": "935af85864d0630e269ebde466db74c333dd1ac2f3f1d3562e480907c875aae6",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_SECO",
+      "nombre": "Seco",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A compact tan patch of dry cracked earth with one curled dry ochre leaf. Distinct wide cracks are readable at small size. No sun or thermometer or cactus.",
+      "archivo": "assets/pictogramas/P_SECO.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 479478,
+      "sha256": "56e5ae1c555c7d40bae7af97eab60561ac814b9b0bc25d5a5e7fe66b9ba30d4e",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_POCAS_PLANTAS",
+      "nombre": "Pocas plantas",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A broad small tan ground patch holding exactly two tiny green sprouts far apart with lots of bare earth between. Sparse vegetation, no large cactus or cracked soil.",
+      "archivo": "assets/pictogramas/P_POCAS_PLANTAS.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 261802,
+      "sha256": "44415a99cbf715eaa6216417ccbe074cb01050a73eaef70c50dd008167f5aa19",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_AGUA_SALADA",
+      "nombre": "Agua salada",
+      "prompt": "Use case: scientific-educational. Create one original transparent communication pictogram meaning SALT WATER for the Zoonauta habitat game. The attached approved capybara is STYLE REFERENCE ONLY. Match its clean polished 2D cartoon, smooth dark brown/blue contours, natural restrained colors and soft flat shading. Do not depict a capybara. Subject: a large clear blue ocean wave beside an unmistakable small salt shaker tilted toward the wave. The salt shaker must have a SHORT rounded grey perforated metal lid with several visible holes, a small clear glass body containing fine WHITE SALT GRANULES, and a few tiny salt grains falling toward the wave. It must read as a kitchen salt shaker, never an ice cube, sugar cube, water bottle or iceberg. Absolutely no cubes or large crystals, no snow. Keep only wave and salt shaker. Few large readable shapes, same animal cartoon style, no photorealism, no 3D. Centered composition, complete objects inside a square canvas with 12 percent margin, recognizable at 96 pixels. TRUE TRANSPARENT ALPHA background around and between objects: no white tile, card, enclosing badge, frame, vignette or background scene. No words, labels, letters, numbers, logos or watermark.",
+      "archivo": "assets/pictogramas/P_AGUA_SALADA.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 512124,
+      "sha256": "95a908b2628fbeaf1cba054d9868a3105d923d36b895dfdbe76db69e68029ab9",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_AGUA_DULCE",
+      "nombre": "Agua dulce",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A clean blue water drop above a compact calm oval freshwater pond patch edged by two green reed leaves. Fresh natural water, no sweet food or sugar, no salt crystals, no river ribbon.",
+      "archivo": "assets/pictogramas/P_AGUA_DULCE.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 424712,
+      "sha256": "1f9443e6159f22f19ca37f60e0acceffb19679e62f9ae1dcdf3fa140c671d527",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_RIO",
+      "nombre": "Río",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A compact blue S-shaped river winding between two narrow green grassy banks, viewed obliquely from above. Dominant flowing river ribbon, no pond or ocean.",
+      "archivo": "assets/pictogramas/P_RIO.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 532678,
+      "sha256": "458383bf8b1fe43eabf9661283e37a6f5e65a1e20fb8856a8dbc125773ccc7cc",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_CLIMA_TEMPLADO",
+      "nombre": "Clima templado",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A thermometer filled to the MIDDLE with soft green liquid, beside one half sun partly covered by a small pale-blue cloud. Mild weather, no red heat lines, no snowflake, no numbers.",
+      "archivo": "assets/pictogramas/P_CLIMA_TEMPLADO.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 356836,
+      "sha256": "9c72fa4206c6a14447a8e8eb82c5a5671baf3d4bba9c205df0d62bf1e2c882c8",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_PLANETA",
+      "nombre": "Planeta",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: One recognizable friendly Earth globe with blue oceans and green continents, subtle cartoon shading and clean dark outline. No polar markers, arrows, background disk or stars.",
+      "archivo": "assets/pictogramas/P_PLANETA.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 674532,
+      "sha256": "8db03ad6b1f1a15a414d5c5a86672d6b411665cd6731e008948472de6ec949ab",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_POLOS",
+      "nombre": "Extremos norte y sur",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A blue-green Earth globe with bright white ice caps at both the TOP and BOTTOM, exactly two large small teal arrows pointing toward these ice caps from above and below. No writing. The north and south extremes are highlighted.",
+      "archivo": "assets/pictogramas/P_POLOS.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 408852,
+      "sha256": "47c3a152999c8596d84857a4849e0620717a77b7d58dfeef8d3a92f16d50b207",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_MONTANAS_ALTAS",
+      "nombre": "Montañas altas",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A prominent very tall rocky mountain with a clearly snow-capped summit above two much smaller low foothills. Centered high peak and rugged steep sides; no iceberg, ocean, globe or sun.",
+      "archivo": "assets/pictogramas/P_MONTANAS_ALTAS.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 511534,
+      "sha256": "6d97c233da9730ac678edf41a80f4bea1e80ac85660de212875ee041a8180af0",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_CONFIRMAR",
+      "nombre": "Confirmar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: One large bold lime green checkmark with smooth rounded form and dark green contour, subtle soft cartoon shading. Entire checkmark visible, no enclosing circle, box or badge.",
+      "archivo": "assets/pictogramas/P_CONFIRMAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 265444,
+      "sha256": "42069eae159a637ffccf3190dc98dfc34ee6812a21ab356fc69d23006dacf03f",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_EXPLORAR",
+      "nombre": "Explorar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: An unfolded cream and green trail map with a small classic compass resting at its corner, one winding dotted route without any words. A clear exploration symbol, no magnifying glass or question mark.",
+      "archivo": "assets/pictogramas/P_EXPLORAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 590708,
+      "sha256": "ce0bb74336acaf2339ac0da25c85d6793392523315d55e14b5d8a4dc9752fb51",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_PROBAR",
+      "nombre": "Probar otra opción",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: Two small blank option cards: a muted cream card on the left and a green card on the right, with a thick teal curved arrow moving from LEFT to RIGHT above them. Try another choice. No repeated circular arrow, checkmark, hand or text.",
+      "archivo": "assets/pictogramas/P_PROBAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 367760,
+      "sha256": "57e96a2a4f41555a5698fbcc81dbcf3246a8519cc35a97f53f2822f04efe92ef",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_REANUDAR",
+      "nombre": "Reanudar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: One bold lime green right-facing play triangle with a distinct teal curved return arrow wrapping only around its LEFT and TOP edges. Resume an interrupted activity; keep the center free and no enclosing background disk.",
+      "archivo": "assets/pictogramas/P_REANUDAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 380306,
+      "sha256": "49bc17645d893d09f8724ff09978169adbe0228f0bac3624bf9c51ff55355aee",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_CONTINUAR",
+      "nombre": "Continuar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: One large bold lime green arrow pointing RIGHT with a broad horizontal shaft and clear triangular tip, dark green contour and subtle soft cartoon shading. Continue forward; no door or enclosed background.",
+      "archivo": "assets/pictogramas/P_CONTINUAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 248756,
+      "sha256": "ac3aaea8b625e70382f18857efde36ca15abfed3ee4499f2d6849d99accdf295",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_INICIAR",
+      "nombre": "Iniciar",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: One large clear right-facing lime green play triangle with softly rounded corners, dark forest-green outline and subtle soft cartoon shading. Single standalone start/play symbol, no circle, square, plate, arrow loop or background.",
+      "archivo": "assets/pictogramas/P_INICIAR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 295702,
+      "sha256": "ddbd6d83a5375f5b9a51840ed9a0c4939308f8833ca4fed42f65a3cabfe11042",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_ELEGIR",
+      "nombre": "Elegir",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: A cream hand with its index finger selecting the middle of three compact small leaf-shaped option symbols, middle leaf lime green and side leaves muted teal. The finger points at the selected middle choice; no tap ripple or text.",
+      "archivo": "assets/pictogramas/P_ELEGIR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 349704,
+      "sha256": "a0ae9572b4a5ca898a2dbee50b60f9c8c688a05a74b250d20e6103b06a9fa95a",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_FIN",
+      "nombre": "Fin",
+      "prompt": "Use case: scientific-educational. Asset type: one original transparent communication pictogram for Zoonauta. Input image 1 is STYLE REFERENCE ONLY: match the exact clean 2D animal cartoon style of the approved capybara: smooth bold dark outlines, rounded natural shapes, restrained warm natural colors, gentle flat shading, friendly accessible appearance. Do not copy or depict the capybara unless explicitly required by the subject. Avoid generic flat SVG appearance, photorealism or 3D. Draw one coherent compact symbol centered in a square with 12% transparent margin. All parts fully inside the canvas; readable at 96 pixels. Use few large meaningful shapes with controlled detail. Background: genuine transparent alpha around and between shapes, no white or colored rectangle, no enclosing tile or badge, no drop shadow, no vignette, no background scene. No words, letters, numbers, labels, logos or watermarks. A question-mark symbol is allowed ONLY if the subject explicitly requests it. Subject: One small friendly finish flag on a short pole, cream-and-dark-green checkered cloth waving gently to the right. Clearly end or finish, soft cartoon contours, no trophy, person, landscape, writing or background.",
+      "archivo": "assets/pictogramas/P_FIN.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "bytes": 351006,
+      "sha256": "61d68f4a37ee430d52b726689f4051b6180052e71dabb30094980e4fdb5dc70c",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    }
+  ]
+}

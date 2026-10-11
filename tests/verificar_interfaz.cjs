@@ -43,10 +43,16 @@ async function mockVoz(context,disponibles=true,vocesNativas=[]){
   },vocesNativas);
 }
 async function vista(page){return page.evaluate(async()=>await (await fetch('/api/vista')).json());}
+async function comprobarTransparencia(locator){
+  const estilos=await locator.evaluateAll(imgs=>imgs.map(i=>{const s=getComputedStyle(i);return {fondo:s.backgroundColor,borde:s.borderTopWidth,relleno:s.paddingTop};}));
+  assert.ok(estilos.length>0);
+  assert.ok(estilos.every(s=>s.fondo==='rgba(0, 0, 0, 0)'&&s.borde==='0px'&&s.relleno==='0px'));
+}
 async function comprobarPictogramas(page){
   const v=await vista(page);
   assert.deepEqual(await page.locator('.secuencia img').evaluateAll(imgs=>imgs.map(i=>i.getAttribute('src'))),v.respuesta.pictogramas.map(id=>v.pictogramas[id].imagen));
   assert.equal(await page.locator('.secuencia .animal-foto').count(),0);
+  await comprobarTransparencia(page.locator('.secuencia img'));
   assert.ok((await page.locator('.secuencia img').evaluateAll(imgs=>imgs.map(i=>i.getBoundingClientRect().width))).every(w=>w>=84));
 }
 async function comprobarControles(page){
@@ -55,6 +61,7 @@ async function comprobarControles(page){
     const nombre=await b.getAttribute('aria-label');
     assert.equal(await b.locator('img').getAttribute('src'),v.pictogramas[ids[nombre]].imagen);
     assert.ok(await b.locator('img').evaluate(i=>i.getBoundingClientRect().width>=56));
+    await comprobarTransparencia(b.locator('img'));
   }
 }
 async function captura(page,archivo,fullPage=true){
@@ -223,6 +230,7 @@ async function clicar(page,texto,fase){
   await clicar(page,'Continuar','COMPLETADA');
   await comprobarPictogramas(page);
   assert.equal(await page.getByRole('button',{name:'Comenzar otra partida',exact:true}).locator('img').getAttribute('src'),(await vista(page)).pictogramas.P_INICIAR.imagen);
+  await comprobarTransparencia(page.getByRole('button',{name:'Comenzar otra partida',exact:true}).locator('img'));
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'1 / 1');
   await captura(page,'13_cierre_completado.png');await clicar(page,'Comenzar otra partida','INICIO');
   await clicar(page,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await page.locator('.habitats button').count(),8);
@@ -230,15 +238,15 @@ async function clicar(page,texto,fase){
   await comprobarPictogramas(page);
   assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
   await captura(page,'14_cierre_salida.png');
-  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; la misma caricatura identifica cada animal y los ocho símbolos de hábitat miden al menos 96 px sin desbordamiento entre 320 y 1280 px',resultado:'OK'});
-  resultados.push({caso:'Apoyo pictográfico completo: catálogo con una caricatura por animal, controles de 56 px, pregunta/pistas de al menos 84 px, pausa/cierre con secuencias, selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
+  resultados.push({caso:'Recorrido de jugador y agente, 48 animales, ocho opciones, pista, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; una caricatura por animal, paisajes de hábitat a todo el ancho y números 01–08 sin desbordamiento entre 320 y 1280 px',resultado:'OK'});
+  resultados.push({caso:'Apoyo pictográfico: controles de 56 px, preguntas/pistas de al menos 84 px, secuencias de pausa/cierre e Iniciar sin fondos ni bordes; una selección pendiente ofrece pista automática y Repetir conserva el contenido',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
   await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await page.getByRole('searchbox',{name:'Buscar animal'}).fill('jirafa');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Pista');
   await captura(page,'03_reto_escritorio.png');
-  // Los 95 recursos activos se decodifican en el navegador (WebP y SVG).
+  // Los 95 recursos activos se decodifican en el navegador (WebP transparentes).
   const assetTest=await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();
     const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:8},(_,i)=>`/habitats/H0${i+1}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
@@ -387,7 +395,7 @@ async function clicar(page,texto,fase){
   assert.deepEqual(await vista(pc),antesCambio);
   resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.4.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'3.8.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

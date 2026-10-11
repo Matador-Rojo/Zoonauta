@@ -65,7 +65,7 @@ body:not([data-fase="INICIO"]) {
 .respuesta h2 { font-size:24px; font-weight:400; line-height:1.35; margin-bottom:20px; }
 .secuencia { gap:12px; }
 .simbolo { width:104px; flex-basis:104px; }
-.simbolo img { width:96px; height:96px; border-radius:16px; padding:5px; }
+.simbolo img { width:96px; height:96px; background:transparent; border:0; border-radius:0; padding:0; }
 .simbolo figcaption { color:#e0ebd7; font-size:11px; font-weight:400; }
 .instruccion { color:#bccfc0; font-size:14px; margin-bottom:14px; }
 .habitats-panel { grid-column:1/-1; min-width:0; }
@@ -88,7 +88,7 @@ body:not([data-fase="INICIO"]) {
 .acciones { padding:16px 0 0; background:none; border:0; border-top:1px solid #ffffff20; border-radius:0; margin-top:24px; gap:12px; }
 .accion { border-radius:999px; min-height:50px; background:#ffffff05; font-size:14px; padding:12px 20px; border-color:#ffffff30; }
 .accion svg { width:19px; height:19px; flex-shrink:0; }
-.acciones .accion img,.cierre-contenido>.accion img { width:56px; height:56px; padding:4px; border-radius:12px; flex-shrink:0; }
+.acciones .accion img,.cierre-contenido>.accion img { width:56px; height:56px; background:transparent; border:0; padding:0; border-radius:0; flex-shrink:0; }
 .acciones img.control-ilustracion { background:transparent; padding:0; border-radius:0; }
 .cierre .secuencia { margin-bottom:24px; }
 .cierre { max-width:1160px; margin:24px auto 50px; padding:30px; display:grid; grid-template-columns:1fr 1.1fr; align-items:center; gap:40px; text-align:left; border-color:#ffffff25; border-radius:32px; background:radial-gradient(ellipse at 16% 52%,#4e744145,transparent 65%),#152c23; min-height:510px; overflow:hidden; }
