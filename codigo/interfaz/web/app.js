@@ -245,8 +245,8 @@ function render(enfocar=false,conservarPaisaje=false) {
     if(f==="ESPERANDO_RESPUESTA")mesa.append(nodo("p","instruccion","Toca un lugar donde pueda vivir."));
     const hab=nodo("div","habitats"); hab.setAttribute("aria-label",t("Ocho hábitats"));
     for(const h of vista.opciones_habitat) {
-      const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta",h.pictograma_id);
-      b.prepend(paisaje(h.id));b.append(nodo("span","habitat-numero",h.id.slice(1)));
+      const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta");
+      b.prepend(paisaje(h.id));
       b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
     }
     mesa.append(hab); tablero.append(companero,mesa); juego.append(tablero,controles());

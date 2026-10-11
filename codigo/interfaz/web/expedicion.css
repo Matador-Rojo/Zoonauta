@@ -68,7 +68,7 @@ body:not([data-fase="INICIO"]) {
 .simbolo figcaption { color:#e0ebd7; font-size:11px; font-weight:400; }
 .instruccion { color:#bccfc0; font-size:14px; margin-bottom:14px; }
 .habitats { gap:14px; }
-.habitats .tarjeta { min-height:202px; border-radius:20px; background:#1b3628; border-color:#ffffff30; transition:transform .18s ease; }
+.habitats .tarjeta { min-height:214px; border-radius:20px; background:#1b3628; border-color:#ffffff28; transition:transform .18s ease; }
 .habitats .tarjeta .paisaje { height:100%; background-size:cover; background-position:center; opacity:1; }
 .habitats .paisaje[data-habitat="H01"] { background-image:url('/portada-selva.webp'); }
 .habitats .paisaje[data-habitat="H02"] { background-image:url('/fondos/H02.webp'); }
@@ -78,12 +78,10 @@ body:not([data-fase="INICIO"]) {
 .habitats .paisaje[data-habitat="H06"] { background-image:url('/fondos/H06.webp'); }
 .habitats .paisaje[data-habitat="H07"] { background-image:url('/fondos/H07.webp'); }
 .habitats .paisaje[data-habitat="H08"] { background-image:url('/fondos/H08.webp'); }
-.habitats .tarjeta::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#071a13f5,transparent 70%); pointer-events:none; }
-.habitats .tarjeta img { top:12px; left:12px; transform:none; width:64px; height:64px; padding:4px; border-radius:12px; background:#f2f5e9; border:1px solid #e6efd9; box-shadow:0 3px 10px #00000025; }
-.habitats .tarjeta>span:not(.habitat-numero) { position:absolute; bottom:0; left:0; min-height:58px; background:#142d22ed; border:0; padding:10px 8px; justify-content:center; color:#fff; font-size:15px; font-weight:600; text-align:center; }
-.habitats .tarjeta .habitat-numero { position:absolute; top:16px; right:14px; left:auto; bottom:auto; width:auto; min-height:0; padding:0; border:0; background:none; font-size:10px; color:#f2f5e9; letter-spacing:1px; text-shadow:0 1px 6px #000; }
+.habitats .tarjeta::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#061d16ed 0%,#061d1640 40%,transparent 70%); pointer-events:none; }
+.habitats .tarjeta>span { position:absolute; bottom:0; left:0; min-height:0; background:transparent; border:0; padding:18px 16px; justify-content:flex-start; color:#fff; font-size:17px; font-weight:600; text-align:left; text-shadow:0 2px 8px #0009; }
 .habitats .tarjeta:hover:not(:disabled) { transform:translateY(-2px); }
-.habitats .tarjeta:hover:not(:disabled)>span:not(.habitat-numero) { background:#25452c; }
+.habitats .tarjeta:hover:not(:disabled)>span { background:transparent; }
 .acciones { padding:16px 0 0; background:none; border:0; border-top:1px solid #ffffff20; border-radius:0; margin-top:24px; gap:12px; }
 .accion { border-radius:999px; min-height:50px; background:#ffffff05; font-size:14px; padding:12px 20px; border-color:#ffffff30; }
 .accion svg { width:19px; height:19px; flex-shrink:0; }
@@ -115,9 +113,7 @@ body:not([data-fase="INICIO"]) {
   .tablero { grid-template-columns:245px minmax(0,1fr); gap:20px; }
   .companero { padding:18px; }
   .animal-actual strong { font-size:27px; }
-  .habitats .tarjeta { min-height:190px; }
-  .habitats .tarjeta img { width:56px; height:56px; }
-  .habitats .tarjeta>span:not(.habitat-numero) { font-size:13px; }
+  .habitats .tarjeta>span { font-size:15px; }
   .cierre { gap:24px; padding:24px; }
 }
 @media (max-width:850px) {
@@ -158,9 +154,8 @@ body:not([data-fase="INICIO"]) {
   .simbolo { width:90px; flex-basis:90px; }
   .simbolo img { width:84px; height:84px; }
   .habitats { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .habitats .tarjeta { min-height:198px; }
-  .habitats .tarjeta img { width:56px; height:56px; }
-  .habitats .tarjeta>span:not(.habitat-numero) { font-size:14px; }
+  .habitats .tarjeta { min-height:196px; }
+  .habitats .tarjeta>span { font-size:15px; padding:16px 12px; }
   .acciones { gap:10px; }
   .accion { padding:11px 14px; min-height:50px; }
   .cierre { padding:20px 24px 32px; border-radius:26px; margin:4px auto 30px; }

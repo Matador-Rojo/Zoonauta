@@ -195,8 +195,9 @@ async function clicar(page,texto,fase){
   for(const ancho of [320,390,768,1024,1280]){
     await page.setViewportSize({width:ancho,height:1080});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-    const medidas=await page.locator('.habitats .tarjeta img').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right};}));
-    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=48&&m.dentro));
+    assert.equal(await page.locator('.habitats .tarjeta img,.habitats .habitat-numero').count(),0);
+    const medidas=await page.locator('.habitats .tarjeta .paisaje').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right,fondo:getComputedStyle(i).backgroundImage};}));
+    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=190&&m.dentro&&m.fondo!=='none'));
   }
   await page.setViewportSize({width:1280,height:1080});
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));

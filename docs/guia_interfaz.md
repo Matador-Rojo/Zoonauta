@@ -147,8 +147,9 @@ El catálogo, el tablero y el cierre comparten la paleta y el cuidado visual de 
 Los 48 animales se muestran mediante recortes fotorrealistas con transparencia, generados
 con IA, en catálogo, retratos y decoración del cierre. Cada tarjeta de selección añade el
 pictograma original correspondiente. Las secuencias educativas usan únicamente los pictogramas originales.
-El tablero muestra los ocho paisajes realistas locales como imagen principal y
-un pictograma pequeño de apoyo en la esquina. Pista (foco), Repetir, Pausar y Salir
+El tablero muestra los ocho paisajes realistas locales y sus nombres, sin dibujos
+ni números superpuestos. Los pictogramas de hábitat se conservan en el banco para
+las secuencias educativas. Pista (foco), Repetir, Pausar y Salir
 usan las nuevas ilustraciones; la acción interna de solicitud de pista se conserva.
 La pausa conserva el animal; el cierre muestra los retos realmente completados, también
 cuando se sale antes de terminar. Pausa, cierre completo y salida anticipada muestran
