@@ -115,6 +115,10 @@ Las tarjetas de hábitat muestran únicamente el paisaje realista y el nombre, s
 dibujos ni números superpuestos. Los pictogramas siguen disponibles en preguntas y
 pistas. El botón «Pista» utiliza un foco; sus recursos y los de hábitats están
 en [imagenes_habitats_controles_ia.json](datos/imagenes_habitats_controles_ia.json).
+Las tarjetas usan ocho paisajes generados específicamente con composición central,
+distintos de los fondos de la portada. Se muestran a todo el ancho debajo del animal
+y de la guía. Sus prompts y archivos están en
+[imagenes_paisajes_tarjetas_ia.json](datos/imagenes_paisajes_tarjetas_ia.json).
 La persona y el robot guía se documentan en
 [imagenes_modalidad_ia.json](datos/imagenes_modalidad_ia.json).
 Los recursos anteriores conservan sus
