@@ -46,6 +46,7 @@ async function vista(page){return page.evaluate(async()=>await (await fetch('/ap
 async function captura(page,archivo,fullPage=true){
   await page.mouse.move(0,0);
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
+  await page.evaluate(async()=>await Promise.all([...document.images].map(i=>i.decode())));
   await page.evaluate(async()=>await Promise.all(document.getAnimations().map(a=>a.finished.catch(()=>{}))));
   await page.screenshot({path:path.join(out,archivo),fullPage});
 }
@@ -128,9 +129,13 @@ async function clicar(page,texto,fase){
   await clicar(page,'Reanudar','ESPERANDO_RESPUESTA');assert.deepEqual((await vista(page)).respuesta,ayuda);
   await clicar(page,'Desierto cálido');assert.equal((await vista(page)).respuesta.tipo_respuesta,'NEUTRAL');assert.equal((await vista(page)).progreso.completados,0);
   await clicar(page,'Selva tropical','RETO_RESUELTO');assert.equal((await vista(page)).progreso.completados,1);assert.equal(await page.locator('.habitats button:enabled').count(),0);
-  await clicar(page,'Continuar','COMPLETADA');await clicar(page,'Comenzar otra partida','INICIO');
+  await clicar(page,'Continuar','COMPLETADA');
+  assert.equal(await page.locator('.cierre-resumen strong').textContent(),'1 / 1');
+  await captura(page,'13_cierre_completado.png');await clicar(page,'Comenzar otra partida','INICIO');
   await clicar(page,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await page.locator('.habitats button').count(),8);
   await clicar(page,'Salir','ABANDONADA');
+  assert.equal(await page.locator('.cierre-resumen strong').textContent(),'0 / 8');
+  await captura(page,'14_cierre_salida.png');
   resultados.push({caso:'Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida',resultado:'OK'});
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
@@ -141,14 +146,14 @@ async function clicar(page,texto,fase){
   // Los 95 recursos se decodifican en el navegador (PNG y SVG).
   const assetTest=await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();
-    const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`)];
+    const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
     await Promise.all(rutas.map(ruta=>new Promise(resolve=>{const i=new Image();i.onload=()=>{if(!i.naturalWidth)fallos.push(ruta);resolve();};i.onerror=()=>{fallos.push(ruta);resolve();};i.src=ruta;})));return fallos;
-  });assert.deepEqual(assetTest,[]);resultados.push({caso:'95 pictogramas y nueve imágenes decorativas decodificados sin errores; ocho fondos sin vídeo ni canvas',resultado:'OK'});
+  });assert.deepEqual(assetTest,[]);resultados.push({caso:'48 animales fotorrealistas, logo, 95 pictogramas originales y nueve paisajes decodificados sin errores; ocho fondos sin vídeo ni canvas',resultado:'OK'});
   // Revisar las representaciones de animales en una plancha para inspección visual.
   await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();const main=document.getElementById('juego');main.replaceChildren();
     const h=document.createElement('h1');h.textContent='Revisión visual: 48 animales';main.append(h);const grid=document.createElement('div');grid.className='catalogo';main.append(grid);
-    for(const a of v.catalogo_animales){const d=document.createElement('div');d.className='tarjeta';const im=document.createElement('img');im.src=v.pictogramas[a.pictograma_id].imagen;const t=document.createElement('span');t.textContent=a.nombre;d.append(im,t);grid.append(d);}
+    for(const a of v.catalogo_animales){const d=document.createElement('div');d.className='tarjeta';const im=document.createElement('img');im.src=`/animales/${a.id}.webp`;const t=document.createElement('span');t.textContent=a.nombre;d.append(im,t);grid.append(d);}
   });await captura(page,'04_revision_animales.png');
   // Vista estrecha real: sin desbordamiento horizontal, controles alcanzables.
   const movil=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mockVoz(movil);const pm=await movil.newPage();pm.on('pageerror',e=>errores.push(e.message));await pm.goto(base);await pm.getByRole('button',{name:'El agente elige'}).waitFor();

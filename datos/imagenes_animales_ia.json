@@ -1,0 +1,1064 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-10",
+  "contenido": "48 recortes fotorrealistas generados con IA; no fotografías de ejemplares reales.",
+  "alcance": "Presentación visual. Las asociaciones, pistas y parámetros del agente se conservan.",
+  "items": [
+    {
+      "id": "A01",
+      "nombre": "Jaguar",
+      "archivo": "assets/animales/A01.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: one isolated animal cutout for Zoonauta educational game. Subject: exactly one adult jaguar (Panthera onca), full body, walking calmly, three-quarter side view facing left. Species accurate robust muscular build, golden fur with large rosettes containing small central black dots, rounded ears, broad head, four legs and long tail visible. Real wildlife photography appearance with detailed natural fur, soft even daylight, neutral studio-like illumination. Center within a square with 12% transparent padding on every side, paws and tail fully in frame. True alpha transparent background, no landscape, no ground plane, no props, no shadow outside the animal, no text, no border, no collage, no duplicate animals. Friendly calm natural pose, anatomically credible, not illustration, not cartoon, not plush, not 3D.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.623,
+      "limites_silueta": [
+        0,
+        0,
+        760,
+        768
+      ],
+      "bytes": 145152,
+      "sha256": "88f1340a5d62f8cee625104f938a3c0c6d4490aeb3694faf0a3cd1cf715ed4c7"
+    },
+    {
+      "id": "A02",
+      "nombre": "Orangután de Borneo",
+      "archivo": "assets/animales/A02.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Bornean orangutan, rich reddish orange hair, dark bare face, long arms, seated naturally, all fingers and feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.4729,
+      "limites_silueta": [
+        0,
+        12,
+        759,
+        753
+      ],
+      "bytes": 168400,
+      "sha256": "ece276180023eb5459f93494bf6f0e1da0a806065f8f8fb460aa91a2edb5eb50"
+    },
+    {
+      "id": "A03",
+      "nombre": "Gorila occidental",
+      "archivo": "assets/animales/A03.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a western gorilla, adult silverback, grey silver back and black fur, broad nose and robust body, calmly knuckle-walking. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.4961,
+      "limites_silueta": [
+        0,
+        18,
+        745,
+        768
+      ],
+      "bytes": 143496,
+      "sha256": "179dd647ca2d3f64b11663a045c558b145b689ac030179f69d45c9a78718cf03"
+    },
+    {
+      "id": "A04",
+      "nombre": "Perezoso de dos dedos de Hoffmann",
+      "archivo": "assets/animales/A04.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Hoffmann's two-toed sloth, shaggy tan grey fur, two long curved claws per forefoot, complete body crawling calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5634,
+      "limites_silueta": [
+        0,
+        9,
+        767,
+        768
+      ],
+      "bytes": 176710,
+      "sha256": "a32cbcf17388e017502067c30aecaac33983b70e2d44bbce3a1d6d4bf3be2826"
+    },
+    {
+      "id": "A05",
+      "nombre": "Guacamayo rojo",
+      "archivo": "assets/animales/A05.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a scarlet macaw, scarlet red body, yellow and blue wing feathers, white facial skin, hooked beak, perched standing with both feet and long tail entirely visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7949,
+      "limites_silueta": [
+        0,
+        10,
+        755,
+        768
+      ],
+      "bytes": 71422,
+      "sha256": "a21a81af9803f866f903a896445b560233ee9e7a5fb96dce8ed69ee09aaccae0"
+    },
+    {
+      "id": "A06",
+      "nombre": "Rana dardo azul",
+      "archivo": "assets/animales/A06.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a blue poison dart frog, vivid cobalt blue skin with irregular black spots, realistic small amphibian, crouching, all limbs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7148,
+      "limites_silueta": [
+        0,
+        10,
+        751,
+        768
+      ],
+      "bytes": 144596,
+      "sha256": "481012c02c3cbd65ee88b9c388b01dd5f9a865c93aa03bbd9559781a0aa16052"
+    },
+    {
+      "id": "A07",
+      "nombre": "León africano",
+      "archivo": "assets/animales/A07.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an adult male African lion, tawny body and natural full mane, calmly standing, entire tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5573,
+      "limites_silueta": [
+        0,
+        10,
+        758,
+        768
+      ],
+      "bytes": 151938,
+      "sha256": "6dc48ff3e52f7fd6c7f6de64dedc702dc7ccec87a6448b1dd4eb2c6dfd9e6be9"
+    },
+    {
+      "id": "A08",
+      "nombre": "Jirafa reticulada",
+      "archivo": "assets/animales/A08.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an adult reticulated giraffe, distinct polygonal reddish brown patches separated by fine white lines, tall neck and ossicones, four full legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.8154,
+      "limites_silueta": [
+        15,
+        9,
+        755,
+        768
+      ],
+      "bytes": 91978,
+      "sha256": "47160dae73afc96c5091e954f3a64b5afd1632d218bf285a483623ea7ff5f881"
+    },
+    {
+      "id": "A09",
+      "nombre": "Cebra de llanura",
+      "archivo": "assets/animales/A09.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a plains zebra, natural black and white stripe pattern, short upright mane, calmly standing, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6482,
+      "limites_silueta": [
+        41,
+        20,
+        729,
+        747
+      ],
+      "bytes": 114830,
+      "sha256": "2e2baa954186c35fc33fbc8832ab5bca641f5afcad6a2f884668d51f73f4342f"
+    },
+    {
+      "id": "A10",
+      "nombre": "Elefante africano de sabana",
+      "archivo": "assets/animales/A10.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an African savanna elephant, huge ears and curved tusks, wrinkled grey skin, complete trunk and four feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5028,
+      "limites_silueta": [
+        0,
+        10,
+        758,
+        724
+      ],
+      "bytes": 173528,
+      "sha256": "d39d189e8f411f2c55545fb8c09a7e9e9c19707bd0834e8ee020b3fa1073d8e2"
+    },
+    {
+      "id": "A11",
+      "nombre": "Guepardo",
+      "archivo": "assets/animales/A11.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a cheetah, slender athletic body, small solid black spots and black tear marks, tail visible, walking calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6768,
+      "limites_silueta": [
+        0,
+        5,
+        760,
+        768
+      ],
+      "bytes": 135822,
+      "sha256": "8bbb0fa6b0c833d43d555d170f1f3d102db3718886e19c2c725716eda5c54104"
+    },
+    {
+      "id": "A12",
+      "nombre": "Avestruz común",
+      "archivo": "assets/animales/A12.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a male common ostrich, black body and white feathers, long bare neck and two strong legs, standing with entire feet in frame. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7713,
+      "limites_silueta": [
+        20,
+        10,
+        755,
+        753
+      ],
+      "bytes": 95458,
+      "sha256": "c64708096c3da0b64e67dcdcde22d716c543990d0ce4d002184a23698cbdfa65"
+    },
+    {
+      "id": "A13",
+      "nombre": "Dromedario",
+      "archivo": "assets/animales/A13.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a dromedary camel with EXACTLY ONE hump, tan fur, long legs, full body standing calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.678,
+      "limites_silueta": [
+        19,
+        5,
+        754,
+        768
+      ],
+      "bytes": 123484,
+      "sha256": "1427072efac922e2bfc0bf3ca5f8589aa874ea6edf825c3cba68ac34846a8aba"
+    },
+    {
+      "id": "A14",
+      "nombre": "Zorro fénec",
+      "archivo": "assets/animales/A14.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a fennec fox, very large ears, pale sandy fur, small delicate body, fluffy tail entirely visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5965,
+      "limites_silueta": [
+        15,
+        13,
+        756,
+        768
+      ],
+      "bytes": 129552,
+      "sha256": "7882a60a0f11873fbb2b5d96b1e822767cdf58c4eeff230f6c87a390402ac8a1"
+    },
+    {
+      "id": "A15",
+      "nombre": "Suricata",
+      "archivo": "assets/animales/A15.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a meerkat, sandy brown fur and dark eye markings, standing upright naturally on two hind feet with tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7879,
+      "limites_silueta": [
+        48,
+        23,
+        734,
+        768
+      ],
+      "bytes": 92014,
+      "sha256": "4138c77cb19ceac36a80b6e4e0ddc4db7c14cce62a25584c7d9c8f83ad102510"
+    },
+    {
+      "id": "A16",
+      "nombre": "Tortuga del desierto de Mojave",
+      "archivo": "assets/animales/A16.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Mojave desert tortoise, domed brown shell and stout scaly terrestrial legs, full body including head and all legs. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6373,
+      "limites_silueta": [
+        0,
+        20,
+        759,
+        747
+      ],
+      "bytes": 140606,
+      "sha256": "7078ceb92cd27fb4b85f77757bb7161aae43531cdbfb2a94de85ce9e22e80f70"
+    },
+    {
+      "id": "A17",
+      "nombre": "Monstruo de Gila",
+      "archivo": "assets/animales/A17.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Gila monster, orange pink and black beaded skin, broad heavy head, thick tail, all four legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7692,
+      "limites_silueta": [
+        0,
+        17,
+        768,
+        768
+      ],
+      "bytes": 112044,
+      "sha256": "ed5d5aeb28cfef19933147cc283cd8794ff131a9bd0dcc85c90ad9d8c93cf8cc"
+    },
+    {
+      "id": "A18",
+      "nombre": "Jerbo egipcio menor",
+      "archivo": "assets/animales/A18.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a lesser Egyptian jerboa, sandy fur, huge hind feet, short forelegs, very long tufted tail and proportionate ears, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7699,
+      "limites_silueta": [
+        0,
+        19,
+        756,
+        768
+      ],
+      "bytes": 120328,
+      "sha256": "45cf70ac82cf9a8356ad4d9782868ab94e699af4f18d64da92416408b94da3aa"
+    },
+    {
+      "id": "A19",
+      "nombre": "Delfín nariz de botella",
+      "archivo": "assets/animales/A19.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a bottlenose dolphin, sleek grey body, short bottle shaped beak, dorsal fin, both flippers and tail flukes visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7439,
+      "limites_silueta": [
+        15,
+        14,
+        768,
+        768
+      ],
+      "bytes": 61182,
+      "sha256": "fde981d4eea91e09ac616d98590b73812a8a9274fb726ed2867515f85f4c45fb"
+    },
+    {
+      "id": "A20",
+      "nombre": "Ballena azul",
+      "archivo": "assets/animales/A20.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a blue whale, very long streamlined blue grey mottled body, small dorsal fin far back, broad tail flukes, complete whale in side view. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.8642,
+      "limites_silueta": [
+        12,
+        25,
+        768,
+        768
+      ],
+      "bytes": 49140,
+      "sha256": "1eb0394526880723d58ac38fc34ab47e43b04020f4b1b673f8849fd656723f9b"
+    },
+    {
+      "id": "A21",
+      "nombre": "Tiburón blanco",
+      "archivo": "assets/animales/A21.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a great white shark, natural grey upper body and white belly, conical snout, all fins and tail visible, mouth closed. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7627,
+      "limites_silueta": [
+        15,
+        22,
+        763,
+        744
+      ],
+      "bytes": 68388,
+      "sha256": "924fff2a72ea49627477a3b3ca4d1e91a3904b51f0f346a9f40951eb3ae1226e"
+    },
+    {
+      "id": "A22",
+      "nombre": "Mantarraya gigante",
+      "archivo": "assets/animales/A22.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a giant oceanic manta ray, wide triangular pectoral fins and two cephalic lobes, dark upper body, overhead three-quarter view with full wings and tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.711,
+      "limites_silueta": [
+        0,
+        14,
+        761,
+        743
+      ],
+      "bytes": 77714,
+      "sha256": "751ce38d9024e04bfadf7123f6084c3d200b901665634f2eb62feb5f6b69343d"
+    },
+    {
+      "id": "A23",
+      "nombre": "Pulpo común",
+      "archivo": "assets/animales/A23.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a common octopus, natural russet mottled skin, eight anatomically correct arms arranged clearly without knots, suckers visible, full animal. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5907,
+      "limites_silueta": [
+        0,
+        13,
+        762,
+        768
+      ],
+      "bytes": 162672,
+      "sha256": "7c269a9b3c0696801c5336f841c4a5e62c45d27ded704ff129b6974f895643cf"
+    },
+    {
+      "id": "A24",
+      "nombre": "Tortuga verde",
+      "archivo": "assets/animales/A24.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a green sea turtle, oval olive brown shell, two long front flippers and short rear flippers, all limbs and head visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.695,
+      "limites_silueta": [
+        0,
+        13,
+        758,
+        768
+      ],
+      "bytes": 125078,
+      "sha256": "19960843890b6518a6274ee59d1554ce1620d6af6c7d4aec7274a21f2e51e86d"
+    },
+    {
+      "id": "A25",
+      "nombre": "Oso pardo",
+      "archivo": "assets/animales/A25.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a brown bear, natural dense brown fur, robust full body walking calmly, all four paws visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.4945,
+      "limites_silueta": [
+        0,
+        0,
+        767,
+        768
+      ],
+      "bytes": 185888,
+      "sha256": "54c12d0f0907d403b974381e681e3c6596d81b52eabe9241a391143b44ded520"
+    },
+    {
+      "id": "A26",
+      "nombre": "Lobo gris",
+      "archivo": "assets/animales/A26.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a grey wolf, silver grey fur and natural wolf proportions, standing calmly, full tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.556,
+      "limites_silueta": [
+        0,
+        0,
+        760,
+        768
+      ],
+      "bytes": 149674,
+      "sha256": "49caecff4f64ee624982e06e6ea9e285ddc0881b3dfcce8791f82bc322a915d9"
+    },
+    {
+      "id": "A27",
+      "nombre": "Zorro rojo",
+      "archivo": "assets/animales/A27.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a red fox, rich russet coat, white chest and black lower legs, full bushy white tipped tail visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6077,
+      "limites_silueta": [
+        0,
+        2,
+        766,
+        768
+      ],
+      "bytes": 131942,
+      "sha256": "7c6254baa47d94eff8b6c9babb44ea9e183c896f26eb0aa65ac7c9749605c18f"
+    },
+    {
+      "id": "A28",
+      "nombre": "Ardilla roja euroasiática",
+      "archivo": "assets/animales/A28.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Eurasian red squirrel, rusty red fur, tufted ears and large bushy tail, seated naturally with full body visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.4269,
+      "limites_silueta": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "bytes": 238808,
+      "sha256": "c083c8dc821af4b148df2dd3fd11f5f04ffd3a5fa4d13319ac00f99fca2662c5"
+    },
+    {
+      "id": "A29",
+      "nombre": "Corzo europeo",
+      "archivo": "assets/animales/A29.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a European roe deer buck, reddish brown summer coat, small branched antlers, black nose, four slim legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.743,
+      "limites_silueta": [
+        0,
+        7,
+        754,
+        757
+      ],
+      "bytes": 107778,
+      "sha256": "ecaf3affcfef468e0e47fb3cf312fc5ffc2f0856a237dbe9d56556ad8bcc55c4"
+    },
+    {
+      "id": "A30",
+      "nombre": "Jabalí",
+      "archivo": "assets/animales/A30.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a wild boar, bristly brown grey coat, elongated snout and modest natural tusks, complete body standing. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5319,
+      "limites_silueta": [
+        0,
+        5,
+        762,
+        768
+      ],
+      "bytes": 200302,
+      "sha256": "c4d7f9157f143ed3677bfc7183f22d57ee92159f3336bb3d9610768f6744bd5c"
+    },
+    {
+      "id": "A31",
+      "nombre": "Capibara o ronsoco",
+      "archivo": "assets/animales/A31.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a capybara, coarse warm brown fur, broad blunt snout and small rounded ears, stout natural body, all four feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5274,
+      "limites_silueta": [
+        0,
+        6,
+        751,
+        768
+      ],
+      "bytes": 187338,
+      "sha256": "673fd720fa1da2c0ae6c3f9b6101d69262109ec76a2ce27092dfa7fc69cb3ab6"
+    },
+    {
+      "id": "A32",
+      "nombre": "Ajolote mexicano",
+      "archivo": "assets/animales/A32.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Mexican axolotl, pale pink leucistic animal, six feathery external gill branches, four small legs and long finned tail visible, natural anatomy. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7367,
+      "limites_silueta": [
+        0,
+        14,
+        763,
+        748
+      ],
+      "bytes": 91458,
+      "sha256": "3b4116a564efb18fe9bf19d2d81dea86e58f41566aa7ea6c9239535f46bd34b8"
+    },
+    {
+      "id": "A33",
+      "nombre": "Delfín rosado amazónico",
+      "archivo": "assets/animales/A33.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Amazon river dolphin, natural pale pink grey coloration, very long narrow beak, rounded forehead, low dorsal ridge, entire body and flukes visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7887,
+      "limites_silueta": [
+        18,
+        13,
+        756,
+        768
+      ],
+      "bytes": 53044,
+      "sha256": "d8c2c36e3cda54259eac8492d36e73cf7aa1a54c9194884b9509260bac5a0daa"
+    },
+    {
+      "id": "A34",
+      "nombre": "Nutria gigante",
+      "archivo": "assets/animales/A34.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a giant river otter, elongated brown furred body, distinctive pale throat patch, rounded head and long flattened tail, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7254,
+      "limites_silueta": [
+        10,
+        27,
+        762,
+        768
+      ],
+      "bytes": 101284,
+      "sha256": "6f9b9d2168039e87e152a310fb66f3a8497d409361bb6e94b493db0ebdbe0340"
+    },
+    {
+      "id": "A35",
+      "nombre": "Castor norteamericano",
+      "archivo": "assets/animales/A35.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a North American beaver, brown fur, rounded body, prominent broad flat scaly tail clearly visible, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6301,
+      "limites_silueta": [
+        0,
+        14,
+        768,
+        768
+      ],
+      "bytes": 151520,
+      "sha256": "a82e3c55eb2ed255be6026f6669f19e0a9b5d013e5515e8a48d01de711563a60"
+    },
+    {
+      "id": "A36",
+      "nombre": "Cocodrilo del Nilo",
+      "archivo": "assets/animales/A36.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Nile crocodile, natural green grey scaled skin, long broad snout, heavy tail, full body with all four feet visible, closed mouth. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7823,
+      "limites_silueta": [
+        0,
+        19,
+        768,
+        753
+      ],
+      "bytes": 102310,
+      "sha256": "e7ceba58d5c51134066f2f365e6cf91924573e7dc9e746aeb13d1de8b4ede270"
+    },
+    {
+      "id": "A37",
+      "nombre": "Oso polar",
+      "archivo": "assets/animales/A37.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a polar bear, natural creamy white dense fur, long neck and large black nose, complete body walking calmly. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5132,
+      "limites_silueta": [
+        0,
+        0,
+        765,
+        768
+      ],
+      "bytes": 112600,
+      "sha256": "f66892ea7a348bf19c2fc5b9b68febc53d6945edf5344ae5270befd0a1ffc9a0"
+    },
+    {
+      "id": "A38",
+      "nombre": "Zorro ártico",
+      "archivo": "assets/animales/A38.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Arctic fox in white winter coat, compact round ears, thick white fur and full fluffy tail, standing. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5725,
+      "limites_silueta": [
+        0,
+        1,
+        766,
+        739
+      ],
+      "bytes": 88082,
+      "sha256": "72b408b7885295731d570a13a18245b89cbc2825b2770e4a76951e8da2823244"
+    },
+    {
+      "id": "A39",
+      "nombre": "Pingüino emperador",
+      "archivo": "assets/animales/A39.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an emperor penguin, black back and head, white belly, warm yellow neck patches, upright adult with both feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7209,
+      "limites_silueta": [
+        45,
+        29,
+        751,
+        753
+      ],
+      "bytes": 73008,
+      "sha256": "d3d6de72245db3d134d2283b2cd47eec186657bfa8d414d16d25211b2e11a510"
+    },
+    {
+      "id": "A40",
+      "nombre": "Morsa",
+      "archivo": "assets/animales/A40.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a walrus, wrinkled warm brown skin, two long ivory tusks, thick whiskers, full body with front and rear flippers. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6322,
+      "limites_silueta": [
+        0,
+        14,
+        761,
+        768
+      ],
+      "bytes": 122994,
+      "sha256": "b99a62d8d560db2b5c3257ee61d5f9ff479f07149de988311c640d3e934e93ba"
+    },
+    {
+      "id": "A41",
+      "nombre": "Búho nival",
+      "archivo": "assets/animales/A41.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a snowy owl, mainly white feathers with subtle dark barring, vivid yellow eyes, full body sitting upright with feet visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5783,
+      "limites_silueta": [
+        0,
+        18,
+        711,
+        752
+      ],
+      "bytes": 92656,
+      "sha256": "63b704be821273d2022f172e189af94a24e3c28f3ada2ad2ba7a76319624227b"
+    },
+    {
+      "id": "A42",
+      "nombre": "Liebre ártica",
+      "archivo": "assets/animales/A42.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Arctic hare in white winter coat, long ears with black tips, powerful hind legs, complete body sitting naturally. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6546,
+      "limites_silueta": [
+        0,
+        0,
+        756,
+        768
+      ],
+      "bytes": 86402,
+      "sha256": "e8bd88df0d54aa5c993832a4a5ff2072592c93d5da40e4117422999c0c9c7d84"
+    },
+    {
+      "id": "A43",
+      "nombre": "Vicuña",
+      "archivo": "assets/animales/A43.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a vicuna, slender South American camelid, warm cinnamon back and white chest and belly, long neck, four slender legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.7637,
+      "limites_silueta": [
+        19,
+        6,
+        768,
+        756
+      ],
+      "bytes": 105036,
+      "sha256": "cfa18b4f634975df1c414731f282039a27ab2d8ce7286b058dfc4ef7017acd79"
+    },
+    {
+      "id": "A44",
+      "nombre": "Yak salvaje",
+      "archivo": "assets/animales/A44.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a wild yak, huge shaggy dark brown black coat, long curved horns, shoulder hump, full body and legs visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5329,
+      "limites_silueta": [
+        0,
+        11,
+        762,
+        768
+      ],
+      "bytes": 158860,
+      "sha256": "5690fbfff029760d61b2a37cb1874686c144f005840b709fca552ec468a05768"
+    },
+    {
+      "id": "A45",
+      "nombre": "Leopardo de las nieves",
+      "archivo": "assets/animales/A45.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a snow leopard, pale grey fur with dark rosettes, fluffy thick coat and exceptionally long thick tail, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6153,
+      "limites_silueta": [
+        17,
+        13,
+        760,
+        768
+      ],
+      "bytes": 125660,
+      "sha256": "8a7e695ff2e1719b7a45024356d68032d730b14e8d7e9b7e2c4677957bc98528"
+    },
+    {
+      "id": "A46",
+      "nombre": "Cóndor andino",
+      "archivo": "assets/animales/A46.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one an Andean condor, black plumage, white neck ruff and white wing patches, male bald reddish head and comb, standing with folded wings and entire feet in frame. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.6509,
+      "limites_silueta": [
+        35,
+        12,
+        745,
+        764
+      ],
+      "bytes": 90684,
+      "sha256": "d17b90a10efea038fa2117545409c46e1dbc7cda53d35c0c012dfdac6f4e751d"
+    },
+    {
+      "id": "A47",
+      "nombre": "Cabra de las Rocosas",
+      "archivo": "assets/animales/A47.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a Rocky Mountain goat, white shaggy coat, short black pointed horns and beard, full body with all four hooves visible. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5353,
+      "limites_silueta": [
+        0,
+        0,
+        761,
+        768
+      ],
+      "bytes": 142706,
+      "sha256": "1e4ff96184ce6c5e0dfa26f383e8c26f0cb38a4f6d1b327254b34be50c78bec7"
+    },
+    {
+      "id": "A48",
+      "nombre": "Chinchilla de cola corta",
+      "archivo": "assets/animales/A48.webp",
+      "fuente": "Generada con IA",
+      "herramienta": "image_gen integrada",
+      "prompt": "Use case: scientific-educational / photorealistic-natural. Asset type: ONE isolated animal cutout for Zoonauta educational game. Subject: exactly one a short tailed chinchilla, dense grey fur, broad rounded ears, compact rodent body and relatively short bushy tail, full body. Real wildlife photograph appearance, species accurate and anatomically credible, detailed natural texture, soft even daylight, consistent neutral illumination. Full body including every foot, appendage and tail inside the frame. Center on a square with generous transparent margin, animal occupies about 76% of image, calm natural pose. Prefer three-quarter side view facing left unless overhead or upright specified. Truly transparent alpha background, NO landscape, NO environment, NO ground plane, NO cast shadow outside animal, NO props, NO text, NO border, NO collage, NO other animals. Not cartoon, not illustration, not plush and not 3D. Exactly one animal.",
+      "dimensiones": [
+        768,
+        768
+      ],
+      "transparencia_real": true,
+      "fraccion_transparente_origen": 0.5764,
+      "limites_silueta": [
+        0,
+        8,
+        762,
+        768
+      ],
+      "bytes": 153120,
+      "sha256": "316f3dfbff4ee1bedac3404c8f71bf34ff5efe04fdbb5810bc55df9d09e724d0"
+    }
+  ]
+}

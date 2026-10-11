@@ -1,0 +1,9 @@
+CP01: CORRECTO. Jirafa: ayudas 1, 2, 3 y 3; respuesta y cierre.
+CP02: CORRECTO. Capibara: aceptar selva tropical aunque la guía apunte a agua dulce.
+CP03: CORRECTO. Relación pendiente: nivel conservado y observación sin etiqueta.
+CP04: CORRECTO. Repetir y pausar conservan el reto.
+CP05: CORRECTO. Un segundo clic después de resolver no duplica el progreso.
+CP06: CORRECTO. Dos retos: capibara en selva y pingüino en mar.
+CP07: CORRECTO. Inicio del agente con un escenario del banco.
+CP08: CORRECTO. Nueva ayuda de nivel 3 cambia la variante; Repetir conserva esa variante.
+Resultado: 8/8 casos correctos.
