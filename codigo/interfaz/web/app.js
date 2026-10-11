@@ -29,13 +29,21 @@ function idiomaPantalla() {
   $("etiqueta-voces").textContent=t(vista.idioma==="pt-BR"?"Voz en portugués brasileño":"Voz en español");
 }
 function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=t(texto); return n; }
-function imagen(id, clase="") { const im=nodo("img",clase); im.src=vista.pictogramas[id].imagen; im.alt=""; im.draggable=false; return im; }
+function imagen(id, clase="") {
+  const im=nodo("img",clase); const animal=/^P_A\d{2}$/.test(id);
+  im.src=animal?`/animales/${id.slice(2)}.webp`:vista.pictogramas[id].imagen;
+  if(animal)im.classList.add("animal-foto");
+  im.alt=""; im.draggable=false; im.decoding="async"; return im;
+}
 function icono(nombre,clase="") {
   const caminos={
     flecha:"M5 12h14m-6-6 6 6-6 6",
     anterior:"M19 12H5m6-6-6 6 6 6",
     pausa:"M9 5v14M15 5v14",
     reproducir:"m8 5 11 7-11 7V5",
+    ayuda:"M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5m0 4v.1M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0",
+    repetir:"M4 10a8 8 0 1 1 1 9M4 3v7h7",
+    salir:"M9 4H4v16h5m5-13 5 5-5 5m-6-5h11",
     persona:"M8 6a4 4 0 1 0 8 0 4 4 0 0 0-8 0M4 22v-3a8 8 0 0 1 16 0v3",
     brujula:"M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20m5-15-3 7-7 3 3-7 7-3",
     buscar:"M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0",
@@ -60,7 +68,8 @@ function boton(texto,tipo,payload={},clase="accion",picto=null) {
 }
 function respuesta(r) {
   const bloque=nodo("section","respuesta "+(r.tipo_respuesta==="CONFIRMACION"?"confirmacion":r.tipo_respuesta==="NEUTRAL"?"neutral":""));
-  const guia=nodo("div","guia-cabecera"); guia.append(imagen("P_AGENTE"),nodo("span","","Tu guía")); bloque.append(guia);
+  const guia=nodo("div","guia-cabecera"),marca=nodo("img");
+  marca.src="/zoonauta-logo.svg";marca.alt="";guia.append(marca,nodo("span","","Tu guía")); bloque.append(guia);
   const titulo=nodo("h2","",r.texto_apoyo); titulo.id="mensaje"; titulo.tabIndex=-1; bloque.append(titulo);
   const sec=nodo("div","secuencia"); sec.setAttribute("aria-label",t("Secuencia de pictogramas"));
   for(const id of r.pictogramas) {const f=nodo("figure","simbolo"); f.append(imagen(id),nodo("figcaption","",vista.pictogramas[id].etiqueta)); sec.append(f);}
@@ -70,7 +79,8 @@ function controles() {
   const a=nodo("nav","acciones"); a.setAttribute("aria-label",t("Controles de la partida"));
   const etiquetas={ayuda:["Ayuda","P_AYUDA"],repetir:["Repetir","P_REPETIR"],pausar:["Pausar","P_PAUSAR"],reanudar:["Reanudar","P_REANUDAR"],continuar:["Continuar","P_CONTINUAR"],salir:["Salir","P_SALIR"]};
   for(const t of vista.controles_disponibles) if(etiquetas[t]) {
-    const [texto,p]=etiquetas[t]; a.append(boton(texto,t,{},"accion "+(t==="ayuda"?"destacada":t==="continuar"?"continuar":t==="salir"?"salir":""),p));
+    const [texto]=etiquetas[t],b=boton(texto,t,{},"accion "+(t==="ayuda"?"destacada":t==="continuar"?"continuar":t==="salir"?"salir":""));
+    b.prepend(icono(({pausar:"pausa",reanudar:"reproducir",continuar:"flecha"})[t]||t));a.append(b);
   } return a;
 }
 function titulo(texto,sub,etiqueta="Tu expedición") {
@@ -151,6 +161,8 @@ function catalogoAnimales() {
   const normalizar=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase(vista.idioma).trim();
   for(const a of vista.catalogo_animales) {
     const tarjeta=boton(a.nombre,"elegir_animal",{animal_id:a.id},"tarjeta",a.pictograma_id);
+    tarjeta.prepend(nodo("span","animal-numero",a.id.slice(1)));
+    tarjeta.append(icono("flecha","animal-flecha"));
     tarjeta.dataset.busqueda=normalizar(a.nombre); catalogo.append(tarjeta);
   }
   const vacia=nodo("p","busqueda-vacia","No encontramos ese animal. Prueba con otro nombre."); vacia.hidden=true;
@@ -162,6 +174,21 @@ function catalogoAnimales() {
   });
   return [barra,catalogo,vacia];
 }
+function cierre(fase) {
+  const b=nodo("section","centro cierre"),visual=nodo("div","cierre-visual"),contenido=nodo("div","cierre-contenido");
+  visual.setAttribute("aria-hidden","true");
+  const ids=fase==="PAUSADA"&&vista.animal?[vista.animal.pictograma_id]:["P_A05","P_A31","P_A01"];
+  ids.forEach((id,i)=>visual.append(imagen(id,`cierre-animal cierre-animal-${i}`)));
+  const h=nodo("h1","",fase==="PAUSADA"?"Tomamos una pausa":fase==="COMPLETADA"?"¡Terminamos!":"Partida terminada");h.id="titulo-pantalla";h.tabIndex=-1;
+  contenido.append(nodo("p","etiqueta","Tu expedición"),h,nodo("p","introduccion",vista.respuesta.texto_apoyo));
+  const resumen=nodo("div","cierre-resumen");
+  resumen.append(nodo("strong","",`${vista.progreso.completados} / ${vista.progreso.total}`),nodo("span","","Retos completados"));
+  contenido.append(resumen);
+  if(fase==="PAUSADA")contenido.append(controles());
+  else {const btn=boton("Comenzar otra partida","nueva_partida",{},"accion continuar");btn.append(icono("flecha"));contenido.append(btn);}
+  contenido.append(nodo("p","cierre-nota","48 animales. Ocho mundos por descubrir."));
+  b.append(visual,contenido);return b;
+}
 function render(enfocar=false,conservarPaisaje=false) {
   const previo=conservarPaisaje&&carrusel?{indice:carrusel.indice,pausado:carrusel.pausado}:null;
   detenerCarrusel(); carrusel=null;idiomaPantalla();
@@ -171,11 +198,7 @@ function render(enfocar=false,conservarPaisaje=false) {
   else if(f==="SELECCION_ANIMAL") {
     juego.append(titulo("Elige un animal","Toca el animal con el que quieres jugar.","Explora los animales"),...catalogoAnimales(),controles());
   } else if(f==="PAUSADA"||f==="COMPLETADA"||f==="ABANDONADA") {
-    const b=nodo("section","centro"); const pid=f==="PAUSADA"?"P_PAUSAR":f==="COMPLETADA"?"P_FIN":"P_SALIR";
-    const h=nodo("h1","",f==="PAUSADA"?"Tomamos una pausa":f==="COMPLETADA"?"¡Terminamos!":"Partida terminada"); h.id="titulo-pantalla"; h.tabIndex=-1;
-    b.append(imagen(pid,"grande"),h,nodo("p","introduccion",vista.respuesta.texto_apoyo));
-    if(f==="PAUSADA")b.append(controles()); else b.append(boton("Comenzar otra partida","nueva_partida",{},"accion continuar","P_INICIAR"));
-    juego.append(b);
+    juego.append(cierre(f));
   } else {
     juego.append(titulo(f==="RETO_RESUELTO"?"¡Encontraste un lugar!":"Elige un hábitat",null,"Encuentra su hábitat"));
     const tablero=nodo("div","tablero"),companero=nodo("aside","companero"),animal=nodo("div","animal-actual"),retrato=nodo("div","animal-retrato");
@@ -187,7 +210,8 @@ function render(enfocar=false,conservarPaisaje=false) {
     const hab=nodo("div","habitats"); hab.setAttribute("aria-label",t("Ocho hábitats"));
     for(const h of vista.opciones_habitat) {
       const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta",h.pictograma_id);
-      b.prepend(paisaje(h.id)); b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
+      b.prepend(paisaje(h.id));b.append(nodo("span","habitat-numero",h.id.slice(1)));
+      b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
     }
     mesa.append(hab); tablero.append(companero,mesa); juego.append(tablero,controles());
   }

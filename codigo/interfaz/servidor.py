@@ -81,6 +81,7 @@ class Manejador(BaseHTTPRequestHandler):
         fijos = {"/": ("index.html", "text/html; charset=utf-8"),
             "/app.js": ("app.js", "text/javascript; charset=utf-8"),
             "/estilos.css": ("estilos.css", "text/css; charset=utf-8"),
+            "/expedicion.css": ("expedicion.css", "text/css; charset=utf-8"),
             "/mundo.svg": ("mundo.svg", "image/svg+xml"),
             "/zoonauta-logo.svg": ("zoonauta-logo.svg", "image/svg+xml"),
             "/portada-selva.webp": ("portada-selva.webp", "image/webp"),
@@ -90,6 +91,8 @@ class Manejador(BaseHTTPRequestHandler):
         if ruta in fijos:
             archivo, mime = fijos[ruta]
             self._enviar((Path(__file__).parent / "web" / archivo).read_bytes(), mime)
+        elif ruta.startswith("/animales/") and ruta.removeprefix("/animales/") in {f"A{i:02}.webp" for i in range(1, 49)}:
+            self._enviar((RAIZ_PROYECTO / "assets" / "animales" / ruta.removeprefix("/animales/")).read_bytes(), "image/webp")
         elif ruta.startswith("/fondos/") and ruta.removeprefix("/fondos/") in {f"H0{i}.webp" for i in range(2, 9)}:
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
         elif ruta == "/api/vista":
