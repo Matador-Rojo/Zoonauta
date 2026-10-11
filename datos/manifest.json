@@ -115,7 +115,8 @@
     "retos_validados_antes_de_modalidad": true,
     "notificaciones_apiladas_con_plazos_independientes": true,
     "cierre_circular_y_tipos_verificados": true,
-    "version_en_creditos_visuales": true
+    "version_en_creditos_visuales": true,
+    "limite_avisos_sin_scroll_ni_recortes_verificado": true
   },
   "archivos": [
     {
@@ -735,13 +736,13 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 31312,
-      "sha256": "c8f5aad05edfd987ead8688ff9ff54e19f5961521f1590fd127f83623b8699b3"
+      "bytes": 31667,
+      "sha256": "38b98da982d05b8eecfc3f328a56d28325cf7d8d952bff5e22754e7fdd8611df"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
-      "bytes": 28981,
-      "sha256": "ca517271555efb9bb841c767884aed4721ebffce61d7c7e4855b198271f074d6"
+      "bytes": 28947,
+      "sha256": "e7ec148732dc5045848b45aee75be72167c0efce0cf6f49c393c5dc5273521b1"
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
@@ -1900,8 +1901,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 20296,
-      "sha256": "2b5c4ba60364db68defb1cd89d6cc51e829ff9a9dff615e7288d0a5c6a12c97d"
+      "bytes": 20372,
+      "sha256": "aaef64c2949dce74c119633853b45b8ea2b21127e0b2d2ea4cb430b20ea83004"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1990,8 +1991,8 @@
     },
     {
       "ruta": "docs/interfaz/4.4/revision.json",
-      "bytes": 8689,
-      "sha256": "ede8285c64e3ae8312fc17ae41d8833037e1a16c58a928461b5bf947859e837e"
+      "bytes": 9106,
+      "sha256": "3a6b76dd43b226389a0e7960fdd7a8d9a84a2af72f20025b0f0500bf999eb196"
     },
     {
       "ruta": "docs/interfaz/alternativas_voz.md",
@@ -2000,8 +2001,8 @@
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 13847,
-      "sha256": "4503d8b0a384d40dc2f0b9715d25294502cd242747dafc0105592a4d5522bb1b"
+      "bytes": 14098,
+      "sha256": "4fe3919b487b2e852e544df0f3ea408ad00d9f3d00563db958b2f4246591e61a"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -2280,8 +2281,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 11112,
-      "sha256": "54fccc858db37e6ae2809800a1c66cb42c073786407106547c7358b57b613e6b"
+      "bytes": 11253,
+      "sha256": "38a2be014eb73f7b64594ea9ddd69f2e310366e63838e42496123832842fee06"
     },
     {
       "ruta": "requirements_voz.txt",
@@ -2335,8 +2336,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 53059,
-      "sha256": "30d4544985960c014bfe3e1819fe743d80abb200454fc9aaa4d1870d9bd5c565"
+      "bytes": 54551,
+      "sha256": "b175faa1a2719f03cba0df5c9289e6cba0cb9eada16535035efc94d1079bc964"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",

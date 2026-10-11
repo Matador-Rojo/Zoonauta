@@ -25,7 +25,7 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 | Selección pendiente | Da una respuesta neutral con una nueva pista automática, sin penalización; conserva el reto y permite repetir esa pista. |
 | Continuar | Abre otro reto o presenta el cierre cuando se completó N. |
 | Preferencias | Disponible solo en la portada: permite N entre 1 y 48 antes del inicio, idioma, voz y velocidad. |
-| Avisos | Tarjetas de hasta 260 px con fondo oscuro y borde por tipo. Las nuevas se añaden abajo y las anteriores suben; cada una dura ocho segundos y tiene una × circular sobre la esquina, accesible por teclado. Comenzar valida un entero del 1 al 48 antes de abrir modalidad. |
+| Avisos | Tarjetas de hasta 260 px con fondo oscuro y borde por tipo. Hasta tres visibles, menos si falta altura; las nuevas se añaden abajo y se retiran las más antiguas, sin scroll ni recortes. Cada una dura ocho segundos y tiene una × circular sobre la esquina, accesible por teclado. Comenzar valida un entero del 1 al 48 antes de abrir modalidad. |
 | Revisión técnica | Página aparte con modelo, estado, decisiones y exportación JSON. |
 
 Los ocho hábitats permanecen en los retos activos. Tras resolver se ven desactivados

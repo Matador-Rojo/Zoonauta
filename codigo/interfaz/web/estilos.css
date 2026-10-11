@@ -348,7 +348,7 @@ dialog .primario span { margin-left:12px; }
 }
 
 /* Notificaciones independientes: nuevas abajo y anteriores hacia arriba. */
-.avisos { position:fixed; inset:auto max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) auto; width:min(304px,calc(100vw - 24px)); max-width:none; max-height:calc(100dvh - 24px); margin:0; padding:22px; display:flex; flex-direction:column; gap:24px; border:0; background:transparent; overflow:auto; scrollbar-width:thin; pointer-events:none; z-index:100; }
+.avisos { position:fixed; inset:auto max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) auto; width:min(304px,calc(100vw - 24px)); max-width:none; max-height:none; margin:0; padding:22px; display:flex; flex-direction:column; gap:24px; border:0; background:transparent; overflow:visible; pointer-events:none; z-index:100; }
 .avisos[hidden] { display:none; }
 .avisos::backdrop { background:transparent; pointer-events:none; }
 .notificacion { --acento:#90c9eb; position:relative; flex-shrink:0; width:100%; padding:14px 18px; border:1px solid var(--acento); border-left-width:3px; border-radius:12px; background:#14201e; color:#f1f5ef; box-shadow:0 4px 12px #0004; pointer-events:auto; }

@@ -21,7 +21,9 @@ Pausar, repetir o recargar conserva el orden de la partida en curso.
 El número de retos debe ser un entero del **1 al 48**. Si falta o no es válido,
 Comenzar indica cómo corregirlo en Preferencias. Los avisos son tarjetas compactas
 con fondo oscuro y borde según su tipo, abajo a la derecha. Los nuevos aparecen
-debajo y los anteriores suben sin superponerse. Cada tarjeta desaparece a los
+debajo y los anteriores suben sin superponerse. Se muestran **hasta tres** a la vez;
+si falta altura, se reduce la cantidad y se retiran los más antiguos, sin scroll
+ni tarjetas cortadas. Cada tarjeta desaparece a los
 **8 segundos** o se cierra con su **×** circular sobre la esquina superior derecha.
 Créditos visuales, dentro de Preferencias, muestra la versión del programa.
 

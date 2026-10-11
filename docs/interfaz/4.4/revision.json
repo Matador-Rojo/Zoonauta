@@ -101,7 +101,7 @@
       "alcance": "API WAV y reproductor controlados; no certifica sonido audible ni comprensión."
     },
     {
-      "caso": "Notificaciones de hasta 260 px: fondo oscuro y bordes por tipo, nuevas debajo de anteriores sin superposición, ocho segundos independientes, cierre circular sobre la esquina por X y teclado; accesibles sobre Preferencias, sin bloquear controles del fondo; validación entera 1–48 antes de modalidad, español/portugués, escritorio/móvil y versión visible en créditos",
+      "caso": "Notificaciones de hasta 260 px: fondo oscuro y bordes por tipo, nuevas debajo de anteriores sin superposición, máximo tres avisos y menos si falta altura, antiguos descartados sin scroll ni recortes, ocho segundos independientes, cierre circular sobre la esquina por X y teclado; accesibles sobre Preferencias, sin bloquear controles del fondo; validación entera 1–48 antes de modalidad, español/portugués, escritorio/móvil y versión visible en créditos",
       "resultado": "OK"
     },
     {
@@ -193,7 +193,6 @@
     "sobre_preferencias": true,
     "sin_desplazar_portada": true,
     "controles_tras_zonas_transparentes_operativos": true,
-    "cola_larga_probada_con_8_avisos_en_320_568": true,
     "version_en_creditos": "4.4",
     "idiomas": [
       "es",
@@ -203,6 +202,10 @@
       [
         1366,
         768
+      ],
+      [
+        320,
+        390
       ],
       [
         320,
@@ -227,6 +230,14 @@
       ],
       "antes_de_modalidad": true,
       "intento_invalido_sin_voz_ni_cambio_de_partida": true
-    }
+    },
+    "maximo_visible": 3,
+    "reducir_por_altura_disponible": true,
+    "descartar_avisos_mas_antiguos": true,
+    "sin_scroll_ni_recortes": true,
+    "ajuste_al_redimensionar": true,
+    "antiguos_descartados_con_temporizador_cancelado": true,
+    "plazos_de_avisos_conservados_sin_reiniciar": true,
+    "rafaga_de_8_avisos_probada": true
   }
 }

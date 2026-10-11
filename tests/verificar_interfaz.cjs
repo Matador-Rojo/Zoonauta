@@ -325,11 +325,11 @@ async function clicar(page,texto,fase){
   const comprobarAvisos=async()=>{
     assert.equal(await pa.locator('#aviso').isVisible(),true);
     const m=await pa.locator('#aviso').evaluate(e=>{
-      const r=e.getBoundingClientRect(),cs=[...e.children].map(c=>{const t=c.getBoundingClientRect(),b=c.querySelector('button').getBoundingClientRect();return {w:t.width,arriba:t.top,abajo:t.bottom,boton:b.width>=44&&b.height>=44,circular:Math.abs(b.x+b.width/2-t.right)<2&&Math.abs(b.y+b.height/2-t.top)<2};});
-      return {right:innerWidth-r.right,bottom:innerHeight-r.bottom,sinDesborde:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,popover:e.matches(':popover-open'),cs};
+      const r=e.getBoundingClientRect(),cs=[...e.children].map(c=>{const t=c.getBoundingClientRect(),b=c.querySelector('button').getBoundingClientRect();return {w:t.width,arriba:t.top,abajo:t.bottom,completa:t.top>=22&&t.bottom<=innerHeight-22&&b.top>=0&&b.right<=innerWidth,boton:b.width>=44&&b.height>=44,circular:Math.abs(b.x+b.width/2-t.right)<2&&Math.abs(b.y+b.height/2-t.top)<2};});
+      return {right:innerWidth-r.right,bottom:innerHeight-r.bottom,sinDesborde:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,popover:e.matches(':popover-open'),sinScroll:e.scrollHeight===e.clientHeight&&e.scrollWidth===e.clientWidth&&getComputedStyle(e).overflow==='visible',cs};
     });
-    assert.ok(m.right>=11&&m.right<=13&&m.bottom>=11&&m.bottom<=13&&m.sinDesborde&&m.popover,JSON.stringify(m));
-    assert.ok(m.cs.every(c=>c.w<=260&&c.boton&&c.circular),JSON.stringify(m));
+    assert.ok(m.right>=11&&m.right<=13&&m.bottom>=11&&m.bottom<=13&&m.sinDesborde&&m.popover&&m.sinScroll&&m.cs.length<=3,JSON.stringify(m));
+    assert.ok(m.cs.every(c=>c.w<=260&&c.completa&&c.boton&&c.circular),JSON.stringify(m));
     for(let i=1;i<m.cs.length;i++)assert.ok(m.cs[i-1].abajo<m.cs[i].arriba,'No se superponen');
   };
   for(const idioma of ['es','pt-BR']){
@@ -381,13 +381,32 @@ async function clicar(page,texto,fase){
       await captura(pa,'notificacion_inicio_'+idioma+'_'+width+'.png',false);
     }
     await vaciar();
-    await pa.setViewportSize({width:320,height:568});
-    for(let i=0;i<8;i++)await comenzar.click();
-    assert.equal(await tarjetas.count(),8);
-    const limite=await tarjetas.last().evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight&&document.documentElement.scrollHeight<=innerHeight&&document.getElementById('aviso').scrollTop>0;});
-    assert.equal(limite,true,'Una cola larga conserva el aviso nuevo visible y no desplaza la página');
-    await pa.clock.runFor(8000);assert.equal(await tarjetas.count(),0);
     await pa.setViewportSize({width:1366,height:768});
+    const descartados=[];
+    for(let i=0;i<8;i++){
+      if(i)await pa.clock.runFor(500);
+      if(await tarjetas.count()===3)descartados.push(await tarjetas.first().elementHandle());
+      await comenzar.click();assert.equal(await tarjetas.count(),Math.min(i+1,3));await comprobarAvisos();
+      for(const viejo of descartados)assert.equal(await viejo.evaluate(e=>e.isConnected),false,'El más antiguo sale de la pila');
+    }
+    await captura(pa,'limite_avisos_'+idioma+'_escritorio.png',false);
+    // Los tres conservados llegan a ocho segundos desde su propia creación.
+    await pa.clock.runFor(6999);assert.equal(await tarjetas.count(),3);
+    await pa.clock.runFor(1);assert.equal(await tarjetas.count(),2);
+    await pa.clock.runFor(500);assert.equal(await tarjetas.count(),1);
+    await pa.clock.runFor(500);assert.equal(await tarjetas.count(),0);
+    for(let i=0;i<3;i++)await comenzar.click();
+    const retenidos=await tarjetas.elementHandles(),ultimo=retenidos.at(-1);
+    await pa.setViewportSize({width:320,height:390});await comprobarAvisos();
+    assert.ok(await tarjetas.count()<3,'Una ventana baja reduce la pila');
+    assert.equal(await ultimo.evaluate(e=>e.isConnected),true,'Conserva el más reciente');
+    assert.equal(await retenidos[0].evaluate(e=>e.isConnected),false);
+    await captura(pa,'limite_avisos_'+idioma+'_ventana_baja.png',false);
+    await pa.setViewportSize({width:320,height:568});
+    for(let i=0;i<8;i++){await comenzar.click();await comprobarAvisos();}
+    await captura(pa,'limite_avisos_'+idioma+'_movil.png',false);
+    await pa.setViewportSize({width:1366,height:768});await comprobarAvisos();
+    await pa.clock.runFor(8000);assert.equal(await tarjetas.count(),0);
     await comenzar.click();
     assert.equal(await pa.locator('.hero-ficha button').first().isEnabled(),true);
     await pa.locator('.hero-ficha button').first().click();assert.equal(await tarjetas.count(),1);
@@ -399,7 +418,7 @@ async function clicar(page,texto,fase){
     await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();await pa.keyboard.press('Escape');
     assert.equal(await tarjetas.count(),0);
   }
-  resultados.push({caso:'Notificaciones de hasta 260 px: fondo oscuro y bordes por tipo, nuevas debajo de anteriores sin superposición, ocho segundos independientes, cierre circular sobre la esquina por X y teclado; accesibles sobre Preferencias, sin bloquear controles del fondo; validación entera 1–48 antes de modalidad, español/portugués, escritorio/móvil y versión visible en créditos',resultado:'OK'});
+  resultados.push({caso:'Notificaciones de hasta 260 px: fondo oscuro y bordes por tipo, nuevas debajo de anteriores sin superposición, máximo tres avisos y menos si falta altura, antiguos descartados sin scroll ni recortes, ocho segundos independientes, cierre circular sobre la esquina por X y teclado; accesibles sobre Preferencias, sin bloquear controles del fondo; validación entera 1–48 antes de modalidad, español/portugués, escritorio/móvil y versión visible en créditos',resultado:'OK'});
   await avisos.close();
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
