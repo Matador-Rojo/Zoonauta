@@ -73,13 +73,18 @@ reinicia los 10 segundos. El carrusel empieza en marcha. Preferencias y la pesta
 inactiva suspenden temporalmente el cambio; movimiento reducido elimina las animaciones.
 La selva es ahora un paisaje sin el guacamayo y comparte el estilo de los otros siete.
 Los botones de inicio y el diálogo usan la misma paleta oscura con acentos lima.
-El catálogo permite buscar
-animales por nombre, incluso sin tildes. El tablero separa el animal, la guía y los
-ocho hábitats, que combinan paisajes decorativos y sus pictogramas originales;
-el progreso indica retos completados. Se adapta a móvil y admite
+El catálogo muestra 48 animales fotorrealistas generados con IA y recortados sin fondo.
+Permite buscar por nombre, incluso sin tildes. El tablero da protagonismo al animal,
+la guía y los ocho hábitats, con fotografías y pequeños pictogramas identificadores.
+El cierre presenta el progreso real y permite comenzar otra partida.
+El progreso indica retos completados. Se adapta a móvil y admite
 selección con teclado. No necesita vídeos, GIF ni recursos visuales externos.
-Puedes ver el [tablero de juego](docs/interfaz/03_reto_escritorio.png) y el
-[inicio en móvil](docs/interfaz/06_inicio_movil.png).
+Puedes ver el [tablero actualizado](docs/interfaz/revisiones/2026-10-10-redisenio/tablero.webp),
+el [catálogo](docs/interfaz/revisiones/2026-10-10-redisenio/catalogo.webp) y
+el [cierre](docs/interfaz/revisiones/2026-10-10-redisenio/cierre.webp).
+Los archivos y prompts de los animales están en
+[imagenes_animales_ia.json](datos/imagenes_animales_ia.json). Son imágenes sintéticas,
+no fotografías de ejemplares reales. Los 95 pictogramas originales se conservan con sus créditos.
 
 La interfaz carga el modelo sintético contextual R01, congelado, elegido por su
 posición como primera réplica y no por su rendimiento. Para revisar los registros
