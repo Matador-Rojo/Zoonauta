@@ -87,15 +87,20 @@ pausar con el botón central; play o cualquiera de las flechas reanuda el cambio
 reinicia los 10 segundos. El carrusel empieza en marcha. Preferencias y la pestaña
 inactiva suspenden temporalmente el cambio; movimiento reducido elimina las animaciones.
 La selva es ahora un paisaje sin el guacamayo y comparte el estilo de los otros siete.
-Los botones de inicio y el diálogo usan la misma paleta oscura con acentos lima.
-El catálogo muestra 48 animales fotorrealistas generados con IA y recortados sin fondo.
-Permite buscar por nombre, incluso sin tildes. El tablero da protagonismo al animal,
-la guía y los ocho hábitats, con fotografías y pequeños pictogramas identificadores.
+La portada tiene un único botón Comenzar; después se elige Yo elijo o El agente elige
+en un diálogo con pictogramas. Ambos diálogos usan la misma paleta oscura con acentos lima.
+Puedes ver la [portada con Comenzar](docs/interfaz/revisiones/2026-10-10-inicio/inicio.webp)
+y la [elección de modalidad](docs/interfaz/revisiones/2026-10-10-inicio/selector.webp).
+El catálogo muestra los 48 animales fotorrealistas generados con IA y recortados sin fondo,
+en ocho páginas de seis animales. Permite buscar en todo el catálogo, incluso sin tildes.
+Las preguntas y pistas conservan los pictogramas originales del catálogo educativo;
+los recortes fotorrealistas se usan en tarjetas, retratos y cierres. Los ocho hábitats
+presentan pictogramas grandes y centrados, con los paisajes como apoyo de fondo.
 El cierre presenta el progreso real y permite comenzar otra partida.
 El progreso indica retos completados. Se adapta a móvil y admite
 selección con teclado. No necesita vídeos, GIF ni recursos visuales externos.
-Puedes ver el [tablero actualizado](docs/interfaz/revisiones/2026-10-10-redisenio/tablero.webp),
-el [catálogo](docs/interfaz/revisiones/2026-10-10-redisenio/catalogo.webp) y
+Puedes ver el [tablero actualizado](docs/interfaz/revisiones/2026-10-10-caa/tablero.webp),
+el [catálogo](docs/interfaz/revisiones/2026-10-10-caa/catalogo.webp) y
 el [cierre](docs/interfaz/revisiones/2026-10-10-redisenio/cierre.webp).
 Los archivos y prompts de los animales están en
 [imagenes_animales_ia.json](datos/imagenes_animales_ia.json). Son imágenes sintéticas,

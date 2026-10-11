@@ -10,9 +10,12 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 
 | Elemento | Comportamiento disponible |
 |---|---|
-| Inicio del jugador | Muestra los 48 animales, todos seleccionables. |
+| Portada | Un único botón principal Comenzar abre la elección de modalidad. Volver al inicio o Escape cierran esa elección sin iniciar la partida. |
+| Inicio del jugador | Muestra seis animales por página; ocho páginas permiten elegir cualquiera de los 48. |
 | Inicio del agente | Prepara automáticamente el escenario siguiente. |
 | Búsqueda | Filtra los 48 animales por nombre, sin distinguir mayúsculas o tildes. |
+| Páginas | Anteriores y Siguientes recorren los resultados sin modificar el reto ni el progreso. Buscar vuelve a la primera página; pausar y reanudar conservan la página. |
+| Pictogramas educativos | Preguntas y pistas usan los recursos originales; las tarjetas y retratos conservan los animales fotorrealistas. Los símbolos de hábitat son grandes y centrados. |
 | Reto | Muestra el animal, la pregunta o pista y los ocho hábitats. |
 | Progreso | Indica retos completados mediante texto y una barra accesible. |
 | Ayuda | Solicita una nueva pista: niveles 1, 2 y 3; después conserva 3. |
@@ -183,14 +186,14 @@ Actualizar allí solo consulta el registro.
 ## 6. Recorrido para la demostración
 
 1. Abre Preferencias, selecciona un reto y prueba una voz española disponible.
-2. Pulsa Yo elijo y muestra el catálogo completo de 48 animales.
-3. Selecciona Capibara o ronsoco. Aparecen los ocho hábitats.
+2. Pulsa Comenzar y luego Yo elijo. Muestra las páginas de seis animales y la búsqueda global.
+3. Busca Capibara o ronsoco y selecciónala. Aparecen los ocho hábitats.
 4. Pulsa Ayuda y Repetir. Se conserva la pista, secuencia y texto de voz.
 5. Pulsa Pausar y Reanudar. El reto y la ayuda siguen vigentes.
 6. Selecciona Desierto cálido: aparece una respuesta neutral por asociación pendiente.
 7. Selecciona Selva tropical: es una asociación adicional confirmada y resuelve el reto,
    aunque el hábitat de guía de la capibara sea Agua dulce.
-8. Pulsa Continuar para cerrar. Comienza otra partida con El agente elige.
+8. Pulsa Continuar para cerrar. Comienza otra partida con Comenzar y después El agente elige.
 9. Abre `/revision` para mostrar que el modelo permanece congelado.
 
 ## 7. Verificación realizada

@@ -5,6 +5,7 @@ let locucionNativa=null;
 const eleccionesVoz={};
 const canalVoz=crypto.randomUUID();
 let carrusel = null, temporizadorPaisaje = null;
+let estadoCatalogo = {consulta:"", pagina:0, idioma:null};
 
 const $ = id => document.getElementById(id);
 const juego = $("juego"), aviso = $("aviso");
@@ -29,8 +30,8 @@ function idiomaPantalla() {
   $("etiqueta-voces").textContent=t(vista.idioma==="pt-BR"?"Voz en portugués brasileño":"Voz en español");
 }
 function nodo(tag, clase, texto) { const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=t(texto); return n; }
-function imagen(id, clase="") {
-  const im=nodo("img",clase); const animal=/^P_A\d{2}$/.test(id);
+function imagen(id, clase="", fotografia=false) {
+  const im=nodo("img",clase); const animal=fotografia&&/^P_A\d{2}$/.test(id);
   im.src=animal?`/animales/${id.slice(2)}.webp`:vista.pictogramas[id].imagen;
   if(animal)im.classList.add("animal-foto");
   im.alt=""; im.draggable=false; im.decoding="async"; return im;
@@ -60,10 +61,10 @@ function icono(nombre,clase="") {
   if(clase)svg.setAttribute("class",clase);
   const path=document.createElementNS(svg.namespaceURI,"path"); path.setAttribute("d",caminos[nombre]); svg.append(path); return svg;
 }
-function boton(texto,tipo,payload={},clase="accion",picto=null) {
+function boton(texto,tipo,payload={},clase="accion",picto=null,fotografia=false) {
   const b=nodo("button",clase); b.type="button"; b.dataset.clave=tipo+JSON.stringify(payload);
   if(texto)b.setAttribute("aria-label",t(texto));
-  if(picto)b.append(imagen(picto)); if(texto)b.append(nodo("span","",texto));
+  if(picto)b.append(imagen(picto,"",fotografia)); if(texto)b.append(nodo("span","",texto));
   b.addEventListener("click",()=>accion(tipo,payload)); return b;
 }
 function respuesta(r) {
@@ -101,7 +102,7 @@ function paisaje(habitat,clase="") {
 function detenerCarrusel() { clearInterval(temporizadorPaisaje); temporizadorPaisaje=null; }
 function ritmoCarrusel() {
   detenerCarrusel();
-  if(carrusel&&!carrusel.pausado&&!document.hidden&&!$("preferencias").open&&vista?.fase==="INICIO")
+  if(carrusel&&!carrusel.pausado&&!document.hidden&&!$("preferencias").open&&!$("elegir-modalidad")?.open&&vista?.fase==="INICIO")
     temporizadorPaisaje=setInterval(()=>cambiarPaisaje(1),10000);
 }
 function cambiarPaisaje(paso) {
@@ -126,14 +127,23 @@ function inicio() {
   const h=nodo("h1"); h.id="titulo-pantalla"; h.tabIndex=-1;
   h.append(nodo("span","","Cada animal."),nodo("em","","Su mundo."));
   texto.append(h,nodo("p","introduccion","48 animales. 8 hábitats. Descubre dónde viven con pictogramas y una guía que te acompaña."));
-  const entrada=nodo("div","entrada"); entrada.append(nodo("h2","pregunta-inicio","¿Quién elige el animal?"));
-  const modos=nodo("div","modalidades");
-  for(const [m,i,etiqueta] of [["JUGADOR","persona","Yo elijo"],["AGENTE","brujula","El agente elige"]]) {
-    const btn=boton("", "iniciar",{modalidad:m},"modalidad"); btn.setAttribute("aria-label",t(etiqueta));
-    btn.append(icono(i,"modo-icono"),nodo("span","",etiqueta),icono("flecha","flecha")); modos.append(btn);
+  const entrada=nodo("div","entrada"),comenzar=nodo("button","modalidad comenzar");
+  comenzar.type="button";comenzar.setAttribute("aria-label",t("Comenzar"));comenzar.setAttribute("aria-haspopup","dialog");
+  comenzar.append(icono("reproducir","modo-icono"),nodo("span","","Comenzar"),icono("flecha","flecha"));
+  const selector=nodo("dialog","selector-modalidad");selector.id="elegir-modalidad";selector.setAttribute("aria-labelledby","titulo-modalidad");
+  const encabezado=nodo("h2","","¿Quién elige el animal?");encabezado.id="titulo-modalidad";
+  const modos=nodo("div","opciones-modalidad");
+  for(const [m,etiqueta] of [["JUGADOR","Yo elijo"],["AGENTE","El agente elige"]]) {
+    const btn=nodo("button","opcion-modalidad");btn.type="button";btn.setAttribute("aria-label",t(etiqueta));
+    btn.append(imagen(m==="JUGADOR"?"P_JUGADOR":"P_AGENTE"),nodo("span","",etiqueta));
+    btn.addEventListener("click",()=>{selector.close();accion("iniciar",{modalidad:m});});modos.append(btn);
   }
+  const volver=nodo("button","accion volver-inicio","Volver al inicio");volver.type="button";volver.addEventListener("click",()=>selector.close());
+  selector.append(encabezado,modos,volver);
+  comenzar.addEventListener("click",()=>{selector.showModal();ritmoCarrusel();});
+  selector.addEventListener("close",()=>{comenzar.focus({preventScroll:true});ritmoCarrusel();});
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
-  entrada.append(modos,nota); texto.append(entrada); layout.append(texto);
+  entrada.append(comenzar,nota); texto.append(entrada); layout.append(texto);
   const ficha=nodo("div","hero-ficha"),numero=nodo("span","ficha-numero"),nombre=nodo("strong");
   ficha.append(numero,nombre);
   const navegacion=nodo("nav","paisaje-controles");
@@ -147,38 +157,57 @@ function inicio() {
   for(const [t,sub] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Ayuda, repetición y pausa"]]) {
     const item=nodo("div","resumen-item");item.append(nodo("strong","",t),nodo("span","",sub));resumen.append(item);
   }
-  b.append(foto,nodo("div","hero-sombra"),layout,resumen);
+  b.append(foto,nodo("div","hero-sombra"),layout,resumen,selector);
   carrusel={foto,numero,nombre,navegacion,pausa,paisajes:vista.opciones_habitat,indice:0,pausado:false};
   cambiarPaisaje(0);ritmoCarrusel();return [b];
 }
 function catalogoAnimales() {
+  if(estadoCatalogo.idioma!==vista.idioma)estadoCatalogo={consulta:"",pagina:0,idioma:vista.idioma};
   const barra=nodo("div","catalogo-barra"),total=nodo("p","catalogo-total",t("{n} animales para explorar",{n:vista.catalogo_animales.length}));
   total.setAttribute("aria-live","polite"); total.setAttribute("aria-atomic","true");
   const buscar=nodo("label","busqueda"),input=nodo("input");
   input.type="search"; input.placeholder=t("Busca un animal…"); input.setAttribute("aria-label",t("Buscar animal")); input.autocomplete="off";
+  input.value=estadoCatalogo.consulta;
   buscar.append(icono("buscar"),input); barra.append(total,buscar);
-  const catalogo=nodo("div","catalogo"); catalogo.setAttribute("aria-label",t("48 animales disponibles"));
+  const catalogo=nodo("div","catalogo"); catalogo.id="catalogo-animales"; catalogo.setAttribute("aria-label",t("Animales de esta página"));
   const normalizar=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase(vista.idioma).trim();
-  for(const a of vista.catalogo_animales) {
-    const tarjeta=boton(a.nombre,"elegir_animal",{animal_id:a.id},"tarjeta",a.pictograma_id);
-    tarjeta.prepend(nodo("span","animal-numero",a.id.slice(1)));
-    tarjeta.append(icono("flecha","animal-flecha"));
-    tarjeta.dataset.busqueda=normalizar(a.nombre); catalogo.append(tarjeta);
-  }
   const vacia=nodo("p","busqueda-vacia","No encontramos ese animal. Prueba con otro nombre."); vacia.hidden=true;
-  input.addEventListener("input",()=>{
-    const consulta=normalizar(input.value); let cantidad=0;
-    for(const b of catalogo.children) {b.hidden=!b.dataset.busqueda.includes(consulta); if(!b.hidden)cantidad++;}
-    total.textContent=consulta?t("{n} de {total} animales",{n:cantidad,total:vista.catalogo_animales.length}):t("{n} animales para explorar",{n:vista.catalogo_animales.length});
-    vacia.hidden=cantidad!==0;
-  });
-  return [barra,catalogo,vacia];
+  const paginas=nodo("nav","catalogo-paginacion"),estado=nodo("span","catalogo-pagina");
+  paginas.setAttribute("aria-label",t("Páginas de animales"));
+  estado.setAttribute("aria-live","polite"); estado.setAttribute("aria-atomic","true");
+  const control=(etiqueta,simbolo,paso)=>{
+    const b=nodo("button","accion");b.type="button";b.setAttribute("aria-label",t(etiqueta));b.setAttribute("aria-controls",catalogo.id);
+    b.append(icono(simbolo),nodo("span","",etiqueta));
+    b.addEventListener("click",()=>{estadoCatalogo.pagina+=paso;dibujar();catalogo.querySelector("button")?.focus({preventScroll:true});catalogo.scrollIntoView({block:"nearest"});});
+    return b;
+  };
+  const anterior=control("Anteriores","anterior",-1),siguiente=control("Siguientes","flecha",1);
+  paginas.append(anterior,estado,siguiente);
+  function dibujar() {
+    const consulta=normalizar(estadoCatalogo.consulta);
+    const animales=vista.catalogo_animales.filter(a=>normalizar(a.nombre).includes(consulta));
+    const cantidadPaginas=Math.ceil(animales.length/6);
+    estadoCatalogo.pagina=Math.max(0,Math.min(estadoCatalogo.pagina,cantidadPaginas-1));
+    catalogo.replaceChildren();
+    for(const a of animales.slice(estadoCatalogo.pagina*6,(estadoCatalogo.pagina+1)*6)) {
+      const tarjeta=boton(a.nombre,"elegir_animal",{animal_id:a.id},"tarjeta",a.pictograma_id,true);
+      tarjeta.prepend(nodo("span","animal-numero",a.id.slice(1)));
+      tarjeta.append(icono("flecha","animal-flecha")); catalogo.append(tarjeta);
+    }
+    total.textContent=consulta?t("{n} de {total} animales",{n:animales.length,total:vista.catalogo_animales.length}):t("{n} animales para explorar",{n:vista.catalogo_animales.length});
+    estado.textContent=t("Página {pagina} de {total}",{pagina:estadoCatalogo.pagina+1,total:cantidadPaginas});
+    anterior.disabled=estadoCatalogo.pagina===0;
+    siguiente.disabled=estadoCatalogo.pagina>=cantidadPaginas-1;
+    paginas.hidden=animales.length===0; vacia.hidden=animales.length!==0;
+  }
+  input.addEventListener("input",()=>{estadoCatalogo.consulta=input.value;estadoCatalogo.pagina=0;dibujar();});
+  dibujar();return [barra,catalogo,paginas,vacia];
 }
 function cierre(fase) {
   const b=nodo("section","centro cierre"),visual=nodo("div","cierre-visual"),contenido=nodo("div","cierre-contenido");
   visual.setAttribute("aria-hidden","true");
   const ids=fase==="PAUSADA"&&vista.animal?[vista.animal.pictograma_id]:["P_A05","P_A31","P_A01"];
-  ids.forEach((id,i)=>visual.append(imagen(id,`cierre-animal cierre-animal-${i}`)));
+  ids.forEach((id,i)=>visual.append(imagen(id,`cierre-animal cierre-animal-${i}`,true)));
   const h=nodo("h1","",fase==="PAUSADA"?"Tomamos una pausa":fase==="COMPLETADA"?"¡Terminamos!":"Partida terminada");h.id="titulo-pantalla";h.tabIndex=-1;
   contenido.append(nodo("p","etiqueta","Tu expedición"),h,nodo("p","introduccion",vista.respuesta.texto_apoyo));
   const resumen=nodo("div","cierre-resumen");
@@ -194,7 +223,7 @@ function render(enfocar=false,conservarPaisaje=false) {
   detenerCarrusel(); carrusel=null;idiomaPantalla();
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
   const f=vista.fase; document.body.dataset.fase=f;
-  if(f==="INICIO") {juego.append(...inicio());if(previo){Object.assign(carrusel,previo);cambiarPaisaje(0);ritmoCarrusel();}}
+  if(f==="INICIO") {estadoCatalogo={consulta:"",pagina:0,idioma:vista.idioma};juego.append(...inicio());if(previo){Object.assign(carrusel,previo);cambiarPaisaje(0);ritmoCarrusel();}}
   else if(f==="SELECCION_ANIMAL") {
     juego.append(titulo("Elige un animal","Toca el animal con el que quieres jugar.","Explora los animales"),...catalogoAnimales(),controles());
   } else if(f==="PAUSADA"||f==="COMPLETADA"||f==="ABANDONADA") {
@@ -202,7 +231,7 @@ function render(enfocar=false,conservarPaisaje=false) {
   } else {
     juego.append(titulo(f==="RETO_RESUELTO"?"¡Encontraste un lugar!":"Elige un hábitat",null,"Encuentra su hábitat"));
     const tablero=nodo("div","tablero"),companero=nodo("aside","companero"),animal=nodo("div","animal-actual"),retrato=nodo("div","animal-retrato");
-    retrato.append(imagen(vista.animal.pictograma_id));
+    retrato.append(imagen(vista.animal.pictograma_id,"",true));
     animal.append(nodo("p","etiqueta","Tu animal"),retrato,nodo("strong","",vista.animal.nombre));
     companero.append(animal,nodo("p","companero-nota","Puedes pedir una pista, repetirla o tomar una pausa."));
     const mesa=nodo("div","mesa"); mesa.append(respuesta(vista.respuesta));

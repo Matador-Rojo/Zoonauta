@@ -33,11 +33,12 @@ async function contexto(browser,voces=inventario,locales=true){
  },voces);
  return c;
 }
-async function abrir(c){const p=await c.newPage();await p.goto(base);await p.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();return p;}
+async function abrir(c){const p=await c.newPage();await p.goto(base);await p.getByRole('button',{name:'Comenzar',exact:true}).waitFor();return p;}
 async function revision(p){return p.evaluate(async()=>await(await fetch('/api/revision')).json());}
 async function elegir(p,nombre){const o=await p.locator('#voces option').filter({hasText:nombre}).getAttribute('value');await p.locator('#voces').selectOption(o);return o;}
 async function probar(p){const n=await p.evaluate(()=>window.__lecturas.length);await p.locator('#probar-voz').click();await p.waitForFunction(n=>window.__lecturas.length>n,n);return p.evaluate(()=>window.__lecturas.at(-1));}
 async function actuar(p,nombre,fase){
+  if(['Yo elijo','El agente elige','Eu escolho','O agente escolhe'].includes(nombre)&&!await p.getByRole('button',{name:nombre,exact:true}).isVisible())await p.getByRole('button',{name:/^(Comenzar|Começar)$/}).click();
  const rev=(await revision(p)).registro.filter(x=>x.tipo_registro==='EVENTO').length;
  await p.getByRole('button',{name:nombre,exact:true}).click();
  await p.waitForFunction(()=>document.getElementById('juego').getAttribute('aria-busy')==='false');
@@ -78,7 +79,7 @@ async function actuar(p,nombre,fase){
   await p.locator('#voz').uncheck();assert.ok(await p.evaluate(()=>window.__cancelaciones)>cancelaciones);
   await p.locator('#voz').check();await probar(p);
   await p.evaluate(()=>window.__actual.onerror({error:'network'}));assert.match(await p.locator('#aviso').textContent(),/Não foi possível reproduzir/);
-  await p.reload();await p.getByRole('button',{name:'Eu escolho',exact:true}).waitFor();assert.equal(await p.evaluate(()=>window.__lecturas.length),0);
+  await p.reload();await p.getByRole('button',{name:'Começar',exact:true}).waitFor();assert.equal(await p.evaluate(()=>window.__lecturas.length),0);
   resultados.push({caso:'Silencio, errores de voz localizados, eventos cancelados antiguos y recarga sin lectura automática',resultado:'OK'});
 
   const tardio=await contexto(browser,[],false),pt=await abrir(tardio);pt.on('pageerror',e=>errores.push(e.message));
@@ -87,7 +88,7 @@ async function actuar(p,nombre,fase){
   const elegida=await elegir(pt,'Microsoft Sabina');await probar(pt);
   await pt.evaluate(()=>window.__actualizar([]));assert.equal(await pt.locator('#probar-voz').isDisabled(),true);
   await pt.evaluate(v=>window.__actualizar(v),inventario);assert.equal(await pt.locator('#voces').inputValue(),elegida);
-  await pt.getByRole('button',{name:'Volver al juego',exact:true}).click();await actuar(pt,'Yo elijo','SELECCION_ANIMAL');await actuar(pt,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
+  await pt.getByRole('button',{name:'Volver al juego',exact:true}).click();await actuar(pt,'Yo elijo','SELECCION_ANIMAL');await pt.getByRole('searchbox',{name:'Buscar animal'}).fill('capibara');await actuar(pt,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
   await actuar(pt,'Ayuda');const ayuda=await pt.evaluate(()=>window.__lecturas.at(-1));await actuar(pt,'Repetir');assert.equal((await pt.evaluate(()=>window.__lecturas.at(-1))).texto,ayuda.texto);
   await actuar(pt,'Pausar','PAUSADA');await actuar(pt,'Reanudar','ESPERANDO_RESPUESTA');assert.equal((await pt.evaluate(()=>window.__lecturas.at(-1))).texto,ayuda.texto);
   await actuar(pt,'Desierto cálido');assert.equal((await revision(pt)).estado.resultado,'PENDIENTE');await actuar(pt,'Selva tropical','RETO_RESUELTO');assert.equal((await revision(pt)).estado.completados,1);
