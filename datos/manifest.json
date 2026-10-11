@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "version_proyecto": "4.2.0",
+  "version_proyecto": "4.3.0",
   "fecha_preparacion": "2026-10-11",
   "paquete": "poc_interfaz_animales_habitats_v3",
   "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
@@ -85,7 +85,7 @@
       "semillas_separadas": true
     },
     "evaluacion_con_jugadores": false,
-    "casos_navegador_correctos": 24,
+    "casos_navegador_correctos": 25,
     "validacion_caa_con_usuarios": false,
     "voz_prueba": "SINTESIS_REAL_14_VOCES_Y_REPRODUCTOR_NATIVO_2_IDIOMAS",
     "audio_audible_en_dispositivo_usuario_verificado": false,
@@ -97,7 +97,7 @@
       "pt-BR"
     ],
     "dependencias_windows_x64_python312_disponibles": 32,
-    "revision_actual": "docs/interfaz/4.2/revision.json",
+    "revision_actual": "docs/interfaz/4.3/revision.json",
     "ayuda_automatica_interfaz": true,
     "relaciones_pendientes_probadas_interfaz": 315,
     "animales_con_imagen_unica": 48,
@@ -110,7 +110,9 @@
     "animal_grande_sin_recorte_verificado": true,
     "fondo_continuo_verificado": true,
     "voz_modalidad_solo_dialogo_verificada": true,
-    "robot_cierre_y_pausa_verificados": true
+    "robot_cierre_y_pausa_verificados": true,
+    "notificaciones_temporales_verificadas": true,
+    "retos_validados_antes_de_modalidad": true
   },
   "archivos": [
     {
@@ -711,7 +713,7 @@
     {
       "ruta": "codigo/interfaz/preparar_voces.py",
       "bytes": 3544,
-      "sha256": "910a1bb5751081251e9d7436685c01a12ce22f91dbc302658f9d4dcd30af42e5"
+      "sha256": "e7bb97f60415c72195192ab4893d714f4e2fffd7f4f0394ae6211150ef535058"
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
@@ -721,7 +723,7 @@
     {
       "ruta": "codigo/interfaz/servidor.py",
       "bytes": 10973,
-      "sha256": "e612535ac1545cec6c0d9cc83275e7954edf926ee29b96e4e77f7933714894dc"
+      "sha256": "8cf51b57cc28a53e76aeac3c0db50b6e6829d37e97059b3566c30d48d5a107a8"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -730,13 +732,13 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 28640,
-      "sha256": "c8b74dd096462247841f8de367440be71f21c0a4f8d2bb651fc40af104238255"
+      "bytes": 30209,
+      "sha256": "1a45d9ee16d33831c746ebdfbca112cbb332fbf93dbb047163e9471bd3601a61"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
-      "bytes": 27559,
-      "sha256": "fb92c31fbbb58af524ebcc6ce20598108c3fe26502435edd235f2b725fcb0f90"
+      "bytes": 28132,
+      "sha256": "169ae185e8e87b15b57256e8fa1a156738aa8bd441fb287f702ecc0f756333f1"
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
@@ -780,8 +782,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 3892,
-      "sha256": "1f85f2d1c1da75c521075481297c5209616b843678b01f912162fec0badab308"
+      "bytes": 4057,
+      "sha256": "93d12e0500756456432b8088fdd8a07757d8371ffc4411a30cd44fb1020795f7"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -990,8 +992,8 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 27083,
-      "sha256": "e4d9e6c4446d6bf8bd9ddde889fb368ed7c19d722e07533ee51b439ea1c31e7b"
+      "bytes": 27378,
+      "sha256": "efa66d60aa53d2c870f45398d151ca5672b670ea57a40fd9c90d3702da60d9bb"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
@@ -1895,8 +1897,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 19957,
-      "sha256": "9fa6f4413ef6ccac5ac506641b530d87493fcff31ec53de5e0dd1eda7c04c5f5"
+      "bytes": 20169,
+      "sha256": "42bc15a712428250455534c7c7e003b8762e1e05dba0709df351891e772cde94"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1979,14 +1981,19 @@
       "sha256": "1209f0a1a09f2b853618db2150758d3b472ea90290bf103adbdd5633e457fc29"
     },
     {
+      "ruta": "docs/interfaz/4.3/revision.json",
+      "bytes": 8076,
+      "sha256": "d3cf846b5d205035bb00a117a843d0aa5c53fa4bd94d52e21894fee17dea63da"
+    },
+    {
       "ruta": "docs/interfaz/alternativas_voz.md",
       "bytes": 7405,
       "sha256": "fb67fe098bb9589ba297d2bc0ecfe4e9bab731809733ffc289969da9c0b45425"
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 12758,
-      "sha256": "7720f5f425a3377e1df620a22e70128ee86f355c0687dc7c3387801cd3a5966d"
+      "bytes": 13235,
+      "sha256": "beaaf6265fd72120c3179f6b6a924ce256239f91c108fafdba8c02a67b8127a4"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -2265,8 +2272,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 10623,
-      "sha256": "ce181bdf2a2948e99a4bf2f3911bd7abe55fb9ce88c4aaea5857a3ca07eea844"
+      "bytes": 10872,
+      "sha256": "121090e5adbbdc183923a77e91aa33ea2ddcad05bb0e147ba6e3ebe8ef45fe74"
     },
     {
       "ruta": "requirements_voz.txt",
@@ -2316,22 +2323,22 @@
     {
       "ruta": "tests/verificar_audio_real.cjs",
       "bytes": 3551,
-      "sha256": "d263be777f792801e0789462abe35a7ce53cf27df1e6173f317f793ec762c7da"
+      "sha256": "cb466a5db0d1eff4a14ba67c4179c76a9306e6382a37a6f2e8ed1955dd7aa0b6"
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 45127,
-      "sha256": "2685183cc1b6b9c9271269ba85d71f2ee8ac499d0c3da0014ede3df18393f3e2"
+      "bytes": 50026,
+      "sha256": "644c24aae8e5d9bc8050050a19b324d7ff01f1a9aee78862cae27f0c95eb79c5"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
-      "bytes": 12826,
-      "sha256": "885f5d7ff7f168105069c3167927663ca150e147d680b2f46c5acf4a7a24a62f"
+      "bytes": 12838,
+      "sha256": "dac53f55f44d8233b47f87d50f016228a31e7158a207950656d39141b4e40d82"
     },
     {
       "ruta": "tests/verificar_voces_reales.py",
       "bytes": 2397,
-      "sha256": "ac8826f353a765efdc713fbcef1d51ebc0a95d33ecb91c66148e03a6d83a9faf"
+      "sha256": "c769847a2d37d40bda13f4c3ffac235f84eaef607ca3c2c8615619c24371cc93"
     }
   ],
   "nombre_proyecto": "Zoonauta"

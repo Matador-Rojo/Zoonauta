@@ -12,13 +12,13 @@
     <button id="ajustes" class="boton-texto" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M9 4v6M15 14v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Preferencias</button>
   </header>
   <main id="juego" aria-busy="true" tabindex="-1"><p class="cargando" role="status">Preparando tu expedición…</p></main>
-  <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
-  <footer class="creditos"><span class="pie-lema">Zoonauta <span class="version">4.2</span></span><p>Ilustraciones de animales, pictogramas y paisajes originales generados con IA.</p></footer>
+  <div id="aviso" class="aviso" popover="manual" hidden><p id="aviso-texto" role="status" aria-live="polite" aria-atomic="true"></p><button id="cerrar-aviso" type="button" aria-label="Cerrar notificación">×</button></div>
+  <footer class="creditos"><span class="pie-lema">Zoonauta <span class="version">4.3</span></span><p>Ilustraciones de animales, pictogramas y paisajes originales generados con IA.</p></footer>
   <dialog id="preferencias" aria-labelledby="titulo-preferencias">
     <div class="ajustes-cabecera"><div><p class="etiqueta">Tu expedición</p><h2 id="titulo-preferencias">A tu manera.</h2></div><button id="cerrar-ajustes" class="cerrar-dialogo" aria-label="Cerrar Preferencias">×</button></div>
     <p class="subtitulo">Un ritmo cómodo. Una voz que te acompañe.</p>
     <label class="campo"><span>Idioma</span><select id="idioma"><option value="es">Español</option><option value="pt-BR">Português (Brasil)</option></select></label>
-    <section class="ajustes-seccion" aria-labelledby="ajustes-partida"><div class="ajuste-fila"><div><h3 id="ajustes-partida">La partida</h3><p class="detalle">¿Cuántos animales quieres explorar?</p></div><label class="numero-retos"><span class="solo-lectura">Retos por partida</span><input id="retos" type="number" min="1" max="48" value="8"></label></div><p class="nota-ajustes">De 1 a 48. Se aplica al comenzar; todos los animales siguen disponibles.</p></section>
+    <section class="ajustes-seccion" aria-labelledby="ajustes-partida"><div class="ajuste-fila"><div><h3 id="ajustes-partida">La partida</h3><p class="detalle">¿Cuántos animales quieres explorar?</p></div><label class="numero-retos"><span class="solo-lectura">Retos por partida</span><input id="retos" type="number" min="1" max="48" step="1" value="8"></label></div><p class="nota-ajustes">De 1 a 48. Se aplica al comenzar; todos los animales siguen disponibles.</p></section>
     <section class="ajustes-seccion" aria-labelledby="ajustes-voz">
       <label class="ajuste-fila voz-interruptor"><span><span id="ajustes-voz" class="ajuste-titulo">Una guía con voz</span><span class="detalle">Leer las respuestas en voz alta.</span></span><input id="voz" type="checkbox" checked></label>
       <label class="campo"><span id="etiqueta-voces">Voz en español</span><select id="voces"><option value="">Buscando voces…</option></select></label>

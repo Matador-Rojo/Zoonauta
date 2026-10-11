@@ -110,9 +110,6 @@ progress::-moz-progress-bar { background:var(--lima); border-radius:10px; }
 .centro .acciones { justify-content:center; border:0; padding:0; background:none; }
 .centro .salir { margin-left:0; }
 .centro>.accion { margin:auto; }
-.aviso { max-width:1320px; margin:0 auto; padding:0 20px; color:#ffd391; font-size:14px; }
-.aviso:empty { display:none; }
-.aviso:not(:empty) { padding:16px 20px; background:#42311b; border:1px solid #a5824e; border-radius:13px; margin-bottom:18px; }
 .creditos { max-width:1344px; width:calc(100% - 96px); margin:0 auto; padding:24px 0 30px; border-top:1px solid var(--borde); color:#acbcaa; font-size:10px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .pie-lema { font-size:18px; color:#dce7d0; flex-shrink:0; letter-spacing:-.6px; }
 .version { font-size:10px; color:#b7c8af; margin-left:6px; letter-spacing:0; }
@@ -225,7 +222,6 @@ body[data-fase="INICIO"] { height:100dvh; overflow:hidden; background:#091713; }
 body[data-fase="INICIO"] .cabecera { position:absolute; z-index:5; top:0; left:0; right:0; max-width:1600px; width:100%; border:0; padding:clamp(20px,3vh,32px) clamp(24px,4vw,64px); }
 body[data-fase="INICIO"] #juego { max-width:none; min-height:0; margin:0; padding:0; }
 body[data-fase="INICIO"] .creditos { display:none; }
-body[data-fase="INICIO"] .aviso:not(:empty) { position:fixed; left:20px; right:20px; bottom:20px; z-index:7; margin:0; }
 .bienvenida { position:relative; isolation:isolate; height:100dvh; overflow:hidden; background:#091713; }
 .hero-paisaje { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:65% 35%; z-index:-3; }
 .hero-sombra { position:absolute; inset:0; background:linear-gradient(90deg,#06100de8 0,#06100db8 26%,#06100d40 52%,#06100d08 80%),linear-gradient(0deg,#06100de8 0,transparent 40%,#06100d30 100%); z-index:-2; }
@@ -350,3 +346,11 @@ dialog .primario span { margin-left:12px; }
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
 }
+
+/* Avisos breves, fuera del flujo de la pantalla y por encima de los diálogos. */
+.aviso { position:fixed; inset:auto max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) auto; width:min(360px,calc(100vw - 40px)); max-width:none; margin:0; padding:12px 12px 12px 16px; display:flex; align-items:flex-start; gap:8px; border:1px solid #a5824e; border-radius:16px; background:#42311bf5; color:#ffe0ad; box-shadow:0 12px 32px #0005; z-index:100; font-size:15px; line-height:1.5; }
+.aviso[hidden] { display:none; }
+.aviso::backdrop { background:transparent; pointer-events:none; }
+.aviso p { flex:1; min-width:0; margin:0; overflow-wrap:anywhere; }
+.aviso button { flex-shrink:0; display:grid; place-items:center; width:44px; height:44px; min-height:44px; padding:0; margin:0; border:0; border-radius:10px; background:transparent; color:inherit; font-size:26px; line-height:1; }
+.aviso button:hover { background:#ffffff12; }

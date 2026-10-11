@@ -1,4 +1,4 @@
-# Zoonauta: dirección visual 4.2
+# Zoonauta: dirección visual 4.3
 
 La portada ocupa una sola pantalla. Sus ocho paisajes cambian cada 10 segundos,
 con nombre y contador sincronizados, controles de pausa y navegación manual.
@@ -141,12 +141,12 @@ ningún hábitat ni control se elimina. La revisión de este ajuste está en
 `docs/interfaz/3.8/revision_tablero.json`.
 
 La captura de portada está en `docs/interfaz/3.8/inicio.webp`; su composición se
-conserva. La revisión actual está en `docs/interfaz/4.2/revision.json`.
-La versión 4.2 pasó 72 pruebas Python y 24 casos de navegador: 19 de interfaz
+conserva. La revisión actual está en `docs/interfaz/4.3/revision.json`.
+La versión 4.3 pasó 72 pruebas Python y 25 casos de navegador: 20 de interfaz
 y cinco de voces controladas. La comprensión CAA requiere evaluación con usuarios;
 las pruebas técnicas no demuestran aprendizaje.
 
-## Cierre y pausa en 4.2
+## Cierre y pausa
 
 El cierre usa al robot guía de cuerpo completo, despidiéndose con una mano y
 sosteniendo su cuaderno. La pausa muestra al mismo guía sentado en un banco.
@@ -164,6 +164,15 @@ animal?» ocurre al abrir el diálogo de modalidad y se cancela al cerrarlo.
 Volver a la portada con Comenzar otra partida no dispara esa lectura. Se
 comprueba el comportamiento con voces locales controladas y voces del navegador
 en español y portugués brasileño, sin cambiar la política educativa.
+
+## Avisos
+
+Las notificaciones ocupan como máximo 360 px, se anclan abajo a la derecha y
+quedan fuera del flujo de la portada. Se muestran también sobre Preferencias.
+Duran ocho segundos; un nuevo aviso reinicia el plazo y sustituye el anterior.
+La × tiene un área de 44 × 44 px, nombre accesible y admite teclado. El mensaje
+se anuncia mediante una región de estado sin desplazar el foco. Los valores
+vacíos, decimales o fuera del intervalo 1–48 impiden abrir la modalidad.
 
 ## Revisión anterior
 

@@ -315,6 +315,58 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Nueva partida vuelve a la portada sin voz; abrir el selector lee su pregunta exacta y cerrarlo cancela la lectura, sin cambiar el estado del juego',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
+  // Los avisos no desplazan la portada ni cambian la partida o leen la modalidad.
+  const avisos=await browser.newContext({viewport:{width:1366,height:768}});await mockVoz(avisos);
+  const pa=await avisos.newPage();pa.on('pageerror',e=>errores.push(e.message));await pa.clock.install({time:new Date('2026-10-11T00:00:00Z')});await pa.clock.pauseAt(new Date('2026-10-11T00:00:01Z'));
+  await pa.goto(base);await pa.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
+  for(const idioma of ['es','pt-BR']){
+    await pa.locator('#ajustes').click();await pa.locator('#idioma').selectOption(idioma);
+    await pa.waitForFunction(i=>document.documentElement.lang===i,idioma);
+    const antesAvisos=await vista(pa),vozAntes=await pa.evaluate(()=>window.__voz.length);
+    const aviso=pa.locator('#aviso'),texto=pa.locator('#aviso-texto');
+    const comprobarAviso=async()=>{
+      assert.equal(await aviso.isVisible(),true);
+      const m=await aviso.evaluate(e=>{const r=e.getBoundingClientRect(),b=e.querySelector('button').getBoundingClientRect();return {w:r.width,right:innerWidth-r.right,bottom:innerHeight-r.bottom,altoBoton:b.height,anchoBoton:b.width,sinDesborde:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,popover:e.matches(':popover-open')};});
+      assert.ok(m.w<=360&&m.right>=19&&m.right<=21&&m.bottom>=19&&m.bottom<=21&&m.altoBoton>=44&&m.anchoBoton>=44&&m.sinDesborde&&m.popover,JSON.stringify(m));
+    };
+    await pa.locator('#retos').fill('50');await pa.locator('#retos').press('Tab');await comprobarAviso();
+    assert.equal(await texto.textContent(),idioma==='es'?'Escribe un número entero del 1 al 48.':'Digite um número inteiro de 1 a 48.');
+    assert.equal(await pa.locator('#cerrar-aviso').getAttribute('aria-label'),idioma==='es'?'Cerrar notificación':'Fechar notificação');
+    await captura(pa,'notificacion_preferencias_'+idioma+'.png',false);
+    await pa.clock.runFor(7999);assert.equal(await aviso.isVisible(),true);
+    await pa.clock.runFor(1);assert.equal(await aviso.isVisible(),false);
+    await pa.locator('#cerrar-preferencias').click();
+    const comenzar=pa.getByRole('button',{name:idioma==='es'?'Comenzar':'Começar',exact:true});
+    for(const valor of ['50','0','-1','','1.5']){
+      await pa.locator('#ajustes').click();await pa.locator('#retos').fill(valor);await pa.locator('#cerrar-preferencias').click();
+      await comenzar.click();await comprobarAviso();
+      assert.equal(await pa.locator('#elegir-modalidad').isVisible(),false);
+      assert.equal(await texto.textContent(),idioma==='es'?'Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.':'Para começar, abra Preferências e digite um número inteiro de 1 a 48.');
+      assert.deepEqual(await vista(pa),antesAvisos);assert.equal(await pa.evaluate(()=>window.__voz.length),vozAntes);
+      await pa.locator('#cerrar-aviso').click();assert.equal(await aviso.isVisible(),false);
+      assert.equal(await comenzar.evaluate(e=>e===document.activeElement),true);
+    }
+    await comenzar.click();await pa.clock.runFor(4000);await comenzar.click();
+    await pa.clock.runFor(4000);assert.equal(await aviso.isVisible(),true);
+    await pa.clock.runFor(3999);assert.equal(await aviso.isVisible(),true);
+    await pa.clock.runFor(1);assert.equal(await aviso.isVisible(),false);
+    await comenzar.click();await pa.locator('#ajustes').click();await comprobarAviso();
+    assert.equal(await aviso.evaluate(e=>e.parentElement.id),'preferencias');
+    await pa.locator('#cerrar-aviso').focus();await pa.keyboard.press('Enter');assert.equal(await aviso.isVisible(),false);
+    await pa.locator('#cerrar-preferencias').click();await comenzar.click();
+    for(const [width,height] of [[320,568],[390,844],[1366,768]]){
+      await pa.setViewportSize({width,height});await comprobarAviso();
+      await captura(pa,'notificacion_inicio_'+idioma+'_'+width+'.png',false);
+    }
+    await pa.locator('#ajustes').click();await pa.locator('#retos').fill('1');await pa.locator('#retos').press('Tab');assert.equal(await aviso.isVisible(),false);
+    await pa.locator('#cerrar-preferencias').click();await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();
+    await pa.keyboard.press('Escape');
+    await pa.locator('#ajustes').click();await pa.locator('#retos').fill('48');await pa.locator('#cerrar-preferencias').click();
+    await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();await pa.keyboard.press('Escape');
+    assert.equal(await aviso.isVisible(),false);
+  }
+  resultados.push({caso:'Avisos compactos abajo a la derecha: 8 segundos, reemplazo reinicia el plazo, X y teclado, accesibles sobre Preferencias; rango entero 1–48 y campos vacíos, sin voz ni cambios de partida al intentar comenzar; español y portugués, escritorio y móvil',resultado:'OK'});
+  await avisos.close();
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
   await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await page.getByRole('searchbox',{name:'Buscar animal'}).fill('jirafa');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Pista');
@@ -474,7 +526,7 @@ async function clicar(page,texto,fase){
   assert.deepEqual(await vista(pc),antesCambio);
   resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.2.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.3.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
