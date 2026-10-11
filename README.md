@@ -111,8 +111,8 @@ Los archivos y prompts de los animales están en
 no fotografías de ejemplares reales. El conjunto activo contiene 48 caricaturas de animales
 y dos ilustraciones de modalidad, ocho símbolos de hábitat, cuatro controles
 ilustrados y 33 pictogramas SVG de apoyo.
-Las tarjetas de hábitat muestran únicamente el paisaje realista y el nombre, sin
-dibujos ni números superpuestos. Los pictogramas siguen disponibles en preguntas y
+Las tarjetas de hábitat muestran el paisaje realista, el nombre y un número del
+01 al 08 en la esquina superior derecha. Los pictogramas siguen disponibles en preguntas y
 pistas. El botón «Pista» utiliza un foco; sus recursos y los de hábitats están
 en [imagenes_habitats_controles_ia.json](datos/imagenes_habitats_controles_ia.json).
 Las tarjetas usan ocho paisajes generados específicamente con composición central,
