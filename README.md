@@ -29,6 +29,21 @@ huella y tamaño. Si se interrumpen, vuelve a abrir el iniciador: conserva los
 archivos completos comprobados. Después puedes jugar y escuchar las voces locales sin
 conexión, claves de API ni cuentas adicionales.
 
+Si la preparación falla por la conexión o por restricciones del equipo, el juego
+abre con los recursos disponibles. Para omitir todas las instalaciones y descargas,
+abre **iniciar_sin_descargas.bat** en Windows, o ejecuta:
+
+```console
+py -3 -m codigo.interfaz.iniciar --sin-descargas
+```
+
+En Linux/macOS usa `python3`. Puedes elegir en Preferencias las voces locales ya
+completas o las voces compatibles del navegador. Si no hay ninguna disponible,
+puedes jugar con texto y pictogramas. Esta opción requiere Python, pero no los
+paquetes de voz. Para preparar las voces más adelante, abre `iniciar_juego.bat`
+con una conexión que permita las descargas. `--solo-preparar` sigue indicando un
+error si no logra completar la instalación.
+
 Para usar otro puerto:
 
 ```console

@@ -104,8 +104,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 7520,
-      "sha256": "2606a1156916f01c7fd619a0caa3ee010988c350c58ee4e19d94f03055e142e6"
+      "bytes": 8260,
+      "sha256": "12416fdb76bdbcc418d2815f4cb0a926b56c7cfbe03c564400fa8aae648de35d"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -874,8 +874,8 @@
     },
     {
       "ruta": "codigo/interfaz/iniciar.py",
-      "bytes": 2332,
-      "sha256": "2d947eb452bd60df2337405b6ad4c07fcd7850da339f9f8a7660a7f44c606b5e"
+      "bytes": 3645,
+      "sha256": "25896203a0f322e6d9aa8bff5ca0070d986712f7419e62fe2a8778074766d933"
     },
     {
       "ruta": "codigo/interfaz/preparar_recursos.py",
@@ -2044,8 +2044,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 17020,
-      "sha256": "bdcc6d97a35a8e4f62c79302754a3e5d8e66749c9d53532659ebf9c26aabf4b0"
+      "bytes": 17797,
+      "sha256": "1b38e7a340b0e41e20e1b9e615e5ade7b945c4a673ff115bd24ead14021c94b5"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2283,6 +2283,11 @@
       "sha256": "afe82eefc2dd680086264f1a00b20c19aac1c189edd34dbd3e1b3bdbd3dfc301"
     },
     {
+      "ruta": "iniciar_sin_descargas.bat",
+      "bytes": 82,
+      "sha256": "79f6291f0520c027187cccd57e1f8f74f3817b4c9d181174d644dae8b01f5f93"
+    },
+    {
       "ruta": "requirements_voz.txt",
       "bytes": 667,
       "sha256": "9e54e3b8775197aa9bf514912e88f48a7769b1005d457a8679845bad9ae34e4c"
@@ -2306,6 +2311,11 @@
       "ruta": "tests/test_idiomas_voz.py",
       "bytes": 11518,
       "sha256": "c73f3982966c3582837f8c2454b229eab886c0939f2a05894227b77b061f6363"
+    },
+    {
+      "ruta": "tests/test_inicio.py",
+      "bytes": 6626,
+      "sha256": "fef4a3499cccd4c52d0eee4c766dce482f36a0585574ed759eb8cf50f16618ca"
     },
     {
       "ruta": "tests/test_interfaz.py",
