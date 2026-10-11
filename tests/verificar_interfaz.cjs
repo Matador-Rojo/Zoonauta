@@ -195,7 +195,10 @@ async function clicar(page,texto,fase){
   for(const ancho of [320,390,768,1024,1280]){
     await page.setViewportSize({width:ancho,height:1080});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-    assert.equal(await page.locator('.habitats .tarjeta img,.habitats .habitat-numero').count(),0);
+    assert.equal(await page.locator('.habitats .tarjeta img').count(),0);
+    assert.deepEqual(await page.locator('.habitats .habitat-numero').allTextContents(),['01','02','03','04','05','06','07','08']);
+    const numeros=await page.locator('.habitats .habitat-numero').evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect(),p=e.closest('button').getBoundingClientRect();return r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<=p.bottom&&r.left>(p.left+p.right)/2&&r.bottom<(p.top+p.bottom)/2;}));
+    assert.ok(numeros.every(Boolean));
     const medidas=await page.locator('.habitats .tarjeta .paisaje').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right,fondo:getComputedStyle(i).backgroundImage};}));
     assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=125&&m.dentro&&m.fondo.includes('/habitats/')));
     const ubicacion=await page.locator('.habitats').evaluate(e=>{const r=e.getBoundingClientRect(),p=e.closest('.tablero').getBoundingClientRect(),a=e.closest('.tablero').querySelector('.companero').getBoundingClientRect();return {centrada:Math.abs((r.left+r.right)-(p.left+p.right))<2,debajo:r.top>=a.bottom};});

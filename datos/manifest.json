@@ -114,8 +114,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 10515,
-      "sha256": "e34b030d624de47958eb27890f14863a57df3865d493e9d587207d601167b3b6"
+      "bytes": 10521,
+      "sha256": "2e7e102b1a01323fa40105710ddd01ee4d94fc85f0cf2b695b9b81f59c4ebbbb"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -604,8 +604,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 27717,
-      "sha256": "b8dc5fbbff0bd877619931b3af80fca19472764122fcfce099cf0d55b3d8beae"
+      "bytes": 27842,
+      "sha256": "5e9b12e6cb28666b2ccdc5188c6aa00d69ff7e89938f6b3ddd08a2e75a114878"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -614,8 +614,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 12920,
-      "sha256": "7da6091b5468b78400ea0bf6292fecc019ea824c18fea97a198e9c959e9466f0"
+      "bytes": 13358,
+      "sha256": "cfb52a4e372747949c466cfe853c881a84a90c08b456111d5ec41731359ef643"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -1744,8 +1744,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 20281,
-      "sha256": "fd446531852665377be1ff20dc4f9803e52d5cb47fce27f6bc25d592c1db8be4"
+      "bytes": 20297,
+      "sha256": "4f859b613cc7b2f236d4f8c84e862b2daac86b91014e8c63b4433a38bdf764d7"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2129,8 +2129,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 36477,
-      "sha256": "62f81a2e29f0a6c4184e87cd6b414d17767a4c1f2d985191a34bdeedecde26a5"
+      "bytes": 36929,
+      "sha256": "19b9a85122cde6591502c1f8209adf4ebde8e6ebd0d8051d6439a95f42573d89"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
@@ -2169,8 +2169,8 @@
     },
     {
       "ruta": "datos/imagenes_habitats_controles_ia.json",
-      "bytes": 21529,
-      "sha256": "f837aae2da68a3c8eb5d908843a3c24b079e4c31813efe01c545b67dbd134aec"
+      "bytes": 21580,
+      "sha256": "17345326100bd78556bf433cc0178b1d5b0b01bbde4b3bea7b37e7fc8193e718"
     },
     {
       "ruta": "assets/pictogramas/P_H01.webp",

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "fecha": "2026-10-11",
   "contenido": "Ocho símbolos de hábitat y cuatro controles originales.",
-  "presentacion": "Las tarjetas de hábitat muestran solo el paisaje realista y el nombre. Los pictogramas permanecen disponibles para preguntas y pistas. Pista sustituye a Ayuda y utiliza un foco.",
+  "presentacion": "Las tarjetas de hábitat muestran el paisaje realista, el nombre y un número del 01 al 08 en la esquina superior derecha. Los pictogramas permanecen disponibles para preguntas y pistas. Pista sustituye a Ayuda y utiliza un foco.",
   "items": [
     {
       "id": "P_H01",

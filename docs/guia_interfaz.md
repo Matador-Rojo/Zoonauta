@@ -148,7 +148,7 @@ Los 48 animales se muestran mediante recortes fotorrealistas con transparencia, 
 con IA, en catálogo, retratos y decoración del cierre. Cada tarjeta de selección añade el
 pictograma original correspondiente. Las secuencias educativas usan únicamente los pictogramas originales.
 El tablero muestra ocho paisajes realistas exclusivos de las tarjetas, con el elemento
-principal centrado y sus nombres, sin dibujos ni números superpuestos. La cuadrícula
+principal centrado, sus nombres y números del 01 al 08 en la esquina superior derecha. La cuadrícula
 ocupa todo el ancho debajo del animal y la guía. Los fondos de portada se conservan.
 Los pictogramas de hábitat se conservan en el banco para
 las secuencias educativas. Pista (foco), Repetir, Pausar y Salir

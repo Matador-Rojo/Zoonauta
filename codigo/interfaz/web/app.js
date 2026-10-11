@@ -248,6 +248,7 @@ function render(enfocar=false,conservarPaisaje=false) {
     for(const h of vista.opciones_habitat) {
       const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta");
       b.prepend(paisaje(h.id));
+      const numero=nodo("span","habitat-numero",h.id.slice(1)); numero.setAttribute("aria-hidden","true"); b.append(numero);
       b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
     }
     opciones.append(hab); tablero.append(companero,mesa,opciones); juego.append(tablero,controles());
