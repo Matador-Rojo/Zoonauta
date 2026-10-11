@@ -1,4 +1,4 @@
-# Zoonauta 4.3.0
+# Zoonauta 4.4.0
 
 Juego de animales y hábitats con pictogramas y una guía de inteligencia artificial.
 Disponible en español y portugués brasileño, con voces locales Piper y Kokoro
@@ -19,8 +19,11 @@ No se repiten animales dentro de la partida y una nueva partida comienza con otr
 Pausar, repetir o recargar conserva el orden de la partida en curso.
 
 El número de retos debe ser un entero del **1 al 48**. Si falta o no es válido,
-Comenzar indica cómo corregirlo en Preferencias. Los avisos aparecen pequeños
-abajo a la derecha, desaparecen a los **8 segundos** y pueden cerrarse con la **×**.
+Comenzar indica cómo corregirlo en Preferencias. Los avisos son tarjetas compactas
+con fondo oscuro y borde según su tipo, abajo a la derecha. Los nuevos aparecen
+debajo y los anteriores suben sin superponerse. Cada tarjeta desaparece a los
+**8 segundos** o se cierra con su **×** circular sobre la esquina superior derecha.
+Créditos visuales, dentro de Preferencias, muestra la versión del programa.
 
 Cada reto presenta el animal, una pregunta y ocho hábitats. Las tarjetas usan paisajes
 realistas generados específicamente para ellas, con composición central, nombre y
@@ -161,12 +164,12 @@ y 51 840 de evaluación. Los resultados se conservan en `docs/experimentos`.
 La ayuda automática ante selecciones pendientes está activa en la interfaz;
 consola y simulador conservan su protocolo de ayuda explícita.
 
-La versión 4.3 pasó 72 pruebas Python, ocho casos de aceptación de consola y
+La versión 4.4 pasó 72 pruebas Python, ocho casos de aceptación de consola y
 25 casos de navegador (20 de interfaz y cinco de voces controladas). Comprueban
 transiciones, repetición, pausa, duplicados, traducciones, transparencia y recorridos
 completos del agente sin repetir los 48 animales. También verifican el cierre en
 escritorio y móvil, el progreso real y la pregunta de modalidad solo cuando
-el diálogo está abierto. [Revisión 4.3](docs/interfaz/4.3/revision.json).
+el diálogo está abierto. [Revisión 4.4](docs/interfaz/4.4/revision.json).
 Las evidencias anteriores de síntesis real de las 14 voces permanecen en
 `docs/interfaz/revision_voces_locales.json`; no certifican pronunciación o escucha
 en otros dispositivos. Los documentos V1/V2 y sus resultados son antecedentes.

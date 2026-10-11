@@ -387,7 +387,11 @@
     "Gracias por jugar": "Obrigado por jogar",
     "Cerrar notificación": "Fechar notificação",
     "Escribe un número entero del 1 al 48.": "Digite um número inteiro de 1 a 48.",
-    "Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.": "Para começar, abra Preferências e digite um número inteiro de 1 a 48."
+    "Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.": "Para começar, abra Preferências e digite um número inteiro de 1 a 48.",
+    "Notificaciones": "Notificações",
+    "Revisa los retos": "Confira os desafios",
+    "No se pudo completar": "Não foi possível concluir",
+    "Información": "Informação"
   },
   "errores": {
     "La pantalla ha cambiado. Se recuperó la vista actual.": "A tela mudou. A visualização atual foi recuperada.",

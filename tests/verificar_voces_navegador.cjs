@@ -78,7 +78,7 @@ async function actuar(p,nombre,fase){
   await probar(p);const cancelaciones=await p.evaluate(()=>window.__cancelaciones);
   await p.locator('#voz').uncheck();assert.ok(await p.evaluate(()=>window.__cancelaciones)>cancelaciones);
   await p.locator('#voz').check();await probar(p);
-  await p.evaluate(()=>window.__actual.onerror({error:'network'}));assert.match(await p.locator('#aviso-texto').textContent(),/Não foi possível reproduzir/);
+  await p.evaluate(()=>window.__actual.onerror({error:'network'}));assert.match(await p.locator('.notificacion-texto').last().textContent(),/Não foi possível reproduzir/);
   await p.reload();await p.getByRole('button',{name:'Começar',exact:true}).waitFor();assert.equal(await p.evaluate(()=>window.__lecturas.length),0);
   resultados.push({caso:'Silencio, errores de voz localizados, eventos cancelados antiguos y recarga sin lectura automática',resultado:'OK'});
 
@@ -103,7 +103,7 @@ async function actuar(p,nombre,fase){
   const cancelada=p.waitForResponse(r=>r.url().endsWith('/api/voz/cancelar'));
   await elegir(p,'Google português');assert.equal((await cancelada).status(),200);
   lectura=await probar(p);assert.equal(lectura.lang,'pt-BR');liberar();
-  await p.waitForFunction(()=>document.getElementById('aviso-texto').textContent==='');
+  await p.waitForFunction(()=>document.querySelectorAll('.notificacion').length===0);
   resultados.push({caso:'Cambio de una lectura WAV pendiente a Google: cancela la cola local y lee con el navegador',resultado:'OK'});
 
   // La pregunta de modalidad solo se lee con el diálogo visible, en ambos idiomas.
@@ -134,7 +134,7 @@ async function actuar(p,nombre,fase){
   }
   resultados.push({caso:'Portada silenciosa al reiniciar; pregunta exacta solo al abrir modalidad y cancelación al cerrar, en español y portugués con voz del navegador',resultado:'OK'});
   assert.deepEqual(errores,[]);
-  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'revision_voces_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.3.0',navegador:browser.version(),alcance:'Síntesis y disponibilidad controladas. No certifica disponibilidad de proveedores ni escucha humana en otro equipo.',resultados,errores_js:errores},null,2));
+  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'revision_voces_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.4.0',navegador:browser.version(),alcance:'Síntesis y disponibilidad controladas. No certifica disponibilidad de proveedores ni escucha humana en otro equipo.',resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

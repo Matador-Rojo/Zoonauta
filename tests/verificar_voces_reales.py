@@ -35,7 +35,7 @@ def main():
         resultados.append(fila)
         print(f"Correcto: {voz['id']} ({fila['duracion_segundos']} s de audio)", flush=True)
     assert len(resultados) == 14
-    documento = {"version": "4.3.0", "fecha": "2026-10-11", "plataforma": platform.system(),
+    documento = {"version": "4.4.0", "fecha": "2026-10-11", "plataforma": platform.system(),
                  "python": platform.python_version(),
                  "dependencias": {n: version(n) for n in ("piper-tts", "kokoro-onnx", "onnxruntime", "numpy")},
                  "alcance": "Síntesis local real y WAV PCM no silencioso. No certifica pronunciación ni reproducción audible en el equipo del usuario.",

@@ -1,4 +1,4 @@
-# Zoonauta: dirección visual 4.3
+# Zoonauta: dirección visual 4.4
 
 La portada ocupa una sola pantalla. Sus ocho paisajes cambian cada 10 segundos,
 con nombre y contador sincronizados, controles de pausa y navegación manual.
@@ -141,8 +141,8 @@ ningún hábitat ni control se elimina. La revisión de este ajuste está en
 `docs/interfaz/3.8/revision_tablero.json`.
 
 La captura de portada está en `docs/interfaz/3.8/inicio.webp`; su composición se
-conserva. La revisión actual está en `docs/interfaz/4.3/revision.json`.
-La versión 4.3 pasó 72 pruebas Python y 25 casos de navegador: 20 de interfaz
+conserva. La revisión actual está en `docs/interfaz/4.4/revision.json`.
+La versión 4.4 pasó 72 pruebas Python y 25 casos de navegador: 20 de interfaz
 y cinco de voces controladas. La comprensión CAA requiere evaluación con usuarios;
 las pruebas técnicas no demuestran aprendizaje.
 
@@ -167,12 +167,22 @@ en español y portugués brasileño, sin cambiar la política educativa.
 
 ## Avisos
 
-Las notificaciones ocupan como máximo 360 px, se anclan abajo a la derecha y
-quedan fuera del flujo de la portada. Se muestran también sobre Preferencias.
-Duran ocho segundos; un nuevo aviso reinicia el plazo y sustituye el anterior.
-La × tiene un área de 44 × 44 px, nombre accesible y admite teclado. El mensaje
-se anuncia mediante una región de estado sin desplazar el foco. Los valores
-vacíos, decimales o fuera del intervalo 1–48 impiden abrir la modalidad.
+Las tarjetas ocupan como máximo 260 px, se anclan abajo a la derecha y quedan
+fuera del flujo de la portada. Se muestran también sobre Preferencias. Cada aviso
+mantiene sus propios ocho segundos: los nuevos se añaden abajo y desplazan los
+anteriores hacia arriba, sin superposición. Una cola que exceda la altura de la
+ventana permite desplazamiento dentro de la cola, sin desplazar la página.
+
+El fondo oscuro es común; el borde y el título usan ámbar para advertencias de
+retos, rojo para errores y azul para información. El título distingue el tipo
+sin depender solo del color. La × se muestra en un círculo centrado sobre la
+esquina superior derecha, mitad dentro y mitad fuera, con un área de toque de
+44 × 44 px y acceso por teclado. Cerrar una tarjeta conserva las demás y sus
+temporizadores. Las zonas transparentes de la cola dejan pulsar los controles
+del fondo. Créditos visuales muestra la versión del programa.
+
+Los valores vacíos, decimales o fuera del intervalo 1–48 impiden abrir modalidad.
+El mensaje se anuncia como estado sin desplazar el foco.
 
 ## Revisión anterior
 

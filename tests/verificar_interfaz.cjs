@@ -315,57 +315,91 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Actualización del navegador conserva sesión sin repetir eventos ni audio',resultado:'OK'});
   resultados.push({caso:'Nueva partida vuelve a la portada sin voz; abrir el selector lee su pregunta exacta y cerrarlo cancela la lectura, sin cambiar el estado del juego',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
-  // Los avisos no desplazan la portada ni cambian la partida o leen la modalidad.
+  // Notificaciones independientes sin desplazar la portada ni alterar la partida.
   const avisos=await browser.newContext({viewport:{width:1366,height:768}});await mockVoz(avisos);
-  const pa=await avisos.newPage();pa.on('pageerror',e=>errores.push(e.message));await pa.clock.install({time:new Date('2026-10-11T00:00:00Z')});await pa.clock.pauseAt(new Date('2026-10-11T00:00:01Z'));
+  const pa=await avisos.newPage();pa.on('pageerror',e=>errores.push(e.message));
+  await pa.clock.install({time:new Date('2026-10-11T00:00:00Z')});await pa.clock.pauseAt(new Date('2026-10-11T00:00:01Z'));
   await pa.goto(base);await pa.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
+  const tarjetas=pa.locator('.notificacion'),cerrar=pa.locator('.notificacion-cerrar');
+  const vaciar=async()=>{while(await tarjetas.count())await cerrar.last().click();};
+  const comprobarAvisos=async()=>{
+    assert.equal(await pa.locator('#aviso').isVisible(),true);
+    const m=await pa.locator('#aviso').evaluate(e=>{
+      const r=e.getBoundingClientRect(),cs=[...e.children].map(c=>{const t=c.getBoundingClientRect(),b=c.querySelector('button').getBoundingClientRect();return {w:t.width,arriba:t.top,abajo:t.bottom,boton:b.width>=44&&b.height>=44,circular:Math.abs(b.x+b.width/2-t.right)<2&&Math.abs(b.y+b.height/2-t.top)<2};});
+      return {right:innerWidth-r.right,bottom:innerHeight-r.bottom,sinDesborde:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,popover:e.matches(':popover-open'),cs};
+    });
+    assert.ok(m.right>=11&&m.right<=13&&m.bottom>=11&&m.bottom<=13&&m.sinDesborde&&m.popover,JSON.stringify(m));
+    assert.ok(m.cs.every(c=>c.w<=260&&c.boton&&c.circular),JSON.stringify(m));
+    for(let i=1;i<m.cs.length;i++)assert.ok(m.cs[i-1].abajo<m.cs[i].arriba,'No se superponen');
+  };
   for(const idioma of ['es','pt-BR']){
     await pa.locator('#ajustes').click();await pa.locator('#idioma').selectOption(idioma);
     await pa.waitForFunction(i=>document.documentElement.lang===i,idioma);
+    await pa.locator('.creditos-ajustes summary').click();
+    assert.equal(await pa.locator('.creditos-version').textContent(),'Zoonauta 4.4');
+    await captura(pa,'creditos_'+idioma+'.png',false);
+    await pa.locator('.creditos-ajustes summary').click();
     const antesAvisos=await vista(pa),vozAntes=await pa.evaluate(()=>window.__voz.length);
-    const aviso=pa.locator('#aviso'),texto=pa.locator('#aviso-texto');
-    const comprobarAviso=async()=>{
-      assert.equal(await aviso.isVisible(),true);
-      const m=await aviso.evaluate(e=>{const r=e.getBoundingClientRect(),b=e.querySelector('button').getBoundingClientRect();return {w:r.width,right:innerWidth-r.right,bottom:innerHeight-r.bottom,altoBoton:b.height,anchoBoton:b.width,sinDesborde:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,popover:e.matches(':popover-open')};});
-      assert.ok(m.w<=360&&m.right>=19&&m.right<=21&&m.bottom>=19&&m.bottom<=21&&m.altoBoton>=44&&m.anchoBoton>=44&&m.sinDesborde&&m.popover,JSON.stringify(m));
-    };
-    await pa.locator('#retos').fill('50');await pa.locator('#retos').press('Tab');await comprobarAviso();
-    assert.equal(await texto.textContent(),idioma==='es'?'Escribe un número entero del 1 al 48.':'Digite um número inteiro de 1 a 48.');
-    assert.equal(await pa.locator('#cerrar-aviso').getAttribute('aria-label'),idioma==='es'?'Cerrar notificación':'Fechar notificação');
+    await pa.locator('#retos').fill('50');await pa.locator('#retos').press('Tab');await comprobarAvisos();
+    assert.equal(await tarjetas.last().locator('.notificacion-texto').textContent(),idioma==='es'?'Escribe un número entero del 1 al 48.':'Digite um número inteiro de 1 a 48.');
+    assert.equal(await cerrar.last().getAttribute('aria-label'),idioma==='es'?'Cerrar notificación':'Fechar notificação');
     await captura(pa,'notificacion_preferencias_'+idioma+'.png',false);
-    await pa.clock.runFor(7999);assert.equal(await aviso.isVisible(),true);
-    await pa.clock.runFor(1);assert.equal(await aviso.isVisible(),false);
+    await pa.clock.runFor(7999);assert.equal(await tarjetas.count(),1);
+    await pa.clock.runFor(1);assert.equal(await tarjetas.count(),0);
     await pa.locator('#cerrar-preferencias').click();
     const comenzar=pa.getByRole('button',{name:idioma==='es'?'Comenzar':'Começar',exact:true});
     for(const valor of ['50','0','-1','','1.5']){
       await pa.locator('#ajustes').click();await pa.locator('#retos').fill(valor);await pa.locator('#cerrar-preferencias').click();
-      await comenzar.click();await comprobarAviso();
+      await comenzar.click();await comprobarAvisos();
       assert.equal(await pa.locator('#elegir-modalidad').isVisible(),false);
-      assert.equal(await texto.textContent(),idioma==='es'?'Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.':'Para começar, abra Preferências e digite um número inteiro de 1 a 48.');
+      assert.equal(await tarjetas.last().locator('.notificacion-texto').textContent(),idioma==='es'?'Para comenzar, abre Preferencias y escribe un número entero del 1 al 48.':'Para começar, abra Preferências e digite um número inteiro de 1 a 48.');
       assert.deepEqual(await vista(pa),antesAvisos);assert.equal(await pa.evaluate(()=>window.__voz.length),vozAntes);
-      await pa.locator('#cerrar-aviso').click();assert.equal(await aviso.isVisible(),false);
-      assert.equal(await comenzar.evaluate(e=>e===document.activeElement),true);
+      await vaciar();assert.equal(await pa.locator('#aviso').isVisible(),false);
     }
-    await comenzar.click();await pa.clock.runFor(4000);await comenzar.click();
-    await pa.clock.runFor(4000);assert.equal(await aviso.isVisible(),true);
-    await pa.clock.runFor(3999);assert.equal(await aviso.isVisible(),true);
-    await pa.clock.runFor(1);assert.equal(await aviso.isVisible(),false);
-    await comenzar.click();await pa.locator('#ajustes').click();await comprobarAviso();
-    assert.equal(await aviso.evaluate(e=>e.parentElement.id),'preferencias');
-    await pa.locator('#cerrar-aviso').focus();await pa.keyboard.press('Enter');assert.equal(await aviso.isVisible(),false);
-    await pa.locator('#cerrar-preferencias').click();await comenzar.click();
+    await comenzar.click();const yPrimero=(await tarjetas.first().boundingBox()).y;
+    await pa.clock.runFor(4000);await comenzar.click();assert.equal(await tarjetas.count(),2);
+    assert.ok((await tarjetas.first().boundingBox()).y<yPrimero,'El anterior sube al llegar otro');
+    await comprobarAvisos();await captura(pa,'avisos_apilados_'+idioma+'.png',false);
+    await pa.clock.runFor(4000);assert.equal(await tarjetas.count(),1);
+    await pa.clock.runFor(3999);assert.equal(await tarjetas.count(),1);
+    await pa.clock.runFor(1);assert.equal(await tarjetas.count(),0);
+    await comenzar.click();await pa.locator('#ajustes').click();await comprobarAvisos();
+    assert.equal(await pa.locator('#aviso').evaluate(e=>e.parentElement.id),'preferencias');
+    // Un error real del reproductor se acumula con la advertencia existente.
+    await pa.evaluate(idioma=>{window.Audio.prototype.play=async()=>{throw new Error(idioma==='es'?'No se pudo reproducir la voz.':'Não foi possível reproduzir a voz.');};},idioma);
+    await pa.locator('#probar-voz').click();await pa.locator('.notificacion[data-tipo="error"]').waitFor();
+    assert.equal(await tarjetas.count(),2);await comprobarAvisos();
+    const colores=await tarjetas.evaluateAll(cs=>cs.map(c=>{const s=getComputedStyle(c);return {borde:s.borderTopColor,fondo:s.backgroundColor};}));
+    assert.notEqual(colores[0].borde,colores[1].borde);assert.equal(colores[0].fondo,colores[1].fondo);
+    assert.equal(colores[0].fondo,'rgb(20, 32, 30)');
+    await captura(pa,'avisos_tipos_'+idioma+'.png',false);
+    await cerrar.first().focus();await pa.keyboard.press('Enter');assert.equal(await tarjetas.count(),1);
+    await cerrar.last().focus();await pa.keyboard.press(' ');assert.equal(await tarjetas.count(),0);
+    await pa.locator('#cerrar-preferencias').click();await comenzar.click();await comenzar.click();
     for(const [width,height] of [[320,568],[390,844],[1366,768]]){
-      await pa.setViewportSize({width,height});await comprobarAviso();
+      await pa.setViewportSize({width,height});await comprobarAvisos();
       await captura(pa,'notificacion_inicio_'+idioma+'_'+width+'.png',false);
     }
-    await pa.locator('#ajustes').click();await pa.locator('#retos').fill('1');await pa.locator('#retos').press('Tab');assert.equal(await aviso.isVisible(),false);
-    await pa.locator('#cerrar-preferencias').click();await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();
-    await pa.keyboard.press('Escape');
+    await vaciar();
+    await pa.setViewportSize({width:320,height:568});
+    for(let i=0;i<8;i++)await comenzar.click();
+    assert.equal(await tarjetas.count(),8);
+    const limite=await tarjetas.last().evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight&&document.documentElement.scrollHeight<=innerHeight&&document.getElementById('aviso').scrollTop>0;});
+    assert.equal(limite,true,'Una cola larga conserva el aviso nuevo visible y no desplaza la página');
+    await pa.clock.runFor(8000);assert.equal(await tarjetas.count(),0);
+    await pa.setViewportSize({width:1366,height:768});
+    await comenzar.click();
+    assert.equal(await pa.locator('.hero-ficha button').first().isEnabled(),true);
+    await pa.locator('.hero-ficha button').first().click();assert.equal(await tarjetas.count(),1);
+    await pa.locator('#ajustes').click();await pa.locator('#retos').fill('1');await pa.locator('#retos').press('Tab');assert.equal(await tarjetas.count(),0);
+    // Restablecer el reproductor controlado para el diálogo de modalidad.
+    await pa.evaluate(()=>{window.Audio.prototype.play=async function(){window.__voz.push({...window.__pedido,rate:this.playbackRate});};});
+    await pa.locator('#cerrar-preferencias').click();await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();await pa.keyboard.press('Escape');
     await pa.locator('#ajustes').click();await pa.locator('#retos').fill('48');await pa.locator('#cerrar-preferencias').click();
     await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();await pa.keyboard.press('Escape');
-    assert.equal(await aviso.isVisible(),false);
+    assert.equal(await tarjetas.count(),0);
   }
-  resultados.push({caso:'Avisos compactos abajo a la derecha: 8 segundos, reemplazo reinicia el plazo, X y teclado, accesibles sobre Preferencias; rango entero 1–48 y campos vacíos, sin voz ni cambios de partida al intentar comenzar; español y portugués, escritorio y móvil',resultado:'OK'});
+  resultados.push({caso:'Notificaciones de hasta 260 px: fondo oscuro y bordes por tipo, nuevas debajo de anteriores sin superposición, ocho segundos independientes, cierre circular sobre la esquina por X y teclado; accesibles sobre Preferencias, sin bloquear controles del fondo; validación entera 1–48 antes de modalidad, español/portugués, escritorio/móvil y versión visible en créditos',resultado:'OK'});
   await avisos.close();
   assert.deepEqual(errores,[]);
   // Captura de un reto con ayuda en escritorio.
@@ -526,7 +560,7 @@ async function clicar(page,texto,fase){
   assert.deepEqual(await vista(pc),antesCambio);
   resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.3.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.4.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,6 +1,6 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
-Versión 4.3.0.
+Versión 4.4.0.
 
 ## 1. Qué está implementado
 
@@ -25,7 +25,7 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 | Selección pendiente | Da una respuesta neutral con una nueva pista automática, sin penalización; conserva el reto y permite repetir esa pista. |
 | Continuar | Abre otro reto o presenta el cierre cuando se completó N. |
 | Preferencias | Disponible solo en la portada: permite N entre 1 y 48 antes del inicio, idioma, voz y velocidad. |
-| Avisos | Notificaciones compactas abajo a la derecha, durante ocho segundos, con × para cerrar y acceso por teclado; no desplazan la pantalla. Comenzar valida un entero del 1 al 48 antes de abrir modalidad. |
+| Avisos | Tarjetas de hasta 260 px con fondo oscuro y borde por tipo. Las nuevas se añaden abajo y las anteriores suben; cada una dura ocho segundos y tiene una × circular sobre la esquina, accesible por teclado. Comenzar valida un entero del 1 al 48 antes de abrir modalidad. |
 | Revisión técnica | Página aparte con modelo, estado, decisiones y exportación JSON. |
 
 Los ocho hábitats permanecen en los retos activos. Tras resolver se ven desactivados
@@ -162,7 +162,7 @@ No se usan vídeos, GIF ni recursos externos para mostrar imágenes.
 Los paisajes se generan con IA y son decorativos; no validan asociaciones del banco.
 Los créditos y metadatos de ARASAAC y los SVG anteriores son históricos.
 La captura de portada actual está en `docs/interfaz/3.8/inicio.webp`.
-La terminal identifica la versión 4.3.0. El pie no ocupa espacio durante la partida.
+Créditos visuales en Preferencias muestra Zoonauta 4.4. La terminal identifica la versión 4.4.0. El pie no ocupa espacio durante la partida.
 
 ## 5. Estado y registros
 
@@ -207,14 +207,14 @@ Actualizar allí solo consulta el registro.
 
 ## 7. Verificación realizada
 
-La versión 4.3 pasó 72 pruebas Python, 20 recorridos de interfaz y cinco casos
+La versión 4.4 pasó 72 pruebas Python, 20 recorridos de interfaz y cinco casos
 de voces Microsoft/Google controladas en Chrome. También pasaron los ocho casos
 de aceptación de consola. Se recorrieron dos partidas de 48 animales sin repetir
 y se comprobó que una nueva partida cambia el primero, mientras pausar conserva
 el orden. Los 95 recursos activos se verificaron como WebP con alpha real;
 los nuevos apoyos se revisaron sobre superficies claras y oscuras.
 Las secuencias y controles, incluido Iniciar, se muestran sin fondos ni bordes.
-La revisión actual está en `docs/interfaz/4.3/revision.json`. La captura de
+La revisión actual está en `docs/interfaz/4.4/revision.json`. La captura de
 portada conservada en `docs/interfaz/3.8/inicio.webp` sigue representando el inicio.
 Las evidencias de síntesis real de las 14 voces pertenecen a revisiones anteriores
 y no se repitieron para este cambio visual y de selección.
