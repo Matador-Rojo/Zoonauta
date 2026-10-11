@@ -38,6 +38,14 @@ def main():
     documento = json.loads(ruta.read_text())
     fuentes = []
     for p in documento["items"]:
+        if p["tipo"] == "ANIMAL" and p.get("fuente_imagen") == "image_gen integrada":
+            archivo = RAIZ_PROYECTO / p["archivo_imagen"]
+            if not archivo.is_file():
+                raise ValueError(f"Falta la caricatura {p['id']}; restaurar el recurso incluido.")
+            if hashlib.sha256(archivo.read_bytes()).hexdigest() != p["sha256_imagen"]:
+                raise ValueError(f"La caricatura {p['id']} no coincide con su huella.")
+            print(p["id"], "caricatura conservada", flush=True)
+            continue
         aid = p["referencia_id"]
         if p["tipo"] == "ANIMAL" and aid in ARASAAC:
             ident = ARASAAC[aid]
@@ -80,7 +88,7 @@ def main():
     (RAIZ_PROYECTO / "datos/fuentes_pictogramas.json").write_text(json.dumps({
         "schema_version": "1.0.0", "fecha_consulta": "2026-10-09", "items": fuentes,
         "condiciones": "https://arasaac.org/terms-of-use"}, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-    print(f"Completados: {len(ARASAAC)} ARASAAC y {95-len(ARASAAC)} SVG originales.", flush=True)
+    print(f"Completados: {len(documento['items'])} recursos; se conservaron las caricaturas existentes.", flush=True)
 
 
 if __name__ == "__main__":

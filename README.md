@@ -91,10 +91,10 @@ La portada tiene un único botón Comenzar; después se elige Yo elijo o El agen
 en un diálogo con pictogramas. Ambos diálogos usan la misma paleta oscura con acentos lima.
 Puedes ver la [portada con Comenzar](docs/interfaz/revisiones/2026-10-10-inicio/inicio.webp)
 y la [elección de modalidad](docs/interfaz/revisiones/2026-10-10-inicio/selector.webp).
-El catálogo muestra el pictograma original de cada animal junto a su recorte fotorrealista
-generado con IA y sin fondo, en ocho páginas de seis animales. Permite buscar en todo el catálogo, incluso sin tildes.
-Las preguntas y pistas conservan los pictogramas originales del catálogo educativo;
-los recortes fotorrealistas se usan en tarjetas, retratos y cierres. Los ocho hábitats
+El catálogo muestra una sola caricatura por animal, generada con IA y sin fondo,
+en ocho páginas de seis animales. Permite buscar en todo el catálogo, incluso sin tildes.
+La misma caricatura identifica al animal en preguntas, pistas, tarjetas, retratos y cierres.
+Los pictogramas de hábitat y los apoyos de comunicación se conservan. Los ocho hábitats
 presentan pictogramas grandes y centrados, con los paisajes como apoyo de fondo.
 Una selección sin asociación confirmada recibe un mensaje amable y una pista nueva
 automáticamente, sin castigo. Repetir conserva esa pista. Los controles muestran los
@@ -108,7 +108,11 @@ el [catálogo](docs/interfaz/revisiones/2026-10-10-apoyos/catalogo.webp) y
 el [cierre](docs/interfaz/revisiones/2026-10-10-apoyos/cierre.webp).
 Los archivos y prompts de los animales están en
 [imagenes_animales_ia.json](datos/imagenes_animales_ia.json). Son imágenes sintéticas,
-no fotografías de ejemplares reales. Los 95 pictogramas originales se conservan con sus créditos.
+no fotografías de ejemplares reales. El conjunto activo contiene 48 caricaturas de animales
+y 47 pictogramas de hábitat, apoyos y controles. Los recursos anteriores conservan sus
+créditos como material histórico; no se muestran como segunda imagen de los animales.
+El estilo toma como referencia la capibara seleccionada. Su comprensión CAA sigue
+pendiente de revisión con usuarios de Kallpa.
 
 La interfaz carga el modelo sintético contextual R01, congelado, elegido por su
 posición como primera réplica y no por su rendimiento. Para revisar los registros
