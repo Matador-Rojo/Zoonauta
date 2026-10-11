@@ -654,8 +654,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 10065,
-      "sha256": "787bce0b0c9905a2705dbd96ec47a7d04faf6455a4baab95ec9935d83f0c194c"
+      "bytes": 10139,
+      "sha256": "35654608fd0517bbc7d1a06eaeb14cd0f42ab6c3fe1be265953863cf5d80b716"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -670,7 +670,7 @@
     {
       "ruta": "codigo/interfaz/web/estilos.css",
       "bytes": 27559,
-      "sha256": "5a903aeba49bbb0459aefca885bd191a329801d960d4f5c30e57df402c46c94a"
+      "sha256": "fb92c31fbbb58af524ebcc6ce20598108c3fe26502435edd235f2b725fcb0f90"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -709,8 +709,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 4193,
-      "sha256": "f22139d192ad1f452374958708bbc3b2615596325bd3b7930c2de7b4b2420159"
+      "bytes": 3992,
+      "sha256": "74a321bdfed44a3aa6a320eebdc5a7a6f2c0ea99728c3248f8aedd91388cc184"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -736,6 +736,11 @@
       "ruta": "codigo/interfaz/web/revision.js",
       "bytes": 1604,
       "sha256": "2ce223bf4749878876f58e0a4d8652d930d6c6b543696c7fb687f50be17ce3ab"
+    },
+    {
+      "ruta": "codigo/interfaz/web/zoonauta-logo.svg",
+      "bytes": 1054,
+      "sha256": "77d61e47de337a1632e56b78d2203c9311113a08bc2e23a6fc5b8c66abfd0366"
     },
     {
       "ruta": "codigo/motores/__init__.py",
@@ -1864,8 +1869,8 @@
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 6327,
-      "sha256": "e085c13e09d21361b322da13ac5cdec2e9a3d6695ec15110e3274fac88aaf56c"
+      "bytes": 6916,
+      "sha256": "58dfd0186d2557b5f271ee74b54da56e1f604292c80bbbba00c83fb4a4b6c862"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -1894,6 +1899,11 @@
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-carrusel/interfaz.json",
+      "bytes": 2749,
+      "sha256": "d04bb807bd1564e7a9274a706c84f1897f58613f8561b86e9b61e02fc920ae1c"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-logo/interfaz.json",
       "bytes": 2749,
       "sha256": "d04bb807bd1564e7a9274a706c84f1897f58613f8561b86e9b61e02fc920ae1c"
     },

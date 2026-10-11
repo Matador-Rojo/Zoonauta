@@ -14,6 +14,17 @@ los 10 segundos. Movimiento reducido elimina las animaciones, conservando el cam
 de fotografías estáticas. Preferencias abierta o la pestaña oculta suspenden temporalmente
 la rotación.
 
+## Símbolo de Zoonauta
+
+La cabecera utiliza un símbolo propio de un animal explorador: un rostro de zorro,
+una oreja con forma de hoja, una órbita abierta y una estrella. La silueta conecta
+los animales, la naturaleza y la exploración. Conserva el lima y el blanco de la
+interfaz, junto al texto existente de Zoonauta y su subtítulo.
+
+El archivo `codigo/interfaz/web/zoonauta-logo.svg` contiene únicamente formas
+vectoriales editables, sin imágenes incrustadas ni fondo. Se puede ampliar sin
+perder definición. El símbolo es decorativo y no sustituye los pictogramas educativos.
+
 ## Referencias de composición
 
 Se revisaron visualmente ejemplos dentro de las tres galerías indicadas por el usuario:
