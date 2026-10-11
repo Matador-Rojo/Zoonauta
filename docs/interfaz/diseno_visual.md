@@ -1,4 +1,4 @@
-# Zoonauta: dirección visual 3.3
+# Zoonauta: dirección visual 3.8
 
 La portada ocupa una sola pantalla. Sus ocho paisajes cambian cada 10 segundos,
 con nombre y contador sincronizados, controles de pausa y navegación manual.
@@ -8,8 +8,8 @@ el guacamayo. Un único botón principal Comenzar abre la elección entre Yo eli
 y El agente elige, mediante dos tarjetas con pictogramas. Volver al inicio o Escape
 cierran el selector sin iniciar una partida. Preferencias comparte la paleta oscura
 y el acento lima.
-El tablero conserva los pictogramas originales en preguntas y pistas. Las tarjetas,
-retratos y cierres de animales usan recortes fotorrealistas.
+El tablero usa caricaturas originales transparentes en preguntas, pistas, tarjetas,
+retratos y cierres. Los nuevos apoyos siguen el mismo estilo de la capibara aprobada.
 No se usan vídeos, GIF, escenas WebGL ni fuentes externas. Las fotografías aparentes
 son imágenes generadas con IA. El carrusel empieza en marcha y solo el botón central
 activa la pausa manual. Play o cualquiera de las flechas reanuda la rotación y reinicia
@@ -23,10 +23,9 @@ El catálogo conserva sus 48 opciones en ocho páginas de seis, con búsqueda gl
 sin tildes. Anteriores y Siguientes permiten recorrerlas; la pausa conserva la página.
 Las tarjetas oscuras
 dan protagonismo a los animales, sin cajas blancas detrás de sus recortes. El tablero
-separa un retrato grande, la guía y ocho tarjetas fotográficas con etiquetas legibles
-y pictogramas centrados de 96–112 píxeles sobre una superficie clara. Los paisajes
-tienen menor opacidad para que el símbolo sea el elemento principal de cada opción.
-Los controles usan iconos vectoriales y botones con texto.
+presenta el retrato y la guía encima de ocho tarjetas de paisaje realista con
+composición central, nombre y número 01–08. Las tarjetas ocupan todo el ancho,
+sin dibujos superpuestos. Los controles usan caricaturas transparentes con texto.
 
 La pantalla de pausa conserva el retrato del animal; los cierres completado y de salida
 presentan el progreso real junto a una composición de animales y la acción de reiniciar.
@@ -34,11 +33,12 @@ El diseño mantiene cuatro columnas de hábitats en escritorio y dos en móvil. 
 usa tres columnas en escritorio y dos en móvil. Ambas pantallas permiten desplazamiento
 cuando el alto disponible lo requiere.
 
-Hay 48 imágenes fotorrealistas generadas individualmente con la herramienta integrada
+Hay 48 caricaturas de animales generadas individualmente con la herramienta integrada
 imagegen, con fondo alfa transparente. Los prompts y la procedencia se registran en
 `datos/imagenes_animales_ia.json`. Se optimizaron como WebP para servirlas localmente.
-No son fotografías de ejemplares reales ni evidencia biológica. Se mantienen los 95
-pictogramas originales, sus archivos y créditos, así como las reglas, ayudas y modelo de IA.
+No son fotografías de ejemplares reales ni evidencia biológica. El banco tiene 95
+pictogramas originales generados con IA; sus identificadores conservan las secuencias,
+reglas, ayudas y modelo. Los recursos anteriores se documentan como antecedentes.
 
 ## Símbolo de Zoonauta
 
@@ -75,8 +75,9 @@ los vídeos, imágenes, prompts de pago o código de estas referencias.
 
 Se usó la herramienta integrada imagegen, sin API ni CLI de respaldo. Las imágenes
 generadas se codificaron como WebP para reducir su peso, conservando la composición
-y las dimensiones. CSS presenta las regiones del atlas en las tarjetas. Los
-pictogramas y sus metadatos permanecen separados; el banco de asociaciones no se
+y las dimensiones. El atlas permanece como antecedente; las tarjetas actuales usan
+imágenes completas propias. Los pictogramas y metadatos permanecen separados;
+el banco de asociaciones no se
 modificó. Los paisajes no constituyen evidencia biológica ni validación CAA.
 
 ## Prompt de portada anterior (3.2, sustituida)
@@ -94,20 +95,28 @@ completos, las rutas de origen y las rutas finales están en
 [`fondos_generados.json`](fondos_generados.json). La conversión a WebP mantiene
 1536 × 1024 píxeles y la composición; los originales generados se conservaron.
 Cada fondo tiene su propia imagen completa para evitar ampliar una celda pequeña
-del atlas. El atlas anterior se mantiene en las tarjetas de hábitat del tablero.
+del atlas. Las tarjetas actuales usan ocho paisajes centrados específicos, registrados
+en `datos/imagenes_paisajes_tarjetas_ia.json`. Los fondos de portada se conservan.
 
 ## Apoyos pictográficos actuales
 
-El catálogo presenta el pictograma original junto al recorte fotorrealista;
-en móvil se distribuyen verticalmente para conservar ambos. Continúan siendo
-seis animales por página, con búsqueda global. Los controles de partida usan
-pictogramas originales de 56 px; las consultas, pistas y secuencias de pausa y
-cierre usan 84–96 px. Los hábitats conservan símbolos de 96–112 px.
+Se utiliza una sola caricatura por animal en todo el recorrido. Las 33 imágenes
+nuevas de apoyo para preguntas, pistas y acciones tienen fondo transparente y
+siguen el estilo aprobado de los animales: contornos definidos, colores naturales
+y sombreado suave. Cada concepto usa una imagen propia: Explorar lleva mapa y
+brújula, Buscar lleva lupa; agua salada combina una ola y un salero, y agua dulce
+una gota y una pequeña laguna. Los prompts y las huellas están en
+`datos/imagenes_apoyos_ia.json`.
 
-Las capturas y verificaciones actuales están en `revisiones/2026-10-10-apoyos/`.
-Pasaron 68 pruebas Python y 21 casos de navegador. Las asociaciones y los
-recursos originales no se modificaron. La comprensión CAA debe validarse con
-usuarios del perfil definido; las pruebas técnicas no demuestran aprendizaje.
+Las preguntas y pistas mantienen secuencias de 84–96 px; los controles, 56 px.
+Se eliminaron los fondos, bordes y rellenos blancos de cada imagen, incluidos
+Iniciar y Salir. Los pictogramas de hábitat permanecen en las secuencias educativas.
+Las tarjetas muestran paisaje y nombre, sin símbolos superpuestos.
+
+La captura de portada y la revisión actual están en `docs/interfaz/3.8/`.
+La versión 3.8 pasó 70 pruebas Python y 21 casos de navegador: 17 de interfaz
+y cuatro de voces controladas. La comprensión CAA requiere evaluación con usuarios;
+las pruebas técnicas no demuestran aprendizaje.
 
 ## Revisión anterior
 

@@ -106,7 +106,7 @@ async function actuar(p,nombre,fase){
   await p.waitForFunction(()=>document.getElementById('aviso').textContent==='');
   resultados.push({caso:'Cambio de una lectura WAV pendiente a Google: cancela la cola local y lee con el navegador',resultado:'OK'});
   assert.deepEqual(errores,[]);
-  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'revision_voces_navegador.json'),JSON.stringify({fecha:'2026-10-10',version:'3.4.0',navegador:browser.version(),alcance:'Síntesis y disponibilidad controladas. No certifica disponibilidad de proveedores ni escucha humana en otro equipo.',resultados,errores_js:errores},null,2));
+  fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'revision_voces_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'3.8.0',navegador:browser.version(),alcance:'Síntesis y disponibilidad controladas. No certifica disponibilidad de proveedores ni escucha humana en otro equipo.',resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

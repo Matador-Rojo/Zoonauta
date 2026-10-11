@@ -5,7 +5,10 @@
 La interfaz usa una única caricatura original por animal: 48 ilustraciones generadas
 con la herramienta integrada image_gen, siguiendo el estilo de la segunda capibara
 seleccionada por el usuario. Las mismas imágenes se utilizan en catálogo, preguntas,
-pistas, retratos y cierres. Se conservan 33 SVG de apoyo.
+pistas, retratos y cierres. En la versión 3.8 se sustituyen los 33 SVG de apoyo
+por 33 ilustraciones originales transparentes del mismo estilo de la capibara,
+generadas con image_gen integrada. Sus prompts y huellas están en
+`datos/imagenes_apoyos_ia.json`. Se ofrecen bajo CC BY-NC-SA 4.0.
 El 11 de octubre se sustituyeron los símbolos de persona y agente por dos
 caricaturas originales transparentes, generadas con image_gen integrada y ofrecidas
 bajo CC BY-NC-SA 4.0. Los prompts y huellas están en

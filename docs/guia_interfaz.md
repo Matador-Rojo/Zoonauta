@@ -1,6 +1,6 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
-Versión 3.4.0.
+Versión 3.8.0.
 
 ## 1. Qué está implementado
 
@@ -12,13 +12,13 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 |---|---|
 | Portada | Un único botón principal Comenzar abre la elección de modalidad. Volver al inicio o Escape cierran esa elección sin iniciar la partida. |
 | Inicio del jugador | Muestra seis animales por página; ocho páginas permiten elegir cualquiera de los 48. |
-| Inicio del agente | Prepara automáticamente el escenario siguiente. |
+| Inicio del agente | Mezcla los 48 animales al preparar cada partida, sin repeticiones; el primer animal cambia al comenzar otra partida. |
 | Búsqueda | Filtra los 48 animales por nombre, sin distinguir mayúsculas o tildes. |
 | Páginas | Anteriores y Siguientes recorren los resultados sin modificar el reto ni el progreso. Buscar vuelve a la primera página; pausar y reanudar conservan la página. |
-| Pictogramas educativos | Preguntas y pistas usan los recursos originales; las tarjetas y retratos conservan los animales fotorrealistas. Los símbolos de hábitat son grandes y centrados. |
+| Pictogramas educativos | Preguntas, pistas, tarjetas y retratos usan las mismas caricaturas originales transparentes. Los apoyos siguen el estilo de la capibara aprobada; los hábitats tienen paisaje, nombre y número 01–08. |
 | Reto | Muestra el animal, la pregunta o pista y los ocho hábitats. |
 | Progreso | Indica retos completados mediante texto y una barra accesible. |
-| Ayuda | Solicita una nueva pista: niveles 1, 2 y 3; después conserva 3. |
+| Pista | Solicita una nueva pista: niveles 1, 2 y 3; después conserva 3. |
 | Repetir | Recupera la misma respuesta educativa, su secuencia y su texto de voz. |
 | Pausar y reanudar | Suspende la interacción, detiene la voz y conserva el reto. |
 | Selección confirmada | Acepta cualquiera de los hábitats confirmados del animal. |
@@ -110,67 +110,38 @@ instalarlos; el juego continúa con texto y pictogramas.
 
 ## 4. Recursos visuales y presentación
 
-Hay 95 imágenes: 48 animales, ocho hábitats y 39 apoyos o controles. Se utilizaron
-28 PNG originales ARASAAC y 67 SVG originales. Los 20 animales con ilustración
-propia incluyen rasgos específicos, como el ajolote, la rana azul o el zorro ártico.
-Cada recurso conserva ruta, procedencia, licencia y SHA-256.
+El banco activo tiene 95 WebP transparentes: 48 animales, ocho símbolos de hábitat
+y 39 apoyos o controles. Se usa una sola caricatura por animal en todas las pantallas.
+Los 33 apoyos renovados de comunicación siguen el mismo estilo de la capibara
+aprobada, con contornos definidos, colores naturales y sombreado suave.
+Explorar utiliza un mapa con brújula y Buscar una lupa: sus imágenes son diferentes.
+Se mantienen los identificadores y las secuencias de preguntas y pistas del núcleo.
+Cada recurso conserva procedencia, prompt, transparencia y SHA-256 en los archivos
+`datos/imagenes_*_ia.json`. La comprensión CAA requiere evaluación con usuarios.
 
-Los PNG genéricos representan la clase del animal; no acreditan una identificación
-de subespecie. Se mantiene el nombre preciso del banco. Los SVG son esquemáticos.
-La revisión técnica comprobó carga, legibilidad y correspondencia de etiquetas.
-La comprensión CAA de las secuencias requiere validación posterior con usuarios.
-
-Las tarjetas combinan el pictograma original, el recorte fotorrealista y el nombre.
-Los controles incorporan pictogramas de 56 px sobre una superficie blanca.
 Las preguntas y pistas usan símbolos de 96 px en escritorio y 84 px en móvil;
-los hábitats, de 96–112 px. Los paneles usan texto claro sobre verde oscuro,
-con fondo blanco en cada pictograma. Hay foco visible para teclado, botones nativos y un
-diálogo de preferencias. En escritorio los hábitats tienen cuatro columnas; en
-pantallas estrechas pasan a dos y se recorren desplazando la página.
-No se elimina ninguna opción para adaptar la interfaz al móvil.
+los controles, 56 px. Las imágenes no llevan recuadros blancos. Iniciar y Salir
+también conservan transparencia en el cierre y en los botones.
+Hay foco visible para teclado, botones nativos y un diálogo de preferencias.
 
-La versión 3.3 muestra una sola portada que ocupa la altura de la pantalla, sin
-sección inferior ni scroll vertical. Ocho fotografías locales cambian cada 10 segundos,
-con nombre y contador sincronizados. El paisaje inicial de selva se sustituyó por
-una escena sin animales, coherente con los otros siete. Hay controles para avanzar,
-retroceder y pausar; play o cualquiera de las flechas reanuda el cambio automático
-y reinicia el intervalo de 10 segundos. La pausa solo se activa con el botón central.
-El carrusel empieza en marcha, incluso con movimiento reducido, que elimina las animaciones.
-Se detiene temporalmente con Preferencias abierta o con la pestaña oculta.
-Este cambio decorativo no emite eventos del juego.
+Las tarjetas de hábitat presentan ocho paisajes realistas propios, con el elemento
+principal centrado, nombre y número 01–08 arriba a la derecha. Ocupan todo el ancho
+debajo del animal y la guía: cuatro columnas en escritorio y dos en móvil.
+Los símbolos de hábitat se usan en las secuencias educativas, sin superponerse a
+las fotografías sintéticas de las tarjetas. No se elimina ninguna opción en móvil.
 
-Los botones de modalidad usan formas redondeadas y los pictogramas de jugador y agente. Preferencias
-comparte el verde oscuro, las líneas suaves y los acentos lima. Los créditos visuales
-están disponibles en Preferencias y en el pie de las pantallas del juego.
-El catálogo mantiene la búsqueda por nombre sin cambiar el modelo o la partida.
-El catálogo, el tablero y el cierre comparten la paleta y el cuidado visual de la portada.
-Los 48 animales se muestran mediante recortes fotorrealistas con transparencia, generados
-con IA, en catálogo, retratos y decoración del cierre. Cada tarjeta de selección añade el
-pictograma original correspondiente. Las secuencias educativas usan únicamente los pictogramas originales.
-El tablero muestra ocho paisajes realistas exclusivos de las tarjetas, con el elemento
-principal centrado, sus nombres y números del 01 al 08 en la esquina superior derecha. La cuadrícula
-ocupa todo el ancho debajo del animal y la guía. Los fondos de portada se conservan.
-Los pictogramas de hábitat se conservan en el banco para
-las secuencias educativas. Pista (foco), Repetir, Pausar y Salir
-usan las nuevas ilustraciones; la acción interna de solicitud de pista se conserva.
-La pausa conserva el animal; el cierre muestra los retos realmente completados, también
-cuando se sale antes de terminar. Pausa, cierre completo y salida anticipada muestran
-las secuencias emitidas por el sistema. Los 95 pictogramas originales se conservan en el banco.
-Las páginas con seis animales y los
-retos pueden desplazarse verticalmente para conservar todas sus opciones.
+La portada conserva los ocho fondos locales, el logo y su composición. Cambia cada
+diez segundos; la pausa se activa solo mediante el botón. Play o las flechas reanudan
+y reinician el intervalo. Preferencias y una pestaña inactiva suspenden el carrusel;
+movimiento reducido elimina las animaciones. Comenzar abre el diálogo de modalidad.
+La portada no requiere desplazamiento vertical; catálogo y retos pueden desplazarse.
+La pausa conserva el animal y el orden; el cierre muestra el progreso real.
 
-No se usan vídeos, GIF ni canvas. Los ocho fondos y el atlas se generaron con la
-herramienta integrada imagegen y se codificaron como WebP sin alterar su contenido.
-Los recortes nuevos se generaron individualmente con la misma herramienta; sus prompts,
-archivos, dimensiones, transparencia y huellas están en `datos/imagenes_animales_ia.json`.
-Son imágenes sintéticas, no fotografías reales, y no modifican las asociaciones o el modelo.
-La revisión del rediseño está en `docs/interfaz/revisiones/2026-10-10-redisenio/`:
-55 pruebas Python, ocho casos de aceptación, 19 recorridos de interfaz y transparencia
-comprobada en los 48 recortes. Las verificaciones previas permanecen en sus archivos originales.
-Son elementos decorativos adicionales a los 95 pictogramas, sin autoridad para validar
-asociaciones del banco. El mapa SVG anterior se conserva como antecedente.
-Las referencias, los prompts y las rutas están en `docs/interfaz/diseno_visual.md`
-y `docs/interfaz/fondos_generados.json`. La terminal indica 3.4.0; el pie del juego identifica la familia 3.4.
+No se usan vídeos, GIF ni recursos externos para mostrar imágenes.
+Los paisajes se generan con IA y son decorativos; no validan asociaciones del banco.
+Los créditos y metadatos de ARASAAC y los SVG anteriores son históricos.
+La captura de portada actual está en `docs/interfaz/3.8/inicio.webp`.
+La terminal identifica la versión 3.8.0 y el pie del juego muestra 3.8.
 
 ## 5. Estado y registros
 
@@ -204,7 +175,7 @@ Actualizar allí solo consulta el registro.
 1. Abre Preferencias, selecciona un reto y prueba una voz española disponible.
 2. Pulsa Comenzar y luego Yo elijo. Muestra las páginas de seis animales y la búsqueda global.
 3. Busca Capibara o ronsoco y selecciónala. Aparecen los ocho hábitats.
-4. Pulsa Ayuda y Repetir. Se conserva la pista, secuencia y texto de voz.
+4. Pulsa Pista y Repetir. Se conserva la pista, secuencia y texto de voz.
 5. Pulsa Pausar y Reanudar. El reto y la ayuda siguen vigentes.
 6. Selecciona Desierto cálido: aparece una respuesta neutral y la siguiente pista
    automáticamente. Pulsa Repetir para escuchar el mismo contenido.
@@ -215,14 +186,16 @@ Actualizar allí solo consulta el registro.
 
 ## 7. Verificación realizada
 
-La revisión actual pasó 68 pruebas Python y 21 casos de navegador en Edge
-155.0.4283.45: 17 de interfaz y cuatro de voces Microsoft/Google controladas.
-Incluye las 315 asociaciones pendientes: producen una pista automática sin
-resolver el reto ni penalizar, con parámetros congelados. También comprueba
-duplicados, repetición, pausa, niveles 1–3 y traducción de la respuesta compuesta.
-Los ocho casos de aceptación de consola siguen pasando con su protocolo original.
-Las pruebas anteriores de síntesis real de 14 voces y reproducción nativa se
-conservan como evidencia de esa etapa; no se repitieron en este ajuste.
+La versión 3.8 pasó 70 pruebas Python, 17 recorridos de interfaz y cuatro casos
+de voces Microsoft/Google controladas en Chrome. También pasaron los ocho casos
+de aceptación de consola. Se recorrieron dos partidas de 48 animales sin repetir
+y se comprobó que una nueva partida cambia el primero, mientras pausar conserva
+el orden. Los 95 recursos activos se verificaron como WebP con alpha real;
+los nuevos apoyos se revisaron sobre superficies claras y oscuras.
+Las secuencias y controles, incluido Iniciar, se muestran sin fondos ni bordes.
+La revisión y la portada actual están en `docs/interfaz/3.8/`.
+Las evidencias de síntesis real de las 14 voces pertenecen a revisiones anteriores
+y no se repitieron para este cambio visual y de selección.
 
 | Comprobación | Resultado |
 |---|---|
@@ -233,16 +206,16 @@ conservan como evidencia de esa etapa; no se repitieron en este ajuste.
 | Recarga sin repetir acciones o audio, idioma de sesión conservado | Correcto |
 | 14 opciones locales, muestras, elección por idioma, ritmo y silencio | Correcto con API y reproductor controlados |
 | Modelos ausentes, idiomas inválidos y descarte de audio obsoleto | Correcto |
-| 95 pictogramas y nueve WebP decorativos decodificados | Correcto |
+| 95 pictogramas, nueve paisajes de portada y ocho paisajes de tarjetas decodificados | Correcto |
 | Móvil, teclado, progreso accesible y movimiento reducido | Correcto |
 | Inicio español y portugués, de 320 × 568 a 1920 × 1080, sin scroll vertical | Correcto |
 | Ocho fondos: contador, cambio cada 10 segundos, pausa y Preferencias | Correcto |
 | Encabezados de revisión técnica localizados, registros originales conservados | Correcto |
-| Síntesis real de las 14 opciones: WAV mono PCM no silencioso, repetición en caché | Correcto |
-| Audio real de Piper español y Kokoro portugués: WAV, decodificación y avance de reproducción nativa | Correcto |
-| Preparación aislada y resolución de paquetes para Windows x64/Python 3.12 | Correcto; ejecución de preparación en Linux, disponibilidad de ruedas Windows |
+| Síntesis real de las 14 opciones: WAV mono PCM no silencioso, repetición en caché | Correcto en revisión anterior |
+| Audio real de Piper español y Kokoro portugués: WAV, decodificación y avance de reproducción nativa | Correcto en revisión anterior |
+| Preparación aislada y resolución de paquetes para Windows x64/Python 3.12 | Revisión anterior: preparación en Linux y disponibilidad de ruedas Windows |
 
-Evidencia actual y capturas: `interfaz/revisiones/2026-10-10-apoyos/`.
+Evidencia anterior y capturas: `interfaz/revisiones/2026-10-10-apoyos/`.
 Evidencias anteriores: `interfaz/revision_navegador.json`,
 `interfaz/revision_voces_locales.json`, `interfaz/revision_audio_navegador.json`
 y doce capturas, incluidas las pantallas en portugués. Las pruebas de PCM y del
@@ -278,9 +251,9 @@ Referencia: [Playwright Library](https://playwright.dev/docs/library).
 | `codigo/interfaz/web/portada-selva.webp` | Selva renovada del carrusel de la versión 3.3. |
 | `codigo/interfaz/web/fondos/` | Siete fondos adicionales del carrusel. |
 | `codigo/interfaz/web/paisajes.webp` | Atlas estático de los ocho paisajes decorativos. |
-| `codigo/interfaz/crear_svg.py` | Fuente editable de las ilustraciones propias. |
-| `codigo/interfaz/preparar_recursos.py` | Regeneración de recursos; innecesaria para jugar. |
-| `assets/pictogramas/` | 28 PNG y 67 SVG listos para presentar. |
+| `codigo/interfaz/crear_svg.py` | Generador SVG histórico del prototipo. |
+| `codigo/interfaz/preparar_recursos.py` | Preparación histórica del prototipo; innecesaria para jugar. |
+| `assets/pictogramas/` | Símbolos, apoyos y controles actuales en WebP transparente. |
 | `datos/pictogramas.json` | IDs simbólicos, imágenes y créditos. |
 | `datos/fuentes_pictogramas.json` | Metadatos y descargas ARASAAC usadas. |
 | `docs/interfaz/alternativas_voz.md` | Catálogo, preparación y verificación de las voces locales. |

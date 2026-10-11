@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "version_proyecto": "3.4.0",
+  "version_proyecto": "3.8.0",
   "fecha_preparacion": "2026-10-11",
   "paquete": "poc_interfaz_animales_habitats_v3",
   "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
@@ -23,14 +23,15 @@
     "casos_aceptacion_no_ejecutados": 0,
     "fuentes_referenciadas": 55,
     "imagenes_png_arasaac": 0,
-    "imagenes_svg_originales": 33,
+    "imagenes_svg_originales": 0,
     "ilustraciones_decorativas_adicionales": 18,
     "imagenes_decorativas_utilizadas": 17,
     "imagenes_caricatura_ia": 48,
     "imagenes_modalidad_ia": 2,
     "imagenes_habitats_ia": 8,
     "imagenes_controles_ia": 4,
-    "imagenes_tarjetas_habitat_ia": 8
+    "imagenes_tarjetas_habitat_ia": 8,
+    "imagenes_apoyos_ia": 33
   },
   "documentos_consultados": [
     {
@@ -66,7 +67,7 @@
   ],
   "estado": "INTERFAZ_BILINGUE_Y_VOCES_LOCALES_PIPER_KOKORO_IMPLEMENTADAS",
   "validacion": {
-    "pruebas_automaticas_correctas": 68,
+    "pruebas_automaticas_correctas": 70,
     "casos_aceptacion_correctos": 8,
     "aprendizaje_bayesiano_ejecutado": true,
     "modelos_aprendidos": 18,
@@ -83,7 +84,7 @@
       "semillas_separadas": true
     },
     "evaluacion_con_jugadores": false,
-    "casos_navegador_correctos": 17,
+    "casos_navegador_correctos": 21,
     "validacion_caa_con_usuarios": false,
     "voz_prueba": "SINTESIS_REAL_14_VOCES_Y_REPRODUCTOR_NATIVO_2_IDIOMAS",
     "audio_audible_en_dispositivo_usuario_verificado": false,
@@ -95,11 +96,13 @@
       "pt-BR"
     ],
     "dependencias_windows_x64_python312_disponibles": 32,
-    "revision_actual": "docs/interfaz/revisiones/2026-10-10-caricaturas/resumen.md",
+    "revision_actual": "docs/interfaz/3.8/revision.json",
     "ayuda_automatica_interfaz": true,
     "relaciones_pendientes_probadas_interfaz": 315,
     "animales_con_imagen_unica": 48,
-    "transparencia_caricaturas_verificada": true
+    "transparencia_caricaturas_verificada": true,
+    "agente_48_sin_repeticiones_verificado": true,
+    "transparencia_apoyos_verificada": true
   },
   "archivos": [
     {
@@ -114,8 +117,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 10521,
-      "sha256": "2e7e102b1a01323fa40105710ddd01ee4d94fc85f0cf2b695b9b81f59c4ebbbb"
+      "bytes": 9315,
+      "sha256": "338c9d0b016565b15d23e609340c7dad291ad336f2ab2cb6865b4a53212add97"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -358,169 +361,279 @@
       "sha256": "0b73c93373c649f648c1d6458277716d848347c888eec8fe47b9912727969969"
     },
     {
-      "ruta": "assets/pictogramas/P_AGUA_DULCE.svg",
-      "bytes": 509,
-      "sha256": "9d1a2c8039e0d105702f822962d746d392848371117b33564ed63af58eaf299e"
+      "ruta": "assets/paisajes/H01.webp",
+      "bytes": 798336,
+      "sha256": "d5e951b8b6c3860050d143d2bf8edce77cc09a57e1bed7f7b41b42ce7f70415c"
     },
     {
-      "ruta": "assets/pictogramas/P_AGUA_SALADA.svg",
-      "bytes": 538,
-      "sha256": "70dd7bc35c966f78652c4038d76ea0efa9b76b23dc3414385f2ebc3891ef2028"
+      "ruta": "assets/paisajes/H02.webp",
+      "bytes": 384966,
+      "sha256": "4690c4e26d5decfb5d5cb9cbb77625b4ce16d6158aba84d9302880f1442836ba"
     },
     {
-      "ruta": "assets/pictogramas/P_ARBOLES_SEPARADOS.svg",
-      "bytes": 828,
-      "sha256": "74c12696707b9f1f16103e9e08563bcf350acab383b15adbaa19737dc5c19b14"
+      "ruta": "assets/paisajes/H03.webp",
+      "bytes": 243474,
+      "sha256": "d7bf6ed2638ce1a1ccac3d06882160df9d7ad14df931b740fe81b1065522ed90"
     },
     {
-      "ruta": "assets/pictogramas/P_BOSQUE.svg",
-      "bytes": 1041,
-      "sha256": "51d72492938de970abf57f365f77498dbcec3f72bb6ef4934dd82e3295dbf301"
+      "ruta": "assets/paisajes/H04.webp",
+      "bytes": 346170,
+      "sha256": "1b7ca539d68d73295dac64a48782e8e755fea32a544b5e2b71bd7477c272c820"
     },
     {
-      "ruta": "assets/pictogramas/P_BUSCAR.svg",
-      "bytes": 437,
-      "sha256": "288162f7b7abe66c05074981c44245c64bca8e349a086408f03729eb06f79f61"
+      "ruta": "assets/paisajes/H05.webp",
+      "bytes": 781538,
+      "sha256": "435f3eb9babd6bf1bd49537e3c557ae6e28faf275a6929d3e745069741a0b672"
     },
     {
-      "ruta": "assets/pictogramas/P_CALOR.svg",
-      "bytes": 514,
-      "sha256": "d2eabba81b7d15b9d7611783fc833e60cd29e1af4f1720aad6de7a46ae51ef0b"
+      "ruta": "assets/paisajes/H06.webp",
+      "bytes": 518494,
+      "sha256": "10a17b66d3c54b0f8d0071f7e76564081035e027bfab29c12e705c922afae194"
     },
     {
-      "ruta": "assets/pictogramas/P_CLIMA_TEMPLADO.svg",
-      "bytes": 521,
-      "sha256": "050119a709621347d773a66a2a957410d1dde71553e196f9079605aa42d5b9fe"
+      "ruta": "assets/paisajes/H07.webp",
+      "bytes": 317968,
+      "sha256": "391f8b8bb1d473c4bc3b51c32d77ab10bfeedfe2685c0885eebe7890e015cd80"
     },
     {
-      "ruta": "assets/pictogramas/P_CONFIRMAR.svg",
-      "bytes": 391,
-      "sha256": "c5e4787d85fa851a7310df4c7037e0f2b68af3119398a82dfc9215e5081139cf"
+      "ruta": "assets/paisajes/H08.webp",
+      "bytes": 502294,
+      "sha256": "2246f6282e74a278b38e6405af0a184a081fa5b9610c7c0ee14409d5754cfe4f"
     },
     {
-      "ruta": "assets/pictogramas/P_CONTINUAR.svg",
-      "bytes": 317,
-      "sha256": "70e8f54667a34be74aa489495d78c5a3d1aa7f36a6e5a72029bead1cf32947bc"
+      "ruta": "assets/pictogramas/P_AGENTE.webp",
+      "bytes": 552474,
+      "sha256": "31cc65da0d7b29e0d321f8325c66481794526b1ac88b46539657c91e09f65500"
     },
     {
-      "ruta": "assets/pictogramas/P_ELEGIR.svg",
-      "bytes": 464,
-      "sha256": "763989761b9d2f10917e35c99e9e6aeb4bd3f2a3bd79fa93bcf20188a03abe72"
+      "ruta": "assets/pictogramas/P_AGUA_DULCE.webp",
+      "bytes": 424712,
+      "sha256": "1f9443e6159f22f19ca37f60e0acceffb19679e62f9ae1dcdf3fa140c671d527"
     },
     {
-      "ruta": "assets/pictogramas/P_EXPLORAR.svg",
-      "bytes": 439,
-      "sha256": "3f51719e80db54fef277903fd729e09470ebe025f1c530905568ce507f52b48d"
+      "ruta": "assets/pictogramas/P_AGUA_SALADA.webp",
+      "bytes": 512124,
+      "sha256": "95a908b2628fbeaf1cba054d9868a3105d923d36b895dfdbe76db69e68029ab9"
     },
     {
-      "ruta": "assets/pictogramas/P_FIN.svg",
-      "bytes": 410,
-      "sha256": "45b8f0545c89deb251fd8bc1c626a9341a3a935a2e75a4ad8db0e4b82138c94c"
+      "ruta": "assets/pictogramas/P_ARBOLES_SEPARADOS.webp",
+      "bytes": 351024,
+      "sha256": "935af85864d0630e269ebde466db74c333dd1ac2f3f1d3562e480907c875aae6"
     },
     {
-      "ruta": "assets/pictogramas/P_HUMEDAD.svg",
-      "bytes": 581,
-      "sha256": "4dfd7dc84e02738a41b9b54a584544410107702690e6189b7082248f8e0b6ab6"
+      "ruta": "assets/pictogramas/P_AYUDA.webp",
+      "bytes": 325346,
+      "sha256": "4a015ed6f79a5acea52ec098c4b69e3545526990eb68ae119983a681baabf398"
     },
     {
-      "ruta": "assets/pictogramas/P_INICIAR.svg",
-      "bytes": 300,
-      "sha256": "7daab6f5415e32b4d16afe214ed6245fb17ac9f886d99407cac32a01ae0a1a19"
+      "ruta": "assets/pictogramas/P_BOSQUE.webp",
+      "bytes": 677088,
+      "sha256": "ae489d0ea4c34acc96ac228e0e5330ab79c6a50a8e6d24eed50598965f129eb9"
     },
     {
-      "ruta": "assets/pictogramas/P_LUGAR_ABIERTO.svg",
-      "bytes": 382,
-      "sha256": "11465180ebe327b8cd1aa333fdb1f31599441ead9671f62dd5bf54beb452c095"
+      "ruta": "assets/pictogramas/P_BUSCAR.webp",
+      "bytes": 450974,
+      "sha256": "51e6dc449a6c8039369a2c7cc122e21f41603c930a0a18fe0d0f461dcb826894"
     },
     {
-      "ruta": "assets/pictogramas/P_MONTANAS_ALTAS.svg",
-      "bytes": 431,
-      "sha256": "e4a257668dc87df10a9596c34dd21b823a096d5edbaf92b1fb84281bfaa6927f"
+      "ruta": "assets/pictogramas/P_CALOR.webp",
+      "bytes": 573670,
+      "sha256": "227a9dbfd52c984a9689a9428f40a045717cf03259b72cc5e058d24b2d1c0087"
     },
     {
-      "ruta": "assets/pictogramas/P_MUCHA_AGUA.svg",
-      "bytes": 417,
-      "sha256": "b71ee43c96bdc7a0803588a7bd2476c59d4e775bf163632095ceac98679fc2de"
+      "ruta": "assets/pictogramas/P_CLIMA_TEMPLADO.webp",
+      "bytes": 356836,
+      "sha256": "9c72fa4206c6a14447a8e8eb82c5a5671baf3d4bba9c205df0d62bf1e2c882c8"
     },
     {
-      "ruta": "assets/pictogramas/P_MUCHOS_ARBOLES.svg",
-      "bytes": 1050,
-      "sha256": "79e4b136434b77cc2582e613cfa6c7b0eab2618777ca9a536fc4a1c3c9ecab47"
+      "ruta": "assets/pictogramas/P_CONFIRMAR.webp",
+      "bytes": 265444,
+      "sha256": "42069eae159a637ffccf3190dc98dfc34ee6812a21ab356fc69d23006dacf03f"
     },
     {
-      "ruta": "assets/pictogramas/P_OPCION.svg",
-      "bytes": 469,
-      "sha256": "a59dc349e790232e263647071265b60f76e3aa8814496d2ccfd74f3304d5afdc"
+      "ruta": "assets/pictogramas/P_CONTINUAR.webp",
+      "bytes": 248756,
+      "sha256": "ac3aaea8b625e70382f18857efde36ca15abfed3ee4499f2d6849d99accdf295"
     },
     {
-      "ruta": "assets/pictogramas/P_PAISAJE_FRIO.svg",
-      "bytes": 642,
-      "sha256": "730a40ba0282efdc243a9c445632fee0e6c36202d4dbcbea1248274293562d0d"
+      "ruta": "assets/pictogramas/P_ELEGIR.webp",
+      "bytes": 349704,
+      "sha256": "a0ae9572b4a5ca898a2dbee50b60f9c8c688a05a74b250d20e6103b06a9fa95a"
     },
     {
-      "ruta": "assets/pictogramas/P_PASTO_ABUNDANTE.svg",
-      "bytes": 779,
-      "sha256": "8a563981b6537f60fdec18940cfab15423b0622615f954cf8ed9579fa1eee60a"
+      "ruta": "assets/pictogramas/P_EXPLORAR.webp",
+      "bytes": 590708,
+      "sha256": "ce0bb74336acaf2339ac0da25c85d6793392523315d55e14b5d8a4dc9752fb51"
     },
     {
-      "ruta": "assets/pictogramas/P_PLANETA.svg",
-      "bytes": 513,
-      "sha256": "e351fecccb5facbeda668d50ca23af35c60fb4480147991dc1ddc1cfb7cc1e1a"
+      "ruta": "assets/pictogramas/P_FIN.webp",
+      "bytes": 351006,
+      "sha256": "61d68f4a37ee430d52b726689f4051b6180052e71dabb30094980e4fdb5dc70c"
     },
     {
-      "ruta": "assets/pictogramas/P_POCAS_PLANTAS.svg",
-      "bytes": 487,
-      "sha256": "cf24706578e568ec3e3da76eb9e9d0b92cbe41bea58f4678c737346618337f20"
+      "ruta": "assets/pictogramas/P_H01.webp",
+      "bytes": 1026240,
+      "sha256": "8d3da32999354ca4a34dbc1ff211836f43cf7a4c5cf6e8686ccc116bb92f24de"
     },
     {
-      "ruta": "assets/pictogramas/P_POLOS.svg",
-      "bytes": 615,
-      "sha256": "4e733ab5eb9f41257f3b62a0e2290e24025fd903640248def896d266f33d6743"
+      "ruta": "assets/pictogramas/P_H02.webp",
+      "bytes": 477676,
+      "sha256": "d37a670ddfe06c23caa437c6ab5c4d3edde7d7ea66afd75ce8699255a68a28e6"
     },
     {
-      "ruta": "assets/pictogramas/P_PREGUNTAR.svg",
-      "bytes": 445,
-      "sha256": "01ae5ac5bffc24f7ee5c1f4841b60c79e7bee9929e95d3a72f4fb0654482fde1"
+      "ruta": "assets/pictogramas/P_H03.webp",
+      "bytes": 351956,
+      "sha256": "fc015a3e71ea90a4150e9fdae7391424f634e759267ae9170f8c234b0177ddcc"
     },
     {
-      "ruta": "assets/pictogramas/P_PROBAR.svg",
-      "bytes": 400,
-      "sha256": "c71028d5584a589de7300a983813cdac24a6dd37f43c1c65bd208326a1823a34"
+      "ruta": "assets/pictogramas/P_H04.webp",
+      "bytes": 448926,
+      "sha256": "5406d4142ffbb0d5586479343960aab4e6e370f7f7a03fa89dc0476e9a1925b5"
     },
     {
-      "ruta": "assets/pictogramas/P_QUE_LUGAR.svg",
-      "bytes": 447,
-      "sha256": "8c94db588e7b1c09b74de9d92db9a2f7cb7ef402f2a6a4fef9f7098c57999b1c"
+      "ruta": "assets/pictogramas/P_H05.webp",
+      "bytes": 678430,
+      "sha256": "39ad32ebefe4f0a063494b55fdba62a28537655e152a3a7d7f5f5248faef6b20"
     },
     {
-      "ruta": "assets/pictogramas/P_REANUDAR.svg",
-      "bytes": 301,
-      "sha256": "2fcbbd72ddf161dc4ce876bd8b8d6012bcc0c1a8a202f4d6fd6c3a0e236c9a8b"
+      "ruta": "assets/pictogramas/P_H06.webp",
+      "bytes": 697060,
+      "sha256": "ca2bb00390f2cb6be2c38017c12a326225e890238cb5d8d3e4b17935e9540f98"
     },
     {
-      "ruta": "assets/pictogramas/P_RIO.svg",
-      "bytes": 721,
-      "sha256": "6f416eb3dd73357ad80fce6e0c037256f0e381ffdce866d02571f5ee4a9febaa"
+      "ruta": "assets/pictogramas/P_H07.webp",
+      "bytes": 499750,
+      "sha256": "8355a246abc9e761e3605e612c6876c7f4789de2a74dfd6e4305834dd7eced05"
     },
     {
-      "ruta": "assets/pictogramas/P_SECO.svg",
-      "bytes": 396,
-      "sha256": "8d1677a8da7589a7f553390e7da606a310af062bde45d051634bb63b7bbab1cc"
+      "ruta": "assets/pictogramas/P_H08.webp",
+      "bytes": 520300,
+      "sha256": "aeed559e89dee537472ab04a44e6ecc1d06f9d7a7e45c98a30a6d59643c291a6"
     },
     {
-      "ruta": "assets/pictogramas/P_SENALAR.svg",
-      "bytes": 423,
-      "sha256": "1a5f73acb47e45f72485a5c22ae8a36363d4a7bae0b79e047b6eff51bd85b9aa"
+      "ruta": "assets/pictogramas/P_HUMEDAD.webp",
+      "bytes": 541390,
+      "sha256": "bf0d695d28a2bda02177f8e722a3674ae665d3d5e2d4d2b4156cb7ec00ad8a99"
     },
     {
-      "ruta": "assets/pictogramas/P_TOCAR.svg",
-      "bytes": 420,
-      "sha256": "9559602feed0b5893b5d1544156f8d8cb42e22fd27e189ca13563c0b07e67353"
+      "ruta": "assets/pictogramas/P_INICIAR.webp",
+      "bytes": 295702,
+      "sha256": "ddbd6d83a5375f5b9a51840ed9a0c4939308f8833ca4fed42f65a3cabfe11042"
     },
     {
-      "ruta": "assets/pictogramas/P_VIVIR.svg",
-      "bytes": 705,
-      "sha256": "395e93dda4f326ab0edd85c060dbbd5213d1324dddfdf5e5359bfc27afbe0664"
+      "ruta": "assets/pictogramas/P_JUGADOR.webp",
+      "bytes": 505520,
+      "sha256": "41eaaba9a83dd561698ce6140f75fb9b3db93a89a35c0d8e03a8be1e68c4619b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_LUGAR_ABIERTO.webp",
+      "bytes": 381964,
+      "sha256": "b405461a23e93f1cc58d697ecea6c352e10db8d81dcf4c9ca55de7bcfe147ce5"
+    },
+    {
+      "ruta": "assets/pictogramas/P_MONTANAS_ALTAS.webp",
+      "bytes": 511534,
+      "sha256": "6d97c233da9730ac678edf41a80f4bea1e80ac85660de212875ee041a8180af0"
+    },
+    {
+      "ruta": "assets/pictogramas/P_MUCHA_AGUA.webp",
+      "bytes": 361444,
+      "sha256": "4c1f16e8cd61017d14bef19ea5da9b761bf659875215a922049358af62308763"
+    },
+    {
+      "ruta": "assets/pictogramas/P_MUCHOS_ARBOLES.webp",
+      "bytes": 741122,
+      "sha256": "6a3d8af272d8f00924c0274ddfcc129ec857569f9061c37bd69e1adb2fc224d2"
+    },
+    {
+      "ruta": "assets/pictogramas/P_OPCION.webp",
+      "bytes": 348964,
+      "sha256": "de848824c918b1f10df924e2e8c4a6082810f85f502cefeb6b3cf2bbdbd3a054"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PAISAJE_FRIO.webp",
+      "bytes": 536914,
+      "sha256": "7a8bf2137588228be93d372a8152e4fd0b7322b7bd43cbfc2ecd31abae9c0275"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PASTO_ABUNDANTE.webp",
+      "bytes": 745546,
+      "sha256": "9bfbb3afae395f5703ea172c08078e0c80fe9ddff3c4d57b5141c0bc7be9c3f7"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PAUSAR.webp",
+      "bytes": 239196,
+      "sha256": "c1b302bc11b7a1765d2b6e65ecef3aca42b3091fff9aeb0b9ef8a8fe7bbb4d6e"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PLANETA.webp",
+      "bytes": 674532,
+      "sha256": "8db03ad6b1f1a15a414d5c5a86672d6b411665cd6731e008948472de6ec949ab"
+    },
+    {
+      "ruta": "assets/pictogramas/P_POCAS_PLANTAS.webp",
+      "bytes": 261802,
+      "sha256": "44415a99cbf715eaa6216417ccbe074cb01050a73eaef70c50dd008167f5aa19"
+    },
+    {
+      "ruta": "assets/pictogramas/P_POLOS.webp",
+      "bytes": 408852,
+      "sha256": "47c3a152999c8596d84857a4849e0620717a77b7d58dfeef8d3a92f16d50b207"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PREGUNTAR.webp",
+      "bytes": 569908,
+      "sha256": "ea8bfec649446bd82575d01e9887af3e9b309bd42d772051417ab200c5f05f7b"
+    },
+    {
+      "ruta": "assets/pictogramas/P_PROBAR.webp",
+      "bytes": 367760,
+      "sha256": "57e96a2a4f41555a5698fbcc81dbcf3246a8519cc35a97f53f2822f04efe92ef"
+    },
+    {
+      "ruta": "assets/pictogramas/P_QUE_LUGAR.webp",
+      "bytes": 495414,
+      "sha256": "3c12df299dd025e7e19f1e0fc580380c956c8d109aa6fb1e0758200d23f3ba27"
+    },
+    {
+      "ruta": "assets/pictogramas/P_REANUDAR.webp",
+      "bytes": 380306,
+      "sha256": "49bc17645d893d09f8724ff09978169adbe0228f0bac3624bf9c51ff55355aee"
+    },
+    {
+      "ruta": "assets/pictogramas/P_REPETIR.webp",
+      "bytes": 387636,
+      "sha256": "e551002b452f7bf8dce45f3f3957349ddba166feb7e91be1f71046f6d9f380ac"
+    },
+    {
+      "ruta": "assets/pictogramas/P_RIO.webp",
+      "bytes": 532678,
+      "sha256": "458383bf8b1fe43eabf9661283e37a6f5e65a1e20fb8856a8dbc125773ccc7cc"
+    },
+    {
+      "ruta": "assets/pictogramas/P_SALIR.webp",
+      "bytes": 323480,
+      "sha256": "ae121141233f42c2dbdf67ca0db5db65a222b8a0d728aef050ff9e08f94574e0"
+    },
+    {
+      "ruta": "assets/pictogramas/P_SECO.webp",
+      "bytes": 479478,
+      "sha256": "56e5ae1c555c7d40bae7af97eab60561ac814b9b0bc25d5a5e7fe66b9ba30d4e"
+    },
+    {
+      "ruta": "assets/pictogramas/P_SENALAR.webp",
+      "bytes": 245076,
+      "sha256": "73d476904a25b2e0a0c5893020d12e6019e2d03c7c9217fdd345330eca23184d"
+    },
+    {
+      "ruta": "assets/pictogramas/P_TOCAR.webp",
+      "bytes": 334038,
+      "sha256": "8ccc98f7fd0b13f2e08f5d3cc68524dfa49fc826e003b5326859754b7dabdf0a"
+    },
+    {
+      "ruta": "assets/pictogramas/P_VIVIR.webp",
+      "bytes": 450426,
+      "sha256": "8715ba0e467586680b3e2ed6949ab29eb56776ff8c47bcccd3abea71590ed664"
     },
     {
       "ruta": "codigo/__init__.py",
@@ -585,17 +698,17 @@
     {
       "ruta": "codigo/interfaz/preparar_voces.py",
       "bytes": 3544,
-      "sha256": "3cb3861ada524783d74c1c5061ab3050f0a670a408c7411cbbd2172ad46f2784"
+      "sha256": "4855e4310882252e0da1e014b8354878fd958e29e5f8be28a1c47edf9364504f"
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
-      "bytes": 7214,
-      "sha256": "0c8f8738a9e0698dec8f0570c9a9db0b567d326e886bca3a1a05e769dd188c35"
+      "bytes": 7835,
+      "sha256": "d779543f5224d463bbf3d8e04a92960bdbf4b5c1887128dca0dba409cf72256a"
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
       "bytes": 10739,
-      "sha256": "cda3d94b531a4549d046b82a7d881042ba434911c0c0f20a634c1be3250508f1"
+      "sha256": "72565d6e3fe0121ebc7aed7a1144f069dc62ddbd0aabefc7edf3d442d9ec20eb"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -614,8 +727,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 13358,
-      "sha256": "cfb52a4e372747949c466cfe853c881a84a90c08b456111d5ec41731359ef643"
+      "bytes": 13416,
+      "sha256": "b489250620275c9cff0ed0ee92d8ff52e95bb5beafb46dead270fe20f18b4b76"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -654,8 +767,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 3959,
-      "sha256": "974de80137e31c3f1d3c57efa59d6f7c7a137fc454a5f26b6eef04d6a142db2f"
+      "bytes": 3892,
+      "sha256": "a1b10e387e01ba44a5ce5bee7a69aec25d1dad8e4d16bf098f233b4834d0151d"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -813,6 +926,26 @@
       "sha256": "b6fffd15f7dc3ed60752f53dfbb73eb44a5767d1ab0beaa41ba39ac243f70eb7"
     },
     {
+      "ruta": "datos/imagenes_apoyos_ia.json",
+      "bytes": 55546,
+      "sha256": "34d0eb0d54a11b371d7cf5ba70ad91a3556e749acb682a406e957356c542e8d1"
+    },
+    {
+      "ruta": "datos/imagenes_habitats_controles_ia.json",
+      "bytes": 21580,
+      "sha256": "17345326100bd78556bf433cc0178b1d5b0b01bbde4b3bea7b37e7fc8193e718"
+    },
+    {
+      "ruta": "datos/imagenes_modalidad_ia.json",
+      "bytes": 3873,
+      "sha256": "8cb7c6188f38b63557a6c19742800596003dca77b498551991b96e358d3b9be3"
+    },
+    {
+      "ruta": "datos/imagenes_paisajes_tarjetas_ia.json",
+      "bytes": 13485,
+      "sha256": "a1661b66308ace3f2819caa43d091fddb3227b5ac39de348a3fd6c76741bba42"
+    },
+    {
       "ruta": "datos/mensajes_sistema.json",
       "bytes": 4984,
       "sha256": "015d31bb7b10cae04f06498fb2932833da66919cf4a9284483709ce86f6185f5"
@@ -829,8 +962,8 @@
     },
     {
       "ruta": "datos/pictogramas.json",
-      "bytes": 81455,
-      "sha256": "d6fbad1fb1c3b139558c017ceac5e329f6799ad502e24060ebfdd7b5d311a9a7"
+      "bytes": 82709,
+      "sha256": "1e7516815c83b438b8c622f07b253b0ccab00c931868c59f7dffad1fe7b96737"
     },
     {
       "ruta": "datos/pistas_originales.json",
@@ -839,8 +972,8 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 26871,
-      "sha256": "18d97c42fde9e933c05e649b240d4e8add23a069b94cef4ffe5ea51df938c653"
+      "bytes": 27036,
+      "sha256": "c9f5ab966f5568df28bf886cb87298bd4eeaec501969a3d4d48d7d7ca7ba60d9"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
@@ -854,8 +987,8 @@
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
-      "bytes": 4415,
-      "sha256": "ac7d8005365568cc1f85f54ee95ed97acc496712e4cdbe8989131053c2006e1f"
+      "bytes": 4650,
+      "sha256": "5616ae90b46b911ffc928b1872e009c082896164c0ff84002bc3d0c2b77f0b56"
     },
     {
       "ruta": "docs/datos/fuentes/baseline_id3_animales_habitats.md",
@@ -1744,8 +1877,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 20297,
-      "sha256": "4f859b613cc7b2f236d4f8c84e862b2daac86b91014e8c63b4433a38bdf764d7"
+      "bytes": 18224,
+      "sha256": "eb577fd88eca5b8071d034606c67876a6f678ca7ae8be447ccbc4953a140d688"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -1803,14 +1936,24 @@
       "sha256": "fdb6d9fa45a3fb9d934a83899f6f0caf02daae104975f146ea10d025c2c351f6"
     },
     {
+      "ruta": "docs/interfaz/3.8/inicio.webp",
+      "bytes": 293516,
+      "sha256": "a4e2dfd0004aeda7d327f722d9217f0532f2ea8185bd819ebf2c1add39d94ac5"
+    },
+    {
+      "ruta": "docs/interfaz/3.8/revision.json",
+      "bytes": 4683,
+      "sha256": "b562f65f7f6c3e2e604a173748a2683d550f42ce3419a2d0536bedffd404ab15"
+    },
+    {
       "ruta": "docs/interfaz/alternativas_voz.md",
       "bytes": 7405,
       "sha256": "fb67fe098bb9589ba297d2bc0ecfe4e9bab731809733ffc289969da9c0b45425"
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 9342,
-      "sha256": "12ac74af351d739d21595b3d4752ee55b7908653addd792761e578c1c42b6cc4"
+      "bytes": 9895,
+      "sha256": "e15a43cd1c708cf8581800626784b312b7eb65a736acc62d5437c6b83d55310f"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -1906,6 +2049,16 @@
       "ruta": "docs/interfaz/revisiones/2026-10-10-caa/tablero.webp",
       "bytes": 100524,
       "sha256": "e2adf4b271ee40d4bbe29014ea0a09c1bbe4ad71471d7de6aed80a3db9d40cbb"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caricaturas/resumen.md",
+      "bytes": 1288,
+      "sha256": "6b1569ead0e931060c9b577f747141515a7beee47ba476e61d32705f4e382977"
+    },
+    {
+      "ruta": "docs/interfaz/revisiones/2026-10-10-caricaturas/revision_navegador.json",
+      "bytes": 3542,
+      "sha256": "cad422d314dfea425313a1a91ddf740aedd86d3d8ac8c12831a20f592bae73d1"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-carrusel/interfaz.json",
@@ -2109,8 +2262,8 @@
     },
     {
       "ruta": "tests/test_interfaz.py",
-      "bytes": 8333,
-      "sha256": "b4dff361e2f9dcecc50e8dd3c3edca1459455b872b001c9fbeba02de2b4474c5"
+      "bytes": 10294,
+      "sha256": "10c6ca145f6dd5f4d900a96de8da89e0109fbaa50ecb72eb112727cb72d27323"
     },
     {
       "ruta": "tests/test_nucleo.py",
@@ -2125,157 +2278,22 @@
     {
       "ruta": "tests/verificar_audio_real.cjs",
       "bytes": 3551,
-      "sha256": "0b17609edecfe041da0ac0d8b0674888f6cf9e6cb636435db0f8beb0e33dcf98"
+      "sha256": "94418ca49faebf3e6ca1831ab51355623edbfe8f0bff38a40eca516962dbbfa1"
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 36929,
-      "sha256": "19b9a85122cde6591502c1f8209adf4ebde8e6ebd0d8051d6439a95f42573d89"
+      "bytes": 37491,
+      "sha256": "3e644e46257bf1878de9f7f7bbd576992964f10cf999fd68a49ab2c7c3230778"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
       "bytes": 10514,
-      "sha256": "ca43c6d5e85ac34233844aa7bf2deff7637869508a6357086a2a5870b838e5b9"
+      "sha256": "ee1f24b6033d598a7cec9e7fee37d9a733976d326feeeccaed39ffd949d9372f"
     },
     {
       "ruta": "tests/verificar_voces_reales.py",
       "bytes": 2397,
-      "sha256": "eb07186aa9ac12ff5e145fa11f47a81e84435df0a523d3f67f05dc52d66fac1d"
-    },
-    {
-      "ruta": "docs/interfaz/revisiones/2026-10-10-caricaturas/resumen.md",
-      "bytes": 1288,
-      "sha256": "6b1569ead0e931060c9b577f747141515a7beee47ba476e61d32705f4e382977"
-    },
-    {
-      "ruta": "docs/interfaz/revisiones/2026-10-10-caricaturas/revision_navegador.json",
-      "bytes": 3542,
-      "sha256": "cad422d314dfea425313a1a91ddf740aedd86d3d8ac8c12831a20f592bae73d1"
-    },
-    {
-      "ruta": "datos/imagenes_modalidad_ia.json",
-      "bytes": 3873,
-      "sha256": "8cb7c6188f38b63557a6c19742800596003dca77b498551991b96e358d3b9be3"
-    },
-    {
-      "ruta": "assets/pictogramas/P_JUGADOR.webp",
-      "bytes": 505520,
-      "sha256": "41eaaba9a83dd561698ce6140f75fb9b3db93a89a35c0d8e03a8be1e68c4619b"
-    },
-    {
-      "ruta": "assets/pictogramas/P_AGENTE.webp",
-      "bytes": 552474,
-      "sha256": "31cc65da0d7b29e0d321f8325c66481794526b1ac88b46539657c91e09f65500"
-    },
-    {
-      "ruta": "datos/imagenes_habitats_controles_ia.json",
-      "bytes": 21580,
-      "sha256": "17345326100bd78556bf433cc0178b1d5b0b01bbde4b3bea7b37e7fc8193e718"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H01.webp",
-      "bytes": 1026240,
-      "sha256": "8d3da32999354ca4a34dbc1ff211836f43cf7a4c5cf6e8686ccc116bb92f24de"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H02.webp",
-      "bytes": 477676,
-      "sha256": "d37a670ddfe06c23caa437c6ab5c4d3edde7d7ea66afd75ce8699255a68a28e6"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H03.webp",
-      "bytes": 351956,
-      "sha256": "fc015a3e71ea90a4150e9fdae7391424f634e759267ae9170f8c234b0177ddcc"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H04.webp",
-      "bytes": 448926,
-      "sha256": "5406d4142ffbb0d5586479343960aab4e6e370f7f7a03fa89dc0476e9a1925b5"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H05.webp",
-      "bytes": 678430,
-      "sha256": "39ad32ebefe4f0a063494b55fdba62a28537655e152a3a7d7f5f5248faef6b20"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H06.webp",
-      "bytes": 697060,
-      "sha256": "ca2bb00390f2cb6be2c38017c12a326225e890238cb5d8d3e4b17935e9540f98"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H07.webp",
-      "bytes": 499750,
-      "sha256": "8355a246abc9e761e3605e612c6876c7f4789de2a74dfd6e4305834dd7eced05"
-    },
-    {
-      "ruta": "assets/pictogramas/P_H08.webp",
-      "bytes": 520300,
-      "sha256": "aeed559e89dee537472ab04a44e6ecc1d06f9d7a7e45c98a30a6d59643c291a6"
-    },
-    {
-      "ruta": "assets/pictogramas/P_AYUDA.webp",
-      "bytes": 325346,
-      "sha256": "4a015ed6f79a5acea52ec098c4b69e3545526990eb68ae119983a681baabf398"
-    },
-    {
-      "ruta": "assets/pictogramas/P_REPETIR.webp",
-      "bytes": 387636,
-      "sha256": "e551002b452f7bf8dce45f3f3957349ddba166feb7e91be1f71046f6d9f380ac"
-    },
-    {
-      "ruta": "assets/pictogramas/P_PAUSAR.webp",
-      "bytes": 239196,
-      "sha256": "c1b302bc11b7a1765d2b6e65ecef3aca42b3091fff9aeb0b9ef8a8fe7bbb4d6e"
-    },
-    {
-      "ruta": "assets/pictogramas/P_SALIR.webp",
-      "bytes": 323480,
-      "sha256": "ae121141233f42c2dbdf67ca0db5db65a222b8a0d728aef050ff9e08f94574e0"
-    },
-    {
-      "ruta": "datos/imagenes_paisajes_tarjetas_ia.json",
-      "bytes": 13485,
-      "sha256": "a1661b66308ace3f2819caa43d091fddb3227b5ac39de348a3fd6c76741bba42"
-    },
-    {
-      "ruta": "assets/paisajes/H01.webp",
-      "bytes": 798336,
-      "sha256": "d5e951b8b6c3860050d143d2bf8edce77cc09a57e1bed7f7b41b42ce7f70415c"
-    },
-    {
-      "ruta": "assets/paisajes/H02.webp",
-      "bytes": 384966,
-      "sha256": "4690c4e26d5decfb5d5cb9cbb77625b4ce16d6158aba84d9302880f1442836ba"
-    },
-    {
-      "ruta": "assets/paisajes/H03.webp",
-      "bytes": 243474,
-      "sha256": "d7bf6ed2638ce1a1ccac3d06882160df9d7ad14df931b740fe81b1065522ed90"
-    },
-    {
-      "ruta": "assets/paisajes/H04.webp",
-      "bytes": 346170,
-      "sha256": "1b7ca539d68d73295dac64a48782e8e755fea32a544b5e2b71bd7477c272c820"
-    },
-    {
-      "ruta": "assets/paisajes/H05.webp",
-      "bytes": 781538,
-      "sha256": "435f3eb9babd6bf1bd49537e3c557ae6e28faf275a6929d3e745069741a0b672"
-    },
-    {
-      "ruta": "assets/paisajes/H06.webp",
-      "bytes": 518494,
-      "sha256": "10a17b66d3c54b0f8d0071f7e76564081035e027bfab29c12e705c922afae194"
-    },
-    {
-      "ruta": "assets/paisajes/H07.webp",
-      "bytes": 317968,
-      "sha256": "391f8b8bb1d473c4bc3b51c32d77ab10bfeedfe2685c0885eebe7890e015cd80"
-    },
-    {
-      "ruta": "assets/paisajes/H08.webp",
-      "bytes": 502294,
-      "sha256": "2246f6282e74a278b38e6405af0a184a081fa5b9610c7c0ee14409d5754cfe4f"
+      "sha256": "79b9912460e9ce60eb8f69c0247377efbe0e2f9fa84036de95728891d60c10f4"
     }
   ],
   "nombre_proyecto": "Zoonauta"

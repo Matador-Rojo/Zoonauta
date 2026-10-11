@@ -4,7 +4,9 @@ from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 from pathlib import Path
+from random import Random
 import unittest
+from unittest.mock import Mock
 from uuid import uuid4
 
 from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, SesionWeb
@@ -41,6 +43,45 @@ class PruebasInterfaz(unittest.TestCase):
         v = self.actuar("iniciar", modalidad="AGENTE", retos=48)["vista"]
         self.assertEqual("ESPERANDO_RESPUESTA", v["fase"])
         self.assertEqual(48, v["progreso"]["total"])
+
+    def test_agente_recorrido_aleatorio_de_48_sin_repeticiones(self):
+        self.s = SesionWeb(self.s.banco, aleatorio=Random(38))
+        primeros = []
+        for partida in range(2):
+            self.actuar("iniciar", modalidad="AGENTE", retos=48)
+            vistos = []
+            for _ in range(48):
+                animal = self.s.vista()["animal"]["id"]
+                vistos.append(animal)
+                habitat = next(h for (a, h), r in self.s.banco.asociaciones.items()
+                               if a == animal and r["estado"] == "VALIDA")
+                self.actuar("seleccionar_habitat", habitat_id=habitat)
+                self.actuar("continuar")
+            self.assertEqual(set(self.s.banco.animales), set(vistos))
+            self.assertEqual(48, len(set(vistos)))
+            self.assertEqual("COMPLETADA", self.s.vista()["fase"])
+            primeros.append(vistos[0])
+            if partida == 0:
+                self.actuar("nueva_partida")
+        self.assertNotEqual(primeros[0], primeros[1])
+
+    def test_nueva_partida_evitar_mismo_inicio_y_pausa_conserva_orden(self):
+        orden = list(self.s.banco.escenarios)
+        azar = Mock()
+        azar.sample.side_effect = [list(orden), list(orden)]
+        self.s = SesionWeb(self.s.banco, aleatorio=azar)
+        self.actuar("iniciar", modalidad="AGENTE", retos=8)
+        primero = self.s.vista()["animal"]["id"]
+        self.actuar("pausar")
+        self.actuar("reanudar")
+        self.assertEqual(primero, self.s.vista()["animal"]["id"])
+        self.assertEqual(1, azar.sample.call_count)
+        self.actuar("salir")
+        self.actuar("nueva_partida")
+        self.actuar("iniciar", modalidad="AGENTE", retos=8)
+        self.assertNotEqual(primero, self.s.vista()["animal"]["id"])
+        self.assertEqual(set(orden), set(self.s.gestor.orden_escenarios))
+        self.assertEqual(2, azar.sample.call_count)
 
     def test_clic_duplicado_o_tardio_no_repite_ayuda(self):
         self.actuar("iniciar", modalidad="AGENTE")
