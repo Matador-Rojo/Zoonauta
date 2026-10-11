@@ -24,10 +24,14 @@ contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
 El cierre muestra los retos realmente completados y permite comenzar otra partida.
 No hay puntos competitivos ni límite de tiempo o intentos.
 
-En computadora, el animal y los controles quedan a la izquierda; la guía y los
-ocho hábitats, alineados a la derecha. El tablero cabe sin scroll desde 1024 × 768
-y 1280 × 720. La cabecera, el logo y Preferencias quedan en el inicio; el pie se
-oculta durante el juego. En móvil, el contenido se apila sin perder opciones.
+En computadora, el tablero aprovecha el ancho y la altura disponibles, con un
+fondo continuo. El animal aparece grande y completo, con su nombre debajo; los
+cuatro controles quedan bajo él en dos filas. La guía y los ocho hábitats se
+alinean a la derecha, con pictogramas y etiquetas más grandes. El tablero cabe
+sin scroll en las resoluciones probadas, incluidas 1024 × 768 y 1280 × 720.
+La cabecera, el logo y Preferencias quedan en el inicio; el pie se oculta durante
+el juego. En móvil se apila el contenido. Una ventana muy baja permite scroll
+para conservar imágenes, nombres y controles completos.
 
 Los 95 recursos educativos activos son ilustraciones originales con transparencia:
 48 animales, ocho símbolos de hábitat y 39 apoyos o controles. Cada animal tiene una

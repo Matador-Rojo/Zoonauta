@@ -119,16 +119,21 @@ Se mantienen los identificadores y las secuencias de preguntas y pistas del núc
 Cada recurso conserva procedencia, prompt, transparencia y SHA-256 en los archivos
 `datos/imagenes_*_ia.json`. La comprensión CAA requiere evaluación con usuarios.
 
-Las preguntas y pistas usan símbolos de 96 px en escritorio y 84 px en móvil;
-los controles, 56 px. Las imágenes no llevan recuadros blancos. Iniciar y Salir
+En el tablero, las preguntas y pistas usan imágenes de 84–140 px según el espacio,
+con etiquetas de 14 px; los controles mantienen imágenes de 56 px y texto de 17 px.
+Las imágenes no llevan recuadros blancos. Iniciar y Salir
 también conservan transparencia en el cierre y en los botones.
 Hay foco visible para teclado, botones nativos y un diálogo de preferencias.
 
 Las tarjetas de hábitat presentan ocho paisajes realistas propios, con el elemento
 principal centrado, nombre y número 01–08 arriba a la derecha. En escritorio ocupan
 la columna derecha, debajo de la guía y con su mismo ancho: cuatro columnas y dos
-filas de tarjetas más pequeñas. El animal y los controles Pista, Repetir, Pausar y
-Salir ocupan la columna izquierda. La cabecera, el logo y Preferencias se muestran
+filas de tarjetas que se ajustan a la altura disponible. El tablero utiliza el
+ancho completo, con márgenes laterales de 20–48 px, y un fondo continuo hasta el
+borde inferior. El animal ocupa un área de imagen de al menos 200 × 180 px en las
+resoluciones de escritorio probadas, conserva sus proporciones y muestra su nombre
+debajo con texto de 24–30 px. Pista, Repetir, Pausar y Salir quedan debajo en una
+cuadrícula de dos columnas. La cabecera, el logo y Preferencias se muestran
 solo en inicio; el pie se oculta durante el juego.
 Los símbolos de hábitat se usan en las secuencias educativas, sin superponerse a
 las fotografías sintéticas de las tarjetas. No se elimina ninguna opción en móvil.
@@ -138,9 +143,11 @@ diez segundos; la pausa se activa solo mediante el botón. Play o las flechas re
 y reinician el intervalo. Preferencias y una pestaña inactiva suspenden el carrusel;
 movimiento reducido elimina las animaciones. Comenzar abre el diálogo de modalidad.
 La portada no requiere desplazamiento vertical. El tablero de escritorio se
-verificó sin scroll en 1024 × 768, 1280 × 720, 1366 × 768, 1440 × 900 y 1920 × 1080,
+verificó sin scroll en 1024 × 768, 1280 × 720, 1366 × 768, 1440 × 900, 1920 × 988 y 1920 × 1080,
 incluidas las pistas más largas. En móvil y pantallas estrechas, el contenido se
 apila y puede desplazarse; se conservan los ocho hábitats y todos los controles.
+Una ventana de menos de 660 px de alto permite desplazamiento para conservar el
+animal, su nombre y las opciones completos, también al aumentar el zoom.
 El catálogo conserva su paginación y puede desplazarse.
 La pausa conserva el animal y el orden; el cierre muestra el progreso real.
 

@@ -108,18 +108,31 @@ brújula, Buscar lleva lupa; agua salada combina una ola y un salero, y agua dul
 una gota y una pequeña laguna. Los prompts y las huellas están en
 `datos/imagenes_apoyos_ia.json`.
 
-Las preguntas y pistas mantienen secuencias de 84–96 px; los controles, 56 px.
+Las preguntas y pistas del tablero usan imágenes de 84–140 px; los controles, 56 px.
 Se eliminaron los fondos, bordes y rellenos blancos de cada imagen, incluidos
 Iniciar y Salir. Los pictogramas de hábitat permanecen en las secuencias educativas.
 Las tarjetas muestran paisaje y nombre, sin símbolos superpuestos.
 
-## Tablero compacto de escritorio
+## Tablero que aprovecha la pantalla
 
-La partida usa dos columnas: animal y controles debajo a la izquierda; guía y
-ocho paisajes debajo a la derecha. Guía y hábitats comparten el mismo ancho.
-Los botones mantienen imágenes de 56 px y los apoyos educativos, de 84–96 px.
-En pantallas de poca altura se reduce el espacio y la altura de los paisajes,
-conservando texto, números 01–08 y todas las opciones.
+La partida aprovecha el ancho y la altura de la pantalla con márgenes de 20–48 px.
+El fondo cubre al menos la altura del visor, queda fijo y no se repite: no aparece
+un corte horizontal al terminar el contenido. Animal y controles quedan a la
+izquierda; guía y ocho paisajes, alineados a la derecha. Las tarjetas de hábitat
+reparten el espacio vertical restante entre sus dos filas.
+
+El animal se muestra centrado, grande y completo, con su nombre debajo. Su área
+de imagen mide al menos 200 × 180 px en las resoluciones de escritorio probadas;
+`object-fit: contain` conserva las proporciones. Su nombre usa texto de 24–30 px.
+Se retiró la nota redundante bajo el animal. Los cuatro controles ocupan dos
+filas y mantienen imágenes de 56 px, con etiquetas de 17 px. Los apoyos de la guía
+se centran y aumentan hasta 140 px, con etiquetas de 14 px. Las pruebas verifican
+los nombres y las pistas en ambos idiomas sin recortes.
+
+En ventanas de menos de 660 px de alto se permite scroll para conservar el
+contenido completo. Las seis resoluciones de escritorio probadas, entre
+1024 × 768 y 1920 × 1080, incluidas 1280 × 720 y 1920 × 988, no requieren scroll.
+Se conservan texto, números 01–08 y todas las opciones.
 
 El logo, la cabecera y Preferencias se reservan para inicio. El pie se oculta
 en las pantallas de juego. En móvil, las columnas se apilan y permiten scroll;
