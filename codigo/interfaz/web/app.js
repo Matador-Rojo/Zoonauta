@@ -102,7 +102,7 @@ function paisaje(habitat,clase="") {
 function detenerCarrusel() { clearInterval(temporizadorPaisaje); temporizadorPaisaje=null; }
 function ritmoCarrusel() {
   detenerCarrusel();
-  if(carrusel&&!carrusel.pausado&&!document.hidden&&!$("preferencias").open&&vista?.fase==="INICIO")
+  if(carrusel&&!carrusel.pausado&&!document.hidden&&!$("preferencias").open&&!$("elegir-modalidad")?.open&&vista?.fase==="INICIO")
     temporizadorPaisaje=setInterval(()=>cambiarPaisaje(1),10000);
 }
 function cambiarPaisaje(paso) {
@@ -127,14 +127,23 @@ function inicio() {
   const h=nodo("h1"); h.id="titulo-pantalla"; h.tabIndex=-1;
   h.append(nodo("span","","Cada animal."),nodo("em","","Su mundo."));
   texto.append(h,nodo("p","introduccion","48 animales. 8 hábitats. Descubre dónde viven con pictogramas y una guía que te acompaña."));
-  const entrada=nodo("div","entrada"); entrada.append(nodo("h2","pregunta-inicio","¿Quién elige el animal?"));
-  const modos=nodo("div","modalidades");
-  for(const [m,i,etiqueta] of [["JUGADOR","persona","Yo elijo"],["AGENTE","brujula","El agente elige"]]) {
-    const btn=boton("", "iniciar",{modalidad:m},"modalidad"); btn.setAttribute("aria-label",t(etiqueta));
-    btn.append(icono(i,"modo-icono"),nodo("span","",etiqueta),icono("flecha","flecha")); modos.append(btn);
+  const entrada=nodo("div","entrada"),comenzar=nodo("button","modalidad comenzar");
+  comenzar.type="button";comenzar.setAttribute("aria-label",t("Comenzar"));comenzar.setAttribute("aria-haspopup","dialog");
+  comenzar.append(icono("reproducir","modo-icono"),nodo("span","","Comenzar"),icono("flecha","flecha"));
+  const selector=nodo("dialog","selector-modalidad");selector.id="elegir-modalidad";selector.setAttribute("aria-labelledby","titulo-modalidad");
+  const encabezado=nodo("h2","","¿Quién elige el animal?");encabezado.id="titulo-modalidad";
+  const modos=nodo("div","opciones-modalidad");
+  for(const [m,etiqueta] of [["JUGADOR","Yo elijo"],["AGENTE","El agente elige"]]) {
+    const btn=nodo("button","opcion-modalidad");btn.type="button";btn.setAttribute("aria-label",t(etiqueta));
+    btn.append(imagen(m==="JUGADOR"?"P_JUGADOR":"P_AGENTE"),nodo("span","",etiqueta));
+    btn.addEventListener("click",()=>{selector.close();accion("iniciar",{modalidad:m});});modos.append(btn);
   }
+  const volver=nodo("button","accion volver-inicio","Volver al inicio");volver.type="button";volver.addEventListener("click",()=>selector.close());
+  selector.append(encabezado,modos,volver);
+  comenzar.addEventListener("click",()=>{selector.showModal();ritmoCarrusel();});
+  selector.addEventListener("close",()=>{comenzar.focus({preventScroll:true});ritmoCarrusel();});
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
-  entrada.append(modos,nota); texto.append(entrada); layout.append(texto);
+  entrada.append(comenzar,nota); texto.append(entrada); layout.append(texto);
   const ficha=nodo("div","hero-ficha"),numero=nodo("span","ficha-numero"),nombre=nodo("strong");
   ficha.append(numero,nombre);
   const navegacion=nodo("nav","paisaje-controles");
@@ -148,7 +157,7 @@ function inicio() {
   for(const [t,sub] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Ayuda, repetición y pausa"]]) {
     const item=nodo("div","resumen-item");item.append(nodo("strong","",t),nodo("span","",sub));resumen.append(item);
   }
-  b.append(foto,nodo("div","hero-sombra"),layout,resumen);
+  b.append(foto,nodo("div","hero-sombra"),layout,resumen,selector);
   carrusel={foto,numero,nombre,navegacion,pausa,paisajes:vista.opciones_habitat,indice:0,pausado:false};
   cambiarPaisaje(0);ritmoCarrusel();return [b];
 }

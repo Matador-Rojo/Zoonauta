@@ -4,15 +4,17 @@ La portada ocupa una sola pantalla. Sus ocho paisajes cambian cada 10 segundos,
 con nombre y contador sincronizados, controles de pausa y navegación manual.
 No existe una sección inferior ni desplazamiento vertical en el inicio. Los ocho
 fondos comparten un estilo de fotografía de naturaleza; la selva se renovó sin
-el guacamayo. Los botones de modalidad son compactos, con bordes redondeados e
-iconos lineales. Preferencias comparte la paleta oscura y el acento lima.
+el guacamayo. Un único botón principal Comenzar abre la elección entre Yo elijo
+y El agente elige, mediante dos tarjetas con pictogramas. Volver al inicio o Escape
+cierran el selector sin iniciar una partida. Preferencias comparte la paleta oscura
+y el acento lima.
 El tablero conserva los pictogramas originales en preguntas y pistas. Las tarjetas,
 retratos y cierres de animales usan recortes fotorrealistas.
 No se usan vídeos, GIF, escenas WebGL ni fuentes externas. Las fotografías aparentes
 son imágenes generadas con IA. El carrusel empieza en marcha y solo el botón central
 activa la pausa manual. Play o cualquiera de las flechas reanuda la rotación y reinicia
 los 10 segundos. Movimiento reducido elimina las animaciones, conservando el cambio
-de fotografías estáticas. Preferencias abierta o la pestaña oculta suspenden temporalmente
+de fotografías estáticas. Preferencias o el selector abiertos, o la pestaña oculta, suspenden temporalmente
 la rotación.
 
 ## Catálogo, tablero y cierre

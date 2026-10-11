@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-10-10",
+  "version": "3.4.0",
+  "navegador": "155.0.4283.45",
+  "resultados": [
+    {
+      "caso": "Un solo botón Comenzar en la portada; después se elige jugador o agente en diálogo con pictogramas. Abrir, volver y Escape no crean una partida; el selector suspende el carrusel y devuelve el foco",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Ocho fondos rotan cada 10 segundos; pausa solo por botón, play y ambas flechas reanudan y reinician el intervalo; Preferencias suspende sin alterar la partida",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Catálogo de seis por página: acceso a los 48 animales sin duplicados, límites, retroceso, pausa conserva página, búsqueda global con tildes y sin resultados; navegar y buscar no cambia la partida",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Recorrido de jugador y agente, 48 animales, 8 opciones, ayuda, repetición, pausa, pendiente neutral, confirmación, cierre y nueva partida; consulta y ayuda usan pictogramas originales y los ocho símbolos de hábitat miden al menos 96 px sin desbordamiento entre 320 y 1280 px",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Actualización del navegador conserva sesión sin repetir eventos ni audio",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Audio local español: texto exacto, repetición y cancelación",
+      "resultado": "OK",
+      "alcance": "API WAV y reproductor controlados; no certifica sonido audible ni comprensión."
+    },
+    {
+      "caso": "48 animales fotorrealistas, logo, 95 pictogramas originales y nueve paisajes decodificados sin errores; ocho fondos sin vídeo ni canvas",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Pantalla móvil 390 × 844: inicio, preferencias y partida, ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos",
+      "resultado": "OK"
+    },
+    {
+      "caso": "14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio",
+      "resultado": "OK",
+      "alcance": "API WAV y reproductor controlados."
+    },
+    {
+      "caso": "Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; cambio en una partida sin alterar estado, registros o modelo",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Revisión técnica con encabezados en portugués y registros originales conservados",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Consulta técnica separada y modelo congelado",
+      "resultado": "OK"
+    },
+    {
+      "caso": "Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida",
+      "resultado": "OK",
+      "alcance": "Descarga de WAV y reproductor controlados."
+    }
+  ],
+  "errores_js": []
+}

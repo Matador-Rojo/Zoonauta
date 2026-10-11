@@ -56,6 +56,7 @@ async function captura(page,archivo,fullPage=true){
   await page.screenshot({path:path.join(out,archivo),fullPage});
 }
 async function clicar(page,texto,fase){
+  if(['Yo elijo','El agente elige','Eu escolho','O agente escolhe'].includes(texto)&&!await page.getByRole('button',{name:texto,exact:true}).isVisible())await page.getByRole('button',{name:/^(Comenzar|Começar)$/}).click();
   const antes=(await vista(page)).revision;
   await page.getByRole('button',{name:texto,exact:true}).click();
   await page.waitForFunction(async rev=>(await (await fetch('/api/vista')).json()).revision>rev,antes);
@@ -72,7 +73,22 @@ async function clicar(page,texto,fase){
  try{
   const contexto=await browser.newContext({viewport:{width:1280,height:1080}});await mockVoz(contexto);
   const page=await contexto.newPage(),errores=[];await page.clock.install();page.on('pageerror',e=>errores.push(e.message));
-  await page.goto(base);await page.getByRole('button',{name:'Yo elijo'}).waitFor();
+  await page.goto(base);await page.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
+  assert.equal(await page.locator('.entrada button:visible').count(),1);
+  assert.equal(await page.getByRole('button',{name:'Yo elijo',exact:true}).isVisible(),false);
+  const antesSelector=await vista(page);
+  await page.getByRole('button',{name:'Comenzar',exact:true}).click();
+  assert.equal(await page.getByRole('dialog',{name:'¿Quién elige el animal?',exact:true}).isVisible(),true);
+  await captura(page,'15_selector_modalidad.png',false);
+  assert.deepEqual(await vista(page),antesSelector);
+  const paisajeSelector=await page.locator('.ficha-numero').textContent();
+  await page.clock.runFor(20000);assert.equal(await page.locator('.ficha-numero').textContent(),paisajeSelector);
+  await page.getByRole('button',{name:'Volver al inicio',exact:true}).click();
+  assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Comenzar');
+  await page.getByRole('button',{name:'Comenzar',exact:true}).click();await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#elegir-modalidad').isVisible(),false);
+  assert.deepEqual(await vista(page),antesSelector);
+  resultados.push({caso:'Un solo botón Comenzar en la portada; después se elige jugador o agente en diálogo con pictogramas. Abrir, volver y Escape no crean una partida; el selector suspende el carrusel y devuelve el foco',resultado:'OK'});
   assert.equal(await page.locator('.lugares,.paisaje-tarjeta').count(),0);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight),true);
   const revisionInicial=(await vista(page)).revision,paisajes=(await vista(page)).opciones_habitat;
@@ -194,11 +210,13 @@ async function clicar(page,texto,fase){
     for(const a of v.catalogo_animales){const d=document.createElement('div');d.className='tarjeta';const im=document.createElement('img');im.src=`/animales/${a.id}.webp`;const t=document.createElement('span');t.textContent=a.nombre;d.append(im,t);grid.append(d);}
   });await captura(page,'04_revision_animales.png');
   // Vista estrecha real: sin desbordamiento horizontal, controles alcanzables.
-  const movil=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mockVoz(movil);const pm=await movil.newPage();pm.on('pageerror',e=>errores.push(e.message));await pm.goto(base);await pm.getByRole('button',{name:'El agente elige'}).waitFor();
+  const movil=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mockVoz(movil);const pm=await movil.newPage();pm.on('pageerror',e=>errores.push(e.message));await pm.goto(base);await pm.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   assert.equal(await pm.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);await captura(pm,'06_inicio_movil.png');
   await pm.getByRole('button',{name:'Preferencias'}).click();
-  const dialogo=await pm.locator('dialog').boundingBox();assert.ok(dialogo.x>=0&&dialogo.x+dialogo.width<=390);
+  const dialogo=await pm.locator('#preferencias').boundingBox();assert.ok(dialogo.x>=0&&dialogo.x+dialogo.width<=390);
   await captura(pm,'07_preferencias_movil.png',false);await pm.getByRole('button',{name:'Volver al juego',exact:true}).click();
+  await pm.getByRole('button',{name:'Comenzar',exact:true}).click();
+  await captura(pm,'16_selector_modalidad_movil.png',false);
   await clicar(pm,'El agente elige','ESPERANDO_RESPUESTA');await clicar(pm,'Ayuda');
   assert.equal(await pm.locator('.habitats button').count(),8);
   assert.equal(await pm.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
@@ -207,17 +225,18 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Pantalla móvil 390 × 844: inicio, preferencias y partida, ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px',resultado:'OK'});
   // Teclado y movimiento reducido: inicio, búsqueda y selección sin ratón.
   const teclado=await browser.newContext({viewport:{width:1280,height:900},reducedMotion:'reduce'});await mockVoz(teclado);
-  const pt=await teclado.newPage();await pt.clock.install();pt.on('pageerror',e=>errores.push(e.message));await pt.goto(base);await pt.getByRole('button',{name:'Yo elijo'}).waitFor();
+  const pt=await teclado.newPage();await pt.clock.install();pt.on('pageerror',e=>errores.push(e.message));await pt.goto(base);await pt.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   assert.equal(await pt.locator('.bienvenida').evaluate(el=>getComputedStyle(el).animationName),'none');
   await pt.clock.runFor(20001);assert.equal(await pt.locator('.ficha-numero').textContent(),'03 / 08');
   await pt.emulateMedia({reducedMotion:'no-preference'});await pt.emulateMedia({reducedMotion:'reduce'});
   await pt.clock.runFor(10001);assert.equal(await pt.locator('.ficha-numero').textContent(),'04 / 08');
   await pt.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
   await pt.clock.runFor(20000);assert.equal(await pt.locator('.ficha-numero').textContent(),'04 / 08');
-  for(const [width,height] of [[320,568],[390,844],[650,390],[844,390],[768,900],[1024,600],[1024,768],[1280,720],[1920,1080]]){await pt.setViewportSize({width,height});assert.equal(await pt.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);for(const nombre of ['Yo elijo','El agente elige','Paisaje anterior','Siguiente paisaje']){const b=await pt.getByRole('button',{name:nombre,exact:true}).boundingBox();assert.ok(b.y>=0&&b.y+b.height<=height,`${nombre} fuera de pantalla ${width}x${height}`);}}
+  for(const [width,height] of [[320,568],[390,844],[650,390],[844,390],[768,900],[1024,600],[1024,768],[1280,720],[1920,1080]]){await pt.setViewportSize({width,height});assert.equal(await pt.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);for(const nombre of ['Comenzar','Paisaje anterior','Siguiente paisaje']){const b=await pt.getByRole('button',{name:nombre,exact:true}).boundingBox();assert.ok(b.y>=0&&b.y+b.height<=height,`${nombre} fuera de pantalla ${width}x${height}`);}}
   await pt.setViewportSize({width:1280,height:900});
   await pt.getByRole('button',{name:'Preferencias',exact:true}).focus();
-  for(let i=0;i<6;i++){await pt.keyboard.press('Tab');if(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')==='Yo elijo'))break;}
+  for(let i=0;i<6;i++){await pt.keyboard.press('Tab');if(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')==='Comenzar'))break;}
+  assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Comenzar');await pt.keyboard.press('Enter');
   assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Yo elijo');await pt.keyboard.press('Enter');
   await pt.getByRole('searchbox',{name:'Buscar animal'}).waitFor();await pt.getByRole('searchbox',{name:'Buscar animal'}).focus();await pt.keyboard.type('jaguar');await pt.keyboard.press('Tab');
   assert.equal(await pt.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Jaguar');await pt.keyboard.press('Enter');await pt.getByRole('button',{name:'Ayuda',exact:true}).waitFor();
@@ -227,12 +246,12 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal',resultado:'OK'});
   // Modelos ausentes: se informa de la preparación, sin recurrir a voces del navegador.
   const sinvoz=await browser.newContext();await mockVoz(sinvoz,false);
-  const pv=await sinvoz.newPage();pv.on('pageerror',e=>errores.push(e.message));await pv.goto(base);await pv.getByRole('button',{name:'El agente elige'}).waitFor();
+  const pv=await sinvoz.newPage();pv.on('pageerror',e=>errores.push(e.message));await pv.goto(base);await pv.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   await pv.getByRole('button',{name:'Preferencias'}).click();assert.match(await pv.locator('#estado-voz').textContent(),/No hay voces preparadas/);assert.equal(await pv.locator('#probar-voz').isDisabled(),true);
   await pv.getByRole('button',{name:'Volver al juego',exact:true}).click();await clicar(pv,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await pv.locator('.habitats button:enabled').count(),8);
   resultados.push({caso:'Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos',resultado:'OK'});
   const bilingue=await browser.newContext();await mockVoz(bilingue);
-  const pg=await bilingue.newPage();pg.on('pageerror',e=>errores.push(e.message));await pg.goto(base);await pg.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();
+  const pg=await bilingue.newPage();pg.on('pageerror',e=>errores.push(e.message));await pg.goto(base);await pg.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
   const revisionIdioma=(await vista(pg)).revision;
   for(const idioma of ['es','pt-BR']){
@@ -253,7 +272,7 @@ async function clicar(page,texto,fase){
   await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();
   for(const [width,height] of [[320,568],[390,844],[650,390],[844,390],[768,900],[1024,600],[1024,768],[1280,720],[1920,1080]]){
     await pg.setViewportSize({width,height});assert.equal(await pg.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);
-    for(const nome of ['Eu escolho','O agente escolhe']){const b=await pg.getByRole('button',{name:nome,exact:true}).boundingBox();assert.ok(b.y>=0&&b.y+b.height<=height);}
+    const b=await pg.getByRole('button',{name:'Começar',exact:true}).boundingBox();assert.ok(b.y>=0&&b.y+b.height<=height);
   }
   await pg.setViewportSize({width:390,height:844});await captura(pg,'11_inicio_portugues_movil.png');
   await pg.getByRole('button',{name:'Preferências',exact:true}).click();await captura(pg,'12_preferencias_portugues_movil.png',false);
@@ -309,7 +328,7 @@ async function clicar(page,texto,fase){
     await route.fulfill({contentType:'audio/wav',body:b}).catch(e=>{if(!route.request().failure())throw e;});
   });
   const pc=await cambios.newPage();pc.on('pageerror',e=>errores.push(e.message));
-  await pc.goto(base);await pc.getByRole('button',{name:'Yo elijo',exact:true}).waitFor();
+  await pc.goto(base);await pc.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   const antesCambio=await vista(pc);
   await pc.getByRole('button',{name:'Preferencias',exact:true}).click();
   await pc.locator('#probar-voz').click();await pendiente;
