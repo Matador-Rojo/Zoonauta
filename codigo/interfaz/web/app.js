@@ -37,6 +37,7 @@ function ubicarAviso() {
   const destino=document.querySelector('dialog[open]')||document.body;
   if(aviso.parentElement!==destino)destino.append(aviso);
   if(typeof aviso.showPopover==="function"&&!aviso.matches(":popover-open"))aviso.showPopover();
+  ajustarAvisos();
 }
 function cerrarAviso(tarjeta) {
   const datos=avisosActivos.get(tarjeta);
@@ -56,6 +57,15 @@ function cerrarAviso(tarjeta) {
 function cerrarAvisos(origen=null) {
   for(const tarjeta of avisosActivos.keys())if(origen===null||tarjeta.dataset.origen===origen)cerrarAviso(tarjeta);
 }
+function ajustarAvisos() {
+  if(aviso.hidden)return;
+  const margen=12+parseFloat(getComputedStyle(aviso).bottom);
+  while(avisosActivos.size>1&&(avisosActivos.size>3||aviso.getBoundingClientRect().height+margen>innerHeight)){
+    cerrarAviso(aviso.firstElementChild);
+  }
+}
+window.addEventListener("resize",ajustarAvisos);
+new ResizeObserver(ajustarAvisos).observe(aviso);
 function notificar(texto,origen="general",tipo="error") {
   if(!texto)return;
   const tipos={advertencia:"Revisa los retos",error:"No se pudo completar",informacion:"Información"};
@@ -67,9 +77,8 @@ function notificar(texto,origen="general",tipo="error") {
   const cerrar=nodo("button","notificacion-cerrar");cerrar.append(nodo("span","","×"));cerrar.type="button";cerrar.setAttribute("aria-label",t("Cerrar notificación"));
   cerrar.addEventListener("click",()=>cerrarAviso(tarjeta));tarjeta.append(contenido,cerrar);
   const foco=document.activeElement;
-  aviso.append(tarjeta);aviso.hidden=false;aviso.setAttribute("aria-label",t("Notificaciones"));ubicarAviso();
   avisosActivos.set(tarjeta,{foco,temporizador:setTimeout(()=>cerrarAviso(tarjeta),8000)});
-  aviso.scrollTop=aviso.scrollHeight;
+  aviso.append(tarjeta);aviso.hidden=false;aviso.setAttribute("aria-label",t("Notificaciones"));ubicarAviso();
 }
 function validarRetos(alComenzar=false) {
   const campo=$("retos"),n=Number(campo.value);

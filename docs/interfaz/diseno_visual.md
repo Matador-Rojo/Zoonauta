@@ -170,8 +170,11 @@ en español y portugués brasileño, sin cambiar la política educativa.
 Las tarjetas ocupan como máximo 260 px, se anclan abajo a la derecha y quedan
 fuera del flujo de la portada. Se muestran también sobre Preferencias. Cada aviso
 mantiene sus propios ocho segundos: los nuevos se añaden abajo y desplazan los
-anteriores hacia arriba, sin superposición. Una cola que exceda la altura de la
-ventana permite desplazamiento dentro de la cola, sin desplazar la página.
+anteriores hacia arriba, sin superposición. Se conservan como máximo tres avisos
+visibles. Cuando la altura disponible no permite mostrarlos completos, se retiran
+los más antiguos hasta que la pila quepa, también al redimensionar la ventana.
+La pila no tiene scroll y conserva completos los bordes y los cierres circulares.
+Eliminar un aviso cancela su temporizador sin reiniciar el plazo de los demás.
 
 El fondo oscuro es común; el borde y el título usan ámbar para advertencias de
 retos, rojo para errores y azul para información. El título distingue el tipo
