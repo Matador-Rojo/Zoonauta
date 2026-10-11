@@ -37,8 +37,6 @@ body:not([data-fase="INICIO"]) {
   background:radial-gradient(ellipse at 50% 42%,#50714c45,transparent 70%),#172c23;
   transition:transform .18s ease,border-color .18s ease,background .18s ease;
 }
-.catalogo .tarjeta:nth-child(4n+2) { background:radial-gradient(ellipse at 50% 42%,#88734c35,transparent 70%),#202c23; }
-.catalogo .tarjeta:nth-child(4n+3) { background:radial-gradient(ellipse at 50% 42%,#47716b40,transparent 70%),#142a25; }
 .catalogo .tarjeta:hover { transform:translateY(-3px); border-color:#d2ee8b; }
 .catalogo .tarjeta img {
   position:absolute; top:22px; left:14px; width:calc(100% - 28px); height:calc(100% - 88px);
