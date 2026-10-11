@@ -109,7 +109,10 @@ el [cierre](docs/interfaz/revisiones/2026-10-10-apoyos/cierre.webp).
 Los archivos y prompts de los animales están en
 [imagenes_animales_ia.json](datos/imagenes_animales_ia.json). Son imágenes sintéticas,
 no fotografías de ejemplares reales. El conjunto activo contiene 48 caricaturas de animales
-y 47 pictogramas de hábitat, apoyos y controles. Los recursos anteriores conservan sus
+y dos ilustraciones de modalidad y 45 pictogramas SVG de hábitat, apoyos y controles.
+La persona y el robot guía se documentan en
+[imagenes_modalidad_ia.json](datos/imagenes_modalidad_ia.json).
+Los recursos anteriores conservan sus
 créditos como material histórico; no se muestran como segunda imagen de los animales.
 El estilo toma como referencia la capibara seleccionada. Su comprensión CAA sigue
 pendiente de revisión con usuarios de Kallpa.

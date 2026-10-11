@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-11",
+  "contenido": "Persona exploradora y robot guía originales para elegir la modalidad.",
+  "items": [
+    {
+      "id": "P_JUGADOR",
+      "nombre": "persona_exploradora",
+      "archivo": "assets/pictogramas/P_JUGADOR.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "prompt": "Use case: scientific-educational.\nAsset type: transparent cartoon illustration for Zoonauta's \"Yo elijo\" mode button.\nInput image 1 is STYLE REFERENCE ONLY: match its clean 2D cartoon contours, simple readable shapes and subtle shading. Do not depict a capybara.\nCreate one friendly human explorer, front-facing head and upper torso, young adult with medium warm skin, short dark brown hair, calm open eyes, small welcoming smile. Simple forest-green shirt with cream collar and one restrained lime-green detail. Arms relaxed beside torso, no hand gestures. Easy to recognize as a person at small size. Warm accessible cartoon aesthetic consistent with animal reference, moderate realistic proportions, dignified and age-neutral.\nComposition: single centered character, head and torso fully visible, balanced square framing, narrow clear transparent margin all around, smooth clean edges.\nPalette: natural skin, dark brown outlines, forest green, light cream, muted lime. Restrained shading, no complex textures.\nActual transparent alpha background. No white square, no backdrop, no circle, no card, no ground shadow. No hat, tools, scenery, letters, labels, text, watermark, logos, 3D or photorealism.",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "sha256": "41eaaba9a83dd561698ce6140f75fb9b3db93a89a35c0d8e03a8be1e68c4619b",
+      "bytes": 505520,
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    },
+    {
+      "id": "P_AGENTE",
+      "nombre": "robot_guia",
+      "archivo": "assets/pictogramas/P_AGENTE.webp",
+      "herramienta": "image_gen integrada",
+      "modo": "built-in",
+      "prompt": "Use case: scientific-educational.\nAsset type: transparent cartoon illustration for Zoonauta's \"El agente elige\" mode button.\nInput image 1 is STYLE REFERENCE ONLY: match its clean 2D cartoon dark contours, readable simple shapes and subtle shading. Do not depict a capybara.\nCreate one original friendly robot guide, front-facing head and upper torso. Rounded rectangular cream head, forest-green face panel with two clear round lime eyes and a small friendly smile. One short central antenna with a lime tip, small rounded side ear discs. Simple compact cream torso with forest-green chest panel and one small lime circular light. Rounded short arms relaxed at the sides. Instantly recognizable as a robot at small sizes. Welcoming cartoon expression, dignified and accessible, no toddler styling.\nComposition: one centered character, complete head antenna and upper torso fully visible, square balanced framing, narrow transparent margin, smooth clean edges.\nPalette: forest green, warm cream, muted lime and dark warm outlines. Restrained 2D shading consistent with the reference animal illustration.\nActual transparent alpha background. No white square, no backdrop, no card, no circle, no floor or drop shadow. No tools, animals, scenery, letters, labels, text, watermark, logo, 3D rendering, photorealism, chrome metal reflections or excessive mechanical details.",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "transparencia_real": true,
+      "sha256": "31cc65da0d7b29e0d321f8325c66481794526b1ac88b46539657c91e09f65500",
+      "bytes": 552474,
+      "referencia_estilo": "Capibara caricatura con colores seleccionada por el usuario",
+      "validacion_visual_caa": "PENDIENTE_CON_USUARIOS"
+    }
+  ]
+}
