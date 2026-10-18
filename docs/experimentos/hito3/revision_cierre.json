@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-18",
+  "alcance": "CIERRE_TECNICO_LOCAL_PREVIO_A_AUDIO_ELEVENLABS",
+  "python": {
+    "correctas": 96,
+    "resultado": "OK"
+  },
+  "aceptacion": {
+    "correctos": 8,
+    "resultado": "OK",
+    "evidencia": "revision_aceptacion.json"
+  },
+  "navegador": {
+    "correctos": 47,
+    "resultado": "OK",
+    "general": 20,
+    "opciones": 6,
+    "preferencias": 16,
+    "voces_controladas": 5,
+    "evidencias": [
+      "revision_general.json",
+      "revision_opciones.json",
+      "revision_preferencias.json",
+      "revision_voces.json"
+    ]
+  },
+  "modelo_ia_modificado": false,
+  "publicacion_github_en_este_cierre": "AUTORIZADA_POR_USUARIO_SIN_CATALOGO_DE_AUDIO",
+  "evaluacion_con_usuarios": false,
+  "audio_escuchado_en_dispositivo_usuario": false,
+  "pendientes": [
+    "Definir y ampliar los textos antes de preparar los audios de ElevenLabs.",
+    "Evaluación acompañada con el público objetivo.",
+    "Informe, video y sustentación finales."
+  ],
+  "nota": "Las comprobaciones técnicas no certifican comprensión CAA ni impacto educativo.",
+  "contenido_audio": "PENDIENTE_DE_DEFINIR_Y_AMPLIAR"
+}

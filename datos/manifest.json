@@ -86,7 +86,7 @@
       "alcance": "Antecedente de la comparación sintética anterior; no corresponde a la evaluación actual del demo."
     },
     "evaluacion_con_jugadores": false,
-    "casos_navegador_correctos": 31,
+    "casos_navegador_correctos": 47,
     "validacion_caa_con_usuarios": false,
     "voz_prueba": "SINTESIS_REAL_14_VOCES_Y_REPRODUCTOR_NATIVO_2_IDIOMAS",
     "audio_audible_en_dispositivo_usuario_verificado": false,
@@ -98,7 +98,7 @@
       "pt-BR"
     ],
     "dependencias_windows_x64_python312_disponibles": 32,
-    "revision_actual": "docs/experimentos/hito2/revision_codigo.json",
+    "revision_actual": "docs/experimentos/hito3/revision_cierre.json",
     "ayuda_automatica_interfaz": true,
     "relaciones_pendientes_probadas_interfaz": 315,
     "animales_con_imagen_unica": 48,
@@ -128,7 +128,8 @@
     "convergencia_demostrada": false,
     "regresion_general_actual": "CORRECTA_20_CASOS",
     "distribuciones_sin_observaciones": 0,
-    "diagnostico_entrenamiento": "docs/experimentos/hito2/diagnostico_entrenamiento.json"
+    "diagnostico_entrenamiento": "docs/experimentos/hito2/diagnostico_entrenamiento.json",
+    "preferencias_dos_columnas_verificadas": true
   },
   "archivos": [
     {
@@ -143,8 +144,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 15323,
-      "sha256": "5b48c7e258156195b1a7bae117a73ae21ad7a831052fa40315690d588c2eff06"
+      "bytes": 16333,
+      "sha256": "a390f3200ddaa26b619e3f58d09b34289cff5fda46e5a288b56cac7a8a030e54"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -763,18 +764,18 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 31930,
-      "sha256": "aed8fadc748fedb01cab33faa0ea06715367dc641470a78f21cfea0b1257d64e"
+      "bytes": 32451,
+      "sha256": "ef060fd4c763a30c8cc07a1ab854ede9fd3ab3d39bb6cff39ec1852d645be358"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
-      "bytes": 28947,
-      "sha256": "e7ec148732dc5045848b45aee75be72167c0efce0cf6f49c393c5dc5273521b1"
+      "bytes": 28968,
+      "sha256": "a9497255b807e037cd4f855e648c1fb466c45ca997a4aba9855a39a0ca6c723e"
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 21779,
-      "sha256": "8b1bb64b51e04b475c13b432c0d5e67317d5d089c8dbea5786505c3767ad378f"
+      "bytes": 23015,
+      "sha256": "6eed556fd2e3ccc58bc334c656d1c23df8db8b017e47c97a618d86edba96040c"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -813,8 +814,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 4487,
-      "sha256": "3e97e6d3e54093ffbeacd396fe220a6819ba8d66d21d2a6c3c3a5652e89911ed"
+      "bytes": 4608,
+      "sha256": "19e2d2b80c146debf61f2eb970eb72f72cea30e5f7e1578edd3d305bf9ce9b6e"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -1045,6 +1046,11 @@
       "ruta": "datos/voces_locales.json",
       "bytes": 11882,
       "sha256": "86732433e6d26781bc932167febc8a888c4cb9743930cc39061379c71c7ef63b"
+    },
+    {
+      "ruta": "docs/cierre_tecnico_hito3.md",
+      "bytes": 5243,
+      "sha256": "3b2aebe1f56b8bd281290384c2226abf40e0a2360203e77d3a282bcb6c3f0699"
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
@@ -1687,6 +1693,41 @@
       "sha256": "36a9162a61ff3fc07a8c26a83555767b1641fd47ca6a5de7511a63031ab9787d"
     },
     {
+      "ruta": "docs/experimentos/hito3/auditoria_banco.json",
+      "bytes": 442,
+      "sha256": "fb8809cd5944541dfa074a6d82c5e20d7a7f72be2615ad024c5af656b73d15f1"
+    },
+    {
+      "ruta": "docs/experimentos/hito3/revision_aceptacion.json",
+      "bytes": 150996,
+      "sha256": "e934e882d7183e492e6e0e7082952aaa52e8d784dc11d712b1e069e84b21dd4b"
+    },
+    {
+      "ruta": "docs/experimentos/hito3/revision_cierre.json",
+      "bytes": 1164,
+      "sha256": "04123e85848d1f822ff348ff78949a2b5014694a8c95d71ad17070d462a65541"
+    },
+    {
+      "ruta": "docs/experimentos/hito3/revision_general.json",
+      "bytes": 4896,
+      "sha256": "fd1f8145db9378b02bedaf0721753007c77cda1b95a2d921f802adfdaaabb9d4"
+    },
+    {
+      "ruta": "docs/experimentos/hito3/revision_opciones.json",
+      "bytes": 1020,
+      "sha256": "948ce87ec9ba6e69a591ed1e273eb3e37a5be9df721e25ee432e3e5dbd9aac37"
+    },
+    {
+      "ruta": "docs/experimentos/hito3/revision_preferencias.json",
+      "bytes": 5071,
+      "sha256": "1346518c8099db12f93f1b63bcbfe163cb498d486093c5a80bcf139bc577ed89"
+    },
+    {
+      "ruta": "docs/experimentos/hito3/revision_voces.json",
+      "bytes": 1125,
+      "sha256": "258e61cc1f629dc09647f10696796b7556b2ff3a70e8ac7bbbd9b8d1d1c92556"
+    },
+    {
       "ruta": "docs/experimentos/informe_comparacion.md",
       "bytes": 9644,
       "sha256": "67f54411907f395dc2829477345167872232f8c74a1709053985c71425b5947e"
@@ -2163,8 +2204,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 21732,
-      "sha256": "7904a9894fda1e9d1343794a68946a56d034c16578bf66d12b11047227b57e7f"
+      "bytes": 21752,
+      "sha256": "5bcf7bc740c4d548143b9397eed3b95b6b6c5f2021e7f1fbf20c8200eefe53cb"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2502,6 +2543,11 @@
       "sha256": "2df53ba9c790a596ffa6724ee7f6e4c9485ac153a728617f5312585efd6f1a3d"
     },
     {
+      "ruta": "docs/manual_usuario.md",
+      "bytes": 2926,
+      "sha256": "c4dbf4a1ff3dfd6d91b80bab2f9c8010c34bd217e49a9f166336e82c64cd9e7b"
+    },
+    {
       "ruta": "docs/resultados/arbol_id3.json",
       "bytes": 4255,
       "sha256": "6ace42e286ff0125f45623726768c9c28e60aeb4558ea35d088b5317206272db"
@@ -2529,8 +2575,7 @@
     {
       "ruta": "iniciar_juego.bat",
       "bytes": 66,
-      "sha256": "0d9f2bd4badb6e611c3cacb6e1efb7e94d3c68a1a48325a864893e112752a8db",
-      "normalizacion": "LF; exportacion CRLF declarada en .gitattributes"
+      "sha256": "0d9f2bd4badb6e611c3cacb6e1efb7e94d3c68a1a48325a864893e112752a8db"
     },
     {
       "ruta": "iniciar_juego.sh",
@@ -2540,8 +2585,7 @@
     {
       "ruta": "iniciar_sin_descargas.bat",
       "bytes": 82,
-      "sha256": "79f6291f0520c027187cccd57e1f8f74f3817b4c9d181174d644dae8b01f5f93",
-      "normalizacion": "LF; exportacion CRLF declarada en .gitattributes"
+      "sha256": "79f6291f0520c027187cccd57e1f8f74f3817b4c9d181174d644dae8b01f5f93"
     },
     {
       "ruta": "requirements_voz.txt",
@@ -2555,8 +2599,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 1656,
-      "sha256": "c863b47731c412f718f04810fae37625616148e40b8d61daf9a3ed9ac58941ac"
+      "bytes": 1832,
+      "sha256": "d7650654938f3607276a42e8acf40efe3278c8eae8ab4db0bf636d9fd39c4d19"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -2617,6 +2661,11 @@
       "ruta": "tests/verificar_hito2.cjs",
       "bytes": 4996,
       "sha256": "5ae0e1f8214e690cd05017cfc484e2d029d9d5e3c35b965d9220da8bf83391aa"
+    },
+    {
+      "ruta": "tests/verificar_hito3.cjs",
+      "bytes": 4848,
+      "sha256": "7b291c63ef4dc56b4291e90c831c01aa209314886b3869f72a1469b3566be323"
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",

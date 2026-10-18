@@ -171,6 +171,27 @@ body:not([data-fase="INICIO"]) {
   .catalogo .tarjeta:hover,.habitats .tarjeta:hover:not(:disabled) { transform:none; }
 }
 
+/* Preferencias usa el ancho disponible sin reducir controles ni ocultar contenido. */
+#preferencias { max-width:1040px; width:calc(100% - 48px); padding:28px 32px; }
+.ajustes-columnas { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:32px; margin-top:24px; }
+.ajustes-columna { min-width:0; }
+.ajustes-columna>.campo:first-child { margin-top:0; }
+.ajustes-audio { margin:0; padding:0 0 0 32px; border-top:0; border-left:1px solid #ffffff26; }
+#preferencias .campo { font-size:14px; }
+#preferencias .campo select { font-size:15px; }
+#preferencias .detalle,#preferencias .nota-ajustes { font-size:13px; }
+#preferencias .nota-ajustes:empty { display:none; }
+#preferencias .ajustes-pie { align-items:flex-start; }
+#preferencias .creditos-ajustes { max-width:60%; }
+@media (max-width:759px) {
+  #preferencias { width:calc(100% - 24px); max-height:calc(100dvh - 24px); padding:24px; }
+  .ajustes-columnas { grid-template-columns:minmax(0,1fr); gap:24px; }
+  .ajustes-audio { border-left:0; border-top:1px solid #ffffff26; padding:24px 0 0; }
+  #preferencias .ajustes-pie { flex-direction:column; gap:20px; }
+  #preferencias .creditos-ajustes { max-width:100%; }
+  #preferencias .ajustes-pie>.primario { width:100%; }
+}
+
 /* El tablero aprovecha la pantalla y da prioridad al reconocimiento del animal. */
 body:not([data-fase="INICIO"]) #juego { padding-top:24px; padding-bottom:24px; }
 body:has(.tablero) #juego { max-width:none; padding:24px clamp(20px,2.5vw,48px); }

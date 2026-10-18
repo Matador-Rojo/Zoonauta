@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "alcance": "COHERENCIA_ESTRUCTURAL_Y_TRADUCCIONES",
+  "animales": 48,
+  "relaciones": {
+    "VALIDA": 69,
+    "PENDIENTE": 315
+  },
+  "variantes": 72,
+  "secuencias_animal_ayuda_revisadas": 432,
+  "errores": [],
+  "correcto": true,
+  "nota": "Comprueba referencias y coherencia interna; no revalida la evidencia biológica ni la comprensión CAA. Las relaciones pendientes siguen pendientes."
+}
