@@ -1,0 +1,4709 @@
+{
+  "origen": "PRUEBAS_DE_CONTROL_SINTETICAS",
+  "casos": [
+    {
+      "caso_id": "CP01",
+      "descripcion": "Jirafa: ayudas 1, 2, 3 y 3; respuesta y cierre.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 1,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L1_V1",
+            "nodo_id": "N07",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP01-O001",
+              "sesion_id": "ACEPTACION-CP01",
+              "reto_id": "ACEPTACION-CP01-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L1_V1",
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "ID3",
+              "evento_apertura": "CP01-EV04"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_LUGAR_ABIERTO",
+                "P_CALOR"
+              ],
+              "texto_apoyo": "Busca un lugar abierto y cálido.",
+              "texto_voz": "Busca un lugar abierto y cálido.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_LUGAR_ABIERTO",
+                "P_CALOR"
+              ],
+              "texto_apoyo": "Busca un lugar abierto y cálido.",
+              "texto_voz": "Busca un lugar abierto y cálido.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "ID3",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "estimaciones": {
+                "V1": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "entorno",
+                "valor": "LLANURA_CALIDA"
+              },
+              "nodo_id": "N07",
+              "K": [
+                "H02",
+                "H03"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "PRESENTACION_FIJA",
+              "tiempo_decision_ns": 15300,
+              "adaptacion_reto": {
+                "regla": "SECUENCIA_BASE",
+                "elecciones": [],
+                "nivel_anterior": 0,
+                "nivel_elegido": 1,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L2_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP01-O002",
+              "sesion_id": "ACEPTACION-CP01",
+              "reto_id": "ACEPTACION-CP01-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L2_V1",
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "ID3",
+              "evento_apertura": "CP01-EV05"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "ID3",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "estimaciones": {
+                "V1": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "vegetacion",
+                "valor": "ABUNDANTE"
+              },
+              "nodo_id": "N08",
+              "K": [
+                "H02"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "PRESENTACION_FIJA",
+              "tiempo_decision_ns": 11700,
+              "adaptacion_reto": {
+                "regla": "SECUENCIA_BASE",
+                "elecciones": [],
+                "nivel_anterior": 1,
+                "nivel_elegido": 2,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 6,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L3_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP01-O003",
+              "sesion_id": "ACEPTACION-CP01",
+              "reto_id": "ACEPTACION-CP01-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L3_V1",
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "ID3",
+              "evento_apertura": "CP01-EV06"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1",
+              "H02:3": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L3_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_OPCION",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Una opción es la sabana. Toca ese lugar.",
+              "texto_voz": "Una opción es la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L3_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_OPCION",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Una opción es la sabana. Toca ese lugar.",
+              "texto_voz": "Una opción es la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "ID3",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "estimaciones": {
+                "V1": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": null,
+              "nodo_id": "N08",
+              "K": [
+                "H02"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "PRESENTACION_FIJA",
+              "tiempo_decision_ns": 10100,
+              "adaptacion_reto": {
+                "regla": "SECUENCIA_BASE",
+                "elecciones": [],
+                "nivel_anterior": 2,
+                "nivel_elegido": 3,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 7,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L3_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP01-O004",
+              "sesion_id": "ACEPTACION-CP01",
+              "reto_id": "ACEPTACION-CP01-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L3_V1",
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "variante_anterior": "V1",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "ID3",
+              "evento_apertura": "CP01-EV07"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1",
+              "H02:3": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L3_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_OPCION",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Una opción es la sabana. Toca ese lugar.",
+              "texto_voz": "Una opción es la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L3_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_OPCION",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Una opción es la sabana. Toca ese lugar.",
+              "texto_voz": "Una opción es la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "ID3",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": "V1",
+              "variantes_usadas_reto": [
+                "V1"
+              ],
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "estimaciones": {
+                "V1": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": null,
+              "nodo_id": "N08",
+              "K": [
+                "H02"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "PRESENTACION_FIJA",
+              "tiempo_decision_ns": 9600,
+              "adaptacion_reto": {
+                "regla": "SECUENCIA_BASE",
+                "elecciones": [],
+                "nivel_anterior": 3,
+                "nivel_elegido": 3,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 8,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "habitat_seleccionado_id": "H02",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1",
+              "H02:3": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A08",
+                "P_VIVIR",
+                "P_H02"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la sabana.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la sabana.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H02",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A08",
+                "P_VIVIR",
+                "P_H02"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la sabana.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la sabana.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 9,
+          "accion": "continuar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "COMPLETADA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "habitat_seleccionado_id": "H02",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_CIERRE",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1",
+              "H02:3": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "MSG_CIERRE",
+              "tipo_respuesta": "CIERRE",
+              "pictogramas": [
+                "P_FIN",
+                "P_CONFIRMAR"
+              ],
+              "texto_apoyo": "Terminamos esta partida. ¡Gracias por jugar!",
+              "texto_voz": "Terminamos esta partida. ¡Gracias por jugar!",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP01-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H02",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_CIERRE",
+              "tipo_respuesta": "CIERRE",
+              "pictogramas": [
+                "P_FIN",
+                "P_CONFIRMAR"
+              ],
+              "texto_apoyo": "Terminamos esta partida. ¡Gracias por jugar!",
+              "texto_voz": "Terminamos esta partida. ¡Gracias por jugar!",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [],
+            "traza": null
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "CP02",
+      "descripcion": "Capibara: aceptar selva tropical aunque la guía apunte a agua dulce.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP02-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A31",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP02-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A31",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 1,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H06_L1_V1",
+            "nodo_id": "N01",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP02-O001",
+              "sesion_id": "ACEPTACION-CP02",
+              "reto_id": "ACEPTACION-CP02-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A31",
+              "habitat_guia_id": "H06",
+              "contexto": {
+                "habitat_guia_id": "H06",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H06_L1_V1",
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "ID3",
+              "evento_apertura": "CP02-EV04"
+            },
+            "variantes_anteriores": {
+              "H06:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H06_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_MUCHA_AGUA"
+              ],
+              "texto_apoyo": "Busca un lugar con mucha agua.",
+              "texto_voz": "Busca un lugar con mucha agua.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP02-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H06_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H06_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_MUCHA_AGUA"
+              ],
+              "texto_apoyo": "Busca un lugar con mucha agua.",
+              "texto_voz": "Busca un lugar con mucha agua.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "ID3",
+              "contexto": {
+                "habitat_guia_id": "H06",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1"
+              ],
+              "estimaciones": {
+                "V1": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "entorno",
+                "valor": "ACUATICO"
+              },
+              "nodo_id": "N01",
+              "K": [
+                "H04",
+                "H06"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "PRESENTACION_FIJA",
+              "tiempo_decision_ns": 11700,
+              "adaptacion_reto": {
+                "regla": "SECUENCIA_BASE",
+                "elecciones": [],
+                "nivel_anterior": 0,
+                "nivel_elegido": 1,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 1,
+            "habitat_seleccionado_id": "H01",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N01",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {
+              "H06:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A31",
+                "P_VIVIR",
+                "P_H01"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP02-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H01",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H06_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A31",
+                "P_VIVIR",
+                "P_H01"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "CP03",
+      "descripcion": "Relación pendiente: nivel conservado y observación sin etiqueta.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP03-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A31",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP03-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A31",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 1,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H06_L1_V1",
+            "nodo_id": "N01",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP03-O001",
+              "sesion_id": "ACEPTACION-CP03",
+              "reto_id": "ACEPTACION-CP03-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A31",
+              "habitat_guia_id": "H06",
+              "contexto": {
+                "habitat_guia_id": "H06",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H06_L1_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP03-EV04"
+            },
+            "variantes_anteriores": {
+              "H06:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H06_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_MUCHA_AGUA"
+              ],
+              "texto_apoyo": "Busca un lugar con mucha agua.",
+              "texto_voz": "Busca un lugar con mucha agua.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP03-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H06_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H06_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_MUCHA_AGUA"
+              ],
+              "texto_apoyo": "Busca un lugar con mucha agua.",
+              "texto_voz": "Busca un lugar con mucha agua.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "PROBABILISTICO",
+              "contexto": {
+                "habitat_guia_id": "H06",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "estimaciones": {
+                "V1": 0.5,
+                "V2": 0.5,
+                "V3": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "entorno",
+                "valor": "ACUATICO"
+              },
+              "nodo_id": "N01",
+              "K": [
+                "H04",
+                "H06"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "MEDIA_POSTERIOR",
+              "tiempo_decision_ns": 13300,
+              "adaptacion_reto": {
+                "regla": "APOYO_PROGRESIVO",
+                "elecciones": [],
+                "nivel_anterior": 0,
+                "nivel_elegido": 1,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 1,
+            "habitat_seleccionado_id": "H03",
+            "resultado": "PENDIENTE",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PENDIENTE",
+            "nodo_id": "N01",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {
+              "H06:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PENDIENTE",
+              "tipo_respuesta": "NEUTRAL",
+              "pictogramas": [
+                "P_A31",
+                "P_EXPLORAR",
+                "P_AYUDA"
+              ],
+              "texto_apoyo": "Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista.",
+              "texto_voz": "Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP03-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H03",
+                "resultado": "PENDIENTE"
+              }
+            ],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H06_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PENDIENTE",
+              "tipo_respuesta": "NEUTRAL",
+              "pictogramas": [
+                "P_A31",
+                "P_EXPLORAR",
+                "P_AYUDA"
+              ],
+              "texto_apoyo": "Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista.",
+              "texto_voz": "Vamos a explorar un lugar que conocemos para este animal. Puedes pedir una pista.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 6,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 1,
+            "habitat_seleccionado_id": "H06",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N01",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {
+              "H06:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A31",
+                "P_VIVIR",
+                "P_H06"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en un entorno de agua dulce.",
+              "texto_voz": "¡Sí! Este animal puede vivir en un entorno de agua dulce.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP03-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H03",
+                "resultado": "PENDIENTE"
+              },
+              {
+                "habitat_id": "H06",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H06_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A31",
+                "P_VIVIR",
+                "P_H06"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en un entorno de agua dulce.",
+              "texto_voz": "¡Sí! Este animal puede vivir en un entorno de agua dulce.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "CP04",
+      "descripcion": "Repetir y pausar conservan el reto.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP04-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP04-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 1,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L1_V1",
+            "nodo_id": "N07",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP04-O001",
+              "sesion_id": "ACEPTACION-CP04",
+              "reto_id": "ACEPTACION-CP04-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L1_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP04-EV04"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_LUGAR_ABIERTO",
+                "P_CALOR"
+              ],
+              "texto_apoyo": "Busca un lugar abierto y cálido.",
+              "texto_voz": "Busca un lugar abierto y cálido.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP04-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_LUGAR_ABIERTO",
+                "P_CALOR"
+              ],
+              "texto_apoyo": "Busca un lugar abierto y cálido.",
+              "texto_voz": "Busca un lugar abierto y cálido.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "PROBABILISTICO",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "estimaciones": {
+                "V1": 0.5,
+                "V2": 0.5,
+                "V3": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "entorno",
+                "valor": "LLANURA_CALIDA"
+              },
+              "nodo_id": "N07",
+              "K": [
+                "H02",
+                "H03"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "MEDIA_POSTERIOR",
+              "tiempo_decision_ns": 12800,
+              "adaptacion_reto": {
+                "regla": "APOYO_PROGRESIVO",
+                "elecciones": [],
+                "nivel_anterior": 0,
+                "nivel_elegido": 1,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L2_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP04-O002",
+              "sesion_id": "ACEPTACION-CP04",
+              "reto_id": "ACEPTACION-CP04-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L2_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP04-EV05"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP04-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "PROBABILISTICO",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "estimaciones": {
+                "V1": 0.5,
+                "V2": 0.5,
+                "V3": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "vegetacion",
+                "valor": "ABUNDANTE"
+              },
+              "nodo_id": "N08",
+              "K": [
+                "H02"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "MEDIA_POSTERIOR",
+              "tiempo_decision_ns": 11000,
+              "adaptacion_reto": {
+                "regla": "APOYO_PROGRESIVO",
+                "elecciones": [],
+                "nivel_anterior": 1,
+                "nivel_elegido": 2,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 6,
+          "accion": "repetir",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L2_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 1,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP04-O002",
+              "sesion_id": "ACEPTACION-CP04",
+              "reto_id": "ACEPTACION-CP04-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L2_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP04-EV05"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP04-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 7,
+          "accion": "pausar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PAUSADA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": "ESPERANDO_RESPUESTA",
+            "u": "AY_H02_L2_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 1,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP04-O002",
+              "sesion_id": "ACEPTACION-CP04",
+              "reto_id": "ACEPTACION-CP04-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L2_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP04-EV05"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP04-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PAUSA",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_PAUSAR",
+                "P_REANUDAR"
+              ],
+              "texto_apoyo": "Partida en pausa. Puedes reanudarla.",
+              "texto_voz": "Partida en pausa. Puedes reanudarla.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "reanudar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 8,
+          "accion": "reanudar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L2_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 1,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP04-O002",
+              "sesion_id": "ACEPTACION-CP04",
+              "reto_id": "ACEPTACION-CP04-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L2_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP04-EV05"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP04-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "CP05",
+      "descripcion": "Un segundo clic después de resolver no duplica el progreso.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP05-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP05-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": "H02",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A08",
+                "P_VIVIR",
+                "P_H02"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la sabana.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la sabana.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP05-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H02",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A08",
+                "P_VIVIR",
+                "P_H02"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la sabana.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la sabana.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": "H02",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A08",
+                "P_VIVIR",
+                "P_H02"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la sabana.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la sabana.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP05-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H02",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": false,
+            "motivo": "ACCION_NO_PERMITIDA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "CP06",
+      "descripcion": "Dos retos: capibara en selva y pingüino en mar.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP06-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A31",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP06-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A31",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A31",
+            "habitat_guia_id": "H06",
+            "nivel": 0,
+            "habitat_seleccionado_id": "H01",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A31",
+                "P_VIVIR",
+                "P_H01"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP06-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H01",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A31",
+                "P_VIVIR",
+                "P_H01"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la selva tropical. Selvas y bosques tropicales con agua accesible.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "continuar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 1,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 6,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A39",
+            "habitat_guia_id": "H07",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP06-R02",
+            "numero_reto": 2,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 7,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A39",
+            "habitat_guia_id": "H07",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A39",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP06-R02",
+            "numero_reto": 2,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A39",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 8,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A39",
+            "habitat_guia_id": "H07",
+            "nivel": 0,
+            "habitat_seleccionado_id": "H04",
+            "resultado": "VALIDA",
+            "completados": 2,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A39",
+                "P_VIVIR",
+                "P_H04"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en el mar. Se alimenta en el mar y se reproduce sobre hielo antártico.",
+              "texto_voz": "¡Sí! Este animal puede vivir en el mar. Se alimenta en el mar y se reproduce sobre hielo antártico.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP06-R02",
+            "numero_reto": 2,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H04",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A39",
+                "P_VIVIR",
+                "P_H04"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en el mar. Se alimenta en el mar y se reproduce sobre hielo antártico.",
+              "texto_voz": "¡Sí! Este animal puede vivir en el mar. Se alimenta en el mar y se reproduce sobre hielo antártico.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 9,
+          "accion": "continuar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "COMPLETADA",
+            "animal_id": "A39",
+            "habitat_guia_id": "H07",
+            "nivel": 0,
+            "habitat_seleccionado_id": "H04",
+            "resultado": "VALIDA",
+            "completados": 2,
+            "fase_previa": null,
+            "u": "MSG_CIERRE",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_CIERRE",
+              "tipo_respuesta": "CIERRE",
+              "pictogramas": [
+                "P_FIN",
+                "P_CONFIRMAR"
+              ],
+              "texto_apoyo": "Terminamos esta partida. ¡Gracias por jugar!",
+              "texto_voz": "Terminamos esta partida. ¡Gracias por jugar!",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP06-R02",
+            "numero_reto": 2,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H04",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_CIERRE",
+              "tipo_respuesta": "CIERRE",
+              "pictogramas": [
+                "P_FIN",
+                "P_CONFIRMAR"
+              ],
+              "texto_apoyo": "Terminamos esta partida. ¡Gracias por jugar!",
+              "texto_voz": "Terminamos esta partida. ¡Gracias por jugar!",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [],
+            "traza": null
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "CP07",
+      "descripcion": "Inicio del agente con un escenario del banco.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "AGENTE",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "generar_reto",
+          "estado": {
+            "modalidad": "AGENTE",
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP07-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "AGENTE",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP07-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "seleccionar_habitat",
+          "estado": {
+            "modalidad": "AGENTE",
+            "fase": "RETO_RESUELTO",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": "H02",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_VALIDA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A08",
+                "P_VIVIR",
+                "P_H02"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la sabana.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la sabana.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP07-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H02",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_VALIDA",
+              "tipo_respuesta": "CONFIRMACION",
+              "pictogramas": [
+                "P_CONFIRMAR",
+                "P_A08",
+                "P_VIVIR",
+                "P_H02"
+              ],
+              "texto_apoyo": "¡Sí! Este animal puede vivir en la sabana.",
+              "texto_voz": "¡Sí! Este animal puede vivir en la sabana.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "repetir",
+              "continuar",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "continuar",
+          "estado": {
+            "modalidad": "AGENTE",
+            "fase": "COMPLETADA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": "H02",
+            "resultado": "VALIDA",
+            "completados": 1,
+            "fase_previa": null,
+            "u": "MSG_CIERRE",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_CIERRE",
+              "tipo_respuesta": "CIERRE",
+              "pictogramas": [
+                "P_FIN",
+                "P_CONFIRMAR"
+              ],
+              "texto_apoyo": "Terminamos esta partida. ¡Gracias por jugar!",
+              "texto_voz": "Terminamos esta partida. ¡Gracias por jugar!",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP07-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [
+              {
+                "habitat_id": "H02",
+                "resultado": "VALIDA"
+              }
+            ],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_CIERRE",
+              "tipo_respuesta": "CIERRE",
+              "pictogramas": [
+                "P_FIN",
+                "P_CONFIRMAR"
+              ],
+              "texto_apoyo": "Terminamos esta partida. ¡Gracias por jugar!",
+              "texto_voz": "Terminamos esta partida. ¡Gracias por jugar!",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [],
+            "traza": null
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "CP08",
+      "descripcion": "Nueva ayuda de nivel 3 cambia la variante; Repetir conserva esa variante.",
+      "resultado": "CORRECTO",
+      "pasos": [
+        {
+          "paso": 1,
+          "accion": "iniciar",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "SELECCION_ANIMAL",
+            "animal_id": null,
+            "habitat_guia_id": null,
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": null,
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": null,
+            "numero_reto": 0,
+            "opciones_habitat": [],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_ELEGIR_ANIMAL",
+              "tipo_respuesta": "NAVEGACION",
+              "pictogramas": [
+                "P_ELEGIR"
+              ],
+              "texto_apoyo": "Elige un animal.",
+              "texto_voz": "Elige un animal.",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "elegir_animal",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 2,
+          "accion": "elegir_animal",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "PRESENTACION",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": null,
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": null,
+            "reto_id": "ACEPTACION-CP08-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": null,
+            "controles_disponibles": [
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 3,
+          "accion": "presentar_reto",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 0,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "MSG_PREGUNTA",
+            "nodo_id": "N00",
+            "repeticion_previa": 0,
+            "observacion": null,
+            "variantes_anteriores": {},
+            "respuesta_educativa": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "reto_id": "ACEPTACION-CP08-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": []
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "MSG_PREGUNTA",
+              "tipo_respuesta": "PREGUNTA",
+              "pictogramas": [
+                "P_QUE_LUGAR",
+                "P_A08",
+                "P_VIVIR"
+              ],
+              "texto_apoyo": "¿Dónde puede vivir este animal?",
+              "texto_voz": "¿Dónde puede vivir este animal?",
+              "nivel": null,
+              "variante_id": null
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        },
+        {
+          "paso": 4,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 1,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L1_V1",
+            "nodo_id": "N07",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP08-O001",
+              "sesion_id": "ACEPTACION-CP08",
+              "reto_id": "ACEPTACION-CP08-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L1_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP08-EV04"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_LUGAR_ABIERTO",
+                "P_CALOR"
+              ],
+              "texto_apoyo": "Busca un lugar abierto y cálido.",
+              "texto_voz": "Busca un lugar abierto y cálido.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP08-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L1_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_LUGAR_ABIERTO",
+                "P_CALOR"
+              ],
+              "texto_apoyo": "Busca un lugar abierto y cálido.",
+              "texto_voz": "Busca un lugar abierto y cálido.",
+              "nivel": 1,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "PROBABILISTICO",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 1,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "estimaciones": {
+                "V1": 0.5,
+                "V2": 0.5,
+                "V3": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "entorno",
+                "valor": "LLANURA_CALIDA"
+              },
+              "nodo_id": "N07",
+              "K": [
+                "H02",
+                "H03"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "MEDIA_POSTERIOR",
+              "tiempo_decision_ns": 13100,
+              "adaptacion_reto": {
+                "regla": "APOYO_PROGRESIVO",
+                "elecciones": [],
+                "nivel_anterior": 0,
+                "nivel_elegido": 1,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 5,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L2_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP08-O002",
+              "sesion_id": "ACEPTACION-CP08",
+              "reto_id": "ACEPTACION-CP08-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L2_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP08-EV05"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP08-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L2_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_BUSCAR",
+                "P_PASTO_ABUNDANTE",
+                "P_ARBOLES_SEPARADOS"
+              ],
+              "texto_apoyo": "Busca mucho pasto y árboles separados.",
+              "texto_voz": "Busca mucho pasto y árboles separados.",
+              "nivel": 2,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "PROBABILISTICO",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 2,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "estimaciones": {
+                "V1": 0.5,
+                "V2": 0.5,
+                "V3": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": {
+                "nombre": "vegetacion",
+                "valor": "ABUNDANTE"
+              },
+              "nodo_id": "N08",
+              "K": [
+                "H02"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "MEDIA_POSTERIOR",
+              "tiempo_decision_ns": 16400,
+              "adaptacion_reto": {
+                "regla": "APOYO_PROGRESIVO",
+                "elecciones": [],
+                "nivel_anterior": 1,
+                "nivel_elegido": 2,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 6,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L3_V1",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP08-O003",
+              "sesion_id": "ACEPTACION-CP08",
+              "reto_id": "ACEPTACION-CP08-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V1",
+              "contenido_id": "AY_H02_L3_V1",
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": null,
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP08-EV06"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1",
+              "H02:3": "V1"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L3_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_OPCION",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Una opción es la sabana. Toca ese lugar.",
+              "texto_voz": "Una opción es la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V1"
+            },
+            "reto_id": "ACEPTACION-CP08-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L3_V1",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_OPCION",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Una opción es la sabana. Toca ese lugar.",
+              "texto_voz": "Una opción es la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V1"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "PROBABILISTICO",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V1",
+              "variante_anterior": null,
+              "variantes_usadas_reto": [],
+              "variantes_elegibles": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "estimaciones": {
+                "V1": 0.5,
+                "V2": 0.5,
+                "V3": 0.5
+              },
+              "exclusion_por_variedad": null,
+              "atributo_guia": null,
+              "nodo_id": "N08",
+              "K": [
+                "H02"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "MEDIA_POSTERIOR",
+              "tiempo_decision_ns": 10200,
+              "adaptacion_reto": {
+                "regla": "APOYO_PROGRESIVO",
+                "elecciones": [],
+                "nivel_anterior": 2,
+                "nivel_elegido": 3,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 7,
+          "accion": "ayuda",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L3_V2",
+            "nodo_id": "N08",
+            "repeticion_previa": 0,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP08-O004",
+              "sesion_id": "ACEPTACION-CP08",
+              "reto_id": "ACEPTACION-CP08-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V2",
+              "contenido_id": "AY_H02_L3_V2",
+              "variantes_elegibles": [
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": "V1",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP08-EV07"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1",
+              "H02:3": "V2"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L3_V2",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_A08",
+                "P_VIVIR",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "texto_voz": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V2"
+            },
+            "reto_id": "ACEPTACION-CP08-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V2",
+                "nivel": 3,
+                "variante_id": "V2"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L3_V2",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_A08",
+                "P_VIVIR",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "texto_voz": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V2"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": {
+              "politica": "PROBABILISTICO",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_elegida": "V2",
+              "variante_anterior": "V1",
+              "variantes_usadas_reto": [
+                "V1"
+              ],
+              "variantes_elegibles": [
+                "V2",
+                "V3"
+              ],
+              "estimaciones": {
+                "V2": 0.5,
+                "V3": 0.5
+              },
+              "exclusion_por_variedad": "V1",
+              "atributo_guia": null,
+              "nodo_id": "N08",
+              "K": [
+                "H02"
+              ],
+              "modelo_estado": "NO_ENTRENADO_PRIOR_UNIFORME",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "parametros_congelados": true,
+              "metodo": "MEDIA_POSTERIOR",
+              "tiempo_decision_ns": 10700,
+              "adaptacion_reto": {
+                "regla": "APOYO_PROGRESIVO",
+                "elecciones": [],
+                "nivel_anterior": 3,
+                "nivel_elegido": 3,
+                "cantidad_opciones": 8
+              }
+            }
+          }
+        },
+        {
+          "paso": 8,
+          "accion": "repetir",
+          "estado": {
+            "modalidad": "JUGADOR",
+            "fase": "ESPERANDO_RESPUESTA",
+            "animal_id": "A08",
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "habitat_seleccionado_id": null,
+            "resultado": "SIN_RESPUESTA",
+            "completados": 0,
+            "fase_previa": null,
+            "u": "AY_H02_L3_V2",
+            "nodo_id": "N08",
+            "repeticion_previa": 1,
+            "observacion": {
+              "observacion_id": "ACEPTACION-CP08-O004",
+              "sesion_id": "ACEPTACION-CP08",
+              "reto_id": "ACEPTACION-CP08-R01",
+              "origen": "PRUEBA_DE_CONTROL_SINTETICA",
+              "animal_id": "A08",
+              "habitat_guia_id": "H02",
+              "contexto": {
+                "habitat_guia_id": "H02",
+                "nivel": 3,
+                "repeticion_previa": 0
+              },
+              "variante_id": "V2",
+              "contenido_id": "AY_H02_L3_V2",
+              "variantes_elegibles": [
+                "V2",
+                "V3"
+              ],
+              "variante_anterior": "V1",
+              "modelo_version": "2d205544aa94c67f6bee0ae3cb76355f5945ef72b0e8f4c1026a6609898ce2ca",
+              "politica": "PROBABILISTICO",
+              "evento_apertura": "CP08-EV07"
+            },
+            "variantes_anteriores": {
+              "H02:1": "V1",
+              "H02:2": "V1",
+              "H02:3": "V2"
+            },
+            "respuesta_educativa": {
+              "contenido_id": "AY_H02_L3_V2",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_A08",
+                "P_VIVIR",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "texto_voz": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V2"
+            },
+            "reto_id": "ACEPTACION-CP08-R01",
+            "numero_reto": 1,
+            "opciones_habitat": [
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08"
+            ],
+            "elecciones_reto": [],
+            "ayudas_reto": [
+              {
+                "contenido_id": "AY_H02_L1_V1",
+                "nivel": 1,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L2_V1",
+                "nivel": 2,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V1",
+                "nivel": 3,
+                "variante_id": "V1"
+              },
+              {
+                "contenido_id": "AY_H02_L3_V2",
+                "nivel": 3,
+                "variante_id": "V2"
+              }
+            ]
+          },
+          "salida": {
+            "aceptada": true,
+            "motivo": "ACEPTADA",
+            "respuesta": {
+              "contenido_id": "AY_H02_L3_V2",
+              "tipo_respuesta": "AYUDA",
+              "pictogramas": [
+                "P_A08",
+                "P_VIVIR",
+                "P_H02",
+                "P_TOCAR"
+              ],
+              "texto_apoyo": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "texto_voz": "Este animal puede vivir en la sabana. Toca ese lugar.",
+              "nivel": 3,
+              "variante_id": "V2"
+            },
+            "controles_disponibles": [
+              "seleccionar_habitat",
+              "ayuda",
+              "repetir",
+              "pausar",
+              "salir"
+            ],
+            "traza": null
+          }
+        }
+      ]
+    }
+  ]
+}

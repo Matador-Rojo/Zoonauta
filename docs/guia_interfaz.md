@@ -74,7 +74,7 @@ Para comparar políticas con el entorno ya preparado, utiliza su ejecutable Pyth
 
 En Linux/macOS usa `.venv-voz/bin/python`. Para cargar otro modelo congelado
 utiliza `--parametros RUTA`. El predeterminado es
-`docs/experimentos/modelos/SIM_CONTEXTUAL_R01.json`: primera réplica contextual
+`docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R01.json`: primera réplica contextual
 del entrenamiento sintético, sin escoger una réplica por su rendimiento.
 Las selecciones manuales se registran y no actualizan α o β.
 

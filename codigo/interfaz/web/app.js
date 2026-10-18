@@ -461,6 +461,15 @@ $("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase
 $("cerrar-preferencias").addEventListener("click",()=>$("preferencias").close());
 $("cerrar-ajustes").addEventListener("click",()=>$("preferencias").close());
 $("preferencias").addEventListener("close",()=>{ubicarAviso();ritmoCarrusel();});
+$("preferencias").addEventListener("keydown",evento=>{
+  if(evento.key!=="Tab")return;
+  const controles=[...$("preferencias").querySelectorAll('button,input,select,summary,a[href],[tabindex]')]
+    .filter(e=>!e.disabled&&e.tabIndex>=0&&e.getClientRects().length);
+  const primero=controles[0],ultimo=controles.at(-1);
+  if(primero&&((evento.shiftKey&&document.activeElement===primero)||(!evento.shiftKey&&document.activeElement===ultimo))){
+    evento.preventDefault();(evento.shiftKey?ultimo:primero).focus();
+  }
+});
 $("retos").addEventListener("change",()=>validarRetos());
 document.addEventListener("visibilitychange",ritmoCarrusel);
 $("voz").addEventListener("change",()=>{if(!$("voz").checked)pararVoz();});

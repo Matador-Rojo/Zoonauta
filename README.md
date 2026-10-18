@@ -68,6 +68,21 @@ Pausar actúa al pulsarlo; play o las flechas reanudan y reinician el intervalo.
 Preferencias y una pestaña inactiva suspenden temporalmente el carrusel.
 La interfaz se adapta a móvil y permite selección con teclado.
 
+## Cierre técnico e instrucciones de uso
+
+Preferencias aprovecha el ancho de la pantalla: idioma y partida a la izquierda,
+voz y ritmo a la derecha. En escritorio se muestran juntos; en ventanas pequeñas
+se apilan y permiten desplazamiento para conservar los controles completos.
+Tab y Mayús+Tab recorren los controles del diálogo; Escape lo cierra.
+
+El [manual de usuario](docs/manual_usuario.md) explica el inicio y los controles.
+El [cierre técnico del Hito 3](docs/cierre_tecnico_hito3.md) reúne ejecución,
+casos de borde y límites de las comprobaciones. El informe, el video y la
+evaluación con usuarios son entregables distintos de estas verificaciones.
+
+La ampliación de los textos de audio y la integración de ElevenLabs quedan
+pendientes de definir el contenido. Las voces disponibles permanecen sin cambios.
+
 ## Ejecutar el juego
 
 Clona este repositorio o descarga y extrae su ZIP. Abre la terminal en la carpeta
@@ -226,8 +241,11 @@ apertura de una ventana y comprueba partidas completas en ambas modalidades con
 2, 4 y 8 opciones. Requiere Python y una carpeta sin `.venv-voz` ni `modelos_voz`.
 
 La revisión local pasó **96 pruebas Python**, los ocho casos de aceptación de
-consola y **31 casos de navegador**: 20 de revisión general, seis del modo 2/4/8
-en ambos idiomas y cinco de voces controladas. El comprobador general libera los
+consola y **47 casos de navegador**: 20 de revisión general, seis del modo 2/4/8
+en ambos idiomas, cinco de voces controladas y 16 de Preferencias y teclado.
+Las [evidencias del cierre](docs/experimentos/hito3/revision_cierre.json) conservan
+el alcance técnico y los pasos que requieren evaluación humana.
+El comprobador general libera los
 contextos entre escenarios conservando la cookie de la partida; mantiene todas
 las comprobaciones. Comprueba transiciones, repetición, pausa, duplicados,
 traducciones, transparencia, cierre, teclado, móvil, progreso real y los 48 animales
