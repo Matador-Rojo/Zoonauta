@@ -17,7 +17,7 @@ from codigo.nucleo.gestor import GestorPartida
 from codigo.nucleo.registro import Registro
 
 
-MODELO_DEMO = RAIZ_PROYECTO / "docs/experimentos/modelos/SIM_CONTEXTUAL_R01.json"
+MODELO_DEMO = RAIZ_PROYECTO / "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R01.json"
 
 
 class ConflictoVista(ValueError):
@@ -133,6 +133,9 @@ class SesionWeb:
                         raise ValueError("Selecciona entre 1 y 48 retos.")
                     if payload.get("modalidad") not in {"AGENTE", "JUGADOR"}:
                         raise ValueError("Selecciona una modalidad válida.")
+                    opciones = payload.get("cantidad_opciones", 8)
+                    if type(opciones) is not int or opciones not in (2, 4, 8):
+                        raise ValueError("Selecciona 2, 4 u 8 hábitats.")
                     self.gestor.N = retos
                 # El cliente nunca puede crear eventos internos ni pasar
                 # acciones directamente al motor de guía.

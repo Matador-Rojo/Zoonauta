@@ -140,7 +140,7 @@ class PruebasInterfaz(unittest.TestCase):
         self.actuar("iniciar", modalidad="JUGADOR", retos=1)
         self.actuar("elegir_animal", animal_id="A31")
         parametros = dict(self.s.gestor.motor.parametros)
-        for nivel in (1, 2, 3, 3):
+        for nivel in (1, 3, 3, 3):
             e = self.entrada("seleccionar_habitat", habitat_id="H03")
             r = self.s.actuar(e)
             self.assertEqual(nivel, self.s.gestor.estado.nivel)
@@ -171,7 +171,12 @@ class PruebasInterfaz(unittest.TestCase):
                 self.actuar("iniciar", modalidad="JUGADOR", retos=1)
                 self.actuar("elegir_animal", animal_id=animal)
                 r = self.actuar("seleccionar_habitat", habitat_id=habitat)
-                self.assertEqual(1, r["respuesta_emitida"]["nivel"])
+                nivel = r["respuesta_emitida"]["nivel"]
+                self.assertIn(nivel, (1, 2, 3))
+                atributo = self.s.gestor.registro.filas[-1]["decision"]["atributo_guia"]
+                if atributo:
+                    perfil_elegido = banco.perfiles[habitat]["atributos"]
+                    self.assertNotEqual(perfil_elegido[atributo["nombre"]], atributo["valor"])
                 self.assertEqual("NEUTRAL", r["respuesta_emitida"]["tipo_respuesta"])
                 self.assertEqual("ESPERANDO_RESPUESTA", r["vista"]["fase"])
                 self.assertEqual(0, self.s.gestor.estado.completados)

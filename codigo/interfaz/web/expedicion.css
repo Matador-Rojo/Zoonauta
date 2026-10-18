@@ -251,6 +251,11 @@ body:has(.tablero) .titulo-fila h1 { font-size:clamp(34px,3.3vw,48px); }
 }
 
 /* El robot guía representa la despedida o una pausa; no el último animal. */
+.tablero .habitats[data-cantidad="2"],.tablero .habitats[data-cantidad="4"] { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.tablero .habitats[data-cantidad="2"] { grid-template-rows:minmax(120px,1fr); }
+@media (max-width:850px) {
+  .tablero .habitats[data-cantidad="2"] { grid-template-rows:none; }
+}
 body:has(.cierre) #juego { max-width:none; min-height:100dvh; display:grid; place-items:center; padding:32px clamp(20px,3vw,56px); }
 .centro.cierre { width:100%; max-width:1360px; min-height:0; margin:0; padding:clamp(24px,3vw,44px); gap:clamp(28px,4vw,64px); grid-template-columns:minmax(0,.85fr) minmax(0,1fr); border-radius:36px; background:radial-gradient(ellipse at 85% 0,#55794928,transparent 70%),#172e25; box-shadow:0 24px 80px #0003; }
 .cierre-visual { margin:0; min-height:410px; height:auto; max-width:none; width:100%; align-self:stretch; padding:24px; display:flex; flex-direction:column; align-items:center; gap:18px; border-radius:28px; background:radial-gradient(ellipse at 50% 45%,#f5f8e8,#d6e5c7 75%); color:#213e2b; }

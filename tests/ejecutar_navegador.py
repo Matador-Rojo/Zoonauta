@@ -16,6 +16,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--audio-real", action="store_true", help="Comprueba WAV con el reproductor nativo; requiere voces preparadas.")
     parser.add_argument("--voces-navegador", action="store_true", help="Comprueba Microsoft/Google con voces controladas y sus reglas de región.")
+    parser.add_argument("--hito2", action="store_true", help="Comprueba 2, 4 y 8 opciones, historial y recarga en ambos idiomas.")
     args = parser.parse_args()
     with TemporaryDirectory() as carpeta:
         servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta))
@@ -23,7 +24,7 @@ def main():
         hilo.start()
         env = {**os.environ, "INTERFAZ_URL": f"http://127.0.0.1:{servidor.server_port}"}
         try:
-            prueba = ("verificar_voces_navegador.cjs" if args.voces_navegador else
+            prueba = ("verificar_hito2.cjs" if args.hito2 else "verificar_voces_navegador.cjs" if args.voces_navegador else
                       "verificar_audio_real.cjs" if args.audio_real else "verificar_interfaz.cjs")
             resultado = subprocess.run(["node", str(Path(__file__).with_name(prueba))], env=env)
         finally:

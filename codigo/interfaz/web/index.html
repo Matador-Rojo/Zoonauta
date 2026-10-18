@@ -19,6 +19,10 @@
     <p class="subtitulo">Un ritmo cómodo. Una voz que te acompañe.</p>
     <label class="campo"><span>Idioma</span><select id="idioma"><option value="es">Español</option><option value="pt-BR">Português (Brasil)</option></select></label>
     <section class="ajustes-seccion" aria-labelledby="ajustes-partida"><div class="ajuste-fila"><div><h3 id="ajustes-partida">La partida</h3><p class="detalle">¿Cuántos animales quieres explorar?</p></div><label class="numero-retos"><span class="solo-lectura">Retos por partida</span><input id="retos" type="number" min="1" max="48" step="1" value="8"></label></div><p class="nota-ajustes">De 1 a 48. Se aplica al comenzar; todos los animales siguen disponibles.</p></section>
+    <section class="ajustes-seccion" aria-labelledby="ajustes-opciones">
+      <label class="campo"><span id="ajustes-opciones">Hábitats para elegir</span><select id="cantidad-opciones" aria-describedby="nota-opciones"><option value="2">2 hábitats</option><option value="4">4 hábitats</option><option value="8" selected>8 hábitats</option></select></label>
+      <p id="nota-opciones" class="nota-ajustes">Menos opciones para empezar. Se aplica a la próxima partida.</p>
+    </section>
     <section class="ajustes-seccion" aria-labelledby="ajustes-voz">
       <label class="ajuste-fila voz-interruptor"><span><span id="ajustes-voz" class="ajuste-titulo">Una guía con voz</span><span class="detalle">Leer las respuestas en voz alta.</span></span><input id="voz" type="checkbox" checked></label>
       <label class="campo"><span id="etiqueta-voces">Voz en español</span><select id="voces"><option value="">Buscando voces…</option></select></label>

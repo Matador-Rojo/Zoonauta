@@ -20,12 +20,12 @@ from codigo.nucleo.datos import BancoDatos, DATOS_PREDETERMINADOS
 METRICAS = ("tasa_y1_etiquetadas", "proporcion_sin_etiqueta", "proporcion_retos_completados",
             "ayudas_por_reto_completado", "ayudas_por_reto_iniciado", "tasa_repeticion_automatica",
             "tiempo_decision_medio_us", "probabilidad_configurada_media", "coste_variedad_medio",
-            "brecha_elegibles_media")
+            "brecha_elegibles_media", "turnos_decision_por_reto_completado")
 
 
 def guardar_json(ruta: Path, contenido: dict) -> None:
     ruta.parent.mkdir(parents=True, exist_ok=True)
-    ruta.write_text(json.dumps(contenido, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    ruta.write_text(json.dumps(contenido, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
 @contextmanager
@@ -86,11 +86,11 @@ def crear_informe(resumen: dict, grafico: bool = False) -> str:
     cfg = resumen["configuracion"]
     n = cfg["replicas"]
     t = ["# Animales y hábitats: aprendizaje y comparación sintética", "",
-         "Versión 2.0.0 · 9 de octubre de 2026.", "",
+         "Ejecución reproducible del selector de ayudas.", "",
          "Se ejecutó el aprendizaje del selector de ayudas con Thompson Sampling y se evaluó el modelo congelado frente a ID3 y rotación. Los resultados proceden exclusivamente del jugador sintético configurado.", "",
          "## 1. Diseño del experimento", "",
          f"Cada condición utilizó {n} réplicas. Por condición y réplica se simularon {cfg['retos_entrenamiento_por_condicion_replica']:,} retos de entrenamiento y {cfg['retos_evaluacion_por_condicion_replica_politica']:,} retos de evaluación por política. Cada réplica entrenó su propio modelo; ninguno utilizó las etiquetas de evaluación.", "",
-         "El mismo catálogo y las mismas reglas se ejecutaron con el gestor compartido. Los 48 animales se programaron por igual. Las modalidades de inicio se alternaron al comenzar nuevas sesiones; las ocho opciones se conservaron en los retos activos.", "",
+         "El mismo catálogo y las mismas reglas se ejecutaron con el gestor compartido. Los 48 animales se programaron por igual. Las modalidades de inicio se alternaron al comenzar nuevas sesiones. Las opciones se mantuvieron estables durante cada reto.", "",
          "Los sorteos de evaluación se indexaron por semilla, reto, número de ayuda y tipo de evento. Así, las políticas compartieron los sorteos exógenos correspondientes. Cuando sus respuestas difieren, también pueden diferir las ayudas y contextos alcanzados: el indicador agregado describe cada política completa y no un efecto aislado de una variante.", "",
          "| Condición | b = 0: V1 / V2 / V3 | b = 1: V1 / V2 / V3 |", "|---|---|---|"]
     for c in resumen["condiciones"]:
@@ -141,11 +141,11 @@ def crear_informe(resumen: dict, grafico: bool = False) -> str:
           "- Las historias de entrenamiento y los ejemplos de decisiones se conservan en las corridas.", "",
           "## 7. Límites y continuidad", "",
           "Las probabilidades artificiales no varían por animal ni por nivel, aunque el modelo mantenga esos contextos separados. El simulador no representa comprensión, fatiga, accesibilidad ni aprendizaje duradero. La generalización que se comprueba es a nuevos sorteos del mismo entorno sintético.", "",
-          "La representación visual, la selección por clic o toque y la voz siguen pendientes. Este paquete desarrolla el aprendizaje y la comparación de la PoC; no constituye la entrega final completa del curso.", "",
+          "La interfaz de Zoonauta ya integra selección por clic o toque, pictogramas y voz. Esta ejecución comprueba el núcleo compartido con un jugador sintético; no evalúa comprensión CAA ni aprendizaje humano.", "",
           "## 8. Redacción para el documento técnico", "",
           f"Se implementó un simulador de interacciones sintéticas sobre el núcleo compartido del juego. El entrenamiento utilizó Thompson Sampling para explorar variantes elegibles y actualizó distribuciones Beta–Bernoulli exclusivamente con observaciones etiquetadas. Se ejecutaron {resumen['total_retos_entrenamiento']:,} retos de entrenamiento y {resumen['total_retos_evaluacion']:,} de evaluación, distribuidos en {len(resumen['condiciones'])} condiciones y {n} réplicas. La evaluación se realizó con parámetros congelados y semillas separadas.", "",
           "La comparación conservó ID3 con presentación fija, rotación de variantes y selección probabilística. El indicador principal fue la proporción de selecciones válidas antes de una nueva ayuda entre los cierres etiquetados. Los cierres pendientes y las salidas se informaron por separado. Las condiciones permiten observar igualdad de resultados, ventajas de una presentación fija y ventajas del selector contextual, sin asumir superioridad universal del modelo adaptativo.", "",
-          "Las conclusiones se limitan a las probabilidades artificiales del simulador. La cobertura por contexto, los parámetros aprendidos y los registros se conservaron para revisar la procedencia de cada decisión. La efectividad de las secuencias de pictogramas y la interacción accesible requerirán la implementación visual y una evaluación posterior.", ""]
+          "Las conclusiones se limitan a las probabilidades artificiales del simulador. La cobertura por contexto, los parámetros aprendidos y los registros se conservaron para revisar la procedencia de cada decisión. La efectividad de las secuencias de pictogramas y la interacción accesible requieren una evaluación posterior con usuarios.", ""]
     return "\n".join(t)
 
 
@@ -230,9 +230,13 @@ def main() -> None:
     parser.add_argument("--condicion", choices=("SIM_UNIFORME", "SIM_DIFERENCIAS", "SIM_CONTEXTUAL"))
     parser.add_argument("--sin-registros", action="store_true", help="Omitir los cierres JSONL completos.")
     parser.add_argument("--grafico", action="store_true", help="Exportar PNG; requiere matplotlib.")
+    parser.add_argument("--opciones", type=int, choices=(2, 4, 8), default=8)
+    parser.add_argument("--ayuda-automatica", action="store_true", help="Usar el protocolo de la interfaz ante selecciones pendientes.")
     args = parser.parse_args()
     banco = BancoDatos(args.datos)
     cfg = banco.leer("configuracion_experimentos.json")
+    cfg["cantidad_opciones"] = args.opciones
+    cfg["ayuda_en_pendiente"] = args.ayuda_automatica
     for arg, key in ((args.replicas, "replicas"), (args.entrenamiento, "retos_entrenamiento_por_condicion_replica"),
                      (args.evaluacion, "retos_evaluacion_por_condicion_replica_politica")):
         if arg is not None:

@@ -22,6 +22,7 @@ node_modules/
 /resultados_nuevos/
 /resultados_con_grafico/
 /prueba_pequena/
+/output/
 
 # Archivos temporales y del sistema
 *.tmp

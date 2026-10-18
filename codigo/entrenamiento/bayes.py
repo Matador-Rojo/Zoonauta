@@ -69,7 +69,7 @@ class ModeloBayes:
 
     def guardar(self, ruta: Path, metadata: dict | None = None) -> None:
         ruta.parent.mkdir(parents=True, exist_ok=True)
-        ruta.write_text(json.dumps(self.documento(metadata), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        ruta.write_text(json.dumps(self.documento(metadata), ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
     def huella(self) -> str:
         contenido = [(clave, v.alpha, v.beta) for clave, v in sorted(self.valores.items())]

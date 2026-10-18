@@ -256,7 +256,23 @@
     "Selvas y bosques tropicales con agua accesible.": "Florestas tropicais com água acessível.",
     "También ocupa ambientes desérticos.": "Também ocupa ambientes desérticos.",
     "También ocupa sabanas semidesérticas del sur de África.": "Também ocupa savanas semidesérticas do sul da África.",
-    "Tundra alpina; el frío por sí solo no convierte una montaña en región polar.": "Tundra alpina; o frio, por si só, não transforma uma montanha em região polar."
+    "Tundra alpina; el frío por sí solo no convierte una montaña en región polar.": "Tundra alpina; o frio, por si só, não transforma uma montanha em região polar.",
+    "Una opción es la selva tropical. Toca ese lugar.": "Uma opção é a floresta tropical. Toque nesse lugar.",
+    "Este animal puede vivir en la selva tropical. Toca ese lugar.": "Este animal pode viver na floresta tropical. Toque nesse lugar.",
+    "Una opción es la sabana. Toca ese lugar.": "Uma opção é a savana. Toque nesse lugar.",
+    "Este animal puede vivir en la sabana. Toca ese lugar.": "Este animal pode viver na savana. Toque nesse lugar.",
+    "Una opción es el desierto cálido. Toca ese lugar.": "Uma opção é o deserto quente. Toque nesse lugar.",
+    "Este animal puede vivir en el desierto cálido. Toca ese lugar.": "Este animal pode viver no deserto quente. Toque nesse lugar.",
+    "Una opción es el mar. Toca ese lugar.": "Uma opção é o mar. Toque nesse lugar.",
+    "Este animal puede vivir en el mar. Toca ese lugar.": "Este animal pode viver no mar. Toque nesse lugar.",
+    "Una opción es el bosque templado. Toca ese lugar.": "Uma opção é a floresta temperada. Toque nesse lugar.",
+    "Este animal puede vivir en un bosque templado. Toca ese lugar.": "Este animal pode viver em uma floresta temperada. Toque nesse lugar.",
+    "Una opción es el agua dulce. Toca ese lugar.": "Uma opção é a água doce. Toque nesse lugar.",
+    "Este animal puede vivir en un entorno de agua dulce. Toca ese lugar.": "Este animal pode viver em um ambiente de água doce. Toque nesse lugar.",
+    "Las regiones polares son una opción. Toca ese lugar.": "As regiões polares são uma opção. Toque nesse lugar.",
+    "Este animal puede vivir en regiones polares. Toca ese lugar.": "Este animal pode viver em regiões polares. Toque nesse lugar.",
+    "Una opción es la alta montaña. Toca ese lugar.": "Uma opção é a alta montanha. Toque nesse lugar.",
+    "Este animal puede vivir en la alta montaña. Toca ese lugar.": "Este animal pode viver na alta montanha. Toque nesse lugar."
   },
   "interfaz": {
     "Animales y hábitats": "Animais e habitats",
@@ -391,7 +407,12 @@
     "Notificaciones": "Notificações",
     "Revisa los retos": "Confira os desafios",
     "No se pudo completar": "Não foi possível concluir",
-    "Información": "Informação"
+    "Información": "Informação",
+    "Hábitats para elegir": "Habitats para escolher",
+    "2 hábitats": "2 habitats",
+    "4 hábitats": "4 habitats",
+    "8 hábitats": "8 habitats",
+    "Menos opciones para empezar. Se aplica a la próxima partida.": "Menos opções para começar. Aplica-se à próxima partida."
   },
   "errores": {
     "La pantalla ha cambiado. Se recuperó la vista actual.": "A tela mudou. A visualização atual foi recuperada.",
@@ -419,7 +440,8 @@
     "Selecciona un idioma válido.": "Selecione um idioma válido.",
     "Selecciona una voz válida para este idioma.": "Selecione uma voz válida para este idioma.",
     "La voz solo puede leer contenido de la partida.": "A voz só pode ler conteúdo da partida.",
-    "Texto de voz no válido.": "Texto de voz inválido."
+    "Texto de voz no válido.": "Texto de voz inválido.",
+    "Selecciona 2, 4 u 8 hábitats.": "Selecione 2, 4 ou 8 habitats."
   },
   "saludo": "Olá. Vamos descobrir onde os animais vivem."
 }

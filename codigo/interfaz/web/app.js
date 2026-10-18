@@ -295,6 +295,7 @@ function render(enfocar=false,conservarPaisaje=false) {
   detenerCarrusel(); carrusel=null;idiomaPantalla();
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
   const f=vista.fase; document.body.dataset.fase=f;
+  if(f!=="INICIO")$("cantidad-opciones").value=String(vista.cantidad_opciones);
   document.querySelector('.cabecera').hidden=f!=="INICIO";
   document.querySelector('.creditos').hidden=f!=="INICIO";
   if(f==="INICIO") {estadoCatalogo={consulta:"",pagina:0,idioma:vista.idioma};juego.append(...inicio());if(previo){Object.assign(carrusel,previo);cambiarPaisaje(0);ritmoCarrusel();}}
@@ -311,7 +312,7 @@ function render(enfocar=false,conservarPaisaje=false) {
     const mesa=nodo("div","mesa"); mesa.append(respuesta(vista.respuesta));
     const opciones=nodo("div","habitats-panel");
     if(f==="ESPERANDO_RESPUESTA")opciones.append(nodo("p","instruccion","Toca un lugar donde pueda vivir."));
-    const hab=nodo("div","habitats"); hab.setAttribute("aria-label",t("Ocho hábitats"));
+    const hab=nodo("div","habitats"); hab.setAttribute("aria-label",t("Hábitats para elegir")); hab.dataset.cantidad=String(vista.opciones_habitat.length);
     for(const h of vista.opciones_habitat) {
       const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta");
       b.prepend(paisaje(h.id));
@@ -443,7 +444,7 @@ async function cambiarIdioma() {
 }
 async function accion(tipo,payload) {
   if(ocupado||!vista)return; ocupado=true; const antes=vista.fase;
-  if(tipo==="iniciar") {const n=validarRetos(true);if(n===null){ocupado=false;return;} payload={...payload,retos:n};}
+  if(tipo==="iniciar") {const n=validarRetos(true);if(n===null){ocupado=false;return;} payload={...payload,retos:n,cantidad_opciones:Number($("cantidad-opciones").value)};}
   pararVoz();
   for(const b of juego.querySelectorAll("button"))b.disabled=true;
   juego.setAttribute("aria-busy","true");
@@ -456,7 +457,7 @@ async function accion(tipo,payload) {
   } catch(e) {notificar(t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida."));juego.setAttribute("aria-busy","false");}
   finally {ocupado=false;}
 }
-$("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();ubicarAviso();ritmoCarrusel();});
+$("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";$("cantidad-opciones").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();ubicarAviso();ritmoCarrusel();});
 $("cerrar-preferencias").addEventListener("click",()=>$("preferencias").close());
 $("cerrar-ajustes").addEventListener("click",()=>$("preferencias").close());
 $("preferencias").addEventListener("close",()=>{ubicarAviso();ritmoCarrusel();});

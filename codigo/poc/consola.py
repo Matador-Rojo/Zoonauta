@@ -104,6 +104,7 @@ def main() -> None:
     parser.add_argument("--modalidad", choices=("JUGADOR", "AGENTE"))
     parser.add_argument("--retos", type=int, help="Entre 1 y 48; valor inicial editable: 8.")
     parser.add_argument("--politica", choices=POLITICAS, default="ID3")
+    parser.add_argument("--opciones", type=int, choices=(2, 4, 8), default=8)
     parser.add_argument("--simbolos", action="store_true", help="Inspeccionar IDs y etiquetas simbólicas.")
     parser.add_argument("--registro", type=Path, help="Ruta opcional del registro JSONL.")
     parser.add_argument("--parametros", type=Path, help="Modelo aprendido que se usará congelado.")
@@ -113,6 +114,7 @@ def main() -> None:
         sesion_id = f"CONSOLA-{uuid4().hex}"
         ruta_registro = args.registro or banco.directorio / "registros" / f"{sesion_id}.jsonl"
         gestor = GestorPartida(banco, args.retos, args.politica,
+                               cantidad_opciones=args.opciones,
                                sesion_id=sesion_id, registro=Registro(ruta_registro),
                                motor=MotorGuia(banco, args.politica, args.parametros))
         try:

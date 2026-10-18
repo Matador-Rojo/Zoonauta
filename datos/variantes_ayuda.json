@@ -219,8 +219,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Una opción es la selva tropical. Toca su pictograma.",
-      "texto_voz": "Una opción es la selva tropical. Toca su pictograma.",
+      "texto": "Una opción es la selva tropical. Toca ese lugar.",
+      "texto_voz": "Una opción es la selva tropical. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -249,8 +249,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en la selva tropical. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en la selva tropical. Toca su pictograma.",
+      "texto": "Este animal puede vivir en la selva tropical. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en la selva tropical. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
@@ -519,8 +519,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Una opción es la sabana. Toca su pictograma.",
-      "texto_voz": "Una opción es la sabana. Toca su pictograma.",
+      "texto": "Una opción es la sabana. Toca ese lugar.",
+      "texto_voz": "Una opción es la sabana. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -549,8 +549,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en la sabana. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en la sabana. Toca su pictograma.",
+      "texto": "Este animal puede vivir en la sabana. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en la sabana. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
@@ -819,8 +819,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Una opción es el desierto cálido. Toca su pictograma.",
-      "texto_voz": "Una opción es el desierto cálido. Toca su pictograma.",
+      "texto": "Una opción es el desierto cálido. Toca ese lugar.",
+      "texto_voz": "Una opción es el desierto cálido. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -849,8 +849,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en el desierto cálido. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en el desierto cálido. Toca su pictograma.",
+      "texto": "Este animal puede vivir en el desierto cálido. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en el desierto cálido. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
@@ -1095,8 +1095,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Una opción es el mar. Toca su pictograma.",
-      "texto_voz": "Una opción es el mar. Toca su pictograma.",
+      "texto": "Una opción es el mar. Toca ese lugar.",
+      "texto_voz": "Una opción es el mar. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -1125,8 +1125,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en el mar. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en el mar. Toca su pictograma.",
+      "texto": "Este animal puede vivir en el mar. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en el mar. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
@@ -1383,8 +1383,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Una opción es el bosque templado. Toca su pictograma.",
-      "texto_voz": "Una opción es el bosque templado. Toca su pictograma.",
+      "texto": "Una opción es el bosque templado. Toca ese lugar.",
+      "texto_voz": "Una opción es el bosque templado. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -1413,8 +1413,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en un bosque templado. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en un bosque templado. Toca su pictograma.",
+      "texto": "Este animal puede vivir en un bosque templado. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en un bosque templado. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
@@ -1671,8 +1671,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Una opción es el agua dulce. Toca su pictograma.",
-      "texto_voz": "Una opción es el agua dulce. Toca su pictograma.",
+      "texto": "Una opción es el agua dulce. Toca ese lugar.",
+      "texto_voz": "Una opción es el agua dulce. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -1701,8 +1701,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en un entorno de agua dulce. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en un entorno de agua dulce. Toca su pictograma.",
+      "texto": "Este animal puede vivir en un entorno de agua dulce. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en un entorno de agua dulce. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
@@ -1959,8 +1959,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Las regiones polares son una opción. Toca su pictograma.",
-      "texto_voz": "Las regiones polares son una opción. Toca su pictograma.",
+      "texto": "Las regiones polares son una opción. Toca ese lugar.",
+      "texto_voz": "Las regiones polares son una opción. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -1989,8 +1989,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en regiones polares. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en regiones polares. Toca su pictograma.",
+      "texto": "Este animal puede vivir en regiones polares. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en regiones polares. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
@@ -2235,8 +2235,8 @@
       "nivel": 3,
       "variante_id": "V1",
       "tipo": "DESCRIPCION",
-      "texto": "Una opción es la alta montaña. Toca su pictograma.",
-      "texto_voz": "Una opción es la alta montaña. Toca su pictograma.",
+      "texto": "Una opción es la alta montaña. Toca ese lugar.",
+      "texto_voz": "Una opción es la alta montaña. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "PICTOGRAMA",
@@ -2265,8 +2265,8 @@
       "nivel": 3,
       "variante_id": "V2",
       "tipo": "RELACION",
-      "texto": "Este animal puede vivir en la alta montaña. Toca su pictograma.",
-      "texto_voz": "Este animal puede vivir en la alta montaña. Toca su pictograma.",
+      "texto": "Este animal puede vivir en la alta montaña. Toca ese lugar.",
+      "texto_voz": "Este animal puede vivir en la alta montaña. Toca ese lugar.",
       "pictogramas": [
         {
           "tipo": "SLOT",
