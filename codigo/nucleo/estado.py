@@ -49,6 +49,9 @@ class Estado:
     respuesta_educativa: Respuesta | None = None
     reto_id: str | None = None
     numero_reto: int = 0
+    opciones_habitat: list[str] = field(default_factory=list)
+    elecciones_reto: list[dict] = field(default_factory=list)
+    ayudas_reto: list[dict] = field(default_factory=list)
 
     def serializar(self) -> dict:
         return asdict(self)

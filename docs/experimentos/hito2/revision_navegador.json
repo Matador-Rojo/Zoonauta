@@ -1,0 +1,54 @@
+{
+  "fecha": "2026-10-18",
+  "navegador": "155.0.8059.82",
+  "resultados": [
+    {
+      "idioma": "es",
+      "opciones": 2,
+      "resultado": "OK",
+      "recarga": true,
+      "pausa": true,
+      "apoyo_explicito": true
+    },
+    {
+      "idioma": "es",
+      "opciones": 4,
+      "resultado": "OK",
+      "recarga": true,
+      "pausa": true,
+      "apoyo_explicito": true
+    },
+    {
+      "idioma": "es",
+      "opciones": 8,
+      "resultado": "OK",
+      "recarga": true,
+      "pausa": true,
+      "apoyo_explicito": true
+    },
+    {
+      "idioma": "pt-BR",
+      "opciones": 2,
+      "resultado": "OK",
+      "recarga": true,
+      "pausa": true,
+      "apoyo_explicito": true
+    },
+    {
+      "idioma": "pt-BR",
+      "opciones": 4,
+      "resultado": "OK",
+      "recarga": true,
+      "pausa": true,
+      "apoyo_explicito": true
+    },
+    {
+      "idioma": "pt-BR",
+      "opciones": 8,
+      "resultado": "OK",
+      "recarga": true,
+      "pausa": true,
+      "apoyo_explicito": true
+    }
+  ]
+}

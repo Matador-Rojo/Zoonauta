@@ -27,7 +27,13 @@ ni tarjetas cortadas. Cada tarjeta desaparece a los
 **8 segundos** o se cierra con su **×** circular sobre la esquina superior derecha.
 Créditos visuales, dentro de Preferencias, muestra la versión del programa.
 
-Cada reto presenta el animal, una pregunta y ocho hábitats. Las tarjetas usan paisajes
+En **Preferencias → Hábitats para elegir** se pueden configurar **2, 4 u 8 opciones**
+(ocho por defecto). El educador elige la cantidad antes de comenzar. Cada reto incluye
+el hábitat guía y al menos una alternativa pendiente; los demás se mezclan sin
+duplicados. La respuesta válida no ocupa siempre la misma posición. Las opciones
+permanecen estables al pedir pistas, repetir, pausar o recargar la partida.
+
+Cada reto presenta el animal, una pregunta y los hábitats configurados. Las tarjetas usan paisajes
 realistas generados específicamente para ellas, con composición central, nombre y
 número del **01 al 08**. Las preguntas y pistas conservan sus secuencias de pictogramas,
 con texto de apoyo y lectura en voz alta. Una selección pendiente ofrece una pista
@@ -139,11 +145,20 @@ instalador; los pesos grandes se descargan al preparar el juego. Consulta
 
 ## Inteligencia artificial y revisión
 
-La interfaz carga el modelo sintético contextual R01, congelado, elegido como primera
+La interfaz carga el modelo sintético contextual R01 de
+`docs/experimentos/hito2/entrenamiento/modelos`, congelado, elegido como primera
 réplica y no por su rendimiento. El núcleo comparte las asociaciones y transiciones
 con consola y simulador. Las interacciones manuales se registran sin modificar los
 parámetros del modelo. La selección aleatoria del animal es independiente de la
 política que escoge las pistas. Consola y simulador conservan su orden reproducible.
+
+El agente probabilístico utiliza el historial del reto: tras una selección pendiente,
+prioriza un atributo que distinga el paisaje elegido del hábitat guía. Tras dos
+selecciones pendientes ofrece el apoyo explícito. **Repetir** conserva exactamente
+el mensaje; si después se solicita otra pista, puede reformularlo una vez antes de
+avanzar. En cada nivel prioriza variantes todavía no presentadas en ese reto y evita
+la repetición inmediata cuando hay alternativas. Estas reglas son observables en
+`/revision`; complementan el selector entrenado y no suponen aprendizaje en vivo.
 
 Para revisar y exportar los registros de la sesión, abre
 http://127.0.0.1:8766/revision en el mismo navegador.
@@ -156,22 +171,42 @@ python -m codigo.interfaz.servidor --politica ID3 --puerto 8001
 python -m codigo.interfaz.servidor --politica ROTACION --puerto 8002
 python -m codigo.poc.consola --modalidad AGENTE --retos 2
 python -m codigo.entrenamiento.experimento --salida resultados_nuevos
+python -m codigo.entrenamiento.evaluar_demo --salida resultados_nuevos/demo
+python -m codigo.nucleo.auditoria --salida resultados_nuevos/auditoria.json
 python -m codigo.poc.aceptacion
 python -m unittest discover -s tests -v
 ```
 
-ID3 construye el árbol calculando ganancias. El aprendizaje probabilístico y su
-evaluación separada se realizaron con datos sintéticos: 34 560 retos de entrenamiento
-y 51 840 de evaluación. Los resultados se conservan en `docs/experimentos`.
-La ayuda automática ante selecciones pendientes está activa en la interfaz;
-consola y simulador conservan su protocolo de ayuda explícita.
+ID3 construye el árbol calculando ganancias. La evaluación del protocolo actual
+utilizó datos sintéticos: **34 560 retos de entrenamiento y 155 520 de evaluación**,
+con tres condiciones, seis réplicas y las políticas ID3, rotación y probabilística,
+separadas por tamaño del panel. Las semillas de entrenamiento y evaluación son
+distintas; los parámetros permanecen congelados al evaluar.
+Los resultados y las curvas de evolución se conservan en
+[evaluacion_demo.json](docs/experimentos/hito2/evaluacion_demo.json).
+Las curvas muestran error frente a probabilidades artificiales, cambios entre
+controles y cobertura. No prueban convergencia general ni eficacia educativa.
+El simulador no modela el efecto cognitivo del número de opciones: resultados iguales
+entre tamaños comprueban el flujo, no que los tres tamaños sean igual de accesibles.
+Las ejecuciones anteriores de `docs/experimentos` son antecedentes.
 
-La versión 4.4 pasó 72 pruebas Python, ocho casos de aceptación de consola y
-25 casos de navegador (20 de interfaz y cinco de voces controladas). Comprueban
+La ayuda automática ante selecciones pendientes está activa en la interfaz y en
+`evaluar_demo`. El comando histórico `experimento` usa ayuda explícita salvo que se
+indique `--ayuda-automatica`; admite `--opciones 2`, `4` u `8`. La consola también
+admite `--opciones`. Las 315 relaciones pendientes conservan su estado y no se
+consideran errores. La auditoría comprueba referencias registradas, secuencias y
+traducciones; no sustituye la revisión biológica ni la validación con usuarios.
+
+La revisión del agente pasó **85 pruebas Python**, los ocho casos de aceptación de
+consola y **11 casos actuales de navegador** (seis del modo 2/4/8 en ambos idiomas y
+cinco de voces controladas). La revisión general anterior de 20 casos de interfaz
+se conserva como antecedente; su ejecución completa actual quedó limitada por
+falta de recursos del navegador y no se registra como aprobada. Las pruebas comprueban
 transiciones, repetición, pausa, duplicados, traducciones, transparencia y recorridos
-completos del agente sin repetir los 48 animales. También verifican el cierre en
+completos del agente sin repetir los 48 animales. Las evidencias anteriores verificaron el cierre en
 escritorio y móvil, el progreso real y la pregunta de modalidad solo cuando
-el diálogo está abierto. [Revisión 4.4](docs/interfaz/4.4/revision.json).
+el diálogo está abierto. [Revisión del agente](docs/experimentos/hito2/revision_codigo.json);
+[revisión visual anterior](docs/interfaz/4.4/revision.json).
 Las evidencias anteriores de síntesis real de las 14 voces permanecen en
 `docs/interfaz/revision_voces_locales.json`; no certifican pronunciación o escucha
 en otros dispositivos. Los documentos V1/V2 y sus resultados son antecedentes.

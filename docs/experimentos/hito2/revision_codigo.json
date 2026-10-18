@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-10-18",
+  "alcance": "DEMO_CODIGO_HITO2",
+  "pruebas_python": {
+    "correctas": 85,
+    "resultado": "OK"
+  },
+  "aceptacion_consola": {
+    "correctos": 8,
+    "resultado": "OK"
+  },
+  "navegador_modo_sencillo": {
+    "correctos": 6,
+    "resultado": "OK",
+    "evidencia": "revision_navegador.json"
+  },
+  "navegador_voces_controladas": {
+    "correctos": 5,
+    "resultado": "OK",
+    "evidencia": "revision_voces.json"
+  },
+  "regresion_general_anterior": {
+    "resultado": "NO_COMPLETADA",
+    "motivo": "El navegador devolvió net::ERR_INSUFFICIENT_RESOURCES durante la ejecución completa. No se registra como aprobada."
+  },
+  "datos_sinteticos": true,
+  "evaluacion_con_usuarios": false,
+  "convergencia_demostrada": false,
+  "modelo_demo": "entrenamiento/modelos/SIM_CONTEXTUAL_R01.json",
+  "criterio_modelo_demo": "Primera réplica contextual, sin selección por rendimiento. Parámetros congelados.",
+  "retos_entrenamiento": 34560,
+  "retos_evaluacion": 155520,
+  "auditoria": "auditoria_banco.json",
+  "modelos_conservados": 18
+}

@@ -16,19 +16,19 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 | Búsqueda | Filtra los 48 animales por nombre, sin distinguir mayúsculas o tildes. |
 | Páginas | Anteriores y Siguientes recorren los resultados sin modificar el reto ni el progreso. Buscar vuelve a la primera página; pausar y reanudar conservan la página. |
 | Pictogramas educativos | Preguntas, pistas, tarjetas y retratos usan las mismas caricaturas originales transparentes. Los apoyos siguen el estilo de la capibara aprobada; los hábitats tienen paisaje, nombre y número 01–08. |
-| Reto | Muestra el animal, la pregunta o pista y los ocho hábitats. |
+| Reto | Muestra el animal, la pregunta o pista y 2, 4 u 8 hábitats según Preferencias. |
 | Progreso | Indica retos completados mediante texto y una barra accesible. |
-| Pista | Solicita una nueva pista: niveles 1, 2 y 3; después conserva 3. |
+| Pista | Solicita una nueva pista. El modelo probabilístico considera la elección y las ayudas anteriores; ID3 y rotación conservan la secuencia base. |
 | Repetir | Recupera la misma respuesta educativa, su secuencia y su texto de voz. |
 | Pausar y reanudar | Suspende la interacción, detiene la voz y conserva el reto. |
 | Selección confirmada | Acepta cualquiera de los hábitats confirmados del animal. |
 | Selección pendiente | Da una respuesta neutral con una nueva pista automática, sin penalización; conserva el reto y permite repetir esa pista. |
 | Continuar | Abre otro reto o presenta el cierre cuando se completó N. |
-| Preferencias | Disponible solo en la portada: permite N entre 1 y 48 antes del inicio, idioma, voz y velocidad. |
+| Preferencias | Disponible solo en la portada: permite N entre 1 y 48, 2/4/8 hábitats antes del inicio, idioma, voz y velocidad. |
 | Avisos | Tarjetas de hasta 260 px con fondo oscuro y borde por tipo. Hasta tres visibles, menos si falta altura; las nuevas se añaden abajo y se retiran las más antiguas, sin scroll ni recortes. Cada una dura ocho segundos y tiene una × circular sobre la esquina, accesible por teclado. Comenzar valida un entero del 1 al 48 antes de abrir modalidad. |
 | Revisión técnica | Página aparte con modelo, estado, decisiones y exportación JSON. |
 
-Los ocho hábitats permanecen en los retos activos. Tras resolver se ven desactivados
+Las opciones elegidas al preparar el reto permanecen estables en los retos activos. Tras resolver se ven desactivados
 para evitar completar dos veces. La pausa ofrece Reanudar y Salir. No hay puntos
 competitivos, reloj ni tope de ayudas para jugar.
 
@@ -311,3 +311,22 @@ genera en el equipo mediante Piper y Kokoro. Se comprobaron WAV reales de las
 14 opciones; la calidad audible en el equipo del usuario requiere escucharlas.
 La comprensión CAA y la eficacia pedagógica requieren evaluación con usuarios;
 los experimentos de aprendizaje siguen siendo exclusivamente sintéticos.
+
+## Historial del reto y evaluación del agente
+
+En la política probabilística, la primera selección pendiente orienta una pista hacia
+un atributo que distinga esa elección del hábitat guía. Tras dos selecciones
+pendientes se presenta una opción explícita. Repetir conserva el contenido; una
+nueva petición después de repetir puede ofrecer otra formulación antes de avanzar.
+Se priorizan variantes no vistas en ese nivel del reto y se conserva el historial
+al pausar o recargar. El historial se limpia al continuar a otro reto.
+
+El panel reducido incluye el hábitat guía y una alternativa pendiente. El núcleo
+rechaza selecciones de tarjetas no visibles. Cambiar la cantidad solo se permite
+al iniciar una partida; el educador decide el apoyo, sin reducir opciones automáticamente.
+
+`python -m codigo.entrenamiento.evaluar_demo --salida resultados_nuevos/demo`
+entrena con semillas separadas y compara las tres políticas en los tres tamaños.
+Los resultados son sintéticos; las curvas de evolución y su cobertura no prueban
+convergencia general ni comprensión humana. `python -m codigo.nucleo.auditoria`
+comprueba referencias y coherencia de las secuencias sin cambiar relaciones pendientes.

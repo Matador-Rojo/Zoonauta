@@ -100,6 +100,7 @@ def simular(banco: BancoDatos, motor: MotorGuia, condicion: dict, *, retos: int,
     registro = RegistroExperimento(condicion, identificador, modelo, archivo)
     contador = Counter()
     ayudas_completados = []
+    turnos_completados = []
     historia = []
     orden = banco.configuracion["orden_animales"]
     gestor = None
@@ -107,14 +108,19 @@ def simular(banco: BancoDatos, motor: MotorGuia, condicion: dict, *, retos: int,
     numero_evento = 0
     huella_antes = tuple(motor.parametros.items())
     max_ayudas = configuracion["max_ayudas_solo_simulador"]
+    turnos_en_reto = 0
+    parametros_previos = {k: v.media for k, v in motor.parametros.items()}
 
     def enviar(tipo: str, *, interno: bool = False, **payload):
-        nonlocal numero_evento
+        nonlocal numero_evento, turnos_en_reto
         numero_evento += 1
         salida = gestor.procesar(gestor.crear_evento(tipo, interno=interno,
                    evento_id=f"{identificador}-EV{numero_evento:08d}", **payload))
         if not salida.aceptada:
             raise AssertionError(f"El simulador emitió una acción inválida: {tipo}, {salida.motivo}.")
+        if tipo in ("ayuda", "seleccionar_habitat"):
+            contador["turnos_decision"] += 1
+            turnos_en_reto += 1
         return salida
 
     for trial in range(retos):
@@ -123,10 +129,14 @@ def simular(banco: BancoDatos, motor: MotorGuia, condicion: dict, *, retos: int,
             numero_sesion += 1
             gestor = GestorPartida(banco, 48, motor.politica, origen=origen,
                 sesion_id=f"{identificador}-S{numero_sesion:05d}", registro=registro,
-                motor=motor, traza_completa=False)
+                motor=motor, traza_completa=False,
+                cantidad_opciones=configuracion.get("cantidad_opciones", 8),
+                ayuda_en_pendiente=configuracion.get("ayuda_en_pendiente", False))
             modalidad = "JUGADOR" if numero_sesion % 2 else "AGENTE"
             enviar("iniciar", modalidad=modalidad)
         animal_id = orden[trial % len(orden)]
+        gestor.semilla_opciones = f"{semilla}:{trial}"
+        turnos_en_reto = 0
         if gestor.estado.modalidad == "JUGADOR":
             enviar("elegir_animal", animal_id=animal_id)
         else:
@@ -159,23 +169,31 @@ def simular(banco: BancoDatos, motor: MotorGuia, condicion: dict, *, retos: int,
                 contador["salidas_voluntarias"] += 1
                 break
             if suerte_tipo < p_salida + p_pendiente:
-                pendiente = next(h for h in banco.habitats if banco.evaluar(animal_id, h)["estado"] == "PENDIENTE")
+                pendiente = next(h for h in gestor.estado.opciones_habitat
+                                 if banco.evaluar(animal_id, h)["estado"] == "PENDIENTE")
+                if gestor.ayuda_en_pendiente and ayudas_en_reto >= max_ayudas:
+                    enviar("salir")
+                    contador["cortes_simulador"] += 1
+                    break
                 enviar("seleccionar_habitat", habitat_id=pendiente)
                 contador["selecciones_pendientes"] += 1
                 if ayudas_en_reto >= max_ayudas:
                     enviar("salir")
                     contador["cortes_simulador"] += 1
                     break
-                enviar("ayuda")
+                if not gestor.ayuda_en_pendiente:
+                    enviar("ayuda")
                 ayudas_en_reto += 1
                 continue
             y = int(uniforme(semilla, trial, indice, "resultado_etiquetado") < probs[v])
             if y == 1:
-                validos = banco.animales[animal_id]["habitats_confirmados"]
+                validos = [h for h in gestor.estado.opciones_habitat
+                           if banco.evaluar(animal_id, h)["estado"] == "VALIDA"]
                 indice_valido = int(uniforme(semilla, trial, indice, "habitat_valido") * len(validos))
                 enviar("seleccionar_habitat", habitat_id=validos[indice_valido])
                 contador["retos_completados"] += 1
                 ayudas_completados.append(ayudas_en_reto)
+                turnos_completados.append(turnos_en_reto)
                 enviar("continuar")
                 break
             if ayudas_en_reto >= max_ayudas:
@@ -189,8 +207,13 @@ def simular(banco: BancoDatos, motor: MotorGuia, condicion: dict, *, retos: int,
             errores = []
             for (h, l, b, variante), beta in modelo.valores.items():
                 errores.append(abs(beta.media - condicion["probabilidades"][f"b{b}"][variante]))
+            cambios = [abs(v.media - parametros_previos[k]) for k, v in modelo.valores.items()]
             historia.append({"retos_entrenados": trial + 1, "actualizaciones": modelo.actualizaciones,
-                             "error_absoluto_medio_144_parametros": mean(errores)})
+                "error_absoluto_medio_144_parametros": mean(errores),
+                "cambio_medio_desde_control_anterior": mean(cambios),
+                "cambio_maximo_desde_control_anterior": max(cambios),
+                "distribuciones_con_10_etiquetas": sum(sum(c) >= 10 for c in modelo.conteos.values())})
+            parametros_previos = {k: v.media for k, v in modelo.valores.items()}
         # El gestor conserva los últimos cierres; el registro ya los procesó y guardó.
         gestor.observaciones_cerradas.clear()
     if gestor.estado.fase not in TERMINALES:
@@ -206,11 +229,14 @@ def simular(banco: BancoDatos, motor: MotorGuia, condicion: dict, *, retos: int,
     oportunidades = registro.totales["oportunidades_repeticion_automatica"]
     return {"experimento_id": identificador, "origen": origen, "condicion": condicion["id"],
         "politica": motor.politica, "semilla_entorno": semilla, "retos_iniciados": retos,
+        "cantidad_opciones": gestor.cantidad_opciones,
+        "ayuda_en_pendiente": gestor.ayuda_en_pendiente,
         **dict(contador), **dict(registro.totales), "etiquetadas": etiquetadas,
         "tasa_y1_etiquetadas": registro.totales["y1"] / etiquetadas if etiquetadas else None,
         "proporcion_sin_etiqueta": registro.totales["sin_etiqueta"] / total if total else None,
         "proporcion_retos_completados": contador["retos_completados"] / retos,
         "ayudas_por_reto_completado": mean(ayudas_completados) if ayudas_completados else None,
+        "turnos_decision_por_reto_completado": mean(turnos_completados) if turnos_completados else None,
         "ayudas_por_reto_iniciado": registro.totales["ayudas"] / retos,
         "tasa_repeticion_automatica": registro.totales["repeticiones_automaticas"] / oportunidades if oportunidades else None,
         "tiempo_decision_medio_us": mean(registro.tiempos_ns) / 1000,

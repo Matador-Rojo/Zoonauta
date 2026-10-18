@@ -82,7 +82,7 @@ class MotorGuia:
                 and r["habilitada_poc_texto"]}
 
     def decidir(self, habitat_id: str, nivel: int, repeticion: int,
-                anteriores: dict[str, str]) -> tuple[dict, str, dict]:
+                anteriores: dict[str, str], *, usadas: list[str] | None = None) -> tuple[dict, str, dict]:
         comienzo = perf_counter_ns()
         disponibles = self.disponibles(habitat_id, nivel)
         orden = sorted(disponibles)
@@ -90,6 +90,9 @@ class MotorGuia:
         elegibles = ([v for v in orden if v != anterior]
                      if len(orden) > 1 and anterior in orden and self.politica != "ID3"
                      else orden)
+        no_vistas = [v for v in elegibles if v not in (usadas or [])]
+        if self.politica == "PROBABILISTICO" and no_vistas:
+            elegibles = no_vistas
         probabilidades = {v: self.parametros[(habitat_id, nivel, repeticion, v)].media
                           for v in elegibles}
         if self.politica == "ID3":
@@ -103,6 +106,7 @@ class MotorGuia:
                  "contexto": {"habitat_guia_id": habitat_id, "nivel": nivel,
                               "repeticion_previa": repeticion},
                  "variante_elegida": elegida, "variante_anterior": anterior,
+                 "variantes_usadas_reto": list(usadas or []),
                  "variantes_elegibles": elegibles, "estimaciones": probabilidades,
                  "exclusion_por_variedad": anterior if anterior in orden and anterior not in elegibles
                                           and self.politica != "ID3" else None,

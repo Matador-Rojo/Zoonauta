@@ -171,7 +171,7 @@ class PruebasNucleo(unittest.TestCase):
     def test_politicas_y_parametros_congelados(self):
         for politica, esperado in [("ID3", ["V1", "V1", "V1", "V1"]),
                                    ("ROTACION", ["V1", "V2", "V3", "V1"]),
-                                   ("PROBABILISTICO", ["V1", "V2", "V1", "V2"])]:
+                                   ("PROBABILISTICO", ["V1", "V2", "V3", "V1"])]:
             with self.subTest(politica=politica):
                 g = self.partida(politica=politica)
                 iniciales = dict(g.motor.parametros)

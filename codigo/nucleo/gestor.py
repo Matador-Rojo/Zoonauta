@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 from dataclasses import asdict
+from random import Random
 from uuid import uuid4
 
 from codigo.motores.guia import MotorGuia
@@ -17,8 +19,13 @@ class GestorPartida:
                  orden_escenarios: list[str] | None = None, origen: str = "CONSOLA_MANUAL",
                  sesion_id: str | None = None, registro: Registro | None = None,
                  motor: MotorGuia | None = None, traza_completa: bool = True,
-                 ayuda_en_pendiente: bool = False):
+                 ayuda_en_pendiente: bool = False, cantidad_opciones: int = 8,
+                 semilla_opciones: int | str | None = None):
         self.banco = banco
+        if type(cantidad_opciones) is not int or cantidad_opciones not in (2, 4, 8):
+            raise ValueError("Selecciona 2, 4 u 8 hábitats.")
+        self.cantidad_opciones = cantidad_opciones
+        self.semilla_opciones = semilla_opciones
         self.N = banco.configuracion["retos_por_partida"] if retos is None else retos
         if type(self.N) is not int or not 1 <= self.N <= 48:
             raise ValueError("La cantidad de retos debe ser un entero entre 1 y 48.")
@@ -90,6 +97,10 @@ class GestorPartida:
             return "ACCION_NO_PERMITIDA"
         if tipo == "iniciar" and evento.payload.get("modalidad") not in {"AGENTE", "JUGADOR"}:
             return "MODALIDAD_DESCONOCIDA"
+        if tipo == "iniciar":
+            opciones = evento.payload.get("cantidad_opciones", self.cantidad_opciones)
+            if type(opciones) is not int or opciones not in (2, 4, 8):
+                return "CANTIDAD_OPCIONES_INVALIDA"
         if tipo == "elegir_animal" and evento.payload.get("animal_id") not in self.banco.animales:
             return "ANIMAL_DESCONOCIDO"
         if tipo == "generar_reto":
@@ -98,6 +109,8 @@ class GestorPartida:
                 return "ANIMAL_DESCONOCIDO"
         if tipo == "seleccionar_habitat" and evento.payload.get("habitat_id") not in self.banco.habitats:
             return "HABITAT_DESCONOCIDO"
+        if tipo == "seleccionar_habitat" and evento.payload["habitat_id"] not in self.estado.opciones_habitat:
+            return "HABITAT_NO_VISIBLE"
         return None
 
     def procesar(self, evento: Evento) -> Salida:
@@ -114,6 +127,7 @@ class GestorPartida:
         respuesta = None
         traza = None
         if tipo == "iniciar":
+            self.cantidad_opciones = evento.payload.get("cantidad_opciones", self.cantidad_opciones)
             s.modalidad = evento.payload["modalidad"]
             s.fase = "SELECCION_ANIMAL"
             if s.modalidad == "JUGADOR":
@@ -132,6 +146,7 @@ class GestorPartida:
             habitat_id = evento.payload["habitat_id"]
             asociacion = self.banco.evaluar(s.animal_id, habitat_id)
             resultado = asociacion["estado"]
+            s.elecciones_reto.append({"habitat_id": habitat_id, "resultado": resultado})
             if resultado == "VALIDA":
                 respuesta = self.generador.mensaje("MSG_VALIDA", s.animal_id, habitat_id,
                                                    asociacion["contexto"])
@@ -201,6 +216,9 @@ class GestorPartida:
         s.repeticion_previa = 0
         s.observacion = None
         s.reto_id = None
+        s.opciones_habitat = []
+        s.elecciones_reto = []
+        s.ayudas_reto = []
 
     def _preparar(self, animal_id: str) -> None:
         s = self.estado
@@ -211,23 +229,61 @@ class GestorPartida:
         s.nodo_id = self.motor.arbol.raiz.id
         s.numero_reto += 1
         s.reto_id = f"{self.sesion_id}-R{s.numero_reto:02d}"
+        orden = list(self.banco.configuracion["orden_habitats"])
+        if self.cantidad_opciones < 8:
+            clave = s.reto_id if self.semilla_opciones is None else f"{self.semilla_opciones}:{animal_id}"
+            semilla = int.from_bytes(hashlib.sha256(clave.encode()).digest()[:8], "big")
+            azar = Random(semilla)
+            pendientes = [h for h in orden if self.banco.evaluar(animal_id, h)["estado"] == "PENDIENTE"]
+            contraste = azar.choice(pendientes)
+            orden = [s.habitat_guia_id, contraste] + azar.sample(
+                [h for h in orden if h not in (s.habitat_guia_id, contraste)], self.cantidad_opciones - 2)
+            azar.shuffle(orden)
+        s.opciones_habitat = orden
         s.fase = "PRESENTACION"
+
+    def _nivel_ayuda(self, motivo: str) -> tuple[int, str]:
+        s = self.estado
+        siguiente = min(s.nivel + 1, 3)
+        if self.motor.politica != "PROBABILISTICO":
+            return siguiente, "SECUENCIA_BASE"
+        pendientes = [e for e in s.elecciones_reto if e["resultado"] != "VALIDA"]
+        if motivo.startswith("SELECCION_") and pendientes:
+            if len(pendientes) >= 2:
+                return 3, "APOYO_EXPLICITO_TRAS_VARIAS_ELECCIONES"
+            perfil = self.banco.perfiles[pendientes[-1]["habitat_id"]]["atributos"]
+            for indice, paso in enumerate(self.motor.rutas[s.habitat_guia_id], 1):
+                if perfil[paso["nombre"]] != paso["valor"]:
+                    return max(siguiente, indice), "ATRIBUTO_QUE_DISTINGUE_LA_ELECCION"
+            return 3, "APOYO_EXPLICITO"
+        usadas = {a["variante_id"] for a in s.ayudas_reto if a["nivel"] == s.nivel}
+        # Repetir conserva exactamente el mensaje. Una nueva petición posterior
+        # ofrece otra formulación antes de añadir más información.
+        if s.repeticion_previa and s.nivel in (1, 2) and len(usadas) == 1:
+            return s.nivel, "REFORMULAR_TRAS_REPETICION"
+        return siguiente, "APOYO_PROGRESIVO"
 
     def _ayuda(self, evento: Evento, motivo_cierre: str,
                prefijo: Respuesta | None = None,
                resultado_cierre: int | None = 0) -> tuple[Respuesta, dict]:
         s = self.estado
-        nivel = min(s.nivel + 1, 3)
+        nivel, motivo_nivel = self._nivel_ayuda(motivo_cierre)
         # Cerrar primero permite que el entrenamiento externo incorpore y=0
         # antes de elegir la nueva variante. La evaluación no actualiza parámetros.
         self._cerrar_observacion(resultado_cierre, motivo_cierre, evento)
+        usadas = [a["variante_id"] for a in s.ayudas_reto if a["nivel"] == nivel]
         plantilla, nodo_id, traza = self.motor.decidir(s.habitat_guia_id, nivel,
-                                                       s.repeticion_previa, s.variantes_anteriores)
+            s.repeticion_previa, s.variantes_anteriores, usadas=usadas)
+        traza["adaptacion_reto"] = {"regla": motivo_nivel,
+            "elecciones": copy.deepcopy(s.elecciones_reto), "nivel_anterior": s.nivel,
+            "nivel_elegido": nivel, "cantidad_opciones": self.cantidad_opciones}
         respuesta = self.generador.ayuda(plantilla, s.animal_id, prefijo)
         s.nivel = nivel
         s.nodo_id = nodo_id
         self._guardar_contenido(respuesta)
         s.variantes_anteriores[f"{s.habitat_guia_id}:{nivel}"] = plantilla["variante_id"]
+        s.ayudas_reto.append({"contenido_id": plantilla["id"], "nivel": nivel,
+                              "variante_id": plantilla["variante_id"]})
         self._numero_observacion += 1
         s.observacion = {
             "observacion_id": f"{self.sesion_id}-O{self._numero_observacion:03d}",
@@ -288,6 +344,10 @@ class GestorPartida:
                    and s.habitat_seleccionado_id is None and s.u is None and s.reto_id is None,
                    "Selección contiene datos de un reto anterior.")
         if efectiva in {"PRESENTACION", "ESPERANDO_RESPUESTA", "RETO_RESUELTO"}:
+            exigir(len(s.opciones_habitat) == self.cantidad_opciones
+                   and len(set(s.opciones_habitat)) == self.cantidad_opciones
+                   and s.habitat_guia_id in s.opciones_habitat,
+                   "Las opciones deben ser únicas e incluir el hábitat guía.")
             exigir(s.animal_id in self.banco.animales and s.reto_id is not None, "Reto sin animal o ID.")
             exigir(s.habitat_guia_id == self.banco.animales[s.animal_id]["habitat_referencia_id"],
                    "Guía no corresponde al animal.")
@@ -317,7 +377,8 @@ class GestorPartida:
                                       for a in self.banco.configuracion["orden_animales"]],
                 "opciones_habitat": [{"id": h, "nombre": self.banco.habitats[h]["nombre"],
                                       "pictograma_id": self.banco.habitats[h]["pictograma_id"]}
-                                     for h in self.banco.configuracion["orden_habitats"]],
+                                     for h in (s.opciones_habitat or self.banco.configuracion["orden_habitats"])],
+                "cantidad_opciones": self.cantidad_opciones,
                 "seleccion_habilitada": s.fase == "ESPERANDO_RESPUESTA",
                 "progreso": {"completados": s.completados, "total": self.N},
                 "controles_disponibles": self.controles(),
