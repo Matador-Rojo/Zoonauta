@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
   "fecha": "2026-10-18",
-  "alcance": "DEMO_CODIGO_HITO2",
+  "alcance": "VERIFICACION_LOCAL_DEMO_HITO2",
   "pruebas_python": {
-    "correctas": 85,
+    "correctas": 96,
     "resultado": "OK"
   },
   "aceptacion_consola": {
@@ -20,17 +20,27 @@
     "resultado": "OK",
     "evidencia": "revision_voces.json"
   },
-  "regresion_general_anterior": {
-    "resultado": "NO_COMPLETADA",
-    "motivo": "El navegador devolvió net::ERR_INSUFFICIENT_RESOURCES durante la ejecución completa. No se registra como aprobada."
-  },
   "datos_sinteticos": true,
   "evaluacion_con_usuarios": false,
   "convergencia_demostrada": false,
   "modelo_demo": "entrenamiento/modelos/SIM_CONTEXTUAL_R01.json",
   "criterio_modelo_demo": "Primera réplica contextual, sin selección por rendimiento. Parámetros congelados.",
-  "retos_entrenamiento": 34560,
+  "retos_entrenamiento": 276480,
   "retos_evaluacion": 155520,
   "auditoria": "auditoria_banco.json",
-  "modelos_conservados": 18
+  "modelos_conservados": 18,
+  "regresion_general": {
+    "correctos": 20,
+    "resultado": "OK",
+    "evidencia": "revision_general.json",
+    "gestion_recursos": "Contextos cerrados entre escenarios; se conservan sus cookies y las mismas comprobaciones."
+  },
+  "diagnostico_entrenamiento": "diagnostico_entrenamiento.json",
+  "copia_descargada": {
+    "resultado": "OK",
+    "partidas": 6,
+    "commit": "719d6739c33ca77d55808e406eec44fd64943550",
+    "evidencia": "revision_copia_descarga.json"
+  },
+  "publicado_en_github": false
 }

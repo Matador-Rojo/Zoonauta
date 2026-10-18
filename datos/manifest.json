@@ -68,11 +68,11 @@
   ],
   "estado": "INTERFAZ_BILINGUE_Y_VOCES_LOCALES_PIPER_KOKORO_IMPLEMENTADAS",
   "validacion": {
-    "pruebas_automaticas_correctas": 85,
+    "pruebas_automaticas_correctas": 96,
     "casos_aceptacion_correctos": 8,
     "aprendizaje_bayesiano_ejecutado": true,
     "modelos_aprendidos": 18,
-    "retos_entrenamiento": 34560,
+    "retos_entrenamiento": 276480,
     "retos_evaluacion": 155520,
     "revision_registros": {
       "resultado": "CORRECTO",
@@ -86,7 +86,7 @@
       "alcance": "Antecedente de la comparación sintética anterior; no corresponde a la evaluación actual del demo."
     },
     "evaluacion_con_jugadores": false,
-    "casos_navegador_correctos": 11,
+    "casos_navegador_correctos": 31,
     "validacion_caa_con_usuarios": false,
     "voz_prueba": "SINTESIS_REAL_14_VOCES_Y_REPRODUCTOR_NATIVO_2_IDIOMAS",
     "audio_audible_en_dispositivo_usuario_verificado": false,
@@ -126,7 +126,9 @@
     "historial_reto_y_reformulacion_verificados": true,
     "evaluacion_demo_parametros_congelados": true,
     "convergencia_demostrada": false,
-    "regresion_general_actual": "NO_COMPLETADA_RECURSOS_NAVEGADOR"
+    "regresion_general_actual": "CORRECTA_20_CASOS",
+    "distribuciones_sin_observaciones": 0,
+    "diagnostico_entrenamiento": "docs/experimentos/hito2/diagnostico_entrenamiento.json"
   },
   "archivos": [
     {
@@ -141,8 +143,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 13871,
-      "sha256": "7631ff1e669f1b3a8e1196043b074b3a43e291f682e50951c11aecfdf792dbc4"
+      "bytes": 15323,
+      "sha256": "5b48c7e258156195b1a7bae117a73ae21ad7a831052fa40315690d588c2eff06"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -690,6 +692,11 @@
       "sha256": "f7aa48420ae40d29cd481ee02b71f83d100473e5ace417898d1ed7ac18a01105"
     },
     {
+      "ruta": "codigo/entrenamiento/diagnosticar.py",
+      "bytes": 5926,
+      "sha256": "ef1cdeb24c3ca47c01e99a851d9b37f793a1edbe13bf250dbc6ceb88ba3cd8d4"
+    },
+    {
       "ruta": "codigo/entrenamiento/evaluar_demo.py",
       "bytes": 6327,
       "sha256": "710e6f9ceea8bb2b6e75b756a9f66a75b33d7bffcbd6e79de8fbf173a01d4bad"
@@ -883,6 +890,11 @@
       "ruta": "codigo/nucleo/registro.py",
       "bytes": 713,
       "sha256": "538bd6636d843f7d8bd16b804825cb6ec84e534a629824862341ee3b34571e1d"
+    },
+    {
+      "ruta": "codigo/nucleo/verificar_paquete.py",
+      "bytes": 2548,
+      "sha256": "846e52610d1a022d9baac1dbab2215a2e0c1dc2a10c2c35146b8d3012dc10047"
     },
     {
       "ruta": "codigo/poc/__init__.py",
@@ -1450,109 +1462,219 @@
       "sha256": "78f67c8de29fdbc8757b8e2a1d185fb7b3251e4b560edb32f79c0e57ce4c5878"
     },
     {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_CONTEXTUAL_R01.json",
+      "bytes": 40762,
+      "sha256": "7391cd3896ff71224fe825c792492dd7ab456371164a7289588f6d129bf8c721"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_CONTEXTUAL_R02.json",
+      "bytes": 40768,
+      "sha256": "2bcea387eb171024a07ec7910db7d8afe03e4a00e268e2a065c4893e33085f08"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_CONTEXTUAL_R03.json",
+      "bytes": 40776,
+      "sha256": "bc25ff8727c1072b5f18fbb3bd4016465158ad8c3fd6ae54e8b6f4bec04e7425"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_CONTEXTUAL_R04.json",
+      "bytes": 40770,
+      "sha256": "508b2c86269bc66b71bc926bfcc336e7c0e739695df9349cee9ac73db1f1bb86"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_CONTEXTUAL_R05.json",
+      "bytes": 40756,
+      "sha256": "b7baea531b3b0c59e9010cf77a903dd5213eba4d01d28e23fde1ecbf7ef29830"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_CONTEXTUAL_R06.json",
+      "bytes": 40760,
+      "sha256": "21565cd57ef04665afcaa36f9f10896f99ff3f6e9ccb7e54430a1e76288681dd"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_DIFERENCIAS_R01.json",
+      "bytes": 40801,
+      "sha256": "7ceed6f74d8ad50d34db9d399789b5a95cb6bc6f4bc10666f51bd28f67fab2fa"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_DIFERENCIAS_R02.json",
+      "bytes": 40793,
+      "sha256": "de78974ef88785d5847cf0765ce9f53916f708a41c866e8eba8831419557c7ec"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_DIFERENCIAS_R03.json",
+      "bytes": 40787,
+      "sha256": "ec6ceb00cd915517d512795d98f775a62948cd9023a596adc749c089d7c7101c"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_DIFERENCIAS_R04.json",
+      "bytes": 40800,
+      "sha256": "7283a049a3e2d29b81d71c7540c174efd7b2dca1412bccdd072f25965aa18d3b"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_DIFERENCIAS_R05.json",
+      "bytes": 40762,
+      "sha256": "3cce1a8cd89479befc228c611bcfd59bac385503f4329d342cddc11acfb9921c"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_DIFERENCIAS_R06.json",
+      "bytes": 40799,
+      "sha256": "1b374b7c19e4ac2f647983ecf4aa02158226840bc02309055792a6921f0bd5fb"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_UNIFORME_R01.json",
+      "bytes": 40812,
+      "sha256": "694c02d02732e3d3776293b51d9c492c50925b6c2453b565dbaf371d13bcc61d"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_UNIFORME_R02.json",
+      "bytes": 40815,
+      "sha256": "013b906aa5f13a17d25c3d0420301255b78e3d7f28afbd7dc6b9af96a35a8bca"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_UNIFORME_R03.json",
+      "bytes": 40818,
+      "sha256": "315ec9f44ac3b1b34a2a986f89d65d3b82bd57165de6eb1020929ee918a492a5"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_UNIFORME_R04.json",
+      "bytes": 40800,
+      "sha256": "5836d397023b29138b9c540919008856d3ef836ee963687e47689c05cbc88d23"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_UNIFORME_R05.json",
+      "bytes": 40807,
+      "sha256": "b18c455ee3521c9fd643c5b52a8463c636e82a5fcf7edd1e582c9ec30746efc9"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/entrenamiento/modelos/SIM_UNIFORME_R06.json",
+      "bytes": 40806,
+      "sha256": "230cf00a6d2b8042306b3b92a425783663097aec7184d7fefe122f34e34acaab"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/antecedentes_1920/evaluacion_demo.json",
+      "bytes": 111323,
+      "sha256": "e76a6dcad10586f07ab5e909a8d3b258f523c314045fd2e5391bd6d80afe90ae"
+    },
+    {
       "ruta": "docs/experimentos/hito2/auditoria_banco.json",
       "bytes": 428,
       "sha256": "4644ff6aca135ca12308ba2232ef1cfee912de96fd2fff7d2c4316942a56fd8d"
     },
     {
+      "ruta": "docs/experimentos/hito2/diagnostico_entrenamiento.json",
+      "bytes": 28277,
+      "sha256": "b771435d7a2fe97f70ad979fd70b87d826d2b6b09820670f392046f3b4b40db6"
+    },
+    {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R01.json",
-      "bytes": 40762,
-      "sha256": "7391cd3896ff71224fe825c792492dd7ab456371164a7289588f6d129bf8c721"
+      "bytes": 41328,
+      "sha256": "f792ac10b005641c1add43c61d73bf24a6ec0b43237ee8633f3568ea3a7933ab"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R02.json",
-      "bytes": 40768,
-      "sha256": "2bcea387eb171024a07ec7910db7d8afe03e4a00e268e2a065c4893e33085f08"
+      "bytes": 41337,
+      "sha256": "af80eb65ecec3e58168c02460c2f41b3db9df7da62ba0ed604a11d7dda245d3f"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R03.json",
-      "bytes": 40776,
-      "sha256": "bc25ff8727c1072b5f18fbb3bd4016465158ad8c3fd6ae54e8b6f4bec04e7425"
+      "bytes": 41294,
+      "sha256": "6c8a4a868556b2b9ae5bd209029aee7434fcf288d3cfc69fb83dd175f8e9b50d"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R04.json",
-      "bytes": 40770,
-      "sha256": "508b2c86269bc66b71bc926bfcc336e7c0e739695df9349cee9ac73db1f1bb86"
+      "bytes": 41298,
+      "sha256": "57da611b7ae571a7d9fd32b7945831bbe78c446218356d584ef55d756c288e8a"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R05.json",
-      "bytes": 40756,
-      "sha256": "b7baea531b3b0c59e9010cf77a903dd5213eba4d01d28e23fde1ecbf7ef29830"
+      "bytes": 41310,
+      "sha256": "2da489b802f7038c4228406dcede933ab26670f69a8096dc9258952a1c047040"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R06.json",
-      "bytes": 40760,
-      "sha256": "21565cd57ef04665afcaa36f9f10896f99ff3f6e9ccb7e54430a1e76288681dd"
+      "bytes": 41301,
+      "sha256": "8b1c8668fc4d7e7fe0ff11307cdc9770110f68c7046131cd53ec40702a967867"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_DIFERENCIAS_R01.json",
-      "bytes": 40801,
-      "sha256": "7ceed6f74d8ad50d34db9d399789b5a95cb6bc6f4bc10666f51bd28f67fab2fa"
+      "bytes": 41344,
+      "sha256": "4cb71263da8fe4036d2aea42218aefed1e5e37836dec23a38caafa546f6d1a56"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_DIFERENCIAS_R02.json",
-      "bytes": 40793,
-      "sha256": "de78974ef88785d5847cf0765ce9f53916f708a41c866e8eba8831419557c7ec"
+      "bytes": 41343,
+      "sha256": "54794b64a1a7ceb1a4f57b2489d08bfb828c5b47df980f83dfeab7d3ccc9d2f0"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_DIFERENCIAS_R03.json",
-      "bytes": 40787,
-      "sha256": "ec6ceb00cd915517d512795d98f775a62948cd9023a596adc749c089d7c7101c"
+      "bytes": 41312,
+      "sha256": "a8aad1a34b749f919ae7deed60946867686d8a3b544dcfaef5f4da61df8929da"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_DIFERENCIAS_R04.json",
-      "bytes": 40800,
-      "sha256": "7283a049a3e2d29b81d71c7540c174efd7b2dca1412bccdd072f25965aa18d3b"
+      "bytes": 41334,
+      "sha256": "e3e9dd55d1ef4b15ae6fd7824501c0cf85d20e9e12d8b078a5aa8392877fa190"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_DIFERENCIAS_R05.json",
-      "bytes": 40762,
-      "sha256": "3cce1a8cd89479befc228c611bcfd59bac385503f4329d342cddc11acfb9921c"
+      "bytes": 41313,
+      "sha256": "1a9b144c746082252d15e87d49604bea8bb189a6e7fc9607b04b7189643cf3ac"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_DIFERENCIAS_R06.json",
-      "bytes": 40799,
-      "sha256": "1b374b7c19e4ac2f647983ecf4aa02158226840bc02309055792a6921f0bd5fb"
+      "bytes": 41341,
+      "sha256": "d09c27934728ebd03242bcb7908ed8c6890ae92a40246898cdb6b0a26a9b9d62"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_UNIFORME_R01.json",
-      "bytes": 40812,
-      "sha256": "694c02d02732e3d3776293b51d9c492c50925b6c2453b565dbaf371d13bcc61d"
+      "bytes": 41420,
+      "sha256": "1ca7500b02f6fe12f5a53d7966e556669ab5cff026fee544d68620f4426ccafd"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_UNIFORME_R02.json",
-      "bytes": 40815,
-      "sha256": "013b906aa5f13a17d25c3d0420301255b78e3d7f28afbd7dc6b9af96a35a8bca"
+      "bytes": 41448,
+      "sha256": "1908f25162310a37e1c659e2a89a1e1dcb52d7483dc5a0dbda056103885f1a20"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_UNIFORME_R03.json",
-      "bytes": 40818,
-      "sha256": "315ec9f44ac3b1b34a2a986f89d65d3b82bd57165de6eb1020929ee918a492a5"
+      "bytes": 41435,
+      "sha256": "cd5bd349dfae8d92ce67df1142905770d8a49511f64f02ff7501eacb400b6fcd"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_UNIFORME_R04.json",
-      "bytes": 40800,
-      "sha256": "5836d397023b29138b9c540919008856d3ef836ee963687e47689c05cbc88d23"
+      "bytes": 41428,
+      "sha256": "0d606e044f4ab4e89aaa6a41f6c5794f2126bb9596d8fbe05e3e17812b664e0b"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_UNIFORME_R05.json",
-      "bytes": 40807,
-      "sha256": "b18c455ee3521c9fd643c5b52a8463c636e82a5fcf7edd1e582c9ec30746efc9"
+      "bytes": 41465,
+      "sha256": "deeecb500cdb7bd420604ca4eaaa39452c6e53fed9f79a5a0f71233d4009a05b"
     },
     {
       "ruta": "docs/experimentos/hito2/entrenamiento/modelos/SIM_UNIFORME_R06.json",
-      "bytes": 40806,
-      "sha256": "230cf00a6d2b8042306b3b92a425783663097aec7184d7fefe122f34e34acaab"
+      "bytes": 41446,
+      "sha256": "4148abba075832e87fa1c3c138134ee84de3dc7770c7159eb1f0975e5eb0add6"
     },
     {
       "ruta": "docs/experimentos/hito2/evaluacion_demo.json",
-      "bytes": 111323,
-      "sha256": "e76a6dcad10586f07ab5e909a8d3b258f523c314045fd2e5391bd6d80afe90ae"
+      "bytes": 378501,
+      "sha256": "6d0b8581a857f5b72ddc83b0404ba48dcd71675821d4a2755730d5046d12bbc9"
     },
     {
       "ruta": "docs/experimentos/hito2/revision_codigo.json",
-      "bytes": 1094,
-      "sha256": "2283a17f63a4e9e89752c07b34c9094293c063b65c5e3db0244f0d9fd2e04ec5"
+      "bytes": 1408,
+      "sha256": "1e616a05b32f5bdd0b855d6edf993b5aaf15e8670403b056300a7a0918022b96"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/revision_copia_descarga.json",
+      "bytes": 1054,
+      "sha256": "4675824c804ac63fcf2c4b90bb01d5d544bc27a79a4c1da2178c475e997c1396"
+    },
+    {
+      "ruta": "docs/experimentos/hito2/revision_general.json",
+      "bytes": 4897,
+      "sha256": "2bddfe22f05ca9ad97fd663f8d0e47266e30d1110f2553685228dcd176c7b5da"
     },
     {
       "ruta": "docs/experimentos/hito2/revision_navegador.json",
@@ -2407,7 +2529,8 @@
     {
       "ruta": "iniciar_juego.bat",
       "bytes": 66,
-      "sha256": "0d9f2bd4badb6e611c3cacb6e1efb7e94d3c68a1a48325a864893e112752a8db"
+      "sha256": "0d9f2bd4badb6e611c3cacb6e1efb7e94d3c68a1a48325a864893e112752a8db",
+      "normalizacion": "LF; exportacion CRLF declarada en .gitattributes"
     },
     {
       "ruta": "iniciar_juego.sh",
@@ -2417,7 +2540,8 @@
     {
       "ruta": "iniciar_sin_descargas.bat",
       "bytes": 82,
-      "sha256": "79f6291f0520c027187cccd57e1f8f74f3817b4c9d181174d644dae8b01f5f93"
+      "sha256": "79f6291f0520c027187cccd57e1f8f74f3817b4c9d181174d644dae8b01f5f93",
+      "normalizacion": "LF; exportacion CRLF declarada en .gitattributes"
     },
     {
       "ruta": "requirements_voz.txt",
@@ -2438,6 +2562,11 @@
       "ruta": "tests/test_aprendizaje.py",
       "bytes": 7898,
       "sha256": "d1e45e5dcb2559f1c208b8c7d3bdbcd213897012449cf27501c80d7328e1c1bf"
+    },
+    {
+      "ruta": "tests/test_diagnostico.py",
+      "bytes": 4084,
+      "sha256": "d6875e1251da9faa150a85fc442e0135e70aa57bba4d707d382de2b6f782661f"
     },
     {
       "ruta": "tests/test_hito2.py",
@@ -2465,6 +2594,11 @@
       "sha256": "ac8e54dfade0d50129c597c829caf060c43c1a562fdf5e4fd60c448c8de7c559"
     },
     {
+      "ruta": "tests/test_paquete.py",
+      "bytes": 2587,
+      "sha256": "9e15486131136cc73a790ddebd795f8c1f06148947418372b7f47a40f23987ed"
+    },
+    {
       "ruta": "tests/test_rendimiento_voz.py",
       "bytes": 9016,
       "sha256": "0280a8cd0015793a3593533982032cecf65350bc67f9266c7caecadfbdaad289"
@@ -2475,14 +2609,19 @@
       "sha256": "51a69d9858f818a3de322f296d2469d2c2feea702072d6b64cca363139f3c694"
     },
     {
+      "ruta": "tests/verificar_copia_limpia.py",
+      "bytes": 6135,
+      "sha256": "78329332bc46e13ae558e428eee6c229270f07756a043e1fd946ca4080b4d907"
+    },
+    {
       "ruta": "tests/verificar_hito2.cjs",
       "bytes": 4996,
       "sha256": "5ae0e1f8214e690cd05017cfc484e2d029d9d5e3c35b965d9220da8bf83391aa"
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 54551,
-      "sha256": "b175faa1a2719f03cba0df5c9289e6cba0cb9eada16535035efc94d1079bc964"
+      "bytes": 55781,
+      "sha256": "a8ad0d742fe1070cc8345aa2d5721729e0fe621f7177abb2a1e7e7affef53968"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",

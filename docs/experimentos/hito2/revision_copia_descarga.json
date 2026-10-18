@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "correcto": true,
+  "integridad": {
+    "schema_version": "1.0.0",
+    "correcto": true,
+    "archivos": 473,
+    "normalizaciones_crlf_declaradas": [
+      "iniciar_juego.bat",
+      "iniciar_sin_descargas.bat"
+    ],
+    "errores": []
+  },
+  "sin_instalaciones_ni_descargas": true,
+  "sin_modelos_voz": true,
+  "voces_catalogadas_no_preparadas": 14,
+  "partidas": [
+    {
+      "modalidad": "AGENTE",
+      "opciones": 2,
+      "resultado": "OK"
+    },
+    {
+      "modalidad": "AGENTE",
+      "opciones": 4,
+      "resultado": "OK"
+    },
+    {
+      "modalidad": "AGENTE",
+      "opciones": 8,
+      "resultado": "OK"
+    },
+    {
+      "modalidad": "JUGADOR",
+      "opciones": 2,
+      "resultado": "OK"
+    },
+    {
+      "modalidad": "JUGADOR",
+      "opciones": 4,
+      "resultado": "OK"
+    },
+    {
+      "modalidad": "JUGADOR",
+      "opciones": 8,
+      "resultado": "OK"
+    }
+  ],
+  "alcance": "Iniciador real sin descargas y partidas HTTP completas. No verifica escucha de voz ni comprensión humana."
+}

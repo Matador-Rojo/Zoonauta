@@ -12,11 +12,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 65,
-      "beta": 21,
-      "resultados_0": 20,
-      "resultados_1": 64,
-      "observaciones_etiquetadas": 84
+      "alpha": 470,
+      "beta": 151,
+      "resultados_0": 150,
+      "resultados_1": 469,
+      "observaciones_etiquetadas": 619
     },
     {
       "contexto": {
@@ -25,11 +25,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 18,
-      "beta": 21,
-      "resultados_0": 20,
-      "resultados_1": 17,
-      "observaciones_etiquetadas": 37
+      "alpha": 221,
+      "beta": 192,
+      "resultados_0": 191,
+      "resultados_1": 220,
+      "observaciones_etiquetadas": 411
     },
     {
       "contexto": {
@@ -38,11 +38,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V3",
-      "alpha": 11,
-      "beta": 15,
-      "resultados_0": 14,
-      "resultados_1": 10,
-      "observaciones_etiquetadas": 24
+      "alpha": 14,
+      "beta": 24,
+      "resultados_0": 23,
+      "resultados_1": 13,
+      "observaciones_etiquetadas": 36
     },
     {
       "contexto": {
@@ -51,37 +51,37 @@
         "repeticion_previa": 1
       },
       "variante_id": "V1",
+      "alpha": 219,
+      "beta": 162,
+      "resultados_0": 161,
+      "resultados_1": 218,
+      "observaciones_etiquetadas": 379
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 449,
+      "beta": 128,
+      "resultados_0": 127,
+      "resultados_1": 448,
+      "observaciones_etiquetadas": 575
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
       "alpha": 12,
-      "beta": 11,
-      "resultados_0": 10,
+      "beta": 22,
+      "resultados_0": 21,
       "resultados_1": 11,
-      "observaciones_etiquetadas": 21
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H01",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 59,
-      "beta": 14,
-      "resultados_0": 13,
-      "resultados_1": 58,
-      "observaciones_etiquetadas": 71
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H01",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 8,
-      "beta": 17,
-      "resultados_0": 16,
-      "resultados_1": 7,
-      "observaciones_etiquetadas": 23
+      "observaciones_etiquetadas": 32
     },
     {
       "contexto": {
@@ -90,11 +90,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 19,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 18,
-      "observaciones_etiquetadas": 23
+      "alpha": 166,
+      "beta": 54,
+      "resultados_0": 53,
+      "resultados_1": 165,
+      "observaciones_etiquetadas": 218
     },
     {
       "contexto": {
@@ -103,11 +103,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 7,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 11
+      "alpha": 39,
+      "beta": 38,
+      "resultados_0": 37,
+      "resultados_1": 38,
+      "observaciones_etiquetadas": 75
     },
     {
       "contexto": {
@@ -116,11 +116,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V3",
-      "alpha": 9,
-      "beta": 8,
-      "resultados_0": 7,
-      "resultados_1": 8,
-      "observaciones_etiquetadas": 15
+      "alpha": 14,
+      "beta": 22,
+      "resultados_0": 21,
+      "resultados_1": 13,
+      "observaciones_etiquetadas": 34
     },
     {
       "contexto": {
@@ -129,11 +129,11 @@
         "repeticion_previa": 1
       },
       "variante_id": "V1",
-      "alpha": 6,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 5,
-      "observaciones_etiquetadas": 9
+      "alpha": 32,
+      "beta": 29,
+      "resultados_0": 28,
+      "resultados_1": 31,
+      "observaciones_etiquetadas": 59
     },
     {
       "contexto": {
@@ -142,11 +142,11 @@
         "repeticion_previa": 1
       },
       "variante_id": "V2",
-      "alpha": 13,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 12,
-      "observaciones_etiquetadas": 14
+      "alpha": 96,
+      "beta": 31,
+      "resultados_0": 30,
+      "resultados_1": 95,
+      "observaciones_etiquetadas": 125
     },
     {
       "contexto": {
@@ -155,63 +155,50 @@
         "repeticion_previa": 1
       },
       "variante_id": "V3",
-      "alpha": 1,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 2
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H01",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 7,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 7
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H01",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 2,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 4
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H01",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 5,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 4,
+      "alpha": 3,
+      "beta": 7,
+      "resultados_0": 6,
+      "resultados_1": 2,
       "observaciones_etiquetadas": 8
     },
     {
       "contexto": {
         "habitat_guia_id": "H01",
         "nivel": 3,
-        "repeticion_previa": 1
+        "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 1,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 1
+      "alpha": 66,
+      "beta": 25,
+      "resultados_0": 24,
+      "resultados_1": 65,
+      "observaciones_etiquetadas": 89
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 9,
+      "beta": 11,
+      "resultados_0": 10,
+      "resultados_1": 8,
+      "observaciones_etiquetadas": 18
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 18,
+      "beta": 19,
+      "resultados_0": 18,
+      "resultados_1": 17,
+      "observaciones_etiquetadas": 35
     },
     {
       "contexto": {
@@ -219,95 +206,30 @@
         "nivel": 3,
         "repeticion_previa": 1
       },
-      "variante_id": "V2",
-      "alpha": 3,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 4
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H01",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 4,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 4
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
       "variante_id": "V1",
-      "alpha": 46,
-      "beta": 20,
-      "resultados_0": 19,
-      "resultados_1": 45,
-      "observaciones_etiquetadas": 64
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 29,
-      "beta": 21,
-      "resultados_0": 20,
-      "resultados_1": 28,
-      "observaciones_etiquetadas": 48
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
       "alpha": 13,
-      "beta": 13,
-      "resultados_0": 12,
+      "beta": 11,
+      "resultados_0": 10,
       "resultados_1": 12,
+      "observaciones_etiquetadas": 22
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H01",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 15,
+      "beta": 11,
+      "resultados_0": 10,
+      "resultados_1": 14,
       "observaciones_etiquetadas": 24
     },
     {
       "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 22,
-      "beta": 17,
-      "resultados_0": 16,
-      "resultados_1": 21,
-      "observaciones_etiquetadas": 37
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 58,
-      "beta": 18,
-      "resultados_0": 17,
-      "resultados_1": 57,
-      "observaciones_etiquetadas": 74
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 1,
+        "habitat_guia_id": "H01",
+        "nivel": 3,
         "repeticion_previa": 1
       },
       "variante_id": "V3",
@@ -320,163 +242,397 @@
     {
       "contexto": {
         "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 484,
+      "beta": 156,
+      "resultados_0": 155,
+      "resultados_1": 483,
+      "observaciones_etiquetadas": 638
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 169,
+      "beta": 142,
+      "resultados_0": 141,
+      "resultados_1": 168,
+      "observaciones_etiquetadas": 309
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 76,
+      "beta": 72,
+      "resultados_0": 71,
+      "resultados_1": 75,
+      "observaciones_etiquetadas": 146
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 192,
+      "beta": 147,
+      "resultados_0": 146,
+      "resultados_1": 191,
+      "observaciones_etiquetadas": 337
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 457,
+      "beta": 157,
+      "resultados_0": 156,
+      "resultados_1": 456,
+      "observaciones_etiquetadas": 612
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 30,
+      "beta": 27,
+      "resultados_0": 26,
+      "resultados_1": 29,
+      "observaciones_etiquetadas": 55
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
         "nivel": 2,
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 12,
-      "beta": 7,
-      "resultados_0": 6,
-      "resultados_1": 11,
+      "alpha": 171,
+      "beta": 48,
+      "resultados_0": 47,
+      "resultados_1": 170,
+      "observaciones_etiquetadas": 217
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 17,
+      "beta": 18,
+      "resultados_0": 17,
+      "resultados_1": 16,
+      "observaciones_etiquetadas": 33
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 36,
+      "beta": 37,
+      "resultados_0": 36,
+      "resultados_1": 35,
+      "observaciones_etiquetadas": 71
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 16,
+      "beta": 18,
+      "resultados_0": 17,
+      "resultados_1": 15,
+      "observaciones_etiquetadas": 32
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 91,
+      "beta": 38,
+      "resultados_0": 37,
+      "resultados_1": 90,
+      "observaciones_etiquetadas": 127
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 16,
+      "beta": 15,
+      "resultados_0": 14,
+      "resultados_1": 15,
+      "observaciones_etiquetadas": 29
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 62,
+      "beta": 21,
+      "resultados_0": 20,
+      "resultados_1": 61,
+      "observaciones_etiquetadas": 81
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 21,
+      "beta": 20,
+      "resultados_0": 19,
+      "resultados_1": 20,
+      "observaciones_etiquetadas": 39
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 7,
+      "beta": 12,
+      "resultados_0": 11,
+      "resultados_1": 6,
       "observaciones_etiquetadas": 17
     },
     {
       "contexto": {
         "habitat_guia_id": "H02",
-        "nivel": 2,
-        "repeticion_previa": 0
+        "nivel": 3,
+        "repeticion_previa": 1
       },
-      "variante_id": "V2",
-      "alpha": 5,
+      "variante_id": "V1",
+      "alpha": 7,
       "beta": 7,
       "resultados_0": 6,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 10
+      "resultados_1": 6,
+      "observaciones_etiquetadas": 12
     },
     {
       "contexto": {
         "habitat_guia_id": "H02",
-        "nivel": 2,
-        "repeticion_previa": 0
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 23,
+      "beta": 16,
+      "resultados_0": 15,
+      "resultados_1": 22,
+      "observaciones_etiquetadas": 37
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H02",
+        "nivel": 3,
+        "repeticion_previa": 1
       },
       "variante_id": "V3",
-      "alpha": 12,
+      "alpha": 8,
       "beta": 9,
       "resultados_0": 8,
-      "resultados_1": 11,
-      "observaciones_etiquetadas": 19
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 5,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 14,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 13,
-      "observaciones_etiquetadas": 14
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 2,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 2
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 8,
-      "beta": 3,
-      "resultados_0": 2,
       "resultados_1": 7,
-      "observaciones_etiquetadas": 9
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 5,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 4,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 1,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 1
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 1,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 1
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H02",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 2,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 2
+      "observaciones_etiquetadas": 15
     },
     {
       "contexto": {
         "habitat_guia_id": "H03",
         "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 476,
+      "beta": 152,
+      "resultados_0": 151,
+      "resultados_1": 475,
+      "observaciones_etiquetadas": 626
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 241,
+      "beta": 192,
+      "resultados_0": 191,
+      "resultados_1": 240,
+      "observaciones_etiquetadas": 431
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 8,
+      "beta": 16,
+      "resultados_0": 15,
+      "resultados_1": 7,
+      "observaciones_etiquetadas": 22
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 199,
+      "beta": 193,
+      "resultados_0": 192,
+      "resultados_1": 198,
+      "observaciones_etiquetadas": 390
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 427,
+      "beta": 159,
+      "resultados_0": 158,
+      "resultados_1": 426,
+      "observaciones_etiquetadas": 584
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 18,
+      "beta": 22,
+      "resultados_0": 21,
+      "resultados_1": 17,
+      "observaciones_etiquetadas": 38
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 190,
+      "beta": 57,
+      "resultados_0": 56,
+      "resultados_1": 189,
+      "observaciones_etiquetadas": 245
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 45,
+      "beta": 40,
+      "resultados_0": 39,
+      "resultados_1": 44,
+      "observaciones_etiquetadas": 83
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 4,
+      "beta": 10,
+      "resultados_0": 9,
+      "resultados_1": 3,
+      "observaciones_etiquetadas": 12
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 27,
+      "beta": 22,
+      "resultados_0": 21,
+      "resultados_1": 26,
+      "observaciones_etiquetadas": 47
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 87,
+      "beta": 31,
+      "resultados_0": 30,
+      "resultados_1": 86,
+      "observaciones_etiquetadas": 116
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 12,
+      "beta": 17,
+      "resultados_0": 16,
+      "resultados_1": 11,
+      "observaciones_etiquetadas": 27
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 3,
         "repeticion_previa": 0
       },
       "variante_id": "V1",
@@ -489,171 +645,15 @@
     {
       "contexto": {
         "habitat_guia_id": "H03",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 29,
-      "beta": 20,
-      "resultados_0": 19,
-      "resultados_1": 28,
-      "observaciones_etiquetadas": 47
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 6,
-      "beta": 9,
-      "resultados_0": 8,
-      "resultados_1": 5,
-      "observaciones_etiquetadas": 13
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 20,
-      "beta": 14,
-      "resultados_0": 13,
-      "resultados_1": 19,
-      "observaciones_etiquetadas": 32
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 58,
-      "beta": 13,
-      "resultados_0": 12,
-      "resultados_1": 57,
-      "observaciones_etiquetadas": 69
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 8,
-      "beta": 14,
-      "resultados_0": 13,
-      "resultados_1": 7,
-      "observaciones_etiquetadas": 20
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 2,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 21,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 20,
-      "observaciones_etiquetadas": 25
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 2,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 5,
-      "beta": 8,
-      "resultados_0": 7,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 11
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 2,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 3,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 5,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 7
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 5,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 7,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 6,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 5,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
         "nivel": 3,
         "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 5,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 6
+      "alpha": 26,
+      "beta": 19,
+      "resultados_0": 18,
+      "resultados_1": 25,
+      "observaciones_etiquetadas": 43
     },
     {
       "contexto": {
@@ -663,127 +663,127 @@
       },
       "variante_id": "V3",
       "alpha": 4,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 7
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 5,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 2,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 2
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H03",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 2,
-      "beta": 1,
-      "resultados_0": 0,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 1
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 56,
-      "beta": 17,
-      "resultados_0": 16,
-      "resultados_1": 55,
-      "observaciones_etiquetadas": 71
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 29,
-      "beta": 20,
-      "resultados_0": 19,
-      "resultados_1": 28,
-      "observaciones_etiquetadas": 47
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 5,
-      "beta": 7,
-      "resultados_0": 6,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 22,
-      "beta": 18,
-      "resultados_0": 17,
-      "resultados_1": 21,
-      "observaciones_etiquetadas": 38
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 59,
-      "beta": 22,
-      "resultados_0": 21,
-      "resultados_1": 58,
-      "observaciones_etiquetadas": 79
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 9,
       "beta": 14,
       "resultados_0": 13,
-      "resultados_1": 8,
-      "observaciones_etiquetadas": 21
+      "resultados_1": 3,
+      "observaciones_etiquetadas": 16
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 8,
+      "beta": 7,
+      "resultados_0": 6,
+      "resultados_1": 7,
+      "observaciones_etiquetadas": 13
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 34,
+      "beta": 7,
+      "resultados_0": 6,
+      "resultados_1": 33,
+      "observaciones_etiquetadas": 39
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H03",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 13,
+      "beta": 8,
+      "resultados_0": 7,
+      "resultados_1": 12,
+      "observaciones_etiquetadas": 19
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 483,
+      "beta": 164,
+      "resultados_0": 163,
+      "resultados_1": 482,
+      "observaciones_etiquetadas": 645
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 212,
+      "beta": 182,
+      "resultados_0": 181,
+      "resultados_1": 211,
+      "observaciones_etiquetadas": 392
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 22,
+      "beta": 24,
+      "resultados_0": 23,
+      "resultados_1": 21,
+      "observaciones_etiquetadas": 44
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 213,
+      "beta": 165,
+      "resultados_0": 164,
+      "resultados_1": 212,
+      "observaciones_etiquetadas": 376
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 455,
+      "beta": 150,
+      "resultados_0": 149,
+      "resultados_1": 454,
+      "observaciones_etiquetadas": 603
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 21,
+      "beta": 24,
+      "resultados_0": 23,
+      "resultados_1": 20,
+      "observaciones_etiquetadas": 43
     },
     {
       "contexto": {
@@ -792,11 +792,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 17,
-      "beta": 7,
-      "resultados_0": 6,
-      "resultados_1": 16,
-      "observaciones_etiquetadas": 22
+      "alpha": 164,
+      "beta": 62,
+      "resultados_0": 61,
+      "resultados_1": 163,
+      "observaciones_etiquetadas": 224
     },
     {
       "contexto": {
@@ -805,211 +805,289 @@
         "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 7,
+      "alpha": 53,
+      "beta": 38,
+      "resultados_0": 37,
+      "resultados_1": 52,
+      "observaciones_etiquetadas": 89
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 4,
       "beta": 7,
       "resultados_0": 6,
-      "resultados_1": 6,
+      "resultados_1": 3,
+      "observaciones_etiquetadas": 9
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 29,
+      "beta": 30,
+      "resultados_0": 29,
+      "resultados_1": 28,
+      "observaciones_etiquetadas": 57
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 81,
+      "beta": 35,
+      "resultados_0": 34,
+      "resultados_1": 80,
+      "observaciones_etiquetadas": 114
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 5,
+      "beta": 9,
+      "resultados_0": 8,
+      "resultados_1": 4,
       "observaciones_etiquetadas": 12
     },
     {
       "contexto": {
         "habitat_guia_id": "H04",
-        "nivel": 2,
+        "nivel": 3,
         "repeticion_previa": 0
       },
-      "variante_id": "V3",
-      "alpha": 1,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 2
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
       "variante_id": "V1",
-      "alpha": 7,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 10
+      "alpha": 67,
+      "beta": 18,
+      "resultados_0": 17,
+      "resultados_1": 66,
+      "observaciones_etiquetadas": 83
     },
     {
       "contexto": {
         "habitat_guia_id": "H04",
-        "nivel": 2,
-        "repeticion_previa": 1
+        "nivel": 3,
+        "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 10,
+      "alpha": 19,
       "beta": 6,
       "resultados_0": 5,
-      "resultados_1": 9,
-      "observaciones_etiquetadas": 14
+      "resultados_1": 18,
+      "observaciones_etiquetadas": 23
     },
     {
       "contexto": {
         "habitat_guia_id": "H04",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 5,
+      "beta": 6,
+      "resultados_0": 5,
+      "resultados_1": 4,
+      "observaciones_etiquetadas": 9
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 11,
+      "beta": 12,
+      "resultados_0": 11,
+      "resultados_1": 10,
+      "observaciones_etiquetadas": 21
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 34,
+      "beta": 13,
+      "resultados_0": 12,
+      "resultados_1": 33,
+      "observaciones_etiquetadas": 45
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H04",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 8,
+      "beta": 11,
+      "resultados_0": 10,
+      "resultados_1": 7,
+      "observaciones_etiquetadas": 17
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 478,
+      "beta": 175,
+      "resultados_0": 174,
+      "resultados_1": 477,
+      "observaciones_etiquetadas": 651
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 164,
+      "beta": 155,
+      "resultados_0": 154,
+      "resultados_1": 163,
+      "observaciones_etiquetadas": 317
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 45,
+      "beta": 66,
+      "resultados_0": 65,
+      "resultados_1": 44,
+      "observaciones_etiquetadas": 109
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 186,
+      "beta": 197,
+      "resultados_0": 196,
+      "resultados_1": 185,
+      "observaciones_etiquetadas": 381
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 446,
+      "beta": 160,
+      "resultados_0": 159,
+      "resultados_1": 445,
+      "observaciones_etiquetadas": 604
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 22,
+      "beta": 35,
+      "resultados_0": 34,
+      "resultados_1": 21,
+      "observaciones_etiquetadas": 55
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 181,
+      "beta": 77,
+      "resultados_0": 76,
+      "resultados_1": 180,
+      "observaciones_etiquetadas": 256
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 23,
+      "beta": 22,
+      "resultados_0": 21,
+      "resultados_1": 22,
+      "observaciones_etiquetadas": 43
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 26,
+      "beta": 31,
+      "resultados_0": 30,
+      "resultados_1": 25,
+      "observaciones_etiquetadas": 55
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
         "nivel": 2,
         "repeticion_previa": 1
       },
-      "variante_id": "V3",
-      "alpha": 3,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
       "variante_id": "V1",
-      "alpha": 7,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 8
+      "alpha": 11,
+      "beta": 15,
+      "resultados_0": 14,
+      "resultados_1": 10,
+      "observaciones_etiquetadas": 24
     },
     {
       "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 3,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 4
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 2,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 3
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 5,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 8
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 3,
+        "habitat_guia_id": "H05",
+        "nivel": 2,
         "repeticion_previa": 1
       },
       "variante_id": "V2",
-      "alpha": 5,
-      "beta": 7,
-      "resultados_0": 6,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H04",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 2,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 5
+      "alpha": 119,
+      "beta": 32,
+      "resultados_0": 31,
+      "resultados_1": 118,
+      "observaciones_etiquetadas": 149
     },
     {
       "contexto": {
         "habitat_guia_id": "H05",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 49,
-      "beta": 19,
-      "resultados_0": 18,
-      "resultados_1": 48,
-      "observaciones_etiquetadas": 66
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 10,
-      "beta": 10,
-      "resultados_0": 9,
-      "resultados_1": 9,
-      "observaciones_etiquetadas": 18
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 16,
-      "beta": 19,
-      "resultados_0": 18,
-      "resultados_1": 15,
-      "observaciones_etiquetadas": 33
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 39,
-      "beta": 30,
-      "resultados_0": 29,
-      "resultados_1": 38,
-      "observaciones_etiquetadas": 67
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 45,
-      "beta": 30,
-      "resultados_0": 29,
-      "resultados_1": 44,
-      "observaciones_etiquetadas": 73
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 1,
+        "nivel": 2,
         "repeticion_previa": 1
       },
       "variante_id": "V3",
@@ -1022,158 +1100,80 @@
     {
       "contexto": {
         "habitat_guia_id": "H05",
-        "nivel": 2,
+        "nivel": 3,
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 23,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 22,
+      "alpha": 79,
+      "beta": 25,
+      "resultados_0": 24,
+      "resultados_1": 78,
+      "observaciones_etiquetadas": 102
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 25,
+      "beta": 17,
+      "resultados_0": 16,
+      "resultados_1": 24,
+      "observaciones_etiquetadas": 40
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 11,
+      "beta": 15,
+      "resultados_0": 14,
+      "resultados_1": 10,
       "observaciones_etiquetadas": 24
     },
     {
       "contexto": {
         "habitat_guia_id": "H05",
-        "nivel": 2,
-        "repeticion_previa": 0
+        "nivel": 3,
+        "repeticion_previa": 1
       },
-      "variante_id": "V2",
-      "alpha": 1,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 3
+      "variante_id": "V1",
+      "alpha": 10,
+      "beta": 8,
+      "resultados_0": 7,
+      "resultados_1": 9,
+      "observaciones_etiquetadas": 16
     },
     {
       "contexto": {
         "habitat_guia_id": "H05",
-        "nivel": 2,
-        "repeticion_previa": 0
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 26,
+      "beta": 11,
+      "resultados_0": 10,
+      "resultados_1": 25,
+      "observaciones_etiquetadas": 35
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H05",
+        "nivel": 3,
+        "repeticion_previa": 1
       },
       "variante_id": "V3",
-      "alpha": 5,
+      "alpha": 7,
       "beta": 7,
       "resultados_0": 6,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 4,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 7
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 21,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 20,
-      "observaciones_etiquetadas": 23
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 4,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 9,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 8,
-      "observaciones_etiquetadas": 11
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 3,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 4
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 3,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 1,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 1
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 4,
-      "beta": 1,
-      "resultados_0": 0,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 3
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H05",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 1,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 1
+      "resultados_1": 6,
+      "observaciones_etiquetadas": 12
     },
     {
       "contexto": {
@@ -1182,11 +1182,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 54,
-      "beta": 26,
-      "resultados_0": 25,
-      "resultados_1": 53,
-      "observaciones_etiquetadas": 78
+      "alpha": 490,
+      "beta": 174,
+      "resultados_0": 173,
+      "resultados_1": 489,
+      "observaciones_etiquetadas": 662
     },
     {
       "contexto": {
@@ -1195,6 +1195,188 @@
         "repeticion_previa": 0
       },
       "variante_id": "V2",
+      "alpha": 124,
+      "beta": 112,
+      "resultados_0": 111,
+      "resultados_1": 123,
+      "observaciones_etiquetadas": 234
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 95,
+      "beta": 95,
+      "resultados_0": 94,
+      "resultados_1": 94,
+      "observaciones_etiquetadas": 188
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 131,
+      "beta": 122,
+      "resultados_0": 121,
+      "resultados_1": 130,
+      "observaciones_etiquetadas": 251
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 474,
+      "beta": 156,
+      "resultados_0": 155,
+      "resultados_1": 473,
+      "observaciones_etiquetadas": 628
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 57,
+      "beta": 72,
+      "resultados_0": 71,
+      "resultados_1": 56,
+      "observaciones_etiquetadas": 127
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 170,
+      "beta": 72,
+      "resultados_0": 71,
+      "resultados_1": 169,
+      "observaciones_etiquetadas": 240
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 48,
+      "beta": 35,
+      "resultados_0": 34,
+      "resultados_1": 47,
+      "observaciones_etiquetadas": 81
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 10,
+      "beta": 11,
+      "resultados_0": 10,
+      "resultados_1": 9,
+      "observaciones_etiquetadas": 19
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 19,
+      "beta": 14,
+      "resultados_0": 13,
+      "resultados_1": 18,
+      "observaciones_etiquetadas": 31
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 105,
+      "beta": 34,
+      "resultados_0": 33,
+      "resultados_1": 104,
+      "observaciones_etiquetadas": 137
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 26,
+      "beta": 19,
+      "resultados_0": 18,
+      "resultados_1": 25,
+      "observaciones_etiquetadas": 43
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 68,
+      "beta": 25,
+      "resultados_0": 24,
+      "resultados_1": 67,
+      "observaciones_etiquetadas": 91
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 19,
+      "beta": 18,
+      "resultados_0": 17,
+      "resultados_1": 18,
+      "observaciones_etiquetadas": 35
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 6,
+      "beta": 14,
+      "resultados_0": 13,
+      "resultados_1": 5,
+      "observaciones_etiquetadas": 18
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H06",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
       "alpha": 9,
       "beta": 9,
       "resultados_0": 8,
@@ -1204,223 +1386,41 @@
     {
       "contexto": {
         "habitat_guia_id": "H06",
-        "nivel": 1,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 19,
-      "beta": 21,
-      "resultados_0": 20,
-      "resultados_1": 18,
-      "observaciones_etiquetadas": 38
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 5,
-      "beta": 7,
-      "resultados_0": 6,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 1,
+        "nivel": 3,
         "repeticion_previa": 1
       },
       "variante_id": "V2",
-      "alpha": 59,
-      "beta": 19,
-      "resultados_0": 18,
-      "resultados_1": 58,
-      "observaciones_etiquetadas": 76
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 20,
-      "beta": 19,
-      "resultados_0": 18,
-      "resultados_1": 19,
-      "observaciones_etiquetadas": 37
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 2,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 25,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 24,
-      "observaciones_etiquetadas": 29
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 2,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 7,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 2,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 3,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 7
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 8,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 7,
-      "observaciones_etiquetadas": 12
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 5,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 5,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 9
+      "alpha": 23,
+      "beta": 15,
+      "resultados_0": 14,
+      "resultados_1": 22,
+      "observaciones_etiquetadas": 36
     },
     {
       "contexto": {
         "habitat_guia_id": "H06",
         "nivel": 3,
-        "repeticion_previa": 0
+        "repeticion_previa": 1
       },
-      "variante_id": "V1",
+      "variante_id": "V3",
       "alpha": 5,
-      "beta": 3,
-      "resultados_0": 2,
+      "beta": 11,
+      "resultados_0": 10,
       "resultados_1": 4,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 8,
-      "beta": 8,
-      "resultados_0": 7,
-      "resultados_1": 7,
       "observaciones_etiquetadas": 14
     },
     {
       "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 2,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 4,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 8
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 5,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 8
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H06",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 2,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
         "habitat_guia_id": "H07",
         "nivel": 1,
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 51,
-      "beta": 21,
-      "resultados_0": 20,
-      "resultados_1": 50,
-      "observaciones_etiquetadas": 70
+      "alpha": 462,
+      "beta": 166,
+      "resultados_0": 165,
+      "resultados_1": 461,
+      "observaciones_etiquetadas": 626
     },
     {
       "contexto": {
@@ -1429,232 +1429,232 @@
         "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 16,
+      "alpha": 186,
+      "beta": 153,
+      "resultados_0": 152,
+      "resultados_1": 185,
+      "observaciones_etiquetadas": 337
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 1,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 52,
+      "beta": 62,
+      "resultados_0": 61,
+      "resultados_1": 51,
+      "observaciones_etiquetadas": 112
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 200,
+      "beta": 158,
+      "resultados_0": 157,
+      "resultados_1": 199,
+      "observaciones_etiquetadas": 356
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 456,
+      "beta": 159,
+      "resultados_0": 158,
+      "resultados_1": 455,
+      "observaciones_etiquetadas": 613
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 1,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 12,
+      "beta": 24,
+      "resultados_0": 23,
+      "resultados_1": 11,
+      "observaciones_etiquetadas": 34
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 174,
+      "beta": 45,
+      "resultados_0": 44,
+      "resultados_1": 173,
+      "observaciones_etiquetadas": 217
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 69,
+      "beta": 40,
+      "resultados_0": 39,
+      "resultados_1": 68,
+      "observaciones_etiquetadas": 107
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 6,
+      "beta": 10,
+      "resultados_0": 9,
+      "resultados_1": 5,
+      "observaciones_etiquetadas": 14
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 29,
+      "beta": 28,
+      "resultados_0": 27,
+      "resultados_1": 28,
+      "observaciones_etiquetadas": 55
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 82,
+      "beta": 34,
+      "resultados_0": 33,
+      "resultados_1": 81,
+      "observaciones_etiquetadas": 114
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 22,
       "beta": 19,
       "resultados_0": 18,
-      "resultados_1": 15,
-      "observaciones_etiquetadas": 33
+      "resultados_1": 21,
+      "observaciones_etiquetadas": 39
     },
     {
       "contexto": {
         "habitat_guia_id": "H07",
-        "nivel": 1,
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 49,
+      "beta": 19,
+      "resultados_0": 18,
+      "resultados_1": 48,
+      "observaciones_etiquetadas": 66
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 23,
+      "beta": 15,
+      "resultados_0": 14,
+      "resultados_1": 22,
+      "observaciones_etiquetadas": 36
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H07",
+        "nivel": 3,
         "repeticion_previa": 0
       },
       "variante_id": "V3",
-      "alpha": 20,
-      "beta": 23,
-      "resultados_0": 22,
-      "resultados_1": 19,
+      "alpha": 23,
+      "beta": 20,
+      "resultados_0": 19,
+      "resultados_1": 22,
       "observaciones_etiquetadas": 41
     },
     {
       "contexto": {
         "habitat_guia_id": "H07",
-        "nivel": 1,
+        "nivel": 3,
         "repeticion_previa": 1
       },
       "variante_id": "V1",
-      "alpha": 13,
-      "beta": 13,
-      "resultados_0": 12,
-      "resultados_1": 12,
-      "observaciones_etiquetadas": 24
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 52,
-      "beta": 21,
-      "resultados_0": 20,
-      "resultados_1": 51,
-      "observaciones_etiquetadas": 71
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 1,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 10,
+      "alpha": 16,
       "beta": 14,
       "resultados_0": 13,
-      "resultados_1": 9,
-      "observaciones_etiquetadas": 22
+      "resultados_1": 15,
+      "observaciones_etiquetadas": 28
     },
     {
       "contexto": {
         "habitat_guia_id": "H07",
-        "nivel": 2,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 18,
-      "beta": 8,
-      "resultados_0": 7,
-      "resultados_1": 17,
-      "observaciones_etiquetadas": 24
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 2,
-        "repeticion_previa": 0
+        "nivel": 3,
+        "repeticion_previa": 1
       },
       "variante_id": "V2",
-      "alpha": 17,
-      "beta": 8,
-      "resultados_0": 7,
-      "resultados_1": 16,
-      "observaciones_etiquetadas": 23
+      "alpha": 29,
+      "beta": 10,
+      "resultados_0": 9,
+      "resultados_1": 28,
+      "observaciones_etiquetadas": 37
     },
     {
       "contexto": {
         "habitat_guia_id": "H07",
-        "nivel": 2,
-        "repeticion_previa": 0
+        "nivel": 3,
+        "repeticion_previa": 1
       },
       "variante_id": "V3",
-      "alpha": 3,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 10,
-      "beta": 7,
-      "resultados_0": 6,
-      "resultados_1": 9,
-      "observaciones_etiquetadas": 15
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 9,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 8,
+      "alpha": 5,
+      "beta": 8,
+      "resultados_0": 7,
+      "resultados_1": 4,
       "observaciones_etiquetadas": 11
     },
     {
       "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 5,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 7
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 4,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 4
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V2",
-      "alpha": 8,
-      "beta": 7,
-      "resultados_0": 6,
-      "resultados_1": 7,
-      "observaciones_etiquetadas": 13
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 7,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 9
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 6,
-      "beta": 1,
-      "resultados_0": 0,
-      "resultados_1": 5,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 3,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 3
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H07",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 1,
-      "beta": 2,
-      "resultados_0": 1,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 1
-    },
-    {
-      "contexto": {
         "habitat_guia_id": "H08",
         "nivel": 1,
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 60,
-      "beta": 19,
-      "resultados_0": 18,
-      "resultados_1": 59,
-      "observaciones_etiquetadas": 77
+      "alpha": 474,
+      "beta": 158,
+      "resultados_0": 157,
+      "resultados_1": 473,
+      "observaciones_etiquetadas": 630
     },
     {
       "contexto": {
@@ -1663,11 +1663,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 29,
-      "beta": 19,
-      "resultados_0": 18,
-      "resultados_1": 28,
-      "observaciones_etiquetadas": 46
+      "alpha": 241,
+      "beta": 198,
+      "resultados_0": 197,
+      "resultados_1": 240,
+      "observaciones_etiquetadas": 437
     },
     {
       "contexto": {
@@ -1677,10 +1677,10 @@
       },
       "variante_id": "V3",
       "alpha": 5,
-      "beta": 9,
-      "resultados_0": 8,
+      "beta": 14,
+      "resultados_0": 13,
       "resultados_1": 4,
-      "observaciones_etiquetadas": 12
+      "observaciones_etiquetadas": 17
     },
     {
       "contexto": {
@@ -1689,11 +1689,11 @@
         "repeticion_previa": 1
       },
       "variante_id": "V1",
-      "alpha": 22,
-      "beta": 20,
-      "resultados_0": 19,
-      "resultados_1": 21,
-      "observaciones_etiquetadas": 40
+      "alpha": 225,
+      "beta": 178,
+      "resultados_0": 177,
+      "resultados_1": 224,
+      "observaciones_etiquetadas": 401
     },
     {
       "contexto": {
@@ -1702,11 +1702,11 @@
         "repeticion_previa": 1
       },
       "variante_id": "V2",
-      "alpha": 55,
-      "beta": 20,
-      "resultados_0": 19,
-      "resultados_1": 54,
-      "observaciones_etiquetadas": 73
+      "alpha": 431,
+      "beta": 142,
+      "resultados_0": 141,
+      "resultados_1": 430,
+      "observaciones_etiquetadas": 571
     },
     {
       "contexto": {
@@ -1715,11 +1715,11 @@
         "repeticion_previa": 1
       },
       "variante_id": "V3",
-      "alpha": 2,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 1,
-      "observaciones_etiquetadas": 6
+      "alpha": 5,
+      "beta": 12,
+      "resultados_0": 11,
+      "resultados_1": 4,
+      "observaciones_etiquetadas": 15
     },
     {
       "contexto": {
@@ -1728,11 +1728,11 @@
         "repeticion_previa": 0
       },
       "variante_id": "V1",
-      "alpha": 10,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 9,
-      "observaciones_etiquetadas": 14
+      "alpha": 151,
+      "beta": 51,
+      "resultados_0": 50,
+      "resultados_1": 150,
+      "observaciones_etiquetadas": 200
     },
     {
       "contexto": {
@@ -1741,145 +1741,145 @@
         "repeticion_previa": 0
       },
       "variante_id": "V2",
-      "alpha": 18,
-      "beta": 6,
-      "resultados_0": 5,
-      "resultados_1": 17,
+      "alpha": 62,
+      "beta": 41,
+      "resultados_0": 40,
+      "resultados_1": 61,
+      "observaciones_etiquetadas": 101
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H08",
+        "nivel": 2,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V3",
+      "alpha": 11,
+      "beta": 14,
+      "resultados_0": 13,
+      "resultados_1": 10,
+      "observaciones_etiquetadas": 23
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H08",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V1",
+      "alpha": 43,
+      "beta": 29,
+      "resultados_0": 28,
+      "resultados_1": 42,
+      "observaciones_etiquetadas": 70
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H08",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V2",
+      "alpha": 64,
+      "beta": 29,
+      "resultados_0": 28,
+      "resultados_1": 63,
+      "observaciones_etiquetadas": 91
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H08",
+        "nivel": 2,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 25,
+      "beta": 25,
+      "resultados_0": 24,
+      "resultados_1": 24,
+      "observaciones_etiquetadas": 48
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H08",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V1",
+      "alpha": 54,
+      "beta": 24,
+      "resultados_0": 23,
+      "resultados_1": 53,
+      "observaciones_etiquetadas": 76
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H08",
+        "nivel": 3,
+        "repeticion_previa": 0
+      },
+      "variante_id": "V2",
+      "alpha": 12,
+      "beta": 12,
+      "resultados_0": 11,
+      "resultados_1": 11,
       "observaciones_etiquetadas": 22
     },
     {
       "contexto": {
         "habitat_guia_id": "H08",
-        "nivel": 2,
+        "nivel": 3,
         "repeticion_previa": 0
       },
       "variante_id": "V3",
-      "alpha": 4,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 7
+      "alpha": 12,
+      "beta": 15,
+      "resultados_0": 14,
+      "resultados_1": 11,
+      "observaciones_etiquetadas": 25
     },
     {
       "contexto": {
         "habitat_guia_id": "H08",
-        "nivel": 2,
+        "nivel": 3,
         "repeticion_previa": 1
       },
       "variante_id": "V1",
-      "alpha": 7,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 6,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H08",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 1,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 0,
-      "observaciones_etiquetadas": 2
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H08",
-        "nivel": 2,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
       "alpha": 10,
-      "beta": 5,
-      "resultados_0": 4,
+      "beta": 9,
+      "resultados_0": 8,
       "resultados_1": 9,
-      "observaciones_etiquetadas": 13
+      "observaciones_etiquetadas": 17
     },
     {
       "contexto": {
         "habitat_guia_id": "H08",
         "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V1",
-      "alpha": 4,
-      "beta": 4,
-      "resultados_0": 3,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H08",
-        "nivel": 3,
-        "repeticion_previa": 0
+        "repeticion_previa": 1
       },
       "variante_id": "V2",
-      "alpha": 5,
+      "alpha": 37,
+      "beta": 9,
+      "resultados_0": 8,
+      "resultados_1": 36,
+      "observaciones_etiquetadas": 44
+    },
+    {
+      "contexto": {
+        "habitat_guia_id": "H08",
+        "nivel": 3,
+        "repeticion_previa": 1
+      },
+      "variante_id": "V3",
+      "alpha": 6,
       "beta": 7,
       "resultados_0": 6,
-      "resultados_1": 4,
-      "observaciones_etiquetadas": 10
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H08",
-        "nivel": 3,
-        "repeticion_previa": 0
-      },
-      "variante_id": "V3",
-      "alpha": 3,
-      "beta": 5,
-      "resultados_0": 4,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 6
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H08",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V1",
-      "alpha": 4,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 3,
-      "observaciones_etiquetadas": 5
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H08",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V2",
-      "alpha": 3,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 4
-    },
-    {
-      "contexto": {
-        "habitat_guia_id": "H08",
-        "nivel": 3,
-        "repeticion_previa": 1
-      },
-      "variante_id": "V3",
-      "alpha": 3,
-      "beta": 3,
-      "resultados_0": 2,
-      "resultados_1": 2,
-      "observaciones_etiquetadas": 4
+      "resultados_1": 5,
+      "observaciones_etiquetadas": 11
     }
   ],
-  "actualizaciones": 2942,
-  "cierres_sin_etiqueta": 189,
+  "actualizaciones": 22620,
+  "cierres_sin_etiqueta": 1450,
   "metadata": {
     "condicion": {
       "id": "SIM_CONTEXTUAL",
@@ -1899,6 +1899,6 @@
     },
     "semilla_entorno": 11102,
     "semilla_thompson": 21102,
-    "retos_entrenados": 1920
+    "retos_entrenados": 15360
   }
 }
