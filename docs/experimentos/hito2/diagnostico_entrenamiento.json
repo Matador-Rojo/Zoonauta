@@ -1,0 +1,1074 @@
+{
+  "schema_version": "1.0.0",
+  "origen": "DIAGNOSTICO_SINTETICO_ENTRENAMIENTO",
+  "resumen_anterior_sha256": "e76a6dcad10586f07ab5e909a8d3b258f523c314045fd2e5391bd6d80afe90ae",
+  "resumen_actual_sha256": "6d0b8581a857f5b72ddc83b0404ba48dcd71675821d4a2755730d5046d12bbc9",
+  "presupuesto_anterior_por_replica": 1920,
+  "presupuesto_actual_por_replica": 15360,
+  "replicas_comparadas": 18,
+  "intervalo_controles": 320,
+  "umbral_operativo_cambio_medio": 0.01,
+  "error_medio_anterior": 0.10387728117665423,
+  "error_medio_actual": 0.052907059416234734,
+  "reduccion_relativa_error_medio": 0.4906772797965253,
+  "modelos_con_estabilidad_media_observada": 18,
+  "distribuciones_sin_observaciones": 0,
+  "distribuciones_con_menos_de_10_etiquetas": 81,
+  "modelo_de_demo": "SIM_CONTEXTUAL_R01",
+  "criterio_modelo_de_demo": "Primera réplica fijada; no se selecciona por resultados de evaluación.",
+  "convergencia_general_demostrada": false,
+  "modelos": [
+    {
+      "modelo": "SIM_UNIFORME_R01",
+      "error_anterior": 0.10592219962359507,
+      "error_actual": 0.0504726257958608,
+      "reduccion_relativa_error": 0.5234934133239281,
+      "ultimos_tres_cambios_medios": [
+        0.0051158778693332265,
+        0.006284662545881536,
+        0.005157995487860465
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 5,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 5
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_UNIFORME_R02",
+      "error_anterior": 0.09610187668764338,
+      "error_actual": 0.04658751897943048,
+      "reduccion_relativa_error": 0.5152277917438356,
+      "ultimos_tres_cambios_medios": [
+        0.005340718218474257,
+        0.005868676821166115,
+        0.004614699124340974
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 8,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V2",
+          "etiquetas": 8
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_UNIFORME_R03",
+      "error_anterior": 0.11225613285999886,
+      "error_actual": 0.05144630971094992,
+      "reduccion_relativa_error": 0.541706021753737,
+      "ultimos_tres_cambios_medios": [
+        0.0055865441098255425,
+        0.004367691944466496,
+        0.004075015540174781
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 11,
+      "con_menos_de_10_etiquetas": [],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_UNIFORME_R04",
+      "error_anterior": 0.10273178423844481,
+      "error_actual": 0.06146304764212014,
+      "reduccion_relativa_error": 0.4017134220168725,
+      "ultimos_tres_cambios_medios": [
+        0.004697199007393144,
+        0.004781861788172274,
+        0.004700224567364659
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 5,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 5
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_UNIFORME_R05",
+      "error_anterior": 0.10778193921507219,
+      "error_actual": 0.04936615956998808,
+      "reduccion_relativa_error": 0.5419811525984798,
+      "ultimos_tres_cambios_medios": [
+        0.0051093414556518625,
+        0.005053504147981399,
+        0.004202656843912719
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 15,
+      "con_menos_de_10_etiquetas": [],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_UNIFORME_R06",
+      "error_anterior": 0.10334383757270517,
+      "error_actual": 0.04640448197097131,
+      "reduccion_relativa_error": 0.5509700136853878,
+      "ultimos_tres_cambios_medios": [
+        0.004785182954387762,
+        0.005514818697632997,
+        0.005162387477702513
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 4,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 4
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_DIFERENCIAS_R01",
+      "error_anterior": 0.10166645937947848,
+      "error_actual": 0.04652084226115171,
+      "reduccion_relativa_error": 0.542417012010728,
+      "ultimos_tres_cambios_medios": [
+        0.004725449840571713,
+        0.004902578505716026,
+        0.004330210533880941
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 6,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_DIFERENCIAS_R02",
+      "error_anterior": 0.10674602984530764,
+      "error_actual": 0.049514063270544854,
+      "reduccion_relativa_error": 0.5361507744850204,
+      "ultimos_tres_cambios_medios": [
+        0.006406773760858183,
+        0.004626097743537128,
+        0.005062325479877721
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 9,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_DIFERENCIAS_R03",
+      "error_anterior": 0.08980259498894151,
+      "error_actual": 0.05115781148713705,
+      "reduccion_relativa_error": 0.4303303652479448,
+      "ultimos_tres_cambios_medios": [
+        0.00680710583804319,
+        0.00415704467153505,
+        0.0036806224307386233
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 7,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V2",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V2",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_DIFERENCIAS_R04",
+      "error_anterior": 0.11435871780897607,
+      "error_actual": 0.05686022086959837,
+      "reduccion_relativa_error": 0.5027906751754838,
+      "ultimos_tres_cambios_medios": [
+        0.004316898858782917,
+        0.004404752937756884,
+        0.004632147760342926
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 5,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 1,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 8
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_DIFERENCIAS_R05",
+      "error_anterior": 0.11043568947928556,
+      "error_actual": 0.05844790863789364,
+      "reduccion_relativa_error": 0.47075163008008636,
+      "ultimos_tres_cambios_medios": [
+        0.004052174324228766,
+        0.004593499009392731,
+        0.003432513821003702
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 4,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 1,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 1,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 1,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 4
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 1,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_DIFERENCIAS_R06",
+      "error_anterior": 0.10520948601056013,
+      "error_actual": 0.050595809110907754,
+      "reduccion_relativa_error": 0.5190946080106377,
+      "ultimos_tres_cambios_medios": [
+        0.003105137023247033,
+        0.005666071646883174,
+        0.005310708865191845
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 5,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V2",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H08",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 5
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_CONTEXTUAL_R01",
+      "error_anterior": 0.10293542303745436,
+      "error_actual": 0.05511266754930237,
+      "reduccion_relativa_error": 0.4645898766137199,
+      "ultimos_tres_cambios_medios": [
+        0.004067587885137849,
+        0.00430133586091477,
+        0.0046180754825620625
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 6,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 1,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V2",
+          "etiquetas": 8
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_CONTEXTUAL_R02",
+      "error_anterior": 0.09244576896892827,
+      "error_actual": 0.04702916594588327,
+      "reduccion_relativa_error": 0.49127833030746776,
+      "ultimos_tres_cambios_medios": [
+        0.006250567057359981,
+        0.005308055252958391,
+        0.005243206552355506
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 8,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 3,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_CONTEXTUAL_R03",
+      "error_anterior": 0.11120344630738233,
+      "error_actual": 0.07066745474389038,
+      "reduccion_relativa_error": 0.3645210010078701,
+      "ultimos_tres_cambios_medios": [
+        0.006693763681094248,
+        0.004193046736608814,
+        0.003979503287757219
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 4,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 4
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 1,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 4
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 4
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 3,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H08",
+            "nivel": 1,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V2",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H08",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 7
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_CONTEXTUAL_R04",
+      "error_anterior": 0.10389844332811844,
+      "error_actual": 0.05495933261817754,
+      "reduccion_relativa_error": 0.47102833442256514,
+      "ultimos_tres_cambios_medios": [
+        0.004526602169947071,
+        0.00610120633390689,
+        0.004081328600929282
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 5,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 1,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V2",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 3,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H08",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 8
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_CONTEXTUAL_R05",
+      "error_anterior": 0.09887687581376925,
+      "error_actual": 0.05461750171716105,
+      "reduccion_relativa_error": 0.4476210815961561,
+      "ultimos_tres_cambios_medios": [
+        0.005492693937108044,
+        0.005751007622079271,
+        0.003698994081762185
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 5,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H03",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 1,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 2,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H04",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H05",
+            "nivel": 3,
+            "repeticion_previa": 0
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H07",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 5
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H08",
+            "nivel": 3,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 6
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    },
+    {
+      "modelo": "SIM_CONTEXTUAL_R06",
+      "error_anterior": 0.1040743560141147,
+      "error_actual": 0.05110414761125642,
+      "reduccion_relativa_error": 0.5089650364559968,
+      "ultimos_tres_cambios_medios": [
+        0.0037907683565956206,
+        0.0048045729401090115,
+        0.005364947294486143
+      ],
+      "estabilidad_media_observada": true,
+      "distribuciones": 144,
+      "sin_observaciones": 0,
+      "etiquetas_minimas": 7,
+      "con_menos_de_10_etiquetas": [
+        {
+          "contexto": {
+            "habitat_guia_id": "H01",
+            "nivel": 1,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 7
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H02",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V1",
+          "etiquetas": 8
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H06",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        },
+        {
+          "contexto": {
+            "habitat_guia_id": "H08",
+            "nivel": 2,
+            "repeticion_previa": 1
+          },
+          "variante_id": "V3",
+          "etiquetas": 9
+        }
+      ],
+      "prefijo_entrenamiento_conservado": true
+    }
+  ],
+  "limites": "El umbral es un diagnóstico operativo en un horizonte finito. La estabilidad media no implica precisión de cada variante. Las distribuciones con pocas etiquetas conservan incertidumbre. Los datos no representan comprensión ni aprendizaje humano."
+}

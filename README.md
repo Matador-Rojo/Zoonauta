@@ -171,21 +171,36 @@ python -m codigo.interfaz.servidor --politica ID3 --puerto 8001
 python -m codigo.interfaz.servidor --politica ROTACION --puerto 8002
 python -m codigo.poc.consola --modalidad AGENTE --retos 2
 python -m codigo.entrenamiento.experimento --salida resultados_nuevos
-python -m codigo.entrenamiento.evaluar_demo --salida resultados_nuevos/demo
+python -m codigo.entrenamiento.evaluar_demo --entrenamiento 15360 --salida resultados_nuevos/demo
 python -m codigo.nucleo.auditoria --salida resultados_nuevos/auditoria.json
+python -m codigo.nucleo.verificar_paquete
 python -m codigo.poc.aceptacion
 python -m unittest discover -s tests -v
 ```
 
 ID3 construye el árbol calculando ganancias. La evaluación del protocolo actual
-utilizó datos sintéticos: **34 560 retos de entrenamiento y 155 520 de evaluación**,
+utilizó datos sintéticos: **276 480 retos de entrenamiento y 155 520 de evaluación**,
 con tres condiciones, seis réplicas y las políticas ID3, rotación y probabilística,
 separadas por tamaño del panel. Las semillas de entrenamiento y evaluación son
 distintas; los parámetros permanecen congelados al evaluar.
 Los resultados y las curvas de evolución se conservan en
 [evaluacion_demo.json](docs/experimentos/hito2/evaluacion_demo.json).
-Las curvas muestran error frente a probabilidades artificiales, cambios entre
-controles y cobertura. No prueban convergencia general ni eficacia educativa.
+El entrenamiento ampliado utiliza 15 360 retos por condición y réplica, frente a
+los 1 920 iniciales. Conserva las semillas, el prefijo del entrenamiento y la
+separación de la evaluación. El error medio frente a las probabilidades artificiales
+pasó de 0,104 a 0,053. Todas las distribuciones tienen observaciones; 81 de las
+2 592 distribuciones de las 18 réplicas siguen teniendo menos de diez etiquetas.
+Las tres últimas variaciones medias son inferiores a 0,01 en cada réplica. Este
+diagnóstico de estabilidad media no prueba convergencia general ni precisión de
+cada variante. La primera réplica contextual sigue fijada como modelo del demo;
+no se eligió una semilla por sus resultados de evaluación.
+El [diagnóstico](docs/experimentos/hito2/diagnostico_entrenamiento.json) conserva
+la comparación y sus límites. Para reproducirlo:
+
+```console
+python -m codigo.entrenamiento.diagnosticar --antes docs/experimentos/hito2/antecedentes_1920 --despues docs/experimentos/hito2 --salida resultados_nuevos/diagnostico.json
+```
+
 El simulador no modela el efecto cognitivo del número de opciones: resultados iguales
 entre tamaños comprueban el flujo, no que los tres tamaños sean igual de accesibles.
 Las ejecuciones anteriores de `docs/experimentos` son antecedentes.
@@ -197,16 +212,27 @@ admite `--opciones`. Las 315 relaciones pendientes conservan su estado y no se
 consideran errores. La auditoría comprueba referencias registradas, secuencias y
 traducciones; no sustituye la revisión biológica ni la validación con usuarios.
 
-La revisión del agente pasó **85 pruebas Python**, los ocho casos de aceptación de
-consola y **11 casos actuales de navegador** (seis del modo 2/4/8 en ambos idiomas y
-cinco de voces controladas). La revisión general anterior de 20 casos de interfaz
-se conserva como antecedente; su ejecución completa actual quedó limitada por
-falta de recursos del navegador y no se registra como aprobada. Las pruebas comprueban
-transiciones, repetición, pausa, duplicados, traducciones, transparencia y recorridos
-completos del agente sin repetir los 48 animales. Las evidencias anteriores verificaron el cierre en
-escritorio y móvil, el progreso real y la pregunta de modalidad solo cuando
-el diálogo está abierto. [Revisión del agente](docs/experimentos/hito2/revision_codigo.json);
-[revisión visual anterior](docs/interfaz/4.4/revision.json).
+La verificación del manifiesto acepta exclusivamente la conversión LF → CRLF de
+los iniciadores BAT declarada en `.gitattributes`; comprueba el resto de su contenido
+y todos los demás archivos por tamaño y SHA-256. Una copia recién extraída puede
+probarse sin instalar voces ni reutilizar el entorno local:
+
+```console
+python -m tests.verificar_copia_limpia --carpeta ruta_de_la_copia_extraida --salida resultados_nuevos/copia_limpia
+```
+
+La prueba ejecuta el iniciador real con `--sin-descargas`, suprime únicamente la
+apertura de una ventana y comprueba partidas completas en ambas modalidades con
+2, 4 y 8 opciones. Requiere Python y una carpeta sin `.venv-voz` ni `modelos_voz`.
+
+La revisión local pasó **96 pruebas Python**, los ocho casos de aceptación de
+consola y **31 casos de navegador**: 20 de revisión general, seis del modo 2/4/8
+en ambos idiomas y cinco de voces controladas. El comprobador general libera los
+contextos entre escenarios conservando la cookie de la partida; mantiene todas
+las comprobaciones. Comprueba transiciones, repetición, pausa, duplicados,
+traducciones, transparencia, cierre, teclado, móvil, progreso real y los 48 animales
+sin repeticiones. [Revisión del agente](docs/experimentos/hito2/revision_codigo.json).
+La copia pública descargada también completó seis partidas sin instalar voces.
 Las evidencias anteriores de síntesis real de las 14 voces permanecen en
 `docs/interfaz/revision_voces_locales.json`; no certifican pronunciación o escucha
 en otros dispositivos. Los documentos V1/V2 y sus resultados son antecedentes.

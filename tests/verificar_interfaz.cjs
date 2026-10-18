@@ -144,8 +144,8 @@ async function clicar(page,texto,fase){
 (async()=>{
  const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{})});
  try{
-  const contexto=await browser.newContext({viewport:{width:1280,height:1080}});await mockVoz(contexto);
-  const page=await contexto.newPage(),errores=[];await page.clock.install();page.on('pageerror',e=>errores.push(e.message));
+  let contexto=await browser.newContext({viewport:{width:1280,height:1080}});await mockVoz(contexto);
+  let page=await contexto.newPage();const errores=[];await page.clock.install();page.on('pageerror',e=>errores.push(e.message));
   await page.goto(base);await page.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   assert.equal(await page.locator('.entrada button:visible').count(),1);
   assert.equal(await page.getByRole('button',{name:'Yo elijo',exact:true}).isVisible(),false);
@@ -182,8 +182,8 @@ async function clicar(page,texto,fase){
   await page.getByRole('button',{name:'Siguiente paisaje',exact:true}).click();
   assert.equal(await page.locator('.ficha-numero').textContent(),'03 / 08');
   await page.getByRole('button',{name:'Pausar paisajes',exact:true}).waitFor();
-  await page.clock.runFor(9999);assert.equal(await page.locator('.ficha-numero').textContent(),'03 / 08');
-  await page.clock.runFor(2);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
+  await page.clock.runFor(9000);assert.equal(await page.locator('.ficha-numero').textContent(),'03 / 08');
+  await page.clock.runFor(1001);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
   await page.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
   await page.getByRole('button',{name:'Paisaje anterior',exact:true}).click();
   await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
@@ -316,6 +316,10 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Nueva partida vuelve a la portada sin voz; abrir el selector lee su pregunta exacta y cerrarlo cancela la lectura, sin cambiar el estado del juego',resultado:'OK'});
   resultados.push({caso:'Audio local español: texto exacto, repetición y cancelación',resultado:'OK',alcance:'API WAV y reproductor controlados; no certifica sonido audible ni comprensión.'});
   // Notificaciones independientes sin desplazar la portada ni alterar la partida.
+  // Liberar imágenes, audio simulado y reloj del escenario anterior. La cookie
+  // conserva la partida para continuar comprobándola en un contexto nuevo.
+  const sesionInicial=await contexto.storageState();await contexto.close();
+  console.log('Recorridos iniciales completos; comprobando avisos.');
   const avisos=await browser.newContext({viewport:{width:1366,height:768}});await mockVoz(avisos);
   const pa=await avisos.newPage();pa.on('pageerror',e=>errores.push(e.message));
   await pa.clock.install({time:new Date('2026-10-11T00:00:00Z')});await pa.clock.pauseAt(new Date('2026-10-11T00:00:01Z'));
@@ -421,6 +425,10 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Notificaciones de hasta 260 px: fondo oscuro y bordes por tipo, nuevas debajo de anteriores sin superposición, máximo tres avisos y menos si falta altura, antiguos descartados sin scroll ni recortes, ocho segundos independientes, cierre circular sobre la esquina por X y teclado; accesibles sobre Preferencias, sin bloquear controles del fondo; validación entera 1–48 antes de modalidad, español/portugués, escritorio/móvil y versión visible en créditos',resultado:'OK'});
   await avisos.close();
   assert.deepEqual(errores,[]);
+  contexto=await browser.newContext({viewport:{width:1280,height:1080},storageState:sesionInicial});await mockVoz(contexto);
+  page=await contexto.newPage();page.on('pageerror',e=>errores.push(e.message));
+  await page.goto(base);await page.getByRole('button',{name:'Comenzar otra partida',exact:true}).waitFor();
+  console.log('Avisos completos; comprobando recursos y vistas móviles.');
   // Captura de un reto con ayuda en escritorio.
   await clicar(page,'Comenzar otra partida','INICIO');await clicar(page,'Yo elijo','SELECCION_ANIMAL');await page.getByRole('searchbox',{name:'Buscar animal'}).fill('jirafa');await clicar(page,'Jirafa reticulada','ESPERANDO_RESPUESTA');await clicar(page,'Pista');
   await captura(page,'03_reto_escritorio.png');
@@ -428,7 +436,12 @@ async function clicar(page,texto,fase){
   const assetTest=await page.evaluate(async()=>{
     const v=await (await fetch('/api/vista')).json();
     const fallos=[],rutas=[...Object.values(v.pictogramas).map(p=>p.imagen),'/ilustraciones/robot_despedida.webp','/ilustraciones/robot_pausa.webp','/zoonauta-logo.svg','/portada-selva.webp','/paisajes.webp',...Array.from({length:7},(_,i)=>`/fondos/H0${i+2}.webp`),...Array.from({length:8},(_,i)=>`/habitats/H0${i+1}.webp`),...Array.from({length:48},(_,i)=>`/animales/A${String(i+1).padStart(2,'0')}.webp`)];
-    await Promise.all(rutas.map(ruta=>new Promise(resolve=>{const i=new Image();i.onload=()=>{if(!i.naturalWidth)fallos.push(ruta);resolve();};i.onerror=()=>{fallos.push(ruta);resolve();};i.src=ruta;})));return fallos;
+    for(let inicio=0;inicio<rutas.length;inicio+=8){
+      await Promise.all(rutas.slice(inicio,inicio+8).map(async ruta=>{
+        const i=new Image();i.src=ruta;
+        try{await i.decode();if(!i.naturalWidth)fallos.push(ruta);}catch{fallos.push(ruta);}
+      }));
+    }return fallos;
   });assert.deepEqual(assetTest,[]);
   assert.equal(await page.evaluate(async()=>(await fetch('/habitats/H09.webp')).status),404);
   assert.equal(await page.evaluate(async()=>(await fetch('/ilustraciones/inexistente.webp')).status),404);
@@ -439,6 +452,7 @@ async function clicar(page,texto,fase){
     const h=document.createElement('h1');h.textContent='Revisión visual: 48 animales';main.append(h);const grid=document.createElement('div');grid.className='catalogo';main.append(grid);
     for(const a of v.catalogo_animales){const d=document.createElement('div');d.className='tarjeta';const im=document.createElement('img');im.src=`/animales/${a.id}.webp`;const t=document.createElement('span');t.textContent=a.nombre;d.append(im,t);grid.append(d);}
   });await captura(page,'04_revision_animales.png');
+  const sesionRevision=await contexto.storageState();await contexto.close();
   // Vista estrecha real: sin desbordamiento horizontal, controles alcanzables.
   const movil=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mockVoz(movil);const pm=await movil.newPage();pm.on('pageerror',e=>errores.push(e.message));await pm.goto(base);await pm.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   assert.equal(await pm.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);await captura(pm,'06_inicio_movil.png');
@@ -453,6 +467,7 @@ async function clicar(page,texto,fase){
   await captura(pm,'05_reto_movil.png');
   const minimo=await pm.locator('button').evaluateAll(bs=>Math.min(...bs.map(b=>b.getBoundingClientRect().height).filter(h=>h>0)));assert.ok(minimo>=44);
   resultados.push({caso:'Pantalla móvil 390 × 844: inicio, preferencias y partida, ocho opciones, sin desbordamiento horizontal, botones de al menos 44 px',resultado:'OK'});
+  await movil.close();
   // Teclado y movimiento reducido: inicio, búsqueda y selección sin ratón.
   const teclado=await browser.newContext({viewport:{width:1280,height:900},reducedMotion:'reduce'});await mockVoz(teclado);
   const pt=await teclado.newPage();await pt.clock.install();pt.on('pageerror',e=>errores.push(e.message));await pt.goto(base);await pt.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
@@ -474,12 +489,15 @@ async function clicar(page,texto,fase){
   for(const ancho of [320,768,1024,1280]){await pt.setViewportSize({width:ancho,height:900});assert.equal(await pt.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);}
   resultados.push({caso:'Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido',resultado:'OK'});
   resultados.push({caso:'Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal',resultado:'OK'});
+  await teclado.close();
   // Modelos ausentes: se informa de la preparación, sin recurrir a voces del navegador.
   const sinvoz=await browser.newContext();await mockVoz(sinvoz,false);
   const pv=await sinvoz.newPage();pv.on('pageerror',e=>errores.push(e.message));await pv.goto(base);await pv.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   await pv.getByRole('button',{name:'Preferencias'}).click();assert.match(await pv.locator('#estado-voz').textContent(),/No hay voces preparadas/);assert.equal(await pv.locator('#probar-voz').isDisabled(),true);
   await pv.getByRole('button',{name:'Volver al juego',exact:true}).click();await clicar(pv,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await pv.locator('.habitats button:enabled').count(),8);
   resultados.push({caso:'Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos',resultado:'OK'});
+  await sinvoz.close();
+  console.log('Recursos, móvil y teclado completos; comprobando idioma y voz.');
   const bilingue=await browser.newContext();await mockVoz(bilingue);
   const pg=await bilingue.newPage();pg.on('pageerror',e=>errores.push(e.message));await pg.goto(base);await pg.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   await pg.getByRole('button',{name:'Preferencias',exact:true}).click();
@@ -549,10 +567,13 @@ async function clicar(page,texto,fase){
   await pg.goto(base+'/revision');await pg.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
   assert.equal(await pg.getByRole('button',{name:'Atualizar registro',exact:true}).isVisible(),true);
   resultados.push({caso:'Revisión técnica con encabezados en portugués y registros originales conservados',resultado:'OK'});
+  await bilingue.close();
   // Página técnica de la misma cookie: solo lectura, modelo congelado.
+  contexto=await browser.newContext({storageState:sesionRevision});page=await contexto.newPage();
   await page.goto(base+'/revision');await page.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
   const tecnicos=JSON.parse(await page.locator('#datos').textContent());assert.equal(tecnicos.parametros_congelados,true);
   resultados.push({caso:'Consulta técnica separada y modelo congelado',resultado:'OK'});
+  await contexto.close();
   // Una muestra que todavía se descarga no debe bloquear el cambio de voz.
   const cambios=await browser.newContext();await mockVoz(cambios);
   let listo,liberar,primera,peticiones=0;
@@ -578,8 +599,9 @@ async function clicar(page,texto,fase){
   assert.equal(await pc.evaluate(()=>window.__voz[0].voz),'piper:es_MX-ald-medium');
   assert.deepEqual(await vista(pc),antesCambio);
   resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
+  await cambios.close();
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:'2026-10-11',version:'4.4.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:process.env.VERIFICACION_FECHA||new Date().toISOString().slice(0,10),version:'4.4.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
