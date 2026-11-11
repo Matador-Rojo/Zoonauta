@@ -18,14 +18,15 @@ def main():
     parser.add_argument("--voces-navegador", action="store_true", help="Comprueba Microsoft/Google con voces controladas y sus reglas de región.")
     parser.add_argument("--hito2", action="store_true", help="Comprueba 2, 4 y 8 opciones, historial y recarga en ambos idiomas.")
     parser.add_argument("--hito3", action="store_true", help="Comprueba Preferencias en dos columnas, pantallas pequeñas y teclado.")
+    parser.add_argument("--catalogo", action="store_true", help="Comprueba tarjetas grandes, paginación adaptable y controles visibles.")
     args = parser.parse_args()
     with TemporaryDirectory() as carpeta:
-        servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta))
+        servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=False)
         hilo = Thread(target=servidor.serve_forever, daemon=True)
         hilo.start()
         env = {**os.environ, "INTERFAZ_URL": f"http://127.0.0.1:{servidor.server_port}"}
         try:
-            prueba = ("verificar_hito3.cjs" if args.hito3 else "verificar_hito2.cjs" if args.hito2 else "verificar_voces_navegador.cjs" if args.voces_navegador else
+            prueba = ("verificar_catalogo.cjs" if args.catalogo else "verificar_hito3.cjs" if args.hito3 else "verificar_hito2.cjs" if args.hito2 else "verificar_voces_navegador.cjs" if args.voces_navegador else
                       "verificar_audio_real.cjs" if args.audio_real else "verificar_interfaz.cjs")
             resultado = subprocess.run(["node", str(Path(__file__).with_name(prueba))], env=env)
         finally:

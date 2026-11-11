@@ -10,7 +10,7 @@ from uuid import uuid4
 
 from codigo.interfaz import idiomas
 from codigo.interfaz.voz import ControlLecturasVoz
-from codigo.motores.guia import MotorGuia
+from codigo.motores.guia import MotorGuia, MotorPistas
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import Evento, TERMINALES
 from codigo.nucleo.gestor import GestorPartida
@@ -30,7 +30,7 @@ class SesionWeb:
                  aleatorio: Random | None = None):
         self.banco = banco
         self.registros = registros
-        self.politica = politica
+        self.politica = MotorPistas.politica if banco.ampliado else politica
         self.parametros = parametros
         self.aleatorio = aleatorio if aleatorio is not None else SystemRandom()
         self.lock = RLock()
@@ -44,7 +44,8 @@ class SesionWeb:
     def _nuevo(self, retos: int) -> GestorPartida:
         sid = "WEB-" + uuid4().hex
         registro = Registro(self.registros / f"{sid}.jsonl" if self.registros else None)
-        motor = MotorGuia(self.banco, self.politica, parametros=self.parametros)
+        motor = (MotorPistas(self.banco) if self.banco.ampliado else
+                 MotorGuia(self.banco, self.politica, parametros=self.parametros))
         # Una permutación completa por partida: todos los animales pueden aparecer
         # y ninguno se repite. La consola y los experimentos conservan su orden.
         orden = self.aleatorio.sample(list(self.banco.escenarios), len(self.banco.escenarios))
@@ -65,9 +66,10 @@ class SesionWeb:
             vista["sesion_id"] = self.gestor.sesion_id
             vista["reto_id"] = self.gestor.estado.reto_id
             vista["revision"] = self.revision
+            vista["catalogo_ampliado"] = self.banco.ampliado
             vista["pictogramas"] = {k: {"etiqueta": v["etiqueta"],
                 "imagen": f"/media/{k}"} for k, v in self.banco.pictogramas.items()}
-            return idiomas.vista(vista, self.idioma)
+            return idiomas.vista(vista, self.idioma, self.banco)
 
     def cambiar_idioma(self, entrada: dict) -> dict:
         with self.lock:
@@ -97,7 +99,7 @@ class SesionWeb:
                 pregunta = "¿Quién elige el animal?"
                 return pregunta if self.idioma == "es" else idiomas.PORTUGUES["interfaz"][pregunta]
             return (idiomas.saludo(self.idioma) if entrada.get("prueba")
-                    else idiomas.texto(self.respuesta["texto_voz"], self.idioma))
+                    else idiomas.texto(self.respuesta["texto_voz"], self.idioma, self.banco))
 
     def actuar(self, entrada: dict) -> dict:
         with self.lock:
@@ -151,7 +153,8 @@ class SesionWeb:
                 self.respuesta = asdict(emitida)
             self.revision += 1
             resultado = {"aceptada": aceptada, "motivo": motivo,
-                "vista": self.vista(), "respuesta_emitida": idiomas.respuesta(asdict(emitida) if emitida else None, self.idioma)}
+                "vista": self.vista(), "respuesta_emitida": idiomas.respuesta(
+                    asdict(emitida) if emitida else None, self.idioma, self.banco)}
             self._recibos[eid] = firma
             return resultado
 

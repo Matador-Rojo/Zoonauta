@@ -1,0 +1,2633 @@
+{
+  "schema_version": "1.0.0",
+  "items": [
+    {
+      "id": "AY_H01_L1",
+      "habitat_guia_id": "H01",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un bosque cálido y húmedo.",
+      "texto_pt": "Procure uma floresta quente e úmida.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_HUMEDAD"
+        }
+      ]
+    },
+    {
+      "id": "AY_H01_L2",
+      "habitat_guia_id": "H01",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Fíjate en los árboles altos y las hojas grandes.",
+      "texto_pt": "Observe as árvores altas e as folhas grandes.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R01"
+        }
+      ]
+    },
+    {
+      "id": "AY_H01_L3",
+      "habitat_guia_id": "H01",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «selva tropical húmeda».",
+      "texto_pt": "Aponte o habitat «floresta tropical úmida».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H01"
+        }
+      ]
+    },
+    {
+      "id": "AY_H02_L1",
+      "habitat_guia_id": "H02",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un bosque cálido que pasa parte del año seco.",
+      "texto_pt": "Procure uma floresta quente que fica seca durante parte do ano.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H02_L2",
+      "habitat_guia_id": "H02",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "En la época seca, muchos árboles pierden sus hojas.",
+      "texto_pt": "Na estação seca, muitas árvores perdem as folhas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R02"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R03"
+        }
+      ]
+    },
+    {
+      "id": "AY_H02_L3",
+      "habitat_guia_id": "H02",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «bosque tropical seco».",
+      "texto_pt": "Aponte o habitat «floresta tropical seca».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H02"
+        }
+      ]
+    },
+    {
+      "id": "AY_H03_L1",
+      "habitat_guia_id": "H03",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un bosque húmedo de montaña.",
+      "texto_pt": "Procure uma floresta úmida de montanha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_HUMEDAD"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H03_L2",
+      "habitat_guia_id": "H03",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "La niebla se mete entre los árboles.",
+      "texto_pt": "A neblina passa entre as árvores.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R04"
+        }
+      ]
+    },
+    {
+      "id": "AY_H03_L3",
+      "habitat_guia_id": "H03",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «bosque nuboso».",
+      "texto_pt": "Aponte o habitat «floresta nublada».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H03"
+        }
+      ]
+    },
+    {
+      "id": "AY_H04_L1",
+      "habitat_guia_id": "H04",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un bosque de clima templado.",
+      "texto_pt": "Procure uma floresta de clima temperado.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CLIMA_TEMPLADO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H04_L2",
+      "habitat_guia_id": "H04",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Fíjate en los árboles de hojas anchas.",
+      "texto_pt": "Observe as árvores de folhas largas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R05"
+        }
+      ]
+    },
+    {
+      "id": "AY_H04_L3",
+      "habitat_guia_id": "H04",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «bosque templado de hojas anchas».",
+      "texto_pt": "Aponte o habitat «floresta temperada de folhas largas».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H04"
+        }
+      ]
+    },
+    {
+      "id": "AY_H05_L1",
+      "habitat_guia_id": "H05",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un bosque de clima templado.",
+      "texto_pt": "Procure uma floresta de clima temperado.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CLIMA_TEMPLADO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H05_L2",
+      "habitat_guia_id": "H05",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Fíjate en los árboles con hojas en forma de aguja.",
+      "texto_pt": "Observe as árvores com folhas em forma de agulha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R06"
+        }
+      ]
+    },
+    {
+      "id": "AY_H05_L3",
+      "habitat_guia_id": "H05",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «bosque templado de coníferas».",
+      "texto_pt": "Aponte o habitat «floresta temperada de coníferas».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H05"
+        }
+      ]
+    },
+    {
+      "id": "AY_H06_L1",
+      "habitat_guia_id": "H06",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un bosque de una región fría.",
+      "texto_pt": "Procure uma floresta de uma região fria.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H06_L2",
+      "habitat_guia_id": "H06",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Busca muchas coníferas en una región de inviernos largos.",
+      "texto_pt": "Procure muitas coníferas em uma região de invernos longos.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R06"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R07"
+        }
+      ]
+    },
+    {
+      "id": "AY_H06_L3",
+      "habitat_guia_id": "H06",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «bosque boreal o taiga».",
+      "texto_pt": "Aponte o habitat «floresta boreal ou taiga».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H06"
+        }
+      ]
+    },
+    {
+      "id": "AY_H07_L1",
+      "habitat_guia_id": "H07",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca árboles donde la tierra se encuentra con el mar.",
+      "texto_pt": "Procure árvores onde a terra encontra o mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHOS_ARBOLES"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H07_L2",
+      "habitat_guia_id": "H07",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Fíjate en las raíces que sobresalen del agua.",
+      "texto_pt": "Observe as raízes que aparecem acima da água.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R09"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R10"
+        }
+      ]
+    },
+    {
+      "id": "AY_H07_L3",
+      "habitat_guia_id": "H07",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «manglar».",
+      "texto_pt": "Aponte o habitat «manguezal».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H07"
+        }
+      ]
+    },
+    {
+      "id": "AY_H08_L1",
+      "habitat_guia_id": "H08",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un bosque cálido cerca de agua dulce.",
+      "texto_pt": "Procure uma floresta quente perto da água doce.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        }
+      ]
+    },
+    {
+      "id": "AY_H08_L2",
+      "habitat_guia_id": "H08",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Cuando el agua sube, cubre el suelo entre los árboles.",
+      "texto_pt": "Quando a água sobe, cobre o chão entre as árvores.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_BOSQUE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R11"
+        }
+      ]
+    },
+    {
+      "id": "AY_H08_L3",
+      "habitat_guia_id": "H08",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «bosque tropical inundable».",
+      "texto_pt": "Aponte o habitat «floresta tropical inundável».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H09_L1",
+      "habitat_guia_id": "H09",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar cálido y abierto con árboles separados.",
+      "texto_pt": "Procure um lugar quente e aberto com árvores afastadas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_ARBOLES_SEPARADOS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H09_L2",
+      "habitat_guia_id": "H09",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay mucho pasto y una época en la que se seca el suelo.",
+      "texto_pt": "Há muito capim e uma época em que o chão fica seco.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R02"
+        }
+      ]
+    },
+    {
+      "id": "AY_H09_L3",
+      "habitat_guia_id": "H09",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «sabana seca».",
+      "texto_pt": "Aponte o habitat «savana seca».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H09"
+        }
+      ]
+    },
+    {
+      "id": "AY_H10_L1",
+      "habitat_guia_id": "H10",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar abierto con pasto y árboles separados.",
+      "texto_pt": "Procure um lugar aberto com capim e árvores afastadas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_ARBOLES_SEPARADOS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H10_L2",
+      "habitat_guia_id": "H10",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "En una época del año el agua cubre parte del pasto.",
+      "texto_pt": "Em uma época do ano, a água cobre parte do capim.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R12"
+        }
+      ]
+    },
+    {
+      "id": "AY_H10_L3",
+      "habitat_guia_id": "H10",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «sabana inundable».",
+      "texto_pt": "Aponte o habitat «savana inundável».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H10"
+        }
+      ]
+    },
+    {
+      "id": "AY_H11_L1",
+      "habitat_guia_id": "H11",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar abierto con mucho pasto.",
+      "texto_pt": "Procure um lugar aberto com muito capim.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        }
+      ]
+    },
+    {
+      "id": "AY_H11_L2",
+      "habitat_guia_id": "H11",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay pocos árboles y el clima es templado.",
+      "texto_pt": "Há poucas árvores e o clima é temperado.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_ARBOLES_SEPARADOS"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CLIMA_TEMPLADO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H11_L3",
+      "habitat_guia_id": "H11",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «pradera templada».",
+      "texto_pt": "Aponte o habitat «pradaria temperada».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H11"
+        }
+      ]
+    },
+    {
+      "id": "AY_H12_L1",
+      "habitat_guia_id": "H12",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar frío y abierto.",
+      "texto_pt": "Procure um lugar frio e aberto.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H12_L2",
+      "habitat_guia_id": "H12",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El suelo suele permanecer congelado y predominan plantas bajas.",
+      "texto_pt": "O solo costuma ficar congelado e predominam plantas baixas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R13"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R14"
+        }
+      ]
+    },
+    {
+      "id": "AY_H12_L3",
+      "habitat_guia_id": "H12",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «tundra».",
+      "texto_pt": "Aponte o habitat «tundra».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H12"
+        }
+      ]
+    },
+    {
+      "id": "AY_H13_L1",
+      "habitat_guia_id": "H13",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar con arbustos.",
+      "texto_pt": "Procure um lugar com arbustos.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R15"
+        }
+      ]
+    },
+    {
+      "id": "AY_H13_L2",
+      "habitat_guia_id": "H13",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El verano es seco y los inviernos son más lluviosos.",
+      "texto_pt": "O verão é seco e os invernos são mais chuvosos.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R16"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R17"
+        }
+      ]
+    },
+    {
+      "id": "AY_H13_L3",
+      "habitat_guia_id": "H13",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «matorral mediterráneo».",
+      "texto_pt": "Aponte o habitat «matagal mediterrâneo».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H13"
+        }
+      ]
+    },
+    {
+      "id": "AY_H14_L1",
+      "habitat_guia_id": "H14",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca arbustos en un lugar cálido.",
+      "texto_pt": "Procure arbustos em um lugar quente.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R15"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ]
+    },
+    {
+      "id": "AY_H14_L2",
+      "habitat_guia_id": "H14",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "La sequía dura parte del año y algunos arbustos tienen espinas.",
+      "texto_pt": "A seca dura parte do ano e alguns arbustos têm espinhos.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R02"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R18"
+        }
+      ]
+    },
+    {
+      "id": "AY_H14_L3",
+      "habitat_guia_id": "H14",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «matorral tropical seco».",
+      "texto_pt": "Aponte o habitat «matagal tropical seco».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H14"
+        }
+      ]
+    },
+    {
+      "id": "AY_H15_L1",
+      "habitat_guia_id": "H15",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca plantas bajas en una montaña alta.",
+      "texto_pt": "Procure plantas baixas em uma montanha alta.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R14"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H15_L2",
+      "habitat_guia_id": "H15",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Aquí dominan los arbustos bajos entre las rocas.",
+      "texto_pt": "Aqui predominam arbustos baixos entre as rochas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R19"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R20"
+        }
+      ]
+    },
+    {
+      "id": "AY_H15_L3",
+      "habitat_guia_id": "H15",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «matorral de alta montaña».",
+      "texto_pt": "Aponte o habitat «matagal de alta montanha».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H15"
+        }
+      ]
+    },
+    {
+      "id": "AY_H16_L1",
+      "habitat_guia_id": "H16",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar abierto en lo alto de una montaña.",
+      "texto_pt": "Procure um lugar aberto no alto de uma montanha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_LUGAR_ABIERTO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H16_L2",
+      "habitat_guia_id": "H16",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay mucho pasto y pocos árboles en altura.",
+      "texto_pt": "Há muito capim e poucas árvores lá no alto.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H16_L3",
+      "habitat_guia_id": "H16",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «pastizal de alta montaña».",
+      "texto_pt": "Aponte o habitat «campo de alta montanha».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H16"
+        }
+      ]
+    },
+    {
+      "id": "AY_H17_L1",
+      "habitat_guia_id": "H17",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar muy seco y cálido.",
+      "texto_pt": "Procure um lugar muito seco e quente.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_CALOR"
+        }
+      ]
+    },
+    {
+      "id": "AY_H17_L2",
+      "habitat_guia_id": "H17",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay pocas plantas y mucha superficie de arena o roca.",
+      "texto_pt": "Há poucas plantas e muita areia ou rocha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POCAS_PLANTAS"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R21"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H17_L3",
+      "habitat_guia_id": "H17",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «desierto cálido».",
+      "texto_pt": "Aponte o habitat «deserto quente».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H17"
+        }
+      ]
+    },
+    {
+      "id": "AY_H18_L1",
+      "habitat_guia_id": "H18",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar muy seco y frío.",
+      "texto_pt": "Procure um lugar muito seco e frio.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H18_L2",
+      "habitat_guia_id": "H18",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay pocas plantas y suelo desnudo expuesto al frío.",
+      "texto_pt": "Há poucas plantas e o chão fica exposto ao frio.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POCAS_PLANTAS"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R22"
+        }
+      ]
+    },
+    {
+      "id": "AY_H18_L3",
+      "habitat_guia_id": "H18",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «desierto frío».",
+      "texto_pt": "Aponte o habitat «deserto frio».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H18"
+        }
+      ]
+    },
+    {
+      "id": "AY_H19_L1",
+      "habitat_guia_id": "H19",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca agua en medio de un lugar seco.",
+      "texto_pt": "Procure água no meio de um lugar seco.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H19_L2",
+      "habitat_guia_id": "H19",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Cerca del agua crecen plantas en un paisaje desértico.",
+      "texto_pt": "Perto da água crescem plantas em uma paisagem desértica.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R23"
+        }
+      ]
+    },
+    {
+      "id": "AY_H19_L3",
+      "habitat_guia_id": "H19",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «oasis».",
+      "texto_pt": "Aponte o habitat «oásis».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H19"
+        }
+      ]
+    },
+    {
+      "id": "AY_H20_L1",
+      "habitat_guia_id": "H20",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar de gran altura.",
+      "texto_pt": "Procure um lugar de grande altitude.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H20_L2",
+      "habitat_guia_id": "H20",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay laderas de roca y poca vegetación.",
+      "texto_pt": "Há encostas rochosas e poucas plantas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R24"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_POCAS_PLANTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H20_L3",
+      "habitat_guia_id": "H20",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «alta montaña rocosa».",
+      "texto_pt": "Aponte o habitat «alta montanha rochosa».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H20"
+        }
+      ]
+    },
+    {
+      "id": "AY_H21_L1",
+      "habitat_guia_id": "H21",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar oscuro en el interior de la roca.",
+      "texto_pt": "Procure um lugar escuro dentro da rocha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R25"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R26"
+        }
+      ]
+    },
+    {
+      "id": "AY_H21_L2",
+      "habitat_guia_id": "H21",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Entra por una abertura en la roca y sigue una cavidad sin luz directa.",
+      "texto_pt": "Entre por uma abertura na rocha e siga por uma cavidade sem luz direta.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R27"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R25"
+        }
+      ]
+    },
+    {
+      "id": "AY_H21_L3",
+      "habitat_guia_id": "H21",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «cueva terrestre».",
+      "texto_pt": "Aponte o habitat «caverna terrestre».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H21"
+        }
+      ]
+    },
+    {
+      "id": "AY_H22_L1",
+      "habitat_guia_id": "H22",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar muy frío en el mar.",
+      "texto_pt": "Procure um lugar muito frio no mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PAISAJE_FRIO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        }
+      ]
+    },
+    {
+      "id": "AY_H22_L2",
+      "habitat_guia_id": "H22",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "La superficie del mar está cubierta de placas de hielo.",
+      "texto_pt": "A superfície do mar está coberta por placas de gelo.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R28"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R29"
+        }
+      ]
+    },
+    {
+      "id": "AY_H22_L3",
+      "habitat_guia_id": "H22",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «hielo marino polar».",
+      "texto_pt": "Aponte o habitat «gelo marinho polar».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H22"
+        }
+      ]
+    },
+    {
+      "id": "AY_H23_L1",
+      "habitat_guia_id": "H23",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca agua dulce que corre.",
+      "texto_pt": "Procure água doce que corre.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H23_L2",
+      "habitat_guia_id": "H23",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El agua avanza despacio entre las orillas.",
+      "texto_pt": "A água avança devagar entre as margens.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R30"
+        }
+      ]
+    },
+    {
+      "id": "AY_H23_L3",
+      "habitat_guia_id": "H23",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «río de corriente lenta».",
+      "texto_pt": "Aponte o habitat «rio de corrente lenta».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H23"
+        }
+      ]
+    },
+    {
+      "id": "AY_H24_L1",
+      "habitat_guia_id": "H24",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca agua que baja por la montaña.",
+      "texto_pt": "Procure água que desce pela montanha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H24_L2",
+      "habitat_guia_id": "H24",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El cauce es estrecho y la corriente pasa rápido entre piedras.",
+      "texto_pt": "O leito é estreito e a água corre depressa entre pedras.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R31"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R32"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R20"
+        }
+      ]
+    },
+    {
+      "id": "AY_H24_L3",
+      "habitat_guia_id": "H24",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «arroyo de montaña».",
+      "texto_pt": "Aponte o habitat «riacho de montanha».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H24"
+        }
+      ]
+    },
+    {
+      "id": "AY_H25_L1",
+      "habitat_guia_id": "H25",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca una gran extensión de agua dulce.",
+      "texto_pt": "Procure uma grande extensão de água doce.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        }
+      ]
+    },
+    {
+      "id": "AY_H25_L2",
+      "habitat_guia_id": "H25",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El agua está rodeada de tierra y se mueve poco.",
+      "texto_pt": "A água é cercada de terra e se move pouco.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R33"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R34"
+        }
+      ]
+    },
+    {
+      "id": "AY_H25_L3",
+      "habitat_guia_id": "H25",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «lago de agua dulce».",
+      "texto_pt": "Aponte o habitat «lago de água doce».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H25"
+        }
+      ]
+    },
+    {
+      "id": "AY_H26_L1",
+      "habitat_guia_id": "H26",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca una pequeña extensión de agua.",
+      "texto_pt": "Procure uma pequena extensão de água.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R35"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        }
+      ]
+    },
+    {
+      "id": "AY_H26_L2",
+      "habitat_guia_id": "H26",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Es pequeña, se llena en una época y luego puede secarse.",
+      "texto_pt": "É pequena, enche em uma época e depois pode secar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R35"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R36"
+        }
+      ]
+    },
+    {
+      "id": "AY_H26_L3",
+      "habitat_guia_id": "H26",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «charca temporal».",
+      "texto_pt": "Aponte o habitat «lagoa temporária».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H26"
+        }
+      ]
+    },
+    {
+      "id": "AY_H27_L1",
+      "habitat_guia_id": "H27",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca suelo mojado con agua dulce.",
+      "texto_pt": "Procure solo molhado com água doce.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R37"
+        }
+      ]
+    },
+    {
+      "id": "AY_H27_L2",
+      "habitat_guia_id": "H27",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Las plantas sobresalen del agua quieta.",
+      "texto_pt": "As plantas saem da água parada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R34"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R38"
+        }
+      ]
+    },
+    {
+      "id": "AY_H27_L3",
+      "habitat_guia_id": "H27",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «pantano de agua dulce».",
+      "texto_pt": "Aponte o habitat «pântano de água doce».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H27"
+        }
+      ]
+    },
+    {
+      "id": "AY_H28_L1",
+      "habitat_guia_id": "H28",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca suelo que permanece empapado.",
+      "texto_pt": "Procure solo que permanece encharcado.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R37"
+        }
+      ]
+    },
+    {
+      "id": "AY_H28_L2",
+      "habitat_guia_id": "H28",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Bajo las plantas se acumulan capas de restos vegetales húmedos.",
+      "texto_pt": "Debaixo das plantas se acumulam camadas de restos vegetais úmidos.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R39"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R37"
+        }
+      ]
+    },
+    {
+      "id": "AY_H28_L3",
+      "habitat_guia_id": "H28",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «turbera».",
+      "texto_pt": "Aponte o habitat «turfeira».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H28"
+        }
+      ]
+    },
+    {
+      "id": "AY_H29_L1",
+      "habitat_guia_id": "H29",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca suelo encharcado en una montaña alta.",
+      "texto_pt": "Procure solo encharcado em uma montanha alta.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R37"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H29_L2",
+      "habitat_guia_id": "H29",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay agua poco profunda y plantas bajas en el suelo húmedo de altura.",
+      "texto_pt": "Há água rasa e plantas baixas no solo úmido da montanha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R40"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R14"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MONTANAS_ALTAS"
+        }
+      ]
+    },
+    {
+      "id": "AY_H29_L3",
+      "habitat_guia_id": "H29",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «humedal de alta montaña».",
+      "texto_pt": "Aponte o habitat «área úmida de alta montanha».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H29"
+        }
+      ]
+    },
+    {
+      "id": "AY_H30_L1",
+      "habitat_guia_id": "H30",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca el cauce de un río.",
+      "texto_pt": "Procure o leito de um rio.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H30_L2",
+      "habitat_guia_id": "H30",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "En una época corre el agua y en otra queda parte del cauce seco.",
+      "texto_pt": "Em uma época a água corre e em outra parte do leito fica seca.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_RIO"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R41"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R36"
+        }
+      ]
+    },
+    {
+      "id": "AY_H30_L3",
+      "habitat_guia_id": "H30",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «río estacional».",
+      "texto_pt": "Aponte o habitat «rio sazonal».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H30"
+        }
+      ]
+    },
+    {
+      "id": "AY_H31_L1",
+      "habitat_guia_id": "H31",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca agua dulce bajo tierra.",
+      "texto_pt": "Procure água doce no subsolo.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_DULCE"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R26"
+        }
+      ]
+    },
+    {
+      "id": "AY_H31_L2",
+      "habitat_guia_id": "H31",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El agua corre por dentro de una cavidad en la roca.",
+      "texto_pt": "A água corre dentro de uma cavidade na rocha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R42"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R25"
+        }
+      ]
+    },
+    {
+      "id": "AY_H31_L3",
+      "habitat_guia_id": "H31",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «río subterráneo».",
+      "texto_pt": "Aponte o habitat «rio subterrâneo».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H31"
+        }
+      ]
+    },
+    {
+      "id": "AY_H32_L1",
+      "habitat_guia_id": "H32",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca una extensión de agua rodeada de tierra.",
+      "texto_pt": "Procure uma extensão de água cercada de terra.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R33"
+        }
+      ]
+    },
+    {
+      "id": "AY_H32_L2",
+      "habitat_guia_id": "H32",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El agua tiene sal y queda tierra alrededor.",
+      "texto_pt": "A água é salgada e há terra ao redor.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R33"
+        }
+      ]
+    },
+    {
+      "id": "AY_H32_L3",
+      "habitat_guia_id": "H32",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «lago salado».",
+      "texto_pt": "Aponte o habitat «lago salgado».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H32"
+        }
+      ]
+    },
+    {
+      "id": "AY_H33_L1",
+      "habitat_guia_id": "H33",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca agua salada cerca de tierra.",
+      "texto_pt": "Procure água salgada perto de terra.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H33_L2",
+      "habitat_guia_id": "H33",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Estás dentro del mar y la orilla queda cerca.",
+      "texto_pt": "Você está dentro do mar e a margem está perto.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R29"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H33_L3",
+      "habitat_guia_id": "H33",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «aguas marinas costeras».",
+      "texto_pt": "Aponte o habitat «águas marinhas costeiras».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H33"
+        }
+      ]
+    },
+    {
+      "id": "AY_H34_L1",
+      "habitat_guia_id": "H34",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar con mucha agua salada.",
+      "texto_pt": "Procure um lugar com muita água salgada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_MUCHA_AGUA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        }
+      ]
+    },
+    {
+      "id": "AY_H34_L2",
+      "habitat_guia_id": "H34",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay luz cerca de la superficie y la costa queda lejos.",
+      "texto_pt": "Há luz perto da superfície e a costa fica longe.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R29"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R43"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R44"
+        }
+      ]
+    },
+    {
+      "id": "AY_H34_L3",
+      "habitat_guia_id": "H34",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «mar abierto superficial».",
+      "texto_pt": "Aponte o habitat «mar aberto superficial».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H34"
+        }
+      ]
+    },
+    {
+      "id": "AY_H35_L1",
+      "habitat_guia_id": "H35",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar con agua salada y poca luz.",
+      "texto_pt": "Procure um lugar com água salgada e pouca luz.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R45"
+        }
+      ]
+    },
+    {
+      "id": "AY_H35_L2",
+      "habitat_guia_id": "H35",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Está muy por debajo de la superficie, en el agua que queda por encima del fondo.",
+      "texto_pt": "Fica bem abaixo da superfície, na água que está acima do fundo.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R46"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R47"
+        }
+      ]
+    },
+    {
+      "id": "AY_H35_L3",
+      "habitat_guia_id": "H35",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «aguas oceánicas profundas».",
+      "texto_pt": "Aponte o habitat «águas oceânicas profundas».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H35"
+        }
+      ]
+    },
+    {
+      "id": "AY_H36_L1",
+      "habitat_guia_id": "H36",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar muy profundo en el mar.",
+      "texto_pt": "Procure um lugar muito profundo no mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R46"
+        }
+      ]
+    },
+    {
+      "id": "AY_H36_L2",
+      "habitat_guia_id": "H36",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Busca el suelo del océano, donde hay sedimento y roca.",
+      "texto_pt": "Procure o piso do oceano, onde há sedimento e rocha.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R48"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R49"
+        }
+      ]
+    },
+    {
+      "id": "AY_H36_L3",
+      "habitat_guia_id": "H36",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «fondo marino profundo».",
+      "texto_pt": "Aponte o habitat «fundo marinho profundo».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H36"
+        }
+      ]
+    },
+    {
+      "id": "AY_H37_L1",
+      "habitat_guia_id": "H37",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca algo fijo bajo el agua salada.",
+      "texto_pt": "Procure algo fixo debaixo da água salgada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R50"
+        }
+      ]
+    },
+    {
+      "id": "AY_H37_L2",
+      "habitat_guia_id": "H37",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Fíjate en las formas de coral que cubren parte del fondo.",
+      "texto_pt": "Observe as formas de coral que cobrem parte do fundo.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R51"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R48"
+        }
+      ]
+    },
+    {
+      "id": "AY_H37_L3",
+      "habitat_guia_id": "H37",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «arrecife de coral».",
+      "texto_pt": "Aponte o habitat «recife de coral».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H37"
+        }
+      ]
+    },
+    {
+      "id": "AY_H38_L1",
+      "habitat_guia_id": "H38",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca plantas bajo el agua salada.",
+      "texto_pt": "Procure plantas debaixo da água salgada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R52"
+        }
+      ]
+    },
+    {
+      "id": "AY_H38_L2",
+      "habitat_guia_id": "H38",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Se ven hojas largas como cintas creciendo desde el suelo.",
+      "texto_pt": "Folhas compridas como fitas crescem a partir do solo.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R53"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R48"
+        }
+      ]
+    },
+    {
+      "id": "AY_H38_L3",
+      "habitat_guia_id": "H38",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «pradera marina».",
+      "texto_pt": "Aponte o habitat «prado marinho».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H38"
+        }
+      ]
+    },
+    {
+      "id": "AY_H39_L1",
+      "habitat_guia_id": "H39",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca vegetación alta bajo el agua salada.",
+      "texto_pt": "Procure vegetação alta debaixo da água salgada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R52"
+        }
+      ]
+    },
+    {
+      "id": "AY_H39_L2",
+      "habitat_guia_id": "H39",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Hay algas grandes con láminas largas que se elevan desde el fondo.",
+      "texto_pt": "Há algas grandes com lâminas longas que sobem do fundo.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R54"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R48"
+        }
+      ]
+    },
+    {
+      "id": "AY_H39_L3",
+      "habitat_guia_id": "H39",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «bosque de algas».",
+      "texto_pt": "Aponte o habitat «floresta de algas».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H39"
+        }
+      ]
+    },
+    {
+      "id": "AY_H40_L1",
+      "habitat_guia_id": "H40",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca rocas bajo el agua salada.",
+      "texto_pt": "Procure rochas debaixo da água salgada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R20"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_AGUA_SALADA"
+        }
+      ]
+    },
+    {
+      "id": "AY_H40_L2",
+      "habitat_guia_id": "H40",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Las rocas forman una zona del fondo que permanece sumergida.",
+      "texto_pt": "As rochas formam uma área do fundo que permanece submersa.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R20"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R50"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R48"
+        }
+      ]
+    },
+    {
+      "id": "AY_H40_L3",
+      "habitat_guia_id": "H40",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «arrecife rocoso».",
+      "texto_pt": "Aponte o habitat «recife rochoso».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H40"
+        }
+      ]
+    },
+    {
+      "id": "AY_H41_L1",
+      "habitat_guia_id": "H41",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca donde se juntan agua dulce y salada.",
+      "texto_pt": "Procure onde a água doce se mistura com a água salgada.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R55"
+        }
+      ]
+    },
+    {
+      "id": "AY_H41_L2",
+      "habitat_guia_id": "H41",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Sigue el río hasta el lugar donde desemboca y se mezcla con el mar.",
+      "texto_pt": "Siga o rio até onde ele deságua e se mistura com o mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R56"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R55"
+        }
+      ]
+    },
+    {
+      "id": "AY_H41_L3",
+      "habitat_guia_id": "H41",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «estuario».",
+      "texto_pt": "Aponte o habitat «estuário».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H41"
+        }
+      ]
+    },
+    {
+      "id": "AY_H42_L1",
+      "habitat_guia_id": "H42",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca agua salobre junto al mar.",
+      "texto_pt": "Procure água salobra perto do mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R55"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H42_L2",
+      "habitat_guia_id": "H42",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Una franja de tierra la separa en parte del mar y queda un paso estrecho.",
+      "texto_pt": "Uma faixa de terra separa parte da lagoa do mar e deixa uma passagem estreita.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R57"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R58"
+        }
+      ]
+    },
+    {
+      "id": "AY_H42_L3",
+      "habitat_guia_id": "H42",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «laguna costera salobre».",
+      "texto_pt": "Aponte o habitat «lagoa costeira salobra».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H42"
+        }
+      ]
+    },
+    {
+      "id": "AY_H43_L1",
+      "habitat_guia_id": "H43",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca plantas junto a la costa.",
+      "texto_pt": "Procure plantas perto da costa.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R38"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H43_L2",
+      "habitat_guia_id": "H43",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Las mareas mojan y descubren un terreno bajo, con barro y pastos.",
+      "texto_pt": "As marés molham e descobrem um terreno baixo, com lama e capim.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R10"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R59"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_PASTO_ABUNDANTE"
+        }
+      ]
+    },
+    {
+      "id": "AY_H43_L3",
+      "habitat_guia_id": "H43",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «marisma costera».",
+      "texto_pt": "Aponte o habitat «marisma costeira».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H43"
+        }
+      ]
+    },
+    {
+      "id": "AY_H44_L1",
+      "habitat_guia_id": "H44",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca un lugar con rocas junto al mar.",
+      "texto_pt": "Procure um lugar com rochas perto do mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R20"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H44_L2",
+      "habitat_guia_id": "H44",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Las olas golpean una orilla de roca al nivel del agua.",
+      "texto_pt": "As ondas batem em uma margem de rocha no nível da água.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R60"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H44_L3",
+      "habitat_guia_id": "H44",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «costa rocosa».",
+      "texto_pt": "Aponte o habitat «costão rochoso».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H44"
+        }
+      ]
+    },
+    {
+      "id": "AY_H45_L1",
+      "habitat_guia_id": "H45",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca agua entre rocas junto al mar.",
+      "texto_pt": "Procure água entre rochas junto do mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R20"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R35"
+        }
+      ]
+    },
+    {
+      "id": "AY_H45_L2",
+      "habitat_guia_id": "H45",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Al bajar la marea queda agua atrapada entre las rocas.",
+      "texto_pt": "Quando a maré baixa, a água fica presa entre as rochas.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R61"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R62"
+        }
+      ]
+    },
+    {
+      "id": "AY_H45_L3",
+      "habitat_guia_id": "H45",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «poza de marea».",
+      "texto_pt": "Aponte o habitat «poça de maré».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H45"
+        }
+      ]
+    },
+    {
+      "id": "AY_H46_L1",
+      "habitat_guia_id": "H46",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca arena junto al mar.",
+      "texto_pt": "Procure areia perto do mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R21"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H46_L2",
+      "habitat_guia_id": "H46",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "La arena se moja justo donde llegan y se retiran las olas.",
+      "texto_pt": "A areia fica molhada onde as ondas chegam e recuam.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R63"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R10"
+        }
+      ]
+    },
+    {
+      "id": "AY_H46_L3",
+      "habitat_guia_id": "H46",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «playa arenosa».",
+      "texto_pt": "Aponte o habitat «praia arenosa».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H46"
+        }
+      ]
+    },
+    {
+      "id": "AY_H47_L1",
+      "habitat_guia_id": "H47",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca montículos de arena cerca del mar.",
+      "texto_pt": "Procure montes de areia perto do mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R64"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H47_L2",
+      "habitat_guia_id": "H47",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "El viento mueve la arena seca detrás de la playa.",
+      "texto_pt": "O vento move a areia seca atrás da praia.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R65"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R21"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SECO"
+        }
+      ]
+    },
+    {
+      "id": "AY_H47_L3",
+      "habitat_guia_id": "H47",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «duna costera».",
+      "texto_pt": "Aponte o habitat «duna costeira».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H47"
+        }
+      ]
+    },
+    {
+      "id": "AY_H48_L1",
+      "habitat_guia_id": "H48",
+      "nivel": 1,
+      "variante_id": "V1",
+      "texto": "Busca roca junto al mar.",
+      "texto_pt": "Procure rocha perto do mar.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R20"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H48_L2",
+      "habitat_guia_id": "H48",
+      "nivel": 2,
+      "variante_id": "V1",
+      "texto": "Una pared alta y casi vertical cae hacia el agua.",
+      "texto_pt": "Um paredão alto e quase vertical desce até a água.",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R66"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_R08"
+        }
+      ]
+    },
+    {
+      "id": "AY_H48_L3",
+      "habitat_guia_id": "H48",
+      "nivel": 3,
+      "variante_id": "V1",
+      "texto": "Señala el hábitat «acantilado costero».",
+      "texto_pt": "Aponte o habitat «falésia costeira».",
+      "pictogramas": [
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_SENALAR"
+        },
+        {
+          "tipo": "PICTOGRAMA",
+          "id": "P_H48"
+        }
+      ]
+    }
+  ]
+}

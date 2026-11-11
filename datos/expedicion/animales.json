@@ -1,0 +1,3383 @@
+{
+  "schema_version": "1.0.0",
+  "items": [
+    {
+      "id": "A01",
+      "nombre": "Jaguar",
+      "nombre_pt": "Onça-pintada",
+      "taxon": "Panthera onca",
+      "pictograma_id": "P_A01",
+      "habitat_referencia_id": "H01",
+      "secundarios": {
+        "H04": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Panthera_onca/"
+          ],
+          "contexto": "Algunas poblaciones del norte de México usan bosques de encinos.",
+          "contexto_pt": "Algumas populações do norte do México usam florestas de carvalhos."
+        }
+      },
+      "contrastes_preferentes": [
+        "H08",
+        "H02",
+        "H03",
+        "H10",
+        "H27",
+        "H14"
+      ]
+    },
+    {
+      "id": "A02",
+      "nombre": "Orangután de Borneo",
+      "nombre_pt": "Orangotango-de-bornéu",
+      "taxon": "Pongo pygmaeus",
+      "pictograma_id": "P_A02",
+      "habitat_referencia_id": "H01",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H08",
+        "H03",
+        "H02",
+        "H07",
+        "H27",
+        "H04",
+        "H10"
+      ]
+    },
+    {
+      "id": "A03",
+      "nombre": "Gorila occidental",
+      "nombre_pt": "Gorila-ocidental",
+      "taxon": "Gorilla gorilla",
+      "pictograma_id": "P_A03",
+      "habitat_referencia_id": "H01",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A04",
+      "nombre": "Perezoso de dos dedos de Hoffmann",
+      "nombre_pt": "Preguiça-de-dois-dedos-de-hoffmann",
+      "taxon": "Choloepus hoffmanni",
+      "pictograma_id": "P_A04",
+      "habitat_referencia_id": "H01",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H02",
+        "H03",
+        "H08",
+        "H07",
+        "H04",
+        "H14",
+        "H10"
+      ]
+    },
+    {
+      "id": "A05",
+      "nombre": "Guacamayo rojo",
+      "nombre_pt": "Araracanga",
+      "taxon": "Ara macao",
+      "pictograma_id": "P_A05",
+      "habitat_referencia_id": "H01",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H08",
+        "H02",
+        "H03",
+        "H07",
+        "H14",
+        "H10",
+        "H27"
+      ]
+    },
+    {
+      "id": "A06",
+      "nombre": "Rana dardo azul",
+      "nombre_pt": "Rã-dardo-azul",
+      "taxon": "Dendrobates tinctorius, morfo azul tradicionalmente llamado azureus",
+      "pictograma_id": "P_A06",
+      "habitat_referencia_id": "H01",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H03",
+        "H08",
+        "H02",
+        "H04",
+        "H05",
+        "H07",
+        "H24"
+      ]
+    },
+    {
+      "id": "A07",
+      "nombre": "León africano",
+      "nombre_pt": "Leão-africano",
+      "taxon": "Panthera leo",
+      "pictograma_id": "P_A07",
+      "habitat_referencia_id": "H09",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A08",
+      "nombre": "Jirafa reticulada",
+      "nombre_pt": "Girafa-reticulada",
+      "taxon": "Giraffa reticulata",
+      "pictograma_id": "P_A08",
+      "habitat_referencia_id": "H09",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H14",
+        "H10",
+        "H17",
+        "H02",
+        "H11",
+        "H19",
+        "H13"
+      ]
+    },
+    {
+      "id": "A09",
+      "nombre": "Cebra de llanura",
+      "nombre_pt": "Zebra-das-planícies",
+      "taxon": "Equus quagga (la fuente usa Equus burchellii)",
+      "pictograma_id": "P_A09",
+      "habitat_referencia_id": "H09",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A10",
+      "nombre": "Elefante africano de sabana",
+      "nombre_pt": "Elefante-africano-da-savana",
+      "taxon": "Loxodonta africana",
+      "pictograma_id": "P_A10",
+      "habitat_referencia_id": "H09",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H10",
+        "H14",
+        "H02",
+        "H08",
+        "H27",
+        "H11",
+        "H17"
+      ]
+    },
+    {
+      "id": "A11",
+      "nombre": "Guepardo",
+      "nombre_pt": "Guepardo",
+      "taxon": "Acinonyx jubatus",
+      "pictograma_id": "P_A11",
+      "habitat_referencia_id": "H09",
+      "secundarios": {
+        "H17": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Acinonyx_jubatus/"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A12",
+      "nombre": "Avestruz común",
+      "nombre_pt": "Avestruz-comum",
+      "taxon": "Struthio camelus",
+      "pictograma_id": "P_A12",
+      "habitat_referencia_id": "H09",
+      "secundarios": {
+        "H17": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Struthio_camelus/",
+            "https://animals.sandiegozoo.org/animals/ostrich"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A13",
+      "nombre": "Dromedario",
+      "nombre_pt": "Dromedário",
+      "taxon": "Camelus dromedarius",
+      "pictograma_id": "P_A13",
+      "habitat_referencia_id": "H17",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A14",
+      "nombre": "Zorro fénec",
+      "nombre_pt": "Raposa-do-deserto",
+      "taxon": "Vulpes zerda",
+      "pictograma_id": "P_A14",
+      "habitat_referencia_id": "H17",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H18",
+        "H14",
+        "H19",
+        "H09",
+        "H47",
+        "H13",
+        "H02"
+      ]
+    },
+    {
+      "id": "A15",
+      "nombre": "Suricata",
+      "nombre_pt": "Suricato",
+      "taxon": "Suricata suricatta",
+      "pictograma_id": "P_A15",
+      "habitat_referencia_id": "H17",
+      "secundarios": {
+        "H09": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Suricata_suricatta/"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A16",
+      "nombre": "Tortuga del desierto de Mojave",
+      "nombre_pt": "Tartaruga-do-deserto-de-mojave",
+      "taxon": "Gopherus agassizii",
+      "pictograma_id": "P_A16",
+      "habitat_referencia_id": "H17",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H14",
+        "H18",
+        "H13",
+        "H19",
+        "H47",
+        "H09",
+        "H30"
+      ]
+    },
+    {
+      "id": "A17",
+      "nombre": "Monstruo de Gila",
+      "nombre_pt": "Monstro-de-gila",
+      "taxon": "Heloderma suspectum",
+      "pictograma_id": "P_A17",
+      "habitat_referencia_id": "H17",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A18",
+      "nombre": "Jerbo egipcio menor",
+      "nombre_pt": "Gerbo-egípcio-pequeno",
+      "taxon": "Jaculus jaculus",
+      "pictograma_id": "P_A18",
+      "habitat_referencia_id": "H17",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A19",
+      "nombre": "Delfín nariz de botella",
+      "nombre_pt": "Golfinho-nariz-de-garrafa",
+      "taxon": "Tursiops truncatus",
+      "pictograma_id": "P_A19",
+      "habitat_referencia_id": "H33",
+      "secundarios": {
+        "H41": {
+          "fuentes": [
+            "https://www.fisheries.noaa.gov/species/common-bottlenose-dolphin",
+            "https://animaldiversity.org/accounts/Tursiops_truncatus/"
+          ]
+        },
+        "H34": {
+          "fuentes": [
+            "https://www.fisheries.noaa.gov/species/common-bottlenose-dolphin",
+            "https://animaldiversity.org/accounts/Tursiops_truncatus/"
+          ]
+        }
+      },
+      "contrastes_preferentes": [
+        "H42",
+        "H37",
+        "H38",
+        "H40",
+        "H35"
+      ]
+    },
+    {
+      "id": "A20",
+      "nombre": "Ballena azul",
+      "nombre_pt": "Baleia-azul",
+      "taxon": "Balaenoptera musculus",
+      "pictograma_id": "P_A20",
+      "habitat_referencia_id": "H34",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H33",
+        "H35",
+        "H22",
+        "H39",
+        "H40",
+        "H37",
+        "H38"
+      ]
+    },
+    {
+      "id": "A21",
+      "nombre": "Tiburón blanco",
+      "nombre_pt": "Tubarão-branco",
+      "taxon": "Carcharodon carcharias",
+      "pictograma_id": "P_A21",
+      "habitat_referencia_id": "H33",
+      "secundarios": {
+        "H34": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Carcharodon_carcharias/"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A22",
+      "nombre": "Mantarraya gigante",
+      "nombre_pt": "Raia-manta-gigante",
+      "taxon": "Mobula birostris (sinónimo usado en fuente antigua: Manta birostris)",
+      "pictograma_id": "P_A22",
+      "habitat_referencia_id": "H34",
+      "secundarios": {
+        "H33": {
+          "fuentes": [
+            "https://www.fisheries.noaa.gov/species/giant-manta-ray",
+            "https://animaldiversity.org/accounts/Manta_birostris/"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A23",
+      "nombre": "Pulpo común",
+      "nombre_pt": "Polvo-comum",
+      "taxon": "Octopus vulgaris",
+      "pictograma_id": "P_A23",
+      "habitat_referencia_id": "H40",
+      "secundarios": {
+        "H33": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Octopus_vulgaris/"
+          ]
+        }
+      },
+      "contrastes_preferentes": [
+        "H39",
+        "H37",
+        "H45",
+        "H38",
+        "H44",
+        "H36"
+      ]
+    },
+    {
+      "id": "A24",
+      "nombre": "Tortuga verde",
+      "nombre_pt": "Tartaruga-verde",
+      "taxon": "Chelonia mydas",
+      "pictograma_id": "P_A24",
+      "habitat_referencia_id": "H38",
+      "secundarios": {
+        "H46": {
+          "fuentes": [
+            "https://www.fisheries.noaa.gov/species/green-turtle"
+          ],
+          "contexto": "Las hembras salen a la playa para poner sus huevos.",
+          "contexto_pt": "As fêmeas saem para a praia para pôr os ovos."
+        },
+        "H34": {
+          "fuentes": [
+            "https://www.fisheries.noaa.gov/species/green-turtle"
+          ],
+          "contexto": "Las crías pueden pasar sus primeros años en mar abierto.",
+          "contexto_pt": "Os filhotes podem passar seus primeiros anos em mar aberto."
+        }
+      },
+      "contrastes_preferentes": [
+        "H33",
+        "H37",
+        "H42",
+        "H39",
+        "H40"
+      ]
+    },
+    {
+      "id": "A25",
+      "nombre": "Oso pardo",
+      "nombre_pt": "Urso-pardo",
+      "taxon": "Ursus arctos",
+      "pictograma_id": "P_A25",
+      "habitat_referencia_id": "H04",
+      "secundarios": {
+        "H16": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Ursus_arctos/"
+          ],
+          "contexto": "Algunas poblaciones usan pastizales alpinos.",
+          "contexto_pt": "Algumas populações usam campos alpinos."
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A26",
+      "nombre": "Lobo gris",
+      "nombre_pt": "Lobo-cinzento",
+      "taxon": "Canis lupus",
+      "pictograma_id": "P_A26",
+      "habitat_referencia_id": "H06",
+      "secundarios": {
+        "H12": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Canis_lupus/",
+            "https://explorer.natureserve.org/Taxon/ELEMENT_GLOBAL.2.105212/Canis_lupus"
+          ],
+          "contexto": "Algunas poblaciones viven en la tundra ártica.",
+          "contexto_pt": "Algumas populações vivem na tundra ártica."
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A27",
+      "nombre": "Zorro rojo",
+      "nombre_pt": "Raposa-vermelha",
+      "taxon": "Vulpes vulpes",
+      "pictograma_id": "P_A27",
+      "habitat_referencia_id": "H04",
+      "secundarios": {
+        "H12": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Vulpes_vulpes/",
+            "https://home.nps.gov/bela/learn/nature/red-fox.htm"
+          ],
+          "contexto": "Algunas poblaciones viven en la tundra ártica.",
+          "contexto_pt": "Algumas populações vivem na tundra ártica."
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A28",
+      "nombre": "Ardilla roja euroasiática",
+      "nombre_pt": "Esquilo-vermelho-eurasiático",
+      "taxon": "Sciurus vulgaris",
+      "pictograma_id": "P_A28",
+      "habitat_referencia_id": "H05",
+      "secundarios": {
+        "H04": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Sciurus_vulgaris/"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A29",
+      "nombre": "Corzo europeo",
+      "nombre_pt": "Corça-europeia",
+      "taxon": "Capreolus capreolus",
+      "pictograma_id": "P_A29",
+      "habitat_referencia_id": "H04",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H05",
+        "H13",
+        "H11",
+        "H06",
+        "H15",
+        "H16",
+        "H28"
+      ]
+    },
+    {
+      "id": "A30",
+      "nombre": "Jabalí",
+      "nombre_pt": "Javali",
+      "taxon": "Sus scrofa",
+      "pictograma_id": "P_A30",
+      "habitat_referencia_id": "H04",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A31",
+      "nombre": "Capibara o ronsoco",
+      "nombre_pt": "Capivara",
+      "taxon": "Hydrochoerus hydrochaeris",
+      "pictograma_id": "P_A31",
+      "habitat_referencia_id": "H10",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H27",
+        "H08",
+        "H23",
+        "H25",
+        "H09",
+        "H26",
+        "H29"
+      ]
+    },
+    {
+      "id": "A32",
+      "nombre": "Ajolote mexicano",
+      "nombre_pt": "Axolote-mexicano",
+      "taxon": "Ambystoma mexicanum",
+      "pictograma_id": "P_A32",
+      "habitat_referencia_id": "H25",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H27",
+        "H23",
+        "H26",
+        "H29",
+        "H32",
+        "H24",
+        "H30"
+      ]
+    },
+    {
+      "id": "A33",
+      "nombre": "Delfín rosado amazónico",
+      "nombre_pt": "Boto-cor-de-rosa",
+      "taxon": "Inia geoffrensis",
+      "pictograma_id": "P_A33",
+      "habitat_referencia_id": "H23",
+      "secundarios": {
+        "H08": {
+          "fuentes": [
+            "https://www.cambridge.org/core/journals/journal-of-zoology/article/abs/river-dolphins-and-flooded-forest-seasonal-habitat-use-and-sexual-segregation-of-botos-inia-geoffrensis-in-an-extreme-cetacean-environment/476D4B11090E01F490378EC1E07C236D"
+          ],
+          "contexto": "Nada entre los árboles cuando el río se desborda.",
+          "contexto_pt": "Ele nada entre as árvores quando o rio transborda."
+        },
+        "H25": {
+          "fuentes": [
+            "https://lajamjournal.org/index.php/lajam/article/view/1403"
+          ],
+          "contexto": "También usa lagos conectados al río.",
+          "contexto_pt": "Também usa lagos ligados ao rio."
+        }
+      },
+      "contrastes_preferentes": [
+        "H27",
+        "H30",
+        "H24",
+        "H41",
+        "H33"
+      ]
+    },
+    {
+      "id": "A34",
+      "nombre": "Nutria gigante",
+      "nombre_pt": "Ariranha",
+      "taxon": "Pteronura brasiliensis",
+      "pictograma_id": "P_A34",
+      "habitat_referencia_id": "H23",
+      "secundarios": {
+        "H25": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Pteronura_brasiliensis/",
+            "https://www.iucnosgbull.org/Volume14/Schenck_et_al_1997.html"
+          ]
+        },
+        "H08": {
+          "fuentes": [
+            "https://iucnosgbull.org/Volume39/Vol39_Iss3_Index.html"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A35",
+      "nombre": "Castor norteamericano",
+      "nombre_pt": "Castor-norte-americano",
+      "taxon": "Castor canadensis",
+      "pictograma_id": "P_A35",
+      "habitat_referencia_id": "H25",
+      "secundarios": {
+        "H23": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Castor_canadensis/"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A36",
+      "nombre": "Cocodrilo del Nilo",
+      "nombre_pt": "Crocodilo-do-nilo",
+      "taxon": "Crocodylus niloticus",
+      "pictograma_id": "P_A36",
+      "habitat_referencia_id": "H23",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A37",
+      "nombre": "Oso polar",
+      "nombre_pt": "Urso-polar",
+      "taxon": "Ursus maritimus",
+      "pictograma_id": "P_A37",
+      "habitat_referencia_id": "H22",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H12",
+        "H33",
+        "H34",
+        "H06",
+        "H18",
+        "H44",
+        "H20"
+      ]
+    },
+    {
+      "id": "A38",
+      "nombre": "Zorro ártico",
+      "nombre_pt": "Raposa-do-ártico",
+      "taxon": "Vulpes lagopus",
+      "pictograma_id": "P_A38",
+      "habitat_referencia_id": "H12",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A39",
+      "nombre": "Pingüino emperador",
+      "nombre_pt": "Pinguim-imperador",
+      "taxon": "Aptenodytes forsteri",
+      "pictograma_id": "P_A39",
+      "habitat_referencia_id": "H22",
+      "secundarios": {
+        "H34": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Aptenodytes_forsteri/"
+          ],
+          "contexto": "Se alimenta en las aguas del océano Antártico.",
+          "contexto_pt": "Alimenta-se nas águas do oceano Antártico."
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A40",
+      "nombre": "Morsa",
+      "nombre_pt": "Morsa",
+      "taxon": "Odobenus rosmarus",
+      "pictograma_id": "P_A40",
+      "habitat_referencia_id": "H22",
+      "secundarios": {
+        "H33": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Odobenus_rosmarus/"
+          ],
+          "contexto": "Busca alimento en aguas poco profundas.",
+          "contexto_pt": "Procura alimento em águas rasas."
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A41",
+      "nombre": "Búho nival",
+      "nombre_pt": "Coruja-das-neves",
+      "taxon": "Bubo scandiacus (sinónimo Nyctea scandiaca)",
+      "pictograma_id": "P_A41",
+      "habitat_referencia_id": "H12",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A42",
+      "nombre": "Liebre ártica",
+      "nombre_pt": "Lebre-do-ártico",
+      "taxon": "Lepus arcticus",
+      "pictograma_id": "P_A42",
+      "habitat_referencia_id": "H12",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A43",
+      "nombre": "Vicuña",
+      "nombre_pt": "Vicunha",
+      "taxon": "Vicugna vicugna",
+      "pictograma_id": "P_A43",
+      "habitat_referencia_id": "H16",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H15",
+        "H29",
+        "H20",
+        "H18",
+        "H12",
+        "H11",
+        "H10"
+      ]
+    },
+    {
+      "id": "A44",
+      "nombre": "Yak salvaje",
+      "nombre_pt": "Iaque-selvagem",
+      "taxon": "Bos mutus bajo criterio UICN; la ficha histórica usa Bos grunniens también para el salvaje",
+      "pictograma_id": "P_A44",
+      "habitat_referencia_id": "H16",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A45",
+      "nombre": "Leopardo de las nieves",
+      "nombre_pt": "Leopardo-das-neves",
+      "taxon": "Panthera uncia (fuente histórica: Uncia uncia)",
+      "pictograma_id": "P_A45",
+      "habitat_referencia_id": "H20",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H15",
+        "H16",
+        "H18",
+        "H12",
+        "H05",
+        "H21",
+        "H48"
+      ]
+    },
+    {
+      "id": "A46",
+      "nombre": "Cóndor andino",
+      "nombre_pt": "Condor-dos-andes",
+      "taxon": "Vultur gryphus",
+      "pictograma_id": "P_A46",
+      "habitat_referencia_id": "H20",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H48",
+        "H16",
+        "H15",
+        "H44",
+        "H11",
+        "H18",
+        "H46"
+      ]
+    },
+    {
+      "id": "A47",
+      "nombre": "Cabra de las Rocosas",
+      "nombre_pt": "Cabra-das-montanhas-rochosas",
+      "taxon": "Oreamnos americanus",
+      "pictograma_id": "P_A47",
+      "habitat_referencia_id": "H20",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "A48",
+      "nombre": "Chinchilla de cola corta",
+      "nombre_pt": "Chinchila-de-cauda-curta",
+      "taxon": "Chinchilla chinchilla",
+      "pictograma_id": "P_A48",
+      "habitat_referencia_id": "H15",
+      "secundarios": {
+        "H16": {
+          "fuentes": [
+            "https://animaldiversity.org/accounts/Chinchilla_chinchilla/"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N001",
+      "nombre": "Lémur de cola anillada",
+      "nombre_pt": "Lêmure-de-cauda-anelada",
+      "taxon": "Lemur catta",
+      "pictograma_id": "P_N001",
+      "habitat_referencia_id": "H02",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N002",
+      "nombre": "Fosa",
+      "nombre_pt": "Fossa",
+      "taxon": "Cryptoprocta ferox",
+      "pictograma_id": "P_N002",
+      "habitat_referencia_id": "H02",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N003",
+      "nombre": "Iguana negra de cola espinosa",
+      "nombre_pt": "Iguana-preta-de-cauda-espinhosa",
+      "taxon": "Ctenosaura similis",
+      "pictograma_id": "P_N003",
+      "habitat_referencia_id": "H02",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H14",
+        "H09",
+        "H13",
+        "H01",
+        "H20",
+        "H47",
+        "H08"
+      ]
+    },
+    {
+      "id": "N004",
+      "nombre": "Mono aullador de manto",
+      "nombre_pt": "Bugio-de-manto",
+      "taxon": "Alouatta palliata",
+      "pictograma_id": "P_N004",
+      "habitat_referencia_id": "H02",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N005",
+      "nombre": "Armadillo de nueve bandas",
+      "nombre_pt": "Tatu-galinha",
+      "taxon": "Dasypus novemcinctus",
+      "pictograma_id": "P_N005",
+      "habitat_referencia_id": "H02",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N006",
+      "nombre": "Boa constrictora",
+      "nombre_pt": "Jiboia",
+      "taxon": "Boa constrictor",
+      "pictograma_id": "P_N006",
+      "habitat_referencia_id": "H02",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N007",
+      "nombre": "Panda rojo",
+      "nombre_pt": "Panda-vermelho",
+      "taxon": "Ailurus fulgens",
+      "pictograma_id": "P_N007",
+      "habitat_referencia_id": "H03",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N008",
+      "nombre": "Oso de anteojos",
+      "nombre_pt": "Urso-de-óculos",
+      "taxon": "Tremarctos ornatus",
+      "pictograma_id": "P_N008",
+      "habitat_referencia_id": "H03",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N009",
+      "nombre": "Quetzal resplandeciente",
+      "nombre_pt": "Quetzal-resplandecente",
+      "taxon": "Pharomachrus mocinno",
+      "pictograma_id": "P_N009",
+      "habitat_referencia_id": "H03",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H01",
+        "H05",
+        "H04",
+        "H08",
+        "H15",
+        "H24",
+        "H02"
+      ]
+    },
+    {
+      "id": "N010",
+      "nombre": "Gallito de las rocas andino",
+      "nombre_pt": "Galo-da-serra-andino",
+      "taxon": "Rupicola peruvianus",
+      "pictograma_id": "P_N010",
+      "habitat_referencia_id": "H03",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N011",
+      "nombre": "Tapir andino",
+      "nombre_pt": "Anta-das-montanhas",
+      "taxon": "Tapirus pinchaque",
+      "pictograma_id": "P_N011",
+      "habitat_referencia_id": "H03",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N012",
+      "nombre": "Tucán andino pechigrís",
+      "nombre_pt": "Tucano-andino-de-peito-cinza",
+      "taxon": "Andigena hypoglauca",
+      "pictograma_id": "P_N012",
+      "habitat_referencia_id": "H03",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N013",
+      "nombre": "Panda gigante",
+      "nombre_pt": "Panda-gigante",
+      "taxon": "Ailuropoda melanoleuca",
+      "pictograma_id": "P_N013",
+      "habitat_referencia_id": "H04",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N014",
+      "nombre": "Koala",
+      "nombre_pt": "Coala",
+      "taxon": "Phascolarctos cinereus",
+      "pictograma_id": "P_N014",
+      "habitat_referencia_id": "H04",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H05",
+        "H13",
+        "H02",
+        "H03",
+        "H06",
+        "H11",
+        "H01"
+      ]
+    },
+    {
+      "id": "N015",
+      "nombre": "Tigre siberiano",
+      "nombre_pt": "Tigre-siberiano",
+      "taxon": "Panthera tigris altaica",
+      "pictograma_id": "P_N015",
+      "habitat_referencia_id": "H05",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N016",
+      "nombre": "Urogallo común",
+      "nombre_pt": "Tetraz-grande",
+      "taxon": "Tetrao urogallus",
+      "pictograma_id": "P_N016",
+      "habitat_referencia_id": "H05",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N017",
+      "nombre": "Marta europea",
+      "nombre_pt": "Marta-europeia",
+      "taxon": "Martes martes",
+      "pictograma_id": "P_N017",
+      "habitat_referencia_id": "H05",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N018",
+      "nombre": "Búho real",
+      "nombre_pt": "Bufo-real",
+      "taxon": "Bubo bubo",
+      "pictograma_id": "P_N018",
+      "habitat_referencia_id": "H05",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N019",
+      "nombre": "Pico picapinos",
+      "nombre_pt": "Pica-pau-malhado-grande",
+      "taxon": "Dendrocopos major",
+      "pictograma_id": "P_N019",
+      "habitat_referencia_id": "H05",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N020",
+      "nombre": "Alce",
+      "nombre_pt": "Alce",
+      "taxon": "Alces alces",
+      "pictograma_id": "P_N020",
+      "habitat_referencia_id": "H06",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N021",
+      "nombre": "Glotón",
+      "nombre_pt": "Carcaju",
+      "taxon": "Gulo gulo",
+      "pictograma_id": "P_N021",
+      "habitat_referencia_id": "H06",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N022",
+      "nombre": "Lince boreal",
+      "nombre_pt": "Lince-eurasiático",
+      "taxon": "Lynx lynx",
+      "pictograma_id": "P_N022",
+      "habitat_referencia_id": "H06",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N023",
+      "nombre": "Liebre americana",
+      "nombre_pt": "Lebre-americana",
+      "taxon": "Lepus americanus",
+      "pictograma_id": "P_N023",
+      "habitat_referencia_id": "H06",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N024",
+      "nombre": "Búho lapón",
+      "nombre_pt": "Coruja-lapônica",
+      "taxon": "Strix nebulosa",
+      "pictograma_id": "P_N024",
+      "habitat_referencia_id": "H06",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N025",
+      "nombre": "Mono narigudo",
+      "nombre_pt": "Macaco-narigudo",
+      "taxon": "Nasalis larvatus",
+      "pictograma_id": "P_N025",
+      "habitat_referencia_id": "H07",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H08",
+        "H01",
+        "H42",
+        "H41",
+        "H27",
+        "H23",
+        "H43"
+      ]
+    },
+    {
+      "id": "N026",
+      "nombre": "Cocodrilo de agua salada",
+      "nombre_pt": "Crocodilo-de-água-salgada",
+      "taxon": "Crocodylus porosus",
+      "pictograma_id": "P_N026",
+      "habitat_referencia_id": "H07",
+      "secundarios": {
+        "H41": {
+          "fuentes": [
+            "https://www.qld.gov.au/environment/plants-animals/animals/living-with/crocodiles/becrocwise/where-are-crocs-found"
+          ]
+        },
+        "H27": {
+          "fuentes": [
+            "https://becrocwise.nt.gov.au/about-crocodiles/saltwater-crocodiles"
+          ]
+        },
+        "H33": {
+          "fuentes": [
+            "https://www.qld.gov.au/environment/plants-animals/animals/living-with/crocodiles/becrocwise/where-are-crocs-found"
+          ]
+        }
+      },
+      "contrastes_preferentes": [
+        "H42",
+        "H43",
+        "H23",
+        "H08"
+      ]
+    },
+    {
+      "id": "N027",
+      "nombre": "Pez arquero bandeado",
+      "nombre_pt": "Peixe-arqueiro-listrado",
+      "taxon": "Toxotes jaculatrix",
+      "pictograma_id": "P_N027",
+      "habitat_referencia_id": "H07",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H41",
+        "H42",
+        "H23",
+        "H27",
+        "H33",
+        "H43",
+        "H08"
+      ]
+    },
+    {
+      "id": "N028",
+      "nombre": "Saltarín del fango atlántico",
+      "nombre_pt": "Saltador-do-lodo-atlântico",
+      "taxon": "Periophthalmus barbarus",
+      "pictograma_id": "P_N028",
+      "habitat_referencia_id": "H07",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H41",
+        "H43",
+        "H42",
+        "H45",
+        "H44",
+        "H33",
+        "H46"
+      ]
+    },
+    {
+      "id": "N029",
+      "nombre": "Cangrejo violinista africano",
+      "nombre_pt": "Caranguejo-violinista-africano",
+      "taxon": "Afruca tangeri",
+      "pictograma_id": "P_N029",
+      "habitat_referencia_id": "H07",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N030",
+      "nombre": "Cangrejo de manglar gigante",
+      "nombre_pt": "Caranguejo-gigante-do-mangue",
+      "taxon": "Scylla serrata",
+      "pictograma_id": "P_N030",
+      "habitat_referencia_id": "H07",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N031",
+      "nombre": "Anaconda verde",
+      "nombre_pt": "Sucuri-verde",
+      "taxon": "Eunectes murinus",
+      "pictograma_id": "P_N031",
+      "habitat_referencia_id": "H08",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N032",
+      "nombre": "Caimán negro",
+      "nombre_pt": "Jacaré-açu",
+      "taxon": "Melanosuchus niger",
+      "pictograma_id": "P_N032",
+      "habitat_referencia_id": "H08",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N033",
+      "nombre": "Hoacín",
+      "nombre_pt": "Cigana",
+      "taxon": "Opisthocomus hoazin",
+      "pictograma_id": "P_N033",
+      "habitat_referencia_id": "H08",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H27",
+        "H23",
+        "H01",
+        "H25",
+        "H07",
+        "H10",
+        "H26"
+      ]
+    },
+    {
+      "id": "N034",
+      "nombre": "Uacarí calvo",
+      "nombre_pt": "Uacari-branco",
+      "taxon": "Cacajao calvus",
+      "pictograma_id": "P_N034",
+      "habitat_referencia_id": "H08",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N035",
+      "nombre": "Tortuga arrau",
+      "nombre_pt": "Tartaruga-da-amazônia",
+      "taxon": "Podocnemis expansa",
+      "pictograma_id": "P_N035",
+      "habitat_referencia_id": "H08",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N036",
+      "nombre": "Manatí amazónico",
+      "nombre_pt": "Peixe-boi-da-amazônia",
+      "taxon": "Trichechus inunguis",
+      "pictograma_id": "P_N036",
+      "habitat_referencia_id": "H08",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H23",
+        "H25",
+        "H27",
+        "H30",
+        "H10",
+        "H41",
+        "H33"
+      ]
+    },
+    {
+      "id": "N037",
+      "nombre": "Hipopótamo común",
+      "nombre_pt": "Hipopótamo-comum",
+      "taxon": "Hippopotamus amphibius",
+      "pictograma_id": "P_N037",
+      "habitat_referencia_id": "H10",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N038",
+      "nombre": "Búfalo africano",
+      "nombre_pt": "Búfalo-africano",
+      "taxon": "Syncerus caffer",
+      "pictograma_id": "P_N038",
+      "habitat_referencia_id": "H10",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N039",
+      "nombre": "Antílope lechwe rojo",
+      "nombre_pt": "Lechwe-vermelho",
+      "taxon": "Kobus leche",
+      "pictograma_id": "P_N039",
+      "habitat_referencia_id": "H10",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N040",
+      "nombre": "Grulla coronada cuelligrís",
+      "nombre_pt": "Grou-coroado-de-pescoço-cinza",
+      "taxon": "Balearica regulorum",
+      "pictograma_id": "P_N040",
+      "habitat_referencia_id": "H10",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N041",
+      "nombre": "Jabirú americano",
+      "nombre_pt": "Tuiuiú",
+      "taxon": "Jabiru mycteria",
+      "pictograma_id": "P_N041",
+      "habitat_referencia_id": "H10",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N042",
+      "nombre": "Bisonte americano",
+      "nombre_pt": "Bisão-americano",
+      "taxon": "Bison bison",
+      "pictograma_id": "P_N042",
+      "habitat_referencia_id": "H11",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N043",
+      "nombre": "Berrendo",
+      "nombre_pt": "Antilocapra",
+      "taxon": "Antilocapra americana",
+      "pictograma_id": "P_N043",
+      "habitat_referencia_id": "H11",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N044",
+      "nombre": "Perrito de las praderas de cola negra",
+      "nombre_pt": "Cão-da-pradaria-de-cauda-preta",
+      "taxon": "Cynomys ludovicianus",
+      "pictograma_id": "P_N044",
+      "habitat_referencia_id": "H11",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N045",
+      "nombre": "Coyote",
+      "nombre_pt": "Coiote",
+      "taxon": "Canis latrans",
+      "pictograma_id": "P_N045",
+      "habitat_referencia_id": "H11",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N046",
+      "nombre": "Ñandú común",
+      "nombre_pt": "Ema",
+      "taxon": "Rhea americana",
+      "pictograma_id": "P_N046",
+      "habitat_referencia_id": "H11",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N047",
+      "nombre": "Canguro gris oriental",
+      "nombre_pt": "Canguru-cinza-oriental",
+      "taxon": "Macropus giganteus",
+      "pictograma_id": "P_N047",
+      "habitat_referencia_id": "H11",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N048",
+      "nombre": "Reno",
+      "nombre_pt": "Rena",
+      "taxon": "Rangifer tarandus",
+      "pictograma_id": "P_N048",
+      "habitat_referencia_id": "H12",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N049",
+      "nombre": "Buey almizclero",
+      "nombre_pt": "Boi-almiscarado",
+      "taxon": "Ovibos moschatus",
+      "pictograma_id": "P_N049",
+      "habitat_referencia_id": "H12",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N050",
+      "nombre": "Lemming noruego",
+      "nombre_pt": "Lêmingue-da-noruega",
+      "taxon": "Lemmus lemmus",
+      "pictograma_id": "P_N050",
+      "habitat_referencia_id": "H12",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N051",
+      "nombre": "Lince ibérico",
+      "nombre_pt": "Lince-ibérico",
+      "taxon": "Lynx pardinus",
+      "pictograma_id": "P_N051",
+      "habitat_referencia_id": "H13",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N052",
+      "nombre": "Conejo europeo",
+      "nombre_pt": "Coelho-europeu",
+      "taxon": "Oryctolagus cuniculus",
+      "pictograma_id": "P_N052",
+      "habitat_referencia_id": "H13",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N053",
+      "nombre": "Perdiz roja",
+      "nombre_pt": "Perdiz-vermelha",
+      "taxon": "Alectoris rufa",
+      "pictograma_id": "P_N053",
+      "habitat_referencia_id": "H13",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N054",
+      "nombre": "Lagarto ocelado",
+      "nombre_pt": "Lagarto-ocelado",
+      "taxon": "Timon lepidus",
+      "pictograma_id": "P_N054",
+      "habitat_referencia_id": "H13",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N055",
+      "nombre": "Tortuga mediterránea",
+      "nombre_pt": "Tartaruga-mediterrânea",
+      "taxon": "Testudo hermanni",
+      "pictograma_id": "P_N055",
+      "habitat_referencia_id": "H13",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N056",
+      "nombre": "Meloncillo",
+      "nombre_pt": "Mangusto-egípcio",
+      "taxon": "Herpestes ichneumon",
+      "pictograma_id": "P_N056",
+      "habitat_referencia_id": "H13",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N057",
+      "nombre": "Órix del Cabo",
+      "nombre_pt": "Órix-do-cabo",
+      "taxon": "Oryx gazella",
+      "pictograma_id": "P_N057",
+      "habitat_referencia_id": "H14",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N058",
+      "nombre": "Gacela de Grant",
+      "nombre_pt": "Gazela-de-grant",
+      "taxon": "Nanger granti",
+      "pictograma_id": "P_N058",
+      "habitat_referencia_id": "H14",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N059",
+      "nombre": "Dikdik de Kirk",
+      "nombre_pt": "Dique-dique-de-kirk",
+      "taxon": "Madoqua kirkii",
+      "pictograma_id": "P_N059",
+      "habitat_referencia_id": "H14",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N060",
+      "nombre": "Rinoceronte negro",
+      "nombre_pt": "Rinoceronte-negro",
+      "taxon": "Diceros bicornis",
+      "pictograma_id": "P_N060",
+      "habitat_referencia_id": "H14",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N061",
+      "nombre": "Cerdo hormiguero",
+      "nombre_pt": "Porco-formigueiro",
+      "taxon": "Orycteropus afer",
+      "pictograma_id": "P_N061",
+      "habitat_referencia_id": "H14",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N062",
+      "nombre": "Ratel",
+      "nombre_pt": "Texugo-do-mel",
+      "taxon": "Mellivora capensis",
+      "pictograma_id": "P_N062",
+      "habitat_referencia_id": "H14",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N063",
+      "nombre": "Taruca",
+      "nombre_pt": "Taruca",
+      "taxon": "Hippocamelus antisensis",
+      "pictograma_id": "P_N063",
+      "habitat_referencia_id": "H15",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N064",
+      "nombre": "Gato andino",
+      "nombre_pt": "Gato-andino",
+      "taxon": "Leopardus jacobita",
+      "pictograma_id": "P_N064",
+      "habitat_referencia_id": "H15",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N065",
+      "nombre": "Vizcacha de montaña",
+      "nombre_pt": "Viscacha-da-montanha",
+      "taxon": "Lagidium viscacia",
+      "pictograma_id": "P_N065",
+      "habitat_referencia_id": "H15",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N066",
+      "nombre": "Colibrí gigante del sur",
+      "nombre_pt": "Beija-flor-gigante-do-sul",
+      "taxon": "Patagona gigas",
+      "pictograma_id": "P_N066",
+      "habitat_referencia_id": "H15",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N067",
+      "nombre": "Zorro culpeo",
+      "nombre_pt": "Raposa-culpeo",
+      "taxon": "Lycalopex culpaeus",
+      "pictograma_id": "P_N067",
+      "habitat_referencia_id": "H15",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N068",
+      "nombre": "Guanaco",
+      "nombre_pt": "Guanaco",
+      "taxon": "Lama guanicoe",
+      "pictograma_id": "P_N068",
+      "habitat_referencia_id": "H16",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N069",
+      "nombre": "Tahr del Himalaya",
+      "nombre_pt": "Tahr-do-himalaia",
+      "taxon": "Hemitragus jemlahicus",
+      "pictograma_id": "P_N069",
+      "habitat_referencia_id": "H16",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N070",
+      "nombre": "Kiang",
+      "nombre_pt": "Kiang",
+      "taxon": "Equus kiang",
+      "pictograma_id": "P_N070",
+      "habitat_referencia_id": "H16",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N071",
+      "nombre": "Marmota del Himalaya",
+      "nombre_pt": "Marmota-do-himalaia",
+      "taxon": "Marmota himalayana",
+      "pictograma_id": "P_N071",
+      "habitat_referencia_id": "H16",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N072",
+      "nombre": "Camello bactriano salvaje",
+      "nombre_pt": "Camelo-bactriano-selvagem",
+      "taxon": "Camelus ferus",
+      "pictograma_id": "P_N072",
+      "habitat_referencia_id": "H18",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N073",
+      "nombre": "Onagro",
+      "nombre_pt": "Onagro",
+      "taxon": "Equus hemionus",
+      "pictograma_id": "P_N073",
+      "habitat_referencia_id": "H18",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N074",
+      "nombre": "Gacela de bocio",
+      "nombre_pt": "Gazela-de-papo",
+      "taxon": "Gazella subgutturosa",
+      "pictograma_id": "P_N074",
+      "habitat_referencia_id": "H18",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N075",
+      "nombre": "Gato de Pallas",
+      "nombre_pt": "Gato-de-pallas",
+      "taxon": "Otocolobus manul",
+      "pictograma_id": "P_N075",
+      "habitat_referencia_id": "H18",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N076",
+      "nombre": "Jerbo orejudo",
+      "nombre_pt": "Jerbo-de-orelhas-longas",
+      "taxon": "Euchoreutes naso",
+      "pictograma_id": "P_N076",
+      "habitat_referencia_id": "H18",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N077",
+      "nombre": "Saiga",
+      "nombre_pt": "Saiga",
+      "taxon": "Saiga tatarica",
+      "pictograma_id": "P_N077",
+      "habitat_referencia_id": "H18",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N078",
+      "nombre": "Gacela dorcas",
+      "nombre_pt": "Gazela-dorcas",
+      "taxon": "Gazella dorcas",
+      "pictograma_id": "P_N078",
+      "habitat_referencia_id": "H19",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N079",
+      "nombre": "Asno salvaje africano",
+      "nombre_pt": "Asno-selvagem-africano",
+      "taxon": "Equus africanus",
+      "pictograma_id": "P_N079",
+      "habitat_referencia_id": "H19",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N080",
+      "nombre": "Abubilla común",
+      "nombre_pt": "Poupa-comum",
+      "taxon": "Upupa epops",
+      "pictograma_id": "P_N080",
+      "habitat_referencia_id": "H19",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N081",
+      "nombre": "Tórtola senegalesa",
+      "nombre_pt": "Rola-do-senegal",
+      "taxon": "Spilopelia senegalensis",
+      "pictograma_id": "P_N081",
+      "habitat_referencia_id": "H19",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N082",
+      "nombre": "Gorrión del desierto",
+      "nombre_pt": "Pardal-do-deserto",
+      "taxon": "Passer simplex",
+      "pictograma_id": "P_N082",
+      "habitat_referencia_id": "H19",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N083",
+      "nombre": "Rana del Sáhara",
+      "nombre_pt": "Rã-do-saara",
+      "taxon": "Pelophylax saharicus",
+      "pictograma_id": "P_N083",
+      "habitat_referencia_id": "H19",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N084",
+      "nombre": "Íbice alpino",
+      "nombre_pt": "Íbex-alpino",
+      "taxon": "Capra ibex",
+      "pictograma_id": "P_N084",
+      "habitat_referencia_id": "H20",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N085",
+      "nombre": "Borrego cimarrón",
+      "nombre_pt": "Carneiro-selvagem-das-rochosas",
+      "taxon": "Ovis canadensis",
+      "pictograma_id": "P_N085",
+      "habitat_referencia_id": "H20",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N086",
+      "nombre": "Águila real",
+      "nombre_pt": "Águia-real",
+      "taxon": "Aquila chrysaetos",
+      "pictograma_id": "P_N086",
+      "habitat_referencia_id": "H20",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N087",
+      "nombre": "Guácharo",
+      "nombre_pt": "Guácharo",
+      "taxon": "Steatornis caripensis",
+      "pictograma_id": "P_N087",
+      "habitat_referencia_id": "H21",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N088",
+      "nombre": "Salangana de nido blanco",
+      "nombre_pt": "Salangana-de-ninho-branco",
+      "taxon": "Aerodramus fuciphagus",
+      "pictograma_id": "P_N088",
+      "habitat_referencia_id": "H21",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N089",
+      "nombre": "Murciélago de herradura grande",
+      "nombre_pt": "Morcego-ferradura-grande",
+      "taxon": "Rhinolophus ferrumequinum",
+      "pictograma_id": "P_N089",
+      "habitat_referencia_id": "H21",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N090",
+      "nombre": "Murciélago frugívoro egipcio",
+      "nombre_pt": "Morcego-frugívoro-egípcio",
+      "taxon": "Rousettus aegyptiacus",
+      "pictograma_id": "P_N090",
+      "habitat_referencia_id": "H21",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N091",
+      "nombre": "Grillo cavernícola europeo",
+      "nombre_pt": "Grilo-cavernícola-europeu",
+      "taxon": "Troglophilus cavicola",
+      "pictograma_id": "P_N091",
+      "habitat_referencia_id": "H21",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N092",
+      "nombre": "Araña cavernícola europea",
+      "nombre_pt": "Aranha-cavernícola-europeia",
+      "taxon": "Meta menardi",
+      "pictograma_id": "P_N092",
+      "habitat_referencia_id": "H21",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N093",
+      "nombre": "Foca anillada",
+      "nombre_pt": "Foca-anelada",
+      "taxon": "Pusa hispida",
+      "pictograma_id": "P_N093",
+      "habitat_referencia_id": "H22",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N094",
+      "nombre": "Foca leopardo",
+      "nombre_pt": "Foca-leopardo",
+      "taxon": "Hydrurga leptonyx",
+      "pictograma_id": "P_N094",
+      "habitat_referencia_id": "H22",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H34",
+        "H33",
+        "H35",
+        "H44",
+        "H48",
+        "H39",
+        "H40"
+      ]
+    },
+    {
+      "id": "N095",
+      "nombre": "Pingüino de Adelia",
+      "nombre_pt": "Pinguim-de-adélia",
+      "taxon": "Pygoscelis adeliae",
+      "pictograma_id": "P_N095",
+      "habitat_referencia_id": "H22",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N096",
+      "nombre": "Piraña roja",
+      "nombre_pt": "Piranha-vermelha",
+      "taxon": "Pygocentrus nattereri",
+      "pictograma_id": "P_N096",
+      "habitat_referencia_id": "H23",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N097",
+      "nombre": "Anguila eléctrica",
+      "nombre_pt": "Poraquê",
+      "taxon": "Electrophorus electricus",
+      "pictograma_id": "P_N097",
+      "habitat_referencia_id": "H23",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N098",
+      "nombre": "Paiche",
+      "nombre_pt": "Pirarucu",
+      "taxon": "Arapaima gigas",
+      "pictograma_id": "P_N098",
+      "habitat_referencia_id": "H23",
+      "secundarios": {
+        "H25": {
+          "fuentes": [
+            "https://doi.org/10.1111/j.1095-8649.2007.01778.x"
+          ]
+        },
+        "H08": {
+          "fuentes": [
+            "https://doi.org/10.1111/j.1095-8649.2007.00255.x"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N099",
+      "nombre": "Trucha arcoíris",
+      "nombre_pt": "Truta-arco-íris",
+      "taxon": "Oncorhynchus mykiss",
+      "pictograma_id": "P_N099",
+      "habitat_referencia_id": "H24",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N100",
+      "nombre": "Mirlo acuático europeo",
+      "nombre_pt": "Melro-d’água-europeu",
+      "taxon": "Cinclus cinclus",
+      "pictograma_id": "P_N100",
+      "habitat_referencia_id": "H24",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N101",
+      "nombre": "Desmán ibérico",
+      "nombre_pt": "Desmã-ibérico",
+      "taxon": "Galemys pyrenaicus",
+      "pictograma_id": "P_N101",
+      "habitat_referencia_id": "H24",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N102",
+      "nombre": "Salamandra gigante china",
+      "nombre_pt": "Salamandra-gigante-chinesa",
+      "taxon": "Andrias davidianus",
+      "pictograma_id": "P_N102",
+      "habitat_referencia_id": "H24",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N103",
+      "nombre": "Cangrejo de río de patas blancas",
+      "nombre_pt": "Lagostim-de-patas-brancas",
+      "taxon": "Austropotamobius pallipes",
+      "pictograma_id": "P_N103",
+      "habitat_referencia_id": "H24",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N104",
+      "nombre": "Rana patilarga",
+      "nombre_pt": "Rã-ibérica",
+      "taxon": "Rana iberica",
+      "pictograma_id": "P_N104",
+      "habitat_referencia_id": "H24",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N105",
+      "nombre": "Cisne vulgar",
+      "nombre_pt": "Cisne-mudo",
+      "taxon": "Cygnus olor",
+      "pictograma_id": "P_N105",
+      "habitat_referencia_id": "H25",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N106",
+      "nombre": "Perca europea",
+      "nombre_pt": "Perca-europeia",
+      "taxon": "Perca fluviatilis",
+      "pictograma_id": "P_N106",
+      "habitat_referencia_id": "H25",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N107",
+      "nombre": "Lucio europeo",
+      "nombre_pt": "Lúcio-europeu",
+      "taxon": "Esox lucius",
+      "pictograma_id": "P_N107",
+      "habitat_referencia_id": "H25",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N108",
+      "nombre": "Somormujo lavanco",
+      "nombre_pt": "Mergulhão-de-crista",
+      "taxon": "Podiceps cristatus",
+      "pictograma_id": "P_N108",
+      "habitat_referencia_id": "H25",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N109",
+      "nombre": "Sapo de espuelas occidental",
+      "nombre_pt": "Sapo-de-esporas-ocidental",
+      "taxon": "Pelobates cultripes",
+      "pictograma_id": "P_N109",
+      "habitat_referencia_id": "H26",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N110",
+      "nombre": "Sapo corredor",
+      "nombre_pt": "Sapo-corredor",
+      "taxon": "Epidalea calamita",
+      "pictograma_id": "P_N110",
+      "habitat_referencia_id": "H26",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N111",
+      "nombre": "Gallipato",
+      "nombre_pt": "Tritão-de-costelas-salientes",
+      "taxon": "Pleurodeles waltl",
+      "pictograma_id": "P_N111",
+      "habitat_referencia_id": "H26",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N112",
+      "nombre": "Triops de cola larga",
+      "nombre_pt": "Triops-de-cauda-longa",
+      "taxon": "Triops longicaudatus",
+      "pictograma_id": "P_N112",
+      "habitat_referencia_id": "H26",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N113",
+      "nombre": "Pez killi turquesa",
+      "nombre_pt": "Killi-turquesa",
+      "taxon": "Nothobranchius furzeri",
+      "pictograma_id": "P_N113",
+      "habitat_referencia_id": "H26",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N114",
+      "nombre": "Rana toro africana",
+      "nombre_pt": "Rã-touro-africana",
+      "taxon": "Pyxicephalus adspersus",
+      "pictograma_id": "P_N114",
+      "habitat_referencia_id": "H26",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N115",
+      "nombre": "Aligátor americano",
+      "nombre_pt": "Aligátor-americano",
+      "taxon": "Alligator mississippiensis",
+      "pictograma_id": "P_N115",
+      "habitat_referencia_id": "H27",
+      "secundarios": {
+        "H23": {
+          "fuentes": [
+            "https://www.fws.gov/sites/default/files/documents/2024-04/1101.pdf"
+          ]
+        },
+        "H25": {
+          "fuentes": [
+            "https://www.fws.gov/sites/default/files/documents/2024-04/1101.pdf"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N116",
+      "nombre": "Picozapato",
+      "nombre_pt": "Bico-de-sapato",
+      "taxon": "Balaeniceps rex",
+      "pictograma_id": "P_N116",
+      "habitat_referencia_id": "H27",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N117",
+      "nombre": "Garza real",
+      "nombre_pt": "Garça-real",
+      "taxon": "Ardea cinerea",
+      "pictograma_id": "P_N117",
+      "habitat_referencia_id": "H27",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N118",
+      "nombre": "Espátula rosada",
+      "nombre_pt": "Colhereiro-rosa",
+      "taxon": "Platalea ajaja",
+      "pictograma_id": "P_N118",
+      "habitat_referencia_id": "H27",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N119",
+      "nombre": "Tortuga mordedora común",
+      "nombre_pt": "Tartaruga-mordedora-comum",
+      "taxon": "Chelydra serpentina",
+      "pictograma_id": "P_N119",
+      "habitat_referencia_id": "H27",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N120",
+      "nombre": "Ánade real",
+      "nombre_pt": "Pato-real",
+      "taxon": "Anas platyrhynchos",
+      "pictograma_id": "P_N120",
+      "habitat_referencia_id": "H27",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N121",
+      "nombre": "Grulla común",
+      "nombre_pt": "Grou-comum",
+      "taxon": "Grus grus",
+      "pictograma_id": "P_N121",
+      "habitat_referencia_id": "H28",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N122",
+      "nombre": "Agachadiza común",
+      "nombre_pt": "Narceja-comum",
+      "taxon": "Gallinago gallinago",
+      "pictograma_id": "P_N122",
+      "habitat_referencia_id": "H28",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N123",
+      "nombre": "Zarapito real",
+      "nombre_pt": "Maçarico-real",
+      "taxon": "Numenius arquata",
+      "pictograma_id": "P_N123",
+      "habitat_referencia_id": "H28",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N124",
+      "nombre": "Lagartija de turbera",
+      "nombre_pt": "Lagarto-vivíparo",
+      "taxon": "Zootoca vivipara",
+      "pictograma_id": "P_N124",
+      "habitat_referencia_id": "H28",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N125",
+      "nombre": "Libélula de turbera",
+      "nombre_pt": "Libélula-de-turfeira",
+      "taxon": "Leucorrhinia dubia",
+      "pictograma_id": "P_N125",
+      "habitat_referencia_id": "H28",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N126",
+      "nombre": "Mariposa de los arándanos",
+      "nombre_pt": "Borboleta-dos-mirtilos",
+      "taxon": "Boloria aquilonaris",
+      "pictograma_id": "P_N126",
+      "habitat_referencia_id": "H28",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N127",
+      "nombre": "Ganso andino",
+      "nombre_pt": "Ganso-andino",
+      "taxon": "Chloephaga melanoptera",
+      "pictograma_id": "P_N127",
+      "habitat_referencia_id": "H29",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N128",
+      "nombre": "Rana gigante del Titicaca",
+      "nombre_pt": "Rã-gigante-do-titicaca",
+      "taxon": "Telmatobius culeus",
+      "pictograma_id": "P_N128",
+      "habitat_referencia_id": "H29",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H25",
+        "H27",
+        "H24",
+        "H23",
+        "H32",
+        "H26",
+        "H28"
+      ]
+    },
+    {
+      "id": "N129",
+      "nombre": "Gallareta gigante",
+      "nombre_pt": "Carqueja-gigante",
+      "taxon": "Fulica gigantea",
+      "pictograma_id": "P_N129",
+      "habitat_referencia_id": "H29",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N130",
+      "nombre": "Ibis de la puna",
+      "nombre_pt": "Íbis-da-puna",
+      "taxon": "Plegadis ridgwayi",
+      "pictograma_id": "P_N130",
+      "habitat_referencia_id": "H29",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N131",
+      "nombre": "Avoceta andina",
+      "nombre_pt": "Alfaiate-andino",
+      "taxon": "Recurvirostra andina",
+      "pictograma_id": "P_N131",
+      "habitat_referencia_id": "H29",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N132",
+      "nombre": "Suri cordillerano",
+      "nombre_pt": "Ema-da-puna",
+      "taxon": "Rhea pennata",
+      "pictograma_id": "P_N132",
+      "habitat_referencia_id": "H29",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N133",
+      "nombre": "Pez pulmonado africano",
+      "nombre_pt": "Peixe-pulmonado-africano",
+      "taxon": "Protopterus annectens",
+      "pictograma_id": "P_N133",
+      "habitat_referencia_id": "H30",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N134",
+      "nombre": "Pez gato africano",
+      "nombre_pt": "Bagre-africano",
+      "taxon": "Clarias gariepinus",
+      "pictograma_id": "P_N134",
+      "habitat_referencia_id": "H30",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N135",
+      "nombre": "Cocodrilo australiano de agua dulce",
+      "nombre_pt": "Crocodilo-australiano-de-água-doce",
+      "taxon": "Crocodylus johnstoni",
+      "pictograma_id": "P_N135",
+      "habitat_referencia_id": "H30",
+      "secundarios": {
+        "H27": {
+          "fuentes": [
+            "https://soe.dcceew.gov.au/coasts/environment/coastal-species"
+          ]
+        }
+      },
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N136",
+      "nombre": "Pez arcoíris del desierto",
+      "nombre_pt": "Peixe-arco-íris-do-deserto",
+      "taxon": "Melanotaenia splendida tatei",
+      "pictograma_id": "P_N136",
+      "habitat_referencia_id": "H30",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N137",
+      "nombre": "Perca australiana de charcas",
+      "nombre_pt": "Perca-australiana-de-lagoas",
+      "taxon": "Leiopotherapon unicolor",
+      "pictograma_id": "P_N137",
+      "habitat_referencia_id": "H30",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N138",
+      "nombre": "Tortuga de cuello de serpiente del norte",
+      "nombre_pt": "Tartaruga-de-pescoço-de-cobra-do-norte",
+      "taxon": "Chelodina rugosa",
+      "pictograma_id": "P_N138",
+      "habitat_referencia_id": "H30",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N139",
+      "nombre": "Proteo",
+      "nombre_pt": "Proteu",
+      "taxon": "Proteus anguinus",
+      "pictograma_id": "P_N139",
+      "habitat_referencia_id": "H31",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N140",
+      "nombre": "Salamandra ciega de Texas",
+      "nombre_pt": "Salamandra-cega-do-texas",
+      "taxon": "Eurycea rathbuni",
+      "pictograma_id": "P_N140",
+      "habitat_referencia_id": "H31",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N141",
+      "nombre": "Tetra ciego mexicano",
+      "nombre_pt": "Tetra-cego-mexicano",
+      "taxon": "Astyanax mexicanus",
+      "pictograma_id": "P_N141",
+      "habitat_referencia_id": "H31",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N142",
+      "nombre": "Pez cavernícola del norte",
+      "nombre_pt": "Peixe-cavernícola-do-norte",
+      "taxon": "Amblyopsis spelaea",
+      "pictograma_id": "P_N142",
+      "habitat_referencia_id": "H31",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N143",
+      "nombre": "Bagre ciego mexicano",
+      "nombre_pt": "Bagre-cego-mexicano",
+      "taxon": "Prietella phreatophila",
+      "pictograma_id": "P_N143",
+      "habitat_referencia_id": "H31",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N144",
+      "nombre": "Cangrejo de río cavernícola de Florida",
+      "nombre_pt": "Lagostim-cavernícola-da-flórida",
+      "taxon": "Procambarus pallidus",
+      "pictograma_id": "P_N144",
+      "habitat_referencia_id": "H31",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H24",
+        "H23",
+        "H30",
+        "H27",
+        "H25",
+        "H26",
+        "H29"
+      ]
+    },
+    {
+      "id": "N145",
+      "nombre": "Flamenco común",
+      "nombre_pt": "Flamingo-comum",
+      "taxon": "Phoenicopterus roseus",
+      "pictograma_id": "P_N145",
+      "habitat_referencia_id": "H32",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N146",
+      "nombre": "Flamenco enano",
+      "nombre_pt": "Flamingo-pequeno",
+      "taxon": "Phoeniconaias minor",
+      "pictograma_id": "P_N146",
+      "habitat_referencia_id": "H32",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N147",
+      "nombre": "Zampullín cuellinegro",
+      "nombre_pt": "Mergulhão-de-pescoço-preto",
+      "taxon": "Podiceps nigricollis",
+      "pictograma_id": "P_N147",
+      "habitat_referencia_id": "H32",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N148",
+      "nombre": "Artemia salina",
+      "nombre_pt": "Artêmia",
+      "taxon": "Artemia salina",
+      "pictograma_id": "P_N148",
+      "habitat_referencia_id": "H32",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N149",
+      "nombre": "Falaropo tricolor",
+      "nombre_pt": "Falaropo-de-wilson",
+      "taxon": "Phalaropus tricolor",
+      "pictograma_id": "P_N149",
+      "habitat_referencia_id": "H32",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N150",
+      "nombre": "Pelícano blanco americano",
+      "nombre_pt": "Pelicano-branco-americano",
+      "taxon": "Pelecanus erythrorhynchos",
+      "pictograma_id": "P_N150",
+      "habitat_referencia_id": "H32",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N151",
+      "nombre": "Orca",
+      "nombre_pt": "Orca",
+      "taxon": "Orcinus orca",
+      "pictograma_id": "P_N151",
+      "habitat_referencia_id": "H33",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N152",
+      "nombre": "Tiburón martillo común",
+      "nombre_pt": "Tubarão-martelo-recortado",
+      "taxon": "Sphyrna zygaena",
+      "pictograma_id": "P_N152",
+      "habitat_referencia_id": "H33",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N153",
+      "nombre": "León marino de California",
+      "nombre_pt": "Leão-marinho-da-califórnia",
+      "taxon": "Zalophus californianus",
+      "pictograma_id": "P_N153",
+      "habitat_referencia_id": "H33",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N154",
+      "nombre": "Medusa luna",
+      "nombre_pt": "Água-viva-lua",
+      "taxon": "Aurelia aurita",
+      "pictograma_id": "P_N154",
+      "habitat_referencia_id": "H33",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N155",
+      "nombre": "Tiburón ballena",
+      "nombre_pt": "Tubarão-baleia",
+      "taxon": "Rhincodon typus",
+      "pictograma_id": "P_N155",
+      "habitat_referencia_id": "H34",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N156",
+      "nombre": "Atún rojo del Atlántico",
+      "nombre_pt": "Atum-rabilho-do-atlântico",
+      "taxon": "Thunnus thynnus",
+      "pictograma_id": "P_N156",
+      "habitat_referencia_id": "H34",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H33",
+        "H35",
+        "H22",
+        "H41",
+        "H37",
+        "H39",
+        "H40"
+      ]
+    },
+    {
+      "id": "N157",
+      "nombre": "Pez espada",
+      "nombre_pt": "Espadarte",
+      "taxon": "Xiphias gladius",
+      "pictograma_id": "P_N157",
+      "habitat_referencia_id": "H34",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N158",
+      "nombre": "Pez luna",
+      "nombre_pt": "Peixe-lua",
+      "taxon": "Mola mola",
+      "pictograma_id": "P_N158",
+      "habitat_referencia_id": "H34",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N159",
+      "nombre": "Cachalote",
+      "nombre_pt": "Cachalote",
+      "taxon": "Physeter macrocephalus",
+      "pictograma_id": "P_N159",
+      "habitat_referencia_id": "H35",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H34",
+        "H33",
+        "H36",
+        "H22",
+        "H40",
+        "H39",
+        "H37"
+      ]
+    },
+    {
+      "id": "N160",
+      "nombre": "Calamar gigante",
+      "nombre_pt": "Lula-gigante",
+      "taxon": "Architeuthis dux",
+      "pictograma_id": "P_N160",
+      "habitat_referencia_id": "H35",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N161",
+      "nombre": "Pez de cabeza transparente",
+      "nombre_pt": "Peixe-de-cabeça-transparente",
+      "taxon": "Macropinna microstoma",
+      "pictograma_id": "P_N161",
+      "habitat_referencia_id": "H35",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N162",
+      "nombre": "Anguila pelícano",
+      "nombre_pt": "Enguia-pelicano",
+      "taxon": "Eurypharynx pelecanoides",
+      "pictograma_id": "P_N162",
+      "habitat_referencia_id": "H35",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N163",
+      "nombre": "Diablo negro del Pacífico",
+      "nombre_pt": "Diabo-negro-do-pacífico",
+      "taxon": "Melanocetus johnsonii",
+      "pictograma_id": "P_N163",
+      "habitat_referencia_id": "H35",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N164",
+      "nombre": "Pez víbora de Sloane",
+      "nombre_pt": "Peixe-víbora-de-sloane",
+      "taxon": "Chauliodus sloani",
+      "pictograma_id": "P_N164",
+      "habitat_referencia_id": "H35",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N165",
+      "nombre": "Pulpo dumbo",
+      "nombre_pt": "Polvo-dumbo",
+      "taxon": "Grimpoteuthis bathynectes",
+      "pictograma_id": "P_N165",
+      "habitat_referencia_id": "H36",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N166",
+      "nombre": "Isópodo gigante",
+      "nombre_pt": "Isópode-gigante",
+      "taxon": "Bathynomus giganteus",
+      "pictograma_id": "P_N166",
+      "habitat_referencia_id": "H36",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N167",
+      "nombre": "Cangrejo araña japonés",
+      "nombre_pt": "Caranguejo-aranha-japonês",
+      "taxon": "Macrocheira kaempferi",
+      "pictograma_id": "P_N167",
+      "habitat_referencia_id": "H36",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N168",
+      "nombre": "Pez trípode",
+      "nombre_pt": "Peixe-tripé",
+      "taxon": "Bathypterois grallator",
+      "pictograma_id": "P_N168",
+      "habitat_referencia_id": "H36",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N169",
+      "nombre": "Cerdo de mar",
+      "nombre_pt": "Porco-do-mar",
+      "taxon": "Scotoplanes globosa",
+      "pictograma_id": "P_N169",
+      "habitat_referencia_id": "H36",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N170",
+      "nombre": "Gusano tubo gigante",
+      "nombre_pt": "Verme-tubícola-gigante",
+      "taxon": "Riftia pachyptila",
+      "pictograma_id": "P_N170",
+      "habitat_referencia_id": "H36",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H35",
+        "H40",
+        "H37",
+        "H39",
+        "H38",
+        "H33",
+        "H34"
+      ]
+    },
+    {
+      "id": "N171",
+      "nombre": "Pez payaso común",
+      "nombre_pt": "Peixe-palhaço-comum",
+      "taxon": "Amphiprion ocellaris",
+      "pictograma_id": "P_N171",
+      "habitat_referencia_id": "H37",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N172",
+      "nombre": "Pez cirujano azul",
+      "nombre_pt": "Peixe-cirurgião-azul",
+      "taxon": "Paracanthurus hepatus",
+      "pictograma_id": "P_N172",
+      "habitat_referencia_id": "H37",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N173",
+      "nombre": "Pez mariposa de hocico largo",
+      "nombre_pt": "Peixe-borboleta-de-focinho-longo",
+      "taxon": "Forcipiger flavissimus",
+      "pictograma_id": "P_N173",
+      "habitat_referencia_id": "H37",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N174",
+      "nombre": "Pez ángel emperador",
+      "nombre_pt": "Peixe-anjo-imperador",
+      "taxon": "Pomacanthus imperator",
+      "pictograma_id": "P_N174",
+      "habitat_referencia_id": "H37",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N175",
+      "nombre": "Tiburón de arrecife de puntas negras",
+      "nombre_pt": "Tubarão-de-recife-de-pontas-negras",
+      "taxon": "Carcharhinus melanopterus",
+      "pictograma_id": "P_N175",
+      "habitat_referencia_id": "H37",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N176",
+      "nombre": "Estrella corona de espinas del Pacífico",
+      "nombre_pt": "Estrela-coroa-de-espinhos-do-pacífico",
+      "taxon": "Acanthaster solaris",
+      "pictograma_id": "P_N176",
+      "habitat_referencia_id": "H37",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N177",
+      "nombre": "Dugongo",
+      "nombre_pt": "Dugongo",
+      "taxon": "Dugong dugon",
+      "pictograma_id": "P_N177",
+      "habitat_referencia_id": "H38",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N178",
+      "nombre": "Caballito de mar de hocico largo",
+      "nombre_pt": "Cavalo-marinho-de-focinho-longo",
+      "taxon": "Hippocampus guttulatus",
+      "pictograma_id": "P_N178",
+      "habitat_referencia_id": "H38",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N179",
+      "nombre": "Pez pipa mula",
+      "nombre_pt": "Peixe-cachimbo-mula",
+      "taxon": "Syngnathus typhle",
+      "pictograma_id": "P_N179",
+      "habitat_referencia_id": "H38",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N180",
+      "nombre": "Erizo de mar de púas cortas",
+      "nombre_pt": "Ouriço-do-mar-de-espinhos-curtos",
+      "taxon": "Lytechinus variegatus",
+      "pictograma_id": "P_N180",
+      "habitat_referencia_id": "H38",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N181",
+      "nombre": "Caracol rosado",
+      "nombre_pt": "Concha-rainha",
+      "taxon": "Aliger gigas",
+      "pictograma_id": "P_N181",
+      "habitat_referencia_id": "H38",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N182",
+      "nombre": "Nutria marina",
+      "nombre_pt": "Lontra-marinha",
+      "taxon": "Enhydra lutris",
+      "pictograma_id": "P_N182",
+      "habitat_referencia_id": "H39",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N183",
+      "nombre": "Foca común",
+      "nombre_pt": "Foca-comum",
+      "taxon": "Phoca vitulina",
+      "pictograma_id": "P_N183",
+      "habitat_referencia_id": "H39",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N184",
+      "nombre": "Pez garibaldi",
+      "nombre_pt": "Peixe-garibaldi",
+      "taxon": "Hypsypops rubicundus",
+      "pictograma_id": "P_N184",
+      "habitat_referencia_id": "H39",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N185",
+      "nombre": "Dragón de mar foliáceo",
+      "nombre_pt": "Dragão-marinho-folhado",
+      "taxon": "Phycodurus eques",
+      "pictograma_id": "P_N185",
+      "habitat_referencia_id": "H39",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N186",
+      "nombre": "Abulón rojo",
+      "nombre_pt": "Abalone-vermelho",
+      "taxon": "Haliotis rufescens",
+      "pictograma_id": "P_N186",
+      "habitat_referencia_id": "H39",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N187",
+      "nombre": "Erizo rojo",
+      "nombre_pt": "Ouriço-do-mar-vermelho",
+      "taxon": "Mesocentrotus franciscanus",
+      "pictograma_id": "P_N187",
+      "habitat_referencia_id": "H39",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N188",
+      "nombre": "Morena mediterránea",
+      "nombre_pt": "Moreia-mediterrânea",
+      "taxon": "Muraena helena",
+      "pictograma_id": "P_N188",
+      "habitat_referencia_id": "H40",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N189",
+      "nombre": "Mero pardo",
+      "nombre_pt": "Mero-pardo",
+      "taxon": "Epinephelus marginatus",
+      "pictograma_id": "P_N189",
+      "habitat_referencia_id": "H40",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N190",
+      "nombre": "Langosta europea",
+      "nombre_pt": "Lagosta-europeia",
+      "taxon": "Palinurus elephas",
+      "pictograma_id": "P_N190",
+      "habitat_referencia_id": "H40",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N191",
+      "nombre": "Congrio europeo",
+      "nombre_pt": "Congro-europeu",
+      "taxon": "Conger conger",
+      "pictograma_id": "P_N191",
+      "habitat_referencia_id": "H40",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N192",
+      "nombre": "Sargo común",
+      "nombre_pt": "Sargo-comum",
+      "taxon": "Diplodus sargus",
+      "pictograma_id": "P_N192",
+      "habitat_referencia_id": "H40",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N193",
+      "nombre": "Manatí del Caribe",
+      "nombre_pt": "Peixe-boi-marinho",
+      "taxon": "Trichechus manatus",
+      "pictograma_id": "P_N193",
+      "habitat_referencia_id": "H41",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N194",
+      "nombre": "Anguila europea",
+      "nombre_pt": "Enguia-europeia",
+      "taxon": "Anguilla anguilla",
+      "pictograma_id": "P_N194",
+      "habitat_referencia_id": "H41",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N195",
+      "nombre": "Lubina europea",
+      "nombre_pt": "Robalo-europeu",
+      "taxon": "Dicentrarchus labrax",
+      "pictograma_id": "P_N195",
+      "habitat_referencia_id": "H41",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N196",
+      "nombre": "Sábalo real",
+      "nombre_pt": "Tarpão",
+      "taxon": "Megalops atlanticus",
+      "pictograma_id": "P_N196",
+      "habitat_referencia_id": "H41",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N197",
+      "nombre": "Cangrejo azul atlántico",
+      "nombre_pt": "Siri-azul-do-atlântico",
+      "taxon": "Callinectes sapidus",
+      "pictograma_id": "P_N197",
+      "habitat_referencia_id": "H41",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N198",
+      "nombre": "Pez sierra de dientes pequeños",
+      "nombre_pt": "Peixe-serra-de-dentes-pequenos",
+      "taxon": "Pristis pectinata",
+      "pictograma_id": "P_N198",
+      "habitat_referencia_id": "H41",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N199",
+      "nombre": "Flamenco del Caribe",
+      "nombre_pt": "Flamingo-do-caribe",
+      "taxon": "Phoenicopterus ruber",
+      "pictograma_id": "P_N199",
+      "habitat_referencia_id": "H42",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N200",
+      "nombre": "Pelícano pardo",
+      "nombre_pt": "Pelicano-pardo",
+      "taxon": "Pelecanus occidentalis",
+      "pictograma_id": "P_N200",
+      "habitat_referencia_id": "H42",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N201",
+      "nombre": "Cisne negro",
+      "nombre_pt": "Cisne-negro",
+      "taxon": "Cygnus atratus",
+      "pictograma_id": "P_N201",
+      "habitat_referencia_id": "H42",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N202",
+      "nombre": "Espátula común",
+      "nombre_pt": "Colhereiro-comum",
+      "taxon": "Platalea leucorodia",
+      "pictograma_id": "P_N202",
+      "habitat_referencia_id": "H42",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N203",
+      "nombre": "Lisa de cabeza plana",
+      "nombre_pt": "Tainha",
+      "taxon": "Mugil cephalus",
+      "pictograma_id": "P_N203",
+      "habitat_referencia_id": "H42",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N204",
+      "nombre": "Tarro blanco",
+      "nombre_pt": "Pato-branco",
+      "taxon": "Tadorna tadorna",
+      "pictograma_id": "P_N204",
+      "habitat_referencia_id": "H42",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N205",
+      "nombre": "Mapache común",
+      "nombre_pt": "Guaxinim-comum",
+      "taxon": "Procyon lotor",
+      "pictograma_id": "P_N205",
+      "habitat_referencia_id": "H43",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N206",
+      "nombre": "Rascón picudo",
+      "nombre_pt": "Saracura-de-bico-longo",
+      "taxon": "Rallus crepitans",
+      "pictograma_id": "P_N206",
+      "habitat_referencia_id": "H43",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N207",
+      "nombre": "Avoceta americana",
+      "nombre_pt": "Alfaiate-americano",
+      "taxon": "Recurvirostra americana",
+      "pictograma_id": "P_N207",
+      "habitat_referencia_id": "H43",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N208",
+      "nombre": "Garza blanca grande",
+      "nombre_pt": "Garça-branca-grande",
+      "taxon": "Ardea alba",
+      "pictograma_id": "P_N208",
+      "habitat_referencia_id": "H43",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N209",
+      "nombre": "Cangrejo violinista atlántico",
+      "nombre_pt": "Caranguejo-violinista-do-atlântico",
+      "taxon": "Minuca pugnax",
+      "pictograma_id": "P_N209",
+      "habitat_referencia_id": "H43",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N210",
+      "nombre": "Caracol de marisma",
+      "nombre_pt": "Caracol-de-marisma",
+      "taxon": "Littoraria irrorata",
+      "pictograma_id": "P_N210",
+      "habitat_referencia_id": "H43",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N211",
+      "nombre": "Iguana marina",
+      "nombre_pt": "Iguana-marinha",
+      "taxon": "Amblyrhynchus cristatus",
+      "pictograma_id": "P_N211",
+      "habitat_referencia_id": "H44",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H45",
+        "H40",
+        "H39",
+        "H48",
+        "H46",
+        "H33",
+        "H37"
+      ]
+    },
+    {
+      "id": "N212",
+      "nombre": "Pingüino de Humboldt",
+      "nombre_pt": "Pinguim-de-humboldt",
+      "taxon": "Spheniscus humboldti",
+      "pictograma_id": "P_N212",
+      "habitat_referencia_id": "H44",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N213",
+      "nombre": "Ostrero euroasiático",
+      "nombre_pt": "Ostraceiro-eurasiático",
+      "taxon": "Haematopus ostralegus",
+      "pictograma_id": "P_N213",
+      "habitat_referencia_id": "H44",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N214",
+      "nombre": "Cangrejo rojo de las Galápagos",
+      "nombre_pt": "Caranguejo-vermelho-das-galápagos",
+      "taxon": "Grapsus grapsus",
+      "pictograma_id": "P_N214",
+      "habitat_referencia_id": "H44",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N215",
+      "nombre": "Lapa común",
+      "nombre_pt": "Lapa-comum",
+      "taxon": "Patella vulgata",
+      "pictograma_id": "P_N215",
+      "habitat_referencia_id": "H44",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N216",
+      "nombre": "Mejillón común",
+      "nombre_pt": "Mexilhão-comum",
+      "taxon": "Mytilus edulis",
+      "pictograma_id": "P_N216",
+      "habitat_referencia_id": "H44",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N217",
+      "nombre": "Estrella de mar ocre",
+      "nombre_pt": "Estrela-do-mar-ocre",
+      "taxon": "Pisaster ochraceus",
+      "pictograma_id": "P_N217",
+      "habitat_referencia_id": "H45",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N218",
+      "nombre": "Anémona de mar verde gigante",
+      "nombre_pt": "Anêmona-verde-gigante",
+      "taxon": "Anthopleura xanthogrammica",
+      "pictograma_id": "P_N218",
+      "habitat_referencia_id": "H45",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N219",
+      "nombre": "Cangrejo ermitaño común",
+      "nombre_pt": "Caranguejo-eremita-comum",
+      "taxon": "Pagurus bernhardus",
+      "pictograma_id": "P_N219",
+      "habitat_referencia_id": "H45",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N220",
+      "nombre": "Blenio de roca",
+      "nombre_pt": "Blênio-das-rochas",
+      "taxon": "Lipophrys pholis",
+      "pictograma_id": "P_N220",
+      "habitat_referencia_id": "H45",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N221",
+      "nombre": "Erizo de mar púrpura",
+      "nombre_pt": "Ouriço-do-mar-roxo",
+      "taxon": "Strongylocentrotus purpuratus",
+      "pictograma_id": "P_N221",
+      "habitat_referencia_id": "H45",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N222",
+      "nombre": "Camarón de roca",
+      "nombre_pt": "Camarão-das-rochas",
+      "taxon": "Palaemon elegans",
+      "pictograma_id": "P_N222",
+      "habitat_referencia_id": "H45",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N223",
+      "nombre": "Cangrejo fantasma atlántico",
+      "nombre_pt": "Caranguejo-fantasma-do-atlântico",
+      "taxon": "Ocypode quadrata",
+      "pictograma_id": "P_N223",
+      "habitat_referencia_id": "H46",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N224",
+      "nombre": "Almeja coquina",
+      "nombre_pt": "Amêijoa-coquina",
+      "taxon": "Donax trunculus",
+      "pictograma_id": "P_N224",
+      "habitat_referencia_id": "H46",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N225",
+      "nombre": "Pulga de playa",
+      "nombre_pt": "Pulga-da-praia",
+      "taxon": "Talitrus saltator",
+      "pictograma_id": "P_N225",
+      "habitat_referencia_id": "H46",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N226",
+      "nombre": "Chorlitejo patinegro",
+      "nombre_pt": "Borrelho-de-coleira-interrompida",
+      "taxon": "Anarhynchus alexandrinus",
+      "pictograma_id": "P_N226",
+      "habitat_referencia_id": "H46",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N227",
+      "nombre": "Correlimos tridáctilo",
+      "nombre_pt": "Maçarico-branco",
+      "taxon": "Calidris alba",
+      "pictograma_id": "P_N227",
+      "habitat_referencia_id": "H46",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N228",
+      "nombre": "Muy muy del Pacífico",
+      "nombre_pt": "Tatuí-do-pacífico",
+      "taxon": "Emerita analoga",
+      "pictograma_id": "P_N228",
+      "habitat_referencia_id": "H46",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N229",
+      "nombre": "Lagartija colirroja",
+      "nombre_pt": "Lagartixa-de-cauda-vermelha",
+      "taxon": "Acanthodactylus erythrurus",
+      "pictograma_id": "P_N229",
+      "habitat_referencia_id": "H47",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N230",
+      "nombre": "Chorlito silbador",
+      "nombre_pt": "Borrelho-assobiador",
+      "taxon": "Anarhynchus melodus",
+      "pictograma_id": "P_N230",
+      "habitat_referencia_id": "H47",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N231",
+      "nombre": "Ratón de playa de Alabama",
+      "nombre_pt": "Camundongo-da-praia-do-alabama",
+      "taxon": "Peromyscus polionotus ammobates",
+      "pictograma_id": "P_N231",
+      "habitat_referencia_id": "H47",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N232",
+      "nombre": "Sapo de Fowler",
+      "nombre_pt": "Sapo-de-fowler",
+      "taxon": "Anaxyrus fowleri",
+      "pictograma_id": "P_N232",
+      "habitat_referencia_id": "H47",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N233",
+      "nombre": "Tucotuco de las dunas",
+      "nombre_pt": "Tuco-tuco-das-dunas",
+      "taxon": "Ctenomys flamarioni",
+      "pictograma_id": "P_N233",
+      "habitat_referencia_id": "H47",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N234",
+      "nombre": "Escarabajo tigre costero",
+      "nombre_pt": "Besouro-tigre-costeiro",
+      "taxon": "Cicindela maritima",
+      "pictograma_id": "P_N234",
+      "habitat_referencia_id": "H47",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N235",
+      "nombre": "Frailecillo atlántico",
+      "nombre_pt": "Papagaio-do-mar-atlântico",
+      "taxon": "Fratercula arctica",
+      "pictograma_id": "P_N235",
+      "habitat_referencia_id": "H48",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N236",
+      "nombre": "Alcatraz atlántico",
+      "nombre_pt": "Ganso-patola-do-atlântico",
+      "taxon": "Morus bassanus",
+      "pictograma_id": "P_N236",
+      "habitat_referencia_id": "H48",
+      "secundarios": {},
+      "contrastes_preferentes": [
+        "H46",
+        "H44",
+        "H33",
+        "H34",
+        "H47",
+        "H45",
+        "H43"
+      ]
+    },
+    {
+      "id": "N237",
+      "nombre": "Gaviota tridáctila",
+      "nombre_pt": "Gaivota-tridáctila",
+      "taxon": "Rissa tridactyla",
+      "pictograma_id": "P_N237",
+      "habitat_referencia_id": "H48",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N238",
+      "nombre": "Cormorán moñudo",
+      "nombre_pt": "Corvo-marinho-de-crista",
+      "taxon": "Gulosus aristotelis",
+      "pictograma_id": "P_N238",
+      "habitat_referencia_id": "H48",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N239",
+      "nombre": "Arao común",
+      "nombre_pt": "Airo-comum",
+      "taxon": "Uria aalge",
+      "pictograma_id": "P_N239",
+      "habitat_referencia_id": "H48",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    },
+    {
+      "id": "N240",
+      "nombre": "Halcón peregrino",
+      "nombre_pt": "Falcão-peregrino",
+      "taxon": "Falco peregrinus",
+      "pictograma_id": "P_N240",
+      "habitat_referencia_id": "H48",
+      "secundarios": {},
+      "contrastes_preferentes": []
+    }
+  ]
+}

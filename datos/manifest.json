@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "version_proyecto": "4.4.0",
+  "version_proyecto": "5.0.0",
   "fecha_preparacion": "2026-10-18",
   "paquete": "poc_interfaz_animales_habitats_v3",
   "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
@@ -86,7 +86,7 @@
       "alcance": "Antecedente de la comparación sintética anterior; no corresponde a la evaluación actual del demo."
     },
     "evaluacion_con_jugadores": false,
-    "casos_navegador_correctos": 47,
+    "casos_navegador_correctos": 63,
     "validacion_caa_con_usuarios": false,
     "voz_prueba": "SINTESIS_REAL_14_VOCES_Y_REPRODUCTOR_NATIVO_2_IDIOMAS",
     "audio_audible_en_dispositivo_usuario_verificado": false,
@@ -129,7 +129,9 @@
     "regresion_general_actual": "CORRECTA_20_CASOS",
     "distribuciones_sin_observaciones": 0,
     "diagnostico_entrenamiento": "docs/experimentos/hito2/diagnostico_entrenamiento.json",
-    "preferencias_dos_columnas_verificadas": true
+    "preferencias_dos_columnas_verificadas": true,
+    "catalogo_escritorio_sin_scroll_y_tarjetas_grandes": true,
+    "catalogo_paginacion_adaptable_y_foco_verificados": true
   },
   "archivos": [
     {
@@ -144,8 +146,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 16333,
-      "sha256": "a390f3200ddaa26b619e3f58d09b34289cff5fda46e5a288b56cac7a8a030e54"
+      "bytes": 17448,
+      "sha256": "e68557ed28c0e430c763c77c22125cd9f1dd21aa44437d1d3cfd9b57376db3d2"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -729,8 +731,8 @@
     },
     {
       "ruta": "codigo/interfaz/idiomas.py",
-      "bytes": 2425,
-      "sha256": "c144b644a48fa427e0642bdd4249bd152362d5eb89886f1dda7f57dda7f0c84d"
+      "bytes": 4040,
+      "sha256": "eb324c6c187d085ea2baa6eb1ab0e674286d7d19b777b5a6637fd40bdd171158"
     },
     {
       "ruta": "codigo/interfaz/iniciar.py",
@@ -744,18 +746,18 @@
     },
     {
       "ruta": "codigo/interfaz/preparar_voces.py",
-      "bytes": 3544,
-      "sha256": "1e55ddf106d7e16f4ba5a689f526d5ad36b23540997767ba7f5b46b0263ade88"
+      "bytes": 3546,
+      "sha256": "130d650b9cf5e828bcb940c07ccbc8f53d66160df2cf3180d7a4122994474da0"
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
-      "bytes": 8638,
-      "sha256": "8b258fb83d2e2b4da8d9442552b3e58fff56ea0c65f37b4f612b6bd36ab9f2ea"
+      "bytes": 8884,
+      "sha256": "9b2eaee66485fb48614f3e2c9a34766716ac6a2e8efdff1f58b14a145e47b794"
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 10973,
-      "sha256": "3ea692ad3e4ddb0d9c034bc603d8c7fd80b42ddba0776ac7b59c77ebe55d95eb"
+      "bytes": 11888,
+      "sha256": "39ceb3c47463eba0753fcdf82e35255505e1b766853c1400fdba1e24187f923a"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -764,18 +766,18 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 32451,
-      "sha256": "ef060fd4c763a30c8cc07a1ab854ede9fd3ab3d39bb6cff39ec1852d645be358"
+      "bytes": 34205,
+      "sha256": "6aa49a47ace2415c6396e0f807abc338c95c2a42a90e5dbaffc847e01bf59844"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
-      "bytes": 28968,
-      "sha256": "a9497255b807e037cd4f855e648c1fb466c45ca997a4aba9855a39a0ca6c723e"
+      "bytes": 28374,
+      "sha256": "012519fc813743c70b57bd9d917f7f60671bd7d1d7b44dfb7f16e52e31b2054c"
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 23015,
-      "sha256": "6eed556fd2e3ccc58bc334c656d1c23df8db8b017e47c97a618d86edba96040c"
+      "bytes": 24858,
+      "sha256": "409e0003ac5b44f9791ae7516e86acfc862eabc8f34e60a63881371cc3a6c157"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -814,8 +816,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 4608,
-      "sha256": "19e2d2b80c146debf61f2eb970eb72f72cea30e5f7e1578edd3d305bf9ce9b6e"
+      "bytes": 4612,
+      "sha256": "4d4715066895dba37400fa5f372a2056685d68a5601e96349a68fcc7a8f8ba14"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -854,8 +856,8 @@
     },
     {
       "ruta": "codigo/motores/guia.py",
-      "bytes": 6589,
-      "sha256": "92aed2b9783dbfb5ccd2fae7a3f0bcd69e3201677d9b105369763d1a8a001ee2"
+      "bytes": 8019,
+      "sha256": "29bdf72c315c2e8288b63930ec0b1db2cfa7661d28c3e4837a7945d35093d2d6"
     },
     {
       "ruta": "codigo/motores/id3.py",
@@ -874,8 +876,8 @@
     },
     {
       "ruta": "codigo/nucleo/datos.py",
-      "bytes": 5680,
-      "sha256": "efbbde068592003cc1d3d8fe29278942e05b71de42cd0c150e7187de78bbfea3"
+      "bytes": 5877,
+      "sha256": "5230513b66a11f5e24c8bd1edf08fe28e9c5a2d78f86145eb59a2df5c5eedd91"
     },
     {
       "ruta": "codigo/nucleo/estado.py",
@@ -884,8 +886,8 @@
     },
     {
       "ruta": "codigo/nucleo/gestor.py",
-      "bytes": 21720,
-      "sha256": "3e8dd8106c466bcdce89a66334064f91a6cb2cbb0f908ec34cbe2390bcce90e4"
+      "bytes": 22190,
+      "sha256": "87c734cd628ed463bb424317ee14c6a5632b65d8b362299ad0399891b6bdf983"
     },
     {
       "ruta": "codigo/nucleo/registro.py",
@@ -1034,8 +1036,8 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 29842,
-      "sha256": "6a5485d6e446abc46497ef049a8c84c2a5a187701b60b291252c3f222ab71487"
+      "bytes": 29876,
+      "sha256": "9b43a88e50744b4b8560c779504996132d1ae3488fef990f6fe226dce98b3da2"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
@@ -1703,9 +1705,14 @@
       "sha256": "e934e882d7183e492e6e0e7082952aaa52e8d784dc11d712b1e069e84b21dd4b"
     },
     {
+      "ruta": "docs/experimentos/hito3/revision_catalogo.json",
+      "bytes": 3813,
+      "sha256": "801ddc2c407ea7f055ffccbadf29c43a3989f582e0392618dc13d8f55cb26363"
+    },
+    {
       "ruta": "docs/experimentos/hito3/revision_cierre.json",
-      "bytes": 1164,
-      "sha256": "04123e85848d1f822ff348ff78949a2b5014694a8c95d71ad17070d462a65541"
+      "bytes": 1175,
+      "sha256": "5d34a7f05b998dc608625da19e8ed33f14fc49bec61dc9e7fedc75fe45fec675"
     },
     {
       "ruta": "docs/experimentos/hito3/revision_general.json",
@@ -2204,8 +2211,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 21752,
-      "sha256": "5bcf7bc740c4d548143b9397eed3b95b6b6c5f2021e7f1fbf20c8200eefe53cb"
+      "bytes": 22175,
+      "sha256": "537ca39734b1a866a88f988268515d17a109cb41e266166a831eb635bf584d1a"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2544,8 +2551,8 @@
     },
     {
       "ruta": "docs/manual_usuario.md",
-      "bytes": 2926,
-      "sha256": "c4dbf4a1ff3dfd6d91b80bab2f9c8010c34bd217e49a9f166336e82c64cd9e7b"
+      "bytes": 3556,
+      "sha256": "317965c6856ac8208715f584f5377510df54739a0659df2fd43cbc97713fe1b2"
     },
     {
       "ruta": "docs/resultados/arbol_id3.json",
@@ -2599,8 +2606,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 1832,
-      "sha256": "d7650654938f3607276a42e8acf40efe3278c8eae8ab4db0bf636d9fd39c4d19"
+      "bytes": 2034,
+      "sha256": "3d61cd9a98962fa392b00b3b5ad7503a9d64ead4e01b16d5feb4fc0775890bfe"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -2619,13 +2626,13 @@
     },
     {
       "ruta": "tests/test_idiomas_voz.py",
-      "bytes": 12755,
-      "sha256": "94ba00d6c79ef2d0574488e382ee88c889031c11e13f803b320a0b1a019cbb92"
+      "bytes": 12762,
+      "sha256": "0ae5fb5ee42cdc2be78073bc9d0de96040422132aa3a613803002309fc5cad30"
     },
     {
       "ruta": "tests/test_inicio.py",
-      "bytes": 6626,
-      "sha256": "fef4a3499cccd4c52d0eee4c766dce482f36a0585574ed759eb8cf50f16618ca"
+      "bytes": 6704,
+      "sha256": "9ea156a04636d34f067ecfc882e5dd6e3d160860835c77808b2fa25f26a31b44"
     },
     {
       "ruta": "tests/test_interfaz.py",
@@ -2653,9 +2660,14 @@
       "sha256": "51a69d9858f818a3de322f296d2469d2c2feea702072d6b64cca363139f3c694"
     },
     {
+      "ruta": "tests/verificar_catalogo.cjs",
+      "bytes": 5872,
+      "sha256": "da5fd2f617324b99a58cc42a9f727fd7c04f35f25e887ec4b44b07d77574a9e5"
+    },
+    {
       "ruta": "tests/verificar_copia_limpia.py",
-      "bytes": 6135,
-      "sha256": "78329332bc46e13ae558e428eee6c229270f07756a043e1fd946ca4080b4d907"
+      "bytes": 6340,
+      "sha256": "21ba0aa92f6878b0eb9533be720437d41bd8753eb7f9034d8faff427f747c7f6"
     },
     {
       "ruta": "tests/verificar_hito2.cjs",
@@ -2669,8 +2681,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 55781,
-      "sha256": "a8ad0d742fe1070cc8345aa2d5721729e0fe621f7177abb2a1e7e7affef53968"
+      "bytes": 56506,
+      "sha256": "4b1d1ddd541b9de8b252b84707202cb2f5a9ebcf5601a30ae210284c72d9d2c3"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
@@ -2681,7 +2693,2296 @@
       "ruta": "tests/verificar_voces_reales.py",
       "bytes": 2397,
       "sha256": "17e9dc68a6faac9a0a89ad1c8de563d4544cc9528d293ee2ced22061c56de5f0"
+    },
+    {
+      "ruta": "codigo/nucleo/catalogo.py",
+      "bytes": 3819,
+      "sha256": "32d719bd78e3814f5d9f3fd1fb14ab1ed709afff360607059c0673ac3cd39c8e"
+    },
+    {
+      "ruta": "tests/test_catalogo_ampliado.py",
+      "bytes": 4711,
+      "sha256": "1a9f37b79962bf92bd3514b19a48e23ccde4f7622ac0f63346a707fd682c127d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A01.webp",
+      "bytes": 237480,
+      "sha256": "1f34c9ea9b6a64b9c560be10d7a699140ba2595889e95d19e19305972ca6a185"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A02.webp",
+      "bytes": 277714,
+      "sha256": "84b03929e22cfd8bc63966a8bd419faebf758f7eecb49123570126db54d94f34"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A03.webp",
+      "bytes": 274914,
+      "sha256": "a8f119059ecfebacb31a7c4c92442d7528a25e0c4e8e62cc3d45dca58a2b2f99"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A04.webp",
+      "bytes": 207702,
+      "sha256": "1c6f84f982e3825cd35ed8c4dec1149e87041410b645fb174b259734d89edb12"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A05.webp",
+      "bytes": 203736,
+      "sha256": "d30e01544d123795f313f7a12f88683fc589aba23ac3998a9bafa6ca39e0a638"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A06.webp",
+      "bytes": 273622,
+      "sha256": "6e1c2361d9e68e43c1480bb607ab6523eefd55769d80998326a5f305ad74d972"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A07.webp",
+      "bytes": 209420,
+      "sha256": "58064da152e3fe7e06ba6c41e5748d9e4e9423161a23fac29eb849fa06a0b3d3"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A08.webp",
+      "bytes": 187734,
+      "sha256": "de3d0377c6459f2e79e2cc30ae02d7119452a9c8a50c24d288adf042069f408f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A09.webp",
+      "bytes": 241804,
+      "sha256": "df2151cc98ee25de055c9aaa89e87e8a7cd1b48be531fa63b9876baa6bff473f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A10.webp",
+      "bytes": 209752,
+      "sha256": "610779939681694a6a489bef56e4984305c0fadb4095fb1280dad1b93ac2fff0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A11.webp",
+      "bytes": 242862,
+      "sha256": "5146662fb4fb39f481a003682413c3b2a1092c4afcc64b3fa8d2c4e09cc61e0b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A12.webp",
+      "bytes": 142440,
+      "sha256": "03d57fb91afc37aefab474a2303a0fe28fc7e2218039b201a625b94781a1339c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A13.webp",
+      "bytes": 208514,
+      "sha256": "27f79e35bb518b118e8688375121bd3ae35d561ee518b0d86e3815a600c2cdf4"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A14.webp",
+      "bytes": 184480,
+      "sha256": "a462e172d99349b50e2dc0e0107e5a567b16819083514c0bb7c7e584a63eaa21"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A15.webp",
+      "bytes": 141194,
+      "sha256": "225d856f702b6b334dc1c0fee18556be28627f886aba3362b1989e7c640f0af2"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A16.webp",
+      "bytes": 345346,
+      "sha256": "7042cf9173964371ed29d6373374f81f0bba88b6deab31544b94214a063301e8"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A17.webp",
+      "bytes": 215630,
+      "sha256": "c3becb16d9674c586a3bb7b112b061aa0eff15c0c87ba66c46a5ab17a9bdc165"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A18.webp",
+      "bytes": 142864,
+      "sha256": "bdde80bd6623151a8a2829ee85319dab44f27e6b54153590499f03b3732ab389"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A19.webp",
+      "bytes": 107324,
+      "sha256": "b3ff149bad008eff3caf99227121a284304a897dd3d99b2f858f366b2313784c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A20.webp",
+      "bytes": 114852,
+      "sha256": "f2f09a30a46e8ff07b7651ffe6318d301d6354c2f944d754a0aaf1b033fb93c4"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A21.webp",
+      "bytes": 102830,
+      "sha256": "1d5b75821b9a008f2438feb3a0ed53f5a4ec6a57a6d3f7d801e09358fbd6c047"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A22.webp",
+      "bytes": 109508,
+      "sha256": "02d2610544b84921b8d3d57915cb646c5a13803a033436dd9af1327c95326ec9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A23.webp",
+      "bytes": 306016,
+      "sha256": "b6759bf018d1e96b7350cd1a588dabb7bde596f9f5c4204ffeb9f9136e5b5816"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A24.webp",
+      "bytes": 333688,
+      "sha256": "8466888a1e497af440fd1ac3d6e731413361697b4e90016b14114f5b1a019cba"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A25.webp",
+      "bytes": 229822,
+      "sha256": "aff919f935a4eec050f16580e5eaad45ac19af18d58df49c959324c1243405b5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A26.webp",
+      "bytes": 206106,
+      "sha256": "caa53bd30de366b3dde1e84e4b427cb51e0c49a78c8cc974020578710214762f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A27.webp",
+      "bytes": 173034,
+      "sha256": "43ece050f518e1d914a2641feeef32bf05474b24c361d2f1a64bac8e500a9f6f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A28.webp",
+      "bytes": 303972,
+      "sha256": "6c6cb18fe8fe092df7e7f0c3554a5ea563550b749cac1dd99249f5652f15e26a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A29.webp",
+      "bytes": 149586,
+      "sha256": "e78e5ec92a8f6c668a369adf604a650c51ba060d3be0b2666b3698d0895b9c03"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A30.webp",
+      "bytes": 161668,
+      "sha256": "039a526e953950c02c018cf8a9c9f0d21ab9305e3de5cb0c8e39c2169215930e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A31.webp",
+      "bytes": 146006,
+      "sha256": "176e9d6472fb8bac09f5224576aac18ed06e73e76d3e4e1414c42606136e8a4e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A32.webp",
+      "bytes": 185552,
+      "sha256": "e907d130f718a0c34d289e8c948523659891cee7fc6419132f19cda7be2cd143"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A33.webp",
+      "bytes": 94522,
+      "sha256": "d1a5754b672cbc077ce785e6629b098b9be45aacd07f28b0d43389e423f852b0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A34.webp",
+      "bytes": 142628,
+      "sha256": "7439a0e81ce978cf11ec373facaa65d54ede3e4480074fc132599d43676398c0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A35.webp",
+      "bytes": 175344,
+      "sha256": "e832de027d76cbcfde85d1cc55079938c63e9d082d04b52e220ba32dce0d1033"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A36.webp",
+      "bytes": 252676,
+      "sha256": "b72c5d3f10a325cc567537aa7499e5348d119213f266644bad1ba395c5323635"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A37.webp",
+      "bytes": 182098,
+      "sha256": "1611a98eca70d1ac2e1e82934a998dcaadf094c5da486249b6cfcce242a96384"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A38.webp",
+      "bytes": 177830,
+      "sha256": "6bc76d9d6f2225e14d92570b6d528fb6fd8f2c48c099d046310f0a26e7b8bdad"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A39.webp",
+      "bytes": 164380,
+      "sha256": "6dad1cba0e592776154dc936fb59f5fda1934a5f03d34e7753543df2ab039f6b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A40.webp",
+      "bytes": 208574,
+      "sha256": "f68b8b5324ddd71ffa3f160663f18dc18028b3bfa07b7d33c4dcf78ce85d9627"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A41.webp",
+      "bytes": 234986,
+      "sha256": "029fb565b7566563b26bac312a85807590b5bb80f4e109bedf9af13dc61738d4"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A42.webp",
+      "bytes": 157682,
+      "sha256": "5b9fa507a69bf251e9739eadd2da4601627b821d43381de8d0ceec218efd0f61"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A43.webp",
+      "bytes": 154596,
+      "sha256": "e5bfb1ea6bc6dcf4cad1bf489f75f3bcd64c7060f70514af44b4cea80323914d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A44.webp",
+      "bytes": 217656,
+      "sha256": "3a4536f1b910600cdf0de12b51ff5b05d16a31bbbfc7b8e46d38e45e9458e8d4"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A45.webp",
+      "bytes": 345802,
+      "sha256": "de1dcaed45dcec102200acb0a5abb99802a631665e0b3373f293b70e86782b5e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A46.webp",
+      "bytes": 199326,
+      "sha256": "0def3206d3de084c430246e4dc4a4f66b197058ac64b28145c222b11d7f2fa2c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A47.webp",
+      "bytes": 211880,
+      "sha256": "f4e75b410c267e5b38a8bb7bb6542d303d97c8730295280899009978d2cf6a40"
+    },
+    {
+      "ruta": "assets/expedicion/animales/A48.webp",
+      "bytes": 224676,
+      "sha256": "45f239b7c461f2f6deb7a54ef7e4b6637072550af186201e69a9d133e0b9017c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N001.webp",
+      "bytes": 289210,
+      "sha256": "efe0b212f777dd07c8d7a0d766e783ad21fd92c8a8886ea3aafe0baf0bda3b4c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N002.webp",
+      "bytes": 134534,
+      "sha256": "e29a7daedc044cedfc3c204ddabe32a1f27c78855aaa2f1d602f861ea8a849ac"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N003.webp",
+      "bytes": 267748,
+      "sha256": "13320ef2cb7e2710a02e46c1bac1c5264444c2b0c12c27535e640adde74ae535"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N004.webp",
+      "bytes": 267090,
+      "sha256": "739befd72fc2f9bdd9484e10f4e72545f9a2e1015428adae6ce02a2cf36e5a99"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N005.webp",
+      "bytes": 273144,
+      "sha256": "6d5e0a41537ffdf40444d43fc3e93dc64c650d6da98234a7b6b776d5d38c72bd"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N006.webp",
+      "bytes": 241396,
+      "sha256": "724e6963ba7fd1b64be790abc37910676fe5272fa338017e98ec05fcaba74eca"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N007.webp",
+      "bytes": 228674,
+      "sha256": "f8752400aa467f2b97494c1090b72ab7a49f5923b1db88dbb012d39e18cce4f3"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N008.webp",
+      "bytes": 212454,
+      "sha256": "31d584a54613ebb28b3f9cbaac7d741442eea4acaff0c66dc4a8c4c62aea8ca7"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N009.webp",
+      "bytes": 194796,
+      "sha256": "4cb885dac9e9ac76f31dff610ec82dba7f7047665d8e1cd2fe4de1b22fef8ecb"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N010.webp",
+      "bytes": 211546,
+      "sha256": "a4db78ffc3d93dd14702f1a6852d31f50f72944fdd96b066ecd5187f98e6758f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N011.webp",
+      "bytes": 192848,
+      "sha256": "c0efb783ac52c69835e78d9ce2cabe272f94af200eaf96b4af190789ea523782"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N012.webp",
+      "bytes": 201546,
+      "sha256": "224ec8b38d85132746f7910a4626591c46cdd0884805abdb3f9c962293d78a1e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N013.webp",
+      "bytes": 299780,
+      "sha256": "7be78f553074cf1b08a211b6b786b34972620950288f705501804dd040443604"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N014.webp",
+      "bytes": 350622,
+      "sha256": "47514590d54642db66100a2220f0f9d763443f26ada50b8881a898e412665a6d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N015.webp",
+      "bytes": 293568,
+      "sha256": "73bef0ae50de73ac8b7e1ff105863da84deabc3f062279b9c099538500a34204"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N016.webp",
+      "bytes": 336906,
+      "sha256": "ce137ecc2faf9f03664d0c40aeb4670f416d96f9bbc69ba37dea34e3aa235d6b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N017.webp",
+      "bytes": 206982,
+      "sha256": "20afe4e1d7a986ec800dae9f9629d048e296df29ee6d38fc0295bd21ea162702"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N018.webp",
+      "bytes": 323428,
+      "sha256": "957a2d4299f9e3f41e519557fddad77cb1c3934228dfd25530d93e5d7751a2c9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N019.webp",
+      "bytes": 174360,
+      "sha256": "a49a8470a020ab35197be169204cdb5664b0c6534a892351dabcf146effe9ffd"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N020.webp",
+      "bytes": 214836,
+      "sha256": "7fdf494ec410044eb303ea28673e392b7c7bf86a9c9f644f60d60460d96135d6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N021.webp",
+      "bytes": 225320,
+      "sha256": "e1f50ec82a66ea3f51e8ec6e549dc6e8ffc7a77b77fd19bdf1af6c0d71313778"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N022.webp",
+      "bytes": 262442,
+      "sha256": "e15c4a22db504ee561b2049fe9a2c21baa61ee6044a9b77db11d13774d3f27f6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N023.webp",
+      "bytes": 220684,
+      "sha256": "676271978bc4f3ca12aff2cd8f5966bd5325645df3ebc768e14c6f9218db6a7b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N024.webp",
+      "bytes": 297654,
+      "sha256": "cd7800459c21b3ff3bec8867432293eb76388f34369bcb80dd706b3fa036d285"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N025.webp",
+      "bytes": 290320,
+      "sha256": "7ca77d3ffa7be1027db21c993a628f80a3355b60ca30a256fc4aba78558158b0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N026.webp",
+      "bytes": 166874,
+      "sha256": "831be810927837aa6d9aa651b76602317f96e131668c0a94b01d91ea471774aa"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N027.webp",
+      "bytes": 300666,
+      "sha256": "d83a02b4a3a27b6eec89b35c1fdb6b2b56613c0f9b66ee9a8e05513c50a355ec"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N028.webp",
+      "bytes": 276828,
+      "sha256": "e1b3207252e23694b4d0c1897c7e89c04979d266f6b63cbee9860dc545a5ee2f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N029.webp",
+      "bytes": 362242,
+      "sha256": "5e8f8f70e442075a6bf302a94679ef8493d966a4a514af2d795d309e67db04a6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N030.webp",
+      "bytes": 373674,
+      "sha256": "e5893342e1ca78d7c1e6154841a6e96766f9f38a3bb2478b04306ce9cb610122"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N031.webp",
+      "bytes": 245812,
+      "sha256": "66c2cc8d70d8aa0ab87a6572a6d042eeda67b99e433290d85c619cd4f776f70a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N032.webp",
+      "bytes": 215734,
+      "sha256": "6284d2a3c098fbbec83c49c4a172f8258ad9d39e6c686e2ef3584d9fdd57ad9f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N033.webp",
+      "bytes": 224446,
+      "sha256": "6a446ade789502ea9356032882553095f36a41eea274bedfda21e06bd39dc5ea"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N034.webp",
+      "bytes": 315306,
+      "sha256": "937a874f28a873270a57789cdbd7461a7e644ad161546442402b5d529093054f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N035.webp",
+      "bytes": 234732,
+      "sha256": "156417704cc8e5bf588cf53bcec3dd247bee597d344858046e796aff8a98c8b6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N036.webp",
+      "bytes": 141364,
+      "sha256": "7cdcba68deddd5aeb1a04b9d728ff39c0c2f763a7f4737772ed6ecb3debc9f92"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N037.webp",
+      "bytes": 203118,
+      "sha256": "2191680225739d09e3ec6d98d4a4bdd6cee79c5701f25b41aa6349a976c873d1"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N038.webp",
+      "bytes": 197986,
+      "sha256": "fa47fab994cda03409188d427aa72c68be5716fd8181c0e681ab68109a724fed"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N039.webp",
+      "bytes": 179288,
+      "sha256": "9a20c19d7e935814453e57f860b8e5c4543ba207bb5f6c08930d5b462ceaeb63"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N040.webp",
+      "bytes": 179680,
+      "sha256": "6a8632b454cac23ee3862f7101fac604962751e029c5846f592a5aad89013e3d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N041.webp",
+      "bytes": 143076,
+      "sha256": "1855f2395a75e59747cc5e4f5bb97f31b5a91461a9e4aec3c839f1949477a555"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N042.webp",
+      "bytes": 223112,
+      "sha256": "0b4f67e7ecdb79026da155fe0f8b70ecb9f169318ae48c0a4ed4e6141f274711"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N043.webp",
+      "bytes": 198710,
+      "sha256": "35e72c8c6298a8a168de3c547908caa27f724eb563fdd038f38e9c0d9842cfa9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N044.webp",
+      "bytes": 208722,
+      "sha256": "88495538422efb0e236c8ee6476bfdbb88172a47ceee055bea928a83bea1c250"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N045.webp",
+      "bytes": 226290,
+      "sha256": "7ba5733e80e3bbd33b26d9281a50b13c465f469562d450ae4b502ef8f1ba3070"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N046.webp",
+      "bytes": 175494,
+      "sha256": "06a8db483d206db85b3cc4fbdf61d0747a5eafd54b1177169ceba66a1403f7e6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N047.webp",
+      "bytes": 188312,
+      "sha256": "36eb92a390bd257e5c97c75531e39f36417dcbb5ceda8408fe55ac9c443d3a42"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N048.webp",
+      "bytes": 221896,
+      "sha256": "6d45942f9a86bef8536b70c6e9d06703cfb59577c10ebdea1f367099a00daefb"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N049.webp",
+      "bytes": 245216,
+      "sha256": "444ceb553725c8ba455847b67a14083bbcd23790a75dc09fbfe3685af3931ec6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N050.webp",
+      "bytes": 205570,
+      "sha256": "9ce27226dff3fdefc8916f8f98872494b064c8a76078efa3a171ebcaf1aa0cfc"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N051.webp",
+      "bytes": 259770,
+      "sha256": "6e815458c6a46a79130e52c95c08bc0a284244397ee4d1ec67a4e07ba4b34369"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N052.webp",
+      "bytes": 228882,
+      "sha256": "283d86804d8644cccf44dc1ba4ce8ab16a3b161d66e6f779c2b31d53b85055cb"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N053.webp",
+      "bytes": 243188,
+      "sha256": "5441b99ab43b7a0cf1d6c0b89941b617b84639cff0b4988aeac1e9615c6c9c00"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N054.webp",
+      "bytes": 298450,
+      "sha256": "10e23a22541a9e311184c910e8350de0e254c3fe1de93ccbd54024995e44be66"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N055.webp",
+      "bytes": 315468,
+      "sha256": "0190534911044b30f5dfaba94cfe7919b64036914eb92206f28b7097b0dab030"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N056.webp",
+      "bytes": 183700,
+      "sha256": "132fd61b511abb5b0a4c2efa21c493d7d2ee91069342ec01abe9bd250e7f85d7"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N057.webp",
+      "bytes": 198308,
+      "sha256": "be5b27e2b436869f94544e3f35f4d3ed846d78b381bc0abe79a4ececd8ee4bdb"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N058.webp",
+      "bytes": 179248,
+      "sha256": "0320f4936b02d12e683d139da55e3b8ed021f0a773e3b0d60d980632e2ddf397"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N059.webp",
+      "bytes": 201632,
+      "sha256": "5a1ff223d701ce5afaa3d85e5a71e94c2b74bbf773b0aba830a811d614db2fce"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N060.webp",
+      "bytes": 187394,
+      "sha256": "638102d9f000559982a195c3763c5abcb7867f8e0874a765bee4c7ade0ef5076"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N061.webp",
+      "bytes": 199606,
+      "sha256": "9f9370394b71f2bd46d68a56d43f025827ee775173f183f2d6516780d16a058e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N062.webp",
+      "bytes": 194866,
+      "sha256": "eb6074a57511ff0a2269a73a8cb253fdb5b757a84c583892d233dfc721d5defa"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N063.webp",
+      "bytes": 187560,
+      "sha256": "542c1271b584b9e09a0826a68e3a85ac476771343cb29e9dc429fd681b1ccdd7"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N064.webp",
+      "bytes": 254658,
+      "sha256": "a4893f120e5b54fd09866b10904153b94a69eb0089f7563bc43925bd17b16d03"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N065.webp",
+      "bytes": 231680,
+      "sha256": "53ad3258582e8095f71e72f2b81dfcc2c08aa93d31ee5f7567f3a398ea3156a5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N066.webp",
+      "bytes": 199966,
+      "sha256": "e7c4dc0c3020b2204fea95e2fff456a832baa3cddbffc7d79c70535f5689a276"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N067.webp",
+      "bytes": 227738,
+      "sha256": "45f0e9dc030fdc84af07d6d0d1438635789bb17e381a51c1abecf64c3904a135"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N068.webp",
+      "bytes": 179838,
+      "sha256": "85d7d0c32c498ee50219a37557d0772d9f89dede7ffa71351548e2c30c0f5e68"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N069.webp",
+      "bytes": 253194,
+      "sha256": "15dd3a2c958c7e52c3d310d24c0e3578c989073fe65fd520ab60c17e1410a70f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N070.webp",
+      "bytes": 213950,
+      "sha256": "f69efa5f6c42b3528ad8fcd7a2871d36a6fb051c46f16b6ca9d60dfa806a2f40"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N071.webp",
+      "bytes": 222780,
+      "sha256": "148fbfc15c2fc3c7f0b7d5c97c9af064919a377ee8ced934aeaef9c2145d9617"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N072.webp",
+      "bytes": 194692,
+      "sha256": "8cdaa6a8495812a57a92ea0739b83f4dd0a4066b21dee2874e81d0dea5cf95d2"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N073.webp",
+      "bytes": 203136,
+      "sha256": "0c8d63372d479af4b1f2a0a8b0e343513528680f5f4ed2c109c31eef4d7e5068"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N074.webp",
+      "bytes": 182350,
+      "sha256": "4a8f73d3da29df52536b58a8a01a120443ea5039be237a5aa88ca02834e234ad"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N075.webp",
+      "bytes": 242430,
+      "sha256": "9bc2956c0ae746375df8b4469a258289419047724af90aeaf73fdd53e99723a9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N076.webp",
+      "bytes": 189096,
+      "sha256": "fadf69b9e4d7f77d29c0e578d1c75a36432f3a3222d8f842f677d923237f9c88"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N077.webp",
+      "bytes": 190520,
+      "sha256": "425ad4c8d07e80ae4ebc6113a6036d7a78f6a634dbae8b13e7c966429fc85152"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N078.webp",
+      "bytes": 182256,
+      "sha256": "2e46ff0614669f278cd8c8f1c0ed6880a3af65dc809d34f0dbbc1d0af44e4fec"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N079.webp",
+      "bytes": 204530,
+      "sha256": "6630f8c4b0794cb719f8a7aec1adc26e07d62ffd8e89d9eba1ce77523f7121c6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N080.webp",
+      "bytes": 204998,
+      "sha256": "f94caf49084941f3e7f6bc63d68ca7ce1c8d3f33a0085324f09c34f2fc0b1ada"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N081.webp",
+      "bytes": 229434,
+      "sha256": "caaae0b3b1cbee5fe1af2420870e561f9bcc92d735a691a1b4b85bad4fa13b9a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N082.webp",
+      "bytes": 177150,
+      "sha256": "145eefad22e5ceefa0667acab3b253f63b2eb8665b5d42b8209c07123ad9a443"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N083.webp",
+      "bytes": 256048,
+      "sha256": "dc6264a98f29dc36a9b20008832f266758087ef5e1691f45d5480ddc06a5b055"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N084.webp",
+      "bytes": 232408,
+      "sha256": "70235d3af3f8325861317f33d673cd05f2363ee1cb4b4306e5c4140e67c9dd3a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N085.webp",
+      "bytes": 230154,
+      "sha256": "ea09019b44b18a189a50f95fad9af59a7bd74727768b5951eacdeb78170b1cba"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N086.webp",
+      "bytes": 229600,
+      "sha256": "f5c89793d1c6291580c0a2ca65c82df1abea8123ead1000ab0d331a31479e630"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N087.webp",
+      "bytes": 237928,
+      "sha256": "2dde25974950a7b3e686cadb3046e22ea555dc036ad59e44034077ed112c8b8b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N088.webp",
+      "bytes": 139834,
+      "sha256": "e30da0c0b4fd026b00f292d0109f4aa844397f6eb7a17b1436dfebe950bab756"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N089.webp",
+      "bytes": 181868,
+      "sha256": "1ad8e537fb1eb6197c5616e0590924b59b1c51ab297f9fdf67f0d995c25e5b55"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N090.webp",
+      "bytes": 169172,
+      "sha256": "7931ca31215f19a1fb0aa63ab389a718c8db39dd0c29cf291be2ebec17353646"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N091.webp",
+      "bytes": 214896,
+      "sha256": "65ffa3a852134e6f3883100474305c1c60b71844dd7a5c9c919353bdbab8f4f5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N092.webp",
+      "bytes": 272926,
+      "sha256": "44701b28b28af7db7d633dc5ad274ed7be9769a765e0ea81cd642cf07b70f069"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N093.webp",
+      "bytes": 190590,
+      "sha256": "72b777a981a5378810989f7471d65ff9b37cada32d2f66b159d57ece8ed5717f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N094.webp",
+      "bytes": 158540,
+      "sha256": "32e3f000db969912d20c1c22171273bff27bf23d97fa01e313cb64b2e8dc8db5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N095.webp",
+      "bytes": 176508,
+      "sha256": "22656ccc5789b313f5a43b69afd5f82e03cc670f77bc5a562129ffba4c1155cf"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N096.webp",
+      "bytes": 251582,
+      "sha256": "79a1cd949c62520c43a9788983271439d86f5439cfee72b58ee57587b8aace40"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N097.webp",
+      "bytes": 109528,
+      "sha256": "fec85087abc05e95f7a00da243eda46eeff990b990e81ecc334a95e3937cda0a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N098.webp",
+      "bytes": 171360,
+      "sha256": "7dd93087a5775ac07041140ad803259af8c5d0c27414f150a093bd73ff4d896b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N099.webp",
+      "bytes": 172770,
+      "sha256": "73bf55639f03c06692f235f6afe12a53e5b844612018702a9fb5610136e0264d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N100.webp",
+      "bytes": 163602,
+      "sha256": "f6319f858e663230f87748cb7a6a3fe2597645801e366bcca601875497a625bd"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N101.webp",
+      "bytes": 168256,
+      "sha256": "097629eedf896d3d546d39b87b69311de79500b2a1bedda17f87822339df8234"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N102.webp",
+      "bytes": 205180,
+      "sha256": "b6f7abe97701d4d904cf62f467edfa7bcd31581f981604dc2e30fb51b9c24e31"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N103.webp",
+      "bytes": 291222,
+      "sha256": "39ff32cd9e13ea28b3d31d77e99075ef356a1987282dc701362610b8cf5fa69d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N104.webp",
+      "bytes": 231598,
+      "sha256": "784d206536862bd60a7ab7eff362c734e5da6b9106c1ac51bb2a113b7454ab60"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N105.webp",
+      "bytes": 176606,
+      "sha256": "f26a5f55310a57b238708714bdd11e817d78f9e1a2ad68c5392ab156a9845a16"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N106.webp",
+      "bytes": 199732,
+      "sha256": "a7d9325b5076b1e623a40fa3c07b1e09ced258b761689604e85e932210c3b2f5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N107.webp",
+      "bytes": 142600,
+      "sha256": "47c01fbb96e892f27a8a665edbad83cc098e37c558f7144b647c4e57f4ddc7cd"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N108.webp",
+      "bytes": 104472,
+      "sha256": "3577bfb78b1334bef75f13f3fa21c5c81694a7f625fdd660f4c5099d3879f505"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N109.webp",
+      "bytes": 232006,
+      "sha256": "e98d129fcf27a43ca22987660b2ef91beb143ad8b4cf64fbe4331879cd16960a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N110.webp",
+      "bytes": 245824,
+      "sha256": "7f567ddf8cfc6d02427d50d7d1b58737c389aee6538a3dbd4e7f529b853a9a4b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N111.webp",
+      "bytes": 162208,
+      "sha256": "27b43f26fd28e4874cb2e2ce1ec33a974e51d7f1953e7c63c1a6aa3cab6f5bf9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N112.webp",
+      "bytes": 159420,
+      "sha256": "22d003b9b411afd9a062a07c2155c0281e875dfcdbc029162130f70319f4e40d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N113.webp",
+      "bytes": 273872,
+      "sha256": "28a83248ed516876faab218c419dcf4a1815906335af069f0cf8a0e167492df1"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N114.webp",
+      "bytes": 266488,
+      "sha256": "47894036f3e7b597558a95f170c1e4c88f0a85544336d3530d09faab6ae68a8d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N115.webp",
+      "bytes": 208754,
+      "sha256": "7ce2d5f885c55ab02d788f2a95bbfaeeceb43cbe045a59c89f7907c7ed17f2c0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N116.webp",
+      "bytes": 169200,
+      "sha256": "0967d71a3899e5dc96e3b3481cc35b87413561dcb69a4eae2e8b930d30a5cc07"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N117.webp",
+      "bytes": 193034,
+      "sha256": "5c1df41cd906518e6cd6495c38cfc123f724dcc61e4f5b0a78277a8d5ac83e6f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N118.webp",
+      "bytes": 189422,
+      "sha256": "30a4627f4f7c73a50ace4a42c3ff2caa64f6ff9ddca971d5c65edd5c9d386a9d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N119.webp",
+      "bytes": 268198,
+      "sha256": "25e0a2e09718eaeac9d0a4461fe29b6a0b417ea7df1e2511a9d18f0248bdc9b9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N120.webp",
+      "bytes": 193048,
+      "sha256": "8cd53ae80e50cff994603091c9a30856739b38c5441840c2f715cc417ab9f702"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N121.webp",
+      "bytes": 142308,
+      "sha256": "eb289a48f83048a7a375d70b76c5eaa1aaca087ed4d09f8f57bdf994b8e931a9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N122.webp",
+      "bytes": 213132,
+      "sha256": "35016222a0169c9c4e3e7b6b4bbf09815b1f9cb78dea31583a482678ef013497"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N123.webp",
+      "bytes": 194986,
+      "sha256": "b91cb0330f65ca7828b2fa22e577fac4ef5185bf828e3c7d1ee56b199829688f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N124.webp",
+      "bytes": 210066,
+      "sha256": "5c9086d83bd6a286afe7095252a3dff8cc09d304f63651350e525150602cae4b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N125.webp",
+      "bytes": 265708,
+      "sha256": "a635f15c686a6cfe490dd430f1485707943ed4f2e53f91e1a669c6b7b0d03379"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N126.webp",
+      "bytes": 288354,
+      "sha256": "3be449e2e7156a8c782d2a8f457a513ce4a13613aa0547cb3de144e3525975f4"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N127.webp",
+      "bytes": 151770,
+      "sha256": "0f7862faa9e0bcfbeefe56f00ea3d0557afeea5c135711d8cad5629f75192c6b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N128.webp",
+      "bytes": 237160,
+      "sha256": "01b71cfebb0b11e6c7ba05faa18b0e5a1e3f8b0f45ebaf3c122c2ff0ad09067f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N129.webp",
+      "bytes": 165488,
+      "sha256": "1483425f7b287223dd90c0176f8ac9bc61e3dfb94950e267f0dccab2eb39ef3f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N130.webp",
+      "bytes": 154032,
+      "sha256": "243814fbaf1de24bc0a126c357190f3a609f4a78c5bf10bc401f693116b693b7"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N131.webp",
+      "bytes": 102780,
+      "sha256": "b4ed11d4d06ce7b06614f7e12f6657d6bbbaa01628ac881a0c4ddc81b6633beb"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N132.webp",
+      "bytes": 182146,
+      "sha256": "6be657fe4c216e5d61e5b39b4094668bfacfbeea03f6692c900bc0593de3a182"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N133.webp",
+      "bytes": 128890,
+      "sha256": "7b23f636d058c7bb6d258d9746e1064ce835109f93d3d42186ea2d47bbfb58cd"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N134.webp",
+      "bytes": 170922,
+      "sha256": "3245a3b91cfedbef081ea9ccd6c769fb9200c486ab8ea49b7521f1d2551c20d3"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N135.webp",
+      "bytes": 207882,
+      "sha256": "d9440ff48bfafcff90d2210618c4a7fe8cdb77056bf07223ec622252d7997f7d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N136.webp",
+      "bytes": 206610,
+      "sha256": "9d0592ede24dd9e48a455640cb2d8a434a6a2456238d660ae56d4c85b87b8ed5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N137.webp",
+      "bytes": 225366,
+      "sha256": "ee364245ae1c0e836b3b2584c8e420327935e6c2991f59a9312bc944e82c33af"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N138.webp",
+      "bytes": 200266,
+      "sha256": "8f38c4ad1a86b7f82a8c74d452dee437d45690c242367b4512e3f0a9b6022a31"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N139.webp",
+      "bytes": 104248,
+      "sha256": "92a940e7e07ed3926ac95538954ae19d121364e0480951af0410784ff8572393"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N140.webp",
+      "bytes": 153972,
+      "sha256": "ff3b4530002e395872999082261303ea4f8ae5e010ec387ce4e4eb8397c87fe9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N141.webp",
+      "bytes": 168126,
+      "sha256": "091d28bb26483c435ac03bbc63d44899aab43351ad62c797489370db3380e3b9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N142.webp",
+      "bytes": 91104,
+      "sha256": "1995462b1e0298e92d9c1a3b4f78bae2693085d841a60faca8c074a2c9df8b71"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N143.webp",
+      "bytes": 125174,
+      "sha256": "14fbdbe12caf635bdc264b10b1579ce5bbb3d870a0fc29039b3be8dd975a1200"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N144.webp",
+      "bytes": 186114,
+      "sha256": "77b937bb0ed38c03f942241e49c50693ea54a292b3b3b56ef1df3c67467086bc"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N145.webp",
+      "bytes": 140264,
+      "sha256": "425a8b5e8dd79c553936d673a1253d4d9c5c6a20d230bcffc725058af7f1ebcd"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N146.webp",
+      "bytes": 151550,
+      "sha256": "509a319a167c17188cbe26924ded352bd8d868c97546fc94218840b86443cfee"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N147.webp",
+      "bytes": 115064,
+      "sha256": "71074eb74a9c62edbed6d4392170141c76486e89e543440e16db88c9a11325e5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N148.webp",
+      "bytes": 159106,
+      "sha256": "971967867acdf521d1f0df343b9f58af32eccd52555fd3cd6e89a0165e7d7b36"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N149.webp",
+      "bytes": 153388,
+      "sha256": "dc7a94c69e20952d86011b81db4848ab1ed34856c1353c6343f117076a71bacb"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N150.webp",
+      "bytes": 208270,
+      "sha256": "be9d8339dab45716348bc44704cb0337a0c0851de55e69253676d7bbaff3aad3"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N151.webp",
+      "bytes": 148800,
+      "sha256": "8e24302382a053ebb11bd588c9327a323170afc5630679e4d8fd93a1c84ad708"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N152.webp",
+      "bytes": 125556,
+      "sha256": "d05f50d0c453cd656e26dfc0ec27f13952a3299e4689da390b4f4b1a932ce486"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N153.webp",
+      "bytes": 189754,
+      "sha256": "6453139952bd84cdcffe9d0fac290103284912fd86b847dfc116b763d67cc8b0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N154.webp",
+      "bytes": 261914,
+      "sha256": "13faa7f780b4303b413f87c5a4639c24cc4d23c66a76ff47a04575c2e695464e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N155.webp",
+      "bytes": 136606,
+      "sha256": "c1ead3f2ddebb71802686ba8bdd009f37c6068600dd4d12cb5a7ab5413a2bcde"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N156.webp",
+      "bytes": 168984,
+      "sha256": "e34ef6fe3c683e7d45779f2cfb7bc2f478cfc36de1746afe138e08c49f19fb99"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N157.webp",
+      "bytes": 85506,
+      "sha256": "5fa23b44ca0ba555cbcc26171870c9b6503f2d48f183982dd6b254c06314c627"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N158.webp",
+      "bytes": 197548,
+      "sha256": "ea5ecbcb527f7c63daffc6bad8b94e6ea2b37cbdd7546c2b8805cc39d5cd21de"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N159.webp",
+      "bytes": 160684,
+      "sha256": "9a983c22da21e0a5ceefa7e81c9cc193fdc859ae4342dc8bdf70950b74d62187"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N160.webp",
+      "bytes": 169292,
+      "sha256": "b59fe54d603266b19844dc816ca9e205291ec1adedb65322f1ff7d7af7355fb3"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N161.webp",
+      "bytes": 146398,
+      "sha256": "8084f0d0f9fa7c5b501f1d6fc9d0a3a99c536ddd6fc23051d56879e82929893d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N162.webp",
+      "bytes": 97018,
+      "sha256": "afc8d5d24949276d1a27d1feef0c0dc420e45b762894b305fadc176afb094c47"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N163.webp",
+      "bytes": 169796,
+      "sha256": "d47a907185e73fb74e021a57dae5e9681f809ecfb0fbf7f07a4cabf3b486ad12"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N164.webp",
+      "bytes": 109902,
+      "sha256": "e64638bbae06852bfacbb5e5327064d579408483f813c865d792b42bf34e3956"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N165.webp",
+      "bytes": 212918,
+      "sha256": "c592b6b403cdb4615494195e8b5a0c4cfb503463ae3a9aa9a1b9437dfb9c21f1"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N166.webp",
+      "bytes": 173154,
+      "sha256": "0b1f8049af4039cc621966898e501493749401161660ec22196e154987a45c88"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N167.webp",
+      "bytes": 239546,
+      "sha256": "24a0e8358472fbcedf92d398e67a0fe978d5efb3dccf104629ea83dcdaff49ec"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N168.webp",
+      "bytes": 134822,
+      "sha256": "ee0f13af38d767c5f73da5429db275952a91e83a6e98fcdef7407a7a3fd395a9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N169.webp",
+      "bytes": 184462,
+      "sha256": "f26cb99cc8aa810ba29fd841750a56830dc7cefa740b7f87d0758e9e9df22fdd"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N170.webp",
+      "bytes": 170788,
+      "sha256": "f766eb5c60a8088daa8c340a9f9600fe3f5e30c5571acfd1cfcc11d6062e796e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N171.webp",
+      "bytes": 172488,
+      "sha256": "1f8d9cbd1aba095ee534f8160c7c5e998d1f200106b70841c0b72160211bf2d6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N172.webp",
+      "bytes": 192110,
+      "sha256": "c891bdf5ede95f407485ecbb0c43693d996db34bd9655e0ab6dada87a271473d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N173.webp",
+      "bytes": 180614,
+      "sha256": "70642739b426312f3b5487fae6c5e06e8dc7c3728215a856c2b73ac8be887e10"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N174.webp",
+      "bytes": 255876,
+      "sha256": "01ce7f112b692f324165b061ad38a81d4a3055312a381e81404e54ebb3fd9ff5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N175.webp",
+      "bytes": 118128,
+      "sha256": "ab24cfe4f6e3bc1ab1f1a7d6f82ad5c5d72966294ed9e8553d7e8340e7b18f65"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N176.webp",
+      "bytes": 379404,
+      "sha256": "d1566177f94d3f0f3751e859e085c7f761d5c5e888b4a9c6ecaf1d6e75547f11"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N177.webp",
+      "bytes": 134072,
+      "sha256": "e2bb08bfd39a1396a6bcd3ae47c7d1bb8f0a41991f3551ce61daf1d25360a7ba"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N178.webp",
+      "bytes": 197658,
+      "sha256": "723452d734e4a44a4bfc9ab41da075cdc3d564b239d6b047d4ea7906246914c2"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N179.webp",
+      "bytes": 56930,
+      "sha256": "69a8d8abae05950e4c730f114d4ef1c8f92d9f6fcfe8d198db890dc1711d1590"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N180.webp",
+      "bytes": 244534,
+      "sha256": "bfbe5d01c59247891f5855c66c4a359c14eedc4fc16f905105412fc62c1d7935"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N181.webp",
+      "bytes": 233286,
+      "sha256": "7f3beced1c848a3510309befe46580eb82120ebb49ad3d64451c3dc331da6be7"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N182.webp",
+      "bytes": 212724,
+      "sha256": "b427153ffb6244547d9722b4dbba05060d65a96695eba5dd41d749fad3ea1741"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N183.webp",
+      "bytes": 174156,
+      "sha256": "cd8ffa18b76d224224f9a67fb4b2c641a6f2802d4e62808bd815cabe1a9705fb"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N184.webp",
+      "bytes": 188620,
+      "sha256": "deaa4c2cf4f29f90266a3ba3a83bed6269777b032bab95fed707ee705925b5ba"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N185.webp",
+      "bytes": 216084,
+      "sha256": "3c8a374db27b6ad4e3a44a6764d845529d611e77aa617cd6e664ae0d02c64d84"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N186.webp",
+      "bytes": 235732,
+      "sha256": "a17c36f1a031146c1e740a8f6c7147f381f2c6c1b387e1e4725a8c1b8b15115a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N187.webp",
+      "bytes": 285842,
+      "sha256": "dbd3f36317ae01d6b462d1fb708b27da3c14d179c89cf6e64fe13999f71c9d6f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N188.webp",
+      "bytes": 152628,
+      "sha256": "302fe01d3a337c99fc22f5f4fed6682ce4cfdc48a813395a81ea15cb2cd2943a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N189.webp",
+      "bytes": 211634,
+      "sha256": "92978318eb7a61691b1b9681f1fb5430f32feb945ac5059d103fc27fd6bc3a3e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N190.webp",
+      "bytes": 247090,
+      "sha256": "66f6684dfd8a28931dc7d5023054ed398558a5fd358a373e4bf80c6329e4f679"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N191.webp",
+      "bytes": 139450,
+      "sha256": "c1eb728d26017a3c554ef7f01388b563f6fa0b8ab4c2870e6d1c90574adfd0de"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N192.webp",
+      "bytes": 195820,
+      "sha256": "63194423f168b18bdc1d892b1e6c8ccdc5a78ba9c290f375139e981287bf2d71"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N193.webp",
+      "bytes": 191238,
+      "sha256": "240c9e8b64faabc9a70cbc4ac722bb87d549589bc99f1ee5ba43d7dbaae41a95"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N194.webp",
+      "bytes": 91930,
+      "sha256": "f1caf2c921d78876a8074968d17b49be8a903deb6ef836fb0e9c34d648fccfc5"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N195.webp",
+      "bytes": 164978,
+      "sha256": "50d1ae2deb5ec653bf0be324fbba42026f94b1cbb85fea96d8f614f3dc013048"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N196.webp",
+      "bytes": 158896,
+      "sha256": "b28fbad607d42880b477b9a23dc1f27f8f41857f37bc255f69b567e83a2b5964"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N197.webp",
+      "bytes": 261644,
+      "sha256": "a81cd35a1d8e7b6fbd237ef8f50b0a596f1317a34e8f0b1fedbd04b57c74011f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N198.webp",
+      "bytes": 57872,
+      "sha256": "18dc66a51d946e368ab930d7b13f0b11afab2883348df9e57587066ad253bd47"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N199.webp",
+      "bytes": 145138,
+      "sha256": "10eacd443df13a4ffa6c3fade5b8e80fe1f62b2bd4ae6253c188f48bdcea55ec"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N200.webp",
+      "bytes": 188162,
+      "sha256": "7592c9212240a450f6ffa6e37c4845589385b7bca17f5948f8598ca07b9c4a76"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N201.webp",
+      "bytes": 160442,
+      "sha256": "49443e2aa001f74881fadaf44bf8a578b847961036659a3d8a04841dee315d1c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N202.webp",
+      "bytes": 159976,
+      "sha256": "e1bdf64193b8bbaead22da484d22d0fe1fbb91c223f63e45dc0a6d4344d56e9a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N203.webp",
+      "bytes": 116780,
+      "sha256": "0a39c1c05a7df69661dbcd83c24abec1b28118a19cbbbcee8226a916c913418a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N204.webp",
+      "bytes": 162190,
+      "sha256": "f6757c8ad290420b70f9d8ae56d862078f880ff61903251b2ac0fae9e65933df"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N205.webp",
+      "bytes": 230422,
+      "sha256": "a6894de4b2ae719dad27e44f7aca6d56bbfb3c09d606f10f232a569d5f05f883"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N206.webp",
+      "bytes": 160970,
+      "sha256": "3a7920daa6437316b24552eb18d1b12d3f9e4c8cc07d865117a40a11c8fa2f25"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N207.webp",
+      "bytes": 114694,
+      "sha256": "54dfc567eb0f4002ac37908c231e9c531fc8cead3547470c24ab2a575a44f333"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N208.webp",
+      "bytes": 125394,
+      "sha256": "6a26e27f826d406c947fbd118036805a3e6e6dce559ed826516ec27867146037"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N209.webp",
+      "bytes": 193290,
+      "sha256": "6879a0cead23124cbc315eefbd6ca2697ee8b52cecdb35597cece0aba72a394e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N210.webp",
+      "bytes": 195970,
+      "sha256": "fb477dec9ceea01b79c1c020ef794f50bf51f409e3bfdffba0fe370caa03ba7c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N211.webp",
+      "bytes": 186660,
+      "sha256": "e9aed609b5f87b4e371250ce5f0a4a57890f5b4498cf307170aae3d24a368e2a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N212.webp",
+      "bytes": 166864,
+      "sha256": "8ffac519aa2eb967ded3bf3ece0b45c4c94194f93e3eae6a7738bbc5c9e5179b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N213.webp",
+      "bytes": 140154,
+      "sha256": "5082ecb14311e118c8e868625d2826081a3269e1070d0dbd409fab1a7951f2e9"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N214.webp",
+      "bytes": 187494,
+      "sha256": "d818934e42697eacf544d48ea7eda8f1ccff1c8f3de060299254c8ef355859df"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N215.webp",
+      "bytes": 222388,
+      "sha256": "93562fee3f8284ebdc5b57a27bf8125e27b973d3faa0ec087b24886c6f59db5c"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N216.webp",
+      "bytes": 176294,
+      "sha256": "f836f4a8e9846a08b3a389020ce01c0d990cfea6918086efc4f5dff02466bb37"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N217.webp",
+      "bytes": 256030,
+      "sha256": "759049d186508429e4bd0a21834c38548ef062a553c856e8eb2dd1af7c18ceb0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N218.webp",
+      "bytes": 302972,
+      "sha256": "e337881abc5e8f54c5d08ceeb3b274a643bed94156dc5f236d844f741cbfa81e"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N219.webp",
+      "bytes": 220138,
+      "sha256": "74ea615a6b945d874868f9492355facc778853c5ac1f6d502ad239d04ec84103"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N220.webp",
+      "bytes": 152864,
+      "sha256": "52c08db778b91be244ecac6fc3a5ec7e215899f07f17159611fa9aeae1497825"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N221.webp",
+      "bytes": 240718,
+      "sha256": "57ca3c668279d3b54dd5225bf9f189c9c9049c64d75ab70ca11242ce8c3a42b6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N222.webp",
+      "bytes": 170952,
+      "sha256": "f692faaab052b3e901b026156d2d441bd75424ed22f1a748d804e7f25891061f"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N223.webp",
+      "bytes": 196228,
+      "sha256": "ca32ef28c305e808b305f2b4023132d977f12b5e6164b218e46996e09c04beb0"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N224.webp",
+      "bytes": 178612,
+      "sha256": "eb565c73a32cfa4a94fe3d05b231a533a0208d5627c9dbec16f7b2a7333a5506"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N225.webp",
+      "bytes": 149182,
+      "sha256": "e6a79e22c359b8b999f47f046403dea676272fe4cd8daf7902c7b1ea1b2951b7"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N226.webp",
+      "bytes": 143374,
+      "sha256": "8e80e40c51945c5ee21f330220df133f3a979d88a1d0f2fd5465a3f60a2e346a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N227.webp",
+      "bytes": 120904,
+      "sha256": "c246ec4c3acbc99d83ff1fd871d6fc8e4920dec3a183e309fd86d27d938a96d1"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N228.webp",
+      "bytes": 146572,
+      "sha256": "969eddd6219605af79f8240479e40868303259cce6bb6e3a4b188261e49b2c2b"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N229.webp",
+      "bytes": 159194,
+      "sha256": "7ace74ca6856b69398ec286bd07462ae2940141116ae1733210a9fa0bbe757cf"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N230.webp",
+      "bytes": 124256,
+      "sha256": "dee64b80dfb3bd133d16df64017767e776fd83a09023b52d9ff17940c35f9887"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N231.webp",
+      "bytes": 124434,
+      "sha256": "626828e85b27212330fe4b08984d1ea4e11254ead27f11685aa6d96d1219ac16"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N232.webp",
+      "bytes": 252210,
+      "sha256": "7bd50b443ba6c0e5df4fd13ae5d051de31c9a9a77647bd0febe86ede8e9e315d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N233.webp",
+      "bytes": 164310,
+      "sha256": "b0b0345fc2287aa10ae1a6770806eaf736bccf301c866ba46ee5ec0cbda7011d"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N234.webp",
+      "bytes": 179802,
+      "sha256": "b21688067e29c087c000edc93ebfd4175d8e023170d242622cdfe374315bb292"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N235.webp",
+      "bytes": 146910,
+      "sha256": "90d1a10832f7d845773c728a5a1336d22d1d5f8ecfc174a6bd6e998dfcc8608a"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N236.webp",
+      "bytes": 150748,
+      "sha256": "9a80cc34f2303ffbb44847b6949541cc2f702a40bcf903b3eaab6a6ef0022aa7"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N237.webp",
+      "bytes": 126388,
+      "sha256": "8096645b3d16a8dfc63447969b4ad2ce7355922b4901bccb076889f3eca980c6"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N238.webp",
+      "bytes": 134918,
+      "sha256": "cb0b51646f408ebb03eb503248ccfe84f73cf891ee90f3233a2f680f2d5af520"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N239.webp",
+      "bytes": 125156,
+      "sha256": "2bb95ed38312ebf25ac42b542083c2fb65fdf06ea098c99b9aa0ce3c6b9daf92"
+    },
+    {
+      "ruta": "assets/expedicion/animales/N240.webp",
+      "bytes": 192754,
+      "sha256": "0fcabab923902ee9125a3137e51ec2fc16cdafd4b4f0949fa25a32d58d12a027"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H01.webp",
+      "bytes": 494060,
+      "sha256": "63e8a424ca029b13f53000b79423a5c50f6125521610b1c104e219479cd097a6"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H02.webp",
+      "bytes": 527780,
+      "sha256": "562f5348a4699727ef9a34a9058d3f78a5206535828343260bf848859b8721da"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H03.webp",
+      "bytes": 496276,
+      "sha256": "bc67aa17d13dfdc6f8dc082c0396b826f6f34a6d35239c667cc21d5b373fb83d"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H04.webp",
+      "bytes": 525936,
+      "sha256": "a019ab8515045579f29fe8f6d8008613c1046ca299cd18b4d22ed27e24e0f5ed"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H05.webp",
+      "bytes": 448422,
+      "sha256": "0d0c0e5e776ddd83b80a9794480191b9a70415756f7ebaec85ffa8ce65412d76"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H06.webp",
+      "bytes": 337218,
+      "sha256": "aed520153cf16b20fbac79b0ac8a4dab86fe79b13707b25a7b5f1e40de5e504e"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H07.webp",
+      "bytes": 386860,
+      "sha256": "e7caabd982f8ed7c4cfd8367c295d62e7d6eec922c3cc1006d7ccca37a840b71"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H08.webp",
+      "bytes": 433488,
+      "sha256": "cff0f5bea983c669dfac48795f89902fe2349c7b38fc6f171f7e57f112703d9d"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H09.webp",
+      "bytes": 266932,
+      "sha256": "c83f927b03550218d26d1dc0031efb0e15268398ba4ad133dca6b8bcbed13980"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H10.webp",
+      "bytes": 310122,
+      "sha256": "6ca6cc50d82f5f5097d3870ee3f9eddaa26c9b5dd04945cb83ba6755246a89dd"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H11.webp",
+      "bytes": 329526,
+      "sha256": "947398318af732afead4c8570be1af4e77dba4eb89176d843994c5e2cb7727f9"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H12.webp",
+      "bytes": 398980,
+      "sha256": "9e50bafcfc32f373728b9128c1491a26d36d445fef412ddb3a535794628de32c"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H13.webp",
+      "bytes": 438950,
+      "sha256": "2543aa3394c37097662b2538a6c486abf30af596f84f2647131181e8357e504f"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H14.webp",
+      "bytes": 461252,
+      "sha256": "bd6c820e0879f63bee22bbba03124c56718456a76930fb8a8bc4700c5625c73a"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H15.webp",
+      "bytes": 466496,
+      "sha256": "b50f90fb1532ba1292cb02e08eb650848f343995baed20a900270f45b3633c7d"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H16.webp",
+      "bytes": 351990,
+      "sha256": "bde790a4add826ed85b0bc30c5f9def93409e4157ed73c9d507a5230bc61c373"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H17.webp",
+      "bytes": 323234,
+      "sha256": "768979347e586226c5df0fdbd3b53788f05795a2ace2448f8969fe68cb90ca61"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H18.webp",
+      "bytes": 371672,
+      "sha256": "54e09823ff491bc6fd70d994c704262b650159becca962262f61eda1348a5640"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H19.webp",
+      "bytes": 416424,
+      "sha256": "e171f245898a2a86a389495a93c8b3cd0a8722ac3f3f8524c8b26ffd5a0e4fe4"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H20.webp",
+      "bytes": 388240,
+      "sha256": "3860f5499f23f5fde48c00e3fc67f9947ce27b38b9424fefe84a3d25b0c2a999"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H21.webp",
+      "bytes": 423168,
+      "sha256": "cc0e3fe59a621c9600500e0ff3df699fdad22d020623155cc31763b3f78d5500"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H22.webp",
+      "bytes": 199126,
+      "sha256": "a22e8f8b9ad988971f5520f77c4795926ceb7e8b707e935fb93bb957ca620771"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H23.webp",
+      "bytes": 362568,
+      "sha256": "89298f23c727dd2eccf8d60bc238044628631ca7027734ac313cf27a99f36986"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H24.webp",
+      "bytes": 449532,
+      "sha256": "953d4a95c537cdeb1157015f646a3941d1b6e1080cf1dc6b30c7e71e23567966"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H25.webp",
+      "bytes": 262740,
+      "sha256": "730a921587eb742131b6c425fe0f35d9fca94990cd61a4d7255286ff1b9f5cf7"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H26.webp",
+      "bytes": 372882,
+      "sha256": "6a69104673d9ed3fba2675e86c138484c5e172204ae40ef2e17b924968ee6f54"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H27.webp",
+      "bytes": 354270,
+      "sha256": "afad3e9eaa26d71f8a71b1526dc7218acc188f23e6dcc4702aca328329426658"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H28.webp",
+      "bytes": 405276,
+      "sha256": "a04b7b076a649e7e69a4143cda268953c03e5187a0b67e50fa92215280834b49"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H29.webp",
+      "bytes": 402646,
+      "sha256": "418ca9a85a1fe042747cda034a87e1ed95964021157eb23eb43d57c20561b311"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H30.webp",
+      "bytes": 351896,
+      "sha256": "8d1e468eb2de1d47707ead1114fe69f6cd16a2ebbbf7825e6f9c6928e2f1e14d"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H31.webp",
+      "bytes": 335686,
+      "sha256": "3ab65a66a5f01a60ba90f4b5aafde0c6db075c62e481d7e225efdc53e2cf333c"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H32.webp",
+      "bytes": 198760,
+      "sha256": "761ac19bd48973561d5be1b48383aaa14e5a72b2a238b0c1e60c8cc450090556"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H33.webp",
+      "bytes": 333722,
+      "sha256": "56e7874507d9174147a2c6455e0fe62b674ac425d97ade53333ab3a2047264a3"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H34.webp",
+      "bytes": 194184,
+      "sha256": "bf4039ff781589842997caa80c783ad57f27d3d6897c45201d9eee5299423938"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H35.webp",
+      "bytes": 31128,
+      "sha256": "3f4c0c998606017c21f059178349228773b46e86c6b62b9c4306cb5e1475d094"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H36.webp",
+      "bytes": 244072,
+      "sha256": "7a296e0ad76095f59fe65d1cc5a13cd3381f158e7ddec0c0911828245b3cf8d8"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H37.webp",
+      "bytes": 383666,
+      "sha256": "f7e0e49b45b82a13b805f6624011f6054b19c24404a09857a438c5fc131d7a6e"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H38.webp",
+      "bytes": 331996,
+      "sha256": "17276b495e2a2065f2262aa7cbfd2525aae7ed85b48d7630240719d95846a826"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H39.webp",
+      "bytes": 318864,
+      "sha256": "84f52658f887136628cdeb507a6c630b062fffba2bede11b0609ab65dd37b73f"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H40.webp",
+      "bytes": 398250,
+      "sha256": "ac41cf40e04bee8e254ed01ae27a9dc6f12d89975dfb3f365165cf6b64c43a90"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H41.webp",
+      "bytes": 264580,
+      "sha256": "642832896ab14a1a7b56104a74aa96ceb7e3e1ff0d82c8606aff30a8843edd59"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H42.webp",
+      "bytes": 198160,
+      "sha256": "a9fc3f773bab3a9fdff6277f6994aba018b25575109f5807f08080584dca571c"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H43.webp",
+      "bytes": 349746,
+      "sha256": "f9bb3ab94b2a35530ad34739fc1491da0559c8ce616fc7a47aa63702f301571b"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H44.webp",
+      "bytes": 427292,
+      "sha256": "c6abca4ff989a16712004ad2220af5786aa8ab6ecd67b4a339bb105285d4434a"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H45.webp",
+      "bytes": 381144,
+      "sha256": "dfd668d0dbac37ab0f59ff9cfa9a475b8d3797b41946fc7d2089369871487c32"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H46.webp",
+      "bytes": 215154,
+      "sha256": "e45c982c079fdba5682986b87ef2d358f6f48f225a8eb57025ead1bb8c315b3b"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H47.webp",
+      "bytes": 306940,
+      "sha256": "21173540517a14833760e426c07c91c8b270719bd876c7db2393ea60e0252258"
+    },
+    {
+      "ruta": "assets/expedicion/paisajes/H48.webp",
+      "bytes": 355492,
+      "sha256": "9b8a08ee93e471f1119f62ae5321dc15528eaeb2785a8b10d2a117cf7f9b1c87"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H01.webp",
+      "bytes": 201864,
+      "sha256": "2a73be263243e12f9896230857904fcdba221e62cc82cd5aaa4f8905fc506739"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H02.webp",
+      "bytes": 177684,
+      "sha256": "87dde4603cdb10639da6aff88f8cea9260f9f43768193452f4e74524ca77c938"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H03.webp",
+      "bytes": 158904,
+      "sha256": "ac9706f8e557d3cfb2f99a40b186b2611795a8d97571ae90224343074bd3f6fd"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H04.webp",
+      "bytes": 177234,
+      "sha256": "458087e98b66f2a844590f640115ac9486ff09082c9246fca389343f9a8593e2"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H05.webp",
+      "bytes": 144744,
+      "sha256": "28f158cbb3aa8b0857ca24f3fc59d9c0740c846e67c166a67353f709977cb04a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H06.webp",
+      "bytes": 149650,
+      "sha256": "10a86e2fced9315cf2ad5e9759bf73baaf2292aa8f61f3dd252267b0b920f957"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H07.webp",
+      "bytes": 161962,
+      "sha256": "e39c796e506987e0c2e608682896f20d61f3c5d80d94b06103e932f0e12058c2"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H08.webp",
+      "bytes": 148300,
+      "sha256": "0ed0f4ec1f738fc8202cd2c63c0a143b1df5de34694a950b0d79892b6fe65619"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H09.webp",
+      "bytes": 99670,
+      "sha256": "868fb4ec80ad0be35d8fef260745809cf29732e9d4503c77ea816eb1abe6a5db"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H10.webp",
+      "bytes": 118794,
+      "sha256": "660ab3954a6acb69841952ba64e537e49bb68e4fb727101fa770e5e0f9204f64"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H11.webp",
+      "bytes": 90054,
+      "sha256": "4a0d595419b1757606e78bc52f061ac5f3eaaf364c836e32ca720024f4e2c453"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H12.webp",
+      "bytes": 99528,
+      "sha256": "15c78a377527bfdd625fc45897c076a3d12c0ea8d77787081c33da3678f43005"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H13.webp",
+      "bytes": 116766,
+      "sha256": "737cd438a51c814fc2631ae6f118fdba9593301d35d01029e8ed5c55643ad87d"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H14.webp",
+      "bytes": 101722,
+      "sha256": "bc40619ac6ff75c9c8ce5b29283f25ed0ca570abacea82321996bcee1a372d73"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H15.webp",
+      "bytes": 114260,
+      "sha256": "f4b08a9a07a9cf1f4fd95da573d2be0f503edc186663181032fd17e67c06d642"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H16.webp",
+      "bytes": 100892,
+      "sha256": "52b3290a7795396422fb115257a401a2a4d1babd5cb7752c532809193b1c1bb6"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H17.webp",
+      "bytes": 92306,
+      "sha256": "3416d7bc1b8db6a6e78555a8662ab5b153ec6e6f1845d541210fbb3d8bbdb8e5"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H18.webp",
+      "bytes": 87780,
+      "sha256": "0ec5607a7c76b15d3b5e1d8409a4bbe33a6305eaca4f22623b3470bb1e691cca"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H19.webp",
+      "bytes": 118970,
+      "sha256": "de33826dd89c5fffbe19521b3db393b8e43e3a6ea3fb9df0eda44f7cc91831e1"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H20.webp",
+      "bytes": 102178,
+      "sha256": "144ffc30ccc02772bca5d1d5c1316ba7f281b7754967e143fd0e047ab68be9af"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H21.webp",
+      "bytes": 106156,
+      "sha256": "32355b4e86863579cf7ecfdb2a60fdf67b5a3cf11118dde579282583212660f0"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H22.webp",
+      "bytes": 86374,
+      "sha256": "c14f2bd73a07a9fcaab5c0d55777d3e677594540c30ebc4ef077c8bf88bdf68b"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H23.webp",
+      "bytes": 132504,
+      "sha256": "166386ff7b17ce9a0c644e10ff7c68c71d93ef72aa67d224c2e6c342687e38bf"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H24.webp",
+      "bytes": 139520,
+      "sha256": "77fab0bdb5be1e43966f0b4eaa84804d1f4e0d73821d8ce4971b712f0e8f8801"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H25.webp",
+      "bytes": 115722,
+      "sha256": "998a3155bf17c914b5db44e8dc592b96a63a115f128bc20f6ec44ebb256ba90c"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H26.webp",
+      "bytes": 99756,
+      "sha256": "c31fce8a188ffe2bd9afb8ba2dd3a62912c84e5acb9c135d508b0d326c9f8dff"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H27.webp",
+      "bytes": 129490,
+      "sha256": "81dca9aab26002efcb7ed2d63350d5a4a65639658af252f587dd570a82d1bd55"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H28.webp",
+      "bytes": 143902,
+      "sha256": "e3bf327ba5e716b3e51d172659a12c3722e2206a0e38ff06793f01c7c6efe248"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H29.webp",
+      "bytes": 143242,
+      "sha256": "5e1297307cc3fe12099bcb29ca35a1d81bfc359692878eeccab84493cc45c8b6"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H30.webp",
+      "bytes": 130508,
+      "sha256": "8c5035f2d8ae7962925c96cd32f6377fba8a0e95f5d8f68a8ab9c2efbf5d3363"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H31.webp",
+      "bytes": 133364,
+      "sha256": "f3dafb54a83fc5aa2f6505d703833f9f9a4741de57f403f021db9e2a6eaf689a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H32.webp",
+      "bytes": 127240,
+      "sha256": "2bdc2ebb813920e2a538f4ada3b97feb1d67f35d80becbdaa550953c3078cf8b"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H33.webp",
+      "bytes": 110668,
+      "sha256": "e17f0397d1d14d4be7d47ace7f157e0fcaf779b29878cd27283485d7d6ee68a2"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H34.webp",
+      "bytes": 113464,
+      "sha256": "b039775663d400796e2dfe179eece67d64da9e271f57607a8a9058a722f8faa3"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H35.webp",
+      "bytes": 84338,
+      "sha256": "ac08d41ad13e4d29fc373dc7149cc79d2effb2f312eda16c88cccb9e532c5d63"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H36.webp",
+      "bytes": 99744,
+      "sha256": "ccd7b6249ca2cdfc84973f7808013bf9c0fd8483a28a6ea610ab1cffe1596d63"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H37.webp",
+      "bytes": 151172,
+      "sha256": "4da20fca55a4a872ae1f0ba2932f39709cc23e4772d8660aa02cc809b98b123c"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H38.webp",
+      "bytes": 110498,
+      "sha256": "3ec655979c3ee43209b53d3f71c3943799b9b4961bfac70513fb6c3107f73084"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H39.webp",
+      "bytes": 158106,
+      "sha256": "5cb536eaf0aafd99a6dd0800a999ef13560a1ce6a77c4687e9504899523a00f7"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H40.webp",
+      "bytes": 134686,
+      "sha256": "d3b562488f7f3642a8f9f66ca5f8e37c98f6954146ebb1843db9145bbba40634"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H41.webp",
+      "bytes": 128538,
+      "sha256": "2796c9d04c39e50943cb1ab11ec42721fabf38275c315c8af363f04356b95baa"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H42.webp",
+      "bytes": 121190,
+      "sha256": "2df1de5751e6552773b6561aecb51ca88ff8dea79a0080a88eb18010fc02cc75"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H43.webp",
+      "bytes": 122590,
+      "sha256": "789d4ef4d5ce8c25e05aa8d6f9bf4e26099b026bf76f935074c03270ae6c222c"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H44.webp",
+      "bytes": 113216,
+      "sha256": "a91050f25b77dbb3977faaede80120d547e1855f4dfbdac5ab6109e408dddc05"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H45.webp",
+      "bytes": 112916,
+      "sha256": "1d99381326d6714f4be28d2d764fb0417cbce38559fa1b985d316f762e13461a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H46.webp",
+      "bytes": 86402,
+      "sha256": "5975a61b4e298d15cc2c65b4e03c040ab63cfe130aafe99328855ab5e3dc4161"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H47.webp",
+      "bytes": 102222,
+      "sha256": "93dcf0d7d46a0a02d4f29b26fa97b7256a373f5d66e0848d843a065a2407d506"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/H48.webp",
+      "bytes": 111626,
+      "sha256": "6302ee103a3829ec68741681bc65c260d3cb15bf3a9f7527f4742cc9d11d78d3"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R01.webp",
+      "bytes": 110028,
+      "sha256": "35020295e78eef5b66e50c5f46066807cf6314576c45c041540e38e6f4714324"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R02.webp",
+      "bytes": 118662,
+      "sha256": "561c3b2b41e77ea58bfa582484514eb387122b71bc14f1406bcfad1b4b826fff"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R03.webp",
+      "bytes": 71572,
+      "sha256": "12a189e3b12d61c6a0f421f419853ad0ca386b3db6c0686b24034eb7bb590e36"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R04.webp",
+      "bytes": 138984,
+      "sha256": "096991f2098fad1ffe4bf219800a9779969ef99e6568f8ebe0f0b75440b86a8d"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R05.webp",
+      "bytes": 94286,
+      "sha256": "7a6044bfd94d5e8b13a49c25e04190a9f94c3967b106e077d132379355a060e9"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R06.webp",
+      "bytes": 125216,
+      "sha256": "e8255dd77431d5c30c1f65ec16ca224bff9b29716c29b0e2c72c682378109a49"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R07.webp",
+      "bytes": 138088,
+      "sha256": "8fb94a2ba1632b16482fc79abc862de405e410ecc3af0968db847e3652f7b5c2"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R08.webp",
+      "bytes": 100402,
+      "sha256": "d19491f8a4901a2ca06ec9a0b7209ef6b802732dd70c99a2c6ccdca8d03a0a92"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R09.webp",
+      "bytes": 129904,
+      "sha256": "0b3ab65bf30dd8b71908afc32829fafa4ebed940e77a2a7d27802877036ee907"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R10.webp",
+      "bytes": 127188,
+      "sha256": "dbae3cdba3b5f3b1945beb5b94c533b0d271e486eae464620ca0bab000117d3a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R11.webp",
+      "bytes": 89472,
+      "sha256": "1df5d80dd8513a8ae5176c9e174942d0929a7743fe8901e5de94cd6c0f71811a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R12.webp",
+      "bytes": 152458,
+      "sha256": "2f5624844e6bed584e161dca25c034ea4e94056851a3c962dc587d1c6cf495f9"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R13.webp",
+      "bytes": 98040,
+      "sha256": "7aa2fc0966c6a7e595ea239381732fb01e7d9752a4a39e63a4a032d72eabe894"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R14.webp",
+      "bytes": 100480,
+      "sha256": "79824b274fb780f2109db18311dc5c66f9c0b3e0a1ca68750c0a0c1b004a8d12"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R15.webp",
+      "bytes": 101760,
+      "sha256": "3bbe62b773ee7e02d1142cda85285d670cbf148764232f8e996be6881b97bd67"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R16.webp",
+      "bytes": 99584,
+      "sha256": "acf6dfa44585c0ff949eb8792b9051700622cc28d810545e7802561cd5360a82"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R17.webp",
+      "bytes": 99974,
+      "sha256": "4dd568114a9c174034c19ee7a98beab3defdc4cb947d0ec27fb1a5ad53e0275a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R18.webp",
+      "bytes": 105566,
+      "sha256": "95032a55af869e8b95b25ad06f06c33132401e40927582db138a15247ac1eb84"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R19.webp",
+      "bytes": 86746,
+      "sha256": "739414b93ea6acc63adde570c23c19a288042c2fafc7ed546a99c42a976c9fac"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R20.webp",
+      "bytes": 69488,
+      "sha256": "b46d8568366aac99a9420b1b631d517e9d9404a2733d05d985aab6cf43e4713d"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R21.webp",
+      "bytes": 46682,
+      "sha256": "ed24ac9cd3fe955d1344cfe6f7b7118d945ec5e0a243289c5216b271c6290e94"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R22.webp",
+      "bytes": 58138,
+      "sha256": "97a675b80a1737fafe1680a169d8e792024902c1f11861bb42ac3906384ba9d0"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R23.webp",
+      "bytes": 119412,
+      "sha256": "7abb92bd86f688b52d9e0eaa7327ac615f729eb1145130530c9aaeb04dffc033"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R24.webp",
+      "bytes": 102614,
+      "sha256": "e29f1efb53156213b596a80cdfb6af6ed8cb69033c6693838d2e5d9a14c09d64"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R25.webp",
+      "bytes": 78416,
+      "sha256": "3855deffd8d4e18a8aca20ccb8335d382486bbb7091d23974255df69c9cfdebd"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R26.webp",
+      "bytes": 94038,
+      "sha256": "288b9637b524475c1634d31a9f81e9cdd18b5a5845857b18c145fb94cc0515cd"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R27.webp",
+      "bytes": 99246,
+      "sha256": "dcc90f88dde6f3247b3b63f9202c2c5a27622e0ef9c90cfe9503295ddc809a99"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R28.webp",
+      "bytes": 78214,
+      "sha256": "5c61b9a54be235ff9015158e49ffa82264eea5cb04671d8d98ce9a2e2e889d91"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R29.webp",
+      "bytes": 13904,
+      "sha256": "b79953e9de191c73048f572338b53151cf05bddde35bac9f0d2bff85b84fab1f"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R30.webp",
+      "bytes": 100876,
+      "sha256": "aad4e3ce0816454b094ff6cffcb11510ae1ceb47c1f839bfe92bad349e6b07e4"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R31.webp",
+      "bytes": 92928,
+      "sha256": "11ddbdd7daa8716e500601d997a3d8b14219a71165208ac6ea4a4c582291248a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R32.webp",
+      "bytes": 128834,
+      "sha256": "f2bb989ae117c9f72be181e001dfba67e22ce9cbaad6e322562a9b40c3f4f2e4"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R33.webp",
+      "bytes": 120104,
+      "sha256": "53912d88cb5d228876283a61a21d1417ff151280ecf4398e0ca3cd5fae9900eb"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R34.webp",
+      "bytes": 83532,
+      "sha256": "49f5d8e97fa0cd20cf1de1d67afa77b9ec01271838d6ce61ee58594c2df47419"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R35.webp",
+      "bytes": 87246,
+      "sha256": "61e2a2f08828ae1e42da87114079616f0a4d3fffd574ebd98f1ef77998c45863"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R36.webp",
+      "bytes": 125772,
+      "sha256": "76dd3264d22fdbec77ee422a305a4356fbba08b7ec253570a71973a52bfad1d4"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R37.webp",
+      "bytes": 101016,
+      "sha256": "24fca3d86e604dd56f8e0f1e19f0e4e7253fefb9643fd9969b245896fb8d8ab1"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R38.webp",
+      "bytes": 100650,
+      "sha256": "3d02e1c046b276d34b7e687f771567fe7c7f66300c5ff3440576809bbbb93d97"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R39.webp",
+      "bytes": 126704,
+      "sha256": "396cce6640cad89da2fe6a8bde8d42ef356537b1d788e0d30cb16cb37cd7b654"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R40.webp",
+      "bytes": 68666,
+      "sha256": "8e645e50d9fbff756ca3cc4a62e3622d5d4c224d0634b182c0b0e12763f01bc8"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R41.webp",
+      "bytes": 127986,
+      "sha256": "efec777d56e7e666f196fe8fef7376520a1a921223201aabcdaa2d28dfb3a562"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R42.webp",
+      "bytes": 137614,
+      "sha256": "85d0c34b353d4fae36bc8bf54cd08f38bc5c27ba850601e86cd8779fd9021777"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R43.webp",
+      "bytes": 123984,
+      "sha256": "ce741e8ae4a3d69251fa267571a8dca0c3e74c34d69fc9494959a74065126538"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R44.webp",
+      "bytes": 73830,
+      "sha256": "f27d77fe7d638e2540c41f8193cdefe5b537904861005ee0814c02020c24508a"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R45.webp",
+      "bytes": 96588,
+      "sha256": "ddbaa2551bd09a5faa620acddb1b3a17904966652bd2c87196d1159ad0bec289"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R46.webp",
+      "bytes": 77566,
+      "sha256": "2c295ff565106213855eb39b359e8b4addd6f3eef9ae0d5eab109ac2631dbc17"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R47.webp",
+      "bytes": 111590,
+      "sha256": "7fb80449604ab87517bb475a31ba1882047ab30284c27b693532d45072a83951"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R48.webp",
+      "bytes": 102860,
+      "sha256": "22d510670508a60a101842dd868b33898488370cdc98b6ae4b9e403c6cd2a6c6"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R49.webp",
+      "bytes": 104330,
+      "sha256": "f5fd9bbeec036fd89b8cd223417ff444b426f7276b2231d1dea50da58d075b26"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R50.webp",
+      "bytes": 105676,
+      "sha256": "4aeebfb4e4a8cd6bd2c42e7432f1c8dd7025b4c2face4fef4ffb898073e61e6f"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R51.webp",
+      "bytes": 139732,
+      "sha256": "4747b6bd71e90923bfd975213dae5c9fd37aca174ecb431366cd708b1902d6ee"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R52.webp",
+      "bytes": 126454,
+      "sha256": "f3527b40bdee8e8fcb642e65c65b585437a0cfcf16906d7196353902b0e5bc34"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R53.webp",
+      "bytes": 66982,
+      "sha256": "8fe4a69add82b3ddc40f5233b4a28856269aee9f831c52640fd3f77a49bb54d5"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R54.webp",
+      "bytes": 80496,
+      "sha256": "b7918c5e93c3bdeb52d8b4db86030f57933968b09a584b879699b179434ae2b1"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R55.webp",
+      "bytes": 104740,
+      "sha256": "4fa17bb919ea829d511b050772cfe0b7bbf4ce8f4d35903bbf090283b38471cf"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R56.webp",
+      "bytes": 125974,
+      "sha256": "38a781df191fba7afb23cb962a87880935fcd9db2486b00218179fd2b5f3bb37"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R57.webp",
+      "bytes": 104238,
+      "sha256": "406d6c6a362f1c4a0abb555afd3724c752f550e5c4c31ad4fe0cc01fbf555a33"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R58.webp",
+      "bytes": 143014,
+      "sha256": "f9cba57a81a6f84db034c2761f3c8fb2b2150429f0b3147b5f1eab9c2092b28f"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R59.webp",
+      "bytes": 64832,
+      "sha256": "0cd1b9019350203cab388d29cce27e6f3d6ed7c8dcb1fe0f25eb1fb97b66c77e"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R60.webp",
+      "bytes": 94654,
+      "sha256": "bd10d38fee4c88369a90615cbf6e7749b8a9d9421ae73c8e09af0320e7866841"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R61.webp",
+      "bytes": 75742,
+      "sha256": "85d7406585664c67a33225d2659f8dd8941af3ac219a6d5323f69eadb2a23dab"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R62.webp",
+      "bytes": 81484,
+      "sha256": "f8158eef29de4cafe65411dbceea6c9fecdb48b05ce44c30c65d71856e17d2d8"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R63.webp",
+      "bytes": 65144,
+      "sha256": "117d6ec77448d313ac13f8a119400792c19dfade76be4ce40c2c2f5b2b1bdc0f"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R64.webp",
+      "bytes": 51026,
+      "sha256": "8b74de800f34bd59c41094daa19cd92ca10235b13fc5713f0fadcfe4b2b529a7"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R65.webp",
+      "bytes": 79270,
+      "sha256": "c01fdbc768fa4e045607f4dfad4dfc91da379f02144eb2395b477ee7c215c2bb"
+    },
+    {
+      "ruta": "assets/expedicion/pictogramas/R66.webp",
+      "bytes": 91522,
+      "sha256": "552472d7e1e16a2f8ea31b0a91c831ca7d15f5803de6bb67a92196f354d4eeeb"
+    },
+    {
+      "ruta": "datos/expedicion/animales.json",
+      "bytes": 90917,
+      "sha256": "28a0c2332438b1ea11aade84451ff23f71c280735066403e36dd5a4b514d849d"
+    },
+    {
+      "ruta": "datos/expedicion/habitats.json",
+      "bytes": 21534,
+      "sha256": "d6b2150ca7c264238e71cf4e3afc5f7ffab4148b544e9f3df37d4d9eb6d80242"
+    },
+    {
+      "ruta": "datos/expedicion/pictogramas.json",
+      "bytes": 81714,
+      "sha256": "1c60996b18fb8ae7d4d619da3d62100e5c543bbd759589b57499eb99314d3e88"
+    },
+    {
+      "ruta": "datos/expedicion/pistas.json",
+      "bytes": 63279,
+      "sha256": "5ee90d42aa850af4df2b0d00ec6f28c9020a693e136eefff409214d2f41864f5"
     }
   ],
-  "nombre_proyecto": "Zoonauta"
+  "nombre_proyecto": "Zoonauta",
+  "catalogo_expedicion": {
+    "directorio": "datos/expedicion",
+    "animales": 288,
+    "habitats": 48,
+    "paisajes": 48,
+    "pictogramas": 441,
+    "pistas": 144,
+    "asociaciones_secundarias_documentadas": 31
+  }
 }

@@ -1,0 +1,186 @@
+{
+  "fecha": "2026-10-18",
+  "navegador": "155.0.8059.82",
+  "resultados": [
+    {
+      "idioma": "es",
+      "width": 1920,
+      "height": 988,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 6,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 8
+    },
+    {
+      "idioma": "es",
+      "width": 1536,
+      "height": 864,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 4,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 12
+    },
+    {
+      "idioma": "es",
+      "width": 1366,
+      "height": 768,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 4,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 12
+    },
+    {
+      "idioma": "es",
+      "width": 1280,
+      "height": 720,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 4,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 12
+    },
+    {
+      "idioma": "es",
+      "width": 1024,
+      "height": 768,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 2,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 24
+    },
+    {
+      "idioma": "es",
+      "width": 1000,
+      "height": 660,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 2,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 24
+    },
+    {
+      "idioma": "es",
+      "width": 1280,
+      "height": 1080,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 6,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 8
+    },
+    {
+      "idioma": "es",
+      "caso": "foco_conservado_al_redistribuir",
+      "resultado": "OK"
+    },
+    {
+      "idioma": "pt-BR",
+      "width": 1920,
+      "height": 988,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 6,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 8
+    },
+    {
+      "idioma": "pt-BR",
+      "width": 1536,
+      "height": 864,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 4,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 12
+    },
+    {
+      "idioma": "pt-BR",
+      "width": 1366,
+      "height": 768,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 4,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 12
+    },
+    {
+      "idioma": "pt-BR",
+      "width": 1280,
+      "height": 720,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 4,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 12
+    },
+    {
+      "idioma": "pt-BR",
+      "width": 1024,
+      "height": 768,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 2,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 24
+    },
+    {
+      "idioma": "pt-BR",
+      "width": 1000,
+      "height": 660,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 2,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 24
+    },
+    {
+      "idioma": "pt-BR",
+      "width": 1280,
+      "height": 1080,
+      "resultado": "OK",
+      "sinScroll": true,
+      "tarjetas": 6,
+      "grandes": true,
+      "animales": true,
+      "todoVisible": true,
+      "paginas": 8
+    },
+    {
+      "idioma": "pt-BR",
+      "caso": "foco_conservado_al_redistribuir",
+      "resultado": "OK"
+    }
+  ],
+  "alcance": "DISTRIBUCION_CATALOGO_Y_PAGINACION_SIN_CAMBIAR_MODALIDAD",
+  "publicado_en_github": false
+}

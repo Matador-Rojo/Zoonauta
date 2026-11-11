@@ -70,25 +70,28 @@ def comprobar(raiz: Path, salida: Path) -> dict:
                     if proceso.poll() is not None or time.monotonic() >= limite:
                         raise AssertionError("El iniciador no abrió el juego sin descargas.")
                     time.sleep(0.1)
-            assert len(v["catalogo_animales"]) == 48
+            assert len(v["catalogo_animales"]) == 288
+            assert len(v["opciones_habitat"]) == 48
             voces = obtener("/api/voz/config")["voces"]
             assert len(voces) == 14 and not any(v["disponible"] for v in voces)
             for modalidad in ("AGENTE", "JUGADOR"):
                 for n in (2, 4, 8):
                     v = actuar("iniciar", modalidad=modalidad, retos=1, cantidad_opciones=n)
                     if modalidad == "JUGADOR":
-                        v = actuar("elegir_animal", animal_id="A02")
+                        v = actuar("elegir_animal", animal_id="A33")
                     opciones = v["opciones_habitat"]
                     assert len(opciones) == n and v["fase"] == "ESPERANDO_RESPUESTA"
                     guia = obtener("/api/revision")["estado"]["habitat_guia_id"]
                     assert guia in [h["id"] for h in opciones]
+                    if modalidad == "JUGADOR":
+                        assert "H08" in [h["id"] for h in opciones]
                     v = actuar("ayuda")
                     contenido = v["respuesta"]
                     assert actuar("repetir")["respuesta"] == contenido
                     assert actuar("pausar")["fase"] == "PAUSADA"
                     v = actuar("reanudar")
                     assert v["respuesta"] == contenido and v["opciones_habitat"] == opciones
-                    v = actuar("seleccionar_habitat", habitat_id=guia)
+                    v = actuar("seleccionar_habitat", habitat_id="H08" if modalidad == "JUGADOR" else guia)
                     assert v["fase"] == "RETO_RESUELTO" and v["progreso"]["completados"] == 1
                     assert actuar("continuar")["fase"] == "COMPLETADA"
                     actuar("nueva_partida")

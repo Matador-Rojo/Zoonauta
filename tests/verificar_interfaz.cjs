@@ -246,11 +246,15 @@ async function clicar(page,texto,fase){
   for(const ancho of [320,390,768,1024,1280]){
     await page.setViewportSize({width:ancho,height:1080});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    await page.waitForFunction(()=>[...document.querySelectorAll('.catalogo .animal-imagenes img')].every(i=>{
+      const r=i.getBoundingClientRect(),p=i.closest('button').getBoundingClientRect(),n=i.closest('button').querySelector('span:not(.animal-numero)').getBoundingClientRect();
+      return r.width>=96&&r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<n.top;
+    }),null,{polling:20});
     const posiciones=await page.locator('.catalogo .animal-imagenes img').evaluateAll(imgs=>imgs.map(i=>{
       const r=i.getBoundingClientRect(),p=i.closest('button').getBoundingClientRect(),nombre=i.closest('button').querySelector('span:not(.animal-numero)').getBoundingClientRect();
       return {ancho:r.width,dentro:r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<nombre.top};
     }));
-    assert.ok(posiciones.every(m=>m.ancho>=96&&m.dentro));
+    assert.ok(posiciones.every(m=>m.ancho>=96&&m.dentro),JSON.stringify({ancho,posiciones}));
   }
   await page.setViewportSize({width:1280,height:1080});
   await clicar(page,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
@@ -328,6 +332,10 @@ async function clicar(page,texto,fase){
   const vaciar=async()=>{while(await tarjetas.count())await cerrar.last().click();};
   const comprobarAvisos=async()=>{
     assert.equal(await pa.locator('#aviso').isVisible(),true);
+    // ResizeObserver y el evento resize se entregan después de setViewportSize.
+    await pa.waitForFunction(()=>[...document.querySelectorAll('.notificacion')].every(c=>{
+      const r=c.getBoundingClientRect();return r.top>=22&&r.bottom<=innerHeight-22;
+    }),null,{polling:20});
     const m=await pa.locator('#aviso').evaluate(e=>{
       const r=e.getBoundingClientRect(),cs=[...e.children].map(c=>{const t=c.getBoundingClientRect(),b=c.querySelector('button').getBoundingClientRect();return {w:t.width,arriba:t.top,abajo:t.bottom,completa:t.top>=22&&t.bottom<=innerHeight-22&&b.top>=0&&b.right<=innerWidth,boton:b.width>=44&&b.height>=44,circular:Math.abs(b.x+b.width/2-t.right)<2&&Math.abs(b.y+b.height/2-t.top)<2};});
       return {right:innerWidth-r.right,bottom:innerHeight-r.bottom,sinDesborde:document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight,popover:e.matches(':popover-open'),sinScroll:e.scrollHeight===e.clientHeight&&e.scrollWidth===e.clientWidth&&getComputedStyle(e).overflow==='visible',cs};
@@ -340,7 +348,7 @@ async function clicar(page,texto,fase){
     await pa.locator('#ajustes').click();await pa.locator('#idioma').selectOption(idioma);
     await pa.waitForFunction(i=>document.documentElement.lang===i,idioma);
     await pa.locator('.creditos-ajustes summary').click();
-    assert.equal(await pa.locator('.creditos-version').textContent(),'Zoonauta 4.4');
+    assert.equal(await pa.locator('.creditos-version').textContent(),'Zoonauta 5.0.0');
     await captura(pa,'creditos_'+idioma+'.png',false);
     await pa.locator('.creditos-ajustes summary').click();
     const antesAvisos=await vista(pa),vozAntes=await pa.evaluate(()=>window.__voz.length);
@@ -601,7 +609,7 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
   await cambios.close();
   assert.deepEqual(errores,[]);
-  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:process.env.VERIFICACION_FECHA||new Date().toISOString().slice(0,10),version:'4.4.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
+  fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:process.env.VERIFICACION_FECHA||new Date().toISOString().slice(0,10),version:'5.0.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

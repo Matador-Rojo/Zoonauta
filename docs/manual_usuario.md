@@ -33,6 +33,16 @@ recorren sus controles. Las preferencias no reemplazan el acompañamiento del ed
 5. Cuando se confirme un hábitat, pulsa **Continuar**.
 6. Al terminar, **Comenzar otra partida** vuelve a la portada.
 
+En el catálogo de escritorio, búsqueda, páginas, progreso, Pausar y Salir están
+a la izquierda. Las tarjetas ocupan el espacio de la derecha. La cantidad por
+página se adapta a la ventana para conservar grandes los animales. Puedes
+recorrer las páginas o buscar por nombre. Están disponibles los 288 animales.
+La partida sigue comenzando al tocar un animal, uno por reto.
+
+Cada reto toma 2, 4 u 8 opciones del catálogo de 48 hábitats. Incluye el principal,
+da prioridad a los secundarios documentados y completa el panel con ambientes
+parecidos. Si eliges un hábitat secundario documentado, también completas el reto.
+
 No hay límite de tiempo ni castigos por pedir ayuda. Una relación pendiente no
 significa que el animal no pueda vivir allí: el juego orienta hacia una relación
 documentada. Pausar y reanudar conservan el reto. Salir termina la partida.

@@ -1,0 +1,917 @@
+{
+  "schema_version": "1.0.0",
+  "items": [
+    {
+      "id": "H01",
+      "nombre": "Selva tropical húmeda",
+      "nombre_pt": "Floresta tropical úmida",
+      "frase_locativa": "en la selva tropical húmeda",
+      "frase_locativa_pt": "na floresta tropical úmida",
+      "pictograma_id": "P_H01",
+      "paisaje": "assets/expedicion/paisajes/H01.webp",
+      "afines": [
+        "H08",
+        "H03",
+        "H02",
+        "H07",
+        "H27",
+        "H10",
+        "H04",
+        "H09"
+      ]
+    },
+    {
+      "id": "H02",
+      "nombre": "Bosque tropical seco",
+      "nombre_pt": "Floresta tropical seca",
+      "frase_locativa": "en el bosque tropical seco",
+      "frase_locativa_pt": "na floresta tropical seca",
+      "pictograma_id": "P_H02",
+      "paisaje": "assets/expedicion/paisajes/H02.webp",
+      "afines": [
+        "H01",
+        "H14",
+        "H09",
+        "H03",
+        "H13",
+        "H08",
+        "H10",
+        "H04"
+      ]
+    },
+    {
+      "id": "H03",
+      "nombre": "Bosque nuboso",
+      "nombre_pt": "Floresta nublada",
+      "frase_locativa": "en el bosque nuboso",
+      "frase_locativa_pt": "na floresta nublada",
+      "pictograma_id": "P_H03",
+      "paisaje": "assets/expedicion/paisajes/H03.webp",
+      "afines": [
+        "H01",
+        "H04",
+        "H08",
+        "H05",
+        "H24",
+        "H02",
+        "H15",
+        "H06"
+      ]
+    },
+    {
+      "id": "H04",
+      "nombre": "Bosque templado de hojas anchas",
+      "nombre_pt": "Floresta temperada de folhas largas",
+      "frase_locativa": "en el bosque templado de hojas anchas",
+      "frase_locativa_pt": "na floresta temperada de folhas largas",
+      "pictograma_id": "P_H04",
+      "paisaje": "assets/expedicion/paisajes/H04.webp",
+      "afines": [
+        "H05",
+        "H06",
+        "H03",
+        "H13",
+        "H11",
+        "H28",
+        "H15",
+        "H24"
+      ]
+    },
+    {
+      "id": "H05",
+      "nombre": "Bosque templado de coníferas",
+      "nombre_pt": "Floresta temperada de coníferas",
+      "frase_locativa": "en el bosque templado de coníferas",
+      "frase_locativa_pt": "na floresta temperada de coníferas",
+      "pictograma_id": "P_H05",
+      "paisaje": "assets/expedicion/paisajes/H05.webp",
+      "afines": [
+        "H06",
+        "H04",
+        "H03",
+        "H15",
+        "H13",
+        "H24",
+        "H12",
+        "H20"
+      ]
+    },
+    {
+      "id": "H06",
+      "nombre": "Bosque boreal o taiga",
+      "nombre_pt": "Floresta boreal ou taiga",
+      "frase_locativa": "en el bosque boreal o taiga",
+      "frase_locativa_pt": "na floresta boreal ou taiga",
+      "pictograma_id": "P_H06",
+      "paisaje": "assets/expedicion/paisajes/H06.webp",
+      "afines": [
+        "H05",
+        "H12",
+        "H04",
+        "H28",
+        "H24",
+        "H11",
+        "H16",
+        "H03"
+      ]
+    },
+    {
+      "id": "H07",
+      "nombre": "Manglar",
+      "nombre_pt": "Manguezal",
+      "frase_locativa": "en el manglar",
+      "frase_locativa_pt": "no manguezal",
+      "pictograma_id": "P_H07",
+      "paisaje": "assets/expedicion/paisajes/H07.webp",
+      "afines": [
+        "H41",
+        "H42",
+        "H43",
+        "H08",
+        "H33",
+        "H27",
+        "H38",
+        "H44"
+      ]
+    },
+    {
+      "id": "H08",
+      "nombre": "Bosque tropical inundable",
+      "nombre_pt": "Floresta tropical inundável",
+      "frase_locativa": "en el bosque tropical inundable",
+      "frase_locativa_pt": "na floresta tropical inundável",
+      "pictograma_id": "P_H08",
+      "paisaje": "assets/expedicion/paisajes/H08.webp",
+      "afines": [
+        "H27",
+        "H23",
+        "H10",
+        "H01",
+        "H25",
+        "H07",
+        "H03",
+        "H02"
+      ]
+    },
+    {
+      "id": "H09",
+      "nombre": "Sabana seca",
+      "nombre_pt": "Savana seca",
+      "frase_locativa": "en la sabana seca",
+      "frase_locativa_pt": "na savana seca",
+      "pictograma_id": "P_H09",
+      "paisaje": "assets/expedicion/paisajes/H09.webp",
+      "afines": [
+        "H14",
+        "H10",
+        "H02",
+        "H11",
+        "H17",
+        "H13",
+        "H19",
+        "H16"
+      ]
+    },
+    {
+      "id": "H10",
+      "nombre": "Sabana inundable",
+      "nombre_pt": "Savana inundável",
+      "frase_locativa": "en la sabana inundable",
+      "frase_locativa_pt": "na savana inundável",
+      "pictograma_id": "P_H10",
+      "paisaje": "assets/expedicion/paisajes/H10.webp",
+      "afines": [
+        "H09",
+        "H27",
+        "H08",
+        "H11",
+        "H26",
+        "H23",
+        "H29",
+        "H14"
+      ]
+    },
+    {
+      "id": "H11",
+      "nombre": "Pradera templada",
+      "nombre_pt": "Pradaria temperada",
+      "frase_locativa": "en la pradera templada",
+      "frase_locativa_pt": "na pradaria temperada",
+      "pictograma_id": "P_H11",
+      "paisaje": "assets/expedicion/paisajes/H11.webp",
+      "afines": [
+        "H09",
+        "H10",
+        "H16",
+        "H13",
+        "H12",
+        "H14",
+        "H04",
+        "H18"
+      ]
+    },
+    {
+      "id": "H12",
+      "nombre": "Tundra",
+      "nombre_pt": "Tundra",
+      "frase_locativa": "en la tundra",
+      "frase_locativa_pt": "na tundra",
+      "pictograma_id": "P_H12",
+      "paisaje": "assets/expedicion/paisajes/H12.webp",
+      "afines": [
+        "H06",
+        "H16",
+        "H18",
+        "H28",
+        "H15",
+        "H20",
+        "H22",
+        "H11"
+      ]
+    },
+    {
+      "id": "H13",
+      "nombre": "Matorral mediterráneo",
+      "nombre_pt": "Matagal mediterrâneo",
+      "frase_locativa": "en el matorral mediterráneo",
+      "frase_locativa_pt": "no matagal mediterrâneo",
+      "pictograma_id": "P_H13",
+      "paisaje": "assets/expedicion/paisajes/H13.webp",
+      "afines": [
+        "H14",
+        "H02",
+        "H11",
+        "H04",
+        "H15",
+        "H09",
+        "H47",
+        "H17"
+      ]
+    },
+    {
+      "id": "H14",
+      "nombre": "Matorral tropical seco",
+      "nombre_pt": "Matagal tropical seco",
+      "frase_locativa": "en el matorral tropical seco",
+      "frase_locativa_pt": "no matagal tropical seco",
+      "pictograma_id": "P_H14",
+      "paisaje": "assets/expedicion/paisajes/H14.webp",
+      "afines": [
+        "H09",
+        "H02",
+        "H13",
+        "H17",
+        "H10",
+        "H19",
+        "H11",
+        "H15"
+      ]
+    },
+    {
+      "id": "H15",
+      "nombre": "Matorral de alta montaña",
+      "nombre_pt": "Matagal de alta montanha",
+      "frase_locativa": "en el matorral de alta montaña",
+      "frase_locativa_pt": "no matagal de alta montanha",
+      "pictograma_id": "P_H15",
+      "paisaje": "assets/expedicion/paisajes/H15.webp",
+      "afines": [
+        "H16",
+        "H20",
+        "H12",
+        "H13",
+        "H18",
+        "H05",
+        "H03",
+        "H11"
+      ]
+    },
+    {
+      "id": "H16",
+      "nombre": "Pastizal de alta montaña",
+      "nombre_pt": "Campo de alta montanha",
+      "frase_locativa": "en el pastizal de alta montaña",
+      "frase_locativa_pt": "no campo de alta montanha",
+      "pictograma_id": "P_H16",
+      "paisaje": "assets/expedicion/paisajes/H16.webp",
+      "afines": [
+        "H15",
+        "H20",
+        "H12",
+        "H11",
+        "H18",
+        "H29",
+        "H10",
+        "H05"
+      ]
+    },
+    {
+      "id": "H17",
+      "nombre": "Desierto cálido",
+      "nombre_pt": "Deserto quente",
+      "frase_locativa": "en el desierto cálido",
+      "frase_locativa_pt": "no deserto quente",
+      "pictograma_id": "P_H17",
+      "paisaje": "assets/expedicion/paisajes/H17.webp",
+      "afines": [
+        "H18",
+        "H14",
+        "H19",
+        "H09",
+        "H47",
+        "H13",
+        "H30",
+        "H02"
+      ]
+    },
+    {
+      "id": "H18",
+      "nombre": "Desierto frío",
+      "nombre_pt": "Deserto frio",
+      "frase_locativa": "en el desierto frío",
+      "frase_locativa_pt": "no deserto frio",
+      "pictograma_id": "P_H18",
+      "paisaje": "assets/expedicion/paisajes/H18.webp",
+      "afines": [
+        "H17",
+        "H12",
+        "H16",
+        "H15",
+        "H19",
+        "H20",
+        "H11",
+        "H30"
+      ]
+    },
+    {
+      "id": "H19",
+      "nombre": "Oasis",
+      "nombre_pt": "Oásis",
+      "frase_locativa": "en el oasis",
+      "frase_locativa_pt": "no oásis",
+      "pictograma_id": "P_H19",
+      "paisaje": "assets/expedicion/paisajes/H19.webp",
+      "afines": [
+        "H30",
+        "H26",
+        "H17",
+        "H27",
+        "H23",
+        "H25",
+        "H14",
+        "H18"
+      ]
+    },
+    {
+      "id": "H20",
+      "nombre": "Alta montaña rocosa",
+      "nombre_pt": "Alta montanha rochosa",
+      "frase_locativa": "en la alta montaña rocosa",
+      "frase_locativa_pt": "na alta montanha rochosa",
+      "pictograma_id": "P_H20",
+      "paisaje": "assets/expedicion/paisajes/H20.webp",
+      "afines": [
+        "H15",
+        "H16",
+        "H12",
+        "H18",
+        "H24",
+        "H48",
+        "H21",
+        "H05"
+      ]
+    },
+    {
+      "id": "H21",
+      "nombre": "Cueva terrestre",
+      "nombre_pt": "Caverna terrestre",
+      "frase_locativa": "en la cueva terrestre",
+      "frase_locativa_pt": "na caverna terrestre",
+      "pictograma_id": "P_H21",
+      "paisaje": "assets/expedicion/paisajes/H21.webp",
+      "afines": [
+        "H31",
+        "H20",
+        "H48",
+        "H15",
+        "H24",
+        "H05",
+        "H03",
+        "H44"
+      ]
+    },
+    {
+      "id": "H22",
+      "nombre": "Hielo marino polar",
+      "nombre_pt": "Gelo marinho polar",
+      "frase_locativa": "sobre el hielo marino polar",
+      "frase_locativa_pt": "sobre o gelo marinho polar",
+      "pictograma_id": "P_H22",
+      "paisaje": "assets/expedicion/paisajes/H22.webp",
+      "afines": [
+        "H34",
+        "H33",
+        "H12",
+        "H35",
+        "H44",
+        "H48",
+        "H39",
+        "H40"
+      ]
+    },
+    {
+      "id": "H23",
+      "nombre": "Río de corriente lenta",
+      "nombre_pt": "Rio de corrente lenta",
+      "frase_locativa": "en el río de corriente lenta",
+      "frase_locativa_pt": "em um rio de corrente lenta",
+      "pictograma_id": "P_H23",
+      "paisaje": "assets/expedicion/paisajes/H23.webp",
+      "afines": [
+        "H25",
+        "H27",
+        "H08",
+        "H30",
+        "H24",
+        "H10",
+        "H26",
+        "H41"
+      ]
+    },
+    {
+      "id": "H24",
+      "nombre": "Arroyo de montaña",
+      "nombre_pt": "Riacho de montanha",
+      "frase_locativa": "en el arroyo de montaña",
+      "frase_locativa_pt": "em um riacho de montanha",
+      "pictograma_id": "P_H24",
+      "paisaje": "assets/expedicion/paisajes/H24.webp",
+      "afines": [
+        "H23",
+        "H30",
+        "H31",
+        "H29",
+        "H25",
+        "H20",
+        "H26",
+        "H27"
+      ]
+    },
+    {
+      "id": "H25",
+      "nombre": "Lago de agua dulce",
+      "nombre_pt": "Lago de água doce",
+      "frase_locativa": "en el lago de agua dulce",
+      "frase_locativa_pt": "em um lago de água doce",
+      "pictograma_id": "P_H25",
+      "paisaje": "assets/expedicion/paisajes/H25.webp",
+      "afines": [
+        "H27",
+        "H23",
+        "H26",
+        "H29",
+        "H32",
+        "H30",
+        "H08",
+        "H24"
+      ]
+    },
+    {
+      "id": "H26",
+      "nombre": "Charca temporal",
+      "nombre_pt": "Lagoa temporária",
+      "frase_locativa": "en la charca temporal",
+      "frase_locativa_pt": "em uma lagoa temporária",
+      "pictograma_id": "P_H26",
+      "paisaje": "assets/expedicion/paisajes/H26.webp",
+      "afines": [
+        "H30",
+        "H27",
+        "H25",
+        "H29",
+        "H19",
+        "H23",
+        "H10",
+        "H28"
+      ]
+    },
+    {
+      "id": "H27",
+      "nombre": "Pantano de agua dulce",
+      "nombre_pt": "Pântano de água doce",
+      "frase_locativa": "en el pantano de agua dulce",
+      "frase_locativa_pt": "no pântano de água doce",
+      "pictograma_id": "P_H27",
+      "paisaje": "assets/expedicion/paisajes/H27.webp",
+      "afines": [
+        "H08",
+        "H25",
+        "H23",
+        "H10",
+        "H28",
+        "H26",
+        "H29",
+        "H43"
+      ]
+    },
+    {
+      "id": "H28",
+      "nombre": "Turbera",
+      "nombre_pt": "Turfeira",
+      "frase_locativa": "en la turbera",
+      "frase_locativa_pt": "na turfeira",
+      "pictograma_id": "P_H28",
+      "paisaje": "assets/expedicion/paisajes/H28.webp",
+      "afines": [
+        "H27",
+        "H29",
+        "H12",
+        "H06",
+        "H26",
+        "H25",
+        "H10",
+        "H43"
+      ]
+    },
+    {
+      "id": "H29",
+      "nombre": "Humedal de alta montaña",
+      "nombre_pt": "Área úmida de alta montanha",
+      "frase_locativa": "en el humedal de alta montaña",
+      "frase_locativa_pt": "em uma área úmida de alta montanha",
+      "pictograma_id": "P_H29",
+      "paisaje": "assets/expedicion/paisajes/H29.webp",
+      "afines": [
+        "H28",
+        "H27",
+        "H25",
+        "H24",
+        "H26",
+        "H16",
+        "H12",
+        "H10"
+      ]
+    },
+    {
+      "id": "H30",
+      "nombre": "Río estacional",
+      "nombre_pt": "Rio sazonal",
+      "frase_locativa": "en el río estacional",
+      "frase_locativa_pt": "em um rio sazonal",
+      "pictograma_id": "P_H30",
+      "paisaje": "assets/expedicion/paisajes/H30.webp",
+      "afines": [
+        "H23",
+        "H24",
+        "H26",
+        "H19",
+        "H27",
+        "H25",
+        "H08",
+        "H10"
+      ]
+    },
+    {
+      "id": "H31",
+      "nombre": "Río subterráneo",
+      "nombre_pt": "Rio subterrâneo",
+      "frase_locativa": "en el río subterráneo",
+      "frase_locativa_pt": "em um rio subterrâneo",
+      "pictograma_id": "P_H31",
+      "paisaje": "assets/expedicion/paisajes/H31.webp",
+      "afines": [
+        "H24",
+        "H21",
+        "H23",
+        "H30",
+        "H25",
+        "H26",
+        "H27",
+        "H29"
+      ]
+    },
+    {
+      "id": "H32",
+      "nombre": "Lago salado",
+      "nombre_pt": "Lago salgado",
+      "frase_locativa": "en el lago salado",
+      "frase_locativa_pt": "em um lago salgado",
+      "pictograma_id": "P_H32",
+      "paisaje": "assets/expedicion/paisajes/H32.webp",
+      "afines": [
+        "H25",
+        "H42",
+        "H41",
+        "H29",
+        "H43",
+        "H26",
+        "H33",
+        "H27"
+      ]
+    },
+    {
+      "id": "H33",
+      "nombre": "Aguas marinas costeras",
+      "nombre_pt": "Águas marinhas costeiras",
+      "frase_locativa": "en las aguas marinas costeras",
+      "frase_locativa_pt": "nas águas marinhas costeiras",
+      "pictograma_id": "P_H33",
+      "paisaje": "assets/expedicion/paisajes/H33.webp",
+      "afines": [
+        "H34",
+        "H41",
+        "H37",
+        "H40",
+        "H38",
+        "H42",
+        "H39",
+        "H35"
+      ]
+    },
+    {
+      "id": "H34",
+      "nombre": "Mar abierto superficial",
+      "nombre_pt": "Mar aberto superficial",
+      "frase_locativa": "en el mar abierto superficial",
+      "frase_locativa_pt": "na superfície do mar aberto",
+      "pictograma_id": "P_H34",
+      "paisaje": "assets/expedicion/paisajes/H34.webp",
+      "afines": [
+        "H33",
+        "H35",
+        "H22",
+        "H37",
+        "H41",
+        "H39",
+        "H40",
+        "H38"
+      ]
+    },
+    {
+      "id": "H35",
+      "nombre": "Aguas oceánicas profundas",
+      "nombre_pt": "Águas oceânicas profundas",
+      "frase_locativa": "en las aguas oceánicas profundas",
+      "frase_locativa_pt": "nas águas oceânicas profundas",
+      "pictograma_id": "P_H35",
+      "paisaje": "assets/expedicion/paisajes/H35.webp",
+      "afines": [
+        "H34",
+        "H36",
+        "H33",
+        "H22",
+        "H40",
+        "H39",
+        "H37",
+        "H38"
+      ]
+    },
+    {
+      "id": "H36",
+      "nombre": "Fondo marino profundo",
+      "nombre_pt": "Fundo marinho profundo",
+      "frase_locativa": "en el fondo marino profundo",
+      "frase_locativa_pt": "no fundo marinho profundo",
+      "pictograma_id": "P_H36",
+      "paisaje": "assets/expedicion/paisajes/H36.webp",
+      "afines": [
+        "H35",
+        "H40",
+        "H39",
+        "H37",
+        "H34",
+        "H33",
+        "H38",
+        "H22"
+      ]
+    },
+    {
+      "id": "H37",
+      "nombre": "Arrecife de coral",
+      "nombre_pt": "Recife de coral",
+      "frase_locativa": "en el arrecife de coral",
+      "frase_locativa_pt": "no recife de coral",
+      "pictograma_id": "P_H37",
+      "paisaje": "assets/expedicion/paisajes/H37.webp",
+      "afines": [
+        "H40",
+        "H33",
+        "H38",
+        "H39",
+        "H44",
+        "H45",
+        "H34",
+        "H36"
+      ]
+    },
+    {
+      "id": "H38",
+      "nombre": "Pradera marina",
+      "nombre_pt": "Prado marinho",
+      "frase_locativa": "en la pradera marina",
+      "frase_locativa_pt": "no prado marinho",
+      "pictograma_id": "P_H38",
+      "paisaje": "assets/expedicion/paisajes/H38.webp",
+      "afines": [
+        "H39",
+        "H37",
+        "H33",
+        "H40",
+        "H42",
+        "H41",
+        "H34",
+        "H45"
+      ]
+    },
+    {
+      "id": "H39",
+      "nombre": "Bosque de algas",
+      "nombre_pt": "Floresta de algas",
+      "frase_locativa": "en el bosque de algas",
+      "frase_locativa_pt": "na floresta de algas",
+      "pictograma_id": "P_H39",
+      "paisaje": "assets/expedicion/paisajes/H39.webp",
+      "afines": [
+        "H38",
+        "H40",
+        "H33",
+        "H37",
+        "H44",
+        "H45",
+        "H22",
+        "H36"
+      ]
+    },
+    {
+      "id": "H40",
+      "nombre": "Arrecife rocoso",
+      "nombre_pt": "Recife rochoso",
+      "frase_locativa": "en el arrecife rocoso",
+      "frase_locativa_pt": "no recife rochoso",
+      "pictograma_id": "P_H40",
+      "paisaje": "assets/expedicion/paisajes/H40.webp",
+      "afines": [
+        "H37",
+        "H39",
+        "H33",
+        "H45",
+        "H44",
+        "H38",
+        "H36",
+        "H48"
+      ]
+    },
+    {
+      "id": "H41",
+      "nombre": "Estuario",
+      "nombre_pt": "Estuário",
+      "frase_locativa": "en el estuario",
+      "frase_locativa_pt": "no estuário",
+      "pictograma_id": "P_H41",
+      "paisaje": "assets/expedicion/paisajes/H41.webp",
+      "afines": [
+        "H42",
+        "H43",
+        "H07",
+        "H33",
+        "H23",
+        "H27",
+        "H38",
+        "H32"
+      ]
+    },
+    {
+      "id": "H42",
+      "nombre": "Laguna costera salobre",
+      "nombre_pt": "Lagoa costeira salobra",
+      "frase_locativa": "en la laguna costera salobre",
+      "frase_locativa_pt": "na lagoa costeira salobra",
+      "pictograma_id": "P_H42",
+      "paisaje": "assets/expedicion/paisajes/H42.webp",
+      "afines": [
+        "H41",
+        "H43",
+        "H07",
+        "H32",
+        "H38",
+        "H33",
+        "H25",
+        "H27"
+      ]
+    },
+    {
+      "id": "H43",
+      "nombre": "Marisma costera",
+      "nombre_pt": "Marisma costeira",
+      "frase_locativa": "en la marisma costera",
+      "frase_locativa_pt": "na marisma costeira",
+      "pictograma_id": "P_H43",
+      "paisaje": "assets/expedicion/paisajes/H43.webp",
+      "afines": [
+        "H41",
+        "H42",
+        "H07",
+        "H27",
+        "H44",
+        "H46",
+        "H28",
+        "H38"
+      ]
+    },
+    {
+      "id": "H44",
+      "nombre": "Costa rocosa",
+      "nombre_pt": "Costão rochoso",
+      "frase_locativa": "en la costa rocosa",
+      "frase_locativa_pt": "no costão rochoso",
+      "pictograma_id": "P_H44",
+      "paisaje": "assets/expedicion/paisajes/H44.webp",
+      "afines": [
+        "H45",
+        "H48",
+        "H46",
+        "H40",
+        "H33",
+        "H43",
+        "H39",
+        "H47"
+      ]
+    },
+    {
+      "id": "H45",
+      "nombre": "Poza de marea",
+      "nombre_pt": "Poça de maré",
+      "frase_locativa": "en la poza de marea",
+      "frase_locativa_pt": "na poça de maré",
+      "pictograma_id": "P_H45",
+      "paisaje": "assets/expedicion/paisajes/H45.webp",
+      "afines": [
+        "H44",
+        "H40",
+        "H33",
+        "H37",
+        "H48",
+        "H39",
+        "H46",
+        "H38"
+      ]
+    },
+    {
+      "id": "H46",
+      "nombre": "Playa arenosa",
+      "nombre_pt": "Praia arenosa",
+      "frase_locativa": "en la playa arenosa",
+      "frase_locativa_pt": "na praia arenosa",
+      "pictograma_id": "P_H46",
+      "paisaje": "assets/expedicion/paisajes/H46.webp",
+      "afines": [
+        "H47",
+        "H44",
+        "H43",
+        "H48",
+        "H45",
+        "H33",
+        "H17",
+        "H42"
+      ]
+    },
+    {
+      "id": "H47",
+      "nombre": "Duna costera",
+      "nombre_pt": "Duna costeira",
+      "frase_locativa": "en la duna costera",
+      "frase_locativa_pt": "na duna costeira",
+      "pictograma_id": "P_H47",
+      "paisaje": "assets/expedicion/paisajes/H47.webp",
+      "afines": [
+        "H46",
+        "H17",
+        "H44",
+        "H48",
+        "H43",
+        "H13",
+        "H19",
+        "H18"
+      ]
+    },
+    {
+      "id": "H48",
+      "nombre": "Acantilado costero",
+      "nombre_pt": "Falésia costeira",
+      "frase_locativa": "en el acantilado costero",
+      "frase_locativa_pt": "na falésia costeira",
+      "pictograma_id": "P_H48",
+      "paisaje": "assets/expedicion/paisajes/H48.webp",
+      "afines": [
+        "H44",
+        "H46",
+        "H45",
+        "H20",
+        "H47",
+        "H21",
+        "H40",
+        "H33"
+      ]
+    }
+  ]
+}

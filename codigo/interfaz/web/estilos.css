@@ -37,14 +37,6 @@ h3 { font-size:21px; }
 .introduccion { color:var(--gris); font-size:17px; max-width:450px; margin:23px 0 28px; line-height:1.6; }
 .flecha { width:18px; height:18px; }
 .ficha-numero { display:block; font-size:10px; letter-spacing:2px; color:var(--lima); margin-bottom:7px; }
-.paisaje { background-image:url("/paisajes.webp"); background-size:400% 200%; background-repeat:no-repeat; background-position:0 0; }
-.paisaje[data-habitat="H02"] { background-position:33.333333% 0; }
-.paisaje[data-habitat="H03"] { background-position:66.666667% 0; }
-.paisaje[data-habitat="H04"] { background-position:100% 0; }
-.paisaje[data-habitat="H05"] { background-position:0 100%; }
-.paisaje[data-habitat="H06"] { background-position:33.333333% 100%; }
-.paisaje[data-habitat="H07"] { background-position:66.666667% 100%; }
-.paisaje[data-habitat="H08"] { background-position:100% 100%; }
 .titulo-fila { display:flex; justify-content:space-between; align-items:center; gap:25px; margin:1px 0 32px; }
 .titulo-fila .etiqueta { margin-bottom:12px; }
 .subtitulo { margin-top:12px; color:var(--gris); font-size:15px; }

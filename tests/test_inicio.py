@@ -111,7 +111,8 @@ class Inicio(unittest.TestCase):
                                 if proceso.poll() is not None or time.monotonic() >= limite:
                                     self.fail("El iniciador no abrió el servidor sin modelos de voz.")
                                 time.sleep(0.1)
-                        self.assertEqual(48, len(vista["catalogo_animales"]))
+                        self.assertEqual(288, len(vista["catalogo_animales"]))
+                        self.assertEqual(48, len(vista["opciones_habitat"]))
                         with urlopen(f"http://127.0.0.1:{puerto}/api/voz/config", timeout=2) as respuesta:
                             voces = json.load(respuesta)["voces"]
                         self.assertEqual(14, len(voces))
