@@ -44,8 +44,8 @@ Solo se mezcla su posición visual. Las opciones permanecen estables al pedir
 pistas, repetir, pausar o recargar la partida.
 
 Cada reto presenta el animal, una pregunta y los hábitats configurados. Las tarjetas usan paisajes
-realistas generados específicamente para ellas, con composición central, nombre y
-número del **01 al 48**. La guía ofrece tres pistas progresivas por hábitat, con pictogramas,
+realistas generados específicamente para ellas, con composición central y el nombre
+sobre un degradado oscuro. La guía ofrece tres pistas progresivas por hábitat, con pictogramas,
 con texto de apoyo y lectura en voz alta. Una selección pendiente ofrece una pista
 nueva automáticamente, sin castigo. **Pista** usa un foco; **Repetir** conserva el
 contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
@@ -72,7 +72,8 @@ Explorar y Buscar tienen representaciones distintas. Los pictogramas de pregunta
 pistas y controles se muestran sin recuadros blancos. Su comprensión CAA sigue
 pendiente de evaluación con usuarios de Kallpa.
 
-La portada recorre los 48 paisajes y cambia de fondo cada diez segundos.
+La portada recorre los 48 hábitats con paisajes propios en Full HD y el motivo principal hacia
+la derecha, y cambia de fondo cada diez segundos.
 Pausar actúa al pulsarlo; play o las flechas reanudan y reinician el intervalo.
 Preferencias y una pestaña inactiva suspenden temporalmente el carrusel.
 La interfaz se adapta a móvil y permite selección con teclado.
@@ -283,8 +284,8 @@ Las rutas, prompts, transparencia y huellas de integridad se documentan en:
 - [Apoyos de preguntas y pistas, versión 3.8](datos/imagenes_apoyos_ia.json).
 - [Paisajes centrados de las tarjetas](datos/imagenes_paisajes_tarjetas_ia.json).
 
-Los 19 WebP decorativos utilizados (ocho fondos de inicio, un atlas, ocho paisajes
-de tarjetas y dos ilustraciones del robot) son adicionales al banco de 95 pictogramas.
+La expedición usa [48 fondos panorámicos de portada](codigo/interfaz/web/fondos/catalogo)
+y 48 paisajes centrados para las tarjetas, además de sus pictogramas e ilustraciones del robot.
 Los créditos de ARASAAC y de los SVG del prototipo se mantienen como antecedentes;
 esos recursos no son las imágenes activas. Las ilustraciones originales se ofrecen
 bajo CC BY-NC-SA 4.0. Consulta [créditos](docs/creditos_pictogramas.md),

@@ -36,7 +36,6 @@ h3 { font-size:21px; }
 .etiqueta::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; flex-shrink:0; }
 .introduccion { color:var(--gris); font-size:17px; max-width:450px; margin:23px 0 28px; line-height:1.6; }
 .flecha { width:18px; height:18px; }
-.ficha-numero { display:block; font-size:10px; letter-spacing:2px; color:var(--lima); margin-bottom:7px; }
 .titulo-fila { display:flex; justify-content:space-between; align-items:center; gap:25px; margin:1px 0 32px; }
 .titulo-fila .etiqueta { margin-bottom:12px; }
 .subtitulo { margin-top:12px; color:var(--gris); font-size:15px; }
@@ -82,8 +81,6 @@ progress::-moz-progress-bar { background:var(--lima); border-radius:10px; }
 .instruccion { font-size:16px; margin:0 0 15px; color:#e2e8db; font-weight:500; }
 .habitats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
 .habitats .tarjeta { display:flex; flex-direction:column; justify-content:flex-end; padding:0; min-height:195px; overflow:hidden; background:#f3f5e9; border:1px solid #ffffff40; border-radius:15px; color:#163120; gap:0; }
-.habitats .tarjeta .paisaje { position:absolute; left:0; top:0; width:100%; height:145px; }
-.habitats .tarjeta img { position:absolute; top:12px; left:12px; z-index:1; width:82px; height:82px; padding:6px; background:#fff; border-radius:13px; border:1px solid #ffffff; box-shadow:0 4px 15px #00000025; }
 .habitats .tarjeta>span { position:relative; z-index:1; width:100%; min-height:60px; display:flex; align-items:center; justify-content:center; padding:12px 8px; background:#f3f5e9; border-top:1px solid #e0e6d6; font-size:15px; font-weight:600; line-height:1.25; }
 .habitats .tarjeta:hover:not(:disabled) { border-color:var(--lima); box-shadow:0 0 0 2px var(--lima); }
 .habitats .tarjeta:hover:not(:disabled)>span { background:#d2ee8b; }
@@ -118,7 +115,6 @@ progress::-moz-progress-bar { background:var(--lima); border-radius:10px; }
   .animal-actual strong { font-size:22px; }
   .habitats .tarjeta { min-height:182px; }
   .habitats .tarjeta>span { font-size:13px; }
-  .habitats .tarjeta img { width:73px; height:73px; left:10px; top:10px; }
   .creditos { width:calc(100% - 56px); }
 }
 @media (max-width:850px) {
@@ -168,7 +164,6 @@ progress::-moz-progress-bar { background:var(--lima); border-radius:10px; }
   .instruccion { font-size:15px; }
   .habitats { grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
   .habitats .tarjeta { min-height:194px; }
-  .habitats .tarjeta img { width:78px; height:78px; top:10px; left:10px; }
   .habitats .tarjeta>span { font-size:14px; min-height:61px; }
   .acciones { gap:9px; padding:10px; border-radius:15px; margin-top:21px; }
   .accion { flex:1 1 calc(50% - 9px); min-height:59px; padding:10px; font-size:14px; gap:8px; }
@@ -236,7 +231,6 @@ body[data-fase="INICIO"] .creditos { display:none; }
 .inicio-nota { display:flex; align-items:center; gap:8px; margin-top:17px; font-size:11px; color:#d7e0d2; }
 .inicio-nota svg { width:15px; height:15px; color:var(--lima); }
 .hero-ficha { position:absolute; right:clamp(24px,4vw,64px); bottom:clamp(134px,17vh,180px); width:230px; color:#fff; padding-left:22px; border-left:1px solid #d2ee8b; text-shadow:0 2px 12px #000; }
-.ficha-numero { display:block; font-size:10px; letter-spacing:2px; color:var(--lima); margin-bottom:6px; font-variant-numeric:tabular-nums; }
 .hero-ficha strong { font-size:23px; font-weight:500; letter-spacing:-.7px; line-height:1.25; display:block; }
 .paisaje-controles { display:flex; gap:4px; margin-top:15px; margin-left:-10px; }
 .paisaje-control { display:flex; align-items:center; justify-content:center; border:1px solid #ffffff30; border-radius:50%; width:44px; height:44px; min-height:44px; background:#0c1b164f; backdrop-filter:blur(10px); color:#fff; }
@@ -306,7 +300,6 @@ dialog .primario span { margin-left:12px; }
   .modalidad .flecha { display:none; }
   .inicio-nota { margin-top:14px; font-size:10px; }
   .hero-ficha { bottom:38px; left:24px; right:24px; width:auto; border-left:0; padding-left:0; padding-top:18px; border-top:1px solid #ffffff38; }
-  .ficha-numero { font-size:9px; margin-bottom:5px; }
   .hero-ficha strong { font-size:17px; max-width:180px; }
   .paisaje-controles { position:absolute; right:0; bottom:-5px; margin:0; gap:5px; }
   .resumen-inicio { display:none; }

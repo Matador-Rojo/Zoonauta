@@ -156,8 +156,8 @@ async function clicar(page,texto,fase){
   assert.equal(await page.evaluate(()=>window.__voz.at(-1).texto),'¿Quién elige el animal?');
   await captura(page,'15_selector_modalidad.png',false);
   assert.deepEqual(await vista(page),antesSelector);
-  const paisajeSelector=await page.locator('.ficha-numero').textContent();
-  await page.clock.runFor(20000);assert.equal(await page.locator('.ficha-numero').textContent(),paisajeSelector);
+  const paisajeSelector=await page.locator('.hero-paisaje').getAttribute('data-habitat');
+  await page.clock.runFor(20000);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),paisajeSelector);
   await page.getByRole('button',{name:'Volver al inicio',exact:true}).click();
   assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('aria-label')),'Comenzar');
   await page.getByRole('button',{name:'Comenzar',exact:true}).click();await page.keyboard.press('Escape');
@@ -171,27 +171,32 @@ async function clicar(page,texto,fase){
     await page.clock.runFor(10001);const h=paisajes[i%8];
     assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),h.id);
     assert.equal(await page.locator('.hero-ficha strong').textContent(),h.nombre);
-    assert.equal(await page.locator('.ficha-numero').textContent(),`${String(i%8+1).padStart(2,'0')} / 08`);
+    const imagen=await page.locator('.hero-paisaje').evaluate(async img=>{
+      await img.decode();
+      return {ruta:img.getAttribute('src'),ancho:img.naturalWidth,alto:img.naturalHeight};
+    });
+    assert.ok(imagen.ruta.startsWith('/fondos/'));
+    assert.deepEqual([imagen.ancho,imagen.alto],[1920,1080]);
   }
   assert.equal((await vista(page)).revision,revisionInicial);
   await page.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
-  await page.clock.runFor(20000);assert.equal(await page.locator('.ficha-numero').textContent(),'01 / 08');
+  await page.clock.runFor(20000);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H01');
   await page.getByRole('button',{name:'Reanudar paisajes',exact:true}).click();
-  await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'02 / 08');
+  await page.clock.runFor(10001);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H02');
   await page.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
   await page.getByRole('button',{name:'Siguiente paisaje',exact:true}).click();
-  assert.equal(await page.locator('.ficha-numero').textContent(),'03 / 08');
+  assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H03');
   await page.getByRole('button',{name:'Pausar paisajes',exact:true}).waitFor();
-  await page.clock.runFor(9000);assert.equal(await page.locator('.ficha-numero').textContent(),'03 / 08');
-  await page.clock.runFor(1001);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
+  await page.clock.runFor(9000);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H03');
+  await page.clock.runFor(1001);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H04');
   await page.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
   await page.getByRole('button',{name:'Paisaje anterior',exact:true}).click();
-  await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
+  await page.clock.runFor(10001);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H04');
   await page.getByRole('button',{name:'Preferencias',exact:true}).click();
-  await page.clock.runFor(20000);assert.equal(await page.locator('.ficha-numero').textContent(),'04 / 08');
+  await page.clock.runFor(20000);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H04');
   const dialogoCerrado=page.evaluate(()=>new Promise(resolve=>document.getElementById('preferencias').addEventListener('close',()=>resolve(),{once:true})));
   await page.getByRole('button',{name:'Volver al juego',exact:true}).click();await dialogoCerrado;
-  await page.clock.runFor(10001);assert.equal(await page.locator('.ficha-numero').textContent(),'05 / 08');
+  await page.clock.runFor(10001);assert.equal(await page.locator('.hero-paisaje').getAttribute('data-habitat'),'H05');
   await page.getByRole('button',{name:'Paisaje anterior',exact:true}).click();
   assert.equal((await vista(page)).revision,revisionInicial);
   resultados.push({caso:'Ocho fondos rotan cada 10 segundos; pausa solo por botón, play y ambas flechas reanudan y reinician el intervalo; Preferencias suspende sin alterar la partida',resultado:'OK'});
@@ -265,12 +270,17 @@ async function clicar(page,texto,fase){
   for(const ancho of [320,390,768,1024,1280]){
     await page.setViewportSize({width:ancho,height:1080});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-    assert.equal(await page.locator('.habitats .tarjeta img').count(),0);
-    assert.deepEqual(await page.locator('.habitats .habitat-numero').allTextContents(),['01','02','03','04','05','06','07','08']);
-    const numeros=await page.locator('.habitats .habitat-numero').evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect(),p=e.closest('button').getBoundingClientRect();return r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<=p.bottom&&r.left>(p.left+p.right)/2&&r.bottom<(p.top+p.bottom)/2;}));
-    assert.ok(numeros.every(Boolean));
-    const medidas=await page.locator('.habitats .tarjeta .paisaje').evaluateAll(imgs=>imgs.map(i=>{const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();return {ancho:r.width,alto:r.height,dentro:r.left>=p.left&&r.right<=p.right,fondo:getComputedStyle(i).backgroundImage};}));
-    assert.equal(medidas.length,8);assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=125&&m.dentro&&m.fondo.includes('/habitats/')));
+    assert.equal(await page.locator('.habitats .tarjeta img').count(),8);
+    assert.equal(await page.locator('.habitats .habitat-numero').count(),0);
+    const medidas=await page.locator('.habitats .tarjeta .paisaje').evaluateAll(imgs=>imgs.map(i=>{
+      const r=i.getBoundingClientRect(),p=i.parentElement.getBoundingClientRect();
+      const foto=getComputedStyle(i),etiqueta=getComputedStyle(i.nextElementSibling);
+      return {ancho:r.width,alto:r.height,cubre:r.left-p.left<=1.5&&p.right-r.right<=1.5,
+        ruta:i.getAttribute('src'),sinMarco:foto.padding==='0px'&&foto.borderWidth==='0px',
+        legible:etiqueta.backgroundImage.startsWith('linear-gradient')&&Number(etiqueta.zIndex)>Number(foto.zIndex==='auto'?0:foto.zIndex)};
+    }));
+    assert.equal(medidas.length,8);
+    assert.ok(medidas.every(m=>m.ancho>=48&&m.alto>=125&&m.cubre&&m.ruta.startsWith('/habitats/')&&m.sinMarco&&m.legible));
     const ubicacion=await page.locator('.habitats').evaluate(e=>{const r=e.getBoundingClientRect(),t=e.closest('.tablero'),g=t.querySelector('.mesa').getBoundingClientRect(),c=t.querySelector('.acciones').getBoundingClientRect();return innerWidth>850?Math.abs(r.left-g.left)<1&&Math.abs(r.right-g.right)<1&&c.right<=r.left:r.top>=c.bottom;});
     assert.ok(ubicacion);
   }
@@ -480,11 +490,11 @@ async function clicar(page,texto,fase){
   const teclado=await browser.newContext({viewport:{width:1280,height:900},reducedMotion:'reduce'});await mockVoz(teclado);
   const pt=await teclado.newPage();await pt.clock.install();pt.on('pageerror',e=>errores.push(e.message));await pt.goto(base);await pt.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
   assert.equal(await pt.locator('.bienvenida').evaluate(el=>getComputedStyle(el).animationName),'none');
-  await pt.clock.runFor(20001);assert.equal(await pt.locator('.ficha-numero').textContent(),'03 / 08');
+  await pt.clock.runFor(20001);assert.equal(await pt.locator('.hero-paisaje').getAttribute('data-habitat'),'H03');
   await pt.emulateMedia({reducedMotion:'no-preference'});await pt.emulateMedia({reducedMotion:'reduce'});
-  await pt.clock.runFor(10001);assert.equal(await pt.locator('.ficha-numero').textContent(),'04 / 08');
+  await pt.clock.runFor(10001);assert.equal(await pt.locator('.hero-paisaje').getAttribute('data-habitat'),'H04');
   await pt.getByRole('button',{name:'Pausar paisajes',exact:true}).click();
-  await pt.clock.runFor(20000);assert.equal(await pt.locator('.ficha-numero').textContent(),'04 / 08');
+  await pt.clock.runFor(20000);assert.equal(await pt.locator('.hero-paisaje').getAttribute('data-habitat'),'H04');
   for(const [width,height] of [[320,568],[390,844],[650,390],[844,390],[768,900],[1024,600],[1024,768],[1280,720],[1920,1080]]){await pt.setViewportSize({width,height});assert.equal(await pt.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.documentElement.scrollHeight<=innerHeight),true);for(const nombre of ['Comenzar','Paisaje anterior','Siguiente paisaje']){const b=await pt.getByRole('button',{name:nombre,exact:true}).boundingBox();assert.ok(b.y>=0&&b.y+b.height<=height,`${nombre} fuera de pantalla ${width}x${height}`);}}
   await pt.setViewportSize({width:1280,height:900});
   await pt.getByRole('button',{name:'Preferencias',exact:true}).focus();
