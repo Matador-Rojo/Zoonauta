@@ -1,0 +1,2819 @@
+{
+  "schema_version": "1.0.0",
+  "items": [
+    {
+      "id": "P_A01",
+      "tipo": "ANIMAL",
+      "etiqueta": "Jaguar",
+      "etiqueta_pt": "Onça-pintada",
+      "archivo_imagen": "assets/expedicion/animales/A01.webp"
+    },
+    {
+      "id": "P_A02",
+      "tipo": "ANIMAL",
+      "etiqueta": "Orangután de Borneo",
+      "etiqueta_pt": "Orangotango-de-bornéu",
+      "archivo_imagen": "assets/expedicion/animales/A02.webp"
+    },
+    {
+      "id": "P_A03",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gorila occidental",
+      "etiqueta_pt": "Gorila-ocidental",
+      "archivo_imagen": "assets/expedicion/animales/A03.webp"
+    },
+    {
+      "id": "P_A04",
+      "tipo": "ANIMAL",
+      "etiqueta": "Perezoso de dos dedos de Hoffmann",
+      "etiqueta_pt": "Preguiça-de-dois-dedos-de-hoffmann",
+      "archivo_imagen": "assets/expedicion/animales/A04.webp"
+    },
+    {
+      "id": "P_A05",
+      "tipo": "ANIMAL",
+      "etiqueta": "Guacamayo rojo",
+      "etiqueta_pt": "Araracanga",
+      "archivo_imagen": "assets/expedicion/animales/A05.webp"
+    },
+    {
+      "id": "P_A06",
+      "tipo": "ANIMAL",
+      "etiqueta": "Rana dardo azul",
+      "etiqueta_pt": "Rã-dardo-azul",
+      "archivo_imagen": "assets/expedicion/animales/A06.webp"
+    },
+    {
+      "id": "P_A07",
+      "tipo": "ANIMAL",
+      "etiqueta": "León africano",
+      "etiqueta_pt": "Leão-africano",
+      "archivo_imagen": "assets/expedicion/animales/A07.webp"
+    },
+    {
+      "id": "P_A08",
+      "tipo": "ANIMAL",
+      "etiqueta": "Jirafa reticulada",
+      "etiqueta_pt": "Girafa-reticulada",
+      "archivo_imagen": "assets/expedicion/animales/A08.webp"
+    },
+    {
+      "id": "P_A09",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cebra de llanura",
+      "etiqueta_pt": "Zebra-das-planícies",
+      "archivo_imagen": "assets/expedicion/animales/A09.webp"
+    },
+    {
+      "id": "P_A10",
+      "tipo": "ANIMAL",
+      "etiqueta": "Elefante africano de sabana",
+      "etiqueta_pt": "Elefante-africano-da-savana",
+      "archivo_imagen": "assets/expedicion/animales/A10.webp"
+    },
+    {
+      "id": "P_A11",
+      "tipo": "ANIMAL",
+      "etiqueta": "Guepardo",
+      "etiqueta_pt": "Guepardo",
+      "archivo_imagen": "assets/expedicion/animales/A11.webp"
+    },
+    {
+      "id": "P_A12",
+      "tipo": "ANIMAL",
+      "etiqueta": "Avestruz común",
+      "etiqueta_pt": "Avestruz-comum",
+      "archivo_imagen": "assets/expedicion/animales/A12.webp"
+    },
+    {
+      "id": "P_A13",
+      "tipo": "ANIMAL",
+      "etiqueta": "Dromedario",
+      "etiqueta_pt": "Dromedário",
+      "archivo_imagen": "assets/expedicion/animales/A13.webp"
+    },
+    {
+      "id": "P_A14",
+      "tipo": "ANIMAL",
+      "etiqueta": "Zorro fénec",
+      "etiqueta_pt": "Raposa-do-deserto",
+      "archivo_imagen": "assets/expedicion/animales/A14.webp"
+    },
+    {
+      "id": "P_A15",
+      "tipo": "ANIMAL",
+      "etiqueta": "Suricata",
+      "etiqueta_pt": "Suricato",
+      "archivo_imagen": "assets/expedicion/animales/A15.webp"
+    },
+    {
+      "id": "P_A16",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tortuga del desierto de Mojave",
+      "etiqueta_pt": "Tartaruga-do-deserto-de-mojave",
+      "archivo_imagen": "assets/expedicion/animales/A16.webp"
+    },
+    {
+      "id": "P_A17",
+      "tipo": "ANIMAL",
+      "etiqueta": "Monstruo de Gila",
+      "etiqueta_pt": "Monstro-de-gila",
+      "archivo_imagen": "assets/expedicion/animales/A17.webp"
+    },
+    {
+      "id": "P_A18",
+      "tipo": "ANIMAL",
+      "etiqueta": "Jerbo egipcio menor",
+      "etiqueta_pt": "Gerbo-egípcio-pequeno",
+      "archivo_imagen": "assets/expedicion/animales/A18.webp"
+    },
+    {
+      "id": "P_A19",
+      "tipo": "ANIMAL",
+      "etiqueta": "Delfín nariz de botella",
+      "etiqueta_pt": "Golfinho-nariz-de-garrafa",
+      "archivo_imagen": "assets/expedicion/animales/A19.webp"
+    },
+    {
+      "id": "P_A20",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ballena azul",
+      "etiqueta_pt": "Baleia-azul",
+      "archivo_imagen": "assets/expedicion/animales/A20.webp"
+    },
+    {
+      "id": "P_A21",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tiburón blanco",
+      "etiqueta_pt": "Tubarão-branco",
+      "archivo_imagen": "assets/expedicion/animales/A21.webp"
+    },
+    {
+      "id": "P_A22",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mantarraya gigante",
+      "etiqueta_pt": "Raia-manta-gigante",
+      "archivo_imagen": "assets/expedicion/animales/A22.webp"
+    },
+    {
+      "id": "P_A23",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pulpo común",
+      "etiqueta_pt": "Polvo-comum",
+      "archivo_imagen": "assets/expedicion/animales/A23.webp"
+    },
+    {
+      "id": "P_A24",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tortuga verde",
+      "etiqueta_pt": "Tartaruga-verde",
+      "archivo_imagen": "assets/expedicion/animales/A24.webp"
+    },
+    {
+      "id": "P_A25",
+      "tipo": "ANIMAL",
+      "etiqueta": "Oso pardo",
+      "etiqueta_pt": "Urso-pardo",
+      "archivo_imagen": "assets/expedicion/animales/A25.webp"
+    },
+    {
+      "id": "P_A26",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lobo gris",
+      "etiqueta_pt": "Lobo-cinzento",
+      "archivo_imagen": "assets/expedicion/animales/A26.webp"
+    },
+    {
+      "id": "P_A27",
+      "tipo": "ANIMAL",
+      "etiqueta": "Zorro rojo",
+      "etiqueta_pt": "Raposa-vermelha",
+      "archivo_imagen": "assets/expedicion/animales/A27.webp"
+    },
+    {
+      "id": "P_A28",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ardilla roja euroasiática",
+      "etiqueta_pt": "Esquilo-vermelho-eurasiático",
+      "archivo_imagen": "assets/expedicion/animales/A28.webp"
+    },
+    {
+      "id": "P_A29",
+      "tipo": "ANIMAL",
+      "etiqueta": "Corzo europeo",
+      "etiqueta_pt": "Corça-europeia",
+      "archivo_imagen": "assets/expedicion/animales/A29.webp"
+    },
+    {
+      "id": "P_A30",
+      "tipo": "ANIMAL",
+      "etiqueta": "Jabalí",
+      "etiqueta_pt": "Javali",
+      "archivo_imagen": "assets/expedicion/animales/A30.webp"
+    },
+    {
+      "id": "P_A31",
+      "tipo": "ANIMAL",
+      "etiqueta": "Capibara o ronsoco",
+      "etiqueta_pt": "Capivara",
+      "archivo_imagen": "assets/expedicion/animales/A31.webp"
+    },
+    {
+      "id": "P_A32",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ajolote mexicano",
+      "etiqueta_pt": "Axolote-mexicano",
+      "archivo_imagen": "assets/expedicion/animales/A32.webp"
+    },
+    {
+      "id": "P_A33",
+      "tipo": "ANIMAL",
+      "etiqueta": "Delfín rosado amazónico",
+      "etiqueta_pt": "Boto-cor-de-rosa",
+      "archivo_imagen": "assets/expedicion/animales/A33.webp"
+    },
+    {
+      "id": "P_A34",
+      "tipo": "ANIMAL",
+      "etiqueta": "Nutria gigante",
+      "etiqueta_pt": "Ariranha",
+      "archivo_imagen": "assets/expedicion/animales/A34.webp"
+    },
+    {
+      "id": "P_A35",
+      "tipo": "ANIMAL",
+      "etiqueta": "Castor norteamericano",
+      "etiqueta_pt": "Castor-norte-americano",
+      "archivo_imagen": "assets/expedicion/animales/A35.webp"
+    },
+    {
+      "id": "P_A36",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cocodrilo del Nilo",
+      "etiqueta_pt": "Crocodilo-do-nilo",
+      "archivo_imagen": "assets/expedicion/animales/A36.webp"
+    },
+    {
+      "id": "P_A37",
+      "tipo": "ANIMAL",
+      "etiqueta": "Oso polar",
+      "etiqueta_pt": "Urso-polar",
+      "archivo_imagen": "assets/expedicion/animales/A37.webp"
+    },
+    {
+      "id": "P_A38",
+      "tipo": "ANIMAL",
+      "etiqueta": "Zorro ártico",
+      "etiqueta_pt": "Raposa-do-ártico",
+      "archivo_imagen": "assets/expedicion/animales/A38.webp"
+    },
+    {
+      "id": "P_A39",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pingüino emperador",
+      "etiqueta_pt": "Pinguim-imperador",
+      "archivo_imagen": "assets/expedicion/animales/A39.webp"
+    },
+    {
+      "id": "P_A40",
+      "tipo": "ANIMAL",
+      "etiqueta": "Morsa",
+      "etiqueta_pt": "Morsa",
+      "archivo_imagen": "assets/expedicion/animales/A40.webp"
+    },
+    {
+      "id": "P_A41",
+      "tipo": "ANIMAL",
+      "etiqueta": "Búho nival",
+      "etiqueta_pt": "Coruja-das-neves",
+      "archivo_imagen": "assets/expedicion/animales/A41.webp"
+    },
+    {
+      "id": "P_A42",
+      "tipo": "ANIMAL",
+      "etiqueta": "Liebre ártica",
+      "etiqueta_pt": "Lebre-do-ártico",
+      "archivo_imagen": "assets/expedicion/animales/A42.webp"
+    },
+    {
+      "id": "P_A43",
+      "tipo": "ANIMAL",
+      "etiqueta": "Vicuña",
+      "etiqueta_pt": "Vicunha",
+      "archivo_imagen": "assets/expedicion/animales/A43.webp"
+    },
+    {
+      "id": "P_A44",
+      "tipo": "ANIMAL",
+      "etiqueta": "Yak salvaje",
+      "etiqueta_pt": "Iaque-selvagem",
+      "archivo_imagen": "assets/expedicion/animales/A44.webp"
+    },
+    {
+      "id": "P_A45",
+      "tipo": "ANIMAL",
+      "etiqueta": "Leopardo de las nieves",
+      "etiqueta_pt": "Leopardo-das-neves",
+      "archivo_imagen": "assets/expedicion/animales/A45.webp"
+    },
+    {
+      "id": "P_A46",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cóndor andino",
+      "etiqueta_pt": "Condor-dos-andes",
+      "archivo_imagen": "assets/expedicion/animales/A46.webp"
+    },
+    {
+      "id": "P_A47",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cabra de las Rocosas",
+      "etiqueta_pt": "Cabra-das-montanhas-rochosas",
+      "archivo_imagen": "assets/expedicion/animales/A47.webp"
+    },
+    {
+      "id": "P_A48",
+      "tipo": "ANIMAL",
+      "etiqueta": "Chinchilla de cola corta",
+      "etiqueta_pt": "Chinchila-de-cauda-curta",
+      "archivo_imagen": "assets/expedicion/animales/A48.webp"
+    },
+    {
+      "id": "P_N001",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lémur de cola anillada",
+      "etiqueta_pt": "Lêmure-de-cauda-anelada",
+      "archivo_imagen": "assets/expedicion/animales/N001.webp"
+    },
+    {
+      "id": "P_N002",
+      "tipo": "ANIMAL",
+      "etiqueta": "Fosa",
+      "etiqueta_pt": "Fossa",
+      "archivo_imagen": "assets/expedicion/animales/N002.webp"
+    },
+    {
+      "id": "P_N003",
+      "tipo": "ANIMAL",
+      "etiqueta": "Iguana negra de cola espinosa",
+      "etiqueta_pt": "Iguana-preta-de-cauda-espinhosa",
+      "archivo_imagen": "assets/expedicion/animales/N003.webp"
+    },
+    {
+      "id": "P_N004",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mono aullador de manto",
+      "etiqueta_pt": "Bugio-de-manto",
+      "archivo_imagen": "assets/expedicion/animales/N004.webp"
+    },
+    {
+      "id": "P_N005",
+      "tipo": "ANIMAL",
+      "etiqueta": "Armadillo de nueve bandas",
+      "etiqueta_pt": "Tatu-galinha",
+      "archivo_imagen": "assets/expedicion/animales/N005.webp"
+    },
+    {
+      "id": "P_N006",
+      "tipo": "ANIMAL",
+      "etiqueta": "Boa constrictora",
+      "etiqueta_pt": "Jiboia",
+      "archivo_imagen": "assets/expedicion/animales/N006.webp"
+    },
+    {
+      "id": "P_N007",
+      "tipo": "ANIMAL",
+      "etiqueta": "Panda rojo",
+      "etiqueta_pt": "Panda-vermelho",
+      "archivo_imagen": "assets/expedicion/animales/N007.webp"
+    },
+    {
+      "id": "P_N008",
+      "tipo": "ANIMAL",
+      "etiqueta": "Oso de anteojos",
+      "etiqueta_pt": "Urso-de-óculos",
+      "archivo_imagen": "assets/expedicion/animales/N008.webp"
+    },
+    {
+      "id": "P_N009",
+      "tipo": "ANIMAL",
+      "etiqueta": "Quetzal resplandeciente",
+      "etiqueta_pt": "Quetzal-resplandecente",
+      "archivo_imagen": "assets/expedicion/animales/N009.webp"
+    },
+    {
+      "id": "P_N010",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gallito de las rocas andino",
+      "etiqueta_pt": "Galo-da-serra-andino",
+      "archivo_imagen": "assets/expedicion/animales/N010.webp"
+    },
+    {
+      "id": "P_N011",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tapir andino",
+      "etiqueta_pt": "Anta-das-montanhas",
+      "archivo_imagen": "assets/expedicion/animales/N011.webp"
+    },
+    {
+      "id": "P_N012",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tucán andino pechigrís",
+      "etiqueta_pt": "Tucano-andino-de-peito-cinza",
+      "archivo_imagen": "assets/expedicion/animales/N012.webp"
+    },
+    {
+      "id": "P_N013",
+      "tipo": "ANIMAL",
+      "etiqueta": "Panda gigante",
+      "etiqueta_pt": "Panda-gigante",
+      "archivo_imagen": "assets/expedicion/animales/N013.webp"
+    },
+    {
+      "id": "P_N014",
+      "tipo": "ANIMAL",
+      "etiqueta": "Koala",
+      "etiqueta_pt": "Coala",
+      "archivo_imagen": "assets/expedicion/animales/N014.webp"
+    },
+    {
+      "id": "P_N015",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tigre siberiano",
+      "etiqueta_pt": "Tigre-siberiano",
+      "archivo_imagen": "assets/expedicion/animales/N015.webp"
+    },
+    {
+      "id": "P_N016",
+      "tipo": "ANIMAL",
+      "etiqueta": "Urogallo común",
+      "etiqueta_pt": "Tetraz-grande",
+      "archivo_imagen": "assets/expedicion/animales/N016.webp"
+    },
+    {
+      "id": "P_N017",
+      "tipo": "ANIMAL",
+      "etiqueta": "Marta europea",
+      "etiqueta_pt": "Marta-europeia",
+      "archivo_imagen": "assets/expedicion/animales/N017.webp"
+    },
+    {
+      "id": "P_N018",
+      "tipo": "ANIMAL",
+      "etiqueta": "Búho real",
+      "etiqueta_pt": "Bufo-real",
+      "archivo_imagen": "assets/expedicion/animales/N018.webp"
+    },
+    {
+      "id": "P_N019",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pico picapinos",
+      "etiqueta_pt": "Pica-pau-malhado-grande",
+      "archivo_imagen": "assets/expedicion/animales/N019.webp"
+    },
+    {
+      "id": "P_N020",
+      "tipo": "ANIMAL",
+      "etiqueta": "Alce",
+      "etiqueta_pt": "Alce",
+      "archivo_imagen": "assets/expedicion/animales/N020.webp"
+    },
+    {
+      "id": "P_N021",
+      "tipo": "ANIMAL",
+      "etiqueta": "Glotón",
+      "etiqueta_pt": "Carcaju",
+      "archivo_imagen": "assets/expedicion/animales/N021.webp"
+    },
+    {
+      "id": "P_N022",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lince boreal",
+      "etiqueta_pt": "Lince-eurasiático",
+      "archivo_imagen": "assets/expedicion/animales/N022.webp"
+    },
+    {
+      "id": "P_N023",
+      "tipo": "ANIMAL",
+      "etiqueta": "Liebre americana",
+      "etiqueta_pt": "Lebre-americana",
+      "archivo_imagen": "assets/expedicion/animales/N023.webp"
+    },
+    {
+      "id": "P_N024",
+      "tipo": "ANIMAL",
+      "etiqueta": "Búho lapón",
+      "etiqueta_pt": "Coruja-lapônica",
+      "archivo_imagen": "assets/expedicion/animales/N024.webp"
+    },
+    {
+      "id": "P_N025",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mono narigudo",
+      "etiqueta_pt": "Macaco-narigudo",
+      "archivo_imagen": "assets/expedicion/animales/N025.webp"
+    },
+    {
+      "id": "P_N026",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cocodrilo de agua salada",
+      "etiqueta_pt": "Crocodilo-de-água-salgada",
+      "archivo_imagen": "assets/expedicion/animales/N026.webp"
+    },
+    {
+      "id": "P_N027",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez arquero bandeado",
+      "etiqueta_pt": "Peixe-arqueiro-listrado",
+      "archivo_imagen": "assets/expedicion/animales/N027.webp"
+    },
+    {
+      "id": "P_N028",
+      "tipo": "ANIMAL",
+      "etiqueta": "Saltarín del fango atlántico",
+      "etiqueta_pt": "Saltador-do-lodo-atlântico",
+      "archivo_imagen": "assets/expedicion/animales/N028.webp"
+    },
+    {
+      "id": "P_N029",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo violinista africano",
+      "etiqueta_pt": "Caranguejo-violinista-africano",
+      "archivo_imagen": "assets/expedicion/animales/N029.webp"
+    },
+    {
+      "id": "P_N030",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo de manglar gigante",
+      "etiqueta_pt": "Caranguejo-gigante-do-mangue",
+      "archivo_imagen": "assets/expedicion/animales/N030.webp"
+    },
+    {
+      "id": "P_N031",
+      "tipo": "ANIMAL",
+      "etiqueta": "Anaconda verde",
+      "etiqueta_pt": "Sucuri-verde",
+      "archivo_imagen": "assets/expedicion/animales/N031.webp"
+    },
+    {
+      "id": "P_N032",
+      "tipo": "ANIMAL",
+      "etiqueta": "Caimán negro",
+      "etiqueta_pt": "Jacaré-açu",
+      "archivo_imagen": "assets/expedicion/animales/N032.webp"
+    },
+    {
+      "id": "P_N033",
+      "tipo": "ANIMAL",
+      "etiqueta": "Hoacín",
+      "etiqueta_pt": "Cigana",
+      "archivo_imagen": "assets/expedicion/animales/N033.webp"
+    },
+    {
+      "id": "P_N034",
+      "tipo": "ANIMAL",
+      "etiqueta": "Uacarí calvo",
+      "etiqueta_pt": "Uacari-branco",
+      "archivo_imagen": "assets/expedicion/animales/N034.webp"
+    },
+    {
+      "id": "P_N035",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tortuga arrau",
+      "etiqueta_pt": "Tartaruga-da-amazônia",
+      "archivo_imagen": "assets/expedicion/animales/N035.webp"
+    },
+    {
+      "id": "P_N036",
+      "tipo": "ANIMAL",
+      "etiqueta": "Manatí amazónico",
+      "etiqueta_pt": "Peixe-boi-da-amazônia",
+      "archivo_imagen": "assets/expedicion/animales/N036.webp"
+    },
+    {
+      "id": "P_N037",
+      "tipo": "ANIMAL",
+      "etiqueta": "Hipopótamo común",
+      "etiqueta_pt": "Hipopótamo-comum",
+      "archivo_imagen": "assets/expedicion/animales/N037.webp"
+    },
+    {
+      "id": "P_N038",
+      "tipo": "ANIMAL",
+      "etiqueta": "Búfalo africano",
+      "etiqueta_pt": "Búfalo-africano",
+      "archivo_imagen": "assets/expedicion/animales/N038.webp"
+    },
+    {
+      "id": "P_N039",
+      "tipo": "ANIMAL",
+      "etiqueta": "Antílope lechwe rojo",
+      "etiqueta_pt": "Lechwe-vermelho",
+      "archivo_imagen": "assets/expedicion/animales/N039.webp"
+    },
+    {
+      "id": "P_N040",
+      "tipo": "ANIMAL",
+      "etiqueta": "Grulla coronada cuelligrís",
+      "etiqueta_pt": "Grou-coroado-de-pescoço-cinza",
+      "archivo_imagen": "assets/expedicion/animales/N040.webp"
+    },
+    {
+      "id": "P_N041",
+      "tipo": "ANIMAL",
+      "etiqueta": "Jabirú americano",
+      "etiqueta_pt": "Tuiuiú",
+      "archivo_imagen": "assets/expedicion/animales/N041.webp"
+    },
+    {
+      "id": "P_N042",
+      "tipo": "ANIMAL",
+      "etiqueta": "Bisonte americano",
+      "etiqueta_pt": "Bisão-americano",
+      "archivo_imagen": "assets/expedicion/animales/N042.webp"
+    },
+    {
+      "id": "P_N043",
+      "tipo": "ANIMAL",
+      "etiqueta": "Berrendo",
+      "etiqueta_pt": "Antilocapra",
+      "archivo_imagen": "assets/expedicion/animales/N043.webp"
+    },
+    {
+      "id": "P_N044",
+      "tipo": "ANIMAL",
+      "etiqueta": "Perrito de las praderas de cola negra",
+      "etiqueta_pt": "Cão-da-pradaria-de-cauda-preta",
+      "archivo_imagen": "assets/expedicion/animales/N044.webp"
+    },
+    {
+      "id": "P_N045",
+      "tipo": "ANIMAL",
+      "etiqueta": "Coyote",
+      "etiqueta_pt": "Coiote",
+      "archivo_imagen": "assets/expedicion/animales/N045.webp"
+    },
+    {
+      "id": "P_N046",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ñandú común",
+      "etiqueta_pt": "Ema",
+      "archivo_imagen": "assets/expedicion/animales/N046.webp"
+    },
+    {
+      "id": "P_N047",
+      "tipo": "ANIMAL",
+      "etiqueta": "Canguro gris oriental",
+      "etiqueta_pt": "Canguru-cinza-oriental",
+      "archivo_imagen": "assets/expedicion/animales/N047.webp"
+    },
+    {
+      "id": "P_N048",
+      "tipo": "ANIMAL",
+      "etiqueta": "Reno",
+      "etiqueta_pt": "Rena",
+      "archivo_imagen": "assets/expedicion/animales/N048.webp"
+    },
+    {
+      "id": "P_N049",
+      "tipo": "ANIMAL",
+      "etiqueta": "Buey almizclero",
+      "etiqueta_pt": "Boi-almiscarado",
+      "archivo_imagen": "assets/expedicion/animales/N049.webp"
+    },
+    {
+      "id": "P_N050",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lemming noruego",
+      "etiqueta_pt": "Lêmingue-da-noruega",
+      "archivo_imagen": "assets/expedicion/animales/N050.webp"
+    },
+    {
+      "id": "P_N051",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lince ibérico",
+      "etiqueta_pt": "Lince-ibérico",
+      "archivo_imagen": "assets/expedicion/animales/N051.webp"
+    },
+    {
+      "id": "P_N052",
+      "tipo": "ANIMAL",
+      "etiqueta": "Conejo europeo",
+      "etiqueta_pt": "Coelho-europeu",
+      "archivo_imagen": "assets/expedicion/animales/N052.webp"
+    },
+    {
+      "id": "P_N053",
+      "tipo": "ANIMAL",
+      "etiqueta": "Perdiz roja",
+      "etiqueta_pt": "Perdiz-vermelha",
+      "archivo_imagen": "assets/expedicion/animales/N053.webp"
+    },
+    {
+      "id": "P_N054",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lagarto ocelado",
+      "etiqueta_pt": "Lagarto-ocelado",
+      "archivo_imagen": "assets/expedicion/animales/N054.webp"
+    },
+    {
+      "id": "P_N055",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tortuga mediterránea",
+      "etiqueta_pt": "Tartaruga-mediterrânea",
+      "archivo_imagen": "assets/expedicion/animales/N055.webp"
+    },
+    {
+      "id": "P_N056",
+      "tipo": "ANIMAL",
+      "etiqueta": "Meloncillo",
+      "etiqueta_pt": "Mangusto-egípcio",
+      "archivo_imagen": "assets/expedicion/animales/N056.webp"
+    },
+    {
+      "id": "P_N057",
+      "tipo": "ANIMAL",
+      "etiqueta": "Órix del Cabo",
+      "etiqueta_pt": "Órix-do-cabo",
+      "archivo_imagen": "assets/expedicion/animales/N057.webp"
+    },
+    {
+      "id": "P_N058",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gacela de Grant",
+      "etiqueta_pt": "Gazela-de-grant",
+      "archivo_imagen": "assets/expedicion/animales/N058.webp"
+    },
+    {
+      "id": "P_N059",
+      "tipo": "ANIMAL",
+      "etiqueta": "Dikdik de Kirk",
+      "etiqueta_pt": "Dique-dique-de-kirk",
+      "archivo_imagen": "assets/expedicion/animales/N059.webp"
+    },
+    {
+      "id": "P_N060",
+      "tipo": "ANIMAL",
+      "etiqueta": "Rinoceronte negro",
+      "etiqueta_pt": "Rinoceronte-negro",
+      "archivo_imagen": "assets/expedicion/animales/N060.webp"
+    },
+    {
+      "id": "P_N061",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cerdo hormiguero",
+      "etiqueta_pt": "Porco-formigueiro",
+      "archivo_imagen": "assets/expedicion/animales/N061.webp"
+    },
+    {
+      "id": "P_N062",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ratel",
+      "etiqueta_pt": "Texugo-do-mel",
+      "archivo_imagen": "assets/expedicion/animales/N062.webp"
+    },
+    {
+      "id": "P_N063",
+      "tipo": "ANIMAL",
+      "etiqueta": "Taruca",
+      "etiqueta_pt": "Taruca",
+      "archivo_imagen": "assets/expedicion/animales/N063.webp"
+    },
+    {
+      "id": "P_N064",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gato andino",
+      "etiqueta_pt": "Gato-andino",
+      "archivo_imagen": "assets/expedicion/animales/N064.webp"
+    },
+    {
+      "id": "P_N065",
+      "tipo": "ANIMAL",
+      "etiqueta": "Vizcacha de montaña",
+      "etiqueta_pt": "Viscacha-da-montanha",
+      "archivo_imagen": "assets/expedicion/animales/N065.webp"
+    },
+    {
+      "id": "P_N066",
+      "tipo": "ANIMAL",
+      "etiqueta": "Colibrí gigante del sur",
+      "etiqueta_pt": "Beija-flor-gigante-do-sul",
+      "archivo_imagen": "assets/expedicion/animales/N066.webp"
+    },
+    {
+      "id": "P_N067",
+      "tipo": "ANIMAL",
+      "etiqueta": "Zorro culpeo",
+      "etiqueta_pt": "Raposa-culpeo",
+      "archivo_imagen": "assets/expedicion/animales/N067.webp"
+    },
+    {
+      "id": "P_N068",
+      "tipo": "ANIMAL",
+      "etiqueta": "Guanaco",
+      "etiqueta_pt": "Guanaco",
+      "archivo_imagen": "assets/expedicion/animales/N068.webp"
+    },
+    {
+      "id": "P_N069",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tahr del Himalaya",
+      "etiqueta_pt": "Tahr-do-himalaia",
+      "archivo_imagen": "assets/expedicion/animales/N069.webp"
+    },
+    {
+      "id": "P_N070",
+      "tipo": "ANIMAL",
+      "etiqueta": "Kiang",
+      "etiqueta_pt": "Kiang",
+      "archivo_imagen": "assets/expedicion/animales/N070.webp"
+    },
+    {
+      "id": "P_N071",
+      "tipo": "ANIMAL",
+      "etiqueta": "Marmota del Himalaya",
+      "etiqueta_pt": "Marmota-do-himalaia",
+      "archivo_imagen": "assets/expedicion/animales/N071.webp"
+    },
+    {
+      "id": "P_N072",
+      "tipo": "ANIMAL",
+      "etiqueta": "Camello bactriano salvaje",
+      "etiqueta_pt": "Camelo-bactriano-selvagem",
+      "archivo_imagen": "assets/expedicion/animales/N072.webp"
+    },
+    {
+      "id": "P_N073",
+      "tipo": "ANIMAL",
+      "etiqueta": "Onagro",
+      "etiqueta_pt": "Onagro",
+      "archivo_imagen": "assets/expedicion/animales/N073.webp"
+    },
+    {
+      "id": "P_N074",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gacela de bocio",
+      "etiqueta_pt": "Gazela-de-papo",
+      "archivo_imagen": "assets/expedicion/animales/N074.webp"
+    },
+    {
+      "id": "P_N075",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gato de Pallas",
+      "etiqueta_pt": "Gato-de-pallas",
+      "archivo_imagen": "assets/expedicion/animales/N075.webp"
+    },
+    {
+      "id": "P_N076",
+      "tipo": "ANIMAL",
+      "etiqueta": "Jerbo orejudo",
+      "etiqueta_pt": "Jerbo-de-orelhas-longas",
+      "archivo_imagen": "assets/expedicion/animales/N076.webp"
+    },
+    {
+      "id": "P_N077",
+      "tipo": "ANIMAL",
+      "etiqueta": "Saiga",
+      "etiqueta_pt": "Saiga",
+      "archivo_imagen": "assets/expedicion/animales/N077.webp"
+    },
+    {
+      "id": "P_N078",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gacela dorcas",
+      "etiqueta_pt": "Gazela-dorcas",
+      "archivo_imagen": "assets/expedicion/animales/N078.webp"
+    },
+    {
+      "id": "P_N079",
+      "tipo": "ANIMAL",
+      "etiqueta": "Asno salvaje africano",
+      "etiqueta_pt": "Asno-selvagem-africano",
+      "archivo_imagen": "assets/expedicion/animales/N079.webp"
+    },
+    {
+      "id": "P_N080",
+      "tipo": "ANIMAL",
+      "etiqueta": "Abubilla común",
+      "etiqueta_pt": "Poupa-comum",
+      "archivo_imagen": "assets/expedicion/animales/N080.webp"
+    },
+    {
+      "id": "P_N081",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tórtola senegalesa",
+      "etiqueta_pt": "Rola-do-senegal",
+      "archivo_imagen": "assets/expedicion/animales/N081.webp"
+    },
+    {
+      "id": "P_N082",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gorrión del desierto",
+      "etiqueta_pt": "Pardal-do-deserto",
+      "archivo_imagen": "assets/expedicion/animales/N082.webp"
+    },
+    {
+      "id": "P_N083",
+      "tipo": "ANIMAL",
+      "etiqueta": "Rana del Sáhara",
+      "etiqueta_pt": "Rã-do-saara",
+      "archivo_imagen": "assets/expedicion/animales/N083.webp"
+    },
+    {
+      "id": "P_N084",
+      "tipo": "ANIMAL",
+      "etiqueta": "Íbice alpino",
+      "etiqueta_pt": "Íbex-alpino",
+      "archivo_imagen": "assets/expedicion/animales/N084.webp"
+    },
+    {
+      "id": "P_N085",
+      "tipo": "ANIMAL",
+      "etiqueta": "Borrego cimarrón",
+      "etiqueta_pt": "Carneiro-selvagem-das-rochosas",
+      "archivo_imagen": "assets/expedicion/animales/N085.webp"
+    },
+    {
+      "id": "P_N086",
+      "tipo": "ANIMAL",
+      "etiqueta": "Águila real",
+      "etiqueta_pt": "Águia-real",
+      "archivo_imagen": "assets/expedicion/animales/N086.webp"
+    },
+    {
+      "id": "P_N087",
+      "tipo": "ANIMAL",
+      "etiqueta": "Guácharo",
+      "etiqueta_pt": "Guácharo",
+      "archivo_imagen": "assets/expedicion/animales/N087.webp"
+    },
+    {
+      "id": "P_N088",
+      "tipo": "ANIMAL",
+      "etiqueta": "Salangana de nido blanco",
+      "etiqueta_pt": "Salangana-de-ninho-branco",
+      "archivo_imagen": "assets/expedicion/animales/N088.webp"
+    },
+    {
+      "id": "P_N089",
+      "tipo": "ANIMAL",
+      "etiqueta": "Murciélago de herradura grande",
+      "etiqueta_pt": "Morcego-ferradura-grande",
+      "archivo_imagen": "assets/expedicion/animales/N089.webp"
+    },
+    {
+      "id": "P_N090",
+      "tipo": "ANIMAL",
+      "etiqueta": "Murciélago frugívoro egipcio",
+      "etiqueta_pt": "Morcego-frugívoro-egípcio",
+      "archivo_imagen": "assets/expedicion/animales/N090.webp"
+    },
+    {
+      "id": "P_N091",
+      "tipo": "ANIMAL",
+      "etiqueta": "Grillo cavernícola europeo",
+      "etiqueta_pt": "Grilo-cavernícola-europeu",
+      "archivo_imagen": "assets/expedicion/animales/N091.webp"
+    },
+    {
+      "id": "P_N092",
+      "tipo": "ANIMAL",
+      "etiqueta": "Araña cavernícola europea",
+      "etiqueta_pt": "Aranha-cavernícola-europeia",
+      "archivo_imagen": "assets/expedicion/animales/N092.webp"
+    },
+    {
+      "id": "P_N093",
+      "tipo": "ANIMAL",
+      "etiqueta": "Foca anillada",
+      "etiqueta_pt": "Foca-anelada",
+      "archivo_imagen": "assets/expedicion/animales/N093.webp"
+    },
+    {
+      "id": "P_N094",
+      "tipo": "ANIMAL",
+      "etiqueta": "Foca leopardo",
+      "etiqueta_pt": "Foca-leopardo",
+      "archivo_imagen": "assets/expedicion/animales/N094.webp"
+    },
+    {
+      "id": "P_N095",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pingüino de Adelia",
+      "etiqueta_pt": "Pinguim-de-adélia",
+      "archivo_imagen": "assets/expedicion/animales/N095.webp"
+    },
+    {
+      "id": "P_N096",
+      "tipo": "ANIMAL",
+      "etiqueta": "Piraña roja",
+      "etiqueta_pt": "Piranha-vermelha",
+      "archivo_imagen": "assets/expedicion/animales/N096.webp"
+    },
+    {
+      "id": "P_N097",
+      "tipo": "ANIMAL",
+      "etiqueta": "Anguila eléctrica",
+      "etiqueta_pt": "Poraquê",
+      "archivo_imagen": "assets/expedicion/animales/N097.webp"
+    },
+    {
+      "id": "P_N098",
+      "tipo": "ANIMAL",
+      "etiqueta": "Paiche",
+      "etiqueta_pt": "Pirarucu",
+      "archivo_imagen": "assets/expedicion/animales/N098.webp"
+    },
+    {
+      "id": "P_N099",
+      "tipo": "ANIMAL",
+      "etiqueta": "Trucha arcoíris",
+      "etiqueta_pt": "Truta-arco-íris",
+      "archivo_imagen": "assets/expedicion/animales/N099.webp"
+    },
+    {
+      "id": "P_N100",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mirlo acuático europeo",
+      "etiqueta_pt": "Melro-d’água-europeu",
+      "archivo_imagen": "assets/expedicion/animales/N100.webp"
+    },
+    {
+      "id": "P_N101",
+      "tipo": "ANIMAL",
+      "etiqueta": "Desmán ibérico",
+      "etiqueta_pt": "Desmã-ibérico",
+      "archivo_imagen": "assets/expedicion/animales/N101.webp"
+    },
+    {
+      "id": "P_N102",
+      "tipo": "ANIMAL",
+      "etiqueta": "Salamandra gigante china",
+      "etiqueta_pt": "Salamandra-gigante-chinesa",
+      "archivo_imagen": "assets/expedicion/animales/N102.webp"
+    },
+    {
+      "id": "P_N103",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo de río de patas blancas",
+      "etiqueta_pt": "Lagostim-de-patas-brancas",
+      "archivo_imagen": "assets/expedicion/animales/N103.webp"
+    },
+    {
+      "id": "P_N104",
+      "tipo": "ANIMAL",
+      "etiqueta": "Rana patilarga",
+      "etiqueta_pt": "Rã-ibérica",
+      "archivo_imagen": "assets/expedicion/animales/N104.webp"
+    },
+    {
+      "id": "P_N105",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cisne vulgar",
+      "etiqueta_pt": "Cisne-mudo",
+      "archivo_imagen": "assets/expedicion/animales/N105.webp"
+    },
+    {
+      "id": "P_N106",
+      "tipo": "ANIMAL",
+      "etiqueta": "Perca europea",
+      "etiqueta_pt": "Perca-europeia",
+      "archivo_imagen": "assets/expedicion/animales/N106.webp"
+    },
+    {
+      "id": "P_N107",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lucio europeo",
+      "etiqueta_pt": "Lúcio-europeu",
+      "archivo_imagen": "assets/expedicion/animales/N107.webp"
+    },
+    {
+      "id": "P_N108",
+      "tipo": "ANIMAL",
+      "etiqueta": "Somormujo lavanco",
+      "etiqueta_pt": "Mergulhão-de-crista",
+      "archivo_imagen": "assets/expedicion/animales/N108.webp"
+    },
+    {
+      "id": "P_N109",
+      "tipo": "ANIMAL",
+      "etiqueta": "Sapo de espuelas occidental",
+      "etiqueta_pt": "Sapo-de-esporas-ocidental",
+      "archivo_imagen": "assets/expedicion/animales/N109.webp"
+    },
+    {
+      "id": "P_N110",
+      "tipo": "ANIMAL",
+      "etiqueta": "Sapo corredor",
+      "etiqueta_pt": "Sapo-corredor",
+      "archivo_imagen": "assets/expedicion/animales/N110.webp"
+    },
+    {
+      "id": "P_N111",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gallipato",
+      "etiqueta_pt": "Tritão-de-costelas-salientes",
+      "archivo_imagen": "assets/expedicion/animales/N111.webp"
+    },
+    {
+      "id": "P_N112",
+      "tipo": "ANIMAL",
+      "etiqueta": "Triops de cola larga",
+      "etiqueta_pt": "Triops-de-cauda-longa",
+      "archivo_imagen": "assets/expedicion/animales/N112.webp"
+    },
+    {
+      "id": "P_N113",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez killi turquesa",
+      "etiqueta_pt": "Killi-turquesa",
+      "archivo_imagen": "assets/expedicion/animales/N113.webp"
+    },
+    {
+      "id": "P_N114",
+      "tipo": "ANIMAL",
+      "etiqueta": "Rana toro africana",
+      "etiqueta_pt": "Rã-touro-africana",
+      "archivo_imagen": "assets/expedicion/animales/N114.webp"
+    },
+    {
+      "id": "P_N115",
+      "tipo": "ANIMAL",
+      "etiqueta": "Aligátor americano",
+      "etiqueta_pt": "Aligátor-americano",
+      "archivo_imagen": "assets/expedicion/animales/N115.webp"
+    },
+    {
+      "id": "P_N116",
+      "tipo": "ANIMAL",
+      "etiqueta": "Picozapato",
+      "etiqueta_pt": "Bico-de-sapato",
+      "archivo_imagen": "assets/expedicion/animales/N116.webp"
+    },
+    {
+      "id": "P_N117",
+      "tipo": "ANIMAL",
+      "etiqueta": "Garza real",
+      "etiqueta_pt": "Garça-real",
+      "archivo_imagen": "assets/expedicion/animales/N117.webp"
+    },
+    {
+      "id": "P_N118",
+      "tipo": "ANIMAL",
+      "etiqueta": "Espátula rosada",
+      "etiqueta_pt": "Colhereiro-rosa",
+      "archivo_imagen": "assets/expedicion/animales/N118.webp"
+    },
+    {
+      "id": "P_N119",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tortuga mordedora común",
+      "etiqueta_pt": "Tartaruga-mordedora-comum",
+      "archivo_imagen": "assets/expedicion/animales/N119.webp"
+    },
+    {
+      "id": "P_N120",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ánade real",
+      "etiqueta_pt": "Pato-real",
+      "archivo_imagen": "assets/expedicion/animales/N120.webp"
+    },
+    {
+      "id": "P_N121",
+      "tipo": "ANIMAL",
+      "etiqueta": "Grulla común",
+      "etiqueta_pt": "Grou-comum",
+      "archivo_imagen": "assets/expedicion/animales/N121.webp"
+    },
+    {
+      "id": "P_N122",
+      "tipo": "ANIMAL",
+      "etiqueta": "Agachadiza común",
+      "etiqueta_pt": "Narceja-comum",
+      "archivo_imagen": "assets/expedicion/animales/N122.webp"
+    },
+    {
+      "id": "P_N123",
+      "tipo": "ANIMAL",
+      "etiqueta": "Zarapito real",
+      "etiqueta_pt": "Maçarico-real",
+      "archivo_imagen": "assets/expedicion/animales/N123.webp"
+    },
+    {
+      "id": "P_N124",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lagartija de turbera",
+      "etiqueta_pt": "Lagarto-vivíparo",
+      "archivo_imagen": "assets/expedicion/animales/N124.webp"
+    },
+    {
+      "id": "P_N125",
+      "tipo": "ANIMAL",
+      "etiqueta": "Libélula de turbera",
+      "etiqueta_pt": "Libélula-de-turfeira",
+      "archivo_imagen": "assets/expedicion/animales/N125.webp"
+    },
+    {
+      "id": "P_N126",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mariposa de los arándanos",
+      "etiqueta_pt": "Borboleta-dos-mirtilos",
+      "archivo_imagen": "assets/expedicion/animales/N126.webp"
+    },
+    {
+      "id": "P_N127",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ganso andino",
+      "etiqueta_pt": "Ganso-andino",
+      "archivo_imagen": "assets/expedicion/animales/N127.webp"
+    },
+    {
+      "id": "P_N128",
+      "tipo": "ANIMAL",
+      "etiqueta": "Rana gigante del Titicaca",
+      "etiqueta_pt": "Rã-gigante-do-titicaca",
+      "archivo_imagen": "assets/expedicion/animales/N128.webp"
+    },
+    {
+      "id": "P_N129",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gallareta gigante",
+      "etiqueta_pt": "Carqueja-gigante",
+      "archivo_imagen": "assets/expedicion/animales/N129.webp"
+    },
+    {
+      "id": "P_N130",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ibis de la puna",
+      "etiqueta_pt": "Íbis-da-puna",
+      "archivo_imagen": "assets/expedicion/animales/N130.webp"
+    },
+    {
+      "id": "P_N131",
+      "tipo": "ANIMAL",
+      "etiqueta": "Avoceta andina",
+      "etiqueta_pt": "Alfaiate-andino",
+      "archivo_imagen": "assets/expedicion/animales/N131.webp"
+    },
+    {
+      "id": "P_N132",
+      "tipo": "ANIMAL",
+      "etiqueta": "Suri cordillerano",
+      "etiqueta_pt": "Ema-da-puna",
+      "archivo_imagen": "assets/expedicion/animales/N132.webp"
+    },
+    {
+      "id": "P_N133",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez pulmonado africano",
+      "etiqueta_pt": "Peixe-pulmonado-africano",
+      "archivo_imagen": "assets/expedicion/animales/N133.webp"
+    },
+    {
+      "id": "P_N134",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez gato africano",
+      "etiqueta_pt": "Bagre-africano",
+      "archivo_imagen": "assets/expedicion/animales/N134.webp"
+    },
+    {
+      "id": "P_N135",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cocodrilo australiano de agua dulce",
+      "etiqueta_pt": "Crocodilo-australiano-de-água-doce",
+      "archivo_imagen": "assets/expedicion/animales/N135.webp"
+    },
+    {
+      "id": "P_N136",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez arcoíris del desierto",
+      "etiqueta_pt": "Peixe-arco-íris-do-deserto",
+      "archivo_imagen": "assets/expedicion/animales/N136.webp"
+    },
+    {
+      "id": "P_N137",
+      "tipo": "ANIMAL",
+      "etiqueta": "Perca australiana de charcas",
+      "etiqueta_pt": "Perca-australiana-de-lagoas",
+      "archivo_imagen": "assets/expedicion/animales/N137.webp"
+    },
+    {
+      "id": "P_N138",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tortuga de cuello de serpiente del norte",
+      "etiqueta_pt": "Tartaruga-de-pescoço-de-cobra-do-norte",
+      "archivo_imagen": "assets/expedicion/animales/N138.webp"
+    },
+    {
+      "id": "P_N139",
+      "tipo": "ANIMAL",
+      "etiqueta": "Proteo",
+      "etiqueta_pt": "Proteu",
+      "archivo_imagen": "assets/expedicion/animales/N139.webp"
+    },
+    {
+      "id": "P_N140",
+      "tipo": "ANIMAL",
+      "etiqueta": "Salamandra ciega de Texas",
+      "etiqueta_pt": "Salamandra-cega-do-texas",
+      "archivo_imagen": "assets/expedicion/animales/N140.webp"
+    },
+    {
+      "id": "P_N141",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tetra ciego mexicano",
+      "etiqueta_pt": "Tetra-cego-mexicano",
+      "archivo_imagen": "assets/expedicion/animales/N141.webp"
+    },
+    {
+      "id": "P_N142",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez cavernícola del norte",
+      "etiqueta_pt": "Peixe-cavernícola-do-norte",
+      "archivo_imagen": "assets/expedicion/animales/N142.webp"
+    },
+    {
+      "id": "P_N143",
+      "tipo": "ANIMAL",
+      "etiqueta": "Bagre ciego mexicano",
+      "etiqueta_pt": "Bagre-cego-mexicano",
+      "archivo_imagen": "assets/expedicion/animales/N143.webp"
+    },
+    {
+      "id": "P_N144",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo de río cavernícola de Florida",
+      "etiqueta_pt": "Lagostim-cavernícola-da-flórida",
+      "archivo_imagen": "assets/expedicion/animales/N144.webp"
+    },
+    {
+      "id": "P_N145",
+      "tipo": "ANIMAL",
+      "etiqueta": "Flamenco común",
+      "etiqueta_pt": "Flamingo-comum",
+      "archivo_imagen": "assets/expedicion/animales/N145.webp"
+    },
+    {
+      "id": "P_N146",
+      "tipo": "ANIMAL",
+      "etiqueta": "Flamenco enano",
+      "etiqueta_pt": "Flamingo-pequeno",
+      "archivo_imagen": "assets/expedicion/animales/N146.webp"
+    },
+    {
+      "id": "P_N147",
+      "tipo": "ANIMAL",
+      "etiqueta": "Zampullín cuellinegro",
+      "etiqueta_pt": "Mergulhão-de-pescoço-preto",
+      "archivo_imagen": "assets/expedicion/animales/N147.webp"
+    },
+    {
+      "id": "P_N148",
+      "tipo": "ANIMAL",
+      "etiqueta": "Artemia salina",
+      "etiqueta_pt": "Artêmia",
+      "archivo_imagen": "assets/expedicion/animales/N148.webp"
+    },
+    {
+      "id": "P_N149",
+      "tipo": "ANIMAL",
+      "etiqueta": "Falaropo tricolor",
+      "etiqueta_pt": "Falaropo-de-wilson",
+      "archivo_imagen": "assets/expedicion/animales/N149.webp"
+    },
+    {
+      "id": "P_N150",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pelícano blanco americano",
+      "etiqueta_pt": "Pelicano-branco-americano",
+      "archivo_imagen": "assets/expedicion/animales/N150.webp"
+    },
+    {
+      "id": "P_N151",
+      "tipo": "ANIMAL",
+      "etiqueta": "Orca",
+      "etiqueta_pt": "Orca",
+      "archivo_imagen": "assets/expedicion/animales/N151.webp"
+    },
+    {
+      "id": "P_N152",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tiburón martillo común",
+      "etiqueta_pt": "Tubarão-martelo-recortado",
+      "archivo_imagen": "assets/expedicion/animales/N152.webp"
+    },
+    {
+      "id": "P_N153",
+      "tipo": "ANIMAL",
+      "etiqueta": "León marino de California",
+      "etiqueta_pt": "Leão-marinho-da-califórnia",
+      "archivo_imagen": "assets/expedicion/animales/N153.webp"
+    },
+    {
+      "id": "P_N154",
+      "tipo": "ANIMAL",
+      "etiqueta": "Medusa luna",
+      "etiqueta_pt": "Água-viva-lua",
+      "archivo_imagen": "assets/expedicion/animales/N154.webp"
+    },
+    {
+      "id": "P_N155",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tiburón ballena",
+      "etiqueta_pt": "Tubarão-baleia",
+      "archivo_imagen": "assets/expedicion/animales/N155.webp"
+    },
+    {
+      "id": "P_N156",
+      "tipo": "ANIMAL",
+      "etiqueta": "Atún rojo del Atlántico",
+      "etiqueta_pt": "Atum-rabilho-do-atlântico",
+      "archivo_imagen": "assets/expedicion/animales/N156.webp"
+    },
+    {
+      "id": "P_N157",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez espada",
+      "etiqueta_pt": "Espadarte",
+      "archivo_imagen": "assets/expedicion/animales/N157.webp"
+    },
+    {
+      "id": "P_N158",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez luna",
+      "etiqueta_pt": "Peixe-lua",
+      "archivo_imagen": "assets/expedicion/animales/N158.webp"
+    },
+    {
+      "id": "P_N159",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cachalote",
+      "etiqueta_pt": "Cachalote",
+      "archivo_imagen": "assets/expedicion/animales/N159.webp"
+    },
+    {
+      "id": "P_N160",
+      "tipo": "ANIMAL",
+      "etiqueta": "Calamar gigante",
+      "etiqueta_pt": "Lula-gigante",
+      "archivo_imagen": "assets/expedicion/animales/N160.webp"
+    },
+    {
+      "id": "P_N161",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez de cabeza transparente",
+      "etiqueta_pt": "Peixe-de-cabeça-transparente",
+      "archivo_imagen": "assets/expedicion/animales/N161.webp"
+    },
+    {
+      "id": "P_N162",
+      "tipo": "ANIMAL",
+      "etiqueta": "Anguila pelícano",
+      "etiqueta_pt": "Enguia-pelicano",
+      "archivo_imagen": "assets/expedicion/animales/N162.webp"
+    },
+    {
+      "id": "P_N163",
+      "tipo": "ANIMAL",
+      "etiqueta": "Diablo negro del Pacífico",
+      "etiqueta_pt": "Diabo-negro-do-pacífico",
+      "archivo_imagen": "assets/expedicion/animales/N163.webp"
+    },
+    {
+      "id": "P_N164",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez víbora de Sloane",
+      "etiqueta_pt": "Peixe-víbora-de-sloane",
+      "archivo_imagen": "assets/expedicion/animales/N164.webp"
+    },
+    {
+      "id": "P_N165",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pulpo dumbo",
+      "etiqueta_pt": "Polvo-dumbo",
+      "archivo_imagen": "assets/expedicion/animales/N165.webp"
+    },
+    {
+      "id": "P_N166",
+      "tipo": "ANIMAL",
+      "etiqueta": "Isópodo gigante",
+      "etiqueta_pt": "Isópode-gigante",
+      "archivo_imagen": "assets/expedicion/animales/N166.webp"
+    },
+    {
+      "id": "P_N167",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo araña japonés",
+      "etiqueta_pt": "Caranguejo-aranha-japonês",
+      "archivo_imagen": "assets/expedicion/animales/N167.webp"
+    },
+    {
+      "id": "P_N168",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez trípode",
+      "etiqueta_pt": "Peixe-tripé",
+      "archivo_imagen": "assets/expedicion/animales/N168.webp"
+    },
+    {
+      "id": "P_N169",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cerdo de mar",
+      "etiqueta_pt": "Porco-do-mar",
+      "archivo_imagen": "assets/expedicion/animales/N169.webp"
+    },
+    {
+      "id": "P_N170",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gusano tubo gigante",
+      "etiqueta_pt": "Verme-tubícola-gigante",
+      "archivo_imagen": "assets/expedicion/animales/N170.webp"
+    },
+    {
+      "id": "P_N171",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez payaso común",
+      "etiqueta_pt": "Peixe-palhaço-comum",
+      "archivo_imagen": "assets/expedicion/animales/N171.webp"
+    },
+    {
+      "id": "P_N172",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez cirujano azul",
+      "etiqueta_pt": "Peixe-cirurgião-azul",
+      "archivo_imagen": "assets/expedicion/animales/N172.webp"
+    },
+    {
+      "id": "P_N173",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez mariposa de hocico largo",
+      "etiqueta_pt": "Peixe-borboleta-de-focinho-longo",
+      "archivo_imagen": "assets/expedicion/animales/N173.webp"
+    },
+    {
+      "id": "P_N174",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez ángel emperador",
+      "etiqueta_pt": "Peixe-anjo-imperador",
+      "archivo_imagen": "assets/expedicion/animales/N174.webp"
+    },
+    {
+      "id": "P_N175",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tiburón de arrecife de puntas negras",
+      "etiqueta_pt": "Tubarão-de-recife-de-pontas-negras",
+      "archivo_imagen": "assets/expedicion/animales/N175.webp"
+    },
+    {
+      "id": "P_N176",
+      "tipo": "ANIMAL",
+      "etiqueta": "Estrella corona de espinas del Pacífico",
+      "etiqueta_pt": "Estrela-coroa-de-espinhos-do-pacífico",
+      "archivo_imagen": "assets/expedicion/animales/N176.webp"
+    },
+    {
+      "id": "P_N177",
+      "tipo": "ANIMAL",
+      "etiqueta": "Dugongo",
+      "etiqueta_pt": "Dugongo",
+      "archivo_imagen": "assets/expedicion/animales/N177.webp"
+    },
+    {
+      "id": "P_N178",
+      "tipo": "ANIMAL",
+      "etiqueta": "Caballito de mar de hocico largo",
+      "etiqueta_pt": "Cavalo-marinho-de-focinho-longo",
+      "archivo_imagen": "assets/expedicion/animales/N178.webp"
+    },
+    {
+      "id": "P_N179",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez pipa mula",
+      "etiqueta_pt": "Peixe-cachimbo-mula",
+      "archivo_imagen": "assets/expedicion/animales/N179.webp"
+    },
+    {
+      "id": "P_N180",
+      "tipo": "ANIMAL",
+      "etiqueta": "Erizo de mar de púas cortas",
+      "etiqueta_pt": "Ouriço-do-mar-de-espinhos-curtos",
+      "archivo_imagen": "assets/expedicion/animales/N180.webp"
+    },
+    {
+      "id": "P_N181",
+      "tipo": "ANIMAL",
+      "etiqueta": "Caracol rosado",
+      "etiqueta_pt": "Concha-rainha",
+      "archivo_imagen": "assets/expedicion/animales/N181.webp"
+    },
+    {
+      "id": "P_N182",
+      "tipo": "ANIMAL",
+      "etiqueta": "Nutria marina",
+      "etiqueta_pt": "Lontra-marinha",
+      "archivo_imagen": "assets/expedicion/animales/N182.webp"
+    },
+    {
+      "id": "P_N183",
+      "tipo": "ANIMAL",
+      "etiqueta": "Foca común",
+      "etiqueta_pt": "Foca-comum",
+      "archivo_imagen": "assets/expedicion/animales/N183.webp"
+    },
+    {
+      "id": "P_N184",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez garibaldi",
+      "etiqueta_pt": "Peixe-garibaldi",
+      "archivo_imagen": "assets/expedicion/animales/N184.webp"
+    },
+    {
+      "id": "P_N185",
+      "tipo": "ANIMAL",
+      "etiqueta": "Dragón de mar foliáceo",
+      "etiqueta_pt": "Dragão-marinho-folhado",
+      "archivo_imagen": "assets/expedicion/animales/N185.webp"
+    },
+    {
+      "id": "P_N186",
+      "tipo": "ANIMAL",
+      "etiqueta": "Abulón rojo",
+      "etiqueta_pt": "Abalone-vermelho",
+      "archivo_imagen": "assets/expedicion/animales/N186.webp"
+    },
+    {
+      "id": "P_N187",
+      "tipo": "ANIMAL",
+      "etiqueta": "Erizo rojo",
+      "etiqueta_pt": "Ouriço-do-mar-vermelho",
+      "archivo_imagen": "assets/expedicion/animales/N187.webp"
+    },
+    {
+      "id": "P_N188",
+      "tipo": "ANIMAL",
+      "etiqueta": "Morena mediterránea",
+      "etiqueta_pt": "Moreia-mediterrânea",
+      "archivo_imagen": "assets/expedicion/animales/N188.webp"
+    },
+    {
+      "id": "P_N189",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mero pardo",
+      "etiqueta_pt": "Mero-pardo",
+      "archivo_imagen": "assets/expedicion/animales/N189.webp"
+    },
+    {
+      "id": "P_N190",
+      "tipo": "ANIMAL",
+      "etiqueta": "Langosta europea",
+      "etiqueta_pt": "Lagosta-europeia",
+      "archivo_imagen": "assets/expedicion/animales/N190.webp"
+    },
+    {
+      "id": "P_N191",
+      "tipo": "ANIMAL",
+      "etiqueta": "Congrio europeo",
+      "etiqueta_pt": "Congro-europeu",
+      "archivo_imagen": "assets/expedicion/animales/N191.webp"
+    },
+    {
+      "id": "P_N192",
+      "tipo": "ANIMAL",
+      "etiqueta": "Sargo común",
+      "etiqueta_pt": "Sargo-comum",
+      "archivo_imagen": "assets/expedicion/animales/N192.webp"
+    },
+    {
+      "id": "P_N193",
+      "tipo": "ANIMAL",
+      "etiqueta": "Manatí del Caribe",
+      "etiqueta_pt": "Peixe-boi-marinho",
+      "archivo_imagen": "assets/expedicion/animales/N193.webp"
+    },
+    {
+      "id": "P_N194",
+      "tipo": "ANIMAL",
+      "etiqueta": "Anguila europea",
+      "etiqueta_pt": "Enguia-europeia",
+      "archivo_imagen": "assets/expedicion/animales/N194.webp"
+    },
+    {
+      "id": "P_N195",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lubina europea",
+      "etiqueta_pt": "Robalo-europeu",
+      "archivo_imagen": "assets/expedicion/animales/N195.webp"
+    },
+    {
+      "id": "P_N196",
+      "tipo": "ANIMAL",
+      "etiqueta": "Sábalo real",
+      "etiqueta_pt": "Tarpão",
+      "archivo_imagen": "assets/expedicion/animales/N196.webp"
+    },
+    {
+      "id": "P_N197",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo azul atlántico",
+      "etiqueta_pt": "Siri-azul-do-atlântico",
+      "archivo_imagen": "assets/expedicion/animales/N197.webp"
+    },
+    {
+      "id": "P_N198",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pez sierra de dientes pequeños",
+      "etiqueta_pt": "Peixe-serra-de-dentes-pequenos",
+      "archivo_imagen": "assets/expedicion/animales/N198.webp"
+    },
+    {
+      "id": "P_N199",
+      "tipo": "ANIMAL",
+      "etiqueta": "Flamenco del Caribe",
+      "etiqueta_pt": "Flamingo-do-caribe",
+      "archivo_imagen": "assets/expedicion/animales/N199.webp"
+    },
+    {
+      "id": "P_N200",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pelícano pardo",
+      "etiqueta_pt": "Pelicano-pardo",
+      "archivo_imagen": "assets/expedicion/animales/N200.webp"
+    },
+    {
+      "id": "P_N201",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cisne negro",
+      "etiqueta_pt": "Cisne-negro",
+      "archivo_imagen": "assets/expedicion/animales/N201.webp"
+    },
+    {
+      "id": "P_N202",
+      "tipo": "ANIMAL",
+      "etiqueta": "Espátula común",
+      "etiqueta_pt": "Colhereiro-comum",
+      "archivo_imagen": "assets/expedicion/animales/N202.webp"
+    },
+    {
+      "id": "P_N203",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lisa de cabeza plana",
+      "etiqueta_pt": "Tainha",
+      "archivo_imagen": "assets/expedicion/animales/N203.webp"
+    },
+    {
+      "id": "P_N204",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tarro blanco",
+      "etiqueta_pt": "Pato-branco",
+      "archivo_imagen": "assets/expedicion/animales/N204.webp"
+    },
+    {
+      "id": "P_N205",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mapache común",
+      "etiqueta_pt": "Guaxinim-comum",
+      "archivo_imagen": "assets/expedicion/animales/N205.webp"
+    },
+    {
+      "id": "P_N206",
+      "tipo": "ANIMAL",
+      "etiqueta": "Rascón picudo",
+      "etiqueta_pt": "Saracura-de-bico-longo",
+      "archivo_imagen": "assets/expedicion/animales/N206.webp"
+    },
+    {
+      "id": "P_N207",
+      "tipo": "ANIMAL",
+      "etiqueta": "Avoceta americana",
+      "etiqueta_pt": "Alfaiate-americano",
+      "archivo_imagen": "assets/expedicion/animales/N207.webp"
+    },
+    {
+      "id": "P_N208",
+      "tipo": "ANIMAL",
+      "etiqueta": "Garza blanca grande",
+      "etiqueta_pt": "Garça-branca-grande",
+      "archivo_imagen": "assets/expedicion/animales/N208.webp"
+    },
+    {
+      "id": "P_N209",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo violinista atlántico",
+      "etiqueta_pt": "Caranguejo-violinista-do-atlântico",
+      "archivo_imagen": "assets/expedicion/animales/N209.webp"
+    },
+    {
+      "id": "P_N210",
+      "tipo": "ANIMAL",
+      "etiqueta": "Caracol de marisma",
+      "etiqueta_pt": "Caracol-de-marisma",
+      "archivo_imagen": "assets/expedicion/animales/N210.webp"
+    },
+    {
+      "id": "P_N211",
+      "tipo": "ANIMAL",
+      "etiqueta": "Iguana marina",
+      "etiqueta_pt": "Iguana-marinha",
+      "archivo_imagen": "assets/expedicion/animales/N211.webp"
+    },
+    {
+      "id": "P_N212",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pingüino de Humboldt",
+      "etiqueta_pt": "Pinguim-de-humboldt",
+      "archivo_imagen": "assets/expedicion/animales/N212.webp"
+    },
+    {
+      "id": "P_N213",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ostrero euroasiático",
+      "etiqueta_pt": "Ostraceiro-eurasiático",
+      "archivo_imagen": "assets/expedicion/animales/N213.webp"
+    },
+    {
+      "id": "P_N214",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo rojo de las Galápagos",
+      "etiqueta_pt": "Caranguejo-vermelho-das-galápagos",
+      "archivo_imagen": "assets/expedicion/animales/N214.webp"
+    },
+    {
+      "id": "P_N215",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lapa común",
+      "etiqueta_pt": "Lapa-comum",
+      "archivo_imagen": "assets/expedicion/animales/N215.webp"
+    },
+    {
+      "id": "P_N216",
+      "tipo": "ANIMAL",
+      "etiqueta": "Mejillón común",
+      "etiqueta_pt": "Mexilhão-comum",
+      "archivo_imagen": "assets/expedicion/animales/N216.webp"
+    },
+    {
+      "id": "P_N217",
+      "tipo": "ANIMAL",
+      "etiqueta": "Estrella de mar ocre",
+      "etiqueta_pt": "Estrela-do-mar-ocre",
+      "archivo_imagen": "assets/expedicion/animales/N217.webp"
+    },
+    {
+      "id": "P_N218",
+      "tipo": "ANIMAL",
+      "etiqueta": "Anémona de mar verde gigante",
+      "etiqueta_pt": "Anêmona-verde-gigante",
+      "archivo_imagen": "assets/expedicion/animales/N218.webp"
+    },
+    {
+      "id": "P_N219",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo ermitaño común",
+      "etiqueta_pt": "Caranguejo-eremita-comum",
+      "archivo_imagen": "assets/expedicion/animales/N219.webp"
+    },
+    {
+      "id": "P_N220",
+      "tipo": "ANIMAL",
+      "etiqueta": "Blenio de roca",
+      "etiqueta_pt": "Blênio-das-rochas",
+      "archivo_imagen": "assets/expedicion/animales/N220.webp"
+    },
+    {
+      "id": "P_N221",
+      "tipo": "ANIMAL",
+      "etiqueta": "Erizo de mar púrpura",
+      "etiqueta_pt": "Ouriço-do-mar-roxo",
+      "archivo_imagen": "assets/expedicion/animales/N221.webp"
+    },
+    {
+      "id": "P_N222",
+      "tipo": "ANIMAL",
+      "etiqueta": "Camarón de roca",
+      "etiqueta_pt": "Camarão-das-rochas",
+      "archivo_imagen": "assets/expedicion/animales/N222.webp"
+    },
+    {
+      "id": "P_N223",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cangrejo fantasma atlántico",
+      "etiqueta_pt": "Caranguejo-fantasma-do-atlântico",
+      "archivo_imagen": "assets/expedicion/animales/N223.webp"
+    },
+    {
+      "id": "P_N224",
+      "tipo": "ANIMAL",
+      "etiqueta": "Almeja coquina",
+      "etiqueta_pt": "Amêijoa-coquina",
+      "archivo_imagen": "assets/expedicion/animales/N224.webp"
+    },
+    {
+      "id": "P_N225",
+      "tipo": "ANIMAL",
+      "etiqueta": "Pulga de playa",
+      "etiqueta_pt": "Pulga-da-praia",
+      "archivo_imagen": "assets/expedicion/animales/N225.webp"
+    },
+    {
+      "id": "P_N226",
+      "tipo": "ANIMAL",
+      "etiqueta": "Chorlitejo patinegro",
+      "etiqueta_pt": "Borrelho-de-coleira-interrompida",
+      "archivo_imagen": "assets/expedicion/animales/N226.webp"
+    },
+    {
+      "id": "P_N227",
+      "tipo": "ANIMAL",
+      "etiqueta": "Correlimos tridáctilo",
+      "etiqueta_pt": "Maçarico-branco",
+      "archivo_imagen": "assets/expedicion/animales/N227.webp"
+    },
+    {
+      "id": "P_N228",
+      "tipo": "ANIMAL",
+      "etiqueta": "Muy muy del Pacífico",
+      "etiqueta_pt": "Tatuí-do-pacífico",
+      "archivo_imagen": "assets/expedicion/animales/N228.webp"
+    },
+    {
+      "id": "P_N229",
+      "tipo": "ANIMAL",
+      "etiqueta": "Lagartija colirroja",
+      "etiqueta_pt": "Lagartixa-de-cauda-vermelha",
+      "archivo_imagen": "assets/expedicion/animales/N229.webp"
+    },
+    {
+      "id": "P_N230",
+      "tipo": "ANIMAL",
+      "etiqueta": "Chorlito silbador",
+      "etiqueta_pt": "Borrelho-assobiador",
+      "archivo_imagen": "assets/expedicion/animales/N230.webp"
+    },
+    {
+      "id": "P_N231",
+      "tipo": "ANIMAL",
+      "etiqueta": "Ratón de playa de Alabama",
+      "etiqueta_pt": "Camundongo-da-praia-do-alabama",
+      "archivo_imagen": "assets/expedicion/animales/N231.webp"
+    },
+    {
+      "id": "P_N232",
+      "tipo": "ANIMAL",
+      "etiqueta": "Sapo de Fowler",
+      "etiqueta_pt": "Sapo-de-fowler",
+      "archivo_imagen": "assets/expedicion/animales/N232.webp"
+    },
+    {
+      "id": "P_N233",
+      "tipo": "ANIMAL",
+      "etiqueta": "Tucotuco de las dunas",
+      "etiqueta_pt": "Tuco-tuco-das-dunas",
+      "archivo_imagen": "assets/expedicion/animales/N233.webp"
+    },
+    {
+      "id": "P_N234",
+      "tipo": "ANIMAL",
+      "etiqueta": "Escarabajo tigre costero",
+      "etiqueta_pt": "Besouro-tigre-costeiro",
+      "archivo_imagen": "assets/expedicion/animales/N234.webp"
+    },
+    {
+      "id": "P_N235",
+      "tipo": "ANIMAL",
+      "etiqueta": "Frailecillo atlántico",
+      "etiqueta_pt": "Papagaio-do-mar-atlântico",
+      "archivo_imagen": "assets/expedicion/animales/N235.webp"
+    },
+    {
+      "id": "P_N236",
+      "tipo": "ANIMAL",
+      "etiqueta": "Alcatraz atlántico",
+      "etiqueta_pt": "Ganso-patola-do-atlântico",
+      "archivo_imagen": "assets/expedicion/animales/N236.webp"
+    },
+    {
+      "id": "P_N237",
+      "tipo": "ANIMAL",
+      "etiqueta": "Gaviota tridáctila",
+      "etiqueta_pt": "Gaivota-tridáctila",
+      "archivo_imagen": "assets/expedicion/animales/N237.webp"
+    },
+    {
+      "id": "P_N238",
+      "tipo": "ANIMAL",
+      "etiqueta": "Cormorán moñudo",
+      "etiqueta_pt": "Corvo-marinho-de-crista",
+      "archivo_imagen": "assets/expedicion/animales/N238.webp"
+    },
+    {
+      "id": "P_N239",
+      "tipo": "ANIMAL",
+      "etiqueta": "Arao común",
+      "etiqueta_pt": "Airo-comum",
+      "archivo_imagen": "assets/expedicion/animales/N239.webp"
+    },
+    {
+      "id": "P_N240",
+      "tipo": "ANIMAL",
+      "etiqueta": "Halcón peregrino",
+      "etiqueta_pt": "Falcão-peregrino",
+      "archivo_imagen": "assets/expedicion/animales/N240.webp"
+    },
+    {
+      "id": "P_H01",
+      "tipo": "HABITAT",
+      "etiqueta": "Selva tropical húmeda",
+      "etiqueta_pt": "Floresta tropical úmida",
+      "archivo_imagen": "assets/expedicion/pictogramas/H01.webp"
+    },
+    {
+      "id": "P_H02",
+      "tipo": "HABITAT",
+      "etiqueta": "Bosque tropical seco",
+      "etiqueta_pt": "Floresta tropical seca",
+      "archivo_imagen": "assets/expedicion/pictogramas/H02.webp"
+    },
+    {
+      "id": "P_H03",
+      "tipo": "HABITAT",
+      "etiqueta": "Bosque nuboso",
+      "etiqueta_pt": "Floresta nublada",
+      "archivo_imagen": "assets/expedicion/pictogramas/H03.webp"
+    },
+    {
+      "id": "P_H04",
+      "tipo": "HABITAT",
+      "etiqueta": "Bosque templado de hojas anchas",
+      "etiqueta_pt": "Floresta temperada de folhas largas",
+      "archivo_imagen": "assets/expedicion/pictogramas/H04.webp"
+    },
+    {
+      "id": "P_H05",
+      "tipo": "HABITAT",
+      "etiqueta": "Bosque templado de coníferas",
+      "etiqueta_pt": "Floresta temperada de coníferas",
+      "archivo_imagen": "assets/expedicion/pictogramas/H05.webp"
+    },
+    {
+      "id": "P_H06",
+      "tipo": "HABITAT",
+      "etiqueta": "Bosque boreal o taiga",
+      "etiqueta_pt": "Floresta boreal ou taiga",
+      "archivo_imagen": "assets/expedicion/pictogramas/H06.webp"
+    },
+    {
+      "id": "P_H07",
+      "tipo": "HABITAT",
+      "etiqueta": "Manglar",
+      "etiqueta_pt": "Manguezal",
+      "archivo_imagen": "assets/expedicion/pictogramas/H07.webp"
+    },
+    {
+      "id": "P_H08",
+      "tipo": "HABITAT",
+      "etiqueta": "Bosque tropical inundable",
+      "etiqueta_pt": "Floresta tropical inundável",
+      "archivo_imagen": "assets/expedicion/pictogramas/H08.webp"
+    },
+    {
+      "id": "P_H09",
+      "tipo": "HABITAT",
+      "etiqueta": "Sabana seca",
+      "etiqueta_pt": "Savana seca",
+      "archivo_imagen": "assets/expedicion/pictogramas/H09.webp"
+    },
+    {
+      "id": "P_H10",
+      "tipo": "HABITAT",
+      "etiqueta": "Sabana inundable",
+      "etiqueta_pt": "Savana inundável",
+      "archivo_imagen": "assets/expedicion/pictogramas/H10.webp"
+    },
+    {
+      "id": "P_H11",
+      "tipo": "HABITAT",
+      "etiqueta": "Pradera templada",
+      "etiqueta_pt": "Pradaria temperada",
+      "archivo_imagen": "assets/expedicion/pictogramas/H11.webp"
+    },
+    {
+      "id": "P_H12",
+      "tipo": "HABITAT",
+      "etiqueta": "Tundra",
+      "etiqueta_pt": "Tundra",
+      "archivo_imagen": "assets/expedicion/pictogramas/H12.webp"
+    },
+    {
+      "id": "P_H13",
+      "tipo": "HABITAT",
+      "etiqueta": "Matorral mediterráneo",
+      "etiqueta_pt": "Matagal mediterrâneo",
+      "archivo_imagen": "assets/expedicion/pictogramas/H13.webp"
+    },
+    {
+      "id": "P_H14",
+      "tipo": "HABITAT",
+      "etiqueta": "Matorral tropical seco",
+      "etiqueta_pt": "Matagal tropical seco",
+      "archivo_imagen": "assets/expedicion/pictogramas/H14.webp"
+    },
+    {
+      "id": "P_H15",
+      "tipo": "HABITAT",
+      "etiqueta": "Matorral de alta montaña",
+      "etiqueta_pt": "Matagal de alta montanha",
+      "archivo_imagen": "assets/expedicion/pictogramas/H15.webp"
+    },
+    {
+      "id": "P_H16",
+      "tipo": "HABITAT",
+      "etiqueta": "Pastizal de alta montaña",
+      "etiqueta_pt": "Campo de alta montanha",
+      "archivo_imagen": "assets/expedicion/pictogramas/H16.webp"
+    },
+    {
+      "id": "P_H17",
+      "tipo": "HABITAT",
+      "etiqueta": "Desierto cálido",
+      "etiqueta_pt": "Deserto quente",
+      "archivo_imagen": "assets/expedicion/pictogramas/H17.webp"
+    },
+    {
+      "id": "P_H18",
+      "tipo": "HABITAT",
+      "etiqueta": "Desierto frío",
+      "etiqueta_pt": "Deserto frio",
+      "archivo_imagen": "assets/expedicion/pictogramas/H18.webp"
+    },
+    {
+      "id": "P_H19",
+      "tipo": "HABITAT",
+      "etiqueta": "Oasis",
+      "etiqueta_pt": "Oásis",
+      "archivo_imagen": "assets/expedicion/pictogramas/H19.webp"
+    },
+    {
+      "id": "P_H20",
+      "tipo": "HABITAT",
+      "etiqueta": "Alta montaña rocosa",
+      "etiqueta_pt": "Alta montanha rochosa",
+      "archivo_imagen": "assets/expedicion/pictogramas/H20.webp"
+    },
+    {
+      "id": "P_H21",
+      "tipo": "HABITAT",
+      "etiqueta": "Cueva terrestre",
+      "etiqueta_pt": "Caverna terrestre",
+      "archivo_imagen": "assets/expedicion/pictogramas/H21.webp"
+    },
+    {
+      "id": "P_H22",
+      "tipo": "HABITAT",
+      "etiqueta": "Hielo marino polar",
+      "etiqueta_pt": "Gelo marinho polar",
+      "archivo_imagen": "assets/expedicion/pictogramas/H22.webp"
+    },
+    {
+      "id": "P_H23",
+      "tipo": "HABITAT",
+      "etiqueta": "Río de corriente lenta",
+      "etiqueta_pt": "Rio de corrente lenta",
+      "archivo_imagen": "assets/expedicion/pictogramas/H23.webp"
+    },
+    {
+      "id": "P_H24",
+      "tipo": "HABITAT",
+      "etiqueta": "Arroyo de montaña",
+      "etiqueta_pt": "Riacho de montanha",
+      "archivo_imagen": "assets/expedicion/pictogramas/H24.webp"
+    },
+    {
+      "id": "P_H25",
+      "tipo": "HABITAT",
+      "etiqueta": "Lago de agua dulce",
+      "etiqueta_pt": "Lago de água doce",
+      "archivo_imagen": "assets/expedicion/pictogramas/H25.webp"
+    },
+    {
+      "id": "P_H26",
+      "tipo": "HABITAT",
+      "etiqueta": "Charca temporal",
+      "etiqueta_pt": "Lagoa temporária",
+      "archivo_imagen": "assets/expedicion/pictogramas/H26.webp"
+    },
+    {
+      "id": "P_H27",
+      "tipo": "HABITAT",
+      "etiqueta": "Pantano de agua dulce",
+      "etiqueta_pt": "Pântano de água doce",
+      "archivo_imagen": "assets/expedicion/pictogramas/H27.webp"
+    },
+    {
+      "id": "P_H28",
+      "tipo": "HABITAT",
+      "etiqueta": "Turbera",
+      "etiqueta_pt": "Turfeira",
+      "archivo_imagen": "assets/expedicion/pictogramas/H28.webp"
+    },
+    {
+      "id": "P_H29",
+      "tipo": "HABITAT",
+      "etiqueta": "Humedal de alta montaña",
+      "etiqueta_pt": "Área úmida de alta montanha",
+      "archivo_imagen": "assets/expedicion/pictogramas/H29.webp"
+    },
+    {
+      "id": "P_H30",
+      "tipo": "HABITAT",
+      "etiqueta": "Río estacional",
+      "etiqueta_pt": "Rio sazonal",
+      "archivo_imagen": "assets/expedicion/pictogramas/H30.webp"
+    },
+    {
+      "id": "P_H31",
+      "tipo": "HABITAT",
+      "etiqueta": "Río subterráneo",
+      "etiqueta_pt": "Rio subterrâneo",
+      "archivo_imagen": "assets/expedicion/pictogramas/H31.webp"
+    },
+    {
+      "id": "P_H32",
+      "tipo": "HABITAT",
+      "etiqueta": "Lago salado",
+      "etiqueta_pt": "Lago salgado",
+      "archivo_imagen": "assets/expedicion/pictogramas/H32.webp"
+    },
+    {
+      "id": "P_H33",
+      "tipo": "HABITAT",
+      "etiqueta": "Aguas marinas costeras",
+      "etiqueta_pt": "Águas marinhas costeiras",
+      "archivo_imagen": "assets/expedicion/pictogramas/H33.webp"
+    },
+    {
+      "id": "P_H34",
+      "tipo": "HABITAT",
+      "etiqueta": "Mar abierto superficial",
+      "etiqueta_pt": "Mar aberto superficial",
+      "archivo_imagen": "assets/expedicion/pictogramas/H34.webp"
+    },
+    {
+      "id": "P_H35",
+      "tipo": "HABITAT",
+      "etiqueta": "Aguas oceánicas profundas",
+      "etiqueta_pt": "Águas oceânicas profundas",
+      "archivo_imagen": "assets/expedicion/pictogramas/H35.webp"
+    },
+    {
+      "id": "P_H36",
+      "tipo": "HABITAT",
+      "etiqueta": "Fondo marino profundo",
+      "etiqueta_pt": "Fundo marinho profundo",
+      "archivo_imagen": "assets/expedicion/pictogramas/H36.webp"
+    },
+    {
+      "id": "P_H37",
+      "tipo": "HABITAT",
+      "etiqueta": "Arrecife de coral",
+      "etiqueta_pt": "Recife de coral",
+      "archivo_imagen": "assets/expedicion/pictogramas/H37.webp"
+    },
+    {
+      "id": "P_H38",
+      "tipo": "HABITAT",
+      "etiqueta": "Pradera marina",
+      "etiqueta_pt": "Prado marinho",
+      "archivo_imagen": "assets/expedicion/pictogramas/H38.webp"
+    },
+    {
+      "id": "P_H39",
+      "tipo": "HABITAT",
+      "etiqueta": "Bosque de algas",
+      "etiqueta_pt": "Floresta de algas",
+      "archivo_imagen": "assets/expedicion/pictogramas/H39.webp"
+    },
+    {
+      "id": "P_H40",
+      "tipo": "HABITAT",
+      "etiqueta": "Arrecife rocoso",
+      "etiqueta_pt": "Recife rochoso",
+      "archivo_imagen": "assets/expedicion/pictogramas/H40.webp"
+    },
+    {
+      "id": "P_H41",
+      "tipo": "HABITAT",
+      "etiqueta": "Estuario",
+      "etiqueta_pt": "Estuário",
+      "archivo_imagen": "assets/expedicion/pictogramas/H41.webp"
+    },
+    {
+      "id": "P_H42",
+      "tipo": "HABITAT",
+      "etiqueta": "Laguna costera salobre",
+      "etiqueta_pt": "Lagoa costeira salobra",
+      "archivo_imagen": "assets/expedicion/pictogramas/H42.webp"
+    },
+    {
+      "id": "P_H43",
+      "tipo": "HABITAT",
+      "etiqueta": "Marisma costera",
+      "etiqueta_pt": "Marisma costeira",
+      "archivo_imagen": "assets/expedicion/pictogramas/H43.webp"
+    },
+    {
+      "id": "P_H44",
+      "tipo": "HABITAT",
+      "etiqueta": "Costa rocosa",
+      "etiqueta_pt": "Costão rochoso",
+      "archivo_imagen": "assets/expedicion/pictogramas/H44.webp"
+    },
+    {
+      "id": "P_H45",
+      "tipo": "HABITAT",
+      "etiqueta": "Poza de marea",
+      "etiqueta_pt": "Poça de maré",
+      "archivo_imagen": "assets/expedicion/pictogramas/H45.webp"
+    },
+    {
+      "id": "P_H46",
+      "tipo": "HABITAT",
+      "etiqueta": "Playa arenosa",
+      "etiqueta_pt": "Praia arenosa",
+      "archivo_imagen": "assets/expedicion/pictogramas/H46.webp"
+    },
+    {
+      "id": "P_H47",
+      "tipo": "HABITAT",
+      "etiqueta": "Duna costera",
+      "etiqueta_pt": "Duna costeira",
+      "archivo_imagen": "assets/expedicion/pictogramas/H47.webp"
+    },
+    {
+      "id": "P_H48",
+      "tipo": "HABITAT",
+      "etiqueta": "Acantilado costero",
+      "etiqueta_pt": "Falésia costeira",
+      "archivo_imagen": "assets/expedicion/pictogramas/H48.webp"
+    },
+    {
+      "id": "P_R01",
+      "tipo": "APOYO",
+      "etiqueta": "Hojas grandes",
+      "etiqueta_pt": "Folhas grandes",
+      "archivo_imagen": "assets/expedicion/pictogramas/R01.webp"
+    },
+    {
+      "id": "P_R02",
+      "tipo": "APOYO",
+      "etiqueta": "Época seca",
+      "etiqueta_pt": "Estação seca",
+      "archivo_imagen": "assets/expedicion/pictogramas/R02.webp"
+    },
+    {
+      "id": "P_R03",
+      "tipo": "APOYO",
+      "etiqueta": "Caída de hojas",
+      "etiqueta_pt": "Queda de folhas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R03.webp"
+    },
+    {
+      "id": "P_R04",
+      "tipo": "APOYO",
+      "etiqueta": "Niebla entre árboles",
+      "etiqueta_pt": "Neblina entre árvores",
+      "archivo_imagen": "assets/expedicion/pictogramas/R04.webp"
+    },
+    {
+      "id": "P_R05",
+      "tipo": "APOYO",
+      "etiqueta": "Hojas anchas",
+      "etiqueta_pt": "Folhas largas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R05.webp"
+    },
+    {
+      "id": "P_R06",
+      "tipo": "APOYO",
+      "etiqueta": "Coníferas",
+      "etiqueta_pt": "Coníferas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R06.webp"
+    },
+    {
+      "id": "P_R07",
+      "tipo": "APOYO",
+      "etiqueta": "Invierno largo",
+      "etiqueta_pt": "Inverno longo",
+      "archivo_imagen": "assets/expedicion/pictogramas/R07.webp"
+    },
+    {
+      "id": "P_R08",
+      "tipo": "APOYO",
+      "etiqueta": "Junto al mar",
+      "etiqueta_pt": "Perto do mar",
+      "archivo_imagen": "assets/expedicion/pictogramas/R08.webp"
+    },
+    {
+      "id": "P_R09",
+      "tipo": "APOYO",
+      "etiqueta": "Raíces sobre el agua",
+      "etiqueta_pt": "Raízes acima da água",
+      "archivo_imagen": "assets/expedicion/pictogramas/R09.webp"
+    },
+    {
+      "id": "P_R10",
+      "tipo": "APOYO",
+      "etiqueta": "Marea",
+      "etiqueta_pt": "Maré",
+      "archivo_imagen": "assets/expedicion/pictogramas/R10.webp"
+    },
+    {
+      "id": "P_R11",
+      "tipo": "APOYO",
+      "etiqueta": "Suelo inundado",
+      "etiqueta_pt": "Solo inundado",
+      "archivo_imagen": "assets/expedicion/pictogramas/R11.webp"
+    },
+    {
+      "id": "P_R12",
+      "tipo": "APOYO",
+      "etiqueta": "Inundación estacional",
+      "etiqueta_pt": "Inundação sazonal",
+      "archivo_imagen": "assets/expedicion/pictogramas/R12.webp"
+    },
+    {
+      "id": "P_R13",
+      "tipo": "APOYO",
+      "etiqueta": "Suelo congelado",
+      "etiqueta_pt": "Solo congelado",
+      "archivo_imagen": "assets/expedicion/pictogramas/R13.webp"
+    },
+    {
+      "id": "P_R14",
+      "tipo": "APOYO",
+      "etiqueta": "Plantas bajas",
+      "etiqueta_pt": "Plantas baixas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R14.webp"
+    },
+    {
+      "id": "P_R15",
+      "tipo": "APOYO",
+      "etiqueta": "Arbustos",
+      "etiqueta_pt": "Arbustos",
+      "archivo_imagen": "assets/expedicion/pictogramas/R15.webp"
+    },
+    {
+      "id": "P_R16",
+      "tipo": "APOYO",
+      "etiqueta": "Verano seco",
+      "etiqueta_pt": "Verão seco",
+      "archivo_imagen": "assets/expedicion/pictogramas/R16.webp"
+    },
+    {
+      "id": "P_R17",
+      "tipo": "APOYO",
+      "etiqueta": "Invierno lluvioso",
+      "etiqueta_pt": "Inverno chuvoso",
+      "archivo_imagen": "assets/expedicion/pictogramas/R17.webp"
+    },
+    {
+      "id": "P_R18",
+      "tipo": "APOYO",
+      "etiqueta": "Arbustos con espinas",
+      "etiqueta_pt": "Arbustos com espinhos",
+      "archivo_imagen": "assets/expedicion/pictogramas/R18.webp"
+    },
+    {
+      "id": "P_R19",
+      "tipo": "APOYO",
+      "etiqueta": "Arbustos bajos",
+      "etiqueta_pt": "Arbustos baixos",
+      "archivo_imagen": "assets/expedicion/pictogramas/R19.webp"
+    },
+    {
+      "id": "P_R20",
+      "tipo": "APOYO",
+      "etiqueta": "Rocas",
+      "etiqueta_pt": "Rochas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R20.webp"
+    },
+    {
+      "id": "P_R21",
+      "tipo": "APOYO",
+      "etiqueta": "Arena",
+      "etiqueta_pt": "Areia",
+      "archivo_imagen": "assets/expedicion/pictogramas/R21.webp"
+    },
+    {
+      "id": "P_R22",
+      "tipo": "APOYO",
+      "etiqueta": "Suelo desnudo",
+      "etiqueta_pt": "Solo descoberto",
+      "archivo_imagen": "assets/expedicion/pictogramas/R22.webp"
+    },
+    {
+      "id": "P_R23",
+      "tipo": "APOYO",
+      "etiqueta": "Plantas junto al agua",
+      "etiqueta_pt": "Plantas junto da água",
+      "archivo_imagen": "assets/expedicion/pictogramas/R23.webp"
+    },
+    {
+      "id": "P_R24",
+      "tipo": "APOYO",
+      "etiqueta": "Ladera rocosa",
+      "etiqueta_pt": "Encosta rochosa",
+      "archivo_imagen": "assets/expedicion/pictogramas/R24.webp"
+    },
+    {
+      "id": "P_R25",
+      "tipo": "APOYO",
+      "etiqueta": "Oscuridad",
+      "etiqueta_pt": "Escuridão",
+      "archivo_imagen": "assets/expedicion/pictogramas/R25.webp"
+    },
+    {
+      "id": "P_R26",
+      "tipo": "APOYO",
+      "etiqueta": "Interior de roca",
+      "etiqueta_pt": "Interior da rocha",
+      "archivo_imagen": "assets/expedicion/pictogramas/R26.webp"
+    },
+    {
+      "id": "P_R27",
+      "tipo": "APOYO",
+      "etiqueta": "Entrada de cueva",
+      "etiqueta_pt": "Entrada da caverna",
+      "archivo_imagen": "assets/expedicion/pictogramas/R27.webp"
+    },
+    {
+      "id": "P_R28",
+      "tipo": "APOYO",
+      "etiqueta": "Hielo flotante",
+      "etiqueta_pt": "Gelo flutuante",
+      "archivo_imagen": "assets/expedicion/pictogramas/R28.webp"
+    },
+    {
+      "id": "P_R29",
+      "tipo": "APOYO",
+      "etiqueta": "Superficie del mar",
+      "etiqueta_pt": "Superfície do mar",
+      "archivo_imagen": "assets/expedicion/pictogramas/R29.webp"
+    },
+    {
+      "id": "P_R30",
+      "tipo": "APOYO",
+      "etiqueta": "Corriente lenta",
+      "etiqueta_pt": "Corrente lenta",
+      "archivo_imagen": "assets/expedicion/pictogramas/R30.webp"
+    },
+    {
+      "id": "P_R31",
+      "tipo": "APOYO",
+      "etiqueta": "Cauce estrecho",
+      "etiqueta_pt": "Leito estreito",
+      "archivo_imagen": "assets/expedicion/pictogramas/R31.webp"
+    },
+    {
+      "id": "P_R32",
+      "tipo": "APOYO",
+      "etiqueta": "Corriente rápida",
+      "etiqueta_pt": "Corrente rápida",
+      "archivo_imagen": "assets/expedicion/pictogramas/R32.webp"
+    },
+    {
+      "id": "P_R33",
+      "tipo": "APOYO",
+      "etiqueta": "Agua rodeada de tierra",
+      "etiqueta_pt": "Água cercada de terra",
+      "archivo_imagen": "assets/expedicion/pictogramas/R33.webp"
+    },
+    {
+      "id": "P_R34",
+      "tipo": "APOYO",
+      "etiqueta": "Agua quieta",
+      "etiqueta_pt": "Água parada",
+      "archivo_imagen": "assets/expedicion/pictogramas/R34.webp"
+    },
+    {
+      "id": "P_R35",
+      "tipo": "APOYO",
+      "etiqueta": "Agua pequeña",
+      "etiqueta_pt": "Pequena quantidade de água",
+      "archivo_imagen": "assets/expedicion/pictogramas/R35.webp"
+    },
+    {
+      "id": "P_R36",
+      "tipo": "APOYO",
+      "etiqueta": "Agua que desaparece",
+      "etiqueta_pt": "Água que desaparece",
+      "archivo_imagen": "assets/expedicion/pictogramas/R36.webp"
+    },
+    {
+      "id": "P_R37",
+      "tipo": "APOYO",
+      "etiqueta": "Suelo encharcado",
+      "etiqueta_pt": "Solo encharcado",
+      "archivo_imagen": "assets/expedicion/pictogramas/R37.webp"
+    },
+    {
+      "id": "P_R38",
+      "tipo": "APOYO",
+      "etiqueta": "Plantas que emergen del agua",
+      "etiqueta_pt": "Plantas que saem da água",
+      "archivo_imagen": "assets/expedicion/pictogramas/R38.webp"
+    },
+    {
+      "id": "P_R39",
+      "tipo": "APOYO",
+      "etiqueta": "Capas de turba",
+      "etiqueta_pt": "Camadas de turfa",
+      "archivo_imagen": "assets/expedicion/pictogramas/R39.webp"
+    },
+    {
+      "id": "P_R40",
+      "tipo": "APOYO",
+      "etiqueta": "Agua poco profunda",
+      "etiqueta_pt": "Água rasa",
+      "archivo_imagen": "assets/expedicion/pictogramas/R40.webp"
+    },
+    {
+      "id": "P_R41",
+      "tipo": "APOYO",
+      "etiqueta": "Cauce seco",
+      "etiqueta_pt": "Leito seco",
+      "archivo_imagen": "assets/expedicion/pictogramas/R41.webp"
+    },
+    {
+      "id": "P_R42",
+      "tipo": "APOYO",
+      "etiqueta": "Agua que fluye bajo tierra",
+      "etiqueta_pt": "Água que corre no subsolo",
+      "archivo_imagen": "assets/expedicion/pictogramas/R42.webp"
+    },
+    {
+      "id": "P_R43",
+      "tipo": "APOYO",
+      "etiqueta": "Luz solar bajo el agua",
+      "etiqueta_pt": "Luz do sol debaixo d’água",
+      "archivo_imagen": "assets/expedicion/pictogramas/R43.webp"
+    },
+    {
+      "id": "P_R44",
+      "tipo": "APOYO",
+      "etiqueta": "Lejos de la costa",
+      "etiqueta_pt": "Longe da costa",
+      "archivo_imagen": "assets/expedicion/pictogramas/R44.webp"
+    },
+    {
+      "id": "P_R45",
+      "tipo": "APOYO",
+      "etiqueta": "Poca luz bajo el agua",
+      "etiqueta_pt": "Pouca luz debaixo d’água",
+      "archivo_imagen": "assets/expedicion/pictogramas/R45.webp"
+    },
+    {
+      "id": "P_R46",
+      "tipo": "APOYO",
+      "etiqueta": "Agua muy profunda",
+      "etiqueta_pt": "Água muito profunda",
+      "archivo_imagen": "assets/expedicion/pictogramas/R46.webp"
+    },
+    {
+      "id": "P_R47",
+      "tipo": "APOYO",
+      "etiqueta": "Agua por encima del fondo",
+      "etiqueta_pt": "Água acima do fundo",
+      "archivo_imagen": "assets/expedicion/pictogramas/R47.webp"
+    },
+    {
+      "id": "P_R48",
+      "tipo": "APOYO",
+      "etiqueta": "Suelo del océano",
+      "etiqueta_pt": "Piso do oceano",
+      "archivo_imagen": "assets/expedicion/pictogramas/R48.webp"
+    },
+    {
+      "id": "P_R49",
+      "tipo": "APOYO",
+      "etiqueta": "Sedimento marino",
+      "etiqueta_pt": "Sedimento marinho",
+      "archivo_imagen": "assets/expedicion/pictogramas/R49.webp"
+    },
+    {
+      "id": "P_R50",
+      "tipo": "APOYO",
+      "etiqueta": "Bajo el agua",
+      "etiqueta_pt": "Debaixo d’água",
+      "archivo_imagen": "assets/expedicion/pictogramas/R50.webp"
+    },
+    {
+      "id": "P_R51",
+      "tipo": "APOYO",
+      "etiqueta": "Corales",
+      "etiqueta_pt": "Corais",
+      "archivo_imagen": "assets/expedicion/pictogramas/R51.webp"
+    },
+    {
+      "id": "P_R52",
+      "tipo": "APOYO",
+      "etiqueta": "Plantas sumergidas",
+      "etiqueta_pt": "Plantas submersas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R52.webp"
+    },
+    {
+      "id": "P_R53",
+      "tipo": "APOYO",
+      "etiqueta": "Hojas en cinta",
+      "etiqueta_pt": "Folhas em forma de fita",
+      "archivo_imagen": "assets/expedicion/pictogramas/R53.webp"
+    },
+    {
+      "id": "P_R54",
+      "tipo": "APOYO",
+      "etiqueta": "Algas altas",
+      "etiqueta_pt": "Algas altas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R54.webp"
+    },
+    {
+      "id": "P_R55",
+      "tipo": "APOYO",
+      "etiqueta": "Agua salobre",
+      "etiqueta_pt": "Água salobra",
+      "archivo_imagen": "assets/expedicion/pictogramas/R55.webp"
+    },
+    {
+      "id": "P_R56",
+      "tipo": "APOYO",
+      "etiqueta": "Desembocadura de río",
+      "etiqueta_pt": "Foz do rio",
+      "archivo_imagen": "assets/expedicion/pictogramas/R56.webp"
+    },
+    {
+      "id": "P_R57",
+      "tipo": "APOYO",
+      "etiqueta": "Barrera costera",
+      "etiqueta_pt": "Barreira costeira",
+      "archivo_imagen": "assets/expedicion/pictogramas/R57.webp"
+    },
+    {
+      "id": "P_R58",
+      "tipo": "APOYO",
+      "etiqueta": "Paso estrecho al mar",
+      "etiqueta_pt": "Passagem estreita para o mar",
+      "archivo_imagen": "assets/expedicion/pictogramas/R58.webp"
+    },
+    {
+      "id": "P_R59",
+      "tipo": "APOYO",
+      "etiqueta": "Barro",
+      "etiqueta_pt": "Lama",
+      "archivo_imagen": "assets/expedicion/pictogramas/R59.webp"
+    },
+    {
+      "id": "P_R60",
+      "tipo": "APOYO",
+      "etiqueta": "Olas sobre rocas",
+      "etiqueta_pt": "Ondas sobre rochas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R60.webp"
+    },
+    {
+      "id": "P_R61",
+      "tipo": "APOYO",
+      "etiqueta": "Marea baja",
+      "etiqueta_pt": "Maré baixa",
+      "archivo_imagen": "assets/expedicion/pictogramas/R61.webp"
+    },
+    {
+      "id": "P_R62",
+      "tipo": "APOYO",
+      "etiqueta": "Agua atrapada entre rocas",
+      "etiqueta_pt": "Água presa entre rochas",
+      "archivo_imagen": "assets/expedicion/pictogramas/R62.webp"
+    },
+    {
+      "id": "P_R63",
+      "tipo": "APOYO",
+      "etiqueta": "Arena mojada",
+      "etiqueta_pt": "Areia molhada",
+      "archivo_imagen": "assets/expedicion/pictogramas/R63.webp"
+    },
+    {
+      "id": "P_R64",
+      "tipo": "APOYO",
+      "etiqueta": "Montículos de arena",
+      "etiqueta_pt": "Montes de areia",
+      "archivo_imagen": "assets/expedicion/pictogramas/R64.webp"
+    },
+    {
+      "id": "P_R65",
+      "tipo": "APOYO",
+      "etiqueta": "Viento mueve arena",
+      "etiqueta_pt": "O vento move a areia",
+      "archivo_imagen": "assets/expedicion/pictogramas/R65.webp"
+    },
+    {
+      "id": "P_R66",
+      "tipo": "APOYO",
+      "etiqueta": "Pared de roca alta",
+      "etiqueta_pt": "Paredão rochoso",
+      "archivo_imagen": "assets/expedicion/pictogramas/R66.webp"
+    }
+  ]
+}

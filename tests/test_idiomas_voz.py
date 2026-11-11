@@ -219,7 +219,7 @@ class HTTP(unittest.TestCase):
         r = self.post("/api/idioma", idioma="pt-BR")
         self.assertEqual(200, r.status)
         self.v = json.loads(r.read())["vista"]
-        self.assertEqual("Floresta tropical", self.v["opciones_habitat"][0]["nombre"])
+        self.assertEqual("Floresta tropical úmida", self.v["opciones_habitat"][0]["nombre"])
         with patch.object(self.servidor.voz, "_disponible", return_value=False):
             r = self.post("/api/voz", idioma="pt-BR", voz="kokoro:pf_dora", prueba=True)
             self.assertEqual(503, r.status)

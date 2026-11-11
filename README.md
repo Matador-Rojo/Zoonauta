@@ -1,10 +1,10 @@
-# Zoonauta 4.4.0
+# Zoonauta 5.0.0
 
 Juego de animales y hábitats con pictogramas y una guía de inteligencia artificial.
 Disponible en español y portugués brasileño, con voces locales Piper y Kokoro
 y voces compatibles de Microsoft y Google del navegador.
 
-![Pantalla principal actual de Zoonauta](docs/interfaz/3.8/inicio.webp)
+![Pantalla principal de una versión anterior de Zoonauta](docs/interfaz/3.8/inicio.webp)
 
 ## Cómo se juega
 
@@ -12,8 +12,14 @@ Pulsa **Comenzar** y escoge **Yo elijo** o **El agente elige**.
 La guía lee «¿Quién elige el animal?» al abrir ese diálogo; al volver a la
 portada o comenzar otra partida no se reproduce esa pregunta. Cerrar el diálogo
 cancela la lectura.
-El catálogo permite elegir cualquiera de los 48 animales, en ocho páginas de seis,
-con búsqueda global por nombre. En modo agente, cada partida mezcla los 48 animales
+El catálogo permite elegir cualquiera de los 288 animales, con búsqueda global por
+nombre y páginas que se adaptan a la ventana. En escritorio, el panel izquierdo
+reúne título, progreso, búsqueda, páginas, Pausar y Salir; las tarjetas ocupan el
+resto de la pantalla. Conservan al menos 435 × 264 px: si caben menos, se muestran
+menos por página, sin reducir los animales. Una pantalla amplia muestra seis.
+En móvil o ventanas muy bajas se permite desplazamiento para conservar el contenido.
+La elección sigue siendo de un animal por reto y comienza al tocar su tarjeta.
+En modo agente, cada partida mezcla los 288 animales
 y presenta tantos como hayas elegido en Preferencias (de 1 a 48; ocho por defecto).
 No se repiten animales dentro de la partida y una nueva partida comienza con otro animal.
 Pausar, repetir o recargar conserva el orden de la partida en curso.
@@ -28,14 +34,18 @@ ni tarjetas cortadas. Cada tarjeta desaparece a los
 Créditos visuales, dentro de Preferencias, muestra la versión del programa.
 
 En **Preferencias → Hábitats para elegir** se pueden configurar **2, 4 u 8 opciones**
-(ocho por defecto). El educador elige la cantidad antes de comenzar. Cada reto incluye
-el hábitat guía y al menos una alternativa pendiente; los demás se mezclan sin
-duplicados. La respuesta válida no ocupa siempre la misma posición. Las opciones
-permanecen estables al pedir pistas, repetir, pausar o recargar la partida.
+(ocho por defecto). El juego toma las opciones de una lista de afinidad por animal.
+Primero incluye el hábitat principal y luego los secundarios documentados que
+quepan. Completa el panel con hábitats afines por el medio, la salinidad, el clima,
+la altitud y la vegetación, con ajustes para especies concretas. Cualquiera de los
+secundarios documentados que se muestren también permite completar el reto. Al
+pasar de 2 a 4 o a 8 opciones, se añaden hábitats a la misma lista de prioridades.
+Solo se mezcla su posición visual. Las opciones permanecen estables al pedir
+pistas, repetir, pausar o recargar la partida.
 
 Cada reto presenta el animal, una pregunta y los hábitats configurados. Las tarjetas usan paisajes
 realistas generados específicamente para ellas, con composición central, nombre y
-número del **01 al 08**. Las preguntas y pistas conservan sus secuencias de pictogramas,
+número del **01 al 48**. La guía ofrece tres pistas progresivas por hábitat, con pictogramas,
 con texto de apoyo y lectura en voz alta. Una selección pendiente ofrece una pista
 nueva automáticamente, sin castigo. **Pista** usa un foco; **Repetir** conserva el
 contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
@@ -48,22 +58,21 @@ No hay puntos competitivos ni límite de tiempo o intentos.
 
 En computadora, el tablero aprovecha el ancho y la altura disponibles, con un
 fondo continuo. El animal aparece grande y completo, con su nombre debajo; los
-cuatro controles quedan bajo él en dos filas. La guía y los ocho hábitats se
+cuatro controles quedan bajo él en dos filas. La guía y las tarjetas de hábitat se
 alinean a la derecha, con pictogramas y etiquetas más grandes. El tablero cabe
 sin scroll en las resoluciones probadas, incluidas 1024 × 768 y 1280 × 720.
 La cabecera, el logo y Preferencias quedan en el inicio; el pie se oculta durante
 el juego. En móvil se apila el contenido. Una ventana muy baja permite scroll
 para conservar imágenes, nombres y controles completos.
 
-Los 95 recursos educativos activos son ilustraciones originales con transparencia:
-48 animales, ocho símbolos de hábitat y 39 apoyos o controles. Cada animal tiene una
-única caricatura. Los 33 apoyos de comunicación renovados en 3.8 siguen el mismo estilo
-de la capibara aprobada: contornos definidos, colores naturales y sombreado suave.
+El catálogo web incluye seis animales de referencia por hábitat. Los recursos
+educativos activos son 288 ilustraciones de animales, 48 símbolos de hábitat,
+66 pictogramas nuevos de rasgos y 39 apoyos o controles del catálogo original.
 Explorar y Buscar tienen representaciones distintas. Los pictogramas de preguntas,
 pistas y controles se muestran sin recuadros blancos. Su comprensión CAA sigue
 pendiente de evaluación con usuarios de Kallpa.
 
-La portada conserva sus ocho paisajes y cambia de fondo cada diez segundos.
+La portada recorre los 48 paisajes y cambia de fondo cada diez segundos.
 Pausar actúa al pulsarlo; play o las flechas reanudan y reinician el intervalo.
 Preferencias y una pestaña inactiva suspenden temporalmente el carrusel.
 La interfaz se adapta a móvil y permite selección con teclado.
@@ -160,7 +169,12 @@ instalador; los pesos grandes se descargan al preparar el juego. Consulta
 
 ## Inteligencia artificial y revisión
 
-La interfaz carga el modelo sintético contextual R01 de
+La expedición ampliada usa tres pistas editadas por hábitat. Los secundarios
+documentados y los contrastes preferentes se guardan en
+[`datos/expedicion/animales.json`](datos/expedicion/animales.json). El conjunto
+de asociaciones secundarias todavía admite ampliaciones con respaldo.
+
+Con `--catalogo-original`, la interfaz carga el modelo sintético contextual R01 de
 `docs/experimentos/hito2/entrenamiento/modelos`, congelado, elegido como primera
 réplica y no por su rendimiento. El núcleo comparte las asociaciones y transiciones
 con consola y simulador. Las interacciones manuales se registran sin modificar los
@@ -182,8 +196,8 @@ Otros comandos desde esta carpeta, que contiene codigo, datos, docs, assets y te
 
 ```console
 python -m codigo.poc.consola --modalidad JUGADOR --retos 2
-python -m codigo.interfaz.servidor --politica ID3 --puerto 8001
-python -m codigo.interfaz.servidor --politica ROTACION --puerto 8002
+python -m codigo.interfaz.servidor --catalogo-original --politica ID3 --puerto 8001
+python -m codigo.interfaz.servidor --catalogo-original --politica ROTACION --puerto 8002
 python -m codigo.poc.consola --modalidad AGENTE --retos 2
 python -m codigo.entrenamiento.experimento --salida resultados_nuevos
 python -m codigo.entrenamiento.evaluar_demo --entrenamiento 15360 --salida resultados_nuevos/demo
@@ -241,8 +255,9 @@ apertura de una ventana y comprueba partidas completas en ambas modalidades con
 2, 4 y 8 opciones. Requiere Python y una carpeta sin `.venv-voz` ni `modelos_voz`.
 
 La revisión local pasó **96 pruebas Python**, los ocho casos de aceptación de
-consola y **47 casos de navegador**: 20 de revisión general, seis del modo 2/4/8
-en ambos idiomas, cinco de voces controladas y 16 de Preferencias y teclado.
+consola y **63 casos de navegador**: 20 de revisión general, seis del modo 2/4/8
+en ambos idiomas, cinco de voces controladas, 16 de Preferencias y teclado y
+16 del catálogo adaptable, incluidos ambos idiomas y conservación del foco.
 Las [evidencias del cierre](docs/experimentos/hito3/revision_cierre.json) conservan
 el alcance técnico y los pasos que requieren evaluación humana.
 El comprobador general libera los

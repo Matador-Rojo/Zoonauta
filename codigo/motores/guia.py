@@ -34,6 +34,7 @@ class MotorGuia:
         self.politica = politica
         self.arbol = ArbolID3(banco.perfiles_documento["items"],
                               banco.perfiles_documento["orden_desempate"])
+        self.nodo_inicial = self.arbol.raiz.id
         self.rutas = {h: self.arbol.ruta(p["atributos"]) for h, p in banco.perfiles.items()}
         for h, pasos in self.rutas.items():
             if len(pasos) != 2 or self.arbol.predecir(banco.perfiles[h]["atributos"]) != h:
@@ -125,4 +126,35 @@ class MotorGuia:
             ciclo = orden[inicio:] + orden[:inicio]
             return next(v for v in ciclo if v in elegibles), {"metodo": "ROTACION"}
         return min(elegibles, key=lambda v: (-probabilidades[v], v)), {"metodo": "MEDIA_POSTERIOR"}
+
+
+class MotorPistas:
+    """Presenta las tres pistas revisadas de cada hábitat del catálogo ampliado."""
+
+    politica = "PISTAS_PROGRESIVAS"
+    nodo_inicial = "INICIO_PISTAS"
+    parametros_congelados = True
+
+    def __init__(self, banco: BancoDatos):
+        self.banco = banco
+        self.modelo_version = banco.huellas["expedicion/pistas.json"]
+
+    def decidir(self, habitat_id: str, nivel: int, repeticion: int,
+                anteriores: dict[str, str], *, usadas: list[str] | None = None) -> tuple[dict, str, dict]:
+        comienzo = perf_counter_ns()
+        pista = self.banco.pistas_progresivas[habitat_id, nivel]
+        nodo = pista["id"]
+        return pista, nodo, {
+            "politica": self.politica, "metodo": "SECUENCIA_BASE",
+            "contexto": {"habitat_guia_id": habitat_id, "nivel": nivel,
+                         "repeticion_previa": repeticion},
+            "variante_elegida": pista["variante_id"],
+            "variante_anterior": anteriores.get(f"{habitat_id}:{nivel}"),
+            "variantes_elegibles": [pista["variante_id"]],
+            "variantes_usadas_reto": list(usadas or []),
+            "nodo_id": nodo, "estimaciones": {},
+            "modelo_estado": "PISTAS_EDITADAS",
+            "modelo_version": self.modelo_version, "parametros_congelados": True,
+            "tiempo_decision_ns": perf_counter_ns() - comienzo,
+        }
 

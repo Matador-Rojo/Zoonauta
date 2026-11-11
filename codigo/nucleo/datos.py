@@ -15,9 +15,14 @@ class ErrorDatos(ValueError):
 
 
 class BancoDatos:
-    def __init__(self, directorio: Path | str = DATOS_PREDETERMINADOS):
+    def __init__(self, directorio: Path | str = DATOS_PREDETERMINADOS, *, ampliado: bool = False):
         self.directorio = Path(directorio).resolve()
         self.huellas: dict[str, str] = {}
+        self.ampliado = ampliado
+        if ampliado:
+            from codigo.nucleo.catalogo import cargar_catalogo
+            cargar_catalogo(self)
+            return
         self.animales = self._indice("animales.json")
         self.habitats = self._indice("habitats.json")
         self.escenarios = self._indice("escenarios.json")

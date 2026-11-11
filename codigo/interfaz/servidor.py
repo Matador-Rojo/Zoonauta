@@ -22,12 +22,20 @@ class Servidor(ThreadingHTTPServer):
     daemon_threads = True
 
     def __init__(self, direccion, *, registros=None, politica="PROBABILISTICO",
-                 parametros=MODELO_DEMO):
-        self.banco = BancoDatos()
+                 parametros=MODELO_DEMO, ampliado=True):
+        self.banco = BancoDatos(ampliado=ampliado)
         for p in self.banco.pictogramas.values():
             archivo = p.get("archivo_imagen")
             if not archivo or not (RAIZ_PROYECTO / archivo).is_file():
                 raise ValueError(f"Falta el recurso visual {p['id']}.")
+        self.imagenes_habitat = {f"{h}.webp": (RAIZ_PROYECTO / datos["paisaje"]
+            if ampliado else RAIZ_PROYECTO / f"assets/paisajes/{h}.webp")
+            for h, datos in self.banco.habitats.items()}
+        if any(not archivo.is_file() for archivo in self.imagenes_habitat.values()):
+            raise ValueError("Falta un paisaje del catálogo.")
+        self.imagenes_animal = {f"{a['id']}.webp": RAIZ_PROYECTO /
+            self.banco.pictogramas[a["pictograma_id"]]["archivo_imagen"]
+            for a in self.banco.animales.values()}
         self.sesiones = {}
         self.voz = MotorVoz()
         self.lock = RLock()
@@ -91,12 +99,12 @@ class Manejador(BaseHTTPRequestHandler):
         if ruta in fijos:
             archivo, mime = fijos[ruta]
             self._enviar((Path(__file__).parent / "web" / archivo).read_bytes(), mime)
-        elif ruta.startswith("/animales/") and ruta.removeprefix("/animales/") in {f"A{i:02}.webp" for i in range(1, 49)}:
-            self._enviar((RAIZ_PROYECTO / "assets" / "animales" / ruta.removeprefix("/animales/")).read_bytes(), "image/webp")
+        elif ruta.startswith("/animales/") and ruta.removeprefix("/animales/") in self.server.imagenes_animal:
+            self._enviar(self.server.imagenes_animal[ruta.removeprefix("/animales/")].read_bytes(), "image/webp")
         elif ruta.startswith("/fondos/") and ruta.removeprefix("/fondos/") in {f"H0{i}.webp" for i in range(2, 9)}:
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
-        elif ruta.startswith("/habitats/") and ruta.removeprefix("/habitats/") in {f"H0{i}.webp" for i in range(1, 9)}:
-            self._enviar((RAIZ_PROYECTO / "assets" / "paisajes" / ruta.removeprefix("/habitats/")).read_bytes(), "image/webp")
+        elif ruta.startswith("/habitats/") and ruta.removeprefix("/habitats/") in self.server.imagenes_habitat:
+            self._enviar(self.server.imagenes_habitat[ruta.removeprefix("/habitats/")].read_bytes(), "image/webp")
         elif ruta in ("/ilustraciones/robot_despedida.webp", "/ilustraciones/robot_pausa.webp"):
             self._enviar((RAIZ_PROYECTO / "assets" / "ilustraciones" / ruta.removeprefix("/ilustraciones/")).read_bytes(), "image/webp")
         elif ruta == "/api/vista":
@@ -182,14 +190,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--puerto", type=int, default=8000)
     parser.add_argument("--abrir", action="store_true")
-    parser.add_argument("--politica", choices=["ID3", "ROTACION", "PROBABILISTICO"], default="PROBABILISTICO")
-    parser.add_argument("--parametros", type=Path, default=MODELO_DEMO)
+    parser.add_argument("--catalogo-original", action="store_true",
+                        help="Abre el banco experimental de 48 animales y ocho hábitats.")
+    parser.add_argument("--politica", choices=["ID3", "ROTACION", "PROBABILISTICO"], default="PROBABILISTICO",
+                        help="Política de guía para el catálogo original.")
+    parser.add_argument("--parametros", type=Path, default=MODELO_DEMO,
+                        help="Modelo de guía para el catálogo original.")
     parser.add_argument("--registros", type=Path, default=RAIZ_PROYECTO / "registros/interfaz")
     args = parser.parse_args()
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
-                         politica=args.politica, parametros=args.parametros)
+                         politica=args.politica, parametros=args.parametros,
+                         ampliado=not args.catalogo_original)
     url = f"http://127.0.0.1:{servidor.server_port}"
-    print(f"Zoonauta 4.4.0: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
+    print(f"Zoonauta 5.0.0: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:
         webbrowser.open(url)
     try:

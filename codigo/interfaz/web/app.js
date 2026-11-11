@@ -6,6 +6,8 @@ const eleccionesVoz={};
 const canalVoz=crypto.randomUUID();
 let carrusel = null, temporizadorPaisaje = null;
 let estadoCatalogo = {consulta:"", pagina:0, idioma:null};
+let ajustarCatalogo = null;
+window.addEventListener("resize",()=>ajustarCatalogo?.());
 
 const $ = id => document.getElementById(id);
 const juego = $("juego"), aviso = $("aviso");
@@ -158,8 +160,13 @@ function titulo(texto,sub,etiqueta="Tu expedición") {
   fila.append(izq,progreso); return fila;
 }
 function paisaje(habitat,clase="") {
-  const p=nodo("div","paisaje "+clase); p.dataset.habitat=habitat;
-  p.setAttribute("aria-hidden","true"); return p;
+  const p=nodo("img","paisaje "+clase);
+  p.alt=""; p.draggable=false; p.src="/habitats/"+habitat+".webp";
+  return p;
+}
+function fotoPortada(habitat) {
+  if(vista.catalogo_ampliado)return "/habitats/"+habitat+".webp";
+  return habitat==="H01"?"/portada-selva.webp":"/fondos/"+habitat+".webp";
 }
 function detenerCarrusel() { clearInterval(temporizadorPaisaje); temporizadorPaisaje=null; }
 function ritmoCarrusel() {
@@ -170,16 +177,16 @@ function ritmoCarrusel() {
 function cambiarPaisaje(paso) {
   if(!carrusel)return;
   const c=carrusel; c.indice=(c.indice+paso+c.paisajes.length)%c.paisajes.length;
-  const h=c.paisajes[c.indice],src=h.id==="H01"?"/portada-selva.webp":`/fondos/${h.id}.webp`;
-  c.foto.src=src; c.foto.dataset.habitat=h.id;
+  const h=c.paisajes[c.indice];
+  c.foto.src=fotoPortada(h.id); c.foto.dataset.habitat=h.id;
   c.numero.textContent=`${String(c.indice+1).padStart(2,"0")} / ${String(c.paisajes.length).padStart(2,"0")}`;
   c.nombre.textContent=h.nombre;
   c.navegacion.setAttribute("aria-label",t("Paisajes: {nombre}, {n} de {total}",{nombre:h.nombre,n:c.indice+1,total:c.paisajes.length}));
   c.pausa.setAttribute("aria-label",t(c.pausado?"Reanudar paisajes":"Pausar paisajes"));
   c.pausa.replaceChildren(icono(c.pausado?"reproducir":"pausa"));
-  // Cargar solo la siguiente fotografía. Las ocho imágenes son locales.
+  // Cargar solo la siguiente fotografía.
   const siguiente=c.paisajes[(c.indice+1)%c.paisajes.length];
-  const precarga=new Image(); precarga.src=siguiente.id==="H01"?"/portada-selva.webp":`/fondos/${siguiente.id}.webp`;
+  const precarga=new Image(); precarga.src=fotoPortada(siguiente.id);
 }
 function inicio() {
   const b=nodo("section","bienvenida"),foto=nodo("img","hero-paisaje");
@@ -188,7 +195,10 @@ function inicio() {
   texto.append(nodo("p","etiqueta","El mundo está esperando"));
   const h=nodo("h1"); h.id="titulo-pantalla"; h.tabIndex=-1;
   h.append(nodo("span","","Cada animal."),nodo("em","","Su mundo."));
-  texto.append(h,nodo("p","introduccion","48 animales. 8 hábitats. Descubre dónde viven con pictogramas y una guía que te acompaña."));
+  const nAnimales=vista.catalogo_animales.length,nHabitats=vista.opciones_habitat.length;
+  const introduccion=nodo("p","introduccion");
+  introduccion.textContent=t("{animales} animales. {habitats} hábitats. Descubre dónde viven con pictogramas y una guía que te acompaña.",{animales:nAnimales,habitats:nHabitats});
+  texto.append(h,introduccion);
   const entrada=nodo("div","entrada"),comenzar=nodo("button","modalidad comenzar");
   comenzar.type="button";comenzar.setAttribute("aria-label",t("Comenzar"));comenzar.setAttribute("aria-haspopup","dialog");
   comenzar.append(icono("reproducir","modo-icono"),nodo("span","","Comenzar"),icono("flecha","flecha"));
@@ -216,7 +226,7 @@ function inicio() {
   const siguiente=control("Siguiente paisaje","flecha",()=>manual(1));
   navegacion.append(anterior,pausa,siguiente);ficha.append(navegacion);layout.append(ficha);
   const resumen=nodo("div","resumen-inicio");
-  for(const [t,sub] of [["48","Animales por descubrir"],["08","Hábitats para explorar"],["A tu ritmo","Pistas, repetición y pausa"]]) {
+  for(const [t,sub] of [[String(nAnimales),"Animales por descubrir"],[String(nHabitats).padStart(2,"0"),"Hábitats para explorar"],["A tu ritmo","Pistas, repetición y pausa"]]) {
     const item=nodo("div","resumen-item");item.append(nodo("strong","",t),nodo("span","",sub));resumen.append(item);
   }
   b.append(foto,nodo("div","hero-sombra"),layout,resumen,selector);
@@ -245,14 +255,32 @@ function catalogoAnimales() {
   };
   const anterior=control("Anteriores","anterior",-1),siguiente=control("Siguientes","flecha",1);
   paginas.append(anterior,estado,siguiente);
+  let tamanoPagina=estadoCatalogo.tamano||6;
   function dibujar() {
+    const animalEnfocado=document.activeElement?.closest("#catalogo-animales button")?.dataset.animal;
     const consulta=normalizar(estadoCatalogo.consulta);
     const animales=vista.catalogo_animales.filter(a=>normalizar(a.nombre).includes(consulta));
-    const cantidadPaginas=Math.ceil(animales.length/6);
+    if(catalogo.isConnected){
+      const compacto=matchMedia("(min-width:1000px) and (min-height:660px)").matches;
+      const columnas=compacto?Math.min(3,Math.max(1,Math.floor((catalogo.clientWidth+18)/453))):3;
+      const filas=compacto?Math.min(3,Math.max(1,Math.floor((catalogo.clientHeight+18)/282))):2;
+      const nuevoTamano=compacto?Math.min(6,columnas*filas):6;
+      // Mantener el primer animal visible al cambiar de tamaño, sin perder la búsqueda.
+      if(nuevoTamano!==tamanoPagina){
+        const enfocado=animales.findIndex(a=>a.id===animalEnfocado);
+        estadoCatalogo.pagina=Math.floor((enfocado>=0?enfocado:estadoCatalogo.pagina*tamanoPagina)/nuevoTamano);
+      }
+      tamanoPagina=nuevoTamano;
+      estadoCatalogo.tamano=tamanoPagina;
+      catalogo.style.setProperty("--columnas-catalogo",String(columnas));
+      catalogo.style.setProperty("--filas-catalogo",String(Math.ceil(tamanoPagina/columnas)));
+    }
+    const cantidadPaginas=Math.ceil(animales.length/tamanoPagina);
     estadoCatalogo.pagina=Math.max(0,Math.min(estadoCatalogo.pagina,cantidadPaginas-1));
     catalogo.replaceChildren();
-    for(const a of animales.slice(estadoCatalogo.pagina*6,(estadoCatalogo.pagina+1)*6)) {
+    for(const a of animales.slice(estadoCatalogo.pagina*tamanoPagina,(estadoCatalogo.pagina+1)*tamanoPagina)) {
       const tarjeta=boton(a.nombre,"elegir_animal",{animal_id:a.id},"tarjeta");
+      tarjeta.dataset.animal=a.id;
       const visual=nodo("div","animal-imagenes");
       visual.append(imagen(a.pictograma_id));
       tarjeta.prepend(visual);
@@ -264,8 +292,10 @@ function catalogoAnimales() {
     anterior.disabled=estadoCatalogo.pagina===0;
     siguiente.disabled=estadoCatalogo.pagina>=cantidadPaginas-1;
     paginas.hidden=animales.length===0; vacia.hidden=animales.length!==0;
+    if(animalEnfocado)[...catalogo.querySelectorAll("button")].find(b=>b.dataset.animal===animalEnfocado)?.focus({preventScroll:true});
   }
   input.addEventListener("input",()=>{estadoCatalogo.consulta=input.value;estadoCatalogo.pagina=0;dibujar();});
+  ajustarCatalogo=dibujar;
   dibujar();return [barra,catalogo,paginas,vacia];
 }
 function cierre(fase) {
@@ -292,7 +322,7 @@ function cierre(fase) {
 function render(enfocar=false,conservarPaisaje=false) {
   const previo=conservarPaisaje&&carrusel?{indice:carrusel.indice,pausado:carrusel.pausado}:null;
   if(aviso.parentElement?.closest("#juego"))document.body.append(aviso);
-  detenerCarrusel(); carrusel=null;idiomaPantalla();
+  detenerCarrusel(); carrusel=null;ajustarCatalogo=null;idiomaPantalla();
   const foco=document.activeElement?.dataset?.clave; juego.replaceChildren(); juego.setAttribute("aria-busy","false");
   const f=vista.fase; document.body.dataset.fase=f;
   if(f!=="INICIO")$("cantidad-opciones").value=String(vista.cantidad_opciones);
@@ -322,7 +352,7 @@ function render(enfocar=false,conservarPaisaje=false) {
     const lateral=nodo("div","panel-animal"); lateral.append(companero,controles());
     opciones.append(hab); tablero.append(lateral,mesa,opciones); juego.append(tablero);
   }
-  ubicarAviso();
+  ajustarCatalogo?.();ubicarAviso();
   if(enfocar) {
     const igual=[...juego.querySelectorAll("button")].find(b=>b.dataset.clave===foco&&!b.disabled);
     (igual||$("titulo-pantalla")||juego.querySelector("h1")||juego.querySelector("button"))?.focus({preventScroll:true});

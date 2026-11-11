@@ -2,6 +2,10 @@
 
 Versión 4.4.0.
 
+Esta guía documenta la interfaz del catálogo original. El inicio habitual
+abre la expedición de 288 animales y 48 hábitats, descrita en el
+[manual de usuario](manual_usuario.md).
+
 ## 1. Qué está implementado
 
 La interfaz convierte clics o toques en eventos del mismo `GestorPartida` utilizado
@@ -11,7 +15,7 @@ el generador; la evaluación de asociaciones y la selección de ayudas las hace 
 | Elemento | Comportamiento disponible |
 |---|---|
 | Portada | Un único botón principal Comenzar abre la elección de modalidad. Volver al inicio o Escape cierran esa elección sin iniciar la partida. |
-| Inicio del jugador | Muestra seis animales por página; ocho páginas permiten elegir cualquiera de los 48. |
+| Inicio del jugador | En escritorio aprovecha la pantalla con controles a la izquierda y tarjetas de al menos 435 × 264 px a la derecha. Ajusta la cantidad por página para acceder a los 48 sin reducir las ilustraciones; las pantallas amplias muestran seis. |
 | Inicio del agente | Mezcla los 48 animales al preparar cada partida, sin repeticiones; el primer animal cambia al comenzar otra partida. |
 | Búsqueda | Filtra los 48 animales por nombre, sin distinguir mayúsculas o tildes. |
 | Páginas | Anteriores y Siguientes recorren los resultados sin modificar el reto ni el progreso. Buscar vuelve a la primera página; pausar y reanudar conservan la página. |
@@ -68,8 +72,8 @@ la preparación termine correctamente y no abre el juego.
 Para comparar políticas con el entorno ya preparado, utiliza su ejecutable Python:
 
 ```console
-.venv-voz\Scripts\python.exe -m codigo.interfaz.servidor --abrir --politica ID3 --puerto 8767
-.venv-voz\Scripts\python.exe -m codigo.interfaz.servidor --abrir --politica ROTACION --puerto 8768
+.venv-voz\Scripts\python.exe -m codigo.interfaz.servidor --catalogo-original --abrir --politica ID3 --puerto 8767
+.venv-voz\Scripts\python.exe -m codigo.interfaz.servidor --catalogo-original --abrir --politica ROTACION --puerto 8768
 ```
 
 En Linux/macOS usa `.venv-voz/bin/python`. Para cargar otro modelo congelado
@@ -194,7 +198,7 @@ Actualizar allí solo consulta el registro.
 ## 6. Recorrido para la demostración
 
 1. Abre Preferencias, selecciona un reto y prueba una voz española disponible.
-2. Pulsa Comenzar y luego Yo elijo. Muestra las páginas de seis animales y la búsqueda global.
+2. Pulsa Comenzar y luego Yo elijo. Muestra las páginas adaptadas a la ventana y la búsqueda global; una pantalla amplia muestra seis animales.
 3. Busca Capibara o ronsoco y selecciónala. Aparecen los ocho hábitats.
 4. Pulsa Pista y Repetir. Se conserva la pista, secuencia y texto de voz.
 5. Pulsa Pausar y Reanudar. El reto y la ayuda siguen vigentes.

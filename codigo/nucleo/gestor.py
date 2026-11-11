@@ -7,7 +7,7 @@ from dataclasses import asdict
 from random import Random
 from uuid import uuid4
 
-from codigo.motores.guia import MotorGuia
+from codigo.motores.guia import MotorGuia, MotorPistas
 from codigo.nucleo.datos import BancoDatos
 from codigo.nucleo.estado import Estado, Evento, PAUSABLES, Respuesta, Salida, TERMINALES
 from codigo.nucleo.registro import Registro
@@ -15,10 +15,10 @@ from codigo.respuestas.generador import GeneradorRespuestas
 
 
 class GestorPartida:
-    def __init__(self, banco: BancoDatos, retos: int | None = None, politica: str = "ID3",
+    def __init__(self, banco: BancoDatos, retos: int | None = None, politica: str | None = None,
                  orden_escenarios: list[str] | None = None, origen: str = "CONSOLA_MANUAL",
                  sesion_id: str | None = None, registro: Registro | None = None,
-                 motor: MotorGuia | None = None, traza_completa: bool = True,
+                 motor: MotorGuia | MotorPistas | None = None, traza_completa: bool = True,
                  ayuda_en_pendiente: bool = False, cantidad_opciones: int = 8,
                  semilla_opciones: int | str | None = None):
         self.banco = banco
@@ -43,7 +43,11 @@ class GestorPartida:
         self.ayuda_en_pendiente = ayuda_en_pendiente
         self.sesion_id = sesion_id or f"S-{uuid4().hex}"
         self.estado = Estado()
-        self.motor = motor if motor is not None else MotorGuia(banco, politica)
+        if politica is None:
+            politica = MotorPistas.politica if banco.ampliado else "ID3"
+        if motor is None:
+            motor = MotorPistas(banco) if banco.ampliado else MotorGuia(banco, politica)
+        self.motor = motor
         if self.motor.banco is not banco or self.motor.politica != politica:
             raise ValueError("El motor debe compartir el banco y la política del gestor.")
         self.generador = GeneradorRespuestas(banco)
@@ -226,19 +230,24 @@ class GestorPartida:
         escenario = self.banco.escenario_por_animal[animal_id]
         s.animal_id = animal_id
         s.habitat_guia_id = escenario["habitat_guia_id"]
-        s.nodo_id = self.motor.arbol.raiz.id
+        s.nodo_id = self.motor.nodo_inicial
         s.numero_reto += 1
         s.reto_id = f"{self.sesion_id}-R{s.numero_reto:02d}"
-        orden = list(self.banco.configuracion["orden_habitats"])
-        if self.cantidad_opciones < 8:
+        if self.banco.ampliado or self.cantidad_opciones < 8:
             clave = s.reto_id if self.semilla_opciones is None else f"{self.semilla_opciones}:{animal_id}"
             semilla = int.from_bytes(hashlib.sha256(clave.encode()).digest()[:8], "big")
             azar = Random(semilla)
-            pendientes = [h for h in orden if self.banco.evaluar(animal_id, h)["estado"] == "PENDIENTE"]
-            contraste = azar.choice(pendientes)
-            orden = [s.habitat_guia_id, contraste] + azar.sample(
-                [h for h in orden if h not in (s.habitat_guia_id, contraste)], self.cantidad_opciones - 2)
+            if self.banco.ampliado:
+                orden = list(self.banco.opciones_ordenadas[animal_id][:self.cantidad_opciones])
+            else:
+                orden = self.banco.configuracion["orden_habitats"]
+                pendientes = [h for h in orden if self.banco.evaluar(animal_id, h)["estado"] == "PENDIENTE"]
+                contraste = azar.choice(pendientes)
+                orden = [s.habitat_guia_id, contraste] + azar.sample(
+                    [h for h in orden if h not in (s.habitat_guia_id, contraste)], self.cantidad_opciones - 2)
             azar.shuffle(orden)
+        else:
+            orden = list(self.banco.configuracion["orden_habitats"])
         s.opciones_habitat = orden
         s.fase = "PRESENTACION"
 
