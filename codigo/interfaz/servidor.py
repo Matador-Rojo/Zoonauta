@@ -17,6 +17,9 @@ from codigo.interfaz.voz import LecturaCancelada, MotorVoz, VozNoDisponible
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import TERMINALES
 
+FONDOS_PORTADA = {f"H{i:02}.webp" for i in range(1, 49)}
+FONDOS_HISTORICOS = {f"H0{i}.webp" for i in range(2, 9)}
+
 
 class Servidor(ThreadingHTTPServer):
     daemon_threads = True
@@ -101,7 +104,9 @@ class Manejador(BaseHTTPRequestHandler):
             self._enviar((Path(__file__).parent / "web" / archivo).read_bytes(), mime)
         elif ruta.startswith("/animales/") and ruta.removeprefix("/animales/") in self.server.imagenes_animal:
             self._enviar(self.server.imagenes_animal[ruta.removeprefix("/animales/")].read_bytes(), "image/webp")
-        elif ruta.startswith("/fondos/") and ruta.removeprefix("/fondos/") in {f"H0{i}.webp" for i in range(2, 9)}:
+        elif ruta.startswith("/fondos/catalogo/") and ruta.removeprefix("/fondos/catalogo/") in FONDOS_PORTADA:
+            self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
+        elif ruta.startswith("/fondos/") and ruta.removeprefix("/fondos/") in FONDOS_HISTORICOS:
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
         elif ruta.startswith("/habitats/") and ruta.removeprefix("/habitats/") in self.server.imagenes_habitat:
             self._enviar(self.server.imagenes_habitat[ruta.removeprefix("/habitats/")].read_bytes(), "image/webp")

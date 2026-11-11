@@ -38,7 +38,8 @@ async function clicar(page,nombre){
    const opciones=(await vista(page)).opciones_habitat;
    await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
    assert.equal(new Set(opciones.map(h=>h.id)).size,n);
-   assert.deepEqual(await page.locator('.habitat-numero').allTextContents(),opciones.map(h=>h.id.slice(1)));
+   assert.equal(await page.locator('.habitat-numero').count(),0);
+   assert.deepEqual(await page.locator('.habitats button').evaluateAll(botones=>botones.map(b=>b.dataset.habitat)),opciones.map(h=>h.id));
    for(const [width,height] of [[1024,768],[1280,720],[1920,1080],[390,844]]){
     await page.setViewportSize({width,height});
     const medidas=await page.evaluate(()=>({ancho:document.documentElement.scrollWidth<=innerWidth,

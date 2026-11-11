@@ -74,12 +74,19 @@ body:not([data-fase="INICIO"]) {
 .habitats-panel { grid-column:1/-1; min-width:0; }
 .habitats { gap:14px; }
 .habitats .tarjeta { width:100%; min-width:0; min-height:190px; aspect-ratio:4/3; border-radius:20px; background:#1b3628; border-color:#ffffff28; transition:transform .18s ease; }
-.habitats .tarjeta .paisaje { height:100%; object-fit:cover; object-position:center; opacity:1; }
-.habitats .tarjeta::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#061d16ed 0%,#061d1640 40%,transparent 70%); pointer-events:none; }
-.habitats .tarjeta>span:not(.habitat-numero) { position:absolute; bottom:0; left:0; min-height:0; background:transparent; border:0; padding:18px 16px; justify-content:flex-start; color:#fff; font-size:17px; font-weight:600; text-align:left; text-shadow:0 2px 8px #0009; }
-.habitats .tarjeta .habitat-numero { position:absolute; top:12px; right:12px; left:auto; bottom:auto; width:auto; min-height:0; padding:4px 8px; border:1px solid #ffffff30; border-radius:8px; background:#071a13b3; color:#fff; font-size:12px; font-weight:600; line-height:1.2; letter-spacing:1px; font-variant-numeric:tabular-nums; pointer-events:none; }
+.habitats .tarjeta .paisaje {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;
+  padding:0; border:0; border-radius:0; background:transparent;
+}
+.habitats .tarjeta>span {
+  position:absolute; inset:auto 0 0; min-height:0; border:0; padding:28px 16px 16px;
+  justify-content:flex-start; color:#fff; font-size:17px; font-weight:600;
+  text-align:left; text-shadow:0 2px 6px #0009;
+}
+.habitats .tarjeta>span,.habitats .tarjeta:hover:not(:disabled)>span {
+  background:linear-gradient(to top,#061d16f5,#061d16de calc(100% - 24px),transparent);
+}
 .habitats .tarjeta:hover:not(:disabled) { transform:translateY(-2px); }
-.habitats .tarjeta:hover:not(:disabled)>span:not(.habitat-numero) { background:transparent; }
 .acciones { padding:16px 0 0; background:none; border:0; border-top:1px solid #ffffff20; border-radius:0; margin-top:24px; gap:12px; }
 .accion { border-radius:999px; min-height:50px; background:#ffffff05; font-size:14px; padding:12px 20px; border-color:#ffffff30; }
 .accion svg { width:19px; height:19px; flex-shrink:0; }
@@ -108,7 +115,7 @@ body:not([data-fase="INICIO"]) {
   .animal-actual { grid-template-columns:75px minmax(0,1fr); }
   .animal-retrato { width:75px; height:115px; }
   .animal-actual strong { font-size:22px; }
-  .habitats .tarjeta>span:not(.habitat-numero) { font-size:15px; }
+  .habitats .tarjeta>span { font-size:15px; }
   .cierre { gap:24px; padding:24px; }
 }
 @media (max-width:850px) {
@@ -149,7 +156,7 @@ body:not([data-fase="INICIO"]) {
   .simbolo img { width:84px; height:84px; }
   .habitats { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
   .habitats .tarjeta { min-height:130px; aspect-ratio:1; }
-  .habitats .tarjeta>span:not(.habitat-numero) { font-size:15px; padding:16px 12px; }
+  .habitats .tarjeta>span { font-size:15px; padding-inline:12px; }
   .acciones { gap:10px; }
   .accion { padding:11px 14px; min-height:50px; }
   .cierre { padding:20px 24px 32px; border-radius:26px; margin:4px auto 30px; }
@@ -225,7 +232,7 @@ body:has(.tablero) #juego { max-width:none; padding:24px clamp(20px,2.5vw,48px);
 .panel-animal .accion.salir { margin-left:0; }
 .tablero .habitats { flex:1; grid-template-rows:repeat(2,minmax(120px,1fr)); gap:16px; }
 .tablero .habitats .tarjeta { min-height:120px; height:100%; aspect-ratio:auto; }
-.tablero .habitats .tarjeta>span:not(.habitat-numero) { font-size:clamp(16px,1.2vw,20px); padding:16px; }
+.tablero .habitats .tarjeta>span { font-size:clamp(16px,1.2vw,20px); }
 .tablero .instruccion { font-size:16px; }
 .tablero .companero { flex:1; min-height:0; display:flex; flex-direction:column; padding:20px; }
 .tablero .animal-actual { flex:1; min-height:0; display:flex; flex-direction:column; align-items:center; gap:12px; padding:0; text-align:center; }

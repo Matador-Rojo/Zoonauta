@@ -146,8 +146,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 17448,
-      "sha256": "e68557ed28c0e430c763c77c22125cd9f1dd21aa44437d1d3cfd9b57376db3d2"
+      "bytes": 17543,
+      "sha256": "492074faa5a27398b875bb10440a68131767a143f2cd494307685f3a6c5ae14e"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 11888,
-      "sha256": "39ceb3c47463eba0753fcdf82e35255505e1b766853c1400fdba1e24187f923a"
+      "bytes": 12200,
+      "sha256": "c504b6555a77bec1b221d0b53a555d84a4273d50dd4c352827e8a0418b8d5010"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -766,18 +766,18 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 34205,
-      "sha256": "6aa49a47ace2415c6396e0f807abc338c95c2a42a90e5dbaffc847e01bf59844"
+      "bytes": 33938,
+      "sha256": "5f3695973d1d4cac22361e5eaa2a122906dcb78f3b85a7ecf1be9ffbd1ea6812"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
-      "bytes": 28374,
-      "sha256": "012519fc813743c70b57bd9d917f7f60671bd7d1d7b44dfb7f16e52e31b2054c"
+      "bytes": 27617,
+      "sha256": "5555e4e922a9fc7949f2bc0c15fb4abe20dd96ed860381e42d8929dce0ea7255"
     },
     {
       "ruta": "codigo/interfaz/web/expedicion.css",
-      "bytes": 24858,
-      "sha256": "409e0003ac5b44f9791ae7516e86acfc862eabc8f34e60a63881371cc3a6c157"
+      "bytes": 24387,
+      "sha256": "ebe06740c6d0af874d8d443c7b58ff1c598fc63c243ef1637ba3499aa3f84b3d"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/H02.webp",
@@ -1036,8 +1036,8 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 29876,
-      "sha256": "9b43a88e50744b4b8560c779504996132d1ae3488fef990f6fe226dce98b3da2"
+      "bytes": 29844,
+      "sha256": "ff3a3bd611ce66ff0db94addefaaf5d8e610ac859854b99ec4bbc7a3ece663dd"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
@@ -2606,8 +2606,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 2034,
-      "sha256": "3d61cd9a98962fa392b00b3b5ad7503a9d64ead4e01b16d5feb4fc0775890bfe"
+      "bytes": 2248,
+      "sha256": "182acce79706816fa11d285ebb4e9a01f7d0fa04dacbefeb5f54f9eb4ae580e9"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -2671,8 +2671,8 @@
     },
     {
       "ruta": "tests/verificar_hito2.cjs",
-      "bytes": 4996,
-      "sha256": "5ae0e1f8214e690cd05017cfc484e2d029d9d5e3c35b965d9220da8bf83391aa"
+      "bytes": 5092,
+      "sha256": "06056cd2f08d726e64440b2788fb40f5beaa4e56fcf2db43a0e19b14e9a4a329"
     },
     {
       "ruta": "tests/verificar_hito3.cjs",
@@ -2681,8 +2681,8 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 56506,
-      "sha256": "4b1d1ddd541b9de8b252b84707202cb2f5a9ebcf5601a30ae210284c72d9d2c3"
+      "bytes": 56790,
+      "sha256": "dc95a094f0be6f651ed960417a2701059b19bafc029c9ed8a0c8b4101ea0f6ee"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
@@ -4973,6 +4973,251 @@
       "ruta": "datos/expedicion/pistas.json",
       "bytes": 63279,
       "sha256": "5ee90d42aa850af4df2b0d00ec6f28c9020a693e136eefff409214d2f41864f5"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H01.webp",
+      "bytes": 345636,
+      "sha256": "5ff8445ed0da9ae1e7ab11a58d80bd8dad903aaaf88ef04712dfcb1fb7aee728"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H02.webp",
+      "bytes": 834622,
+      "sha256": "b1b30b02dfe429d8ed2162b0956f0f099d211ea562b021cc26ea5e8c1fff4320"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H03.webp",
+      "bytes": 511116,
+      "sha256": "5e8c4d4fe173e142e4841e9f0724876f496b3e8ac921a8b996c1453f5d1092c3"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H04.webp",
+      "bytes": 641758,
+      "sha256": "e1be38d7ffed531160ede6f59f77ccc62f5d2f51c9102edfe8e7e02aea7ffea8"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H05.webp",
+      "bytes": 500388,
+      "sha256": "ad1a162943b4d87b889c5618f7d3b646185662c448aae5e78224ea849d3b5061"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H06.webp",
+      "bytes": 524386,
+      "sha256": "11e570b80949605006b907838c18319f8c9fe76e6ebb159e4b1e0affaf9c9349"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H07.webp",
+      "bytes": 543376,
+      "sha256": "4202c01b1cad68b868e882102da6d8d19a0e44cf5e8f086c61aea687b2b032eb"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H08.webp",
+      "bytes": 476234,
+      "sha256": "ae1c74d4ce562d1aa00f691a065e87efd7578e4611c887d5fca74cbba06caa46"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H09.webp",
+      "bytes": 246710,
+      "sha256": "396852b5079f6130070a3e6863966d26c99e8130f8fec4c4cd958aa90180ead9"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H10.webp",
+      "bytes": 503732,
+      "sha256": "a6dca555bfcefb3a8f9fb79fc42a44680466dc30c1c09f683a597b60b16e9051"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H11.webp",
+      "bytes": 452614,
+      "sha256": "7ee3770176bf1430141a17899630cbcb384deea4b8a8b8e3533bd8a0b326290e"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H12.webp",
+      "bytes": 533270,
+      "sha256": "c86716632083920a804e189e1b1e59769199e0f4abb68645e9660a7a0a4dd74d"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H13.webp",
+      "bytes": 580720,
+      "sha256": "a8f72543d1d06ac2fde46c546b8da4256ecaa969f729612a2749d4309f6c66bf"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H14.webp",
+      "bytes": 592206,
+      "sha256": "387dbc3bb60ec0d0d039beea4a418801d67696dcba44dfafdd797fcf10366fb5"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H15.webp",
+      "bytes": 441358,
+      "sha256": "03b13afc0e669963bab673e1bfcf5bfa8e6880c0eed28dcfa23d2c70248fa69b"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H16.webp",
+      "bytes": 627006,
+      "sha256": "332eafdaa6c6c8a87ab480b29240ebecb8af76d846382a99c0e8549d42298eb4"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H17.webp",
+      "bytes": 193412,
+      "sha256": "07b6f25a6ffaf7e6910f10526a950f31d2dbf18cdd0637a00ceb04b98f638c71"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H18.webp",
+      "bytes": 435094,
+      "sha256": "3a043298e875e9a2c15a6129d123ad525cedde1b2ac0d1a9b1fcae1131c35f2f"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H19.webp",
+      "bytes": 626058,
+      "sha256": "27c4e343218e406306c0c2a1bb4ce15061de9617c6dd8b2b64fe0b0056313301"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H20.webp",
+      "bytes": 236602,
+      "sha256": "a4e7574cc6de5be956805b64dc70694d7f8a57a6103a37e9de497d663e6b92b6"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H21.webp",
+      "bytes": 475770,
+      "sha256": "71c9149b9ced5785b363770419bc2d3e37774fadedb6f711c4ac869382ae5d81"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H22.webp",
+      "bytes": 276996,
+      "sha256": "873fe556c32ca32eed52a6b22aa39663f846d4d39ad3e456d514d68cbedffae3"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H23.webp",
+      "bytes": 441750,
+      "sha256": "6d74345b1946ce414636ab47711b489d23ac26f485f73f38ad28b1eebcf340ee"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H24.webp",
+      "bytes": 609870,
+      "sha256": "1a4df29851e56831cb754fff0187c5e6ac586a24e2405c388e9b7253ef3fac52"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H25.webp",
+      "bytes": 474514,
+      "sha256": "4bcc234c9bc47a0d6c799282467c52e8b8c89451b71a6018fe36d7b8d32313f2"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H26.webp",
+      "bytes": 571662,
+      "sha256": "788cf819d4a662af36aa185e07cb6594edb02ff602a3093ba3e0db6de2c05e12"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H27.webp",
+      "bytes": 459512,
+      "sha256": "534eae5fc724691ae24a408f9edcef40da268cb71c1311163b9bfde0613b047f"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H28.webp",
+      "bytes": 516508,
+      "sha256": "285cb712bb4b15afbf38ec4bb07d98cb592da00075820c51a2983f0d9a7da7d9"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H29.webp",
+      "bytes": 607088,
+      "sha256": "034e5bb09d1474ada82b2aca17f6598de8e79ba1acd64ac493bac63f791da97c"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H30.webp",
+      "bytes": 590728,
+      "sha256": "a4362eda9f11c9943855ee367045aeafb4e9ebf02c2f690f6bbcd76ee42d12f1"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H31.webp",
+      "bytes": 377038,
+      "sha256": "d13f209ed25f842cf39fe717161078418e7a4b7d5e0fb8fba3492b04ee0e11d2"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H32.webp",
+      "bytes": 394368,
+      "sha256": "3bf1678e69ac275b60ff5855a36e6aa6b9fc29edaaa03b7f792538e8899e5051"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H33.webp",
+      "bytes": 355728,
+      "sha256": "5cd140a20829460094a094e487522402309c4a1608db885d8b9d564348cb212e"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H34.webp",
+      "bytes": 381856,
+      "sha256": "733cba11747e604f817e7293f66b767f846a9b8f1b9604f2a15b439a94449dab"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H35.webp",
+      "bytes": 169352,
+      "sha256": "69d75d7198e107ae058447967ebc57900e40bc5b961105389ac55366824c3df7"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H36.webp",
+      "bytes": 376566,
+      "sha256": "90b6a751cd6af3723b7634a07258f2b1313ceea2e727caa962f140e7213eeb88"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H37.webp",
+      "bytes": 341318,
+      "sha256": "515b4debce43dc88894388fc39cab2207b9c32a68a39124fb325800e764aa81a"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H38.webp",
+      "bytes": 390048,
+      "sha256": "c94a24640c4325e4b1554fd917256fcaf2e276a02601d613fbef21c5919e4df7"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H39.webp",
+      "bytes": 310646,
+      "sha256": "7bf431274429f9a9f868c479c50387da9535c03fae944ceb52db0f6dc2f5586e"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H40.webp",
+      "bytes": 426996,
+      "sha256": "e0b5934e629f3471d61412816e2ec78949b44b7b760bcca8a4a14e3d658717e9"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H41.webp",
+      "bytes": 402964,
+      "sha256": "8e89e2b743de1a6a8889c72c9d80bcf9905d92540ce34e2e3025c12ef3a2ebed"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H42.webp",
+      "bytes": 336074,
+      "sha256": "ccd9be75edb7044ffc0ee0c93f1381f102e1269bae0c6b665167c434d330826d"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H43.webp",
+      "bytes": 453656,
+      "sha256": "7f5b8f065eecd9515c09e601d54db23c66f5e153b8ab5e89494dcdd0e78370d1"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H44.webp",
+      "bytes": 526570,
+      "sha256": "bfa0da57476ad2e6dee8adb22cdfea79a56291d41d19eaae9d19569284cf2b06"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H45.webp",
+      "bytes": 531718,
+      "sha256": "09d9e5b491c35887e31d393765c865434d4171ec131b8bb065049afce38ce6c7"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H46.webp",
+      "bytes": 400740,
+      "sha256": "aa7a434b98b8fdd2701d373392f085469f508cb8c922ff0562ce3654ddf6f5d2"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H47.webp",
+      "bytes": 407636,
+      "sha256": "e7e9a843a9d5d28ef25fa770c895da0d305696bbd43ac52848912ea8db2c8dca"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/catalogo/H48.webp",
+      "bytes": 404072,
+      "sha256": "022cc982cde0e952438666ce79a967c073602335ee7f8c5747e00d46efe46d3d"
+    },
+    {
+      "ruta": "tests/verificar_portada.cjs",
+      "bytes": 2626,
+      "sha256": "6330c5a99f7df8fc439c7315fcf442ebaacb1332dc5c3473e4469ca89e185254"
     }
   ],
   "nombre_proyecto": "Zoonauta",
@@ -4983,6 +5228,7 @@
     "paisajes": 48,
     "pictogramas": 441,
     "pistas": 144,
-    "asociaciones_secundarias_documentadas": 31
+    "asociaciones_secundarias_documentadas": 31,
+    "fondos_portada": 48
   }
 }

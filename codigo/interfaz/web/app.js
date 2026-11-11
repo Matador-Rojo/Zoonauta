@@ -159,14 +159,17 @@ function titulo(texto,sub,etiqueta="Tu expedición") {
   barra.setAttribute("aria-label",t("Progreso de la partida")); progreso.append(barra);
   fila.append(izq,progreso); return fila;
 }
-function paisaje(habitat,clase="") {
-  const p=nodo("img","paisaje "+clase);
+function paisaje(habitat) {
+  const p=nodo("img","paisaje");
   p.alt=""; p.draggable=false; p.src="/habitats/"+habitat+".webp";
   return p;
 }
-function fotoPortada(habitat) {
-  if(vista.catalogo_ampliado)return "/habitats/"+habitat+".webp";
-  return habitat==="H01"?"/portada-selva.webp":"/fondos/"+habitat+".webp";
+function paisajesPortada() {
+  const fondosOriginales=["H01","H09","H17","H37","H04","H23","H22","H20"];
+  return vista.opciones_habitat.map((habitat,indice)=>({
+    ...habitat,
+    imagen:`/fondos/catalogo/${vista.catalogo_ampliado?habitat.id:fondosOriginales[indice]}.webp`
+  }));
 }
 function detenerCarrusel() { clearInterval(temporizadorPaisaje); temporizadorPaisaje=null; }
 function ritmoCarrusel() {
@@ -178,15 +181,14 @@ function cambiarPaisaje(paso) {
   if(!carrusel)return;
   const c=carrusel; c.indice=(c.indice+paso+c.paisajes.length)%c.paisajes.length;
   const h=c.paisajes[c.indice];
-  c.foto.src=fotoPortada(h.id); c.foto.dataset.habitat=h.id;
-  c.numero.textContent=`${String(c.indice+1).padStart(2,"0")} / ${String(c.paisajes.length).padStart(2,"0")}`;
+  c.foto.src=h.imagen; c.foto.dataset.habitat=h.id;
   c.nombre.textContent=h.nombre;
-  c.navegacion.setAttribute("aria-label",t("Paisajes: {nombre}, {n} de {total}",{nombre:h.nombre,n:c.indice+1,total:c.paisajes.length}));
+  c.navegacion.setAttribute("aria-label",t("Paisajes: {nombre}",{nombre:h.nombre}));
   c.pausa.setAttribute("aria-label",t(c.pausado?"Reanudar paisajes":"Pausar paisajes"));
   c.pausa.replaceChildren(icono(c.pausado?"reproducir":"pausa"));
   // Cargar solo la siguiente fotografía.
   const siguiente=c.paisajes[(c.indice+1)%c.paisajes.length];
-  const precarga=new Image(); precarga.src=fotoPortada(siguiente.id);
+  const precarga=new Image(); precarga.src=siguiente.imagen;
 }
 function inicio() {
   const b=nodo("section","bienvenida"),foto=nodo("img","hero-paisaje");
@@ -216,8 +218,8 @@ function inicio() {
   selector.addEventListener("close",()=>{ubicarAviso();if(vista.fase==="INICIO")pararVoz();comenzar.focus({preventScroll:true});ritmoCarrusel();});
   const nota=nodo("p","inicio-nota"); nota.append(icono("reloj"),nodo("span","","Sin reloj. Con ayuda. A tu ritmo."));
   entrada.append(comenzar,nota); texto.append(entrada); layout.append(texto);
-  const ficha=nodo("div","hero-ficha"),numero=nodo("span","ficha-numero"),nombre=nodo("strong");
-  ficha.append(numero,nombre);
+  const ficha=nodo("div","hero-ficha"),nombre=nodo("strong");
+  ficha.append(nombre);
   const navegacion=nodo("nav","paisaje-controles");
   const control=(etiqueta,icon,fn)=>{const btn=nodo("button","paisaje-control");btn.type="button";btn.setAttribute("aria-label",t(etiqueta));btn.append(icono(icon));btn.addEventListener("click",fn);return btn;};
   const manual=paso=>{carrusel.pausado=false;cambiarPaisaje(paso);ritmoCarrusel();};
@@ -230,7 +232,7 @@ function inicio() {
     const item=nodo("div","resumen-item");item.append(nodo("strong","",t),nodo("span","",sub));resumen.append(item);
   }
   b.append(foto,nodo("div","hero-sombra"),layout,resumen,selector);
-  carrusel={foto,numero,nombre,navegacion,pausa,paisajes:vista.opciones_habitat,indice:0,pausado:false};
+  carrusel={foto,nombre,navegacion,pausa,paisajes:paisajesPortada(),indice:0,pausado:false};
   cambiarPaisaje(0);ritmoCarrusel();return [b];
 }
 function catalogoAnimales() {
@@ -346,7 +348,6 @@ function render(enfocar=false,conservarPaisaje=false) {
     for(const h of vista.opciones_habitat) {
       const b=boton(h.nombre,"seleccionar_habitat",{habitat_id:h.id},"tarjeta");
       b.prepend(paisaje(h.id));
-      const numero=nodo("span","habitat-numero",h.id.slice(1)); numero.setAttribute("aria-hidden","true"); b.append(numero);
       b.dataset.habitat=h.id; b.disabled=!vista.seleccion_habilitada; hab.append(b);
     }
     const lateral=nodo("div","panel-animal"); lateral.append(companero,controles());
