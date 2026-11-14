@@ -60,9 +60,9 @@ axe-core 4.14: 0 incidencias en portada, selector, catálogo, tablero y pausa.
 
 `/media/<id>` sirve copias derivadas de 384 px (WebP, calidad 82) de
 `assets/pictogramas_ligeros/`; los 441 originales (87 MB) se conservan sin cambios.
-`indice.json` guarda la huella de cada original y `tests/test_pictogramas_ligeros.py`
+`indice.json` guarda la huella de cada original y `tests/test_imagenes_ligeras.py`
 falla si alguna copia queda desactualizada. Regenerar con
-`python -m codigo.interfaz.preparar_pictogramas_ligeros` (requiere Pillow).
+`python -m codigo.interfaz.preparar_imagenes_ligeras` (requiere Pillow).
 Medición (catálogo + tablero, Chrome 157): 1.173 KB → 53 KB en pictogramas.
 
 ## Pendiente

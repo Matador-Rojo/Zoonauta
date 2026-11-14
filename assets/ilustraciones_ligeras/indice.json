@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "lado_maximo": 640,
+  "calidad_webp": 82,
+  "procedencia": "Derivadas de los originales sin otra edición que el cambio de tamaño; conservan la licencia y los créditos del original.",
+  "items": {
+    "robot_despedida": {
+      "original": "assets/ilustraciones/robot_despedida.webp",
+      "sha256_original": "674f9a8ee35999ae7217ca28826441aa9aace22500a4b65e32af89d7bac2657e"
+    },
+    "robot_pausa": {
+      "original": "assets/ilustraciones/robot_pausa.webp",
+      "sha256_original": "36b3690cfe5ed4dd8e6075ae2e2e6c061abb76df1ba1e1008aecd35447855214"
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "lado_maximo": 560,
+  "calidad_webp": 75,
+  "procedencia": "Derivadas de los originales sin otra edición que el cambio de tamaño; conservan la licencia y los créditos del original.",
+  "items": {
+    "H01": {
+      "original": "assets/expedicion/paisajes/H01.webp",
+      "sha256_original": "63e8a424ca029b13f53000b79423a5c50f6125521610b1c104e219479cd097a6"
+    },
+    "H02": {
+      "original": "assets/expedicion/paisajes/H02.webp",
+      "sha256_original": "562f5348a4699727ef9a34a9058d3f78a5206535828343260bf848859b8721da"
+    },
+    "H03": {
+      "original": "assets/expedicion/paisajes/H03.webp",
+      "sha256_original": "bc67aa17d13dfdc6f8dc082c0396b826f6f34a6d35239c667cc21d5b373fb83d"
+    },
+    "H04": {
+      "original": "assets/expedicion/paisajes/H04.webp",
+      "sha256_original": "a019ab8515045579f29fe8f6d8008613c1046ca299cd18b4d22ed27e24e0f5ed"
+    },
+    "H05": {
+      "original": "assets/expedicion/paisajes/H05.webp",
+      "sha256_original": "0d0c0e5e776ddd83b80a9794480191b9a70415756f7ebaec85ffa8ce65412d76"
+    },
+    "H06": {
+      "original": "assets/expedicion/paisajes/H06.webp",
+      "sha256_original": "aed520153cf16b20fbac79b0ac8a4dab86fe79b13707b25a7b5f1e40de5e504e"
+    },
+    "H07": {
+      "original": "assets/expedicion/paisajes/H07.webp",
+      "sha256_original": "e7caabd982f8ed7c4cfd8367c295d62e7d6eec922c3cc1006d7ccca37a840b71"
+    },
+    "H08": {
+      "original": "assets/expedicion/paisajes/H08.webp",
+      "sha256_original": "cff0f5bea983c669dfac48795f89902fe2349c7b38fc6f171f7e57f112703d9d"
+    },
+    "H09": {
+      "original": "assets/expedicion/paisajes/H09.webp",
+      "sha256_original": "c83f927b03550218d26d1dc0031efb0e15268398ba4ad133dca6b8bcbed13980"
+    },
+    "H10": {
+      "original": "assets/expedicion/paisajes/H10.webp",
+      "sha256_original": "6ca6cc50d82f5f5097d3870ee3f9eddaa26c9b5dd04945cb83ba6755246a89dd"
+    },
+    "H11": {
+      "original": "assets/expedicion/paisajes/H11.webp",
+      "sha256_original": "947398318af732afead4c8570be1af4e77dba4eb89176d843994c5e2cb7727f9"
+    },
+    "H12": {
+      "original": "assets/expedicion/paisajes/H12.webp",
+      "sha256_original": "9e50bafcfc32f373728b9128c1491a26d36d445fef412ddb3a535794628de32c"
+    },
+    "H13": {
+      "original": "assets/expedicion/paisajes/H13.webp",
+      "sha256_original": "2543aa3394c37097662b2538a6c486abf30af596f84f2647131181e8357e504f"
+    },
+    "H14": {
+      "original": "assets/expedicion/paisajes/H14.webp",
+      "sha256_original": "bd6c820e0879f63bee22bbba03124c56718456a76930fb8a8bc4700c5625c73a"
+    },
+    "H15": {
+      "original": "assets/expedicion/paisajes/H15.webp",
+      "sha256_original": "b50f90fb1532ba1292cb02e08eb650848f343995baed20a900270f45b3633c7d"
+    },
+    "H16": {
+      "original": "assets/expedicion/paisajes/H16.webp",
+      "sha256_original": "bde790a4add826ed85b0bc30c5f9def93409e4157ed73c9d507a5230bc61c373"
+    },
+    "H17": {
+      "original": "assets/expedicion/paisajes/H17.webp",
+      "sha256_original": "768979347e586226c5df0fdbd3b53788f05795a2ace2448f8969fe68cb90ca61"
+    },
+    "H18": {
+      "original": "assets/expedicion/paisajes/H18.webp",
+      "sha256_original": "54e09823ff491bc6fd70d994c704262b650159becca962262f61eda1348a5640"
+    },
+    "H19": {
+      "original": "assets/expedicion/paisajes/H19.webp",
+      "sha256_original": "e171f245898a2a86a389495a93c8b3cd0a8722ac3f3f8524c8b26ffd5a0e4fe4"
+    },
+    "H20": {
+      "original": "assets/expedicion/paisajes/H20.webp",
+      "sha256_original": "3860f5499f23f5fde48c00e3fc67f9947ce27b38b9424fefe84a3d25b0c2a999"
+    },
+    "H21": {
+      "original": "assets/expedicion/paisajes/H21.webp",
+      "sha256_original": "cc0e3fe59a621c9600500e0ff3df699fdad22d020623155cc31763b3f78d5500"
+    },
+    "H22": {
+      "original": "assets/expedicion/paisajes/H22.webp",
+      "sha256_original": "a22e8f8b9ad988971f5520f77c4795926ceb7e8b707e935fb93bb957ca620771"
+    },
+    "H23": {
+      "original": "assets/expedicion/paisajes/H23.webp",
+      "sha256_original": "89298f23c727dd2eccf8d60bc238044628631ca7027734ac313cf27a99f36986"
+    },
+    "H24": {
+      "original": "assets/expedicion/paisajes/H24.webp",
+      "sha256_original": "953d4a95c537cdeb1157015f646a3941d1b6e1080cf1dc6b30c7e71e23567966"
+    },
+    "H25": {
+      "original": "assets/expedicion/paisajes/H25.webp",
+      "sha256_original": "730a921587eb742131b6c425fe0f35d9fca94990cd61a4d7255286ff1b9f5cf7"
+    },
+    "H26": {
+      "original": "assets/expedicion/paisajes/H26.webp",
+      "sha256_original": "6a69104673d9ed3fba2675e86c138484c5e172204ae40ef2e17b924968ee6f54"
+    },
+    "H27": {
+      "original": "assets/expedicion/paisajes/H27.webp",
+      "sha256_original": "afad3e9eaa26d71f8a71b1526dc7218acc188f23e6dcc4702aca328329426658"
+    },
+    "H28": {
+      "original": "assets/expedicion/paisajes/H28.webp",
+      "sha256_original": "a04b7b076a649e7e69a4143cda268953c03e5187a0b67e50fa92215280834b49"
+    },
+    "H29": {
+      "original": "assets/expedicion/paisajes/H29.webp",
+      "sha256_original": "418ca9a85a1fe042747cda034a87e1ed95964021157eb23eb43d57c20561b311"
+    },
+    "H30": {
+      "original": "assets/expedicion/paisajes/H30.webp",
+      "sha256_original": "8d1e468eb2de1d47707ead1114fe69f6cd16a2ebbbf7825e6f9c6928e2f1e14d"
+    },
+    "H31": {
+      "original": "assets/expedicion/paisajes/H31.webp",
+      "sha256_original": "3ab65a66a5f01a60ba90f4b5aafde0c6db075c62e481d7e225efdc53e2cf333c"
+    },
+    "H32": {
+      "original": "assets/expedicion/paisajes/H32.webp",
+      "sha256_original": "761ac19bd48973561d5be1b48383aaa14e5a72b2a238b0c1e60c8cc450090556"
+    },
+    "H33": {
+      "original": "assets/expedicion/paisajes/H33.webp",
+      "sha256_original": "56e7874507d9174147a2c6455e0fe62b674ac425d97ade53333ab3a2047264a3"
+    },
+    "H34": {
+      "original": "assets/expedicion/paisajes/H34.webp",
+      "sha256_original": "bf4039ff781589842997caa80c783ad57f27d3d6897c45201d9eee5299423938"
+    },
+    "H35": {
+      "original": "assets/expedicion/paisajes/H35.webp",
+      "sha256_original": "3f4c0c998606017c21f059178349228773b46e86c6b62b9c4306cb5e1475d094"
+    },
+    "H36": {
+      "original": "assets/expedicion/paisajes/H36.webp",
+      "sha256_original": "7a296e0ad76095f59fe65d1cc5a13cd3381f158e7ddec0c0911828245b3cf8d8"
+    },
+    "H37": {
+      "original": "assets/expedicion/paisajes/H37.webp",
+      "sha256_original": "f7e0e49b45b82a13b805f6624011f6054b19c24404a09857a438c5fc131d7a6e"
+    },
+    "H38": {
+      "original": "assets/expedicion/paisajes/H38.webp",
+      "sha256_original": "17276b495e2a2065f2262aa7cbfd2525aae7ed85b48d7630240719d95846a826"
+    },
+    "H39": {
+      "original": "assets/expedicion/paisajes/H39.webp",
+      "sha256_original": "84f52658f887136628cdeb507a6c630b062fffba2bede11b0609ab65dd37b73f"
+    },
+    "H40": {
+      "original": "assets/expedicion/paisajes/H40.webp",
+      "sha256_original": "ac41cf40e04bee8e254ed01ae27a9dc6f12d89975dfb3f365165cf6b64c43a90"
+    },
+    "H41": {
+      "original": "assets/expedicion/paisajes/H41.webp",
+      "sha256_original": "642832896ab14a1a7b56104a74aa96ceb7e3e1ff0d82c8606aff30a8843edd59"
+    },
+    "H42": {
+      "original": "assets/expedicion/paisajes/H42.webp",
+      "sha256_original": "a9fc3f773bab3a9fdff6277f6994aba018b25575109f5807f08080584dca571c"
+    },
+    "H43": {
+      "original": "assets/expedicion/paisajes/H43.webp",
+      "sha256_original": "f9bb3ab94b2a35530ad34739fc1491da0559c8ce616fc7a47aa63702f301571b"
+    },
+    "H44": {
+      "original": "assets/expedicion/paisajes/H44.webp",
+      "sha256_original": "c6abca4ff989a16712004ad2220af5786aa8ab6ecd67b4a339bb105285d4434a"
+    },
+    "H45": {
+      "original": "assets/expedicion/paisajes/H45.webp",
+      "sha256_original": "dfd668d0dbac37ab0f59ff9cfa9a475b8d3797b41946fc7d2089369871487c32"
+    },
+    "H46": {
+      "original": "assets/expedicion/paisajes/H46.webp",
+      "sha256_original": "e45c982c079fdba5682986b87ef2d358f6f48f225a8eb57025ead1bb8c315b3b"
+    },
+    "H47": {
+      "original": "assets/expedicion/paisajes/H47.webp",
+      "sha256_original": "21173540517a14833760e426c07c91c8b270719bd876c7db2393ea60e0252258"
+    },
+    "H48": {
+      "original": "assets/expedicion/paisajes/H48.webp",
+      "sha256_original": "9b8a08ee93e471f1119f62ae5321dc15528eaeb2785a8b10d2a117cf7f9b1c87"
+    }
+  }
+}

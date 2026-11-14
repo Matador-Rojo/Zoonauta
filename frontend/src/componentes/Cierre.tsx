@@ -14,6 +14,9 @@ export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: Tip
       <figure className="cierre-visual">
         <img
           src={`/ilustraciones/${pausa ? "robot_pausa" : "robot_despedida"}.webp`}
+          // Proporciones reales (1:1 y 2:3) para reservar el espacio y evitar saltos.
+          width={pausa ? 640 : 427}
+          height={640}
           alt={t("Tu guía")}
           draggable={false}
         />

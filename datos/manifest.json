@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 15526,
-      "sha256": "09c50e12e283c6109503ffb96f83c44f398fe4ca558b0e6d539f2d7efdbd66cc"
+      "bytes": 16987,
+      "sha256": "89c17ddb572aed9026b262c4ab4cbfdd3f1d00f2384a0ca86c1343fc7dc7ef21"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -2606,8 +2606,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 3601,
-      "sha256": "5882122edb49b1a68c5ddcfcfd988f91f94b374f19ca9698645e69e75eb160f2"
+      "bytes": 3818,
+      "sha256": "c6d851520744f441dad73a1d44e8f30e9c69b11a0b295d64829aa28d47876c87"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -5226,8 +5226,8 @@
     },
     {
       "ruta": "frontend/index.html",
-      "bytes": 818,
-      "sha256": "68c3819390deb16f4ffbe868b8ceec00286fdfcebcb1cf21dba12ca9c9560d4d"
+      "bytes": 1163,
+      "sha256": "c85b29077b7409ad4681ed51ae6efc5f38fbce27c10aa7fd87f8ba069db23b1b"
     },
     {
       "ruta": "frontend/package-lock.json",
@@ -5261,8 +5261,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Cierre.tsx",
-      "bytes": 1942,
-      "sha256": "3239e6aad6d84389a183548ecbf827dfcd76449df9a35c9f7c7705177a3770d0"
+      "bytes": 2088,
+      "sha256": "c0708b2e871f2874deda424c5f8717ccecfef9882f99c6c404620aba1bdfb7f0"
     },
     {
       "ruta": "frontend/src/componentes/Encabezado.tsx",
@@ -5281,8 +5281,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Portada.tsx",
-      "bytes": 13083,
-      "sha256": "07f862f946795c1e03c6140602c121205b8e0fc7c97547d317b5394d92ff84e1"
+      "bytes": 13565,
+      "sha256": "04b4bf408fdc80255fd86ec48edf3dc1abdfc21e97c05d82ee15a11d2e90d47d"
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
@@ -5301,8 +5301,8 @@
     },
     {
       "ruta": "frontend/src/estilos/pantallas.css",
-      "bytes": 10544,
-      "sha256": "60acecfc1c78cd0c3f5df58b0c573e8ac8c6185cf22929395fa744e80c2ab112"
+      "bytes": 10737,
+      "sha256": "5c17371acd40ae4794b063ae5f8cbe19de2fb81f1b8ea1fadb9e561dfae66400"
     },
     {
       "ruta": "frontend/src/estilos/portada.css",
@@ -5386,8 +5386,8 @@
     },
     {
       "ruta": "codigo/interfaz/web6/index.html",
-      "bytes": 920,
-      "sha256": "33cf287d4debbfcbdd2d08e6a543750963c86357ff68d6f8d4692f979f96dace"
+      "bytes": 1265,
+      "sha256": "4df68a162a6f053af7e6f0b72f0e659ad2044ca21637f9a44ae94834465b05f7"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -7650,16 +7650,6 @@
       "sha256": "3428847af2e5849eacd47a05fa093e79bfc37b7bb53479e5f8cfe46443a20d03"
     },
     {
-      "ruta": "codigo/interfaz/preparar_pictogramas_ligeros.py",
-      "bytes": 3081,
-      "sha256": "36a8f61ba3ece5d07e6fb43867d0e97780a23298e66b07d9e4a504879b1bbb6b"
-    },
-    {
-      "ruta": "tests/test_pictogramas_ligeros.py",
-      "bytes": 2790,
-      "sha256": "1d474866da293a4a285d447c5bc029dfb888e41c73893953693eb03fc1a4e038"
-    },
-    {
       "ruta": "codigo/interfaz/web/fondos/capas/H01-hojas.webp",
       "bytes": 55500,
       "sha256": "e93042ca058e78ed295f6554fd80bb68779073ca9e3acdb45ddfb45fb7172a72"
@@ -7690,19 +7680,299 @@
       "sha256": "c477246060d961d6f8aa5c95c601610e15642344b1b73cf1762f3f5cceeea12e"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-BlthaCKV.css",
-      "bytes": 20832,
-      "sha256": "007f561ff30a93c92b594021ecd580c1b1a72600a74f72734cb3ad2257f44ee2"
-    },
-    {
-      "ruta": "codigo/interfaz/web6/assets/index-CHTxEukW.js",
-      "bytes": 252410,
-      "sha256": "b34a4d3cb9530b083e696aac5cbfb9b03d93895b2847c6eff862ca2e199bd100"
-    },
-    {
       "ruta": "tests/verificar_voz_v6.cjs",
       "bytes": 8545,
       "sha256": "f5cf489e52742d387e6cb047d214117a5668fc64268ac0e6a6a3054768c11710"
+    },
+    {
+      "ruta": "assets/ilustraciones_ligeras/indice.json",
+      "bytes": 603,
+      "sha256": "756d4f4ac46e0df53a7aa7eace03f05991bb010d774f492c9e8fe0785840afc4"
+    },
+    {
+      "ruta": "assets/ilustraciones_ligeras/robot_despedida.webp",
+      "bytes": 42180,
+      "sha256": "69968c806afd7a0bef80b227528890ea770cb507da98ddbb39c4656737666bc7"
+    },
+    {
+      "ruta": "assets/ilustraciones_ligeras/robot_pausa.webp",
+      "bytes": 44526,
+      "sha256": "adf2f2fd4542f64c6e2d4da0eed7d972a61533da2420f2d87ad79fc884e9ab5e"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H01.webp",
+      "bytes": 112158,
+      "sha256": "e2a08b2b6025bfc878dd746c95d5a0ffc3a6e13a32e2c029b1ccf7f75007fa3a"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H02.webp",
+      "bytes": 118408,
+      "sha256": "9238a9cb7c7c20eec5bb99937f7495d8dafa39246c20b98f92fa6564d466dcd4"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H03.webp",
+      "bytes": 111752,
+      "sha256": "91bbfd82e5b6a931a22ba4cf624c90dee6783f0c7d8b2b67720aafbb312fab81"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H04.webp",
+      "bytes": 119874,
+      "sha256": "ea556b7126dd2093c74e7c1b4079e44bfe9bce6f83d463f25a1d41c247f90eaf"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H05.webp",
+      "bytes": 99128,
+      "sha256": "47623c0a9b3eaa62544edc2f8a84d94254fe8b7abfdacbf581d6b9c82d6b51bb"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H06.webp",
+      "bytes": 72982,
+      "sha256": "b5130732d5de0a6264f98b31bc25123a8c4a8a8e9d8a74e54ec6d7240b027e1d"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H07.webp",
+      "bytes": 93614,
+      "sha256": "945476c6bd9888ab73cec299b35bf26404d66303a6bdd0a930819c9079da7a46"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H08.webp",
+      "bytes": 102188,
+      "sha256": "e5a94ff8942521ff369d02c69f9a75756d045ad53b0af3cbac10c42280b76768"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H09.webp",
+      "bytes": 54542,
+      "sha256": "69f7eada836982b58f0aa863081b2efbfa8bd8825856e8e884af43e778a3de80"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H10.webp",
+      "bytes": 66528,
+      "sha256": "186b198adbe227fb4f52bddb3382ce23ce3048378a1e09c327e4b98175a4503d"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H11.webp",
+      "bytes": 69734,
+      "sha256": "146e78507265543cf29ddab3e231b6334bb7fa230a488a215128d6cfd8bb5638"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H12.webp",
+      "bytes": 89808,
+      "sha256": "6f19bd3353d1550fbadf5c175c4dbdb15680b0859fcddddd0dd5acc0a5782fba"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H13.webp",
+      "bytes": 95986,
+      "sha256": "ee15e7809bd21ebde094a4d3f5748514d4adc612072575a23b5402f1965f38f3"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H14.webp",
+      "bytes": 96912,
+      "sha256": "aff0dcc59c30037334c751c54db1234fe5cb1c5c0dfe759afe82237441c570c5"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H15.webp",
+      "bytes": 100060,
+      "sha256": "ee3633f4d565a3c4813c9b6a7c528a31c68f2925e671d0aea161e87454723cb0"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H16.webp",
+      "bytes": 71648,
+      "sha256": "6bc0d27a181dec32320c6d2cc8f95d1fec65f0af30aa02917a358b2fdd51f0bd"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H17.webp",
+      "bytes": 66806,
+      "sha256": "cdce9df5188fac14ca1234ba01ba052289b5a0d56c5e80b67647dc937c88a7c0"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H18.webp",
+      "bytes": 78610,
+      "sha256": "d2bd69bd35fb2f1ae7eb0dd611838c511f1c67ccfe96f5a4c2eb456662f8a85c"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H19.webp",
+      "bytes": 88200,
+      "sha256": "b784f5b43716af861f32b72a2ec633b87fc6a41b5909599f9e871ab75e15acac"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H20.webp",
+      "bytes": 87342,
+      "sha256": "38bf8fcbd49cbfe7ac0115d2e23afa65c9ea307aa0a525054740b595a5de9126"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H21.webp",
+      "bytes": 92800,
+      "sha256": "db8ba924bda455003f50aa932c07bb9ec1a6fedee2d96918c510afcbdfb88c12"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H22.webp",
+      "bytes": 40570,
+      "sha256": "6d9fe913fffaa9cf07f867adcf3296015a29bb97f11e76d60e0ffe53b7300b12"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H23.webp",
+      "bytes": 77320,
+      "sha256": "e26f832b01faf153dd8064dd0e8e754633b868555a481b9e7273411fcf1ea381"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H24.webp",
+      "bytes": 104394,
+      "sha256": "100852788732130866a0b7b6f0a29077858a20bf85b26bfbc918d22924faef19"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H25.webp",
+      "bytes": 57402,
+      "sha256": "b9cb04f0c35b83d4973dacb5cc9ac63140db535e28d05055a714d2166ae38817"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H26.webp",
+      "bytes": 82930,
+      "sha256": "c4e0ca99c624e7ba8f5feead6bf4f1550a113548795e15d5f4d4f17b0ceb4e43"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H27.webp",
+      "bytes": 82316,
+      "sha256": "9a6e866653fe9b47fc27967b5406cdca22e6f6b310500554416a1690b9dbc637"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H28.webp",
+      "bytes": 90574,
+      "sha256": "590dd53c0632d5ff34ceb0e2dc0146149917ffe21c31b4b33a9d2ed3a5605686"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H29.webp",
+      "bytes": 86162,
+      "sha256": "f45c5ef83ef37cc6d513c4c1291f9d9fe123b518c449af6d8f131f70cf11033a"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H30.webp",
+      "bytes": 71292,
+      "sha256": "7f8a0f3d5847ed951f95b2c7c18757fc9040fed55412961a3b776eacaebbc5bf"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H31.webp",
+      "bytes": 74206,
+      "sha256": "1750095a0fea59601a503c70696f39b25796aa1f22b2d7d5ee86f699130f5a7c"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H32.webp",
+      "bytes": 40818,
+      "sha256": "ddaeb513115431b7b09d04c3900dc97409bb5111cd11009ccd3a3314a97291be"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H33.webp",
+      "bytes": 77244,
+      "sha256": "8ec415b4b5573e3ccb59c142363cadcf47142a8957bb7d75f7333241cfe4b6c0"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H34.webp",
+      "bytes": 41690,
+      "sha256": "d8691932e76713b5b705f8598a2ae787601195e074cc9bdb3afd7d54eaad3de7"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H35.webp",
+      "bytes": 4628,
+      "sha256": "8b94db64e5cbfe9c6a0a7132525f2f2ce3615052dfd1531edac9c17e1e6f1d39"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H36.webp",
+      "bytes": 44250,
+      "sha256": "2c892b93bd841863eb34980cf283b46e68d2bd838843afc233e6eaecc2af79d8"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H37.webp",
+      "bytes": 89444,
+      "sha256": "a40414e4ee98111db2788620f16b1320c7b8ec77ef930a7af25174563300d78b"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H38.webp",
+      "bytes": 74506,
+      "sha256": "5caf64162e740e3d1151987b98783793401ee84218c0d6b88a64d49b953f81e3"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H39.webp",
+      "bytes": 73092,
+      "sha256": "406c5776dcbfcb4a1117af71e158aa52a3f928b1d85851a0232d4c1e36fd47dd"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H40.webp",
+      "bytes": 93074,
+      "sha256": "163df238fea8665c980ba746ee35e7438c852bc19e4b791097a94011efb65012"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H41.webp",
+      "bytes": 53858,
+      "sha256": "ea8ea296162bc63b9331dc79ff6fbb34b611fb0705ed828cb6463198f8715892"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H42.webp",
+      "bytes": 37776,
+      "sha256": "ee99204ba7968387f610885e05495187543ee26cdd6327b2ecbdc6a69a590f01"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H43.webp",
+      "bytes": 69226,
+      "sha256": "7fa777e74d2d0ed723a51ee3cb8ccfba296c9c1b639990aa1729825d1f5bdf9b"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H44.webp",
+      "bytes": 100158,
+      "sha256": "b9b5dcee3439ebd95fe7039d8ba568ae4213861166bcf8eadb005f8a78221134"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H45.webp",
+      "bytes": 96230,
+      "sha256": "b5950a550b6f5e51b7665fe870642df529a36461539d209215bba863cb25ac4c"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H46.webp",
+      "bytes": 37748,
+      "sha256": "da6a4e5ff65d85e54594fb44301849b3dd9855200f3f36ce3d63887bb622ede7"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H47.webp",
+      "bytes": 61282,
+      "sha256": "86e475b684b288c021a7ef5d651dcbdb8f7f09134109c43e23953073e9d3bb0e"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/H48.webp",
+      "bytes": 76896,
+      "sha256": "a371ded1065c0ba6bc1d3abbb9da4f3c3c127ed03477afd2d66c64808307ab5f"
+    },
+    {
+      "ruta": "assets/paisajes_ligeros/indice.json",
+      "bytes": 8349,
+      "sha256": "6cafbf858825497f51d2ee3b7323ff3b7b98f917c85ef6bb750770be88df9ed8"
+    },
+    {
+      "ruta": "codigo/interfaz/preparar_imagenes_ligeras.py",
+      "bytes": 4614,
+      "sha256": "012aff89fe60d7a948dbabb48b24516561ac98aee795963e0848f3367cac676d"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-BJr8NTnh.css",
+      "bytes": 20916,
+      "sha256": "ffc306ed92b5c5becc479934a3120fcbea66dd85978faee7ba66492a202c5ea3"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-CHDm-LHh.js",
+      "bytes": 252525,
+      "sha256": "b614e86bd42c98e928156600e1b72dbf400291c0729f7b4b58f082989256d65f"
+    },
+    {
+      "ruta": "tests/lighthouse_v6.py",
+      "bytes": 4894,
+      "sha256": "4c272a82b9c3c0dd9f9b725f36deaed6f54043d759261fefe5f2042d27a436f2"
+    },
+    {
+      "ruta": "tests/test_imagenes_ligeras.py",
+      "bytes": 3366,
+      "sha256": "371c1d5057b84e1b37a44503648c3c1a726aae45414ba43f99f19d5d4cf298e1"
+    },
+    {
+      "ruta": "tests/verificar_partidas_v6.cjs",
+      "bytes": 5530,
+      "sha256": "1dd7b5eed7203ceb2f4f1ea2164593c0d5988bab82be6906045e352ecc16c00e"
     }
   ],
   "nombre_proyecto": "Zoonauta",

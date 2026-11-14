@@ -49,6 +49,9 @@ python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
 python -m tests.ejecutar_navegador --catalogo      # 16 casos
 python -m tests.ejecutar_navegador --hito3         # 16 casos (Preferencias, teclado)
 python -m tests.ejecutar_navegador                 # 20 casos (recorrido general)
+python -m tests.ejecutar_navegador --partidas-v6    # 4 partidas completas con teclado (6.0)
+python -m tests.ejecutar_navegador --voz-v6         # cadena de voz 6.0 con audio simulado
+python -m tests.lighthouse_v6 --salida <carpeta>      # Lighthouse en 4 pantallas × 2 dispositivos
 py -3 -m codigo.interfaz.iniciar --sin-descargas   # juego en http://127.0.0.1:8766
 ```
 
@@ -63,7 +66,7 @@ cd frontend && npm run mwg -- search "toggle switch"   # Modern Web Guidance (CL
 python -m uv tool run ruff@0.15.0 check codigo tests    # 18 avisos de base (ver ruff.toml)
 python -m uv tool run --python 3.12 pip-audit@2.10.0 -r requirements_voz.txt --disable-pip --no-deps
 python -m codigo.nucleo.actualizar_manifiesto [--incluir RUTA]  # tras compilar o editar
-python -m codigo.interfaz.preparar_pictogramas_ligeros         # si cambia un pictograma (Pillow)
+python -m codigo.interfaz.preparar_imagenes_ligeras            # si cambia un pictograma, paisaje o robot (Pillow)
 ```
 
 Flujo de Modern Web Guidance: `search` → `retrieve` → aplicar y verificar → cerrar la

@@ -1,4 +1,4 @@
-"""Las copias ligeras de los pictogramas existen, están al día y se sirven en /media."""
+"""Las copias ligeras (pictogramas, paisajes, robot) existen, están al día y se sirven."""
 import hashlib
 import json
 import struct
@@ -8,7 +8,7 @@ from tempfile import TemporaryDirectory
 from threading import Thread
 from urllib.request import urlopen
 
-from codigo.interfaz.preparar_pictogramas_ligeros import CARPETA, LADO, pictogramas
+from codigo.interfaz.preparar_imagenes_ligeras import CARPETA, GRUPOS, ORIGENES
 from codigo.interfaz.servidor import Servidor
 from codigo.nucleo.datos import RAIZ_PROYECTO
 
@@ -27,19 +27,20 @@ def tamano_webp(datos: bytes) -> tuple[int, int]:
     return ancho & 0x3FFF, alto & 0x3FFF
 
 
-class PruebasPictogramasLigeros(unittest.TestCase):
+class PruebasImagenesLigeras(unittest.TestCase):
     def test_todas_las_copias_existen_y_estan_al_dia(self):
-        indice = json.loads((CARPETA / "indice.json").read_text("utf-8"))["items"]
-        for pid, original in pictogramas().items():
-            if original.suffix == ".svg":
-                continue
-            with self.subTest(pictograma=pid):
-                self.assertIn(pid, indice)
-                self.assertEqual(indice[pid]["sha256_original"], hashlib.sha256(original.read_bytes()).hexdigest(),
-                                 "Copia desactualizada: ejecuta python -m codigo.interfaz.preparar_pictogramas_ligeros")
-                copia = (CARPETA / f"{pid}.webp").read_bytes()
-                self.assertLessEqual(max(tamano_webp(copia)), LADO)
-                self.assertLess(len(copia), original.stat().st_size)
+        for grupo, datos in GRUPOS.items():
+            indice = json.loads((datos["carpeta"] / "indice.json").read_text("utf-8"))["items"]
+            for clave, original in ORIGENES[grupo]().items():
+                if original.suffix == ".svg":
+                    continue
+                with self.subTest(grupo=grupo, imagen=clave):
+                    self.assertIn(clave, indice)
+                    self.assertEqual(indice[clave]["sha256_original"], hashlib.sha256(original.read_bytes()).hexdigest(),
+                                     "Copia desactualizada: ejecuta python -m codigo.interfaz.preparar_imagenes_ligeras")
+                    copia = (datos["carpeta"] / f"{clave}.webp").read_bytes()
+                    self.assertLessEqual(max(tamano_webp(copia)), datos["lado"])
+                    self.assertLess(len(copia), original.stat().st_size)
 
     def test_el_servidor_entrega_la_copia_ligera(self):
         with TemporaryDirectory() as carpeta:
@@ -53,6 +54,11 @@ class PruebasPictogramasLigeros(unittest.TestCase):
                     self.assertEqual(respuesta.read(), (CARPETA / f"{pid}.webp").read_bytes())
                 original = RAIZ_PROYECTO / servidor.banco.pictogramas[pid]["archivo_imagen"]
                 self.assertTrue(original.is_file(), "el original se conserva")
+                base = f"http://127.0.0.1:{servidor.server_port}"
+                for ruta, copia in (("/habitats/H01.webp", GRUPOS["paisajes"]["carpeta"] / "H01.webp"),
+                                    ("/ilustraciones/robot_pausa.webp", GRUPOS["ilustraciones"]["carpeta"] / "robot_pausa.webp")):
+                    with urlopen(base + ruta) as respuesta:
+                        self.assertEqual(respuesta.read(), copia.read_bytes(), ruta)
             finally:
                 servidor.shutdown()
                 servidor.server_close()
