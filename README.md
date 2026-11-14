@@ -26,8 +26,10 @@ pistas y descubre dónde vive.* Pulsa **Comenzar** y escoge **Yo elijo** o
 
 Cada reto presenta el animal grande a la izquierda con **Pista**, **Repetir**,
 **Pausar** y **Salir** debajo; a la derecha, la guía con su frase y sus pictogramas, y
-los hábitats para elegir (2, 4 u 8, según Preferencias). La guía ofrece tres pistas
-progresivas por hábitat; tras una selección pendiente ofrece otra pista sin castigo.
+los hábitats para elegir (2, 4 u 8, según Preferencias). Al pedir **Pista**, o tras
+elegir un hábitat no confirmado, el **agente de la guía** elige la ayuda que mejor
+distingue las opciones que quedan en pantalla, sin castigo ni límite de tiempo
+(ver [El agente de la 6.0](#el-agente-de-la-60)).
 Al acertar, el hábitat elegido se marca con ✓ y **Continuar** pasa al siguiente reto.
 Pausar muestra al robot sentado en su banco; al terminar, el robot se despide y
 **Comenzar otra partida** vuelve a la portada. No hay puntos, límite de tiempo ni de
@@ -127,10 +129,31 @@ y [la guía de interfaz](docs/guia_interfaz.md).
 
 ## Inteligencia artificial y revisión
 
-La expedición ampliada usa tres pistas editadas por hábitat. Los secundarios
-documentados y los contrastes preferentes se guardan en
-[`datos/expedicion/animales.json`](datos/expedicion/animales.json). El conjunto
-de asociaciones secundarias todavía admite ampliaciones con respaldo.
+### El agente de la 6.0
+
+En la partida principal (288 animales, 48 hábitats) un agente local decide qué ayuda
+dar en cada momento: no usa Internet ni una API externa. Considera el animal, los
+hábitats visibles, lo que ya se eligió, las ayudas ya mostradas y si se pulsó
+**Repetir**. Puede decir las tres pistas revisadas del hábitat (la 3, «Señala el
+hábitat…», es el apoyo explícito) y 32 ayudas breves por rasgo («Busca un lugar
+frío.»), que solo usa cuando existe su grabación. Solo afirma rasgos que una pista
+revisada ya dice; lo que no está documentado se trata como desconocido, nunca como
+falso, y un hábitat no confirmado no se presenta como incorrecto. Tras elegir un
+hábitat parecido, no repite algo que también lo describa. Es un modelo de decisión con
+reglas y una utilidad de parámetros fijos: no aprende durante la partida.
+
+Junto a él hay una línea base ID3 (ganancia de información sobre las opciones
+visibles) y la secuencia editorial anterior, que se pueden comparar con
+`--agente ID3_OPCIONES` o `--agente PISTAS_PROGRESIVAS`. Cómo funciona, cómo se
+evalúa, los resultados (estructurales y con un jugador sintético, no con personas) y
+lo que falta revisar están en [docs/agente/agente_6.md](docs/agente/agente_6.md).
+
+Los secundarios documentados y los contrastes preferentes se guardan en
+[`datos/expedicion/animales.json`](datos/expedicion/animales.json); los rasgos de los
+hábitats, en [`datos/expedicion/atributos_habitats.json`](datos/expedicion/atributos_habitats.json).
+El conjunto de asociaciones secundarias todavía admite ampliaciones con respaldo.
+
+### Catálogo original (48 animales, ocho hábitats)
 
 Con `--catalogo-original`, la interfaz carga el modelo sintético contextual R01 de
 `docs/experimentos/hito2/entrenamiento/modelos`, congelado, elegido como primera
@@ -139,7 +162,7 @@ con consola y simulador. Las interacciones manuales se registran sin modificar l
 parámetros del modelo. La selección aleatoria del animal es independiente de la
 política que escoge las pistas. Consola y simulador conservan su orden reproducible.
 
-El agente probabilístico utiliza el historial del reto: tras una selección pendiente,
+En ese catálogo original, el agente probabilístico utiliza el historial del reto: tras una selección pendiente,
 prioriza un atributo que distinga el paisaje elegido del hábitat guía. Tras dos
 selecciones pendientes ofrece el apoyo explícito. **Repetir** conserva exactamente
 el mensaje; si después se solicita otra pista, puede reformularlo una vez antes de
@@ -154,6 +177,8 @@ Otros comandos desde esta carpeta, que contiene codigo, datos, docs, assets y te
 
 ```console
 python -m codigo.poc.consola --modalidad JUGADOR --retos 2
+python -m codigo.interfaz.servidor --agente ID3_OPCIONES --puerto 8003
+python -m codigo.entrenamiento.evaluar_agente6 --salida resultados_nuevos/agente6
 python -m codigo.interfaz.servidor --catalogo-original --politica ID3 --puerto 8001
 python -m codigo.interfaz.servidor --catalogo-original --politica ROTACION --puerto 8002
 python -m codigo.poc.consola --modalidad AGENTE --retos 2
@@ -212,8 +237,9 @@ La prueba ejecuta el iniciador real, suprime únicamente la apertura de una vent
 comprueba partidas completas en ambas modalidades con 2, 4 y 8 opciones. Requiere Python
 y una carpeta sin `.venv-voz` ni `modelos_voz`.
 
-**Zoonauta 6.0 (2026-11-14):** pasan **95 pruebas Python** (incluida la cobertura de la
-voz grabada, 343 de 343 mensajes) y las pruebas de navegador de la 6.0: portada (6 casos
+**Zoonauta 6.0 (2026-11-14):** pasan **109 pruebas Python** (incluidas las 14 del agente
+y la cobertura de la voz grabada jugando todos los animales con el agente) y las pruebas de
+navegador de la 6.0: portada (6 casos
 con axe), recorrido (9), cuatro partidas completas con teclado sin desplazamiento (2, 4 y 8
 hábitats, español, portugués y 320 px) y voz (9). `python -m tests.comparar_versiones`
 compara la 5.0 y la 6.0 en seis tamaños de pantalla y mide desplazamiento y tarjetas aplastadas.
