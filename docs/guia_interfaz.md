@@ -263,8 +263,7 @@ npm install --no-save playwright
 npx playwright install chromium
 python -m tests.ejecutar_navegador
 python -m tests.ejecutar_navegador --voces-navegador
-.venv-voz\Scripts\python.exe -m tests.verificar_voces_reales
-.venv-voz\Scripts\python.exe -m tests.ejecutar_navegador --audio-real
+python -m tests.ejecutar_navegador --voz-v5   # voz grabada de la 5.0 (desde 2026-11-14 no hay voces locales)
 ```
 
 Referencia: [Playwright Library](https://playwright.dev/docs/library).

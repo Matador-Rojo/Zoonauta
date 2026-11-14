@@ -26,7 +26,7 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
     ...(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {}),
   });
   const estado = {grabadas: 6, grabada: true, retraso: 0, fallo: false};
-  const pedidos = {grabada: 0, voz: [], cancelar: 0};
+  const pedidos = {grabada: 0, voz: []};
   try {
     const context = await browser.newContext({viewport: {width: 1280, height: 860}, reducedMotion: 'reduce'});
     // Registra cada elemento de audio que se reproduce.
@@ -38,12 +38,7 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
         return reproducir.call(this);
       };
     });
-    // El catálogo simulado incluye una voz Piper a propósito: la prueba comprueba que la 6.0
-    // NO la usa (solo voz grabada; pedidos.voz debe quedar vacío).
-    await context.route('**/api/voz/config', r => r.fulfill({json: {
-      voces: [{id: 'piper:prueba', nombre: 'Prueba', motor: 'piper', idioma: 'es', region: 'MX', disponible: true}],
-      grabadas: {es: estado.grabadas, 'pt-BR': 0},
-    }}));
+    await context.route('**/api/voz/config', r => r.fulfill({json: {voces: [], grabadas: {es: estado.grabadas, 'pt-BR': 0}}}));
     await context.route('**/api/voz/grabada', async r => {
       pedidos.grabada++;
       if (estado.retraso) await new Promise(f => setTimeout(f, estado.retraso));
@@ -51,13 +46,8 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       if (estado.grabada) { try { await r.fulfill({body: AUDIO, contentType: 'audio/wav'}); } catch { /* cancelada */ } }
       else await r.fulfill({status: 404, json: {grabada: false}});
     });
-    await context.route('**/api/voz', async r => {
-      pedidos.voz.push(JSON.parse(r.request().postData()));
-      if (estado.retraso) await new Promise(f => setTimeout(f, estado.retraso));
-      if (estado.fallo) return r.abort('internetdisconnected');
-      try { await r.fulfill({body: AUDIO, contentType: 'audio/wav'}); } catch { /* cancelada */ }
-    });
-    await context.route('**/api/voz/cancelar', async r => { pedidos.cancelar++; await r.continue(); });
+    // La 6.0 ya no tiene voces sintetizadas: cualquier pedido a /api/voz sería un error.
+    await context.route('**/api/voz', async r => { pedidos.voz.push(r.request().postData()); await r.fulfill({status: 404, json: {}}); });
 
     const page = await context.newPage();
     const errores = [];
@@ -113,13 +103,11 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
 
     await caso('Pausar cancela una lectura pendiente', async () => {
       estado.retraso = 1500;
-      const cancelaciones = pedidos.cancelar;
       const audios = await page.evaluate(() => window.__audios.length);
       await repetir();
       await page.locator('button[data-control="pausar"]').click();
       await page.locator('.cierre[data-estado="PAUSADA"]').waitFor();
       await page.waitForTimeout(2000);
-      assert.ok(pedidos.cancelar > cancelaciones, 'se avisa al servidor de la cancelación');
       assert.equal(await activos(), 0, 'nada suena en pausa');
       assert.equal(await page.evaluate(() => window.__audios.length), audios, 'la lectura cancelada no llega a sonar');
       estado.retraso = 0;

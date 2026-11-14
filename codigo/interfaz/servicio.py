@@ -9,7 +9,6 @@ from threading import RLock
 from uuid import uuid4
 
 from codigo.interfaz import idiomas
-from codigo.interfaz.voz import ControlLecturasVoz
 from codigo.motores.guia import MotorGuia, MotorPistas
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import Evento, TERMINALES
@@ -34,7 +33,6 @@ class SesionWeb:
         self.parametros = parametros
         self.aleatorio = aleatorio if aleatorio is not None else SystemRandom()
         self.lock = RLock()
-        self.lecturas_voz = ControlLecturasVoz()
         self.revision = 0
         self.idioma = "es"
         self._recibos: dict[str, str] = {}

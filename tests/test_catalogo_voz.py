@@ -149,6 +149,25 @@ class HTTPGrabada(unittest.TestCase):
             config = json.loads(self.c.getresponse().read())
             self.assertEqual({"es": 1, "pt-BR": 0}, config["grabadas"])
 
+    def test_grabacion_permite_reproducir_blob_y_rechaza_pantalla_antigua(self):
+        with TemporaryDirectory() as tmp, patch.object(voz_grabada, "CARPETA_AUDIO", Path(tmp)):
+            (Path(tmp) / "es-419").mkdir()
+            (Path(tmp) / "es-419/MSG_INICIO.mp3").write_bytes(b"ID3grabacion")
+            entrada = {k: self.v[k] for k in ("revision", "sesion_id", "reto_id")}
+            self.c.request("POST", "/api/voz/grabada", json.dumps({**entrada, "idioma": "es"}),
+                           {"Content-Type": "application/json", "Cookie": self.cookie})
+            r = self.c.getresponse(); r.read()
+            self.assertEqual(200, r.status)
+            # El cliente reproduce el audio desde un blob: la CSP debe permitirlo.
+            self.assertIn("media-src 'self' blob:", r.getheader("Content-Security-Policy"))
+            # Tras cambiar de idioma, la petición de la pantalla anterior se rechaza (409).
+            r, _ = self.post("/api/idioma", idioma="pt-BR")
+            self.assertEqual(200, r.status)
+            self.c.request("POST", "/api/voz/grabada", json.dumps({**entrada, "idioma": "es"}),
+                           {"Content-Type": "application/json", "Cookie": self.cookie})
+            r = self.c.getresponse(); r.read()
+            self.assertEqual(409, r.status)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -68,14 +68,4 @@ export interface ResultadoAccion {
   error?: string;
 }
 
-export interface VozCatalogo {
-  id: string;
-  nombre: string;
-  motor: "piper" | "kokoro" | "google" | "microsoft";
-  idioma: Idioma;
-  region: string;
-  calidad?: string;
-  disponible: boolean;
-}
-
 export type Diccionarios = Record<Idioma, Record<string, string>>;

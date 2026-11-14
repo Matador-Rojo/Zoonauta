@@ -1,4 +1,4 @@
-import type { Diccionarios, Idioma, ResultadoAccion, TipoAccion, Vista, VozCatalogo } from "./tipos";
+import type { Diccionarios, Idioma, ResultadoAccion, TipoAccion, Vista } from "./tipos";
 
 async function json<T>(respuesta: Response): Promise<T> {
   return (await respuesta.json()) as T;
@@ -22,8 +22,7 @@ function enviar(ruta: string, cuerpo: unknown, signal?: AbortSignal, keepalive =
 
 export const cargarVista = () => obtener<Vista>("/api/vista");
 export const cargarDiccionarios = () => obtener<Diccionarios>("/api/idiomas");
-export const cargarConfigVoz = () =>
-  obtener<{ voces: VozCatalogo[]; grabadas?: Partial<Record<Idioma, number>> }>("/api/voz/config");
+export const cargarConfigVoz = () => obtener<{ grabadas?: Partial<Record<Idioma, number>> }>("/api/voz/config");
 
 /** Envía una acción con la semántica de 5.0: evento_id único, revisión, sesión y reto. */
 export async function enviarAccion(
@@ -53,15 +52,7 @@ export async function enviarIdioma(vista: Vista, idioma: Idioma) {
   return { ok: r.ok, datos: await json<ResultadoAccion>(r) };
 }
 
-export function pedirVoz(entrada: Record<string, unknown>, signal: AbortSignal) {
-  return enviar("/api/voz", entrada, signal);
-}
-
-/** Grabación completa del mensaje actual; 404 si no existe (el cliente usa la voz alternativa). */
+/** Grabación completa del mensaje actual (voz de Zoonauta); 404 si no existe. */
 export function pedirGrabacion(entrada: Record<string, unknown>, signal: AbortSignal) {
   return enviar("/api/voz/grabada", entrada, signal);
-}
-
-export function cancelarVoz(canal: string, turno: number) {
-  return enviar("/api/voz/cancelar", { canal_voz: canal, turno_voz: turno }, undefined, true).catch(() => undefined);
 }

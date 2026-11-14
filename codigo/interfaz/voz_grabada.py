@@ -3,8 +3,8 @@
 Solo se reproduce una grabación cuando su texto es exactamente el mensaje que la
 partida va a leer. Nunca se unen archivos: si no hay grabación para el mensaje
 completo, ``buscar`` devuelve ``None``. En la 6.0 (solo voz grabada) el cliente no
-lo lee entonces con otra voz; la 5.0 lo lee con la voz alternativa (Piper, Kokoro o
-el navegador). ``tests/test_voz_grabada_cobertura.py`` comprueba que no falte ninguna.
+lo lee entonces con otra voz; la 5.0 lo lee con una voz del navegador si la hay (desde el
+2026-11-14 no existen voces locales Piper ni Kokoro). ``tests/test_voz_grabada_cobertura.py`` comprueba que no falte ninguna.
 """
 from __future__ import annotations
 
