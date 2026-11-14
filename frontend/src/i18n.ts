@@ -13,6 +13,9 @@ export const TEXTOS_NUEVOS_PENDIENTES: Record<string, string> = {
     "Mostra fotografias fixas e muda de paisagem só com os botões.",
   "Paisaje {n} de {total}": "Paisagem {n} de {total}",
   "Paisajes de la portada": "Paisagens da página inicial",
+  "Elige un paisaje": "Escolha uma paisagem",
+  "Tu equipo ya pide reducir el movimiento. Las fotografías quedan fijas.":
+    "Seu dispositivo já pede para reduzir o movimento. As fotografias ficam fixas.",
   "Cerrar notificación": "Fechar notificação",
 };
 

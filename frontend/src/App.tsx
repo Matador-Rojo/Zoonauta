@@ -18,7 +18,19 @@ function movimientoInicial(): boolean {
     const guardado = localStorage.getItem(CLAVE_MOVIMIENTO);
     if (guardado !== null) return guardado === "1";
   } catch { /* almacenamiento no disponible */ }
-  return matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return false;
+}
+
+// Preferencia del sistema, escuchada en vivo. Si pide reducir, manda sobre la elección local.
+function useSistemaReduceMovimiento(): boolean {
+  const [reduce, setReduce] = useState(() => matchMedia("(prefers-reduced-motion: reduce)").matches);
+  useEffect(() => {
+    const consulta = matchMedia("(prefers-reduced-motion: reduce)");
+    const alCambiar = () => setReduce(consulta.matches);
+    consulta.addEventListener("change", alCambiar);
+    return () => consulta.removeEventListener("change", alCambiar);
+  }, []);
+  return reduce;
 }
 
 export function App() {
@@ -33,6 +45,8 @@ export function App() {
   const [prefs, setPrefs] = useState<ValoresPreferencias>(() => ({
     retos: "8", opciones: 8, vozActiva: true, vozId: "", velocidad: 0.95, movimientoReducido: movimientoInicial(),
   }));
+  const sistemaReduce = useSistemaReduceMovimiento();
+  const movimientoReducido = prefs.movimientoReducido || sistemaReduce;
   const ocupadoRef = useRef(false);
   const vistaRef = useRef<Vista | null>(null);
   vistaRef.current = vista;
@@ -83,7 +97,9 @@ export function App() {
     document.title = "Zoonauta · " + t("Animales y hábitats");
   }, [idioma, t]);
   useEffect(() => {
-    document.documentElement.dataset.movimiento = prefs.movimientoReducido ? "reducido" : "normal";
+    document.documentElement.dataset.movimiento = movimientoReducido ? "reducido" : "normal";
+  }, [movimientoReducido]);
+  useEffect(() => {
     try { localStorage.setItem(CLAVE_MOVIMIENTO, prefs.movimientoReducido ? "1" : "0"); } catch { /* sin almacenamiento */ }
   }, [prefs.movimientoReducido]);
 
@@ -166,7 +182,7 @@ export function App() {
   let pantalla: React.ReactNode;
   if (enInicio) {
     pantalla = (
-      <Portada vista={vista} movimientoReducido={prefs.movimientoReducido} dialogoAbierto={dialogoAbierto}
+      <Portada vista={vista} movimientoReducido={movimientoReducido} dialogoAbierto={dialogoAbierto}
         onAbrirModalidad={() => { setDialogoAbierto(true); hablar(vista, "modalidad"); }}
         onCerrarModalidad={() => { setDialogoAbierto(false); if (vistaRef.current?.fase === "INICIO") guia.parar(); }}
         onComenzar={(modalidad: Modalidad) => void accion("iniciar", { modalidad })} />
@@ -208,7 +224,7 @@ export function App() {
           </article>
         ))}
       </div>
-      <Preferencias ref={preferencias} idioma={idioma} enInicio={enInicio} voces={voces}
+      <Preferencias ref={preferencias} idioma={idioma} enInicio={enInicio} voces={voces} sistemaReduce={sistemaReduce}
         valores={{ ...prefs, vozId }}
         onCambio={(cambios) => {
           if ("vozId" in cambios || "velocidad" in cambios || cambios.vozActiva === false) guia.parar();
