@@ -29,6 +29,10 @@ class Inventario(unittest.TestCase):
         apoyo = g.mensaje("MSG_APOYO_AUTO")
         for pista in self.banco.variantes.values():
             textos |= {g.ayuda(pista, "A01").texto_voz, g.ayuda(pista, "A01", apoyo).texto_voz}
+        # Ayudas por rasgo del agente 6.0 (se emiten cuando existen sus grabaciones).
+        for ayuda in self.banco.ayudas_rasgo.values():
+            plantilla = {**ayuda, "nivel": 1, "variante_id": "RASGO"}
+            textos |= {g.ayuda(plantilla, "A01").texto_voz, g.ayuda(plantilla, "A01", apoyo).texto_voz}
         for (animal, habitat), a in self.banco.asociaciones.items():
             if a["estado"] == "VALIDA":
                 textos.add(g.mensaje("MSG_VALIDA", animal, habitat, a["contexto"]).texto_voz)
@@ -52,6 +56,8 @@ class Inventario(unittest.TestCase):
         self.assertEqual(144, cuenta["apoyo_con_pista"])
         self.assertEqual(48, cuenta["confirmacion"])
         self.assertEqual(10, cuenta["confirmacion_con_contexto"])
+        self.assertEqual(32, cuenta["pista_rasgo"])
+        self.assertEqual(32, cuenta["apoyo_con_pista_rasgo"])
         self.assertTrue({p for p in self.banco.variantes} <= set(ids))
         for f in self.tabla:
             self.assertRegex(f["archivo"], r"^(es-419|pt-BR)/[A-Z0-9_]+\.mp3$")

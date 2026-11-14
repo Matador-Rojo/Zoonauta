@@ -9,6 +9,7 @@ from threading import RLock
 from uuid import uuid4
 
 from codigo.interfaz import idiomas
+from codigo.motores.agente import MOTORES_6, POLITICA_AGENTE
 from codigo.motores.guia import MotorGuia, MotorPistas
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import Evento, TERMINALES
@@ -16,6 +17,7 @@ from codigo.nucleo.gestor import GestorPartida
 from codigo.nucleo.registro import Registro
 
 
+POLITICAS_6 = (*MOTORES_6, MotorPistas.politica)
 MODELO_DEMO = RAIZ_PROYECTO / "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R01.json"
 
 
@@ -26,10 +28,14 @@ class ConflictoVista(ValueError):
 class SesionWeb:
     def __init__(self, banco: BancoDatos, registros: Path | None = None,
                  politica: str = "PROBABILISTICO", parametros: Path | None = MODELO_DEMO,
-                 aleatorio: Random | None = None):
+                 aleatorio: Random | None = None, agente: str = POLITICA_AGENTE):
         self.banco = banco
         self.registros = registros
-        self.politica = MotorPistas.politica if banco.ampliado else politica
+        # Catálogo ampliado (6.0 y 5.0 en /v5/): el agente elige las pistas; ID3_OPCIONES y
+        # PISTAS_PROGRESIVAS quedan como comparación. El original conserva sus tres políticas.
+        if banco.ampliado and agente not in POLITICAS_6:
+            raise ValueError(f"Agente no reconocido: {agente}.")
+        self.politica = agente if banco.ampliado else politica
         self.parametros = parametros
         self.aleatorio = aleatorio if aleatorio is not None else SystemRandom()
         self.lock = RLock()
@@ -42,8 +48,13 @@ class SesionWeb:
     def _nuevo(self, retos: int) -> GestorPartida:
         sid = "WEB-" + uuid4().hex
         registro = Registro(self.registros / f"{sid}.jsonl" if self.registros else None)
-        motor = (MotorPistas(self.banco) if self.banco.ampliado else
-                 MotorGuia(self.banco, self.politica, parametros=self.parametros))
+        if not self.banco.ampliado:
+            motor = MotorGuia(self.banco, self.politica, parametros=self.parametros)
+        elif self.politica in MOTORES_6:
+            # Solo ayudas con grabación: la 6.0 nunca muestra una ayuda que la voz no puede leer.
+            motor = MOTORES_6[self.politica](self.banco, solo_grabadas=True)
+        else:
+            motor = MotorPistas(self.banco)
         # Una permutación completa por partida: todos los animales pueden aparecer
         # y ninguno se repite. La consola y los experimentos conservan su orden.
         orden = self.aleatorio.sample(list(self.banco.escenarios), len(self.banco.escenarios))
