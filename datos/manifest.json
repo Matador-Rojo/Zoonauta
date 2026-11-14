@@ -1036,8 +1036,8 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 29844,
-      "sha256": "ff3a3bd611ce66ff0db94addefaaf5d8e610ac859854b99ec4bbc7a3ece663dd"
+      "bytes": 30755,
+      "sha256": "872eead3ee2d3b468b0b3d71d0db6604a1a9f5331be206c1cbdcb825df690504"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
@@ -5311,8 +5311,8 @@
     },
     {
       "ruta": "frontend/src/i18n.ts",
-      "bytes": 2269,
-      "sha256": "0196409a907bc864d24b0254d8f8aa54c40a939b0b55c1dde69a08cdd4e52ac9"
+      "bytes": 1429,
+      "sha256": "7b8fcfff52922882d1ac33be508d245d91465453867ffcd9d8403bdbe593ad13"
     },
     {
       "ruta": "frontend/src/main.tsx",
@@ -5387,7 +5387,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 1268,
-      "sha256": "e149a51341628f50a27af53c48c9f3b27da3bccbdd6598cda8a3849f4eb9fb95"
+      "sha256": "13a3d0a661661f90353a69e5d71afcc99ce765a9576d08c8050c65bf5fa01545"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -5411,8 +5411,8 @@
     },
     {
       "ruta": "frontend/src/pruebas/i18n.test.ts",
-      "bytes": 994,
-      "sha256": "c65f4272422e004be084138a1a42ca3dab7fae4eae2b6aecbc8ecc8befcbcd35"
+      "bytes": 1208,
+      "sha256": "896cce4773c1f83a1cd0dafabafb0e76d2aec526bdbdbf380724fcf28af59300"
     },
     {
       "ruta": "frontend/src/pruebas/preparar.ts",
@@ -9815,14 +9815,14 @@
       "sha256": "da1bd844e5268a4be42bfafeeeb31ba5d74c16d9e3362ff5be9fffb3bf093226"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-B4S5sRkL.js",
-      "bytes": 248932,
-      "sha256": "67e2f969b633f3b0a3127e0b3d3dd619a41e81e3c4464de2a1234f56a6673bbf"
-    },
-    {
       "ruta": "codigo/interfaz/web6/assets/index-J3Hn6SVf.css",
       "bytes": 36555,
       "sha256": "0bae13364569dab056337a088a0412e32a9a305f6dae37226d1b17c785b5cbfa"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-B5sgVnOv.js",
+      "bytes": 248055,
+      "sha256": "fd544320ff697e6e2f4b28329f4a0dc7ed3c96f73b75f8f6486702167b0cb28f"
     }
   ],
   "nombre_proyecto": "Zoonauta",
