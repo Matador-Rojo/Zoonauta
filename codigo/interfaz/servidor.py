@@ -21,6 +21,8 @@ FONDOS_PORTADA = {f"H{i:02}.webp" for i in range(1, 49)}
 FONDOS_HISTORICOS = {f"H0{i}.webp" for i in range(2, 9)}
 # Versiones de 960 px de los ocho paisajes de la portada 6.0 (derivadas de fondos/catalogo).
 FONDOS_PORTADA_960 = {f"{h}-960.webp" for h in ("H01", "H09", "H17", "H22", "H20", "H37", "H21", "H25")}
+# Capas con transparencia superpuestas a cinco paisajes (ver fondos/capas/procedencia.json).
+CAPAS_PORTADA = {f"{c}.webp" for c in ("H01-hojas", "H01-niebla", "H09-hierba", "H20-nubes", "H37-algas")}
 WEB6 = (Path(__file__).parent / "web6").resolve()
 TIPOS_V6 = {".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8",
             ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".webp": "image/webp",
@@ -131,6 +133,8 @@ class Manejador(BaseHTTPRequestHandler):
             self._enviar_v6(ruta)
         elif ruta.startswith("/animales/") and ruta.removeprefix("/animales/") in self.server.imagenes_animal:
             self._enviar(self.server.imagenes_animal[ruta.removeprefix("/animales/")].read_bytes(), "image/webp")
+        elif ruta.startswith("/fondos/capas/") and ruta.removeprefix("/fondos/capas/") in CAPAS_PORTADA:
+            self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
         elif ruta.startswith("/fondos/portada/") and ruta.removeprefix("/fondos/portada/") in FONDOS_PORTADA_960:
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
         elif ruta.startswith("/fondos/catalogo/") and ruta.removeprefix("/fondos/catalogo/") in FONDOS_PORTADA:

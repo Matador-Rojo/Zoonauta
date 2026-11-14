@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 15117,
-      "sha256": "ea3afa7a24374201248ab3668733d8da411d2298cd2469047c305f4cea29484e"
+      "bytes": 15526,
+      "sha256": "09c50e12e283c6109503ffb96f83c44f398fe4ca558b0e6d539f2d7efdbd66cc"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -5216,8 +5216,8 @@
     },
     {
       "ruta": "tests/verificar_portada.cjs",
-      "bytes": 11047,
-      "sha256": "d730f136f527120778097ba92afb7ab9baf25dd51c61ca588368e3191403b55c"
+      "bytes": 11947,
+      "sha256": "10237eda5577002a263ccacded03e768b733c4b0df33a95cb770ee7810541c9d"
     },
     {
       "ruta": "frontend/.gitignore",
@@ -5281,8 +5281,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Portada.tsx",
-      "bytes": 11560,
-      "sha256": "089ccbaf5f22162bcd60b99c3afdb08204c0d537926cdbb87e0f435ac9da69ef"
+      "bytes": 13083,
+      "sha256": "07f862f946795c1e03c6140602c121205b8e0fc7c97547d317b5394d92ff84e1"
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
@@ -5306,8 +5306,8 @@
     },
     {
       "ruta": "frontend/src/estilos/portada.css",
-      "bytes": 9160,
-      "sha256": "9ed41eb7c7fe76ff5c19af7ef12c4cda99522c2a01bb27535b792be72fa35c2f"
+      "bytes": 9618,
+      "sha256": "31cd57efac9317814f8991d7923e67dbefa9dc548e71f4a9872b03a63eea6178"
     },
     {
       "ruta": "frontend/src/i18n.ts",
@@ -5387,7 +5387,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 920,
-      "sha256": "cdd71c3e3dfbe95fef7a5bc04bb69464a556118cc4e463c052097b3b0b5297ae"
+      "sha256": "78b806b10cac3b8f2fc0088bfce6c693580d5575a01a53ec30123a0810e834c0"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -5438,16 +5438,6 @@
       "ruta": "codigo/interfaz/web6/assets/atkinson-hyperlegible-next-latin-wght-normal-BcXVPD7q.woff2",
       "bytes": 33996,
       "sha256": "18b2a1a39a2fa298b0ba5390aca68462669826c90925656f1c1f6796e0e1bbaf"
-    },
-    {
-      "ruta": "codigo/interfaz/web6/assets/index-BNWKpsip.css",
-      "bytes": 20663,
-      "sha256": "1c42d5e6bb6e7f4140683cb65cf670b74559800528f196d43ea7c26bafcfbcca"
-    },
-    {
-      "ruta": "codigo/interfaz/web6/assets/index-Dic5JS9P.js",
-      "bytes": 251031,
-      "sha256": "fc7afdf8bc73d87532c01d2369f9d3c43aad15d41e479c2644d1ca3ad5b7ae04"
     },
     {
       "ruta": "assets/pictogramas_ligeros/P_A01.webp",
@@ -7668,6 +7658,46 @@
       "ruta": "tests/test_pictogramas_ligeros.py",
       "bytes": 2790,
       "sha256": "1d474866da293a4a285d447c5bc029dfb888e41c73893953693eb03fc1a4e038"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/capas/H01-hojas.webp",
+      "bytes": 55500,
+      "sha256": "e93042ca058e78ed295f6554fd80bb68779073ca9e3acdb45ddfb45fb7172a72"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/capas/H01-niebla.webp",
+      "bytes": 27890,
+      "sha256": "60e66afb9ff2f22b21af1d2dc137821515ad019aec0adc10a69c36a7e9b023eb"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/capas/H09-hierba.webp",
+      "bytes": 111084,
+      "sha256": "251501efee8bd70de21d18d8df5fc289cd6605561d9ef4c1561a1f2280d73d08"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/capas/H20-nubes.webp",
+      "bytes": 5800,
+      "sha256": "96e1ac4ea5055ee38aa2d4e12a0c0bf5637cda433071fd1159d518d31a363139"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/capas/H37-algas.webp",
+      "bytes": 35270,
+      "sha256": "5cab3f649eea9a1449f4a1fd796dd8f7d5f566b0c060e8d5072ac7f2b8f2e09e"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/capas/procedencia.json",
+      "bytes": 2218,
+      "sha256": "c477246060d961d6f8aa5c95c601610e15642344b1b73cf1762f3f5cceeea12e"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-BlthaCKV.css",
+      "bytes": 20832,
+      "sha256": "007f561ff30a93c92b594021ecd580c1b1a72600a74f72734cb3ad2257f44ee2"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-Hg_E5INJ.js",
+      "bytes": 251595,
+      "sha256": "b68bdd58151e789a6b9c23634888152842b88cfd284a428aacb3d6c7c0874df5"
     }
   ],
   "nombre_proyecto": "Zoonauta",
