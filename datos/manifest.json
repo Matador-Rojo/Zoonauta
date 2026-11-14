@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 13027,
-      "sha256": "9c2612ff1c66ad7e649d4a30a37733f9a2ba3b95e0c21b4328f46d4f1aae3c01"
+      "bytes": 14017,
+      "sha256": "df86606e3f13f71548aee0c545eaad6adfc991d1258096c9089d89f7b1f3678f"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -2606,8 +2606,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 2248,
-      "sha256": "182acce79706816fa11d285ebb4e9a01f7d0fa04dacbefeb5f54f9eb4ae580e9"
+      "bytes": 2440,
+      "sha256": "f0f1e677d9dd0ec42adc4bd6fcac63e92a1429c034be0863fd7a96151317104c"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -5218,6 +5218,141 @@
       "ruta": "tests/verificar_portada.cjs",
       "bytes": 2626,
       "sha256": "6330c5a99f7df8fc439c7315fcf442ebaacb1332dc5c3473e4469ca89e185254"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-CT6ZvLcw.js",
+      "bytes": 215236,
+      "sha256": "4144d8775ae9d4c1b4def9b545f49c779688671b000ff23c638aa33cf74ab954"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-ClAGZudO.css",
+      "bytes": 14886,
+      "sha256": "da64a7d32b3fa8391bf4de8c64abf8816a4938aed64149453c633afec007c3c2"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/index.html",
+      "bytes": 612,
+      "sha256": "f28039f0153197462bf4d300c51ac48eb4d933a68ba7383f5c944d1fb7b67ecf"
+    },
+    {
+      "ruta": "frontend/.gitignore",
+      "bytes": 14,
+      "sha256": "4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97"
+    },
+    {
+      "ruta": "frontend/index.html",
+      "bytes": 510,
+      "sha256": "a220d17439f1955c6b0a100fcaea5b3de718b9628c4b86e7fc89ffd0c7e398f0"
+    },
+    {
+      "ruta": "frontend/package-lock.json",
+      "bytes": 61779,
+      "sha256": "ea041f93ad7e5a9d18570f9371966c2843b9209daf995dbe57b5602a5169f0ab"
+    },
+    {
+      "ruta": "frontend/package.json",
+      "bytes": 469,
+      "sha256": "8decb9ada7319388482ee92c7e3a386b9d41627d687111753a9168a1d16d40d3"
+    },
+    {
+      "ruta": "frontend/src/App.tsx",
+      "bytes": 11102,
+      "sha256": "d7e80a55063aba61c4eafee9272f99032fe603f056214a048f8c8ab6bc9576f7"
+    },
+    {
+      "ruta": "frontend/src/api/cliente.ts",
+      "bytes": 2047,
+      "sha256": "3b84cd7016a08bd194654ef2181de41cbf540cfaf305548b843ed1e40fc07362"
+    },
+    {
+      "ruta": "frontend/src/api/tipos.ts",
+      "bytes": 1931,
+      "sha256": "bae14b33b815dd36e30351b9da4708b49dd01b3c8eef28d3a8fc3ad320a684ac"
+    },
+    {
+      "ruta": "frontend/src/componentes/Catalogo.tsx",
+      "bytes": 4084,
+      "sha256": "22690d619c449f85000d6ae971664f0c0391b416aede404203c450a8ddbd094d"
+    },
+    {
+      "ruta": "frontend/src/componentes/Cierre.tsx",
+      "bytes": 2146,
+      "sha256": "fd83af2a3b01a1530d5b43b9d831162b14e7de4682210e9176a3c935a9dc2940"
+    },
+    {
+      "ruta": "frontend/src/componentes/Encabezado.tsx",
+      "bytes": 798,
+      "sha256": "fe9def5d5c32cf2732335f22e4b38e9a180414d8c4d073b858b02e56c69d3dd6"
+    },
+    {
+      "ruta": "frontend/src/componentes/Icono.tsx",
+      "bytes": 916,
+      "sha256": "3fa85bc038f3c8dbbd00f4ba09a3fbcb94675013ee9d0735e39c59c5a3897739"
+    },
+    {
+      "ruta": "frontend/src/componentes/Pictograma.tsx",
+      "bytes": 1542,
+      "sha256": "adf4dba82e1ddac4ce3d0f86f8ad48d54ca7bb5963a591b1e7f3086fe0d788e5"
+    },
+    {
+      "ruta": "frontend/src/componentes/Portada.tsx",
+      "bytes": 7112,
+      "sha256": "da3052623312589651fa24426833a995d674e551d612c9f9e681809d41e6ef08"
+    },
+    {
+      "ruta": "frontend/src/componentes/Preferencias.tsx",
+      "bytes": 6032,
+      "sha256": "999ba423e10b1b5be7ed6d4933cbc131a4386f0e5710be597b7ddf9e8280cf44"
+    },
+    {
+      "ruta": "frontend/src/componentes/Reto.tsx",
+      "bytes": 4175,
+      "sha256": "f3696fe1201be367d409ff2f5dbffc4c9bea44c4e71bd74d0e98acf81f9c7f21"
+    },
+    {
+      "ruta": "frontend/src/estilos/base.css",
+      "bytes": 5583,
+      "sha256": "0bd3253cc55cf8c8a1cb66e77df5f64584606d08af920cfdf9d50e2c8baf5e49"
+    },
+    {
+      "ruta": "frontend/src/estilos/pantallas.css",
+      "bytes": 7696,
+      "sha256": "f6a3ebcfb9783c7c254e5d1df2b667db7457910810be27cdfacd7163af557a2a"
+    },
+    {
+      "ruta": "frontend/src/estilos/portada.css",
+      "bytes": 5397,
+      "sha256": "6dcc2c3518a7c7c22d6eae51f3276118c2a2f32c09a3b47d8ef00186d347ec50"
+    },
+    {
+      "ruta": "frontend/src/i18n.ts",
+      "bytes": 1612,
+      "sha256": "f7127f4e30139a2e5303124ba8e9a9fbd1e4c0af037a17e6e64ebeb65420caff"
+    },
+    {
+      "ruta": "frontend/src/main.tsx",
+      "bytes": 308,
+      "sha256": "d30f76b54c0ba869b31a9d8b59f7872c452f98a0cf6d1e5166e27cb5ea9d9c2d"
+    },
+    {
+      "ruta": "frontend/src/voz.ts",
+      "bytes": 5622,
+      "sha256": "b9ba58536019ae2b3f8796ce983b7d6727e806121eb554d90be98f6d0cde3987"
+    },
+    {
+      "ruta": "frontend/tsconfig.json",
+      "bytes": 430,
+      "sha256": "91e522fe4b6c9f95c1e97f46797915a92a4d2183bc0ce8abfb7d55f0427dea84"
+    },
+    {
+      "ruta": "frontend/vite.config.ts",
+      "bytes": 786,
+      "sha256": "b9b499ed4a35e7b68792aae34278d04044795a2059b96dd36f9f7436e4e37cdb"
+    },
+    {
+      "ruta": "tests/verificar_v6.cjs",
+      "bytes": 9995,
+      "sha256": "9ceb47ad658f76ef77e8e9f46a298769bd194420d42d762aca5364323d3f1276"
     }
   ],
   "nombre_proyecto": "Zoonauta",

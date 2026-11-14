@@ -66,6 +66,19 @@ Detalles del entorno:
 - Nueve JSON de `datos/` y `docs/` están confirmados con CRLF pese a `eol=lf` y aparecen
   como modificados. No incluirlos en commits sin decisión explícita.
 
+## Frontend 6.0 (React + TypeScript + Vite, decidido 2026-11-13)
+
+- Código en `frontend/`; el compilado va a `codigo/interfaz/web6/` y se versiona, para que
+  `iniciar_juego.bat` funcione sin Node. Python lo sirve en `/v6/`; la 5.0 sigue en `/`
+  hasta que el propietario apruebe el cambio.
+- `cd frontend && npm ci && npm run build` (tsc + vite). Tras compilar, los nombres con
+  hash cambian: actualizar `datos/manifest.json` (quitar los antiguos, añadir los nuevos).
+- Desarrollo: servidor Python en 8766 + `npm run dev` (Vite reenvía `/api`, `/media`, etc.).
+- `python -m tests.ejecutar_navegador --v6` — recorrido completo del prototipo (10 casos).
+- CSS nativo y controles HTML nativos (`<dialog>` con `showModal`, `<select>`, switches
+  `role="switch"`). Sin Tailwind, shadcn, Motion ni Embla mientras no aporten algo concreto.
+- Textos nuevos sin traducción revisada: `TEXTOS_NUEVOS_PENDIENTES` en `frontend/src/i18n.ts`.
+
 ## Mapa del proyecto
 
 - `codigo/interfaz/servidor.py` — HTTP y API (`/api/vista`, `/api/accion`, `/api/idioma`,

@@ -19,6 +19,9 @@ from codigo.nucleo.estado import TERMINALES
 
 FONDOS_PORTADA = {f"H{i:02}.webp" for i in range(1, 49)}
 FONDOS_HISTORICOS = {f"H0{i}.webp" for i in range(2, 9)}
+WEB6 = (Path(__file__).parent / "web6").resolve()
+TIPOS_V6 = {".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8",
+            ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".webp": "image/webp"}
 
 
 class Servidor(ThreadingHTTPServer):
@@ -87,6 +90,19 @@ class Manejador(BaseHTTPRequestHandler):
             # El navegador puede cancelar una descarga al pausar la lectura.
             pass
 
+    def _enviar_v6(self, ruta):
+        """Interfaz 6.0 compilada con Vite (frontend/ → web6/). No requiere Node para jugar."""
+        if ruta in ("/v6", "/v6/"):
+            archivo = WEB6 / "index.html"
+        else:
+            archivo = (WEB6 / ruta.removeprefix("/v6/")).resolve()
+            if not archivo.is_relative_to(WEB6 / "assets"):
+                return self._enviar({"error": "Ruta no encontrada."}, codigo=404)
+        mime = TIPOS_V6.get(archivo.suffix)
+        if not mime or not archivo.is_file():
+            return self._enviar({"error": "Ruta no encontrada."}, codigo=404)
+        self._enviar(archivo.read_bytes(), mime)
+
     def do_GET(self):
         ruta = urlsplit(self.path).path
         fijos = {"/": ("index.html", "text/html; charset=utf-8"),
@@ -102,6 +118,8 @@ class Manejador(BaseHTTPRequestHandler):
         if ruta in fijos:
             archivo, mime = fijos[ruta]
             self._enviar((Path(__file__).parent / "web" / archivo).read_bytes(), mime)
+        elif ruta in ("/v6", "/v6/") or ruta.startswith("/v6/assets/"):
+            self._enviar_v6(ruta)
         elif ruta.startswith("/animales/") and ruta.removeprefix("/animales/") in self.server.imagenes_animal:
             self._enviar(self.server.imagenes_animal[ruta.removeprefix("/animales/")].read_bytes(), "image/webp")
         elif ruta.startswith("/fondos/catalogo/") and ruta.removeprefix("/fondos/catalogo/") in FONDOS_PORTADA:
