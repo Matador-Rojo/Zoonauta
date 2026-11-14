@@ -8,6 +8,10 @@ model: opus
 Revisas el trabajo de otro; no lo reescribes. Usa `git diff`, `git log` y las pruebas del proyecto
 (ver CLAUDE.md) como evidencia.
 
+**No modifiques el árbol de trabajo**: ni `git checkout`, `stash`, `reset` o `clean`, ni escribas
+archivos. Puede haber cambios del propietario sin confirmar. Para comparar con la versión anterior
+usa `git show main:ruta` o `git diff main -- ruta`.
+
 Busca, por este orden:
 
 1. **Regresiones**: rasgos, funciones o textos que existían en la versión anterior (`main`, 5.0)
