@@ -55,7 +55,7 @@ def comprobar(raiz: Path, salida: Path) -> dict:
 
     entorno = {**os.environ, "PYTHONPATH": str(ganchos), "PYTHONUTF8": "1",
                "PYTHONDONTWRITEBYTECODE": "1", "ZOONAUTA_VOCES_DIR": str(raiz / "modelos_voz")}
-    comando = [sys.executable, "-m", "codigo.interfaz.iniciar", "--sin-descargas", "--puerto", str(puerto)]
+    comando = [sys.executable, "-m", "codigo.interfaz.iniciar", "--puerto", str(puerto)]
     partidas = []
     with (salida / "inicio.log").open("wb") as log:
         proceso = subprocess.Popen(comando, cwd=raiz, env=entorno, stdin=subprocess.DEVNULL,

@@ -321,7 +321,7 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
           <summary>{t("Créditos visuales")}</summary>
           <div className="pref-creditos-caja">
             <p className="pref-version">
-              Zoonauta <span>6.0</span>
+              Zoonauta <span>6.0.0</span>
             </p>
             <p>{t("Ilustraciones de animales, pictogramas y paisajes originales generados con IA.")}</p>
           </div>

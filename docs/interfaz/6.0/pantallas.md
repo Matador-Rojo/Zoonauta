@@ -1,5 +1,10 @@
 # Pantallas 6.0 — registro de la Fase 4
 
+> **Superado el 2026-11-14.** Este registro describe la fase 4 (paleta clara, luego oscura y
+> lima, carrusel de 8 paisajes). La 6.0 actual es azul noche y cian, con la portada «Bosque de
+> luz» y la composición de la 5.0: ver `identidad.md` y `accesibilidad_rendimiento.md`.
+
+
 Interfaz en `/v6/` (rama `experimental/zoonauta-v6-modern-web`). Reglas, modos y
 datos educativos sin cambios: solo cambia la presentación.
 

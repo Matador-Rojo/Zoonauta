@@ -1,9 +1,10 @@
 # Zoonauta — instrucciones para Claude Code
 
 Juego educativo sobre animales y hábitats (curso de IA, UPC 2026-2) para personas que
-pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoonauta
-5.0.0 (`main`, 1a0b3a5). Trabajo actual: modernización 6.0 en la rama
-`experimental/zoonauta-v6-modern-web`. Responder al propietario en español.
+pueden necesitar apoyos visuales, pictográficos y auditivos. **Versión actual: Zoonauta
+6.0.0** (en `main` desde el 2026-11-14, c1d0877; también en la rama
+`experimental/zoonauta-v6-modern-web`). La 5.0.0 (1a0b3a5) sigue en `/v5/`.
+Responder al propietario en español.
 
 ## Reglas permanentes
 
@@ -77,7 +78,7 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
 
 ```bash
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
-PYTHONUTF8=1 python -m unittest discover -s tests -q   # 100 pruebas
+PYTHONUTF8=1 python -m unittest discover -s tests -q   # 106 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
 python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/): 6 casos + axe
 python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados
@@ -89,7 +90,7 @@ python -m tests.ejecutar_navegador                 # 20 casos (recorrido general
 python -m tests.ejecutar_navegador --partidas-v6    # 4 partidas completas con teclado (6.0)
 python -m tests.ejecutar_navegador --voz-v6         # cadena de voz 6.0 con audio simulado
 python -m tests.lighthouse_v6 --salida <carpeta>      # Lighthouse en 4 pantallas × 2 dispositivos
-py -3 -m codigo.interfaz.iniciar --sin-descargas   # juego en http://127.0.0.1:8766
+py -3 -m codigo.interfaz.iniciar                   # juego en http://127.0.0.1:8766 (6.0; 5.0 en /v5/)
 ```
 
 Herramientas de prueba: `cd frontend && npm ci` instala Playwright core, axe-core y
@@ -101,7 +102,6 @@ sustituyen). `INTERFAZ_SALIDA=<carpeta temporal>` evita escribir capturas en `ou
 cd frontend && npm run check        # tsc + ESLint 10 + Prettier + Vitest
 cd frontend && npm run mwg -- search "toggle switch"   # Modern Web Guidance (CLI 1.0.0)
 python -m uv tool run ruff@0.15.0 check codigo tests    # 18 avisos de base (ver ruff.toml)
-python -m uv tool run --python 3.12 pip-audit@2.10.0 -r requirements_voz.txt --disable-pip --no-deps
 python -m codigo.nucleo.actualizar_manifiesto [--incluir RUTA]  # tras compilar o editar
 python -m codigo.interfaz.preparar_imagenes_ligeras            # si cambia un pictograma, paisaje o robot (Pillow)
 python -m codigo.nucleo.validar_catalogo                      # integridad del catálogo ampliado (0 errores)
@@ -131,7 +131,7 @@ Detalles del entorno:
 - `cd frontend && npm ci && npm run build` (tsc + vite). Tras compilar, los nombres con
   hash cambian: actualizar `datos/manifest.json` (quitar los antiguos, añadir los nuevos).
 - Desarrollo: servidor Python en 8766 + `npm run dev` (Vite reenvía `/api`, `/media`, etc.).
-- `python -m tests.ejecutar_navegador --v6` — recorrido completo del prototipo (10 casos).
+- `python -m tests.ejecutar_navegador --v6` — recorrido completo de la 6.0 (9 casos).
 - CSS nativo y controles HTML nativos (`<dialog>` con `showModal`, `<select>`, switches
   `role="switch"`). Sin Tailwind, shadcn, Motion ni Embla mientras no aporten algo concreto.
 - Textos nuevos sin traducción revisada: `TEXTOS_NUEVOS_PENDIENTES` en `frontend/src/i18n.ts`.
@@ -141,9 +141,10 @@ Detalles del entorno:
 - `codigo/interfaz/servidor.py` — HTTP y API (`/api/vista`, `/api/accion`, `/api/idioma`,
   `/api/voz`, `/api/voz/cancelar`, `/api/revision`, `/revision`). Acciones con
   `evento_id`, `revision`, `sesion_id`, `reto_id`.
-- `codigo/interfaz/iniciar.py` — iniciador (uv, Python 3.12 gestionado, modelos de voz).
-  `iniciar_juego.bat` / `iniciar_sin_descargas.bat` lo llaman.
-- `codigo/interfaz/web/` — frontend actual (`index.html`, `app.js`, `estilos.css`,
+- `codigo/interfaz/iniciar.py` — iniciador: solo arranca el servidor con el Python del
+  equipo (sin descargas ni entornos; `requirements_voz.txt` e `iniciar_sin_descargas.bat`
+  se retiraron el 2026-11-14). `iniciar_juego.bat` / `iniciar_juego.sh` lo llaman.
+- `codigo/interfaz/web/` — frontend de la 5.0, servido en `/v5/` (`index.html`, `app.js`, `estilos.css`,
   `expedicion.css`, `fondos/catalogo/H01..H48.webp` de 1920×1080).
 - `codigo/nucleo/` — estado, gestor de sesión, catálogo, registro, auditoría, manifiesto.
 - `codigo/motores/` — `guia.py` (pistas progresivas del catálogo ampliado, ambas
@@ -159,7 +160,7 @@ Detalles del entorno:
 ## Portada 6.0 (decidido 2026-11-14, sustituye al carrusel de ocho fondos)
 
 Un único fondo aprobado: «Bosque de luz» (ciervo y búho bajo la luna,
-`prototipo-bosque-de-luz/bosque-de-luz-ciervo.png`). No se sustituye, ni se le aplican
+`assets/portada/bosque-de-luz-ciervo.png`; copia WebP en `frontend/src/recursos/`). No se sustituye, ni se le aplican
 filtros, animaciones o capas; conserva su encuadre y su velo oscuro. La portada ocupa
 exactamente la vista, sin desplazamiento; Preferencias se abre encima sin empujar nada.
 **Sin pictogramas en la portada.** Textos: «Descubre el bosque de luz.» y «Elige un animal.

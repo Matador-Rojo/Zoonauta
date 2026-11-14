@@ -290,7 +290,7 @@ def main():
                          politica=args.politica, parametros=args.parametros,
                          ampliado=not args.catalogo_original)
     url = f"http://127.0.0.1:{servidor.server_port}"
-    print(f"Zoonauta 5.0.0: {url}\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
+    print(f"Zoonauta 6.0.0: {url}  (5.0: {url}/v5/)\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:
         webbrowser.open(url)
     try:
