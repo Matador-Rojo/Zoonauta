@@ -12,8 +12,8 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Bash",
-        "hooks": [{"type": "command", "command": "python .claude/hooks/proteger_git.py"}]
+        "matcher": "Bash|PowerShell",
+        "hooks": [{"type": "command", "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/proteger_git.py\""}]
       }
     ]
   },

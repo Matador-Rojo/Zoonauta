@@ -7,7 +7,7 @@ from pathlib import Path
 
 HOOK = Path(__file__).resolve().parents[1] / ".claude" / "hooks" / "proteger_git.py"
 BLOQUEAR = ["git add -A", "git add .", "git add --all", "git commit -am x", "git push origin x",
-            "git reset --hard HEAD", "git clean -fd", "git stash", "git checkout -- a.txt", "git restore a"]
+            "git reset --hard HEAD", "git clean -fd", "git stash", "git checkout -- a.txt", "git checkout main -- a.txt", "git commit --amend", "git commit --all -m x", "git add -A; git status", "git restore a"]
 PERMITIR = ["git add docs/a.md", 'git commit -m "x"', "git status", "git diff main -- a", "git log -3", "git show main:a"]
 
 
