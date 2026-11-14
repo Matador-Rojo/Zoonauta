@@ -23,7 +23,8 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
 - Sin 3D, dioramas, WebGL de escenarios, zoom continuo, parallax intenso ni destellos.
   Todo movimiento es ambiental, leve y desactivable (control propio + `prefers-reduced-motion`).
 - Audio siempre bajo control del usuario: una sola voz a la vez; cancelar la lectura
-  anterior al cambiar de mensaje o pausar. Conservar Piper, Kokoro y Web Speech API.
+  anterior al cambiar de mensaje o pausar. Conservar el código de Piper, Kokoro y Web Speech
+  API (la 5.0 los usa; la 6.0 no los ofrece, ver la regla siguiente).
 - Voces de la 6.0 (decidido 2026-11-14): **solo la voz grabada de Zoonauta (ElevenLabs)**, 350
   mp3 en `assets/voz/grabada/es-419/` (copiados de `Downloads/Voces Zoonauta`; cubren los 353
   mensajes en español, 3 reutilizan un duplicado). Piper, Kokoro y las voces del navegador no se
@@ -78,7 +79,9 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
 PYTHONUTF8=1 python -m unittest discover -s tests -q   # 100 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
-python -m tests.ejecutar_navegador --portada       # portada 6.0 (/v6/): 8 paisajes, 7 casos + axe
+python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/v6/): 6 casos + axe
+python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados
+PYTHONUTF8=1 python -m unittest tests.test_voz_grabada_cobertura  # cada mensaje tiene grabación
 python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
 python -m tests.ejecutar_navegador --catalogo      # 16 casos
 python -m tests.ejecutar_navegador --hito3         # 16 casos (Preferencias, teclado)

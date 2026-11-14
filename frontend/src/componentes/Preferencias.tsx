@@ -117,7 +117,7 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
       <div className="pref-contenido" data-mas={hayMas || undefined} onScroll={(e) => medir(e.currentTarget)}>
         <div className="pref-campo pref-idioma">
           <label htmlFor="pref-idioma">{t("Idioma")}</label>
-          <select id="pref-idioma" value={idioma} autoFocus onChange={(e) => onIdioma(e.target.value as Idioma)}>
+          <select id="pref-idioma" value={idioma} onChange={(e) => onIdioma(e.target.value as Idioma)}>
             <option value="es">Español</option>
             <option value="pt-BR">Português (Brasil)</option>
           </select>

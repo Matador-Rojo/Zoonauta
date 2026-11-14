@@ -91,6 +91,9 @@ async function partida(browser, {modalidad, opciones, retos, idioma = 'es', anch
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'sin desplazamiento horizontal');
     const sobra = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
     if (sobra > 0) await page.screenshot({path: require('node:path').resolve(process.env.INTERFAZ_SALIDA || 'output', `desplaza_${modalidad}_${opciones}_${idioma}_${ancho}.png`)});
+    // Nada aplastado: las tarjetas de hábitat se ven y se pueden pulsar.
+    const bajas = await page.locator('.tarjeta-habitat').evaluateAll(t => t.map(e => e.getBoundingClientRect().height).filter(h => h < 56));
+    assert.deepEqual(bajas, [], 'tarjetas de hábitat de al menos 56 px');
     assert.equal(sobra, 0, `sin desplazamiento vertical (${modalidad}, ${opciones} hábitats, ${idioma}, ${ancho}px, reto ${reto + 1})`);
     await tabularYActivar(page, 'button[data-control="continuar"]', reto % 2 ? 'Space' : 'Enter');
     await esperarRevision(page, v.revision);

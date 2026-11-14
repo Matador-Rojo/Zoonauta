@@ -111,7 +111,7 @@ def main():
             servidor.shutdown()
             servidor.server_close()
     for pantalla in args.pantallas:
-        for dispositivo in ("escritorio", "portatil", "movil"):
+        for dispositivo in ("escritorio", "portatil", "movil", "zoom200", "movil-pequeno", "apaisado"):
             print(juntar(args.salida, pantalla, dispositivo))
 
 

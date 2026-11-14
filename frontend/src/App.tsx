@@ -3,6 +3,7 @@ import { cargarConfigVoz, cargarDiccionarios, cargarVista, enviarAccion, enviarI
 import type { Diccionarios, Idioma, Modalidad, TipoAccion, Vista, VozCatalogo } from "./api/tipos";
 import { Catalogo } from "./componentes/Catalogo";
 import { Cierre } from "./componentes/Cierre";
+import { useCerrarFuera } from "./componentes/dialogos";
 import { Icono } from "./componentes/Icono";
 import { Portada } from "./componentes/Portada";
 import { Preferencias, type ValoresPreferencias } from "./componentes/Preferencias";
@@ -64,6 +65,7 @@ export function App() {
     vistaRef.current = vista;
   }, [vista]);
   const preferencias = useRef<HTMLDialogElement>(null);
+  useCerrarFuera(preferencias);
   const [eleccionesVoz, setEleccionesVoz] = useState<Partial<Record<Idioma, string>>>({});
 
   const idioma: Idioma = vista?.idioma ?? "es";
@@ -231,7 +233,11 @@ export function App() {
     [guia, notificar, t],
   );
 
-  const abrirPreferencias = () => preferencias.current?.showModal();
+  // El foco empieza en Idioma, el primer campo (Modern Web Guidance: dialog, foco inicial).
+  const abrirPreferencias = () => {
+    preferencias.current?.showModal();
+    document.getElementById("pref-idioma")?.focus();
+  };
 
   if (errorCarga)
     return (

@@ -11,7 +11,12 @@ const VIEWPORTS = {
   escritorio: {width: 1440, height: 900},
   portatil: {width: 1280, height: 720},
   movil: {width: 390, height: 844},
+  // Vistas bajas: comprueban que nada se aplasta (zoom 200 % de 1440×900, móvil pequeño y apaisado).
+  zoom200: {width: 720, height: 450},
+  'movil-pequeno': {width: 360, height: 640},
+  apaisado: {width: 844, height: 390},
 };
+const MOVILES = new Set(['movil', 'movil-pequeno', 'apaisado']);
 const VERSIONES = {'5.0': '/', '6.0': '/v6/'};
 // Pantallas que se abren desde la interfaz (no desde la API): botón a pulsar en cada versión.
 const PULSAR = {modalidad: {'5.0': 'button.comenzar', '6.0': 'main [aria-haspopup="dialog"]'}};
@@ -25,7 +30,7 @@ const PULSAR = {modalidad: {'5.0': 'button.comenzar', '6.0': 'main [aria-haspopu
       for (const [nombreVp, viewport] of Object.entries(VIEWPORTS)) {
         for (const [version, ruta] of Object.entries(VERSIONES)) {
           // Movimiento reducido: capturas estables, sin fundidos a medias.
-          const context = await browser.newContext({viewport, reducedMotion: 'reduce', isMobile: nombreVp === 'movil', deviceScaleFactor: 1});
+          const context = await browser.newContext({viewport, reducedMotion: 'reduce', isMobile: MOVILES.has(nombreVp), deviceScaleFactor: 1});
           await context.addCookies([{name: 'habitats', value: valor, url: base}]);
           const page = await context.newPage();
           await page.goto(base + ruta);
@@ -35,6 +40,18 @@ const PULSAR = {modalidad: {'5.0': 'button.comenzar', '6.0': 'main [aria-haspopu
           medidas.push({version, pantalla, vista: nombreVp, ...(await page.evaluate(() => ({
             desplazamientoVertical: Math.max(0, document.documentElement.scrollHeight - innerHeight),
             desplazamientoHorizontal: Math.max(0, document.documentElement.scrollWidth - innerWidth),
+            // Alto mínimo de lo que se pulsa o se mira (solo selectores de la 6.0). Que no haya
+            // desplazamiento no basta: también debe verse y poder pulsarse cada elemento.
+            aplastados: [...document.querySelectorAll('.tarjeta-habitat, .tarjeta-animal, .control, .animal-actual img, .cierre-visual img')]
+              .filter(e => getComputedStyle(e).display !== 'none')
+              .map(e => {
+                const r = e.getBoundingClientRect();
+                // Controles ≥ 44 px (objetivo táctil); fotos e ilustraciones ≥ 48 px; tarjetas ≥ 56 px.
+                const minimo = e.matches('.control') ? 44 : e.matches('img') ? 48 : 56;
+                const texto = e.querySelector('span:not(.tarjeta-numero)');
+                const recortado = texto && e.matches('.tarjeta-habitat') && texto.getBoundingClientRect().height > r.height + 0.5;
+                return r.height < minimo || recortado ? `${e.className.split(' ')[0]}:${Math.round(r.height)}px` : null;
+              }).filter(Boolean),
           })))});
           await page.screenshot({path: path.join(salida, `${version}_${pantalla}_${nombreVp}.png`), fullPage: false});
           await context.close();
