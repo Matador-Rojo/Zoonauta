@@ -55,6 +55,12 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
 - La identidad visual del propietario (oscura, acento lima, titular grande y ligero) manda sobre
   cualquier guía genérica de diseño. Ante la duda, pregunta.
 - Búsquedas y lecturas amplias: delégalas en `investigador`.
+- Cambios visuales: ejecuta `python -m tests.comparar_versiones --salida <carpeta temporal>` (5.0
+  izquierda, 6.0 derecha, escritorio y móvil), MIRA las imágenes y contrasta con
+  `docs/interfaz/6.0/identidad.md`. Al cerrar cualquier cambio sigue el skill `/cerrar-cambio`.
+- Hook `.claude/hooks/proteger_git.py` (probado en `tests/probar_hook_git.py`): bloquea
+  `git add -A/.`, `commit -a`, `reset --hard`, `clean`, `push`, `stash`, `restore` y
+  `checkout --`. Los cambios sin confirmar del propietario no se tocan ni se confirman.
 
 ## Comandos verificados (Windows, 2026-11-13)
 

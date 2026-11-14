@@ -9,6 +9,14 @@
       }
     }
   },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [{"type": "command", "command": "python .claude/hooks/proteger_git.py"}]
+      }
+    ]
+  },
   "enabledPlugins": {
     "modern-web-guidance@googlechrome": true
   }
