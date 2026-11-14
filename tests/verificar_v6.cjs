@@ -10,16 +10,29 @@ const out = path.resolve(process.env.INTERFAZ_SALIDA || 'output/v6/navegador');
 fs.mkdirSync(out, {recursive: true});
 const ORDEN = ['H01', 'H09', 'H17', 'H22', 'H20', 'H37', 'H21', 'H25'];
 const casos = [];
+async function axe(page, nombre) {
+  if (!process.env.AXE_SOURCE) return [];
+  await page.addScriptTag({path: process.env.AXE_SOURCE});
+  const r = await page.evaluate(() => window.axe.run(document, {runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice']}));
+  fs.writeFileSync(path.join(out, `axe_${nombre}.json`), JSON.stringify(r.violations, null, 2));
+  return r.violations.map(v => `${nombre}: ${v.id} (${v.impact}) ${v.nodes.map(n => n.target.join(' ')).join(', ')}`);
+}
+const incidencias = [];
+// /api/voz/grabada responde 404 cuando un mensaje no tiene grabación: es lo previsto
+// (el cliente lee entonces con la voz alternativa).
+const esperado404 = r => r.status() === 404 && new URL(r.url()).pathname === '/api/voz/grabada';
 const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
 
 (async () => {
   const browser = await chromium.launch({headless: true, ...(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {})});
   try {
-    const context = await browser.newContext({viewport: {width: 1440, height: 900}, reducedMotion: 'no-preference'});
+    const context = await browser.newContext({viewport: {width: 1440, height: 900}, reducedMotion: 'no-preference', bypassCSP: true});
     const page = await context.newPage();
     const errores = [];
     page.on('pageerror', e => errores.push(e.message));
-    page.on('console', m => { if (m.type() === 'error') errores.push(m.text()); });
+    // Las respuestas con error se registran por URL; el aviso genérico de consola se omite.
+    page.on('console', m => { if (m.type() === 'error' && !m.text().startsWith('Failed to load resource')) errores.push(m.text()); });
+    page.on('response', r => { if (r.status() >= 400 && !esperado404(r)) errores.push(`${r.status()} ${new URL(r.url()).pathname}`); });
     await page.goto(base);
     await page.locator('#titulo-pantalla').waitFor();
 
@@ -83,9 +96,10 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       assert.equal(await page.locator('.tarjeta-animal').count(), 6);
       await page.getByRole('button', {name: 'Siguientes'}).click();
       assert.equal(await page.locator('.paginacion-estado').textContent(), 'Página 2 de 48');
-      assert.ok(await page.evaluate(() => document.activeElement.classList.contains('tarjeta-animal')));
+      await page.waitForFunction(() => document.activeElement.classList.contains('tarjeta-animal'), null, {timeout: 2000});
       await page.getByRole('searchbox', {name: 'Buscar animal'}).fill('jaguar');
       assert.equal(await page.locator('.tarjeta-animal').count(), 1);
+      incidencias.push(...await axe(page, 'catalogo'));
       await page.screenshot({path: path.join(out, '02_catalogo.png')});
       await page.locator('.tarjeta-animal[data-animal="A01"]').click();
       await page.locator('.reto-pantalla').waitFor();
@@ -97,7 +111,7 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
 
     await caso('Pista conserva tablero y foco, y cambia la guía completa', async () => {
       const marcar = () => page.evaluate(() => {
-        window.__retrato = document.querySelector('.animal-retrato img');
+        window.__retrato = document.querySelector('.animal-actual img');
         window.__tarjetas = [...document.querySelectorAll('.tarjeta-habitat')];
       });
       await marcar();
@@ -108,14 +122,15 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       // Durante la espera, el tablero sigue intacto y con la guía anterior.
       await page.waitForTimeout(200);
       assert.equal(await page.locator('#mensaje').textContent(), antes);
-      assert.equal(await page.locator('.secuencia .simbolo').count() > 0, true);
+      assert.equal(await page.locator('.tira .tira-celda').count() > 0, true);
       await page.waitForFunction(t => document.querySelector('#mensaje').textContent !== t, antes);
-      const intacto = await page.evaluate(() => window.__retrato === document.querySelector('.animal-retrato img') &&
+      const intacto = await page.evaluate(() => window.__retrato === document.querySelector('.animal-actual img') &&
         window.__tarjetas.every(t => t.isConnected));
       assert.ok(intacto, 'el animal y las tarjetas no se reconstruyen');
       assert.equal(await page.evaluate(() => document.activeElement.dataset.control), 'ayuda');
       // Texto y pictogramas llegan juntos: todas las imágenes de la guía ya están decodificadas.
-      assert.ok(await page.evaluate(() => [...document.querySelectorAll('.secuencia img')].every(i => i.complete && i.naturalWidth > 0)));
+      assert.ok(await page.evaluate(() => [...document.querySelectorAll('.tira img')].every(i => i.complete && i.naturalWidth > 0)));
+      incidencias.push(...await axe(page, 'tablero'));
       await page.screenshot({path: path.join(out, '03_pista.png')});
     });
 
@@ -149,6 +164,7 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       await page.locator('.cierre[data-estado="PAUSADA"]').waitFor();
       assert.match(await page.locator('.cierre-visual img').getAttribute('src'), /robot_pausa\.webp$/);
       assert.equal(await page.evaluate(() => document.activeElement.dataset.control), 'reanudar');
+      incidencias.push(...await axe(page, 'pausa'));
       await page.locator('button[data-control="reanudar"]').click();
       await page.locator('.reto-pantalla').waitFor();
     });
@@ -159,6 +175,7 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       await page.screenshot({path: path.join(out, '04_reto_movil.png'), fullPage: true});
     });
 
+    assert.deepEqual(incidencias, [], 'axe-core sin incidencias');
     assert.deepEqual(errores, []);
     console.log(JSON.stringify({casos: casos.length, resultado: 'OK'}));
   } finally {

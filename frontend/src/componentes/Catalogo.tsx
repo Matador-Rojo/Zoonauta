@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Vista } from "../api/tipos";
 import { useT } from "../i18n";
 import { Icono } from "./Icono";
@@ -31,10 +31,17 @@ export function Catalogo({
   const paginaActual = Math.min(pagina, paginas - 1);
   const visibles = animales.slice(paginaActual * POR_PAGINA, (paginaActual + 1) * POR_PAGINA);
 
+  // Tras cambiar de página con los botones, el foco pasa al primer animal de la página
+  // nueva (cuando React ya la pintó), sin desplazar la página.
+  const enfocarPrimero = useRef(false);
+  useEffect(() => {
+    if (!enfocarPrimero.current) return;
+    enfocarPrimero.current = false;
+    rejilla.current?.querySelector("button")?.focus({ preventScroll: true });
+  }, [paginaActual]);
   const irA = (paso: number) => {
+    enfocarPrimero.current = true;
     setPagina(paginaActual + paso);
-    // El foco pasa al primer animal de la página nueva, sin desplazar la página.
-    requestAnimationFrame(() => rejilla.current?.querySelector("button")?.focus({ preventScroll: true }));
   };
 
   const totalTexto = consulta.trim()
@@ -43,12 +50,7 @@ export function Catalogo({
 
   return (
     <section className="pantalla catalogo-pantalla" aria-labelledby="titulo-pantalla">
-      <Encabezado
-        vista={vista}
-        etiqueta="Explora los animales"
-        titulo="Elige un animal"
-        subtitulo="Toca el animal con el que quieres jugar."
-      />
+      <Encabezado vista={vista} titulo="Elige un animal" subtitulo="Toca el animal con el que quieres jugar." />
       <div className="catalogo-barra">
         <p className="catalogo-total" aria-live="polite" aria-atomic="true">
           {totalTexto}
@@ -73,19 +75,21 @@ export function Catalogo({
         <p className="busqueda-vacia">{t("No encontramos ese animal. Prueba con otro nombre.")}</p>
       ) : (
         <>
-          <div ref={rejilla} id="catalogo-animales" className="catalogo" aria-label={t("Animales de esta página")}>
+          <div
+            ref={rejilla}
+            id="catalogo-animales"
+            className="catalogo"
+            role="group"
+            aria-label={t("Animales de esta página")}
+          >
             {visibles.map((a) => (
               <button
                 key={a.id}
                 type="button"
                 className="tarjeta-animal"
                 data-animal={a.id}
-                aria-label={a.nombre}
                 onClick={() => onElegir(a.id)}
               >
-                <span className="tarjeta-numero" aria-hidden="true">
-                  {a.id.slice(1)}
-                </span>
                 <span className="tarjeta-imagen">
                   <Pictograma id={a.pictograma_id} datos={vista.pictogramas[a.pictograma_id]} />
                 </span>

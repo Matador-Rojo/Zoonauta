@@ -22,7 +22,8 @@ function enviar(ruta: string, cuerpo: unknown, signal?: AbortSignal, keepalive =
 
 export const cargarVista = () => obtener<Vista>("/api/vista");
 export const cargarDiccionarios = () => obtener<Diccionarios>("/api/idiomas");
-export const cargarConfigVoz = () => obtener<{ voces: VozCatalogo[] }>("/api/voz/config");
+export const cargarConfigVoz = () =>
+  obtener<{ voces: VozCatalogo[]; grabadas?: Partial<Record<Idioma, number>> }>("/api/voz/config");
 
 /** Envía una acción con la semántica de 5.0: evento_id único, revisión, sesión y reto. */
 export async function enviarAccion(
@@ -54,6 +55,11 @@ export async function enviarIdioma(vista: Vista, idioma: Idioma) {
 
 export function pedirVoz(entrada: Record<string, unknown>, signal: AbortSignal) {
   return enviar("/api/voz", entrada, signal);
+}
+
+/** Grabación completa del mensaje actual; 404 si no existe (el cliente usa la voz alternativa). */
+export function pedirGrabacion(entrada: Record<string, unknown>, signal: AbortSignal) {
+  return enviar("/api/voz/grabada", entrada, signal);
 }
 
 export function cancelarVoz(canal: string, turno: number) {

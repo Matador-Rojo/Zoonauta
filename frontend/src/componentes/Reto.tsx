@@ -3,37 +3,61 @@ import { useT } from "../i18n";
 import { Encabezado } from "./Encabezado";
 import { Pictograma, useContenidoListo } from "./Pictograma";
 
-const CONTROLES: Partial<Record<string, [string, string, string]>> = {
-  ayuda: ["Pista", "P_AYUDA", "destacada"],
-  repetir: ["Repetir", "P_REPETIR", ""],
-  pausar: ["Pausar", "P_PAUSAR", ""],
-  reanudar: ["Reanudar", "P_REANUDAR", ""],
-  continuar: ["Continuar", "P_CONTINUAR", "continuar"],
-  salir: ["Salir", "P_SALIR", "salir"],
+type Grupo = "ayuda" | "partida";
+
+// Orden y grupo fijos: las ayudas (Pista, Repetir) a un lado y la partida (Pausar,
+// Reanudar, Continuar, Salir) al otro, siempre en el mismo sitio.
+const CONTROLES: Partial<Record<string, { texto: string; picto: string; grupo: Grupo }>> = {
+  ayuda: { texto: "Pista", picto: "P_AYUDA", grupo: "ayuda" },
+  repetir: { texto: "Repetir", picto: "P_REPETIR", grupo: "ayuda" },
+  continuar: { texto: "Continuar", picto: "P_CONTINUAR", grupo: "partida" },
+  reanudar: { texto: "Reanudar", picto: "P_REANUDAR", grupo: "partida" },
+  pausar: { texto: "Pausar", picto: "P_PAUSAR", grupo: "partida" },
+  salir: { texto: "Salir", picto: "P_SALIR", grupo: "partida" },
 };
 
 export function Controles({ vista, onAccion }: { vista: Vista; onAccion: (tipo: TipoAccion) => void }) {
   const { t } = useT();
+  const disponibles = Object.keys(CONTROLES).filter((tipo) => vista.controles_disponibles.includes(tipo));
+  const boton = (tipo: string) => {
+    const { texto, picto } = CONTROLES[tipo]!;
+    return (
+      <button
+        key={tipo}
+        type="button"
+        className="control"
+        data-control={tipo}
+        onClick={() => onAccion(tipo as TipoAccion)}
+      >
+        <Pictograma id={picto} datos={vista.pictogramas[picto]} />
+        <span>{t(texto)}</span>
+      </button>
+    );
+  };
   return (
     <nav className="controles" aria-label={t("Controles de la partida")}>
-      {vista.controles_disponibles.map((tipo) => {
-        const control = CONTROLES[tipo];
-        if (!control) return null;
-        const [texto, picto, variante] = control;
-        return (
-          <button
-            key={tipo}
-            type="button"
-            className={`control ${variante}`.trim()}
-            data-control={tipo}
-            onClick={() => onAccion(tipo as TipoAccion)}
-          >
-            <Pictograma id={picto} datos={vista.pictogramas[picto]} />
-            <span>{t(texto)}</span>
-          </button>
-        );
-      })}
+      <div className="controles-grupo" data-grupo="ayuda">
+        {disponibles.filter((tipo) => CONTROLES[tipo]!.grupo === "ayuda").map(boton)}
+      </div>
+      <div className="controles-grupo" data-grupo="partida">
+        {disponibles.filter((tipo) => CONTROLES[tipo]!.grupo === "partida").map(boton)}
+      </div>
     </nav>
+  );
+}
+
+/** Tira de frase: los pictogramas en orden de lectura, como en un tablero CAA. */
+export function TiraPictogramas({ ids, vista }: { ids: string[]; vista: Vista }) {
+  const { t } = useT();
+  return (
+    <ol className="tira" aria-label={t("Secuencia de pictogramas")}>
+      {ids.map((id, i) => (
+        <li key={`${i}-${id}`} className="tira-celda">
+          <Pictograma id={id} datos={vista.pictogramas[id]} />
+          <span>{vista.pictogramas[id]?.etiqueta}</span>
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -50,20 +74,13 @@ export function Guia({ vista }: { vista: Vista }) {
   return (
     <section className={`guia ${tono}`.trim()} aria-labelledby="mensaje">
       <p className="guia-cabecera">
-        <img src="/zoonauta-logo.svg" alt="" width={28} height={28} />
+        <img src="/zoonauta-logo.svg" alt="" width={32} height={32} />
         {t("Tu guía")}
       </p>
       <h2 id="mensaje" tabIndex={-1}>
         {t(respuesta.texto_apoyo)}
       </h2>
-      <div className="secuencia" aria-label={t("Secuencia de pictogramas")}>
-        {respuesta.pictogramas.map((id, i) => (
-          <figure key={`${i}-${id}`} className="simbolo">
-            <Pictograma id={id} datos={vista.pictogramas[id]} />
-            <figcaption>{vista.pictogramas[id]?.etiqueta}</figcaption>
-          </figure>
-        ))}
-      </div>
+      <TiraPictogramas ids={respuesta.pictogramas} vista={vista} />
     </section>
   );
 }
@@ -80,50 +97,45 @@ export function Reto({
   const animal = vista.animal;
   return (
     <section className="pantalla reto-pantalla" aria-labelledby="titulo-pantalla">
-      <Encabezado
-        vista={vista}
-        etiqueta="Encuentra su hábitat"
-        titulo={resuelto ? "¡Encontraste un lugar!" : "Elige un hábitat"}
-      />
+      <Encabezado vista={vista} titulo={resuelto ? "¡Encontraste un lugar!" : "Elige un hábitat"} />
       <div className="tablero">
-        <aside className="panel-animal">
-          {animal && (
-            <div className="animal-actual">
-              <p className="etiqueta">{t("Tu animal")}</p>
-              <div className="animal-retrato">
-                <Pictograma id={animal.pictograma_id} datos={vista.pictogramas[animal.pictograma_id]} />
-              </div>
+        {animal && (
+          <figure className="animal-actual">
+            <Pictograma id={animal.pictograma_id} datos={vista.pictogramas[animal.pictograma_id]} />
+            <figcaption>
+              <span className="etiqueta">{t("Tu animal")}</span>
               <strong>{animal.nombre}</strong>
-            </div>
-          )}
-          <Controles vista={vista} onAccion={onAccion} />
-        </aside>
+            </figcaption>
+          </figure>
+        )}
         <Guia vista={vista} />
-        <div className="habitats-panel">
-          {vista.fase === "ESPERANDO_RESPUESTA" && (
-            <p className="instruccion">{t("Toca un lugar donde pueda vivir.")}</p>
-          )}
-          <div
-            className="habitats"
-            data-cantidad={vista.opciones_habitat.length}
-            aria-label={t("Hábitats para elegir")}
-          >
-            {vista.opciones_habitat.map((h) => (
-              <button
-                key={h.id}
-                type="button"
-                className="tarjeta-habitat"
-                data-habitat={h.id}
-                disabled={!vista.seleccion_habilitada}
-                onClick={() => onAccion("seleccionar_habitat", { habitat_id: h.id })}
-              >
-                <img className="paisaje" src={`/habitats/${h.id}.webp`} alt="" draggable={false} loading="lazy" />
-                <span>{h.nombre}</span>
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
+      <Controles vista={vista} onAccion={onAccion} />
+      <section className="habitats-panel" aria-labelledby="titulo-habitats">
+        <h2 id="titulo-habitats" className="instruccion">
+          {t(vista.fase === "ESPERANDO_RESPUESTA" ? "Toca un lugar donde pueda vivir." : "Hábitats para elegir")}
+        </h2>
+        <div
+          className="habitats"
+          role="group"
+          aria-labelledby="titulo-habitats"
+          data-cantidad={vista.opciones_habitat.length}
+        >
+          {vista.opciones_habitat.map((h) => (
+            <button
+              key={h.id}
+              type="button"
+              className="tarjeta-habitat"
+              data-habitat={h.id}
+              disabled={!vista.seleccion_habilitada}
+              onClick={() => onAccion("seleccionar_habitat", { habitat_id: h.id })}
+            >
+              <img className="paisaje" src={`/habitats/${h.id}.webp`} alt="" draggable={false} loading="lazy" />
+              <span>{h.nombre}</span>
+            </button>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }

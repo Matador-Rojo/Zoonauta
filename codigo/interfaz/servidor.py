@@ -23,7 +23,8 @@ FONDOS_HISTORICOS = {f"H0{i}.webp" for i in range(2, 9)}
 FONDOS_PORTADA_960 = {f"{h}-960.webp" for h in ("H01", "H09", "H17", "H22", "H20", "H37", "H21", "H25")}
 WEB6 = (Path(__file__).parent / "web6").resolve()
 TIPOS_V6 = {".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8",
-            ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".webp": "image/webp"}
+            ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".webp": "image/webp",
+            ".woff2": "font/woff2"}
 
 
 class Servidor(ThreadingHTTPServer):

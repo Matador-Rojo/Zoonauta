@@ -1,24 +1,48 @@
-/* Sistema de diseño 6.0 (prototipo). CSS nativo con propiedades personalizadas. */
+/* Sistema de diseño 6.0 — «tablero de expedición».
+   Inspirado en los tableros de comunicación aumentativa (CAA): la tira de pictogramas
+   es la pieza protagonista; el resto se mantiene sereno y ordenado.
+   Tipografía: Atkinson Hyperlegible Next (Braille Institute, OFL), diseñada para
+   personas con baja visión. Modern Web Guidance: visually-stable-font-fallbacks,
+   natural-interactions, form-factor-adaptation, switch, progress. */
 :root {
-  --tinta: #17261f;
-  --tinta-suave: #3f5248;
-  --papel: #f7f4ec;
+  /* Color */
+  --niebla: #eef2ec; /* fondo: niebla de bosque */
+  --tinta: #1b2b24; /* texto principal (contraste 13,9:1 sobre --niebla) */
+  --tinta-suave: #44564c; /* texto secundario (7,1:1) */
   --superficie: #ffffff;
-  --borde: #d6dccf;
-  --selva: #1f5e3f;
-  --selva-oscura: #143f2a;
-  --ambar: #f2b33d;
+  --linea: #c9d4cb; /* bordes de reposo */
+  --linea-fuerte: #8fa497; /* bordes de controles (3,1:1 sobre blanco) */
+  --expedicion: #2f6b4f; /* verde principal */
+  --expedicion-oscuro: #1f4a36;
+  --ambar: #f0b43c; /* ayuda: Pista, acción principal */
   --ambar-tinta: #3a2500;
-  --exito: #1d6b3a;
-  --exito-fondo: #e3f3e7;
-  --neutro-fondo: #f1efe7;
+  --agua: #2c6e8f; /* audio: Repetir */
+  --agua-claro: #e3eff5;
+  --exito-fondo: #e1f1e6;
+  --neutro-fondo: #f3f4ef;
+  --alerta: #9b2c1f;
+  --alerta-fondo: #fbe9e5;
   --foco: #0b57d0;
-  --radio: 18px;
-  --radio-grande: 28px;
-  --sombra: 0 1px 2px rgb(20 40 30 / 8%), 0 8px 24px rgb(20 40 30 / 10%);
+
+  /* Forma: el radio crece con la jerarquía (control < tarjeta < panel). */
+  --radio-control: 14px;
+  --radio-tarjeta: 18px;
+  --radio-panel: 26px;
   --toque: 48px;
-  --fuente: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Tipografía: escala modular 1,25 sobre 18 px. */
+  --fuente: "Atkinson Hyperlegible Next Variable", "Atkinson Hyperlegible", system-ui, "Segoe UI", Roboto, sans-serif;
+  --texto-s: 0.9375rem;
+  --texto-m: 1.125rem;
+  --texto-l: 1.40625rem;
+  --texto-xl: 1.7578rem;
+  --texto-xxl: clamp(2rem, 4vw, 2.75rem);
   color-scheme: light;
+}
+@media (pointer: coarse) {
+  :root {
+    --toque: 52px;
+  }
 }
 
 *,
@@ -34,10 +58,12 @@ body {
   margin: 0;
   min-height: 100dvh;
   font-family: var(--fuente);
-  font-size: 1.0625rem;
-  line-height: 1.5;
+  /* Evita saltos al cargar la fuente: el respaldo se escala a su altura x. */
+  font-size-adjust: from-font;
+  font-size: var(--texto-m);
+  line-height: 1.55;
   color: var(--tinta);
-  background: var(--papel);
+  background: var(--niebla);
 }
 img {
   max-width: 100%;
@@ -55,7 +81,7 @@ button {
 }
 button:disabled {
   cursor: not-allowed;
-  opacity: 0.55;
+  opacity: 0.5;
 }
 h1,
 h2,
@@ -63,15 +89,16 @@ h3 {
   line-height: 1.15;
   text-wrap: balance;
   margin: 0;
+  font-weight: 800;
 }
 p {
   text-wrap: pretty;
 }
 
+/* Foco visible en todos los controles, distinto de hover y de pulsación. */
 :focus-visible {
   outline: 3px solid var(--foco);
   outline-offset: 3px;
-  border-radius: 6px;
 }
 [tabindex="-1"]:focus {
   outline: none;
@@ -84,8 +111,8 @@ p {
   z-index: 50;
   padding: 0.75rem 1rem;
   background: var(--superficie);
-  border-radius: 12px;
-  box-shadow: var(--sombra);
+  border: 2px solid var(--tinta);
+  border-radius: var(--radio-control);
 }
 .saltar:focus {
   top: 1rem;
@@ -102,21 +129,20 @@ p {
   border: 0;
 }
 
+/* Etiqueta: texto breve que nombra una zona (en minúsculas de frase). */
 .etiqueta {
-  margin: 0 0 0.35rem;
-  font-size: 0.8rem;
+  margin: 0 0 0.25rem;
+  font-size: var(--texto-s);
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--selva);
+  color: var(--expedicion);
 }
 .nota {
   margin: 0.25rem 0 0;
-  font-size: 0.92rem;
+  font-size: var(--texto-s);
   color: var(--tinta-suave);
 }
 
-/* Botones */
+/* --- Botones --- */
 .boton-principal,
 .boton-secundario,
 .boton-texto,
@@ -126,13 +152,14 @@ p {
   justify-content: center;
   gap: 0.6rem;
   min-height: var(--toque);
+  min-width: var(--toque);
   border-radius: 999px;
   font-weight: 700;
   border: 2px solid transparent;
   transition:
     background-color 0.15s,
     border-color 0.15s,
-    color 0.15s;
+    box-shadow 0.15s;
 }
 .boton-principal svg,
 .boton-secundario svg,
@@ -143,42 +170,54 @@ p {
   flex: none;
 }
 .boton-principal {
-  padding: 0.85rem 1.6rem;
+  padding: 0.8rem 1.6rem;
   background: var(--ambar);
   color: var(--ambar-tinta);
-  font-size: 1.15rem;
+  font-size: var(--texto-m);
 }
 .boton-principal:hover {
   background: #ffc552;
 }
 .boton-principal img {
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 .boton-secundario {
-  padding: 0.6rem 1.2rem;
+  padding: 0.55rem 1.2rem;
   background: var(--superficie);
-  border-color: var(--borde);
+  border-color: var(--linea-fuerte);
 }
 .boton-secundario:hover:not(:disabled) {
-  border-color: var(--selva);
+  border-color: var(--expedicion);
+  background: var(--neutro-fondo);
 }
 .boton-texto {
   padding: 0.5rem 1rem;
-  background: rgb(255 255 255 / 92%);
-  border-color: var(--borde);
+  background: var(--superficie);
+  border-color: var(--linea-fuerte);
+}
+.boton-texto:hover {
+  border-color: var(--expedicion);
 }
 .control-redondo {
-  width: var(--toque);
   padding: 0;
-  background: rgb(255 255 255 / 92%);
-  border-color: var(--borde);
+  background: var(--superficie);
+  border-color: var(--linea-fuerte);
 }
 .control-redondo:hover {
-  border-color: var(--selva);
+  border-color: var(--expedicion);
+}
+/* Respuesta al pulsar: una leve compresión, solo con movimiento permitido. */
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-movimiento="normal"] :is(button, .boton-principal):not(:disabled) {
+    transition-property: background-color, border-color, box-shadow, scale;
+  }
+  :root[data-movimiento="normal"] :is(button):not(:disabled):active {
+    scale: 0.97;
+  }
 }
 
-/* Cabecera */
+/* --- Cabecera --- */
 .cabecera {
   position: relative;
   z-index: 5;
@@ -186,7 +225,7 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem clamp(1rem, 4vw, 2.5rem);
+  padding: 0.85rem clamp(1rem, 4vw, 2.5rem);
 }
 .cabecera[data-fase="INICIO"] {
   position: absolute;
@@ -200,14 +239,15 @@ p {
   color: inherit;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: var(--texto-l);
+  border-radius: var(--radio-control);
 }
 .marca-texto {
   display: grid;
   line-height: 1.1;
 }
 .marca-subtitulo {
-  font-size: 0.8rem;
+  font-size: var(--texto-s);
   font-weight: 600;
   opacity: 0.85;
 }
@@ -234,46 +274,47 @@ main[aria-busy="true"] {
   gap: 0.25rem 1rem;
   align-items: baseline;
   padding: 0.75rem clamp(1rem, 4vw, 2.5rem);
-  font-size: 0.85rem;
+  font-size: var(--texto-s);
   color: #fff;
-  background: rgb(10 20 15 / 70%);
+  background: rgb(10 20 15 / 78%);
 }
 .creditos p {
   margin: 0;
 }
 
-/* Avisos */
+/* --- Avisos persistentes (Modern Web Guidance: persistent-toast-notifications).
+   Un error no desaparece solo: queda en la página hasta que la persona lo cierra. */
 .avisos {
   position: fixed;
   z-index: 40;
   inset: auto 1rem 1rem auto;
   display: grid;
   gap: 0.5rem;
-  width: min(26rem, calc(100vw - 2rem));
+  width: min(28rem, calc(100vw - 2rem));
 }
 .aviso {
   display: flex;
   align-items: start;
   gap: 0.75rem;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radio);
-  background: var(--superficie);
-  border-left: 6px solid var(--ambar);
-  box-shadow: var(--sombra);
+  padding: 0.9rem 0.9rem 0.9rem 1.1rem;
+  border-radius: var(--radio-tarjeta);
+  background: var(--alerta-fondo);
+  color: var(--tinta);
+  border: 2px solid var(--alerta);
 }
 .aviso p {
   margin: 0;
   flex: 1;
+  align-self: center;
 }
 
-/* Diálogos: Modern Web Guidance, dialog — contención de scroll sin bloquear html/body */
+/* --- Diálogos (Modern Web Guidance: dialog) --- */
 dialog {
   border: 0;
   padding: clamp(1.25rem, 3vw, 2rem);
-  border-radius: var(--radio-grande);
+  border-radius: var(--radio-panel);
   background: var(--superficie);
   color: var(--tinta);
-  box-shadow: var(--sombra);
   width: min(56rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2rem);
 }
@@ -281,35 +322,46 @@ dialog:modal {
   overscroll-behavior: contain;
 }
 dialog::backdrop {
-  background: rgb(10 25 18 / 55%);
+  background: rgb(10 25 18 / 60%);
   overflow: hidden;
   overscroll-behavior: contain;
 }
 
+/* --- Campos --- */
 .campo {
   display: grid;
   gap: 0.35rem;
-  margin-top: 1rem;
-  font-weight: 600;
+  margin-top: 1.1rem;
+  font-weight: 700;
 }
 .campo select,
 .campo input {
   min-height: var(--toque);
   padding: 0.5rem 0.75rem;
-  border: 2px solid var(--borde);
-  border-radius: 12px;
+  border: 2px solid var(--linea-fuerte);
+  border-radius: var(--radio-control);
   background: var(--superficie);
   font-weight: 400;
 }
+.campo :is(select, input):hover:not(:disabled) {
+  border-color: var(--expedicion);
+}
+
+/* Interruptor: <input type="checkbox" switch> (Modern Web Guidance: switch). Chrome aún
+   no lo dibuja como interruptor, así que se dibuja aquí con el mismo checkbox nativo. */
 .interruptor {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 1.25rem;
-  padding: 0.9rem 1rem;
-  border: 2px solid var(--borde);
-  border-radius: var(--radio);
+  margin-top: 1.1rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--linea);
+  border-radius: var(--radio-tarjeta);
+  cursor: pointer;
+}
+.interruptor:has(input:disabled) {
+  cursor: default;
 }
 .interruptor > span {
   display: grid;
@@ -318,8 +370,42 @@ dialog::backdrop {
   font-weight: 700;
 }
 .interruptor input {
-  width: 1.6rem;
-  height: 1.6rem;
-  accent-color: var(--selva);
+  appearance: none;
   flex: none;
+  position: relative;
+  width: 3.25rem;
+  height: 1.9rem;
+  margin: 0;
+  border-radius: 999px;
+  background: var(--superficie);
+  border: 2px solid var(--linea-fuerte);
+  cursor: inherit;
+  transition: background-color 0.15s;
+}
+.interruptor input::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--tinta-suave);
+}
+.interruptor input:checked {
+  background: var(--expedicion);
+  border-color: var(--expedicion);
+}
+.interruptor input:checked::before {
+  left: auto;
+  right: 3px;
+  background: #fff;
+}
+.interruptor input:disabled {
+  opacity: 0.6;
+}
+@media (forced-colors: active) {
+  .interruptor input {
+    appearance: auto;
+  }
 }
