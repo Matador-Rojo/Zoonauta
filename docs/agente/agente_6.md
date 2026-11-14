@@ -279,7 +279,7 @@ alcancen:
 
 Cada tipo empieza en Beta(1, 1) y se actualiza con cada resultado.
 
-- **Recompensa** (decidida por el propietario el 2026-11-14):
+- **Recompensa** (propuesta y aceptada por el propietario el 2026-11-14):
   - **1** si tras la ayuda se elige un hábitat confirmado;
   - **0** si se pide otra pista o se elige un hábitat no confirmado. El 0 significa que la
     ayuda no llevó a una respuesta confirmada, no que ese hábitat sea incorrecto;
@@ -407,7 +407,7 @@ Lectura:
   da. Aun así, el modelo de demostración cambia alguna decisión frente al agente fijo.
 - **Etiqueta de las elecciones no confirmadas.** El registro de la partida marca la elección
   de un hábitat no confirmado como «sin etiqueta», según el protocolo del catálogo original.
-  El entrenamiento la cuenta como 0, por la recompensa decidida para la 6.0. Quien lea los
+  El entrenamiento la cuenta como 0, por la recompensa aceptada para la 6.0. Quien lea los
   JSONL verá esa diferencia.
 - **Repetir y la señal de dificultad.** La clave de una ayuda se fija al mostrarla: si
   después se pulsa Repetir, la señal de dificultad no se añade a esa ayuda. No afecta a la
@@ -445,9 +445,9 @@ Lectura:
 
 ## 7. Pruebas
 
-**Automáticas** (`tests/test_agente6.py`, 15 pruebas, y `tests/test_aprendizaje6.py`, 11 pruebas
+**Automáticas** (`tests/test_agente6.py`, 15 pruebas, y `tests/test_aprendizaje6.py`, 12 pruebas
 del aprendizaje: etiquetas desde el registro, Beta-Bernoulli, modelo congelado y seguro,
-recuperación de lo plantado; con el resto, 121 en total):
+recuperación de lo plantado; con el resto, 122 en total):
 
 - datos: cada rasgo cita una pista revisada del mismo hábitat; ayudas breves, con
   pictogramas existentes y traducción; lo desconocido nunca descarta;

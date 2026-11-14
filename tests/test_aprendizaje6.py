@@ -179,6 +179,18 @@ class Simulacion(Base):
         self.assertEqual(1, len(lista))
         self.assertEqual(1, lista[0]["resultado"])
 
+    def test_entrenar_descarta_otra_version_de_los_datos(self):
+        registro = Registro()
+        g = self.reto(MotorAgente(self.banco), registro=registro)
+        g.procesar(g.crear_evento("ayuda"))
+        g.procesar(g.crear_evento("seleccionar_habitat", habitat_id="H01"))
+        h = self.banco.huellas
+        version = f"{h['expedicion/atributos_habitats.json']}:{h['expedicion/pistas.json']}"
+        self.assertEqual(1, len(ent.etiquetas(registro.filas, version)))
+        viejas = [{**f, "modelo_version": "otra:version"} if f["tipo_registro"] == "AYUDA_PRESENTADA" else f
+                  for f in registro.filas]
+        self.assertEqual([], ent.etiquetas(viejas, version))
+
     def test_probabilidades_plantadas_validas(self):
         azar = Random(1)
         for condicion in ent.CONDICIONES:

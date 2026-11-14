@@ -141,7 +141,7 @@
       "evaluacion_con_jugadores": false,
       "ayudas_rasgo_con_grabacion": 1,
       "mensajes_pendientes_de_grabar_es": 62,
-      "pruebas_python_correctas": 121,
+      "pruebas_python_correctas": 122,
       "documentacion": "docs/agente/agente_6.md",
       "politica_aprendida": "AGENTE_APRENDIDO",
       "aprendizaje": {
@@ -169,7 +169,7 @@
     {
       "ruta": "README.md",
       "bytes": 16959,
-      "sha256": "950183e38373c4e06ee7a269777fa1d2af39e562191198909c2a135a73acce20"
+      "sha256": "a0920c5b7833e437d668c030ca5c99765b06252cf379d3e17010c877b6263846"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -9833,8 +9833,8 @@
     },
     {
       "ruta": "CLAUDE.md",
-      "bytes": 12985,
-      "sha256": "95d689ee3c0e34d188e2186368fdbf1c56e6618652e029b646fde2febff2e3ee"
+      "bytes": 13200,
+      "sha256": "7a6034bbb2cc919867dc705639903a4cc2e066c1d633f7d0630e1c7dc54e1f0c"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/index-BGmevnUX.js",
@@ -9878,8 +9878,8 @@
     },
     {
       "ruta": "docs/agente/agente_6.md",
-      "bytes": 38702,
-      "sha256": "091108cbfbdfe5d37499e9dd54c082b9c87333adbd331dfb0899f7b09c22c8e9"
+      "bytes": 38714,
+      "sha256": "45a744c1da5d18cfeef73f5c3e2ac06da63825da327293c5d15eb60729f41fd5"
     },
     {
       "ruta": "docs/experimentos/agente6/evaluacion.json",
@@ -9893,13 +9893,13 @@
     },
     {
       "ruta": "codigo/entrenamiento/entrenar_agente6.py",
-      "bytes": 16544,
-      "sha256": "f99dad0161691cc644a3edb6b9a89e5af89906dd630bada170bcd56ef14a59fa"
+      "bytes": 16558,
+      "sha256": "c80ca9da4b4e8e1c9c26adaf351a757423d4bcd69579011be9103ee999c5f92f"
     },
     {
       "ruta": "codigo/motores/aprendizaje6.py",
-      "bytes": 7863,
-      "sha256": "627f65baf6e20deec3a5f943a2a1cd1a3bc9b69b65f99f987f0eb7f60dfb73a8"
+      "bytes": 7894,
+      "sha256": "90d374afa0ecb2b8259272e8b1822fab2ee94e50e93a61b8ae7f23866925c3e8"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/experimento.json",
@@ -9953,8 +9953,8 @@
     },
     {
       "ruta": "tests/test_aprendizaje6.py",
-      "bytes": 9892,
-      "sha256": "e20d3c6a01bc2a21f996a1638908d6928ebb9788b89dc05c2bca4461e3e120ab"
+      "bytes": 10583,
+      "sha256": "e479258dbd3568422e2fd0321be336faaa12f72d671578f4e7d65a7de39d371e"
     }
   ],
   "nombre_proyecto": "Zoonauta",
