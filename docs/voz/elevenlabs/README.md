@@ -1,6 +1,6 @@
 # Voces de ElevenLabs para Zoonauta 6.0
 
-Fecha: 2026-11-13 · Rama: `experimental/zoonauta-v6-modern-web`
+Fecha: 2026-11-13 (modelo actualizado el 2026-11-14) · Rama: `experimental/zoonauta-v6-modern-web`
 
 Ninguna grabación se ha generado todavía. Este documento y el inventario solo preparan el trabajo:
 no se ha usado la API ni se ha gastado ningún crédito.
@@ -97,25 +97,25 @@ Duplicados exactos (se graban una vez): `AY_H05_L1` = `AY_H04_L1`,
 
 ## Créditos
 
-En la web de ElevenLabs (tarifas consultadas el 2026-11-13; **confírmalas en la pantalla de
-generación antes de empezar**):
+**Modelo elegido: Eleven v4 (`eleven_v4`)**, decidido por el propietario el 2026-11-14. En la web
+cuesta 1 crédito por carácter, igual que los demás modelos de voz completos (tarifas consultadas el
+2026-11-14; **confírmalas en la pantalla de generación antes de empezar**):
 
 | Modelo | Créditos/carácter | Todo el inventario | Con 50 % de margen para repeticiones |
 |---|---:|---:|---:|
-| Eleven Multilingual v2 (`eleven_multilingual_v2`) | 1 | 39.621 | 59.432 |
-| Eleven v3 (`eleven_v3`) | 1 | 39.621 | 59.432 |
+| **Eleven v4 (`eleven_v4`)** | 1 | 39.621 | 59.432 |
+| Eleven Multilingual v2 / Eleven v3 | 1 | 39.621 | 59.432 |
 | Flash / Turbo v2.5 | 0,5 | 19.811 | 29.716 |
 
-Saldo disponible: **36.698 créditos**, con renovación el **15 de noviembre de 2026**. Con
-Multilingual v2 no alcanza para todo en este ciclo. Propuesta en dos fases:
+Saldo disponible: **36.698 créditos**, con renovación el **15 de noviembre de 2026**. Con v4 no
+alcanza para todo en este ciclo. Propuesta en dos fases:
 
 - **Fase A, con el saldo actual** — P1 + P3 + las confirmaciones y pistas de P2: 22.887 créditos.
   Deja unos 13.800 para repeticiones (≈ 60 %).
 - **Fase B, con el saldo renovado** — apoyo + pista de P2: 16.734 créditos.
 
 Si los créditos no usados no pasan al ciclo siguiente en tu plan (compruébalo en *Subscription*),
-conviene usar la Fase A antes del 15. Flash v2.5 permitiría grabar todo ahora, pero suena menos
-natural. Recomiendo escuchar primero una muestra de P1.
+conviene usar la Fase A antes del 15. Recomiendo escuchar primero una muestra de P1.
 
 ## Elegir voz y modelo (una sola vez por idioma)
 
@@ -125,9 +125,11 @@ natural. Recomiendo escuchar primero una muestra de P1.
 2. **es-419**: usa una voz con acento latinoamericano (en *Voice Library*, filtra por idioma Spanish
    y acento Latin American o Mexican). **pt-BR**: usa una voz con acento brasileño (Portuguese,
    acento Brazilian). No uses voces de España ni de Portugal.
-3. Modelo propuesto: **Eleven Multilingual v2**. Es estable y respeta bien el texto. Eleven v3 es más
-   expresivo, pero varía más entre tomas. Si eliges otro modelo, anótalo en `modelo_elevenlabs`: el
-   CSV recalcula los créditos.
+3. Modelo: **Eleven v4** (`eleven_v4`). En la lista de modelos de la página, elige *Eleven v4*, no
+   *v4 Turbo*. Comprueba en la muestra que la voz mantenga el acento es-419 o pt-BR y que no añada
+   ni omita palabras. Los modelos expresivos pueden variar entre tomas, así que hay que escuchar cada
+   audio completo. Si en algún mensaje usas otro modelo, anótalo en `modelo_elevenlabs`: el CSV
+   recalcula los créditos.
 4. Fija los ajustes y no los cambies durante la serie. Anota voz, `voice_id` y ajustes en la primera
    fila de cada idioma. Punto de partida: *Stability* ≈ 50–60 %, *Similarity* ≈ 75 %, *Style* 0 %,
    *Speaker boost* activado y velocidad 1,0. En el juego, la velocidad la controla el usuario.
