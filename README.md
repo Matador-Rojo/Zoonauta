@@ -244,7 +244,7 @@ La prueba ejecuta el iniciador real, suprime únicamente la apertura de una vent
 comprueba partidas completas en ambas modalidades con 2, 4 y 8 opciones. Requiere Python
 y una carpeta sin `.venv-voz` ni `modelos_voz`.
 
-**Zoonauta 6.0 (2026-11-14):** pasan **120 pruebas Python** (incluidas las 25 del agente y su aprendizaje
+**Zoonauta 6.0 (2026-11-14):** pasan **121 pruebas Python** (incluidas las 26 del agente y su aprendizaje
 y la cobertura de la voz grabada jugando todos los animales con el agente) y las pruebas de
 navegador de la 6.0: portada (6 casos
 con axe), recorrido (9), cuatro partidas completas con teclado sin desplazamiento (2, 4 y 8

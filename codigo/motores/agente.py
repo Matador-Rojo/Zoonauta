@@ -21,13 +21,15 @@ Nada de esto se muestra al jugador: las frases siempre describen el hábitat gu�
 positivo. Un hábitat no confirmado para el animal es una relación desconocida, no
 «incorrecta», y una ayuda nunca afirma algo de las otras opciones.
 
-Dos políticas comparten esta representación:
+Tres políticas comparten esta representación:
   * ``ID3_OPCIONES`` (línea base): un árbol ID3 (``codigo.motores.id3``, entropía y
     ganancia de información) construido al empezar el reto con las opciones visibles;
     presenta las ayudas del camino del hábitat guía y no mira lo que hace el jugador.
   * ``AGENTE_ADAPTATIVO`` (modelo principal): decide en cada petición con el estado del
     reto (opciones que quedan, elecciones, ayudas ya vistas, Repetir) maximizando una
     utilidad esperada con parámetros fijos. No aprende durante la partida.
+  * ``AGENTE_APRENDIDO`` (``codigo/motores/aprendizaje6.py``): igual, pero elige entre las
+    ayudas seguras con un modelo Beta-Bernoulli entrenado fuera de la partida y congelado.
 """
 from __future__ import annotations
 

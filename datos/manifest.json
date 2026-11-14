@@ -141,7 +141,7 @@
       "evaluacion_con_jugadores": false,
       "ayudas_rasgo_con_grabacion": 1,
       "mensajes_pendientes_de_grabar_es": 62,
-      "pruebas_python_correctas": 120,
+      "pruebas_python_correctas": 121,
       "documentacion": "docs/agente/agente_6.md",
       "politica_aprendida": "AGENTE_APRENDIDO",
       "aprendizaje": {
@@ -169,7 +169,7 @@
     {
       "ruta": "README.md",
       "bytes": 16959,
-      "sha256": "85799673d358338ef036967c95d7fe45a23291f9b970e9450ec5b27e53e2e17e"
+      "sha256": "950183e38373c4e06ee7a269777fa1d2af39e562191198909c2a135a73acce20"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -773,8 +773,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 16402,
-      "sha256": "ee4dcd0182e055be5c9b3fbbdc8561706b7539ca17d74422bf131a122c00d3ce"
+      "bytes": 16779,
+      "sha256": "5c140aaeadd7af83af38fbf1337ab2d14727835205ee3b99423a1bbb1af329e0"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
@@ -9834,7 +9834,7 @@
     {
       "ruta": "CLAUDE.md",
       "bytes": 12985,
-      "sha256": "a301a4591271c4818f0306b3b55ef0db925ce1a9e4a5c5b094225226f4901483"
+      "sha256": "95d689ee3c0e34d188e2186368fdbf1c56e6618652e029b646fde2febff2e3ee"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/index-BGmevnUX.js",
@@ -9863,8 +9863,8 @@
     },
     {
       "ruta": "codigo/motores/agente.py",
-      "bytes": 19291,
-      "sha256": "8757edbd697211ed94b0c93c26f0d909f8a81b4aa0f83c3ef204445a3a38c6e1"
+      "bytes": 19474,
+      "sha256": "30674b281c48405553d790c17732492333da876c1957c78f384d3b8f36be6c93"
     },
     {
       "ruta": "datos/expedicion/atributos_habitats.json",
@@ -9878,8 +9878,8 @@
     },
     {
       "ruta": "docs/agente/agente_6.md",
-      "bytes": 36544,
-      "sha256": "8d4bf4ae5f780ee1d36dd4ef159fbfc415d65750eb469ce113ae14a2fedcc27f"
+      "bytes": 38702,
+      "sha256": "091108cbfbdfe5d37499e9dd54c082b9c87333adbd331dfb0899f7b09c22c8e9"
     },
     {
       "ruta": "docs/experimentos/agente6/evaluacion.json",
@@ -9893,68 +9893,68 @@
     },
     {
       "ruta": "codigo/entrenamiento/entrenar_agente6.py",
-      "bytes": 15473,
-      "sha256": "629213a09d9a9f62023fddd8d931537a74ec13b62c4e39c91cb8b376f40bede3"
+      "bytes": 16544,
+      "sha256": "f99dad0161691cc644a3edb6b9a89e5af89906dd630bada170bcd56ef14a59fa"
     },
     {
       "ruta": "codigo/motores/aprendizaje6.py",
-      "bytes": 7528,
-      "sha256": "8c0418deeeb50c66acff77f71e68b6598d6d2e964b44b78884519387255f5714"
+      "bytes": 7863,
+      "sha256": "627f65baf6e20deec3a5f943a2a1cd1a3bc9b69b65f99f987f0eb7f60dfb73a8"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/experimento.json",
-      "bytes": 85168,
-      "sha256": "8010e087878f9afa196734962183fee388ca2a472fc0b12308281fb1f7614603"
+      "bytes": 85138,
+      "sha256": "d164c9376bcd880b4ddbcac3999d1edf5327d5cb70142e04f4a89be93bec6081"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/IDEAS_R01.json",
-      "bytes": 6275,
-      "sha256": "cb1aea176b88c636e977581d32d0a380a1f06c160d014a34e0a4d72f9cc49d0e"
+      "bytes": 6272,
+      "sha256": "695a428edfc4203593c8dbd817d477b8ffa51ffd7c5d63da6ba06a2e256aa3e3"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/IDEAS_R02.json",
-      "bytes": 6271,
-      "sha256": "f0ea2f3263650341e26a00fff0925c7b9c2557093127c54851a8b8c9385ba227"
+      "bytes": 6272,
+      "sha256": "f260830eb73477aa2ee60f130a43ed751e33baed8757d335e826f8d9b15c8dc2"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/IDEAS_R03.json",
-      "bytes": 6274,
-      "sha256": "7e1da567cd0178284adb435254ea8770d3284a416f8dfb213c0d27839c04d4c2"
+      "bytes": 6272,
+      "sha256": "121359cbc5dc834fa6d6e461f768098d35fe58ae1779a8504c541a6c079a8d67"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/PISTAS_R01.json",
       "bytes": 6266,
-      "sha256": "77195c23ca133c23f7bbf2ab23040e29116ad4c9b76de79ddeb958ab6e899ea1"
+      "sha256": "9caa4bd0e6764c978d94bbf0bdd33b9ea6fec41841ceba00833f47e901dc5519"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/PISTAS_R02.json",
       "bytes": 6264,
-      "sha256": "1a21658aa16ffe509d3cf16624c9c11a3c4ff0e436b0a7104356565b53445999"
+      "sha256": "ce06493e55dafb58ee5417d0e454113be3dc9f52bdc3e6b8b8a77324739ff38e"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/PISTAS_R03.json",
-      "bytes": 6264,
-      "sha256": "bddce624929aae47421466f36c8cb362e23381a38898483e856446a8e0bdf2b2"
+      "bytes": 6263,
+      "sha256": "56675887fc5644a9c48bebb21061f423a536ef950b33a72593e7dd9e3b111c0b"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/RASGOS_R01.json",
-      "bytes": 6270,
-      "sha256": "a5f035aca17776309e5c6eee470eaccfda2ee0df4c8a26e925760764d7bf5334"
+      "bytes": 6268,
+      "sha256": "63f8ed4f4d16a516991beeaf1bd81a440f82d9a2acfd4b73469c9758588a74c7"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/RASGOS_R02.json",
-      "bytes": 6266,
-      "sha256": "970cda4df5abc343405b89110b49267214deb626eb0af73281c2db451e72024e"
+      "bytes": 6262,
+      "sha256": "49231ab83e6e5b90ab8d1868e9590aba6ebbda1313ab129f7b33a562ad94deb2"
     },
     {
       "ruta": "docs/experimentos/agente6/aprendizaje/modelos/RASGOS_R03.json",
-      "bytes": 6265,
-      "sha256": "4120479c44b5e034c6f515059ae15cd34fda29730bfa913dd6977df4afc016a9"
+      "bytes": 6260,
+      "sha256": "a97c3a58fd5b76207f761830c9ada313bba808c11f39ab93a3e8b46191675983"
     },
     {
       "ruta": "tests/test_aprendizaje6.py",
-      "bytes": 7654,
-      "sha256": "ecf769a38d5b5e07899657b5ecd6ca5b45030d450ee7b6ad160b709ce442c33e"
+      "bytes": 9892,
+      "sha256": "e20d3c6a01bc2a21f996a1638908d6928ebb9788b89dc05c2bca4461e3e120ab"
     }
   ],
   "nombre_proyecto": "Zoonauta",

@@ -109,25 +109,57 @@ class Modelo(Base):
 
 
 class Seguridad(Base):
+    def modelos_adversarios(self):
+        """Modelos aleatorios con preferencias extremas: el aprendizaje puede ser cualquier cosa."""
+        for semilla in range(4):
+            azar = Random(semilla)
+            m = ModeloAyudas.nuevo(self.banco, "PRUEBA")
+            for clave in CLAVES:
+                m.parametros[clave].update(alpha=azar.choice((1.0, 1000.0)), beta=azar.choice((1.0, 1000.0)))
+            yield m
+
     def test_el_modelo_solo_reordena_dentro_de_las_ayudas_seguras(self):
-        # Un modelo que adora un tipo concreto no rompe las reglas fijas.
-        m = ModeloAyudas.nuevo(self.banco, "PRUEBA")
-        for clave in CLAVES:
-            if clave.startswith("RASGO") and clave.endswith("ninguno"):
-                m.parametros[clave].update(alpha=1000.0, beta=1.0)
-        motor = MotorAgenteAprendido(self.banco, m, solo_grabadas=False)
-        rep = motor.rep
-        for animal, ficha in list(self.banco.animales.items())[::5]:
-            for k in (2, 4, 8):
-                g = self.reto(motor, animal, k)
-                self.assertNotEqual(3, g.procesar(g.crear_evento("ayuda")).respuesta.nivel)
-                distractores = [o for o in g.estado.opciones_habitat if o not in ficha["habitats_confirmados"]]
-                if distractores:
-                    g = self.reto(motor, animal, k)
-                    r = g.procesar(g.crear_evento("seleccionar_habitat", habitat_id=distractores[0])).respuesta
-                    c = next((c for c in rep._candidatas[g.estado.habitat_guia_id] if c.id == r.contenido_id), None)
-                    if c is not None:
+        for m in self.modelos_adversarios():
+            for solo_grabadas in (True, False):
+                motor = MotorAgenteAprendido(self.banco, m, solo_grabadas=solo_grabadas)
+                rep = motor.rep
+                for animal, ficha in list(self.banco.animales.items())[::7]:
+                    for k in (2, 4, 8):
+                        g = self.reto(motor, animal, k)
+                        self.assertNotEqual(3, g.procesar(g.crear_evento("ayuda")).respuesta.nivel)
+                        distractores = [o for o in g.estado.opciones_habitat if o not in ficha["habitats_confirmados"]]
+                        if not distractores:
+                            continue
+                        g = self.reto(motor, animal, k)
+                        salida = g.procesar(g.crear_evento("seleccionar_habitat", habitat_id=distractores[0]))
+                        r = salida.respuesta
+                        if solo_grabadas and r.contenido_id.startswith("AY_ATR_"):
+                            self.assertIn(r.contenido_id, motor.rep.ayudas_activas)  # solo con grabación
+                        c = next((c for c in rep._candidatas[g.estado.habitat_guia_id] if c.id == r.contenido_id), None)
+                        if c is None:
+                            continue
                         self.assertNotIn(rep.relacion(c, distractores[0]), ("compartida", "parcial"))
+                        elegida = next(e for e in salida.traza["candidatas"] if e["id"] == c.id)
+                        if elegida["aleja_de_valida"]:
+                            # Solo si ninguna otra ayuda útil evitaba alejar de una respuesta válida.
+                            utiles = [e for e in salida.traza["candidatas"] if e["informativa"] and e["utilidad"] > 0]
+                            self.assertTrue(all(e["aleja_de_valida"] for e in utiles))
+
+    def test_jaguar_no_se_aleja_del_bosque_templado(self):
+        # Caso encontrado en la revisión: tras elegir H14, el modelo de demostración daba
+        # «Busca un bosque cálido y húmedo.», que aleja de H04 (válido para el jaguar).
+        for motor in (MotorAgenteAprendido(self.banco), *(MotorAgenteAprendido(self.banco, m)
+                                                          for m in self.modelos_adversarios())):
+            g = GestorPartida(self.banco, 1, motor=motor, ayuda_en_pendiente=True, semilla_opciones=0,
+                              traza_completa=False)
+            g.procesar(g.crear_evento("iniciar", modalidad="JUGADOR", cantidad_opciones=8))
+            g.procesar(g.crear_evento("elegir_animal", animal_id="A01"))
+            g.avanzar_preparacion()
+            self.assertIn("H04", g.estado.opciones_habitat)
+            salida = g.procesar(g.crear_evento("seleccionar_habitat", habitat_id="H14"))
+            c = next((c for c in motor.rep._candidatas["H01"] if c.id == salida.respuesta.contenido_id), None)
+            if c is not None:
+                self.assertNotEqual("conflicto", motor.rep.relacion(c, "H04"))
 
 
 class Simulacion(Base):

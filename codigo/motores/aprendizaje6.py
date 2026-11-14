@@ -13,8 +13,9 @@ confirmada»; no dice que ese hábitat sea incorrecto); sin dato si se sale.
 
 Qué no cambia: el modelo solo elige entre las ayudas que el agente ya considera seguras e
 informativas. Las reglas fijas (solo frases verdaderas del hábitat guía, solo con
-grabación, la primera Pista nunca revela, nunca describir lo ya elegido, apoyo explícito tras
-dos elecciones o tres pistas) quedan fuera del aprendizaje.
+grabación, la primera Pista nunca revela, nunca describir lo ya elegido, no alejar de otra
+respuesta válida visible si hay alternativa, apoyo explícito tras dos elecciones o tres
+pistas) quedan fuera del aprendizaje.
 
 Al jugar, el modelo está congelado (media posterior): no aprende durante la partida. Solo
 se entrena con ``codigo.entrenamiento.entrenar_agente6`` a partir de registros de partidas.
@@ -132,6 +133,9 @@ class MotorAgenteAprendido(MotorAgente):
         def valor(par):
             clave = par[1]["clave_aprendizaje"]
             return self.modelo.muestra(clave, self.azar) if self.azar else self.modelo.media(clave)
+        # Regla fija antes de lo aprendido: si hay alguna ayuda que no aleja de otra respuesta
+        # válida visible (p. ej. el bosque templado del jaguar), solo se elige entre esas.
+        utiles = [par for par in utiles if not par[1]["aleja_de_valida"]] or utiles
         valores = {par[0].id: valor(par) for par in utiles}
         for _, e in utiles:
             e["probabilidad_aprendida"] = round(self.modelo.media(e["clave_aprendizaje"]), 6)
