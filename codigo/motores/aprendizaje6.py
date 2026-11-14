@@ -7,7 +7,7 @@ ideas, 2/4/8 opciones, señal de dificultad y si la ayuda distingue lo visible d
 documentada, sin comprobar o nada. Cada tipo tiene una distribución Beta(α, β) que empieza
 en Beta(1, 1) y se actualiza con resultados 1/0 (Beta-Bernoulli).
 
-Recompensa (decidida el 2026-11-14): 1 si tras la ayuda se elige un hábitat confirmado;
+Recompensa (propuesta y aceptada por el propietario el 2026-11-14): 1 si tras la ayuda se elige un hábitat confirmado;
 0 si se pide otra pista o se elige un hábitat no confirmado («no llevó a una respuesta
 confirmada»; no dice que ese hábitat sea incorrecto); sin dato si se sale.
 

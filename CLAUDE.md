@@ -78,7 +78,7 @@ Responder al propietario en español.
 
 ```bash
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
-PYTHONUTF8=1 python -m unittest discover -s tests -q   # 121 pruebas
+PYTHONUTF8=1 python -m unittest discover -s tests -q   # 122 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
 python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/): 6 casos + axe
 python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados
@@ -88,6 +88,8 @@ PYTHONUTF8=1 python -m codigo.entrenamiento.evaluar_agente6 --salida <carpeta>  
 PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes  # TXT de audios que faltan
 PYTHONUTF8=1 python -m codigo.entrenamiento.entrenar_agente6 simular --salida <carpeta>  # aprendizaje (Hito 2, ~1,5 min)
 PYTHONUTF8=1 python -m codigo.entrenamiento.entrenar_agente6 entrenar --registros registros/interfaz --salida <modelo.json>
+# Si cambian atributos_habitats.json o pistas.json, los modelos aprendidos se niegan a cargar y
+# test_modelo_de_demostracion_congelado falla: volver a ejecutar «simular» en docs/experimentos/agente6/aprendizaje.
 python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
 python -m tests.ejecutar_navegador --catalogo      # 16 casos
 python -m tests.ejecutar_navegador --hito3         # 16 casos (Preferencias, teclado)

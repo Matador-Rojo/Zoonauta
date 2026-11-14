@@ -36,8 +36,8 @@ from codigo.nucleo.registro import Registro
 
 # Recompensa: evento que cierra la observación de una ayuda → resultado.
 # El gestor marca SELECCION_PENDIENTE como «sin etiqueta» (protocolo del catálogo original, que
-# no castigaba una relación desconocida). Para el agente 6.0 el propietario decidió el
-# 2026-11-14 contarla como 0: «la ayuda no llevó a una respuesta confirmada», nunca como
+# no castigaba una relación desconocida). Para el agente 6.0 se propuso, y el propietario
+# aceptó el 2026-11-14, contarla como 0: «la ayuda no llevó a una respuesta confirmada», nunca como
 # «hábitat incorrecto». En el catálogo ampliado no existe SELECCION_INCORRECTA_VALIDADA.
 RECOMPENSA = {"SELECCION_VALIDA": 1, "NUEVA_AYUDA": 0, "SELECCION_PENDIENTE": 0, "SALIDA": None}
 ORIGEN_SIMULADO = "SIMULACION_ENTRENAMIENTO_AGENTE6"
