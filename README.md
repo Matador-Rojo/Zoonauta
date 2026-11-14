@@ -111,6 +111,9 @@ entorno aislado con Python 3.12, los motores y los modelos, y abre
 http://127.0.0.1:8766. Puedes conservar tu Python 3.14: el juego prepara su propia
 versión compatible. Mantén la terminal abierta; Ctrl+C detiene el servidor.
 
+Esa dirección abre **Zoonauta 6.0** (portada «Bosque de luz», voz grabada de Zoonauta en
+español). La versión 5.0 sigue disponible en http://127.0.0.1:8766/v5/.
+
 La primera preparación requiere Internet y descarga unos **656 MB de modelos**,
 además de Python y las dependencias que falten. Las descargas se verifican por
 huella y tamaño. Si se interrumpen, vuelve a abrir el iniciador: conserva los

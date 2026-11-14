@@ -14,7 +14,7 @@ fs.mkdirSync(out,{recursive:true});
    const context=await browser.newContext({viewport:{width:1280,height:720},reducedMotion:'reduce'});
    const page=await context.newPage(),errores=[];
    page.on('pageerror',e=>errores.push(e.message));
-   await page.goto(base);await page.locator('#ajustes').click();
+   await page.goto(base+'/v5/');await page.locator('#ajustes').click();
    if(idioma==='pt-BR'){
     await page.locator('#idioma').selectOption(idioma);
     await page.waitForFunction(()=>document.documentElement.lang==='pt-BR');

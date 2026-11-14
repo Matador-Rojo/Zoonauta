@@ -1,4 +1,4 @@
-"""Lighthouse sobre las pantallas de la interfaz 6.0 (/v6/), en escritorio y móvil.
+"""Lighthouse sobre las pantallas de la interfaz 6.0 («/», versión principal), en escritorio y móvil.
 
 Crea por HTTP una sesión en cada pantalla (portada, catálogo, tablero, pausa) y pasa
 su cookie a Lighthouse. Usa Lighthouse de frontend/node_modules (npm ci) y el Chrome
@@ -72,7 +72,7 @@ def main():
                 cookie = _sesion(base, PANTALLAS[nombre])
                 for dispositivo in ("escritorio", "movil"):
                     informe = args.salida / f"{nombre}_{dispositivo}.json"
-                    orden = ["node", str(LIGHTHOUSE), base + "/v6/", "--quiet", "--output=json",
+                    orden = ["node", str(LIGHTHOUSE), base + "/", "--quiet", "--output=json",
                              f"--output-path={informe}", f"--only-categories={','.join(CATEGORIAS)}",
                              f"--extra-headers={json.dumps({'Cookie': cookie})}",
                              "--chrome-flags=--headless=new --no-first-run"]

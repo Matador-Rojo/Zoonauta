@@ -6,7 +6,7 @@
    la voz está bloqueada. */
 const assert = require('node:assert/strict');
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/v6/';
+const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/';
 
 // WAV PCM de 0,6 s en silencio (8 kHz, 16 bits, mono).
 function wav(segundos = 0.6) {

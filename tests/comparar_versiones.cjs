@@ -1,4 +1,4 @@
-/* Captura cada pantalla en la 5.0 («/») y en la 6.0 («/v6/») con la MISMA sesión, en escritorio,
+/* Captura cada pantalla en la 5.0 («/v5/») y en la 6.0 («/», versión principal) con la MISMA sesión, en escritorio,
    portátil y móvil. Lo usa tests/comparar_versiones.py, que las junta lado a lado.
    Además mide el desplazamiento de cada página (medidas.json): la 6.0 no debe desplazarse.
    Uso: node comparar_versiones.cjs <url base> <carpeta de salida> <json de cookies por pantalla> */
@@ -17,7 +17,7 @@ const VIEWPORTS = {
   apaisado: {width: 844, height: 390},
 };
 const MOVILES = new Set(['movil', 'movil-pequeno', 'apaisado']);
-const VERSIONES = {'5.0': '/', '6.0': '/v6/'};
+const VERSIONES = {'5.0': '/v5/', '6.0': '/'};
 // Pantallas que se abren desde la interfaz (no desde la API): botón a pulsar en cada versión.
 const PULSAR = {modalidad: {'5.0': 'button.comenzar', '6.0': 'main [aria-haspopup="dialog"]'}};
 

@@ -19,7 +19,7 @@ async function clicar(p,nombre,fase){
    const context=await browser.newContext({viewport:{width:1920,height:988}});
    const p=await context.newPage(),errores=[];
    p.on('pageerror',e=>errores.push(e.message));
-   await p.goto(base);await p.locator('#ajustes').click();await p.locator('#voz').uncheck();
+   await p.goto(base+'/v5/');await p.locator('#ajustes').click();await p.locator('#voz').uncheck();
    if(idioma==='pt-BR'){await p.locator('#idioma').selectOption(idioma);await p.waitForFunction(()=>document.documentElement.lang==='pt-BR');}
    await p.locator('#cerrar-preferencias').click();
    await p.getByRole('button',{name:idioma==='es'?'Comenzar':'Começar',exact:true}).click();

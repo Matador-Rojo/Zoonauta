@@ -141,7 +141,10 @@ class Manejador(BaseHTTPRequestHandler):
 
     def do_GET(self):
         ruta = urlsplit(self.path).path
-        fijos = {"/": ("index.html", "text/html; charset=utf-8"),
+        # Desde el 2026-11-14 la 6.0 es la versión principal («/»); la 5.0 sigue en «/v5/».
+        # Las dos comparten API y sesión; sus recursos usan rutas absolutas.
+        fijos = {"/v5": ("index.html", "text/html; charset=utf-8"),
+            "/v5/": ("index.html", "text/html; charset=utf-8"),
             "/app.js": ("app.js", "text/javascript; charset=utf-8"),
             "/estilos.css": ("estilos.css", "text/css; charset=utf-8"),
             "/expedicion.css": ("expedicion.css", "text/css; charset=utf-8"),
@@ -154,6 +157,8 @@ class Manejador(BaseHTTPRequestHandler):
         if ruta in fijos:
             archivo, mime = fijos[ruta]
             self._enviar((Path(__file__).parent / "web" / archivo).read_bytes(), mime)
+        elif ruta == "/":
+            self._enviar_v6("/v6/")
         elif ruta in ("/v6", "/v6/") or ruta.startswith("/v6/assets/"):
             self._enviar_v6(ruta)
         elif ruta.startswith("/animales/") and ruta.removeprefix("/animales/") in self.server.imagenes_animal:

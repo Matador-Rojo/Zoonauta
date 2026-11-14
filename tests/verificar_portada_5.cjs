@@ -28,7 +28,7 @@ async function comprobarFoto(page, habitat) {
         errores.push(respuesta.url());
       }
     });
-    await page.goto(base);
+    await page.goto(base+'/v5/');
     const siguiente = page.getByRole("button", {name: "Siguiente paisaje", exact: true});
     await siguiente.waitFor();
     const {opciones_habitat: habitats} = await page.evaluate(async () =>

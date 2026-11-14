@@ -19,7 +19,7 @@ const base=process.env.INTERFAZ_URL;
     return r;
    };
   });
-  await page.goto(base);await page.locator('.modalidad').first().waitFor();
+  await page.goto(base+'/v5/');await page.locator('.modalidad').first().waitFor();
   const antes=await page.evaluate(async()=>await (await fetch('/api/revision')).json());
   await page.locator('#ajustes').click();
   const resultados=[];

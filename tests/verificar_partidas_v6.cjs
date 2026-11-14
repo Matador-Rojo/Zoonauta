@@ -3,7 +3,7 @@
    El servidor decide si un hábitat es válido: se prueban hábitats hasta resolver cada reto. */
 const assert = require('node:assert/strict');
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/v6/';
+const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/';
 const casos = [];
 
 async function vista(page) {

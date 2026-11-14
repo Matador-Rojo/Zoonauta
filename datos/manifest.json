@@ -146,8 +146,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 17543,
-      "sha256": "492074faa5a27398b875bb10440a68131767a143f2cd494307685f3a6c5ae14e"
+      "bytes": 17710,
+      "sha256": "fa571b134ba1a186bcc4387fd16db080742eb656c78d33a162f3d35033799718"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 17036,
-      "sha256": "cc0ee46fedbfaad43b602a61968e9ce45557259580a48627e2d6163d58289abd"
+      "bytes": 17339,
+      "sha256": "4300b28930a346132a4b246c39eb06a2718d174989b42635744ce060d0d6f5ba"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -816,8 +816,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/index.html",
-      "bytes": 4612,
-      "sha256": "4d4715066895dba37400fa5f372a2056685d68a5601e96349a68fcc7a8f8ba14"
+      "bytes": 4615,
+      "sha256": "0cdcf3ba2f2bfa2fe45440486f4736332c0b0cf4874abe335ec77ef8b1d48e9e"
     },
     {
       "ruta": "codigo/interfaz/web/mundo.svg",
@@ -2656,13 +2656,13 @@
     },
     {
       "ruta": "tests/verificar_audio_real.cjs",
-      "bytes": 3551,
-      "sha256": "51a69d9858f818a3de322f296d2469d2c2feea702072d6b64cca363139f3c694"
+      "bytes": 3558,
+      "sha256": "9342b88a3255b3ed29bfe4d789fadb2305b3d60ec47869cf9e04e7d7fc14cee3"
     },
     {
       "ruta": "tests/verificar_catalogo.cjs",
-      "bytes": 5872,
-      "sha256": "da5fd2f617324b99a58cc42a9f727fd7c04f35f25e887ec4b44b07d77574a9e5"
+      "bytes": 5879,
+      "sha256": "7997c5416775313aea61427df9a896bb0c7f1d14904efa60c50209327d64385a"
     },
     {
       "ruta": "tests/verificar_copia_limpia.py",
@@ -2671,23 +2671,23 @@
     },
     {
       "ruta": "tests/verificar_hito2.cjs",
-      "bytes": 8005,
-      "sha256": "3e5ceee37ccc9bac58bb46fb91f2521cdbc1c0c4e25c70374a556e559b0b0122"
+      "bytes": 8012,
+      "sha256": "a0e7c2a61b44d69c345ec8552c3fcc6ec4cdd7956c856d0e3222106e4992be85"
     },
     {
       "ruta": "tests/verificar_hito3.cjs",
-      "bytes": 4848,
-      "sha256": "7b291c63ef4dc56b4291e90c831c01aa209314886b3869f72a1469b3566be323"
+      "bytes": 4855,
+      "sha256": "d1ca2e3e2e5c652929168f85f9c5e223cff906fbbb60f721fc043efb9ac9ea1a"
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 56790,
-      "sha256": "dc95a094f0be6f651ed960417a2701059b19bafc029c9ed8a0c8b4101ea0f6ee"
+      "bytes": 56846,
+      "sha256": "96ba46d85b48761c012c93baecf7baf89451d5f90d5002386108d23ed0e9c22a"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
-      "bytes": 12850,
-      "sha256": "936cee37f8110906bd4d698b33e5da8d97ae2f2a20e6ace8b2362962ae04eec0"
+      "bytes": 12857,
+      "sha256": "d0eed815c5078997a6ddf65e40bc04ae1c54e3b5f0a9d6af600dca8979e10a79"
     },
     {
       "ruta": "tests/verificar_voces_reales.py",
@@ -5216,8 +5216,8 @@
     },
     {
       "ruta": "tests/verificar_portada.cjs",
-      "bytes": 8844,
-      "sha256": "6a9dc5043c8b0ad6f808e707569d34bbdc0cc6992eaa530115f07c48ec740115"
+      "bytes": 8841,
+      "sha256": "da7aa05f6ca5211dd8b8ec2fb2c264fb2fbc4cc999eafa649f52df51a046ae55"
     },
     {
       "ruta": "frontend/.gitignore",
@@ -5241,8 +5241,8 @@
     },
     {
       "ruta": "frontend/src/App.tsx",
-      "bytes": 13271,
-      "sha256": "b253fbeaae1be003f1a0292b44dfd6a181ba206cb29492953cdef59369016300"
+      "bytes": 13268,
+      "sha256": "3110cd11bed9aabc68c24a8cd1d475a332a28176d31eae148a910ec5c3398c91"
     },
     {
       "ruta": "frontend/src/api/cliente.ts",
@@ -5336,13 +5336,13 @@
     },
     {
       "ruta": "tests/verificar_v6.cjs",
-      "bytes": 9671,
-      "sha256": "94d0ca3bd943aa2d5f4eb4c0b1800e68f76b01143dcbc8af18130ce1be3a8919"
+      "bytes": 9668,
+      "sha256": "7170ee0f14ebfc2bd82d6bcb19f5d63af4f8a77f5b78020a9a149bde2b479a92"
     },
     {
       "ruta": "tests/verificar_portada_5.cjs",
-      "bytes": 2631,
-      "sha256": "0d009be7add8c56a8a80288a03768832447b2358e8df894ceb6cad7a509f033f"
+      "bytes": 2638,
+      "sha256": "056df53ed94924cd342679831d5df3fa38f84edcd53c225ddb2bab66f7984fb1"
     },
     {
       "ruta": "codigo/interfaz/web/fondos/portada/H01-960.webp",
@@ -5387,7 +5387,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 1268,
-      "sha256": "13a3d0a661661f90353a69e5d71afcc99ce765a9576d08c8050c65bf5fa01545"
+      "sha256": "75284011c32de610bd574644129499c275804566da0ef71349d4cbd9913d7dd9"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -7681,8 +7681,8 @@
     },
     {
       "ruta": "tests/verificar_voz_v6.cjs",
-      "bytes": 10130,
-      "sha256": "4c5c4cfef195e96ac0b2c174c99f19dc3c807c46374c96f36fb2fc47ffa963c7"
+      "bytes": 10127,
+      "sha256": "6140d215317cad0a0f4a4056c598f3a50d2d763a88af7dac04707a8c0ce46545"
     },
     {
       "ruta": "assets/ilustraciones_ligeras/indice.json",
@@ -7951,8 +7951,8 @@
     },
     {
       "ruta": "tests/lighthouse_v6.py",
-      "bytes": 4894,
-      "sha256": "4c272a82b9c3c0dd9f9b725f36deaed6f54043d759261fefe5f2042d27a436f2"
+      "bytes": 4912,
+      "sha256": "e831b9a82fc42c79286ca0bd7db7df71f1b075cd9c1273d36492452e0ee65128"
     },
     {
       "ruta": "tests/test_imagenes_ligeras.py",
@@ -7961,8 +7961,8 @@
     },
     {
       "ruta": "tests/verificar_partidas_v6.cjs",
-      "bytes": 6787,
-      "sha256": "f562e89ae115ce6f9de66bca1427d257b1da9741916c5ea322eea782d768f2f9"
+      "bytes": 6784,
+      "sha256": "3a6c1e4e9a3a8cc9b43b0fbaff33531bde452e9606ce8d9b440797b0c04bf717"
     },
     {
       "ruta": "codigo/nucleo/hoja_revision_traducciones.py",
@@ -9820,9 +9820,9 @@
       "sha256": "0bae13364569dab056337a088a0412e32a9a305f6dae37226d1b17c785b5cbfa"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-B5sgVnOv.js",
-      "bytes": 248055,
-      "sha256": "fd544320ff697e6e2f4b28329f4a0dc7ed3c96f73b75f8f6486702167b0cb28f"
+      "ruta": "codigo/interfaz/web6/assets/index-DhmEaATr.js",
+      "bytes": 248052,
+      "sha256": "be6ddd3518ccd8592b3e50b03f88792da0ed1788570f0a110864ca9145f013b3"
     }
   ],
   "nombre_proyecto": "Zoonauta",

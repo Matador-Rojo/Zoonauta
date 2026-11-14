@@ -30,7 +30,7 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
   mensajes en español, 3 reutilizan un duplicado). Piper, Kokoro y las voces del navegador no se
   ofrecen (`SOLO_VOZ_GRABADA` en `frontend/src/voz.ts`); su código y modelos se conservan. Un
   mensaje sin grabación no se lee con otra voz. En pt-BR la voz queda bloqueada (cero voces).
-  Más idiomas llegarán después. La 5.0 en `/` mantiene su sistema de voces.
+  Más idiomas llegarán después. La 5.0 en `/v5/` mantiene su sistema de voces.
 - ElevenLabs u otro servicio externo: esperar autorización antes de consumir créditos o
   enviar textos. Claves solo en el entorno del servidor o de generación, nunca en el
   frontend ni en el repositorio.
@@ -61,7 +61,7 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
   y qué es peor. Avisa siempre que quites un rasgo que existía.
 - La identidad visual del propietario manda sobre cualquier guía genérica de diseño. Desde el
   2026-11-14 la 6.0 entera es azul noche con acento cian/turquesa (botones, foco, brillos),
-  titular serif grande sobre la portada «Bosque de luz». La 5.0 en `/` conserva su verde y lima.
+  titular serif grande sobre la portada «Bosque de luz». La 5.0 en `/v5/` conserva su verde y lima.
   Contrato completo en `docs/interfaz/6.0/identidad.md`. Ante la duda, pregunta.
 - Antes de rediseñar una pieza, captúrala en la 5.0 y parte de ella (controles, textos,
   estructura); no la imagines de cero. Leer `referencias-externas/LEEME.md` y aplicar sus guías.
@@ -79,7 +79,7 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
 PYTHONUTF8=1 python -m unittest discover -s tests -q   # 100 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
-python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/v6/): 6 casos + axe
+python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/): 6 casos + axe
 python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados
 PYTHONUTF8=1 python -m unittest tests.test_voz_grabada_cobertura  # cada mensaje tiene grabación
 python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
@@ -125,8 +125,9 @@ Detalles del entorno:
 ## Frontend 6.0 (React + TypeScript + Vite, decidido 2026-11-13)
 
 - Código en `frontend/`; el compilado va a `codigo/interfaz/web6/` y se versiona, para que
-  `iniciar_juego.bat` funcione sin Node. Python lo sirve en `/v6/`; la 5.0 sigue en `/`
-  hasta que el propietario apruebe el cambio.
+  `iniciar_juego.bat` funcione sin Node. **Desde el 2026-11-14 la 6.0 es la versión
+  principal**: Python la sirve en `/` (y en `/v6/`, por compatibilidad); la 5.0 sigue
+  disponible en `/v5/`. Las dos comparten API y sesión.
 - `cd frontend && npm ci && npm run build` (tsc + vite). Tras compilar, los nombres con
   hash cambian: actualizar `datos/manifest.json` (quitar los antiguos, añadir los nuevos).
 - Desarrollo: servidor Python en 8766 + `npm run dev` (Vite reenvía `/api`, `/media`, etc.).
