@@ -16,7 +16,6 @@ export const TEXTOS_NUEVOS_PENDIENTES: Record<string, string> = {
   "Elige un paisaje": "Escolha uma paisagem",
   "Tu equipo ya pide reducir el movimiento. Las fotografías quedan fijas.":
     "Seu dispositivo já pede para reduzir o movimento. As fotografias ficam fixas.",
-  "Cerrar notificación": "Fechar notificação",
 };
 
 export interface Traductor {
