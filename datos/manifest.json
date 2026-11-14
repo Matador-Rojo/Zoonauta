@@ -141,8 +141,18 @@
       "evaluacion_con_jugadores": false,
       "ayudas_rasgo_con_grabacion": 1,
       "mensajes_pendientes_de_grabar_es": 62,
-      "pruebas_python_correctas": 110,
-      "documentacion": "docs/agente/agente_6.md"
+      "pruebas_python_correctas": 120,
+      "documentacion": "docs/agente/agente_6.md",
+      "politica_aprendida": "AGENTE_APRENDIDO",
+      "aprendizaje": {
+        "modelo": "Beta-Bernoulli por tipo de ayuda (72 tipos)",
+        "fuera_de_la_partida": true,
+        "congelado_al_jugar": true,
+        "datos": "SIMULADOS",
+        "sesiones_reales": 0,
+        "experimento": "docs/experimentos/agente6/aprendizaje/experimento.json",
+        "modelo_demostracion": "docs/experimentos/agente6/aprendizaje/modelos/IDEAS_R01.json"
+      }
     }
   },
   "archivos": [
@@ -158,8 +168,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 16513,
-      "sha256": "f641acf6d3acbab49a826a755bfdaef74f868b793518cd1ca6d296f4b05d35a4"
+      "bytes": 16959,
+      "sha256": "85799673d358338ef036967c95d7fe45a23291f9b970e9450ec5b27e53e2e17e"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -758,13 +768,13 @@
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
-      "bytes": 9467,
-      "sha256": "d671f47278a474e3a493bbea2e32f4d66930634d4c458cbc036b483e5e58487c"
+      "bytes": 9983,
+      "sha256": "caeffc2e4f57f397d5d526d5ae8d9bbea60c0250586413bffdc43673579394c8"
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 15997,
-      "sha256": "45bdb663598150111c2d5a462fae595518a3253a6d7e201aac57aab35d621636"
+      "bytes": 16402,
+      "sha256": "ee4dcd0182e055be5c9b3fbbdc8561706b7539ca17d74422bf131a122c00d3ce"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
@@ -888,8 +898,8 @@
     },
     {
       "ruta": "codigo/nucleo/gestor.py",
-      "bytes": 23479,
-      "sha256": "cb7a7168ddf031790cb8cccb4b5141a679b28e1a0239e84bbb04bce1fd549703"
+      "bytes": 23735,
+      "sha256": "5c39912a35c34c7f0f586df7877b5a7e8d1478110fb52068210154c6921ed765"
     },
     {
       "ruta": "codigo/nucleo/registro.py",
@@ -9823,8 +9833,8 @@
     },
     {
       "ruta": "CLAUDE.md",
-      "bytes": 12606,
-      "sha256": "38dcc22f61d96732ed67b1d84fcb1ec620f3396052e99afadd28f3f93a7a1d8b"
+      "bytes": 12985,
+      "sha256": "a301a4591271c4818f0306b3b55ef0db925ce1a9e4a5c5b094225226f4901483"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/index-BGmevnUX.js",
@@ -9853,8 +9863,8 @@
     },
     {
       "ruta": "codigo/motores/agente.py",
-      "bytes": 18029,
-      "sha256": "54e68605a9eb5fbdb1cb4be2bd8fc0e346723e00245e062f7e138c19339da1f2"
+      "bytes": 19291,
+      "sha256": "8757edbd697211ed94b0c93c26f0d909f8a81b4aa0f83c3ef204445a3a38c6e1"
     },
     {
       "ruta": "datos/expedicion/atributos_habitats.json",
@@ -9868,8 +9878,8 @@
     },
     {
       "ruta": "docs/agente/agente_6.md",
-      "bytes": 27685,
-      "sha256": "30494e742578bf47ff8e944148783a82c71b9d1425bf3ae91a3ecd724fbb946f"
+      "bytes": 36544,
+      "sha256": "8d4bf4ae5f780ee1d36dd4ef159fbfc415d65750eb469ce113ae14a2fedcc27f"
     },
     {
       "ruta": "docs/experimentos/agente6/evaluacion.json",
@@ -9880,6 +9890,71 @@
       "ruta": "docs/voz/elevenlabs/textos_pendientes_es-419.txt",
       "bytes": 5325,
       "sha256": "b6c02bac31b006d76c9037889d4ebb64c81a3456fc9a99cef9b9dad5e16fd21e"
+    },
+    {
+      "ruta": "codigo/entrenamiento/entrenar_agente6.py",
+      "bytes": 15473,
+      "sha256": "629213a09d9a9f62023fddd8d931537a74ec13b62c4e39c91cb8b376f40bede3"
+    },
+    {
+      "ruta": "codigo/motores/aprendizaje6.py",
+      "bytes": 7528,
+      "sha256": "8c0418deeeb50c66acff77f71e68b6598d6d2e964b44b78884519387255f5714"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/experimento.json",
+      "bytes": 85168,
+      "sha256": "8010e087878f9afa196734962183fee388ca2a472fc0b12308281fb1f7614603"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/IDEAS_R01.json",
+      "bytes": 6275,
+      "sha256": "cb1aea176b88c636e977581d32d0a380a1f06c160d014a34e0a4d72f9cc49d0e"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/IDEAS_R02.json",
+      "bytes": 6271,
+      "sha256": "f0ea2f3263650341e26a00fff0925c7b9c2557093127c54851a8b8c9385ba227"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/IDEAS_R03.json",
+      "bytes": 6274,
+      "sha256": "7e1da567cd0178284adb435254ea8770d3284a416f8dfb213c0d27839c04d4c2"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/PISTAS_R01.json",
+      "bytes": 6266,
+      "sha256": "77195c23ca133c23f7bbf2ab23040e29116ad4c9b76de79ddeb958ab6e899ea1"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/PISTAS_R02.json",
+      "bytes": 6264,
+      "sha256": "1a21658aa16ffe509d3cf16624c9c11a3c4ff0e436b0a7104356565b53445999"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/PISTAS_R03.json",
+      "bytes": 6264,
+      "sha256": "bddce624929aae47421466f36c8cb362e23381a38898483e856446a8e0bdf2b2"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/RASGOS_R01.json",
+      "bytes": 6270,
+      "sha256": "a5f035aca17776309e5c6eee470eaccfda2ee0df4c8a26e925760764d7bf5334"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/RASGOS_R02.json",
+      "bytes": 6266,
+      "sha256": "970cda4df5abc343405b89110b49267214deb626eb0af73281c2db451e72024e"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/aprendizaje/modelos/RASGOS_R03.json",
+      "bytes": 6265,
+      "sha256": "4120479c44b5e034c6f515059ae15cd34fda29730bfa913dd6977df4afc016a9"
+    },
+    {
+      "ruta": "tests/test_aprendizaje6.py",
+      "bytes": 7654,
+      "sha256": "ecf769a38d5b5e07899657b5ecd6ca5b45030d450ee7b6ad160b709ce442c33e"
     }
   ],
   "nombre_proyecto": "Zoonauta",

@@ -10,6 +10,7 @@ from uuid import uuid4
 
 from codigo.interfaz import idiomas
 from codigo.motores.agente import MOTORES_6, POLITICA_AGENTE
+from codigo.motores.aprendizaje6 import POLITICA_APRENDIDA, MotorAgenteAprendido
 from codigo.motores.guia import MotorGuia, MotorPistas
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import Evento, TERMINALES
@@ -17,7 +18,7 @@ from codigo.nucleo.gestor import GestorPartida
 from codigo.nucleo.registro import Registro
 
 
-POLITICAS_6 = (*MOTORES_6, MotorPistas.politica)
+POLITICAS_6 = (*MOTORES_6, POLITICA_APRENDIDA, MotorPistas.politica)
 MODELO_DEMO = RAIZ_PROYECTO / "docs/experimentos/hito2/entrenamiento/modelos/SIM_CONTEXTUAL_R01.json"
 
 
@@ -28,7 +29,8 @@ class ConflictoVista(ValueError):
 class SesionWeb:
     def __init__(self, banco: BancoDatos, registros: Path | None = None,
                  politica: str = "PROBABILISTICO", parametros: Path | None = MODELO_DEMO,
-                 aleatorio: Random | None = None, agente: str = POLITICA_AGENTE):
+                 aleatorio: Random | None = None, agente: str = POLITICA_AGENTE,
+                 modelo_agente: Path | None = None):
         self.banco = banco
         self.registros = registros
         # Catálogo ampliado (6.0 y 5.0 en /v5/): el agente elige las pistas; ID3_OPCIONES y
@@ -36,6 +38,7 @@ class SesionWeb:
         if banco.ampliado and agente not in POLITICAS_6:
             raise ValueError(f"Agente no reconocido: {agente}.")
         self.politica = agente if banco.ampliado else politica
+        self.modelo_agente = modelo_agente
         self.parametros = parametros
         self.aleatorio = aleatorio if aleatorio is not None else SystemRandom()
         self.lock = RLock()
@@ -50,6 +53,10 @@ class SesionWeb:
         registro = Registro(self.registros / f"{sid}.jsonl" if self.registros else None)
         if not self.banco.ampliado:
             motor = MotorGuia(self.banco, self.politica, parametros=self.parametros)
+        elif self.politica == POLITICA_APRENDIDA:
+            # Modelo aprendido fuera de la partida y congelado (por defecto, el de demostración
+            # entrenado con jugadores simulados). No aprende mientras se juega.
+            motor = MotorAgenteAprendido(self.banco, self.modelo_agente, solo_grabadas=True)
         elif self.politica in MOTORES_6:
             # Solo ayudas con grabación: la 6.0 nunca muestra una ayuda que la voz no puede leer.
             motor = MOTORES_6[self.politica](self.banco, solo_grabadas=True)

@@ -66,7 +66,7 @@ Para el hábitat guía del animal (siempre visible entre las opciones):
 
 No hay ninguna frase sobre otro hábitat ni sobre si un hábitat es incorrecto.
 
-## 4. Las dos políticas nuevas y cómo se integran
+## 4. Las políticas nuevas y cómo se integran
 
 El gestor (`codigo/nucleo/gestor.py`, `_ayuda`) llama a `decidir_reto(contexto)` cuando el
 motor lo ofrece. El contexto contiene el animal, el hábitat guía, las **opciones visibles**
@@ -258,6 +258,148 @@ Lectura, con cautela:
   - No mide comprensión real, motivación, fatiga ni el papel del educador.
   - **No son resultados de usuarios** ni se usaron para entrenar nada.
 
+## 5 bis. Aprendizaje fuera de la partida (Hito 2)
+
+El enunciado del curso (TP-TF 1ASI0404, 2026-20, págs. 4-5) pide para el Hito 2 un modelo
+principal de decisión «capaz de modular la asistencia» y un informe con su formulación y
+**entrenamiento**: tasa de éxito, eficiencia de la guía y análisis de convergencia. Por eso el
+agente tiene una tercera política, `AGENTE_APRENDIDO` (`codigo/motores/aprendizaje6.py`).
+
+### Qué aprende
+
+Es un **sistema experto probabilístico Beta-Bernoulli**: para cada *tipo* de ayuda estima la
+probabilidad de que la siguiente acción del jugador sea elegir un hábitat confirmado. Un tipo
+de ayuda combina cinco datos (72 tipos en total), no el hábitat concreto, para que los datos
+alcancen:
+- pista revisada o ayuda por rasgo;
+- una idea o varias;
+- 2, 4 u 8 opciones;
+- si hubo señal de dificultad;
+- si la ayuda distingue lo visible de forma documentada, sin comprobar o nada.
+
+Cada tipo empieza en Beta(1, 1) y se actualiza con cada resultado.
+
+- **Recompensa** (decidida por el propietario el 2026-11-14):
+  - **1** si tras la ayuda se elige un hábitat confirmado;
+  - **0** si se pide otra pista o se elige un hábitat no confirmado. El 0 significa que la
+    ayuda no llevó a una respuesta confirmada, no que ese hábitat sea incorrecto;
+  - **sin dato** si se sale.
+- **Qué decide.** Solo elige entre las ayudas que el agente ya considera seguras e
+  informativas: la de mayor probabilidad aprendida. Las reglas fijas siguen fuera del
+  aprendizaje:
+  - solo frases verdaderas del hábitat guía;
+  - solo ayudas con grabación;
+  - la primera Pista nunca revela la respuesta;
+  - nunca describir lo ya elegido;
+  - apoyo explícito tras dos elecciones o tres pistas.
+- **Cuándo aprende.** Solo fuera de la partida. Al jugar, el modelo está **congelado** (media
+  posterior) y no cambia. El archivo del modelo guarda la huella de los rasgos y de las
+  pistas; si cambian, se niega a cargar y hay que volver a entrenar.
+
+### Un único camino de datos, para sesiones reales y simuladas
+
+`registro de la partida (JSONL) → etiquetas() → modelo Beta-Bernoulli → modelo congelado`
+(`codigo/entrenamiento/entrenar_agente6.py`). La partida web ya guarda cada ayuda con su tipo
+(`clave_aprendizaje`) y su cierre en `registros/interfaz/`.
+
+```console
+# Con sesiones reales (cuando existan, con el consentimiento que corresponda):
+PYTHONUTF8=1 python -m codigo.entrenamiento.entrenar_agente6 entrenar --registros registros/interfaz --salida resultados_nuevos/modelo_sesiones.json
+# Experimento con jugadores simulados (1 min 25 s):
+PYTHONUTF8=1 python -m codigo.entrenamiento.entrenar_agente6 simular --salida docs/experimentos/agente6/aprendizaje
+# Jugar con el modelo congelado (por defecto, el de demostración):
+python -m codigo.interfaz.servidor --agente AGENTE_APRENDIDO --puerto 8005
+python -m codigo.interfaz.servidor --agente AGENTE_APRENDIDO --modelo-agente resultados_nuevos/modelo_sesiones.json
+```
+
+Hoy **no hay sesiones reales**: `registros/interfaz/` solo tiene unas pocas partidas de prueba,
+de origen desconocido. Por eso el entrenamiento de esta entrega es **simulado**.
+
+### Experimento con jugadores simulados
+
+- **Probabilidades plantadas.** El jugador simulado tiene, para cada tipo de ayuda, una
+  probabilidad de acertar después de ella. Son valores inventados que el agente no conoce,
+  en tres condiciones:
+  - `IDEAS`: cada idea extra pesa mucho;
+  - `RASGOS`: las frases por rasgo se entienden mejor;
+  - `PISTAS`: las pistas editadas se entienden mejor.
+- **Comportamiento del jugador simulado:**
+  - antes de cualquier ayuda pide pista la mitad de las veces y acierta sin ayuda el 20 %;
+  - si no acierta tras una ayuda, pide otra o elige un hábitat no confirmado;
+  - tras «Señala» acierta el 95 %.
+- **Protocolo**, el mismo del proyecto para el catálogo original:
+  - 3 condiciones × 3 réplicas = 9 modelos;
+  - cada modelo se entrena con 4320 retos (288 animales × 3 tamaños × 5 vueltas), con
+    exploración por Thompson sampling y las 32 ayudas por rasgo activas;
+  - después se congela y se evalúa con semillas distintas: 864 retos por política, con los
+    mismos sorteos para todas las políticas.
+- El modelo de demostración que carga el juego es `IDEAS_R01`, la primera réplica, elegida
+  por orden y no por sus resultados.
+- Datos completos en
+  [`docs/experimentos/agente6/aprendizaje/experimento.json`](../experimentos/agente6/aprendizaje/experimento.json).
+
+**Convergencia.** La tabla da el error medio, ponderado por observaciones, entre lo aprendido
+y lo plantado (media de 3 réplicas).
+
+| Condición | 144 retos | 432 retos | 864 retos | 1728 retos | 2592 retos | 4320 retos | Tipos vistos | Tipos con ≥30 obs. | Variación en los 3 últimos tramos |
+|---|---|---|---|---|---|---|---|---|---|
+| IDEAS | 0,092 | 0,061 | 0,039 | 0,031 | 0,024 | 0,020 | 37 de 72 | 15 | ≤ 0,003 |
+| RASGOS | 0,124 | 0,070 | 0,046 | 0,039 | 0,028 | 0,020 | 34 de 72 | 14 | ≤ 0,002 |
+| PISTAS | 0,087 | 0,062 | 0,051 | 0,035 | 0,028 | 0,021 | 33 de 72 | 16 | ≤ 0,003 |
+
+- **Converge:** el error baja de 0,09–0,12 a 0,02, y en los tres últimos tramos cambia
+  ≤ 0,003.
+- **Cobertura parcial:** el agente solo ve los tipos de ayuda que llega a elegir; unos 35 de
+  72, y 14–16 con 30 o más observaciones. Los demás siguen cerca de su valor inicial, sin
+  aprender.
+- Es convergencia sobre datos simulados, no prueba de que el modelo acierte con personas.
+
+**Tasa de éxito y eficiencia** (congelado, media de 3 réplicas). Todas las políticas resuelven
+el 100 % de los retos en ≤ 10 acciones, porque al final se señala la respuesta. La medida
+exigente es **acertar sin llegar a «Señala»**.
+
+| Condición | Política | Acierta sin «Señala» (2/4/8) | Acciones por reto (2/4/8) | Elecciones no confirmadas (2/4/8) | Llega a «Señala» (2/4/8) |
+|---|---|---|---|---|---|
+| IDEAS | PISTAS_PROGRESIVAS | 62 / 65 / 56 % | 2,82 / 2,81 / 3,03 | 0,55 / 0,87 / 0,97 | 38 / 35 / 44 % |
+| IDEAS | ID3_OPCIONES | 63 / 65 / 55 % | 2,77 / 2,79 / 3,01 | 0,54 / 0,86 / 0,95 | 37 / 35 / 45 % |
+| IDEAS | AGENTE_ADAPTATIVO | 72 / 68 / 63 % | 2,40 / 2,53 / 2,80 | 0,48 / 0,73 / 0,84 | 28 / 32 / 37 % |
+| IDEAS | **AGENTE_APRENDIDO** | 72 / 71 / 70 % | 2,40 / 2,46 / 2,62 | 0,48 / 0,69 / 0,73 | 28 / 29 / 30 % |
+| RASGOS | PISTAS_PROGRESIVAS | 72 / 68 / 61 % | 2,66 / 2,79 / 2,89 | 0,53 / 0,85 / 0,93 | 28 / 32 / 39 % |
+| RASGOS | ID3_OPCIONES | 73 / 68 / 62 % | 2,59 / 2,75 / 2,84 | 0,51 / 0,83 / 0,91 | 27 / 32 / 38 % |
+| RASGOS | AGENTE_ADAPTATIVO | 78 / 73 / 72 % | 2,23 / 2,42 / 2,54 | 0,45 / 0,66 / 0,74 | 22 / 27 / 28 % |
+| RASGOS | **AGENTE_APRENDIDO** | 78 / 77 / 76 % | 2,23 / 2,33 / 2,39 | 0,45 / 0,62 / 0,67 | 22 / 23 / 24 % |
+| PISTAS | PISTAS_PROGRESIVAS | 88 / 90 / 86 % | 2,28 / 2,30 / 2,40 | 0,44 / 0,58 / 0,64 | 12 / 10 / 14 % |
+| PISTAS | ID3_OPCIONES | 90 / 91 / 86 % | 2,22 / 2,26 / 2,36 | 0,44 / 0,56 / 0,62 | 10 / 9 / 14 % |
+| PISTAS | AGENTE_ADAPTATIVO | 81 / 77 / 75 % | 2,33 / 2,38 / 2,52 | 0,46 / 0,63 / 0,70 | 19 / 23 / 25 % |
+| PISTAS | **AGENTE_APRENDIDO** | 82 / 81 / 80 % | 2,26 / 2,26 / 2,38 | 0,43 / 0,57 / 0,63 | 18 / 19 / 20 % |
+
+Lectura:
+- **Frente al agente con parámetros fijos:** el aprendido mejora o iguala en las tres
+  condiciones. La diferencia aparece con 4 y 8 opciones (p. ej. `IDEAS` con 8 opciones: acierta
+  sin «Señala» el 70 % frente al 63 %, con 2,62 acciones frente a 2,80). Con 2 opciones suelen
+  elegir lo mismo.
+- **Frente a la secuencia anterior y a ID3:** gana en `IDEAS` y `RASGOS`, pero **pierde en
+  `PISTAS`** (80–82 % frente a 86–91 % sin «Señala»).
+  - En esa condición, las pistas editadas, que la secuencia muestra siempre, son justo las
+    que mejor se entienden.
+  - Las reglas fijas del agente (apoyo explícito antes, no repetir lo que describe lo
+    elegido) llevan antes a «Señala».
+  - El aprendizaje reduce esa desventaja, pero no la elimina.
+- Nada de esto mide comprensión real, motivación ni el papel del educador.
+
+### Límites
+
+- Los datos son simulados y las probabilidades, inventadas: el experimento muestra que el
+  método aprende lo que hay en los datos, no qué ayuda funciona con las personas de Kallpa.
+- **Entrenar con sesiones reales** exigirá:
+  - sesiones con educadores y el consentimiento que corresponda;
+  - revisar antes los rasgos (apartado 8), porque el modelo aprende sobre ellos;
+  - comparar el modelo nuevo con el actual antes de usarlo.
+- Con pocas sesiones, la mayoría de los tipos seguirán sin datos y el agente decidirá casi
+  como el de parámetros fijos.
+- No hay aprendizaje en vivo: explorar con personas reales supondría darles a propósito
+  ayudas peores.
+
 ## 6. Voces
 
 - **Se reutilizan** las 350 grabaciones: las 144 pistas solas, las 144 precedidas del apoyo y
@@ -279,7 +421,9 @@ Lectura, con cautela:
 
 ## 7. Pruebas
 
-**Automáticas** (`tests/test_agente6.py`, 15 pruebas; con el resto, 110 en total):
+**Automáticas** (`tests/test_agente6.py`, 15 pruebas, y `tests/test_aprendizaje6.py`, 10 pruebas
+del aprendizaje: etiquetas desde el registro, Beta-Bernoulli, modelo congelado y seguro,
+recuperación de lo plantado; con el resto, 120 en total):
 
 - datos: cada rasgo cita una pista revisada del mismo hábitat; ayudas breves, con
   pictogramas existentes y traducción; lo desconocido nunca descarta;

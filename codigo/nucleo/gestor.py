@@ -8,6 +8,7 @@ from random import Random
 from uuid import uuid4
 
 from codigo.motores.agente import MOTORES_6, POLITICA_AGENTE, MotorAgente, MotorID3Opciones
+from codigo.motores.aprendizaje6 import POLITICA_APRENDIDA, MotorAgenteAprendido
 from codigo.motores.guia import MotorGuia, MotorPistas
 from codigo.nucleo.datos import BancoDatos
 from codigo.nucleo.estado import Estado, Evento, PAUSABLES, Respuesta, Salida, TERMINALES
@@ -50,7 +51,12 @@ class GestorPartida:
                 POLITICA_AGENTE if banco.ampliado else "ID3")
         if motor is None:
             if banco.ampliado:
-                motor = MOTORES_6[politica](banco) if politica in MOTORES_6 else MotorPistas(banco)
+                if politica == POLITICA_APRENDIDA:
+                    motor = MotorAgenteAprendido(banco)
+                elif politica in MOTORES_6:
+                    motor = MOTORES_6[politica](banco)
+                else:
+                    motor = MotorPistas(banco)
             else:
                 motor = MotorGuia(banco, politica)
         self.motor = motor

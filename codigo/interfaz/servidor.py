@@ -53,7 +53,7 @@ class Servidor(ThreadingHTTPServer):
     daemon_threads = True
 
     def __init__(self, direccion, *, registros=None, politica="PROBABILISTICO",
-                 parametros=MODELO_DEMO, ampliado=True, agente=POLITICA_AGENTE):
+                 parametros=MODELO_DEMO, ampliado=True, agente=POLITICA_AGENTE, modelo_agente=None):
         self.banco = BancoDatos(ampliado=ampliado)
         for p in self.banco.pictogramas.values():
             archivo = p.get("archivo_imagen")
@@ -75,7 +75,7 @@ class Servidor(ThreadingHTTPServer):
         self.sesiones = {}
         self.lock = RLock()
         self.registros, self.politica, self.parametros = registros, politica, parametros
-        self.agente = agente
+        self.agente, self.modelo_agente = agente, modelo_agente
         super().__init__(direccion, Manejador)
 
 
@@ -99,7 +99,7 @@ class Manejador(BaseHTTPRequestHandler):
                 sid = uuid4().hex
                 self.server.sesiones[sid] = SesionWeb(self.server.banco,
                     self.server.registros, self.server.politica, self.server.parametros,
-                    agente=self.server.agente)
+                    agente=self.server.agente, modelo_agente=self.server.modelo_agente)
                 self.nueva_cookie = f"habitats={sid}; HttpOnly; SameSite=Strict; Path=/"
             return self.server.sesiones[sid]
 
@@ -257,11 +257,15 @@ def main():
     parser.add_argument("--agente", choices=POLITICAS_6, default=POLITICA_AGENTE,
                         help="Quién elige las pistas con el catálogo ampliado (por defecto, el agente "
                              "adaptativo; ID3_OPCIONES y PISTAS_PROGRESIVAS sirven para comparar).")
+    parser.add_argument("--modelo-agente", type=Path, default=None,
+                        help="Con --agente AGENTE_APRENDIDO: modelo congelado (por defecto, el de "
+                             "demostración entrenado con jugadores simulados).")
     parser.add_argument("--registros", type=Path, default=RAIZ_PROYECTO / "registros/interfaz")
     args = parser.parse_args()
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
                          politica=args.politica, parametros=args.parametros,
-                         ampliado=not args.catalogo_original, agente=args.agente)
+                         ampliado=not args.catalogo_original, agente=args.agente,
+                         modelo_agente=args.modelo_agente)
     url = f"http://127.0.0.1:{servidor.server_port}"
     print(f"Zoonauta 6.0.0: {url}  (5.0: {url}/v5/)\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:

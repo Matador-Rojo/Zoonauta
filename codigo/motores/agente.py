@@ -208,6 +208,7 @@ class MotorID3Opciones(_MotorReto):
 class MotorAgente(_MotorReto):
     """Modelo principal: utilidad esperada de cada ayuda con el estado actual del reto."""
     politica = POLITICA_AGENTE
+    metodo = "UTILIDAD_ESPERADA"
 
     def evaluar(self, c: Candidata, contexto: dict, restantes: list[str], distractores: list[str],
                 validas: list[str], ultima: str | None, dificultad: bool,
@@ -229,7 +230,15 @@ class MotorAgente(_MotorReto):
         con_ultima = self.rep.relacion(c, ultima) if ultima else None
         bono = {"conflicto": BONO_ULTIMA_ELECCION, "propia": BONO_ULTIMA_ELECCION / 2}.get(con_ultima, 0.0)
         utilidad = comprension * ganancia + bono - PENALIZACION_VALIDA * len(aleja)
+        if conflicto or con_ultima == "conflicto":
+            informa = "documentado"
+        elif propia or parcial or con_ultima in ("propia", "parcial"):
+            informa = "sin_comprobar"
+        else:
+            informa = "ninguno"
         return {"id": c.id, "tipo": c.tipo, "ideas": ideas, "descarta_documentado": conflicto,
+                "clave_aprendizaje": clave_aprendizaje(c.tipo, ideas, len(contexto["opciones"]),
+                                                       dificultad, informa),
                 "distingue_sin_comprobar": propia, "en_parte_compartida": parcial,
                 "aleja_de_valida": aleja, "describe_eleccion_previa": confunde,
                 "relacion_con_ultima_eleccion": con_ultima,
@@ -254,7 +263,10 @@ class MotorAgente(_MotorReto):
         senalar = self.rep.senalar(g)
 
         def salida(c, regla, evaluaciones=()):
-            _, nodo, traza = self._salida(contexto, c, regla, "UTILIDAD_ESPERADA", list(evaluaciones), comienzo)
+            _, nodo, traza = self._salida(contexto, c, regla, self.metodo, list(evaluaciones), comienzo)
+            # Qué tipo de ayuda fue: con esto se aprende fuera de la partida (ver aprendizaje6.py).
+            traza["clave_aprendizaje"] = next((e["clave_aprendizaje"] for e in evaluaciones
+                                               if e["id"] == c.id), None)
             traza["estado_reto"] = {"restantes": restantes, "distractores": distractores, "validas": validas,
                                     "ultima_eleccion": ultima, "elecciones_pendientes": len(pendientes),
                                     "ayuda_no_entendida": no_entendida, "dificultad": dificultad}
@@ -295,12 +307,22 @@ class MotorAgente(_MotorReto):
                 if siguiente:
                     return salida(siguiente, "SECUENCIA_SIN_AYUDA_QUE_DISTINGA", evaluaciones)
             return salida(senalar, "SIN_AYUDA_QUE_DISTINGA", evaluaciones)
+        c, e, regla = self._elegir(utiles)
+        return salida(c, regla, evaluaciones)
+
+    def _elegir(self, utiles: list[tuple[Candidata, dict]]) -> tuple[Candidata, dict, str]:
+        """Elige entre las ayudas seguras e informativas (el modelo aprendido lo sustituye)."""
         orden_tipo = {"RASGO": 0, "PISTA": 1}
         c, e = max(utiles, key=lambda par: (par[1]["utilidad"], -par[1]["ideas"],
                                             -orden_tipo[par[0].tipo], -par[0].plantilla["nivel"]))
         regla = ("DISTINGUE_LA_ULTIMA_ELECCION" if e["relacion_con_ultima_eleccion"] == "conflicto"
                  else "MAYOR_UTILIDAD_ESPERADA")
-        return salida(c, regla, evaluaciones)
+        return c, e, regla
+
+
+def clave_aprendizaje(tipo: str, ideas: int, opciones: int, dificultad: bool, informa: str) -> str:
+    """Contexto de una ayuda para el modelo aprendido: pocos rasgos, no el hábitat concreto."""
+    return f"{tipo}|{'1' if ideas <= 1 else '2+'}|{opciones}|{int(bool(dificultad))}|{informa}"
 
 
 MOTORES_6 = {POLITICA_AGENTE: MotorAgente, POLITICA_ID3: MotorID3Opciones}

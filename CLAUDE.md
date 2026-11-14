@@ -78,7 +78,7 @@ Responder al propietario en español.
 
 ```bash
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
-PYTHONUTF8=1 python -m unittest discover -s tests -q   # 110 pruebas
+PYTHONUTF8=1 python -m unittest discover -s tests -q   # 120 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
 python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/): 6 casos + axe
 python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados
@@ -86,6 +86,8 @@ PYTHONUTF8=1 python -m unittest tests.test_voz_grabada_cobertura  # cada mensaje
 PYTHONUTF8=1 python -m unittest tests.test_agente6       # agente 6.0: decisiones, 2/4/8, voz
 PYTHONUTF8=1 python -m codigo.entrenamiento.evaluar_agente6 --salida <carpeta>  # evaluación (~3 min)
 PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes  # TXT de audios que faltan
+PYTHONUTF8=1 python -m codigo.entrenamiento.entrenar_agente6 simular --salida <carpeta>  # aprendizaje (Hito 2, ~1,5 min)
+PYTHONUTF8=1 python -m codigo.entrenamiento.entrenar_agente6 entrenar --registros registros/interfaz --salida <modelo.json>
 python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
 python -m tests.ejecutar_navegador --catalogo      # 16 casos
 python -m tests.ejecutar_navegador --hito3         # 16 casos (Preferencias, teclado)
@@ -152,7 +154,8 @@ Detalles del entorno:
   `expedicion.css`, `fondos/catalogo/H01..H48.webp` de 1920×1080).
 - `codigo/nucleo/` — estado, gestor de sesión, catálogo, registro, auditoría, manifiesto.
 - `codigo/motores/` — `agente.py` (agente 6.0 del catálogo ampliado: `AGENTE_ADAPTATIVO`,
-  línea base `ID3_OPCIONES`; ver `docs/agente/agente_6.md`), `guia.py` (`MotorPistas`, la
+  línea base `ID3_OPCIONES`; ver `docs/agente/agente_6.md`), `aprendizaje6.py` (`AGENTE_APRENDIDO`:
+  Beta-Bernoulli entrenado fuera de la partida, congelado al jugar; hoy con datos simulados), `guia.py` (`MotorPistas`, la
   secuencia editorial anterior, y `MotorGuia` del catálogo original: ID3, rotación y
   probabilística, `--catalogo-original`) e `id3.py` (árbol ID3 que usan ambos).
 - `codigo/entrenamiento/`, `codigo/poc/` — experimentos, simulador, consola, aceptación.
