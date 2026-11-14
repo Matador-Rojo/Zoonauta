@@ -182,7 +182,7 @@ opciones no confirmadas.
 | **AGENTE (grabadas)** | 8 | 69 % | 0 % | 0 % | 2,09 | 34 % | 0 % | 9 % | 1 | 0 |
 | AGENTE (todas) | 2 | 40 % | 0 % | 0 % | 1,44 | 40 % | 0 % | 13 % | 1 | 0 |
 | AGENTE (todas) | 4 | 55 % | 0 % | 0 % | 1,53 | 31 % | 0 % | 10 % | 0 | 0 |
-| AGENTE (todas) | 8 | 74 % | 0 % | 0 % | 1,61 | 34 % | 0 % | 6 % | 0 | 0 |
+| AGENTE (todas) | 8 | 74 % | 0 % | 0 % | 1,63 | 34 % | 0 % | 6 % | 0 | 0 |
 
 (`ID3_OPCIONES (todas)` da casi los mismos números que con grabadas; están en el JSON.)
 
@@ -232,9 +232,9 @@ los mismos sorteos para todas.
 | **AGENTE (grabadas)** | autonomo | 0,22 / 0,44 / 0,58 | 0,68 / 0,95 / 1,14 | 12 / 26 / 32 % | 2,06 |
 | **AGENTE (grabadas)** | apoyo_medio | 0,24 / 0,45 / 0,66 | 1,20 / 1,51 / 1,75 | 27 / 44 / 54 % | 2,06 |
 | **AGENTE (grabadas)** | apoyo_alto | 0,24 / 0,40 / 0,57 | 1,84 / 2,15 / 2,35 | 51 / 68 / 77 % | 2,05 |
-| AGENTE (todas) | autonomo | 0,22 / 0,44 / 0,61 | 0,69 / 0,98 / 1,21 | 8 / 19 / 25 % | 1,65 |
-| AGENTE (todas) | apoyo_medio | 0,23 / 0,46 / 0,71 | 1,25 / 1,65 / 1,98 | 19 / 31 / 42 % | 1,68 |
-| AGENTE (todas) | apoyo_alto | 0,24 / 0,45 / 0,66 | 2,03 / 2,54 / 2,87 | 42 / 58 / 70 % | 1,71 |
+| AGENTE (todas) | autonomo | 0,22 / 0,44 / 0,61 | 0,69 / 0,98 / 1,21 | 8 / 19 / 25 % | 1,66 |
+| AGENTE (todas) | apoyo_medio | 0,23 / 0,47 / 0,71 | 1,25 / 1,65 / 1,98 | 19 / 31 / 42 % | 1,69 |
+| AGENTE (todas) | apoyo_alto | 0,24 / 0,45 / 0,66 | 2,02 / 2,54 / 2,87 | 42 / 58 / 70 % | 1,72 |
 
 Lectura, con cautela:
 
@@ -247,7 +247,7 @@ Lectura, con cautela:
 - **Con las 32 ayudas por rasgo:**
   - Las frases son más cortas (1,7 ideas frente a 2,1) y se llega menos a «Señala» que con
     las grabadas.
-  - En el perfil `apoyo_alto` hacen falta más ayudas que con la secuencia (2,03 / 2,54 / 2,87
+  - En el perfil `apoyo_alto` hacen falta más ayudas que con la secuencia (2,02 / 2,54 / 2,87
     frente a 1,96 / 2,34 / 2,54), y con 8 opciones algo más de elecciones: cada frase corta
     lleva menos información.
   - Es un cambio de compromiso que habría que observar con personas.
@@ -279,7 +279,7 @@ Lectura, con cautela:
 
 ## 7. Pruebas
 
-**Automáticas** (`tests/test_agente6.py`, 14 pruebas; con el resto, 109 en total):
+**Automáticas** (`tests/test_agente6.py`, 15 pruebas; con el resto, 110 en total):
 
 - datos: cada rasgo cita una pista revisada del mismo hábitat; ayudas breves, con
   pictogramas existentes y traducción; lo desconocido nunca descarta;
@@ -291,9 +291,11 @@ Lectura, con cautela:
   H05); no aleja del secundario documentado (jaguar y H04); apoyo explícito tras dos elecciones
   o tres ayudas; Repetir exacto; Pausar y Reanudar sin efecto; sin grabación no se usa la ayuda
   por rasgo y, con una grabación de prueba, sí; ID3 elige la mayor ganancia de información;
-- cobertura de voz con el agente en la partida real (`test_voz_grabada_cobertura`; lee unos
-  300 mensajes distintos porque el agente no recorre todas las pistas en orden; una simulación
-  aparte de la revisión, con cinco estrategias de juego, no encontró mensajes sin grabación);
+- cobertura de voz con el agente en la partida real (`test_voz_grabada_cobertura`). Lee unos
+  300 mensajes distintos, porque el agente no recorre todas las pistas en orden. Las demás
+  ramas quedan cubiertas porque el agente solo construye candidatas con grabación: las pistas
+  y apoyos ya grabados, y las ayudas por rasgo filtradas por `ayudas_con_grabacion`, que
+  `test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo` comprueba;
 - navegador: las suites de la 6.0 (`--v6`, `--partidas-v6`, `--voz-v6`, `--portada`) y de la
   5.0 en `/v5/` (`--hito2`, `--hito3`, `--catalogo`, general, `--voz-v5`, `--voces-navegador`).
 

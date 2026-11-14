@@ -24,6 +24,12 @@ grabaciones (`codigo/motores/agente.py`, `ayudas_con_grabacion`). Sin ellas usa 
 grabadas, así que la guía nunca muestra un mensaje que la voz no pueda leer. Nada se une ni se
 sustituye por otra voz.
 
+**Antes de grabar.** Revisa los textos en español y aprueba su traducción pt-BR (grupo
+`ayuda_rasgo` de `docs/traducciones/revision_es_pt.csv`). En cuanto existan los audios en español,
+el agente también usará estas ayudas en las partidas en portugués, con su texto pt-BR. Si grabas con
+`codigo/interfaz/generar_voces_api.py`, ese script salta estas filas mientras su columna
+`revision_humana` de `catalogo_voces.csv` esté vacía (con Codex y el TXT no hay ese freno).
+
 **Cómo se incorporan.**
 
 1. Copia los MP3 con su nombre exacto en `assets/voz/grabada/es-419/`.

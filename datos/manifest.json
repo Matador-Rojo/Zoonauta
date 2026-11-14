@@ -141,7 +141,7 @@
       "evaluacion_con_jugadores": false,
       "ayudas_rasgo_con_grabacion": 1,
       "mensajes_pendientes_de_grabar_es": 62,
-      "pruebas_python_correctas": 109,
+      "pruebas_python_correctas": 110,
       "documentacion": "docs/agente/agente_6.md"
     }
   },
@@ -159,7 +159,7 @@
     {
       "ruta": "README.md",
       "bytes": 16513,
-      "sha256": "fdeb9cff7ed4323cca236bfd4c91c1d6a837fcf02db9ab684baaabb8400b6bfd"
+      "sha256": "f641acf6d3acbab49a826a755bfdaef74f868b793518cd1ca6d296f4b05d35a4"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -858,8 +858,8 @@
     },
     {
       "ruta": "codigo/motores/guia.py",
-      "bytes": 8019,
-      "sha256": "29bdf72c315c2e8288b63930ec0b1db2cfa7661d28c3e4837a7945d35093d2d6"
+      "bytes": 8201,
+      "sha256": "7ffcc46f935b7a957328f89ef06882c4755c0b5ea58d7b49d474a89228af269c"
     },
     {
       "ruta": "codigo/motores/id3.py",
@@ -9818,13 +9818,13 @@
     },
     {
       "ruta": "docs/voz/elevenlabs/README.md",
-      "bytes": 14416,
-      "sha256": "a0a7f8cefa48a4b65873c31db0c73e359fb9686f2bab7d32c50deb51ce8e9b3b"
+      "bytes": 14893,
+      "sha256": "972aa2acecda416999bab26013188e02859595c45a83752f58ecea7460e51190"
     },
     {
       "ruta": "CLAUDE.md",
       "bytes": 12606,
-      "sha256": "dc69c21257f4560f36360137e9b8c9fd89000a619d5d697f690f8e93c4275d02"
+      "sha256": "38dcc22f61d96732ed67b1d84fcb1ec620f3396052e99afadd28f3f93a7a1d8b"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/index-BGmevnUX.js",
@@ -9853,8 +9853,8 @@
     },
     {
       "ruta": "codigo/motores/agente.py",
-      "bytes": 17632,
-      "sha256": "add7e6443a67376f6d3ef222608e4807074cd4357fcf850ea7d93ec8657c80fb"
+      "bytes": 18029,
+      "sha256": "54e68605a9eb5fbdb1cb4be2bd8fc0e346723e00245e062f7e138c19339da1f2"
     },
     {
       "ruta": "datos/expedicion/atributos_habitats.json",
@@ -9863,18 +9863,18 @@
     },
     {
       "ruta": "tests/test_agente6.py",
-      "bytes": 12611,
-      "sha256": "85e4a2320b075a60518ac3ebe765fa37dc6e5374e83c76bde4e323e3b27a55f7"
+      "bytes": 13456,
+      "sha256": "c6cb9d72206e621d126f629c439f052382cd5c03479eec2b251d4acd744ee157"
     },
     {
       "ruta": "docs/agente/agente_6.md",
-      "bytes": 27538,
-      "sha256": "02f1a0443ad8d9ab8e954e1b04a86d84e72595fda28c1f83ca506b2d35b72940"
+      "bytes": 27685,
+      "sha256": "30494e742578bf47ff8e944148783a82c71b9d1425bf3ae91a3ecd724fbb946f"
     },
     {
       "ruta": "docs/experimentos/agente6/evaluacion.json",
-      "bytes": 27017,
-      "sha256": "d7089773d1bbd9baf4f2152805b56e4d568ec4ef555cedf1ff1369cf12099cab"
+      "bytes": 27016,
+      "sha256": "94a158bbaaf637c5bb72ca574bd0c1cd9d2339508eecc6dd90d7876ef6efeb52"
     },
     {
       "ruta": "docs/voz/elevenlabs/textos_pendientes_es-419.txt",
