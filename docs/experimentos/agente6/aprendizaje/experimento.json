@@ -5,7 +5,6 @@
   "SELECCION_VALIDA": 1,
   "NUEVA_AYUDA": 0,
   "SELECCION_PENDIENTE": 0,
-  "SELECCION_INCORRECTA_VALIDADA": 0,
   "SALIDA": null
  },
  "condiciones": {
@@ -55,2304 +54,2304 @@
    "curva": [
     {
      "retos": 144,
-     "error_medio_ponderado": 0.0941,
-     "error_medio_tipos_con_30_o_mas": null,
-     "tipos_vistos": 20,
-     "tipos_con_30_o_mas": 0,
-     "observaciones": 176
-    },
-    {
-     "retos": 288,
-     "error_medio_ponderado": 0.083,
-     "error_medio_tipos_con_30_o_mas": 0.098,
-     "tipos_vistos": 23,
-     "tipos_con_30_o_mas": 5,
-     "observaciones": 342
-    },
-    {
-     "retos": 432,
-     "error_medio_ponderado": 0.0646,
-     "error_medio_tipos_con_30_o_mas": 0.0629,
-     "tipos_vistos": 27,
-     "tipos_con_30_o_mas": 7,
-     "observaciones": 519
-    },
-    {
-     "retos": 576,
-     "error_medio_ponderado": 0.0554,
-     "error_medio_tipos_con_30_o_mas": 0.044,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 682
-    },
-    {
-     "retos": 720,
-     "error_medio_ponderado": 0.046,
-     "error_medio_tipos_con_30_o_mas": 0.0391,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 864
-    },
-    {
-     "retos": 864,
-     "error_medio_ponderado": 0.0445,
-     "error_medio_tipos_con_30_o_mas": 0.0371,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1041
-    },
-    {
-     "retos": 1008,
-     "error_medio_ponderado": 0.04,
-     "error_medio_tipos_con_30_o_mas": 0.035,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1209
-    },
-    {
-     "retos": 1152,
-     "error_medio_ponderado": 0.0352,
-     "error_medio_tipos_con_30_o_mas": 0.0331,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1366
-    },
-    {
-     "retos": 1296,
-     "error_medio_ponderado": 0.0342,
-     "error_medio_tipos_con_30_o_mas": 0.0313,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1538
-    },
-    {
-     "retos": 1440,
-     "error_medio_ponderado": 0.0342,
-     "error_medio_tipos_con_30_o_mas": 0.0304,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1696
-    },
-    {
-     "retos": 1584,
-     "error_medio_ponderado": 0.0277,
-     "error_medio_tipos_con_30_o_mas": 0.0251,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1849
-    },
-    {
-     "retos": 1728,
-     "error_medio_ponderado": 0.0307,
-     "error_medio_tipos_con_30_o_mas": 0.0268,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2001
-    },
-    {
-     "retos": 1872,
-     "error_medio_ponderado": 0.0305,
-     "error_medio_tipos_con_30_o_mas": 0.0262,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2178
-    },
-    {
-     "retos": 2016,
-     "error_medio_ponderado": 0.0267,
-     "error_medio_tipos_con_30_o_mas": 0.0244,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2339
-    },
-    {
-     "retos": 2160,
-     "error_medio_ponderado": 0.025,
-     "error_medio_tipos_con_30_o_mas": 0.0258,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2524
-    },
-    {
-     "retos": 2304,
-     "error_medio_ponderado": 0.0283,
-     "error_medio_tipos_con_30_o_mas": 0.0281,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2682
-    },
-    {
-     "retos": 2448,
-     "error_medio_ponderado": 0.0285,
-     "error_medio_tipos_con_30_o_mas": 0.0306,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2854
-    },
-    {
-     "retos": 2592,
-     "error_medio_ponderado": 0.0242,
-     "error_medio_tipos_con_30_o_mas": 0.0295,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3029
-    },
-    {
-     "retos": 2736,
-     "error_medio_ponderado": 0.0214,
-     "error_medio_tipos_con_30_o_mas": 0.0258,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3197
-    },
-    {
-     "retos": 2880,
-     "error_medio_ponderado": 0.0218,
-     "error_medio_tipos_con_30_o_mas": 0.0287,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3366
-    },
-    {
-     "retos": 3024,
-     "error_medio_ponderado": 0.0207,
-     "error_medio_tipos_con_30_o_mas": 0.0253,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3543
-    },
-    {
-     "retos": 3168,
-     "error_medio_ponderado": 0.0214,
-     "error_medio_tipos_con_30_o_mas": 0.0249,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3707
-    },
-    {
-     "retos": 3312,
-     "error_medio_ponderado": 0.0222,
-     "error_medio_tipos_con_30_o_mas": 0.0265,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3874
-    },
-    {
-     "retos": 3456,
-     "error_medio_ponderado": 0.0217,
-     "error_medio_tipos_con_30_o_mas": 0.0271,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 4037
-    },
-    {
-     "retos": 3600,
-     "error_medio_ponderado": 0.0217,
-     "error_medio_tipos_con_30_o_mas": 0.0342,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4217
-    },
-    {
-     "retos": 3744,
-     "error_medio_ponderado": 0.0203,
-     "error_medio_tipos_con_30_o_mas": 0.0345,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4371
-    },
-    {
-     "retos": 3888,
-     "error_medio_ponderado": 0.0175,
-     "error_medio_tipos_con_30_o_mas": 0.0329,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4537
-    },
-    {
-     "retos": 4032,
-     "error_medio_ponderado": 0.0175,
-     "error_medio_tipos_con_30_o_mas": 0.0312,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4703
-    },
-    {
-     "retos": 4176,
-     "error_medio_ponderado": 0.0182,
-     "error_medio_tipos_con_30_o_mas": 0.0344,
-     "tipos_vistos": 37,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4873
-    },
-    {
-     "retos": 4320,
-     "error_medio_ponderado": 0.0192,
-     "error_medio_tipos_con_30_o_mas": 0.0332,
-     "tipos_vistos": 37,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 5031
-    }
-   ],
-   "final": {
-    "error_medio_ponderado": 0.0192,
-    "error_medio_tipos_con_30_o_mas": 0.0332,
-    "tipos_vistos": 37,
-    "tipos_con_30_o_mas": 16,
-    "observaciones": 5031
-   },
-   "variacion_ultimos_tramos": [
-    0.0,
-    0.0007,
-    0.001
-   ]
-  },
-  "IDEAS_R02": {
-   "curva": [
-    {
-     "retos": 144,
-     "error_medio_ponderado": 0.0792,
-     "error_medio_tipos_con_30_o_mas": null,
-     "tipos_vistos": 24,
-     "tipos_con_30_o_mas": 0,
-     "observaciones": 180
-    },
-    {
-     "retos": 288,
-     "error_medio_ponderado": 0.0688,
-     "error_medio_tipos_con_30_o_mas": 0.0509,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 5,
-     "observaciones": 357
-    },
-    {
-     "retos": 432,
-     "error_medio_ponderado": 0.0746,
-     "error_medio_tipos_con_30_o_mas": 0.0647,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 7,
-     "observaciones": 526
-    },
-    {
-     "retos": 576,
-     "error_medio_ponderado": 0.0579,
-     "error_medio_tipos_con_30_o_mas": 0.045,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 692
-    },
-    {
-     "retos": 720,
-     "error_medio_ponderado": 0.053,
-     "error_medio_tipos_con_30_o_mas": 0.0433,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 859
-    },
-    {
-     "retos": 864,
-     "error_medio_ponderado": 0.0378,
-     "error_medio_tipos_con_30_o_mas": 0.0396,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1038
-    },
-    {
-     "retos": 1008,
-     "error_medio_ponderado": 0.0326,
-     "error_medio_tipos_con_30_o_mas": 0.0368,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1199
-    },
-    {
-     "retos": 1152,
-     "error_medio_ponderado": 0.0317,
-     "error_medio_tipos_con_30_o_mas": 0.0337,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1378
-    },
-    {
-     "retos": 1296,
-     "error_medio_ponderado": 0.0275,
-     "error_medio_tipos_con_30_o_mas": 0.0281,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1541
-    },
-    {
-     "retos": 1440,
-     "error_medio_ponderado": 0.0293,
-     "error_medio_tipos_con_30_o_mas": 0.0256,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1704
-    },
-    {
-     "retos": 1584,
-     "error_medio_ponderado": 0.0286,
-     "error_medio_tipos_con_30_o_mas": 0.025,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1871
-    },
-    {
-     "retos": 1728,
-     "error_medio_ponderado": 0.0274,
-     "error_medio_tipos_con_30_o_mas": 0.0247,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2043
-    },
-    {
-     "retos": 1872,
-     "error_medio_ponderado": 0.0283,
-     "error_medio_tipos_con_30_o_mas": 0.0258,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2197
-    },
-    {
-     "retos": 2016,
-     "error_medio_ponderado": 0.0281,
-     "error_medio_tipos_con_30_o_mas": 0.0251,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2369
-    },
-    {
-     "retos": 2160,
-     "error_medio_ponderado": 0.0288,
-     "error_medio_tipos_con_30_o_mas": 0.026,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2529
-    },
-    {
-     "retos": 2304,
-     "error_medio_ponderado": 0.0247,
-     "error_medio_tipos_con_30_o_mas": 0.0244,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2688
-    },
-    {
-     "retos": 2448,
-     "error_medio_ponderado": 0.0248,
-     "error_medio_tipos_con_30_o_mas": 0.0245,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2858
-    },
-    {
-     "retos": 2592,
-     "error_medio_ponderado": 0.0257,
-     "error_medio_tipos_con_30_o_mas": 0.0231,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3029
-    },
-    {
-     "retos": 2736,
-     "error_medio_ponderado": 0.0263,
-     "error_medio_tipos_con_30_o_mas": 0.0216,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3203
-    },
-    {
-     "retos": 2880,
-     "error_medio_ponderado": 0.0235,
-     "error_medio_tipos_con_30_o_mas": 0.0209,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 3363
-    },
-    {
-     "retos": 3024,
-     "error_medio_ponderado": 0.0232,
-     "error_medio_tipos_con_30_o_mas": 0.0223,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 3542
-    },
-    {
-     "retos": 3168,
-     "error_medio_ponderado": 0.0234,
-     "error_medio_tipos_con_30_o_mas": 0.0223,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 3706
-    },
-    {
-     "retos": 3312,
-     "error_medio_ponderado": 0.0218,
-     "error_medio_tipos_con_30_o_mas": 0.0264,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 3867
-    },
-    {
-     "retos": 3456,
-     "error_medio_ponderado": 0.0213,
-     "error_medio_tipos_con_30_o_mas": 0.0261,
-     "tipos_vistos": 37,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4042
-    },
-    {
-     "retos": 3600,
-     "error_medio_ponderado": 0.0217,
-     "error_medio_tipos_con_30_o_mas": 0.0272,
-     "tipos_vistos": 37,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 4218
-    },
-    {
-     "retos": 3744,
-     "error_medio_ponderado": 0.0228,
-     "error_medio_tipos_con_30_o_mas": 0.0302,
-     "tipos_vistos": 37,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4389
-    },
-    {
-     "retos": 3888,
-     "error_medio_ponderado": 0.0214,
-     "error_medio_tipos_con_30_o_mas": 0.0276,
-     "tipos_vistos": 37,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4563
-    },
-    {
-     "retos": 4032,
-     "error_medio_ponderado": 0.0215,
-     "error_medio_tipos_con_30_o_mas": 0.03,
-     "tipos_vistos": 37,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4729
-    },
-    {
-     "retos": 4176,
-     "error_medio_ponderado": 0.022,
-     "error_medio_tipos_con_30_o_mas": 0.0301,
-     "tipos_vistos": 39,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4900
-    },
-    {
-     "retos": 4320,
-     "error_medio_ponderado": 0.0222,
-     "error_medio_tipos_con_30_o_mas": 0.0307,
-     "tipos_vistos": 39,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 5072
-    }
-   ],
-   "final": {
-    "error_medio_ponderado": 0.0222,
-    "error_medio_tipos_con_30_o_mas": 0.0307,
-    "tipos_vistos": 39,
-    "tipos_con_30_o_mas": 16,
-    "observaciones": 5072
-   },
-   "variacion_ultimos_tramos": [
-    0.0001,
-    0.0005,
-    0.0002
-   ]
-  },
-  "IDEAS_R03": {
-   "curva": [
-    {
-     "retos": 144,
-     "error_medio_ponderado": 0.1026,
-     "error_medio_tipos_con_30_o_mas": 0.1529,
-     "tipos_vistos": 19,
-     "tipos_con_30_o_mas": 1,
-     "observaciones": 184
-    },
-    {
-     "retos": 288,
-     "error_medio_ponderado": 0.0454,
-     "error_medio_tipos_con_30_o_mas": 0.0436,
-     "tipos_vistos": 23,
-     "tipos_con_30_o_mas": 5,
-     "observaciones": 364
-    },
-    {
-     "retos": 432,
-     "error_medio_ponderado": 0.0426,
-     "error_medio_tipos_con_30_o_mas": 0.0286,
-     "tipos_vistos": 24,
-     "tipos_con_30_o_mas": 8,
-     "observaciones": 526
-    },
-    {
-     "retos": 576,
-     "error_medio_ponderado": 0.0382,
-     "error_medio_tipos_con_30_o_mas": 0.0295,
-     "tipos_vistos": 27,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 690
-    },
-    {
-     "retos": 720,
-     "error_medio_ponderado": 0.0357,
-     "error_medio_tipos_con_30_o_mas": 0.0327,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 858
-    },
-    {
-     "retos": 864,
-     "error_medio_ponderado": 0.0343,
-     "error_medio_tipos_con_30_o_mas": 0.0274,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1034
-    },
-    {
-     "retos": 1008,
-     "error_medio_ponderado": 0.0356,
-     "error_medio_tipos_con_30_o_mas": 0.0296,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1198
-    },
-    {
-     "retos": 1152,
-     "error_medio_ponderado": 0.0419,
-     "error_medio_tipos_con_30_o_mas": 0.0504,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1368
-    },
-    {
-     "retos": 1296,
-     "error_medio_ponderado": 0.0334,
-     "error_medio_tipos_con_30_o_mas": 0.036,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1537
-    },
-    {
-     "retos": 1440,
-     "error_medio_ponderado": 0.0367,
-     "error_medio_tipos_con_30_o_mas": 0.0358,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1724
-    },
-    {
-     "retos": 1584,
-     "error_medio_ponderado": 0.0357,
-     "error_medio_tipos_con_30_o_mas": 0.0329,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1905
-    },
-    {
-     "retos": 1728,
-     "error_medio_ponderado": 0.0339,
-     "error_medio_tipos_con_30_o_mas": 0.0332,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2065
-    },
-    {
-     "retos": 1872,
-     "error_medio_ponderado": 0.0312,
-     "error_medio_tipos_con_30_o_mas": 0.03,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2236
-    },
-    {
-     "retos": 2016,
-     "error_medio_ponderado": 0.0315,
-     "error_medio_tipos_con_30_o_mas": 0.0301,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2398
-    },
-    {
-     "retos": 2160,
-     "error_medio_ponderado": 0.0295,
-     "error_medio_tipos_con_30_o_mas": 0.0281,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2590
-    },
-    {
-     "retos": 2304,
-     "error_medio_ponderado": 0.0262,
-     "error_medio_tipos_con_30_o_mas": 0.0236,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2751
-    },
-    {
-     "retos": 2448,
-     "error_medio_ponderado": 0.0245,
-     "error_medio_tipos_con_30_o_mas": 0.0224,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2910
-    },
-    {
-     "retos": 2592,
-     "error_medio_ponderado": 0.0213,
-     "error_medio_tipos_con_30_o_mas": 0.0194,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3067
-    },
-    {
-     "retos": 2736,
-     "error_medio_ponderado": 0.024,
-     "error_medio_tipos_con_30_o_mas": 0.0292,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3247
-    },
-    {
-     "retos": 2880,
-     "error_medio_ponderado": 0.0223,
-     "error_medio_tipos_con_30_o_mas": 0.0276,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3416
-    },
-    {
-     "retos": 3024,
-     "error_medio_ponderado": 0.0201,
-     "error_medio_tipos_con_30_o_mas": 0.0248,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3586
-    },
-    {
-     "retos": 3168,
-     "error_medio_ponderado": 0.0205,
-     "error_medio_tipos_con_30_o_mas": 0.0246,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3735
-    },
-    {
-     "retos": 3312,
-     "error_medio_ponderado": 0.0172,
-     "error_medio_tipos_con_30_o_mas": 0.0216,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 3890
-    },
-    {
-     "retos": 3456,
-     "error_medio_ponderado": 0.0177,
-     "error_medio_tipos_con_30_o_mas": 0.0221,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4054
-    },
-    {
-     "retos": 3600,
-     "error_medio_ponderado": 0.016,
-     "error_medio_tipos_con_30_o_mas": 0.0208,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4207
-    },
-    {
-     "retos": 3744,
-     "error_medio_ponderado": 0.0156,
-     "error_medio_tipos_con_30_o_mas": 0.0221,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4373
-    },
-    {
-     "retos": 3888,
-     "error_medio_ponderado": 0.0184,
-     "error_medio_tipos_con_30_o_mas": 0.0247,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4537
-    },
-    {
-     "retos": 4032,
-     "error_medio_ponderado": 0.0158,
-     "error_medio_tipos_con_30_o_mas": 0.02,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4677
-    },
-    {
-     "retos": 4176,
-     "error_medio_ponderado": 0.0179,
-     "error_medio_tipos_con_30_o_mas": 0.024,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4842
-    },
-    {
-     "retos": 4320,
-     "error_medio_ponderado": 0.0178,
-     "error_medio_tipos_con_30_o_mas": 0.0234,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4997
-    }
-   ],
-   "final": {
-    "error_medio_ponderado": 0.0178,
-    "error_medio_tipos_con_30_o_mas": 0.0234,
-    "tipos_vistos": 35,
-    "tipos_con_30_o_mas": 14,
-    "observaciones": 4997
-   },
-   "variacion_ultimos_tramos": [
-    0.0026,
-    0.0021,
-    0.0001
-   ]
-  },
-  "RASGOS_R01": {
-   "curva": [
-    {
-     "retos": 144,
-     "error_medio_ponderado": 0.1118,
-     "error_medio_tipos_con_30_o_mas": null,
-     "tipos_vistos": 23,
-     "tipos_con_30_o_mas": 0,
-     "observaciones": 170
-    },
-    {
-     "retos": 288,
-     "error_medio_ponderado": 0.0859,
-     "error_medio_tipos_con_30_o_mas": 0.0561,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 4,
-     "observaciones": 329
-    },
-    {
-     "retos": 432,
-     "error_medio_ponderado": 0.0819,
-     "error_medio_tipos_con_30_o_mas": 0.061,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 8,
-     "observaciones": 503
-    },
-    {
-     "retos": 576,
-     "error_medio_ponderado": 0.0616,
-     "error_medio_tipos_con_30_o_mas": 0.0466,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 667
-    },
-    {
-     "retos": 720,
-     "error_medio_ponderado": 0.0562,
-     "error_medio_tipos_con_30_o_mas": 0.0408,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 824
-    },
-    {
-     "retos": 864,
-     "error_medio_ponderado": 0.0544,
-     "error_medio_tipos_con_30_o_mas": 0.0509,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 988
-    },
-    {
-     "retos": 1008,
-     "error_medio_ponderado": 0.0512,
-     "error_medio_tipos_con_30_o_mas": 0.0468,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1147
-    },
-    {
-     "retos": 1152,
-     "error_medio_ponderado": 0.0455,
-     "error_medio_tipos_con_30_o_mas": 0.0411,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1297
-    },
-    {
-     "retos": 1296,
-     "error_medio_ponderado": 0.0483,
-     "error_medio_tipos_con_30_o_mas": 0.0424,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1438
-    },
-    {
-     "retos": 1440,
-     "error_medio_ponderado": 0.0483,
-     "error_medio_tipos_con_30_o_mas": 0.0407,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1593
-    },
-    {
-     "retos": 1584,
-     "error_medio_ponderado": 0.0463,
-     "error_medio_tipos_con_30_o_mas": 0.0383,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1740
-    },
-    {
-     "retos": 1728,
-     "error_medio_ponderado": 0.0499,
-     "error_medio_tipos_con_30_o_mas": 0.0445,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1893
-    },
-    {
-     "retos": 1872,
-     "error_medio_ponderado": 0.0509,
-     "error_medio_tipos_con_30_o_mas": 0.0445,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2050
-    },
-    {
-     "retos": 2016,
-     "error_medio_ponderado": 0.0427,
-     "error_medio_tipos_con_30_o_mas": 0.0355,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2214
-    },
-    {
-     "retos": 2160,
-     "error_medio_ponderado": 0.036,
-     "error_medio_tipos_con_30_o_mas": 0.0319,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2380
-    },
-    {
-     "retos": 2304,
-     "error_medio_ponderado": 0.0355,
-     "error_medio_tipos_con_30_o_mas": 0.0348,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2555
-    },
-    {
-     "retos": 2448,
-     "error_medio_ponderado": 0.036,
-     "error_medio_tipos_con_30_o_mas": 0.0352,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2721
-    },
-    {
-     "retos": 2592,
-     "error_medio_ponderado": 0.0333,
-     "error_medio_tipos_con_30_o_mas": 0.0379,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2881
-    },
-    {
-     "retos": 2736,
-     "error_medio_ponderado": 0.0317,
-     "error_medio_tipos_con_30_o_mas": 0.0372,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3037
-    },
-    {
-     "retos": 2880,
-     "error_medio_ponderado": 0.0305,
-     "error_medio_tipos_con_30_o_mas": 0.0356,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3182
-    },
-    {
-     "retos": 3024,
-     "error_medio_ponderado": 0.0263,
-     "error_medio_tipos_con_30_o_mas": 0.0272,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3344
-    },
-    {
-     "retos": 3168,
-     "error_medio_ponderado": 0.0246,
-     "error_medio_tipos_con_30_o_mas": 0.027,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3503
-    },
-    {
-     "retos": 3312,
-     "error_medio_ponderado": 0.0237,
-     "error_medio_tipos_con_30_o_mas": 0.0261,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3676
-    },
-    {
-     "retos": 3456,
-     "error_medio_ponderado": 0.0237,
-     "error_medio_tipos_con_30_o_mas": 0.0255,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3815
-    },
-    {
-     "retos": 3600,
-     "error_medio_ponderado": 0.0234,
-     "error_medio_tipos_con_30_o_mas": 0.0282,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 3966
-    },
-    {
-     "retos": 3744,
-     "error_medio_ponderado": 0.0239,
-     "error_medio_tipos_con_30_o_mas": 0.0286,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4118
-    },
-    {
-     "retos": 3888,
-     "error_medio_ponderado": 0.0227,
-     "error_medio_tipos_con_30_o_mas": 0.0292,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4263
-    },
-    {
-     "retos": 4032,
-     "error_medio_ponderado": 0.0236,
-     "error_medio_tipos_con_30_o_mas": 0.0298,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4418
-    },
-    {
-     "retos": 4176,
-     "error_medio_ponderado": 0.0226,
-     "error_medio_tipos_con_30_o_mas": 0.0281,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4587
-    },
-    {
-     "retos": 4320,
-     "error_medio_ponderado": 0.0216,
-     "error_medio_tipos_con_30_o_mas": 0.0265,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4734
-    }
-   ],
-   "final": {
-    "error_medio_ponderado": 0.0216,
-    "error_medio_tipos_con_30_o_mas": 0.0265,
-    "tipos_vistos": 33,
-    "tipos_con_30_o_mas": 14,
-    "observaciones": 4734
-   },
-   "variacion_ultimos_tramos": [
-    0.0009,
-    0.001,
-    0.001
-   ]
-  },
-  "RASGOS_R02": {
-   "curva": [
-    {
-     "retos": 144,
-     "error_medio_ponderado": 0.1317,
-     "error_medio_tipos_con_30_o_mas": null,
-     "tipos_vistos": 19,
-     "tipos_con_30_o_mas": 0,
-     "observaciones": 164
-    },
-    {
-     "retos": 288,
-     "error_medio_ponderado": 0.0875,
-     "error_medio_tipos_con_30_o_mas": 0.0868,
-     "tipos_vistos": 23,
-     "tipos_con_30_o_mas": 3,
-     "observaciones": 322
-    },
-    {
-     "retos": 432,
-     "error_medio_ponderado": 0.0723,
-     "error_medio_tipos_con_30_o_mas": 0.0578,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 8,
-     "observaciones": 491
-    },
-    {
-     "retos": 576,
-     "error_medio_ponderado": 0.0587,
-     "error_medio_tipos_con_30_o_mas": 0.0498,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 644
-    },
-    {
-     "retos": 720,
-     "error_medio_ponderado": 0.0546,
-     "error_medio_tipos_con_30_o_mas": 0.0557,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 809
-    },
-    {
-     "retos": 864,
-     "error_medio_ponderado": 0.0522,
-     "error_medio_tipos_con_30_o_mas": 0.0554,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 956
-    },
-    {
-     "retos": 1008,
-     "error_medio_ponderado": 0.0514,
-     "error_medio_tipos_con_30_o_mas": 0.0501,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1095
-    },
-    {
-     "retos": 1152,
-     "error_medio_ponderado": 0.0478,
-     "error_medio_tipos_con_30_o_mas": 0.0522,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1264
-    },
-    {
-     "retos": 1296,
-     "error_medio_ponderado": 0.0445,
-     "error_medio_tipos_con_30_o_mas": 0.0467,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1412
-    },
-    {
-     "retos": 1440,
-     "error_medio_ponderado": 0.0466,
-     "error_medio_tipos_con_30_o_mas": 0.054,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1566
-    },
-    {
-     "retos": 1584,
-     "error_medio_ponderado": 0.0462,
-     "error_medio_tipos_con_30_o_mas": 0.0516,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1717
-    },
-    {
-     "retos": 1728,
-     "error_medio_ponderado": 0.0432,
-     "error_medio_tipos_con_30_o_mas": 0.0466,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1875
-    },
-    {
-     "retos": 1872,
-     "error_medio_ponderado": 0.0412,
-     "error_medio_tipos_con_30_o_mas": 0.0412,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2028
-    },
-    {
-     "retos": 2016,
-     "error_medio_ponderado": 0.0359,
-     "error_medio_tipos_con_30_o_mas": 0.0376,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2182
-    },
-    {
-     "retos": 2160,
-     "error_medio_ponderado": 0.0367,
-     "error_medio_tipos_con_30_o_mas": 0.0388,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2327
-    },
-    {
-     "retos": 2304,
-     "error_medio_ponderado": 0.0367,
-     "error_medio_tipos_con_30_o_mas": 0.0367,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2496
-    },
-    {
-     "retos": 2448,
-     "error_medio_ponderado": 0.0341,
-     "error_medio_tipos_con_30_o_mas": 0.0344,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2639
-    },
-    {
-     "retos": 2592,
-     "error_medio_ponderado": 0.0321,
-     "error_medio_tipos_con_30_o_mas": 0.0296,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2794
-    },
-    {
-     "retos": 2736,
-     "error_medio_ponderado": 0.0307,
-     "error_medio_tipos_con_30_o_mas": 0.0285,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2956
-    },
-    {
-     "retos": 2880,
-     "error_medio_ponderado": 0.0304,
-     "error_medio_tipos_con_30_o_mas": 0.0289,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3105
-    },
-    {
-     "retos": 3024,
-     "error_medio_ponderado": 0.0318,
-     "error_medio_tipos_con_30_o_mas": 0.029,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3266
-    },
-    {
-     "retos": 3168,
-     "error_medio_ponderado": 0.0311,
-     "error_medio_tipos_con_30_o_mas": 0.0288,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3431
-    },
-    {
-     "retos": 3312,
-     "error_medio_ponderado": 0.0289,
-     "error_medio_tipos_con_30_o_mas": 0.0264,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3570
-    },
-    {
-     "retos": 3456,
-     "error_medio_ponderado": 0.027,
-     "error_medio_tipos_con_30_o_mas": 0.0229,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3725
-    },
-    {
-     "retos": 3600,
-     "error_medio_ponderado": 0.0266,
-     "error_medio_tipos_con_30_o_mas": 0.0225,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 3885
-    },
-    {
-     "retos": 3744,
-     "error_medio_ponderado": 0.025,
-     "error_medio_tipos_con_30_o_mas": 0.0203,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 4053
-    },
-    {
-     "retos": 3888,
-     "error_medio_ponderado": 0.0243,
-     "error_medio_tipos_con_30_o_mas": 0.0192,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 4207
-    },
-    {
-     "retos": 4032,
-     "error_medio_ponderado": 0.0221,
-     "error_medio_tipos_con_30_o_mas": 0.0172,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 4368
-    },
-    {
-     "retos": 4176,
-     "error_medio_ponderado": 0.0211,
-     "error_medio_tipos_con_30_o_mas": 0.0223,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 4513
-    },
-    {
-     "retos": 4320,
-     "error_medio_ponderado": 0.0212,
-     "error_medio_tipos_con_30_o_mas": 0.0198,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4670
-    }
-   ],
-   "final": {
-    "error_medio_ponderado": 0.0212,
-    "error_medio_tipos_con_30_o_mas": 0.0198,
-    "tipos_vistos": 33,
-    "tipos_con_30_o_mas": 14,
-    "observaciones": 4670
-   },
-   "variacion_ultimos_tramos": [
-    0.0022,
-    0.001,
-    0.0001
-   ]
-  },
-  "RASGOS_R03": {
-   "curva": [
-    {
-     "retos": 144,
-     "error_medio_ponderado": 0.1272,
-     "error_medio_tipos_con_30_o_mas": null,
-     "tipos_vistos": 22,
-     "tipos_con_30_o_mas": 0,
-     "observaciones": 163
-    },
-    {
-     "retos": 288,
-     "error_medio_ponderado": 0.0768,
-     "error_medio_tipos_con_30_o_mas": 0.0654,
-     "tipos_vistos": 24,
-     "tipos_con_30_o_mas": 2,
-     "observaciones": 317
-    },
-    {
-     "retos": 432,
-     "error_medio_ponderado": 0.0561,
-     "error_medio_tipos_con_30_o_mas": 0.0431,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 7,
-     "observaciones": 472
-    },
-    {
-     "retos": 576,
-     "error_medio_ponderado": 0.0566,
-     "error_medio_tipos_con_30_o_mas": 0.0455,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 641
-    },
-    {
-     "retos": 720,
-     "error_medio_ponderado": 0.0353,
-     "error_medio_tipos_con_30_o_mas": 0.032,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 815
-    },
-    {
-     "retos": 864,
-     "error_medio_ponderado": 0.0316,
-     "error_medio_tipos_con_30_o_mas": 0.0284,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 978
-    },
-    {
-     "retos": 1008,
-     "error_medio_ponderado": 0.0283,
-     "error_medio_tipos_con_30_o_mas": 0.0229,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1131
-    },
-    {
-     "retos": 1152,
-     "error_medio_ponderado": 0.0267,
-     "error_medio_tipos_con_30_o_mas": 0.02,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1295
-    },
-    {
-     "retos": 1296,
-     "error_medio_ponderado": 0.0272,
-     "error_medio_tipos_con_30_o_mas": 0.0185,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1461
-    },
-    {
-     "retos": 1440,
-     "error_medio_ponderado": 0.0253,
-     "error_medio_tipos_con_30_o_mas": 0.018,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 1625
-    },
-    {
-     "retos": 1584,
-     "error_medio_ponderado": 0.0254,
-     "error_medio_tipos_con_30_o_mas": 0.0255,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1785
-    },
-    {
-     "retos": 1728,
-     "error_medio_ponderado": 0.025,
-     "error_medio_tipos_con_30_o_mas": 0.0238,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1943
-    },
-    {
-     "retos": 1872,
-     "error_medio_ponderado": 0.0244,
-     "error_medio_tipos_con_30_o_mas": 0.0251,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2099
-    },
-    {
-     "retos": 2016,
-     "error_medio_ponderado": 0.024,
-     "error_medio_tipos_con_30_o_mas": 0.0263,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2258
-    },
-    {
-     "retos": 2160,
-     "error_medio_ponderado": 0.022,
-     "error_medio_tipos_con_30_o_mas": 0.0259,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2411
-    },
-    {
-     "retos": 2304,
-     "error_medio_ponderado": 0.0224,
-     "error_medio_tipos_con_30_o_mas": 0.0279,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2560
-    },
-    {
-     "retos": 2448,
-     "error_medio_ponderado": 0.0195,
-     "error_medio_tipos_con_30_o_mas": 0.0265,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2696
-    },
-    {
-     "retos": 2592,
-     "error_medio_ponderado": 0.0173,
-     "error_medio_tipos_con_30_o_mas": 0.0227,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2849
-    },
-    {
-     "retos": 2736,
-     "error_medio_ponderado": 0.0187,
-     "error_medio_tipos_con_30_o_mas": 0.0221,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3001
-    },
-    {
-     "retos": 2880,
-     "error_medio_ponderado": 0.0166,
-     "error_medio_tipos_con_30_o_mas": 0.0206,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3154
-    },
-    {
-     "retos": 3024,
-     "error_medio_ponderado": 0.0167,
-     "error_medio_tipos_con_30_o_mas": 0.0206,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3307
-    },
-    {
-     "retos": 3168,
-     "error_medio_ponderado": 0.0172,
-     "error_medio_tipos_con_30_o_mas": 0.0215,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3455
-    },
-    {
-     "retos": 3312,
-     "error_medio_ponderado": 0.0179,
-     "error_medio_tipos_con_30_o_mas": 0.0229,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3599
-    },
-    {
-     "retos": 3456,
-     "error_medio_ponderado": 0.0199,
-     "error_medio_tipos_con_30_o_mas": 0.0251,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3758
-    },
-    {
-     "retos": 3600,
-     "error_medio_ponderado": 0.0188,
-     "error_medio_tipos_con_30_o_mas": 0.0222,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 3917
-    },
-    {
-     "retos": 3744,
-     "error_medio_ponderado": 0.0207,
-     "error_medio_tipos_con_30_o_mas": 0.0224,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 4065
-    },
-    {
-     "retos": 3888,
-     "error_medio_ponderado": 0.0211,
-     "error_medio_tipos_con_30_o_mas": 0.0235,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 4224
-    },
-    {
-     "retos": 4032,
-     "error_medio_ponderado": 0.0197,
-     "error_medio_tipos_con_30_o_mas": 0.0212,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 4371
-    },
-    {
-     "retos": 4176,
-     "error_medio_ponderado": 0.0198,
-     "error_medio_tipos_con_30_o_mas": 0.0261,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4538
-    },
-    {
-     "retos": 4320,
-     "error_medio_ponderado": 0.018,
-     "error_medio_tipos_con_30_o_mas": 0.0253,
-     "tipos_vistos": 36,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 4702
-    }
-   ],
-   "final": {
-    "error_medio_ponderado": 0.018,
-    "error_medio_tipos_con_30_o_mas": 0.0253,
-    "tipos_vistos": 36,
-    "tipos_con_30_o_mas": 14,
-    "observaciones": 4702
-   },
-   "variacion_ultimos_tramos": [
-    0.0014,
-    0.0001,
-    0.0018
-   ]
-  },
-  "PISTAS_R01": {
-   "curva": [
-    {
-     "retos": 144,
-     "error_medio_ponderado": 0.1008,
-     "error_medio_tipos_con_30_o_mas": 0.1687,
+     "error_medio_ponderado": 0.0916,
+     "error_medio_tipos_con_30_o_mas": 0.1576,
      "tipos_vistos": 23,
      "tipos_con_30_o_mas": 1,
      "observaciones": 174
     },
     {
      "retos": 288,
-     "error_medio_ponderado": 0.0731,
-     "error_medio_tipos_con_30_o_mas": 0.0652,
-     "tipos_vistos": 25,
+     "error_medio_ponderado": 0.073,
+     "error_medio_tipos_con_30_o_mas": 0.0627,
+     "tipos_vistos": 30,
      "tipos_con_30_o_mas": 4,
-     "observaciones": 327
+     "observaciones": 355
     },
     {
      "retos": 432,
-     "error_medio_ponderado": 0.0697,
-     "error_medio_tipos_con_30_o_mas": 0.0561,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 4,
-     "observaciones": 483
+     "error_medio_ponderado": 0.0606,
+     "error_medio_tipos_con_30_o_mas": 0.0494,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 7,
+     "observaciones": 534
     },
     {
      "retos": 576,
-     "error_medio_ponderado": 0.0717,
-     "error_medio_tipos_con_30_o_mas": 0.0706,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 8,
-     "observaciones": 643
+     "error_medio_ponderado": 0.0525,
+     "error_medio_tipos_con_30_o_mas": 0.0491,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 9,
+     "observaciones": 707
     },
     {
      "retos": 720,
-     "error_medio_ponderado": 0.0735,
-     "error_medio_tipos_con_30_o_mas": 0.0744,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 8,
-     "observaciones": 802
+     "error_medio_ponderado": 0.0669,
+     "error_medio_tipos_con_30_o_mas": 0.0593,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 882
     },
     {
      "retos": 864,
-     "error_medio_ponderado": 0.0596,
-     "error_medio_tipos_con_30_o_mas": 0.0685,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 964
+     "error_medio_ponderado": 0.0584,
+     "error_medio_tipos_con_30_o_mas": 0.0503,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1053
     },
     {
      "retos": 1008,
-     "error_medio_ponderado": 0.06,
-     "error_medio_tipos_con_30_o_mas": 0.0643,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1115
+     "error_medio_ponderado": 0.0547,
+     "error_medio_tipos_con_30_o_mas": 0.0456,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1228
     },
     {
      "retos": 1152,
-     "error_medio_ponderado": 0.0528,
-     "error_medio_tipos_con_30_o_mas": 0.0587,
-     "tipos_vistos": 31,
+     "error_medio_ponderado": 0.0432,
+     "error_medio_tipos_con_30_o_mas": 0.0374,
+     "tipos_vistos": 34,
      "tipos_con_30_o_mas": 12,
-     "observaciones": 1292
+     "observaciones": 1386
     },
     {
      "retos": 1296,
-     "error_medio_ponderado": 0.0508,
-     "error_medio_tipos_con_30_o_mas": 0.053,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 1444
+     "error_medio_ponderado": 0.0366,
+     "error_medio_tipos_con_30_o_mas": 0.0291,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1547
     },
     {
      "retos": 1440,
-     "error_medio_ponderado": 0.0499,
-     "error_medio_tipos_con_30_o_mas": 0.055,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 1601
+     "error_medio_ponderado": 0.0324,
+     "error_medio_tipos_con_30_o_mas": 0.0302,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1707
     },
     {
      "retos": 1584,
-     "error_medio_ponderado": 0.0434,
-     "error_medio_tipos_con_30_o_mas": 0.0448,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 1756
+     "error_medio_ponderado": 0.0292,
+     "error_medio_tipos_con_30_o_mas": 0.0289,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1870
     },
     {
      "retos": 1728,
-     "error_medio_ponderado": 0.0405,
-     "error_medio_tipos_con_30_o_mas": 0.0462,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 1901
+     "error_medio_ponderado": 0.0267,
+     "error_medio_tipos_con_30_o_mas": 0.0281,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2022
     },
     {
      "retos": 1872,
-     "error_medio_ponderado": 0.0353,
-     "error_medio_tipos_con_30_o_mas": 0.0381,
-     "tipos_vistos": 32,
+     "error_medio_ponderado": 0.0297,
+     "error_medio_tipos_con_30_o_mas": 0.0304,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2197
+    },
+    {
+     "retos": 2016,
+     "error_medio_ponderado": 0.0267,
+     "error_medio_tipos_con_30_o_mas": 0.0285,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2364
+    },
+    {
+     "retos": 2160,
+     "error_medio_ponderado": 0.0259,
+     "error_medio_tipos_con_30_o_mas": 0.0287,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2528
+    },
+    {
+     "retos": 2304,
+     "error_medio_ponderado": 0.0267,
+     "error_medio_tipos_con_30_o_mas": 0.0365,
+     "tipos_vistos": 36,
      "tipos_con_30_o_mas": 13,
+     "observaciones": 2707
+    },
+    {
+     "retos": 2448,
+     "error_medio_ponderado": 0.024,
+     "error_medio_tipos_con_30_o_mas": 0.0347,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2882
+    },
+    {
+     "retos": 2592,
+     "error_medio_ponderado": 0.0246,
+     "error_medio_tipos_con_30_o_mas": 0.0309,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3068
+    },
+    {
+     "retos": 2736,
+     "error_medio_ponderado": 0.022,
+     "error_medio_tipos_con_30_o_mas": 0.0275,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3235
+    },
+    {
+     "retos": 2880,
+     "error_medio_ponderado": 0.0194,
+     "error_medio_tipos_con_30_o_mas": 0.0207,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3399
+    },
+    {
+     "retos": 3024,
+     "error_medio_ponderado": 0.0153,
+     "error_medio_tipos_con_30_o_mas": 0.018,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3552
+    },
+    {
+     "retos": 3168,
+     "error_medio_ponderado": 0.0129,
+     "error_medio_tipos_con_30_o_mas": 0.0175,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3709
+    },
+    {
+     "retos": 3312,
+     "error_medio_ponderado": 0.016,
+     "error_medio_tipos_con_30_o_mas": 0.0187,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3896
+    },
+    {
+     "retos": 3456,
+     "error_medio_ponderado": 0.0157,
+     "error_medio_tipos_con_30_o_mas": 0.0201,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4063
+    },
+    {
+     "retos": 3600,
+     "error_medio_ponderado": 0.016,
+     "error_medio_tipos_con_30_o_mas": 0.0182,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4254
+    },
+    {
+     "retos": 3744,
+     "error_medio_ponderado": 0.0157,
+     "error_medio_tipos_con_30_o_mas": 0.0177,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4429
+    },
+    {
+     "retos": 3888,
+     "error_medio_ponderado": 0.0165,
+     "error_medio_tipos_con_30_o_mas": 0.0186,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4594
+    },
+    {
+     "retos": 4032,
+     "error_medio_ponderado": 0.0183,
+     "error_medio_tipos_con_30_o_mas": 0.0199,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4762
+    },
+    {
+     "retos": 4176,
+     "error_medio_ponderado": 0.0181,
+     "error_medio_tipos_con_30_o_mas": 0.0197,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4935
+    },
+    {
+     "retos": 4320,
+     "error_medio_ponderado": 0.0175,
+     "error_medio_tipos_con_30_o_mas": 0.0176,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 5099
+    }
+   ],
+   "final": {
+    "error_medio_ponderado": 0.0175,
+    "error_medio_tipos_con_30_o_mas": 0.0176,
+    "tipos_vistos": 38,
+    "tipos_con_30_o_mas": 16,
+    "observaciones": 5099
+   },
+   "variacion_ultimos_tramos": [
+    0.0018,
+    0.0002,
+    0.0006
+   ]
+  },
+  "IDEAS_R02": {
+   "curva": [
+    {
+     "retos": 144,
+     "error_medio_ponderado": 0.0759,
+     "error_medio_tipos_con_30_o_mas": null,
+     "tipos_vistos": 20,
+     "tipos_con_30_o_mas": 0,
+     "observaciones": 174
+    },
+    {
+     "retos": 288,
+     "error_medio_ponderado": 0.0806,
+     "error_medio_tipos_con_30_o_mas": 0.0675,
+     "tipos_vistos": 26,
+     "tipos_con_30_o_mas": 6,
+     "observaciones": 360
+    },
+    {
+     "retos": 432,
+     "error_medio_ponderado": 0.0526,
+     "error_medio_tipos_con_30_o_mas": 0.0331,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 8,
+     "observaciones": 521
+    },
+    {
+     "retos": 576,
+     "error_medio_ponderado": 0.0367,
+     "error_medio_tipos_con_30_o_mas": 0.0262,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 687
+    },
+    {
+     "retos": 720,
+     "error_medio_ponderado": 0.0324,
+     "error_medio_tipos_con_30_o_mas": 0.0216,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 864
+    },
+    {
+     "retos": 864,
+     "error_medio_ponderado": 0.0327,
+     "error_medio_tipos_con_30_o_mas": 0.0219,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1028
+    },
+    {
+     "retos": 1008,
+     "error_medio_ponderado": 0.0347,
+     "error_medio_tipos_con_30_o_mas": 0.0263,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1195
+    },
+    {
+     "retos": 1152,
+     "error_medio_ponderado": 0.0363,
+     "error_medio_tipos_con_30_o_mas": 0.0289,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1352
+    },
+    {
+     "retos": 1296,
+     "error_medio_ponderado": 0.0335,
+     "error_medio_tipos_con_30_o_mas": 0.0254,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1504
+    },
+    {
+     "retos": 1440,
+     "error_medio_ponderado": 0.0335,
+     "error_medio_tipos_con_30_o_mas": 0.0265,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1676
+    },
+    {
+     "retos": 1584,
+     "error_medio_ponderado": 0.0315,
+     "error_medio_tipos_con_30_o_mas": 0.024,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1831
+    },
+    {
+     "retos": 1728,
+     "error_medio_ponderado": 0.0346,
+     "error_medio_tipos_con_30_o_mas": 0.0264,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2014
+    },
+    {
+     "retos": 1872,
+     "error_medio_ponderado": 0.0284,
+     "error_medio_tipos_con_30_o_mas": 0.0212,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2175
+    },
+    {
+     "retos": 2016,
+     "error_medio_ponderado": 0.027,
+     "error_medio_tipos_con_30_o_mas": 0.0209,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2330
+    },
+    {
+     "retos": 2160,
+     "error_medio_ponderado": 0.029,
+     "error_medio_tipos_con_30_o_mas": 0.0229,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2505
+    },
+    {
+     "retos": 2304,
+     "error_medio_ponderado": 0.0279,
+     "error_medio_tipos_con_30_o_mas": 0.0356,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2658
+    },
+    {
+     "retos": 2448,
+     "error_medio_ponderado": 0.0247,
+     "error_medio_tipos_con_30_o_mas": 0.0323,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2816
+    },
+    {
+     "retos": 2592,
+     "error_medio_ponderado": 0.023,
+     "error_medio_tipos_con_30_o_mas": 0.0334,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2977
+    },
+    {
+     "retos": 2736,
+     "error_medio_ponderado": 0.0249,
+     "error_medio_tipos_con_30_o_mas": 0.0357,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3155
+    },
+    {
+     "retos": 2880,
+     "error_medio_ponderado": 0.0267,
+     "error_medio_tipos_con_30_o_mas": 0.0398,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3315
+    },
+    {
+     "retos": 3024,
+     "error_medio_ponderado": 0.0264,
+     "error_medio_tipos_con_30_o_mas": 0.0363,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3490
+    },
+    {
+     "retos": 3168,
+     "error_medio_ponderado": 0.0251,
+     "error_medio_tipos_con_30_o_mas": 0.0334,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3667
+    },
+    {
+     "retos": 3312,
+     "error_medio_ponderado": 0.0262,
+     "error_medio_tipos_con_30_o_mas": 0.0363,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3837
+    },
+    {
+     "retos": 3456,
+     "error_medio_ponderado": 0.0272,
+     "error_medio_tipos_con_30_o_mas": 0.0387,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4015
+    },
+    {
+     "retos": 3600,
+     "error_medio_ponderado": 0.0256,
+     "error_medio_tipos_con_30_o_mas": 0.0356,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4177
+    },
+    {
+     "retos": 3744,
+     "error_medio_ponderado": 0.025,
+     "error_medio_tipos_con_30_o_mas": 0.0373,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4339
+    },
+    {
+     "retos": 3888,
+     "error_medio_ponderado": 0.0252,
+     "error_medio_tipos_con_30_o_mas": 0.0367,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4508
+    },
+    {
+     "retos": 4032,
+     "error_medio_ponderado": 0.0227,
+     "error_medio_tipos_con_30_o_mas": 0.0345,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4658
+    },
+    {
+     "retos": 4176,
+     "error_medio_ponderado": 0.0204,
+     "error_medio_tipos_con_30_o_mas": 0.0288,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4829
+    },
+    {
+     "retos": 4320,
+     "error_medio_ponderado": 0.0196,
+     "error_medio_tipos_con_30_o_mas": 0.0274,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4983
+    }
+   ],
+   "final": {
+    "error_medio_ponderado": 0.0196,
+    "error_medio_tipos_con_30_o_mas": 0.0274,
+    "tipos_vistos": 34,
+    "tipos_con_30_o_mas": 16,
+    "observaciones": 4983
+   },
+   "variacion_ultimos_tramos": [
+    0.0025,
+    0.0023,
+    0.0008
+   ]
+  },
+  "IDEAS_R03": {
+   "curva": [
+    {
+     "retos": 144,
+     "error_medio_ponderado": 0.0757,
+     "error_medio_tipos_con_30_o_mas": 0.0359,
+     "tipos_vistos": 20,
+     "tipos_con_30_o_mas": 1,
+     "observaciones": 186
+    },
+    {
+     "retos": 288,
+     "error_medio_ponderado": 0.0668,
+     "error_medio_tipos_con_30_o_mas": 0.0677,
+     "tipos_vistos": 23,
+     "tipos_con_30_o_mas": 4,
+     "observaciones": 354
+    },
+    {
+     "retos": 432,
+     "error_medio_ponderado": 0.059,
+     "error_medio_tipos_con_30_o_mas": 0.0464,
+     "tipos_vistos": 24,
+     "tipos_con_30_o_mas": 6,
+     "observaciones": 524
+    },
+    {
+     "retos": 576,
+     "error_medio_ponderado": 0.0597,
+     "error_medio_tipos_con_30_o_mas": 0.0492,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 693
+    },
+    {
+     "retos": 720,
+     "error_medio_ponderado": 0.0557,
+     "error_medio_tipos_con_30_o_mas": 0.0492,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 876
+    },
+    {
+     "retos": 864,
+     "error_medio_ponderado": 0.0545,
+     "error_medio_tipos_con_30_o_mas": 0.0584,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1042
+    },
+    {
+     "retos": 1008,
+     "error_medio_ponderado": 0.0478,
+     "error_medio_tipos_con_30_o_mas": 0.049,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1218
+    },
+    {
+     "retos": 1152,
+     "error_medio_ponderado": 0.0451,
+     "error_medio_tipos_con_30_o_mas": 0.0468,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1388
+    },
+    {
+     "retos": 1296,
+     "error_medio_ponderado": 0.035,
+     "error_medio_tipos_con_30_o_mas": 0.034,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1552
+    },
+    {
+     "retos": 1440,
+     "error_medio_ponderado": 0.0363,
+     "error_medio_tipos_con_30_o_mas": 0.0319,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1727
+    },
+    {
+     "retos": 1584,
+     "error_medio_ponderado": 0.0319,
+     "error_medio_tipos_con_30_o_mas": 0.0261,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1900
+    },
+    {
+     "retos": 1728,
+     "error_medio_ponderado": 0.0283,
+     "error_medio_tipos_con_30_o_mas": 0.0281,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2067
+    },
+    {
+     "retos": 1872,
+     "error_medio_ponderado": 0.0276,
+     "error_medio_tipos_con_30_o_mas": 0.026,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2237
+    },
+    {
+     "retos": 2016,
+     "error_medio_ponderado": 0.0259,
+     "error_medio_tipos_con_30_o_mas": 0.0231,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2402
+    },
+    {
+     "retos": 2160,
+     "error_medio_ponderado": 0.0227,
+     "error_medio_tipos_con_30_o_mas": 0.0189,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2591
+    },
+    {
+     "retos": 2304,
+     "error_medio_ponderado": 0.0242,
+     "error_medio_tipos_con_30_o_mas": 0.0203,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2746
+    },
+    {
+     "retos": 2448,
+     "error_medio_ponderado": 0.026,
+     "error_medio_tipos_con_30_o_mas": 0.0233,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2907
+    },
+    {
+     "retos": 2592,
+     "error_medio_ponderado": 0.0271,
+     "error_medio_tipos_con_30_o_mas": 0.0261,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3057
+    },
+    {
+     "retos": 2736,
+     "error_medio_ponderado": 0.0254,
+     "error_medio_tipos_con_30_o_mas": 0.0256,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3229
+    },
+    {
+     "retos": 2880,
+     "error_medio_ponderado": 0.0248,
+     "error_medio_tipos_con_30_o_mas": 0.0258,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3371
+    },
+    {
+     "retos": 3024,
+     "error_medio_ponderado": 0.0227,
+     "error_medio_tipos_con_30_o_mas": 0.0219,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3550
+    },
+    {
+     "retos": 3168,
+     "error_medio_ponderado": 0.0241,
+     "error_medio_tipos_con_30_o_mas": 0.023,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3718
+    },
+    {
+     "retos": 3312,
+     "error_medio_ponderado": 0.0215,
+     "error_medio_tipos_con_30_o_mas": 0.023,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3889
+    },
+    {
+     "retos": 3456,
+     "error_medio_ponderado": 0.0212,
+     "error_medio_tipos_con_30_o_mas": 0.0256,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4050
+    },
+    {
+     "retos": 3600,
+     "error_medio_ponderado": 0.023,
+     "error_medio_tipos_con_30_o_mas": 0.0258,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4223
+    },
+    {
+     "retos": 3744,
+     "error_medio_ponderado": 0.0223,
+     "error_medio_tipos_con_30_o_mas": 0.0271,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4384
+    },
+    {
+     "retos": 3888,
+     "error_medio_ponderado": 0.022,
+     "error_medio_tipos_con_30_o_mas": 0.0262,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4552
+    },
+    {
+     "retos": 4032,
+     "error_medio_ponderado": 0.0218,
+     "error_medio_tipos_con_30_o_mas": 0.0275,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4692
+    },
+    {
+     "retos": 4176,
+     "error_medio_ponderado": 0.0199,
+     "error_medio_tipos_con_30_o_mas": 0.0319,
+     "tipos_vistos": 40,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4858
+    },
+    {
+     "retos": 4320,
+     "error_medio_ponderado": 0.0217,
+     "error_medio_tipos_con_30_o_mas": 0.034,
+     "tipos_vistos": 40,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 5009
+    }
+   ],
+   "final": {
+    "error_medio_ponderado": 0.0217,
+    "error_medio_tipos_con_30_o_mas": 0.034,
+    "tipos_vistos": 40,
+    "tipos_con_30_o_mas": 16,
+    "observaciones": 5009
+   },
+   "variacion_ultimos_tramos": [
+    0.0002,
+    0.0019,
+    0.0018
+   ]
+  },
+  "RASGOS_R01": {
+   "curva": [
+    {
+     "retos": 144,
+     "error_medio_ponderado": 0.0913,
+     "error_medio_tipos_con_30_o_mas": 0.0438,
+     "tipos_vistos": 17,
+     "tipos_con_30_o_mas": 1,
+     "observaciones": 167
+    },
+    {
+     "retos": 288,
+     "error_medio_ponderado": 0.0624,
+     "error_medio_tipos_con_30_o_mas": 0.0275,
+     "tipos_vistos": 23,
+     "tipos_con_30_o_mas": 3,
+     "observaciones": 322
+    },
+    {
+     "retos": 432,
+     "error_medio_ponderado": 0.0658,
+     "error_medio_tipos_con_30_o_mas": 0.0663,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 8,
+     "observaciones": 485
+    },
+    {
+     "retos": 576,
+     "error_medio_ponderado": 0.0602,
+     "error_medio_tipos_con_30_o_mas": 0.0544,
+     "tipos_vistos": 28,
+     "tipos_con_30_o_mas": 9,
+     "observaciones": 653
+    },
+    {
+     "retos": 720,
+     "error_medio_ponderado": 0.0527,
+     "error_medio_tipos_con_30_o_mas": 0.0419,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 807
+    },
+    {
+     "retos": 864,
+     "error_medio_ponderado": 0.0538,
+     "error_medio_tipos_con_30_o_mas": 0.0488,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 975
+    },
+    {
+     "retos": 1008,
+     "error_medio_ponderado": 0.0441,
+     "error_medio_tipos_con_30_o_mas": 0.0434,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1125
+    },
+    {
+     "retos": 1152,
+     "error_medio_ponderado": 0.0421,
+     "error_medio_tipos_con_30_o_mas": 0.0434,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1283
+    },
+    {
+     "retos": 1296,
+     "error_medio_ponderado": 0.0332,
+     "error_medio_tipos_con_30_o_mas": 0.0383,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1426
+    },
+    {
+     "retos": 1440,
+     "error_medio_ponderado": 0.0363,
+     "error_medio_tipos_con_30_o_mas": 0.0416,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1582
+    },
+    {
+     "retos": 1584,
+     "error_medio_ponderado": 0.0374,
+     "error_medio_tipos_con_30_o_mas": 0.0426,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1730
+    },
+    {
+     "retos": 1728,
+     "error_medio_ponderado": 0.0363,
+     "error_medio_tipos_con_30_o_mas": 0.0422,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1883
+    },
+    {
+     "retos": 1872,
+     "error_medio_ponderado": 0.0341,
+     "error_medio_tipos_con_30_o_mas": 0.0372,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 2040
+    },
+    {
+     "retos": 2016,
+     "error_medio_ponderado": 0.0334,
+     "error_medio_tipos_con_30_o_mas": 0.0382,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 2196
+    },
+    {
+     "retos": 2160,
+     "error_medio_ponderado": 0.0326,
+     "error_medio_tipos_con_30_o_mas": 0.0341,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 2361
+    },
+    {
+     "retos": 2304,
+     "error_medio_ponderado": 0.0301,
+     "error_medio_tipos_con_30_o_mas": 0.0307,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 2529
+    },
+    {
+     "retos": 2448,
+     "error_medio_ponderado": 0.0281,
+     "error_medio_tipos_con_30_o_mas": 0.0292,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 2698
+    },
+    {
+     "retos": 2592,
+     "error_medio_ponderado": 0.027,
+     "error_medio_tipos_con_30_o_mas": 0.0317,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2845
+    },
+    {
+     "retos": 2736,
+     "error_medio_ponderado": 0.0271,
+     "error_medio_tipos_con_30_o_mas": 0.0288,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3004
+    },
+    {
+     "retos": 2880,
+     "error_medio_ponderado": 0.0262,
+     "error_medio_tipos_con_30_o_mas": 0.0288,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3147
+    },
+    {
+     "retos": 3024,
+     "error_medio_ponderado": 0.0246,
+     "error_medio_tipos_con_30_o_mas": 0.0262,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3310
+    },
+    {
+     "retos": 3168,
+     "error_medio_ponderado": 0.021,
+     "error_medio_tipos_con_30_o_mas": 0.0213,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3459
+    },
+    {
+     "retos": 3312,
+     "error_medio_ponderado": 0.0184,
+     "error_medio_tipos_con_30_o_mas": 0.0193,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3624
+    },
+    {
+     "retos": 3456,
+     "error_medio_ponderado": 0.0178,
+     "error_medio_tipos_con_30_o_mas": 0.0188,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3765
+    },
+    {
+     "retos": 3600,
+     "error_medio_ponderado": 0.0157,
+     "error_medio_tipos_con_30_o_mas": 0.023,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3917
+    },
+    {
+     "retos": 3744,
+     "error_medio_ponderado": 0.0168,
+     "error_medio_tipos_con_30_o_mas": 0.0262,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4071
+    },
+    {
+     "retos": 3888,
+     "error_medio_ponderado": 0.0175,
+     "error_medio_tipos_con_30_o_mas": 0.0333,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4223
+    },
+    {
+     "retos": 4032,
+     "error_medio_ponderado": 0.0175,
+     "error_medio_tipos_con_30_o_mas": 0.0322,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4374
+    },
+    {
+     "retos": 4176,
+     "error_medio_ponderado": 0.0158,
+     "error_medio_tipos_con_30_o_mas": 0.0293,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4529
+    },
+    {
+     "retos": 4320,
+     "error_medio_ponderado": 0.0153,
+     "error_medio_tipos_con_30_o_mas": 0.0293,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4676
+    }
+   ],
+   "final": {
+    "error_medio_ponderado": 0.0153,
+    "error_medio_tipos_con_30_o_mas": 0.0293,
+    "tipos_vistos": 33,
+    "tipos_con_30_o_mas": 15,
+    "observaciones": 4676
+   },
+   "variacion_ultimos_tramos": [
+    0.0,
+    0.0017,
+    0.0005
+   ]
+  },
+  "RASGOS_R02": {
+   "curva": [
+    {
+     "retos": 144,
+     "error_medio_ponderado": 0.0766,
+     "error_medio_tipos_con_30_o_mas": 0.0879,
+     "tipos_vistos": 20,
+     "tipos_con_30_o_mas": 1,
+     "observaciones": 155
+    },
+    {
+     "retos": 288,
+     "error_medio_ponderado": 0.0779,
+     "error_medio_tipos_con_30_o_mas": 0.0967,
+     "tipos_vistos": 22,
+     "tipos_con_30_o_mas": 3,
+     "observaciones": 310
+    },
+    {
+     "retos": 432,
+     "error_medio_ponderado": 0.0541,
+     "error_medio_tipos_con_30_o_mas": 0.0563,
+     "tipos_vistos": 23,
+     "tipos_con_30_o_mas": 7,
+     "observaciones": 465
+    },
+    {
+     "retos": 576,
+     "error_medio_ponderado": 0.0446,
+     "error_medio_tipos_con_30_o_mas": 0.0432,
+     "tipos_vistos": 25,
+     "tipos_con_30_o_mas": 8,
+     "observaciones": 638
+    },
+    {
+     "retos": 720,
+     "error_medio_ponderado": 0.0433,
+     "error_medio_tipos_con_30_o_mas": 0.041,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 803
+    },
+    {
+     "retos": 864,
+     "error_medio_ponderado": 0.0394,
+     "error_medio_tipos_con_30_o_mas": 0.0386,
+     "tipos_vistos": 28,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 957
+    },
+    {
+     "retos": 1008,
+     "error_medio_ponderado": 0.0419,
+     "error_medio_tipos_con_30_o_mas": 0.039,
+     "tipos_vistos": 28,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 1096
+    },
+    {
+     "retos": 1152,
+     "error_medio_ponderado": 0.0365,
+     "error_medio_tipos_con_30_o_mas": 0.0343,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 1269
+    },
+    {
+     "retos": 1296,
+     "error_medio_ponderado": 0.0314,
+     "error_medio_tipos_con_30_o_mas": 0.0257,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 1428
+    },
+    {
+     "retos": 1440,
+     "error_medio_ponderado": 0.0337,
+     "error_medio_tipos_con_30_o_mas": 0.0298,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1590
+    },
+    {
+     "retos": 1584,
+     "error_medio_ponderado": 0.0367,
+     "error_medio_tipos_con_30_o_mas": 0.0337,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1751
+    },
+    {
+     "retos": 1728,
+     "error_medio_ponderado": 0.037,
+     "error_medio_tipos_con_30_o_mas": 0.0338,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1911
+    },
+    {
+     "retos": 1872,
+     "error_medio_ponderado": 0.035,
+     "error_medio_tipos_con_30_o_mas": 0.033,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 12,
      "observaciones": 2075
     },
     {
      "retos": 2016,
-     "error_medio_ponderado": 0.0336,
-     "error_medio_tipos_con_30_o_mas": 0.0367,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 13,
+     "error_medio_ponderado": 0.0319,
+     "error_medio_tipos_con_30_o_mas": 0.0287,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 12,
      "observaciones": 2239
     },
     {
      "retos": 2160,
-     "error_medio_ponderado": 0.0347,
-     "error_medio_tipos_con_30_o_mas": 0.0459,
-     "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 2400
+     "error_medio_ponderado": 0.0315,
+     "error_medio_tipos_con_30_o_mas": 0.0281,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2398
     },
     {
      "retos": 2304,
-     "error_medio_ponderado": 0.0344,
-     "error_medio_tipos_con_30_o_mas": 0.0448,
+     "error_medio_ponderado": 0.0296,
+     "error_medio_tipos_con_30_o_mas": 0.0286,
      "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 2551
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2562
     },
     {
      "retos": 2448,
-     "error_medio_ponderado": 0.0323,
-     "error_medio_tipos_con_30_o_mas": 0.0397,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 2726
+     "error_medio_ponderado": 0.0273,
+     "error_medio_tipos_con_30_o_mas": 0.0279,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2719
     },
     {
      "retos": 2592,
-     "error_medio_ponderado": 0.0303,
-     "error_medio_tipos_con_30_o_mas": 0.0377,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 2875
+     "error_medio_ponderado": 0.0279,
+     "error_medio_tipos_con_30_o_mas": 0.0275,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2870
     },
     {
      "retos": 2736,
-     "error_medio_ponderado": 0.0282,
-     "error_medio_tipos_con_30_o_mas": 0.0359,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3027
+     "error_medio_ponderado": 0.0271,
+     "error_medio_tipos_con_30_o_mas": 0.0268,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 3025
     },
     {
      "retos": 2880,
-     "error_medio_ponderado": 0.0251,
-     "error_medio_tipos_con_30_o_mas": 0.0346,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3185
+     "error_medio_ponderado": 0.0294,
+     "error_medio_tipos_con_30_o_mas": 0.0339,
+     "tipos_vistos": 36,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3178
     },
     {
      "retos": 3024,
-     "error_medio_ponderado": 0.0207,
-     "error_medio_tipos_con_30_o_mas": 0.0309,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3338
+     "error_medio_ponderado": 0.0301,
+     "error_medio_tipos_con_30_o_mas": 0.0386,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3325
     },
     {
      "retos": 3168,
-     "error_medio_ponderado": 0.0196,
-     "error_medio_tipos_con_30_o_mas": 0.0311,
-     "tipos_vistos": 34,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3487
+     "error_medio_ponderado": 0.0282,
+     "error_medio_tipos_con_30_o_mas": 0.0363,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3485
     },
     {
      "retos": 3312,
-     "error_medio_ponderado": 0.0197,
-     "error_medio_tipos_con_30_o_mas": 0.0314,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3643
+     "error_medio_ponderado": 0.0283,
+     "error_medio_tipos_con_30_o_mas": 0.0379,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3623
     },
     {
      "retos": 3456,
-     "error_medio_ponderado": 0.0219,
-     "error_medio_tipos_con_30_o_mas": 0.0337,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3803
+     "error_medio_ponderado": 0.0278,
+     "error_medio_tipos_con_30_o_mas": 0.0396,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3778
     },
     {
      "retos": 3600,
-     "error_medio_ponderado": 0.0229,
-     "error_medio_tipos_con_30_o_mas": 0.0338,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3956
+     "error_medio_ponderado": 0.027,
+     "error_medio_tipos_con_30_o_mas": 0.0393,
+     "tipos_vistos": 37,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3937
     },
     {
      "retos": 3744,
-     "error_medio_ponderado": 0.0229,
-     "error_medio_tipos_con_30_o_mas": 0.0313,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 4115
+     "error_medio_ponderado": 0.0259,
+     "error_medio_tipos_con_30_o_mas": 0.0379,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4101
     },
     {
      "retos": 3888,
-     "error_medio_ponderado": 0.0224,
-     "error_medio_tipos_con_30_o_mas": 0.0329,
-     "tipos_vistos": 35,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 4278
+     "error_medio_ponderado": 0.0241,
+     "error_medio_tipos_con_30_o_mas": 0.0354,
+     "tipos_vistos": 38,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4254
     },
     {
      "retos": 4032,
-     "error_medio_ponderado": 0.0215,
-     "error_medio_tipos_con_30_o_mas": 0.0325,
-     "tipos_vistos": 35,
+     "error_medio_ponderado": 0.024,
+     "error_medio_tipos_con_30_o_mas": 0.037,
+     "tipos_vistos": 38,
      "tipos_con_30_o_mas": 15,
-     "observaciones": 4441
+     "observaciones": 4410
     },
     {
      "retos": 4176,
-     "error_medio_ponderado": 0.0194,
-     "error_medio_tipos_con_30_o_mas": 0.0301,
-     "tipos_vistos": 35,
+     "error_medio_ponderado": 0.0221,
+     "error_medio_tipos_con_30_o_mas": 0.0368,
+     "tipos_vistos": 38,
      "tipos_con_30_o_mas": 15,
-     "observaciones": 4595
+     "observaciones": 4556
     },
     {
      "retos": 4320,
-     "error_medio_ponderado": 0.0192,
-     "error_medio_tipos_con_30_o_mas": 0.0298,
-     "tipos_vistos": 35,
+     "error_medio_ponderado": 0.0219,
+     "error_medio_tipos_con_30_o_mas": 0.0373,
+     "tipos_vistos": 38,
      "tipos_con_30_o_mas": 15,
-     "observaciones": 4749
+     "observaciones": 4714
     }
    ],
    "final": {
-    "error_medio_ponderado": 0.0192,
-    "error_medio_tipos_con_30_o_mas": 0.0298,
-    "tipos_vistos": 35,
+    "error_medio_ponderado": 0.0219,
+    "error_medio_tipos_con_30_o_mas": 0.0373,
+    "tipos_vistos": 38,
     "tipos_con_30_o_mas": 15,
-    "observaciones": 4749
+    "observaciones": 4714
    },
    "variacion_ultimos_tramos": [
-    0.0009,
-    0.0021,
+    0.0001,
+    0.0019,
     0.0002
+   ]
+  },
+  "RASGOS_R03": {
+   "curva": [
+    {
+     "retos": 144,
+     "error_medio_ponderado": 0.1084,
+     "error_medio_tipos_con_30_o_mas": null,
+     "tipos_vistos": 18,
+     "tipos_con_30_o_mas": 0,
+     "observaciones": 162
+    },
+    {
+     "retos": 288,
+     "error_medio_ponderado": 0.0659,
+     "error_medio_tipos_con_30_o_mas": 0.036,
+     "tipos_vistos": 20,
+     "tipos_con_30_o_mas": 4,
+     "observaciones": 313
+    },
+    {
+     "retos": 432,
+     "error_medio_ponderado": 0.0615,
+     "error_medio_tipos_con_30_o_mas": 0.0371,
+     "tipos_vistos": 21,
+     "tipos_con_30_o_mas": 6,
+     "observaciones": 475
+    },
+    {
+     "retos": 576,
+     "error_medio_ponderado": 0.0456,
+     "error_medio_tipos_con_30_o_mas": 0.0487,
+     "tipos_vistos": 23,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 637
+    },
+    {
+     "retos": 720,
+     "error_medio_ponderado": 0.0491,
+     "error_medio_tipos_con_30_o_mas": 0.0552,
+     "tipos_vistos": 24,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 802
+    },
+    {
+     "retos": 864,
+     "error_medio_ponderado": 0.0435,
+     "error_medio_tipos_con_30_o_mas": 0.0472,
+     "tipos_vistos": 24,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 971
+    },
+    {
+     "retos": 1008,
+     "error_medio_ponderado": 0.0345,
+     "error_medio_tipos_con_30_o_mas": 0.0373,
+     "tipos_vistos": 25,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1122
+    },
+    {
+     "retos": 1152,
+     "error_medio_ponderado": 0.0333,
+     "error_medio_tipos_con_30_o_mas": 0.0338,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1288
+    },
+    {
+     "retos": 1296,
+     "error_medio_ponderado": 0.0375,
+     "error_medio_tipos_con_30_o_mas": 0.0361,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1455
+    },
+    {
+     "retos": 1440,
+     "error_medio_ponderado": 0.0363,
+     "error_medio_tipos_con_30_o_mas": 0.0373,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1609
+    },
+    {
+     "retos": 1584,
+     "error_medio_ponderado": 0.0366,
+     "error_medio_tipos_con_30_o_mas": 0.0387,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1781
+    },
+    {
+     "retos": 1728,
+     "error_medio_ponderado": 0.0349,
+     "error_medio_tipos_con_30_o_mas": 0.0375,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1941
+    },
+    {
+     "retos": 1872,
+     "error_medio_ponderado": 0.0313,
+     "error_medio_tipos_con_30_o_mas": 0.0343,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2097
+    },
+    {
+     "retos": 2016,
+     "error_medio_ponderado": 0.0295,
+     "error_medio_tipos_con_30_o_mas": 0.0338,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2255
+    },
+    {
+     "retos": 2160,
+     "error_medio_ponderado": 0.0305,
+     "error_medio_tipos_con_30_o_mas": 0.0386,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2410
+    },
+    {
+     "retos": 2304,
+     "error_medio_ponderado": 0.0274,
+     "error_medio_tipos_con_30_o_mas": 0.0369,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2553
+    },
+    {
+     "retos": 2448,
+     "error_medio_ponderado": 0.0266,
+     "error_medio_tipos_con_30_o_mas": 0.0369,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 2694
+    },
+    {
+     "retos": 2592,
+     "error_medio_ponderado": 0.0247,
+     "error_medio_tipos_con_30_o_mas": 0.0342,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2847
+    },
+    {
+     "retos": 2736,
+     "error_medio_ponderado": 0.0239,
+     "error_medio_tipos_con_30_o_mas": 0.0308,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3000
+    },
+    {
+     "retos": 2880,
+     "error_medio_ponderado": 0.0248,
+     "error_medio_tipos_con_30_o_mas": 0.0315,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3152
+    },
+    {
+     "retos": 3024,
+     "error_medio_ponderado": 0.023,
+     "error_medio_tipos_con_30_o_mas": 0.0311,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3306
+    },
+    {
+     "retos": 3168,
+     "error_medio_ponderado": 0.0203,
+     "error_medio_tipos_con_30_o_mas": 0.0266,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3461
+    },
+    {
+     "retos": 3312,
+     "error_medio_ponderado": 0.0204,
+     "error_medio_tipos_con_30_o_mas": 0.0278,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3601
+    },
+    {
+     "retos": 3456,
+     "error_medio_ponderado": 0.0192,
+     "error_medio_tipos_con_30_o_mas": 0.0285,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3760
+    },
+    {
+     "retos": 3600,
+     "error_medio_ponderado": 0.0212,
+     "error_medio_tipos_con_30_o_mas": 0.0316,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 3919
+    },
+    {
+     "retos": 3744,
+     "error_medio_ponderado": 0.0232,
+     "error_medio_tipos_con_30_o_mas": 0.0342,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4067
+    },
+    {
+     "retos": 3888,
+     "error_medio_ponderado": 0.0227,
+     "error_medio_tipos_con_30_o_mas": 0.0306,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4220
+    },
+    {
+     "retos": 4032,
+     "error_medio_ponderado": 0.0217,
+     "error_medio_tipos_con_30_o_mas": 0.0308,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4378
+    },
+    {
+     "retos": 4176,
+     "error_medio_ponderado": 0.0225,
+     "error_medio_tipos_con_30_o_mas": 0.0335,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4533
+    },
+    {
+     "retos": 4320,
+     "error_medio_ponderado": 0.0241,
+     "error_medio_tipos_con_30_o_mas": 0.0356,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 4705
+    }
+   ],
+   "final": {
+    "error_medio_ponderado": 0.0241,
+    "error_medio_tipos_con_30_o_mas": 0.0356,
+    "tipos_vistos": 35,
+    "tipos_con_30_o_mas": 14,
+    "observaciones": 4705
+   },
+   "variacion_ultimos_tramos": [
+    0.001,
+    0.0008,
+    0.0016
+   ]
+  },
+  "PISTAS_R01": {
+   "curva": [
+    {
+     "retos": 144,
+     "error_medio_ponderado": 0.0866,
+     "error_medio_tipos_con_30_o_mas": null,
+     "tipos_vistos": 19,
+     "tipos_con_30_o_mas": 0,
+     "observaciones": 173
+    },
+    {
+     "retos": 288,
+     "error_medio_ponderado": 0.0726,
+     "error_medio_tipos_con_30_o_mas": 0.0731,
+     "tipos_vistos": 22,
+     "tipos_con_30_o_mas": 4,
+     "observaciones": 341
+    },
+    {
+     "retos": 432,
+     "error_medio_ponderado": 0.0348,
+     "error_medio_tipos_con_30_o_mas": 0.0216,
+     "tipos_vistos": 25,
+     "tipos_con_30_o_mas": 6,
+     "observaciones": 494
+    },
+    {
+     "retos": 576,
+     "error_medio_ponderado": 0.0456,
+     "error_medio_tipos_con_30_o_mas": 0.0419,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 8,
+     "observaciones": 651
+    },
+    {
+     "retos": 720,
+     "error_medio_ponderado": 0.0412,
+     "error_medio_tipos_con_30_o_mas": 0.0381,
+     "tipos_vistos": 28,
+     "tipos_con_30_o_mas": 9,
+     "observaciones": 803
+    },
+    {
+     "retos": 864,
+     "error_medio_ponderado": 0.0373,
+     "error_medio_tipos_con_30_o_mas": 0.0339,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 964
+    },
+    {
+     "retos": 1008,
+     "error_medio_ponderado": 0.031,
+     "error_medio_tipos_con_30_o_mas": 0.0326,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1119
+    },
+    {
+     "retos": 1152,
+     "error_medio_ponderado": 0.0216,
+     "error_medio_tipos_con_30_o_mas": 0.0231,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1283
+    },
+    {
+     "retos": 1296,
+     "error_medio_ponderado": 0.0268,
+     "error_medio_tipos_con_30_o_mas": 0.0261,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1439
+    },
+    {
+     "retos": 1440,
+     "error_medio_ponderado": 0.0302,
+     "error_medio_tipos_con_30_o_mas": 0.0289,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1598
+    },
+    {
+     "retos": 1584,
+     "error_medio_ponderado": 0.0322,
+     "error_medio_tipos_con_30_o_mas": 0.0323,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1755
+    },
+    {
+     "retos": 1728,
+     "error_medio_ponderado": 0.033,
+     "error_medio_tipos_con_30_o_mas": 0.0348,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1908
+    },
+    {
+     "retos": 1872,
+     "error_medio_ponderado": 0.033,
+     "error_medio_tipos_con_30_o_mas": 0.0325,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2087
+    },
+    {
+     "retos": 2016,
+     "error_medio_ponderado": 0.0336,
+     "error_medio_tipos_con_30_o_mas": 0.0337,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2249
+    },
+    {
+     "retos": 2160,
+     "error_medio_ponderado": 0.0323,
+     "error_medio_tipos_con_30_o_mas": 0.0372,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2410
+    },
+    {
+     "retos": 2304,
+     "error_medio_ponderado": 0.031,
+     "error_medio_tipos_con_30_o_mas": 0.0359,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 2557
+    },
+    {
+     "retos": 2448,
+     "error_medio_ponderado": 0.0277,
+     "error_medio_tipos_con_30_o_mas": 0.0322,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2716
+    },
+    {
+     "retos": 2592,
+     "error_medio_ponderado": 0.0273,
+     "error_medio_tipos_con_30_o_mas": 0.031,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 2872
+    },
+    {
+     "retos": 2736,
+     "error_medio_ponderado": 0.0261,
+     "error_medio_tipos_con_30_o_mas": 0.0273,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3026
+    },
+    {
+     "retos": 2880,
+     "error_medio_ponderado": 0.0253,
+     "error_medio_tipos_con_30_o_mas": 0.0291,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3180
+    },
+    {
+     "retos": 3024,
+     "error_medio_ponderado": 0.0237,
+     "error_medio_tipos_con_30_o_mas": 0.0279,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 3335
+    },
+    {
+     "retos": 3168,
+     "error_medio_ponderado": 0.0262,
+     "error_medio_tipos_con_30_o_mas": 0.0324,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 3492
+    },
+    {
+     "retos": 3312,
+     "error_medio_ponderado": 0.0232,
+     "error_medio_tipos_con_30_o_mas": 0.0297,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 3646
+    },
+    {
+     "retos": 3456,
+     "error_medio_ponderado": 0.0241,
+     "error_medio_tipos_con_30_o_mas": 0.0308,
+     "tipos_vistos": 34,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 3806
+    },
+    {
+     "retos": 3600,
+     "error_medio_ponderado": 0.0261,
+     "error_medio_tipos_con_30_o_mas": 0.0317,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 3965
+    },
+    {
+     "retos": 3744,
+     "error_medio_ponderado": 0.0254,
+     "error_medio_tipos_con_30_o_mas": 0.0323,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4113
+    },
+    {
+     "retos": 3888,
+     "error_medio_ponderado": 0.0254,
+     "error_medio_tipos_con_30_o_mas": 0.0298,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4274
+    },
+    {
+     "retos": 4032,
+     "error_medio_ponderado": 0.0227,
+     "error_medio_tipos_con_30_o_mas": 0.0283,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4438
+    },
+    {
+     "retos": 4176,
+     "error_medio_ponderado": 0.0224,
+     "error_medio_tipos_con_30_o_mas": 0.0284,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4596
+    },
+    {
+     "retos": 4320,
+     "error_medio_ponderado": 0.0194,
+     "error_medio_tipos_con_30_o_mas": 0.0249,
+     "tipos_vistos": 35,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4754
+    }
+   ],
+   "final": {
+    "error_medio_ponderado": 0.0194,
+    "error_medio_tipos_con_30_o_mas": 0.0249,
+    "tipos_vistos": 35,
+    "tipos_con_30_o_mas": 16,
+    "observaciones": 4754
+   },
+   "variacion_ultimos_tramos": [
+    0.0027,
+    0.0003,
+    0.003
    ]
   },
   "PISTAS_R02": {
    "curva": [
     {
      "retos": 144,
-     "error_medio_ponderado": 0.0714,
+     "error_medio_ponderado": 0.1059,
      "error_medio_tipos_con_30_o_mas": null,
-     "tipos_vistos": 18,
+     "tipos_vistos": 19,
      "tipos_con_30_o_mas": 0,
-     "observaciones": 154
+     "observaciones": 166
     },
     {
      "retos": 288,
-     "error_medio_ponderado": 0.0551,
-     "error_medio_tipos_con_30_o_mas": 0.0092,
-     "tipos_vistos": 20,
-     "tipos_con_30_o_mas": 4,
-     "observaciones": 294
+     "error_medio_ponderado": 0.082,
+     "error_medio_tipos_con_30_o_mas": 0.057,
+     "tipos_vistos": 23,
+     "tipos_con_30_o_mas": 3,
+     "observaciones": 343
     },
     {
      "retos": 432,
-     "error_medio_ponderado": 0.0438,
-     "error_medio_tipos_con_30_o_mas": 0.0163,
-     "tipos_vistos": 22,
+     "error_medio_ponderado": 0.0643,
+     "error_medio_tipos_con_30_o_mas": 0.0596,
+     "tipos_vistos": 24,
      "tipos_con_30_o_mas": 6,
-     "observaciones": 457
+     "observaciones": 508
     },
     {
      "retos": 576,
-     "error_medio_ponderado": 0.0475,
-     "error_medio_tipos_con_30_o_mas": 0.0449,
-     "tipos_vistos": 22,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 607
+     "error_medio_ponderado": 0.0448,
+     "error_medio_tipos_con_30_o_mas": 0.0434,
+     "tipos_vistos": 26,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 650
     },
     {
      "retos": 720,
-     "error_medio_ponderado": 0.0505,
-     "error_medio_tipos_con_30_o_mas": 0.0473,
-     "tipos_vistos": 23,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 764
+     "error_medio_ponderado": 0.0431,
+     "error_medio_tipos_con_30_o_mas": 0.0439,
+     "tipos_vistos": 26,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 805
     },
     {
      "retos": 864,
-     "error_medio_ponderado": 0.0441,
-     "error_medio_tipos_con_30_o_mas": 0.0405,
-     "tipos_vistos": 24,
-     "tipos_con_30_o_mas": 9,
-     "observaciones": 922
+     "error_medio_ponderado": 0.0421,
+     "error_medio_tipos_con_30_o_mas": 0.0427,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 972
     },
     {
      "retos": 1008,
-     "error_medio_ponderado": 0.039,
-     "error_medio_tipos_con_30_o_mas": 0.0359,
-     "tipos_vistos": 25,
-     "tipos_con_30_o_mas": 10,
-     "observaciones": 1067
+     "error_medio_ponderado": 0.0381,
+     "error_medio_tipos_con_30_o_mas": 0.0403,
+     "tipos_vistos": 28,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1135
     },
     {
      "retos": 1152,
-     "error_medio_ponderado": 0.045,
-     "error_medio_tipos_con_30_o_mas": 0.0408,
-     "tipos_vistos": 25,
-     "tipos_con_30_o_mas": 10,
-     "observaciones": 1222
+     "error_medio_ponderado": 0.0269,
+     "error_medio_tipos_con_30_o_mas": 0.0312,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1288
     },
     {
      "retos": 1296,
-     "error_medio_ponderado": 0.0442,
-     "error_medio_tipos_con_30_o_mas": 0.0572,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1393
+     "error_medio_ponderado": 0.0269,
+     "error_medio_tipos_con_30_o_mas": 0.0282,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1456
     },
     {
      "retos": 1440,
-     "error_medio_ponderado": 0.0389,
-     "error_medio_tipos_con_30_o_mas": 0.0503,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1544
+     "error_medio_ponderado": 0.0304,
+     "error_medio_tipos_con_30_o_mas": 0.0327,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1607
     },
     {
      "retos": 1584,
-     "error_medio_ponderado": 0.0372,
-     "error_medio_tipos_con_30_o_mas": 0.0465,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1697
+     "error_medio_ponderado": 0.0336,
+     "error_medio_tipos_con_30_o_mas": 0.0332,
+     "tipos_vistos": 29,
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1747
     },
     {
      "retos": 1728,
-     "error_medio_ponderado": 0.0366,
-     "error_medio_tipos_con_30_o_mas": 0.0444,
+     "error_medio_ponderado": 0.0345,
+     "error_medio_tipos_con_30_o_mas": 0.0304,
      "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1842
+     "tipos_con_30_o_mas": 13,
+     "observaciones": 1892
     },
     {
      "retos": 1872,
-     "error_medio_ponderado": 0.034,
-     "error_medio_tipos_con_30_o_mas": 0.0402,
+     "error_medio_ponderado": 0.0355,
+     "error_medio_tipos_con_30_o_mas": 0.0362,
      "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 2014
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2060
     },
     {
      "retos": 2016,
-     "error_medio_ponderado": 0.0332,
-     "error_medio_tipos_con_30_o_mas": 0.0386,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2164
+     "error_medio_ponderado": 0.0356,
+     "error_medio_tipos_con_30_o_mas": 0.0379,
+     "tipos_vistos": 31,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2227
     },
     {
      "retos": 2160,
-     "error_medio_ponderado": 0.034,
-     "error_medio_tipos_con_30_o_mas": 0.0404,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 2329
+     "error_medio_ponderado": 0.033,
+     "error_medio_tipos_con_30_o_mas": 0.0336,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2376
     },
     {
      "retos": 2304,
-     "error_medio_ponderado": 0.0323,
-     "error_medio_tipos_con_30_o_mas": 0.0514,
-     "tipos_vistos": 31,
+     "error_medio_ponderado": 0.0305,
+     "error_medio_tipos_con_30_o_mas": 0.0339,
+     "tipos_vistos": 32,
      "tipos_con_30_o_mas": 14,
-     "observaciones": 2483
+     "observaciones": 2524
     },
     {
      "retos": 2448,
-     "error_medio_ponderado": 0.0343,
-     "error_medio_tipos_con_30_o_mas": 0.0526,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 2632
+     "error_medio_ponderado": 0.0305,
+     "error_medio_tipos_con_30_o_mas": 0.0369,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2683
     },
     {
      "retos": 2592,
-     "error_medio_ponderado": 0.0332,
-     "error_medio_tipos_con_30_o_mas": 0.0485,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 2792
+     "error_medio_ponderado": 0.0277,
+     "error_medio_tipos_con_30_o_mas": 0.0336,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2834
     },
     {
      "retos": 2736,
-     "error_medio_ponderado": 0.0288,
-     "error_medio_tipos_con_30_o_mas": 0.0479,
-     "tipos_vistos": 31,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 2956
+     "error_medio_ponderado": 0.028,
+     "error_medio_tipos_con_30_o_mas": 0.0346,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2999
     },
     {
      "retos": 2880,
-     "error_medio_ponderado": 0.028,
-     "error_medio_tipos_con_30_o_mas": 0.0451,
+     "error_medio_ponderado": 0.0269,
+     "error_medio_tipos_con_30_o_mas": 0.0342,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3109
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3153
     },
     {
      "retos": 3024,
-     "error_medio_ponderado": 0.027,
-     "error_medio_tipos_con_30_o_mas": 0.0414,
+     "error_medio_ponderado": 0.0268,
+     "error_medio_tipos_con_30_o_mas": 0.0342,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3264
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3308
     },
     {
      "retos": 3168,
-     "error_medio_ponderado": 0.0269,
-     "error_medio_tipos_con_30_o_mas": 0.0402,
+     "error_medio_ponderado": 0.0268,
+     "error_medio_tipos_con_30_o_mas": 0.0342,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3423
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3460
     },
     {
      "retos": 3312,
-     "error_medio_ponderado": 0.0242,
-     "error_medio_tipos_con_30_o_mas": 0.0386,
+     "error_medio_ponderado": 0.026,
+     "error_medio_tipos_con_30_o_mas": 0.0347,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3592
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3623
     },
     {
      "retos": 3456,
-     "error_medio_ponderado": 0.0228,
-     "error_medio_tipos_con_30_o_mas": 0.0354,
+     "error_medio_ponderado": 0.0237,
+     "error_medio_tipos_con_30_o_mas": 0.032,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3743
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3775
     },
     {
      "retos": 3600,
-     "error_medio_ponderado": 0.0233,
-     "error_medio_tipos_con_30_o_mas": 0.0337,
+     "error_medio_ponderado": 0.0256,
+     "error_medio_tipos_con_30_o_mas": 0.0309,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3910
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3939
     },
     {
      "retos": 3744,
-     "error_medio_ponderado": 0.0262,
-     "error_medio_tipos_con_30_o_mas": 0.0371,
+     "error_medio_ponderado": 0.0252,
+     "error_medio_tipos_con_30_o_mas": 0.0316,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4068
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4097
     },
     {
      "retos": 3888,
-     "error_medio_ponderado": 0.0253,
-     "error_medio_tipos_con_30_o_mas": 0.0377,
+     "error_medio_ponderado": 0.0244,
+     "error_medio_tipos_con_30_o_mas": 0.0317,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4211
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4238
     },
     {
      "retos": 4032,
-     "error_medio_ponderado": 0.0255,
-     "error_medio_tipos_con_30_o_mas": 0.0374,
+     "error_medio_ponderado": 0.0257,
+     "error_medio_tipos_con_30_o_mas": 0.032,
      "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 4369
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 4394
     },
     {
      "retos": 4176,
-     "error_medio_ponderado": 0.024,
-     "error_medio_tipos_con_30_o_mas": 0.0355,
-     "tipos_vistos": 32,
+     "error_medio_ponderado": 0.0246,
+     "error_medio_tipos_con_30_o_mas": 0.0282,
+     "tipos_vistos": 33,
      "tipos_con_30_o_mas": 16,
-     "observaciones": 4530
+     "observaciones": 4558
     },
     {
      "retos": 4320,
-     "error_medio_ponderado": 0.0269,
-     "error_medio_tipos_con_30_o_mas": 0.0417,
-     "tipos_vistos": 32,
-     "tipos_con_30_o_mas": 17,
-     "observaciones": 4683
+     "error_medio_ponderado": 0.0238,
+     "error_medio_tipos_con_30_o_mas": 0.0284,
+     "tipos_vistos": 33,
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4719
     }
    ],
    "final": {
-    "error_medio_ponderado": 0.0269,
-    "error_medio_tipos_con_30_o_mas": 0.0417,
-    "tipos_vistos": 32,
-    "tipos_con_30_o_mas": 17,
-    "observaciones": 4683
+    "error_medio_ponderado": 0.0238,
+    "error_medio_tipos_con_30_o_mas": 0.0284,
+    "tipos_vistos": 33,
+    "tipos_con_30_o_mas": 16,
+    "observaciones": 4719
    },
    "variacion_ultimos_tramos": [
-    0.0002,
-    0.0015,
-    0.0029
+    0.0013,
+    0.0011,
+    0.0008
    ]
   },
   "PISTAS_R03": {
    "curva": [
     {
      "retos": 144,
-     "error_medio_ponderado": 0.0873,
-     "error_medio_tipos_con_30_o_mas": 0.1242,
-     "tipos_vistos": 16,
-     "tipos_con_30_o_mas": 1,
-     "observaciones": 168
+     "error_medio_ponderado": 0.0977,
+     "error_medio_tipos_con_30_o_mas": null,
+     "tipos_vistos": 19,
+     "tipos_con_30_o_mas": 0,
+     "observaciones": 156
     },
     {
      "retos": 288,
-     "error_medio_ponderado": 0.093,
-     "error_medio_tipos_con_30_o_mas": 0.0643,
-     "tipos_vistos": 20,
+     "error_medio_ponderado": 0.0756,
+     "error_medio_tipos_con_30_o_mas": 0.0649,
+     "tipos_vistos": 22,
      "tipos_con_30_o_mas": 4,
-     "observaciones": 344
+     "observaciones": 315
     },
     {
      "retos": 432,
-     "error_medio_ponderado": 0.0717,
-     "error_medio_tipos_con_30_o_mas": 0.0575,
-     "tipos_vistos": 22,
-     "tipos_con_30_o_mas": 6,
-     "observaciones": 500
+     "error_medio_ponderado": 0.0546,
+     "error_medio_tipos_con_30_o_mas": 0.0413,
+     "tipos_vistos": 24,
+     "tipos_con_30_o_mas": 5,
+     "observaciones": 475
     },
     {
      "retos": 576,
-     "error_medio_ponderado": 0.058,
-     "error_medio_tipos_con_30_o_mas": 0.0532,
-     "tipos_vistos": 23,
-     "tipos_con_30_o_mas": 10,
-     "observaciones": 666
+     "error_medio_ponderado": 0.0471,
+     "error_medio_tipos_con_30_o_mas": 0.0338,
+     "tipos_vistos": 25,
+     "tipos_con_30_o_mas": 8,
+     "observaciones": 635
     },
     {
      "retos": 720,
-     "error_medio_ponderado": 0.0507,
-     "error_medio_tipos_con_30_o_mas": 0.0489,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 11,
-     "observaciones": 828
+     "error_medio_ponderado": 0.0468,
+     "error_medio_tipos_con_30_o_mas": 0.0399,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 784
     },
     {
      "retos": 864,
-     "error_medio_ponderado": 0.0489,
-     "error_medio_tipos_con_30_o_mas": 0.0523,
-     "tipos_vistos": 26,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 996
+     "error_medio_ponderado": 0.0451,
+     "error_medio_tipos_con_30_o_mas": 0.0395,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 940
     },
     {
      "retos": 1008,
-     "error_medio_ponderado": 0.0397,
-     "error_medio_tipos_con_30_o_mas": 0.0389,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1162
+     "error_medio_ponderado": 0.0432,
+     "error_medio_tipos_con_30_o_mas": 0.0349,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 10,
+     "observaciones": 1093
     },
     {
      "retos": 1152,
-     "error_medio_ponderado": 0.0354,
-     "error_medio_tipos_con_30_o_mas": 0.0375,
-     "tipos_vistos": 28,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1303
+     "error_medio_ponderado": 0.04,
+     "error_medio_tipos_con_30_o_mas": 0.0388,
+     "tipos_vistos": 27,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1247
     },
     {
      "retos": 1296,
-     "error_medio_ponderado": 0.034,
-     "error_medio_tipos_con_30_o_mas": 0.0337,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 12,
-     "observaciones": 1457
+     "error_medio_ponderado": 0.0374,
+     "error_medio_tipos_con_30_o_mas": 0.0383,
+     "tipos_vistos": 28,
+     "tipos_con_30_o_mas": 11,
+     "observaciones": 1397
     },
     {
      "retos": 1440,
-     "error_medio_ponderado": 0.0345,
-     "error_medio_tipos_con_30_o_mas": 0.0335,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 1623
+     "error_medio_ponderado": 0.0365,
+     "error_medio_tipos_con_30_o_mas": 0.0376,
+     "tipos_vistos": 28,
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1553
     },
     {
      "retos": 1584,
-     "error_medio_ponderado": 0.0311,
-     "error_medio_tipos_con_30_o_mas": 0.0347,
+     "error_medio_ponderado": 0.0293,
+     "error_medio_tipos_con_30_o_mas": 0.0257,
      "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 1782
+     "tipos_con_30_o_mas": 12,
+     "observaciones": 1702
     },
     {
      "retos": 1728,
-     "error_medio_ponderado": 0.0282,
-     "error_medio_tipos_con_30_o_mas": 0.0317,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 13,
-     "observaciones": 1928
+     "error_medio_ponderado": 0.0339,
+     "error_medio_tipos_con_30_o_mas": 0.0309,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 1858
     },
     {
      "retos": 1872,
-     "error_medio_ponderado": 0.0284,
-     "error_medio_tipos_con_30_o_mas": 0.0328,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 2097
-    },
-    {
-     "retos": 2016,
-     "error_medio_ponderado": 0.024,
-     "error_medio_tipos_con_30_o_mas": 0.0299,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 2252
-    },
-    {
-     "retos": 2160,
-     "error_medio_ponderado": 0.0216,
-     "error_medio_tipos_con_30_o_mas": 0.0276,
-     "tipos_vistos": 29,
-     "tipos_con_30_o_mas": 14,
-     "observaciones": 2402
-    },
-    {
-     "retos": 2304,
-     "error_medio_ponderado": 0.0233,
+     "error_medio_ponderado": 0.0316,
      "error_medio_tipos_con_30_o_mas": 0.0312,
      "tipos_vistos": 30,
      "tipos_con_30_o_mas": 14,
-     "observaciones": 2573
+     "observaciones": 2018
+    },
+    {
+     "retos": 2016,
+     "error_medio_ponderado": 0.0284,
+     "error_medio_tipos_con_30_o_mas": 0.0248,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2165
+    },
+    {
+     "retos": 2160,
+     "error_medio_ponderado": 0.0275,
+     "error_medio_tipos_con_30_o_mas": 0.0219,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2319
+    },
+    {
+     "retos": 2304,
+     "error_medio_ponderado": 0.0262,
+     "error_medio_tipos_con_30_o_mas": 0.0223,
+     "tipos_vistos": 30,
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 2495
     },
     {
      "retos": 2448,
-     "error_medio_ponderado": 0.0214,
-     "error_medio_tipos_con_30_o_mas": 0.0273,
+     "error_medio_ponderado": 0.0265,
+     "error_medio_tipos_con_30_o_mas": 0.0255,
      "tipos_vistos": 30,
      "tipos_con_30_o_mas": 14,
-     "observaciones": 2722
+     "observaciones": 2645
     },
     {
      "retos": 2592,
-     "error_medio_ponderado": 0.0212,
-     "error_medio_tipos_con_30_o_mas": 0.0276,
+     "error_medio_ponderado": 0.0242,
+     "error_medio_tipos_con_30_o_mas": 0.0224,
      "tipos_vistos": 30,
      "tipos_con_30_o_mas": 14,
-     "observaciones": 2880
+     "observaciones": 2803
     },
     {
      "retos": 2736,
-     "error_medio_ponderado": 0.0204,
-     "error_medio_tipos_con_30_o_mas": 0.0272,
+     "error_medio_ponderado": 0.0264,
+     "error_medio_tipos_con_30_o_mas": 0.0241,
      "tipos_vistos": 30,
      "tipos_con_30_o_mas": 14,
-     "observaciones": 3037
+     "observaciones": 2960
     },
     {
      "retos": 2880,
-     "error_medio_ponderado": 0.0192,
-     "error_medio_tipos_con_30_o_mas": 0.0255,
+     "error_medio_ponderado": 0.0237,
+     "error_medio_tipos_con_30_o_mas": 0.0234,
      "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 15,
-     "observaciones": 3202
+     "tipos_con_30_o_mas": 14,
+     "observaciones": 3125
     },
     {
      "retos": 3024,
-     "error_medio_ponderado": 0.0194,
-     "error_medio_tipos_con_30_o_mas": 0.0271,
+     "error_medio_ponderado": 0.0208,
+     "error_medio_tipos_con_30_o_mas": 0.022,
      "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3357
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3280
     },
     {
      "retos": 3168,
-     "error_medio_ponderado": 0.0184,
-     "error_medio_tipos_con_30_o_mas": 0.0262,
+     "error_medio_ponderado": 0.0192,
+     "error_medio_tipos_con_30_o_mas": 0.0252,
      "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3509
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3432
     },
     {
      "retos": 3312,
-     "error_medio_ponderado": 0.017,
-     "error_medio_tipos_con_30_o_mas": 0.0251,
+     "error_medio_ponderado": 0.0196,
+     "error_medio_tipos_con_30_o_mas": 0.0235,
      "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3662
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3587
     },
     {
      "retos": 3456,
-     "error_medio_ponderado": 0.0176,
-     "error_medio_tipos_con_30_o_mas": 0.0232,
-     "tipos_vistos": 30,
-     "tipos_con_30_o_mas": 16,
-     "observaciones": 3814
+     "error_medio_ponderado": 0.0196,
+     "error_medio_tipos_con_30_o_mas": 0.0257,
+     "tipos_vistos": 32,
+     "tipos_con_30_o_mas": 15,
+     "observaciones": 3739
     },
     {
      "retos": 3600,
-     "error_medio_ponderado": 0.0183,
-     "error_medio_tipos_con_30_o_mas": 0.0253,
-     "tipos_vistos": 30,
+     "error_medio_ponderado": 0.0204,
+     "error_medio_tipos_con_30_o_mas": 0.0242,
+     "tipos_vistos": 32,
      "tipos_con_30_o_mas": 16,
-     "observaciones": 3955
+     "observaciones": 3879
     },
     {
      "retos": 3744,
-     "error_medio_ponderado": 0.0178,
-     "error_medio_tipos_con_30_o_mas": 0.0232,
-     "tipos_vistos": 32,
+     "error_medio_ponderado": 0.019,
+     "error_medio_tipos_con_30_o_mas": 0.0231,
+     "tipos_vistos": 33,
      "tipos_con_30_o_mas": 16,
-     "observaciones": 4104
+     "observaciones": 4027
     },
     {
      "retos": 3888,
-     "error_medio_ponderado": 0.0164,
-     "error_medio_tipos_con_30_o_mas": 0.0199,
-     "tipos_vistos": 32,
+     "error_medio_ponderado": 0.0204,
+     "error_medio_tipos_con_30_o_mas": 0.0256,
+     "tipos_vistos": 33,
      "tipos_con_30_o_mas": 16,
-     "observaciones": 4257
+     "observaciones": 4175
     },
     {
      "retos": 4032,
-     "error_medio_ponderado": 0.016,
-     "error_medio_tipos_con_30_o_mas": 0.0203,
+     "error_medio_ponderado": 0.0213,
+     "error_medio_tipos_con_30_o_mas": 0.026,
      "tipos_vistos": 33,
      "tipos_con_30_o_mas": 16,
-     "observaciones": 4404
+     "observaciones": 4340
     },
     {
      "retos": 4176,
-     "error_medio_ponderado": 0.0175,
-     "error_medio_tipos_con_30_o_mas": 0.02,
+     "error_medio_ponderado": 0.0215,
+     "error_medio_tipos_con_30_o_mas": 0.0298,
      "tipos_vistos": 33,
      "tipos_con_30_o_mas": 16,
-     "observaciones": 4566
+     "observaciones": 4492
     },
     {
      "retos": 4320,
-     "error_medio_ponderado": 0.0172,
-     "error_medio_tipos_con_30_o_mas": 0.0183,
+     "error_medio_ponderado": 0.0211,
+     "error_medio_tipos_con_30_o_mas": 0.0302,
      "tipos_vistos": 33,
-     "tipos_con_30_o_mas": 17,
-     "observaciones": 4721
+     "tipos_con_30_o_mas": 16,
+     "observaciones": 4642
     }
    ],
    "final": {
-    "error_medio_ponderado": 0.0172,
-    "error_medio_tipos_con_30_o_mas": 0.0183,
+    "error_medio_ponderado": 0.0211,
+    "error_medio_tipos_con_30_o_mas": 0.0302,
     "tipos_vistos": 33,
-    "tipos_con_30_o_mas": 17,
-    "observaciones": 4721
+    "tipos_con_30_o_mas": 16,
+    "observaciones": 4642
    },
    "variacion_ultimos_tramos": [
-    0.0004,
-    0.0015,
-    0.0003
+    0.0009,
+    0.0002,
+    0.0004
    ]
   }
  },
@@ -2467,11 +2466,11 @@
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7118,
+     "tasa_exito_sin_senalar": 0.7083,
      "acciones_medias": 2.6146,
      "ayudas_medias": 1.6146,
      "elecciones_no_confirmadas_medias": 0.6979,
-     "llego_a_senalar": 0.2882
+     "llego_a_senalar": 0.2917
     }
    }
   },
@@ -2585,11 +2584,11 @@
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.6875,
-     "acciones_medias": 2.6458,
-     "ayudas_medias": 1.6458,
-     "elecciones_no_confirmadas_medias": 0.75,
-     "llego_a_senalar": 0.3125
+     "tasa_exito_sin_senalar": 0.684,
+     "acciones_medias": 2.6493,
+     "ayudas_medias": 1.6493,
+     "elecciones_no_confirmadas_medias": 0.7535,
+     "llego_a_senalar": 0.316
     }
    }
   },
@@ -2704,9 +2703,9 @@
      "retos": 288,
      "tasa_exito": 1,
      "tasa_exito_sin_senalar": 0.7049,
-     "acciones_medias": 2.6146,
-     "ayudas_medias": 1.6146,
-     "elecciones_no_confirmadas_medias": 0.7535,
+     "acciones_medias": 2.6076,
+     "ayudas_medias": 1.6076,
+     "elecciones_no_confirmadas_medias": 0.75,
      "llego_a_senalar": 0.2951
     }
    }
@@ -2812,20 +2811,20 @@
     "4": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7674,
-     "acciones_medias": 2.3646,
-     "ayudas_medias": 1.3646,
-     "elecciones_no_confirmadas_medias": 0.6389,
-     "llego_a_senalar": 0.2326
+     "tasa_exito_sin_senalar": 0.7639,
+     "acciones_medias": 2.3681,
+     "ayudas_medias": 1.3681,
+     "elecciones_no_confirmadas_medias": 0.6424,
+     "llego_a_senalar": 0.2361
     },
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7778,
+     "tasa_exito_sin_senalar": 0.7743,
      "acciones_medias": 2.4062,
      "ayudas_medias": 1.4062,
      "elecciones_no_confirmadas_medias": 0.6424,
-     "llego_a_senalar": 0.2222
+     "llego_a_senalar": 0.2257
     }
    }
   },
@@ -2930,20 +2929,20 @@
     "4": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7847,
-     "acciones_medias": 2.309,
-     "ayudas_medias": 1.309,
-     "elecciones_no_confirmadas_medias": 0.5938,
-     "llego_a_senalar": 0.2153
+     "tasa_exito_sin_senalar": 0.7778,
+     "acciones_medias": 2.3125,
+     "ayudas_medias": 1.3125,
+     "elecciones_no_confirmadas_medias": 0.5972,
+     "llego_a_senalar": 0.2222
     },
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7604,
-     "acciones_medias": 2.3924,
-     "ayudas_medias": 1.3924,
-     "elecciones_no_confirmadas_medias": 0.6667,
-     "llego_a_senalar": 0.2396
+     "tasa_exito_sin_senalar": 0.7535,
+     "acciones_medias": 2.3993,
+     "ayudas_medias": 1.3993,
+     "elecciones_no_confirmadas_medias": 0.6701,
+     "llego_a_senalar": 0.2465
     }
    }
   },
@@ -3049,19 +3048,19 @@
      "retos": 288,
      "tasa_exito": 1,
      "tasa_exito_sin_senalar": 0.7569,
-     "acciones_medias": 2.3299,
-     "ayudas_medias": 1.3299,
-     "elecciones_no_confirmadas_medias": 0.6146,
+     "acciones_medias": 2.3368,
+     "ayudas_medias": 1.3368,
+     "elecciones_no_confirmadas_medias": 0.6181,
      "llego_a_senalar": 0.2431
     },
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7535,
-     "acciones_medias": 2.3785,
-     "ayudas_medias": 1.3785,
-     "elecciones_no_confirmadas_medias": 0.7049,
-     "llego_a_senalar": 0.2465
+     "tasa_exito_sin_senalar": 0.75,
+     "acciones_medias": 2.3819,
+     "ayudas_medias": 1.3819,
+     "elecciones_no_confirmadas_medias": 0.7083,
+     "llego_a_senalar": 0.25
     }
    }
   },
@@ -3166,20 +3165,20 @@
     "4": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.8056,
+     "tasa_exito_sin_senalar": 0.8125,
      "acciones_medias": 2.2222,
      "ayudas_medias": 1.2222,
      "elecciones_no_confirmadas_medias": 0.5486,
-     "llego_a_senalar": 0.1944
+     "llego_a_senalar": 0.1875
     },
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7986,
-     "acciones_medias": 2.3993,
-     "ayudas_medias": 1.3993,
-     "elecciones_no_confirmadas_medias": 0.6146,
-     "llego_a_senalar": 0.2014
+     "tasa_exito_sin_senalar": 0.7951,
+     "acciones_medias": 2.4028,
+     "ayudas_medias": 1.4028,
+     "elecciones_no_confirmadas_medias": 0.6181,
+     "llego_a_senalar": 0.2049
     }
    }
   },
@@ -3284,20 +3283,20 @@
     "4": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.7882,
+     "tasa_exito_sin_senalar": 0.7847,
      "acciones_medias": 2.3576,
      "ayudas_medias": 1.3576,
      "elecciones_no_confirmadas_medias": 0.6111,
-     "llego_a_senalar": 0.2118
+     "llego_a_senalar": 0.2153
     },
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.8021,
-     "acciones_medias": 2.3715,
-     "ayudas_medias": 1.3715,
-     "elecciones_no_confirmadas_medias": 0.6493,
-     "llego_a_senalar": 0.1979
+     "tasa_exito_sin_senalar": 0.7986,
+     "acciones_medias": 2.375,
+     "ayudas_medias": 1.375,
+     "elecciones_no_confirmadas_medias": 0.6528,
+     "llego_a_senalar": 0.2014
     }
    }
   },
@@ -3411,11 +3410,11 @@
     "8": {
      "retos": 288,
      "tasa_exito": 1,
-     "tasa_exito_sin_senalar": 0.8021,
-     "acciones_medias": 2.3785,
-     "ayudas_medias": 1.3785,
+     "tasa_exito_sin_senalar": 0.8056,
+     "acciones_medias": 2.3681,
+     "ayudas_medias": 1.3681,
      "elecciones_no_confirmadas_medias": 0.625,
-     "llego_a_senalar": 0.1979
+     "llego_a_senalar": 0.1944
     }
    }
   }

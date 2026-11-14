@@ -35,23 +35,30 @@ from codigo.nucleo.gestor import GestorPartida
 from codigo.nucleo.registro import Registro
 
 # Recompensa: evento que cierra la observación de una ayuda → resultado.
-RECOMPENSA = {"SELECCION_VALIDA": 1, "NUEVA_AYUDA": 0, "SELECCION_PENDIENTE": 0,
-              "SELECCION_INCORRECTA_VALIDADA": 0, "SALIDA": None}
+# El gestor marca SELECCION_PENDIENTE como «sin etiqueta» (protocolo del catálogo original, que
+# no castigaba una relación desconocida). Para el agente 6.0 el propietario decidió el
+# 2026-11-14 contarla como 0: «la ayuda no llevó a una respuesta confirmada», nunca como
+# «hábitat incorrecto». En el catálogo ampliado no existe SELECCION_INCORRECTA_VALIDADA.
+RECOMPENSA = {"SELECCION_VALIDA": 1, "NUEVA_AYUDA": 0, "SELECCION_PENDIENTE": 0, "SALIDA": None}
 ORIGEN_SIMULADO = "SIMULACION_ENTRENAMIENTO_AGENTE6"
 CANTIDADES = (2, 4, 8)
 MAX_ACCIONES = 10
 
 
-def etiquetas(filas: list[dict]) -> list[dict]:
+def etiquetas(filas: list[dict], version: str | None = None) -> list[dict]:
     """Empareja cada ayuda presentada con su cierre y aplica la recompensa.
 
-    Se descartan las ayudas sin tipo (p. ej. «Señala…» o motores sin clave) y las cerradas
-    sin resultado (salir).
+    Se descartan las ayudas sin tipo (p. ej. «Señala…» o motores sin clave), las cerradas
+    sin resultado (salir) y, si se indica ``version`` (huellas de rasgos y pistas), las
+    jugadas con otros datos. La clave se fija al presentar la ayuda: si después se pulsa
+    Repetir, la señal de dificultad no se añade a esa ayuda (límite documentado).
     """
     claves = {}
     salida = []
     for fila in filas:
         if fila.get("tipo_registro") == "AYUDA_PRESENTADA":
+            if version and not str(fila.get("modelo_version", "")).startswith(version):
+                continue
             claves[fila["observacion_id"]] = (fila.get("decision") or {}).get("clave_aprendizaje")
         elif fila.get("tipo_registro") == "OBSERVACION_CERRADA":
             clave = claves.pop(fila["observacion_id"], None)
@@ -179,7 +186,7 @@ def entrenar_simulado(banco, condicion: str, replica: int, pasadas: int, cada: i
     modelo = ModeloAyudas.nuevo(banco, ORIGEN_SIMULADO, {
         "condicion": condicion, "replica": replica, "semilla_entrenamiento": semilla,
         "aviso": "Entrenado con jugadores SIMULADOS de probabilidades inventadas; no con personas."})
-    motor = MotorAgenteAprendido(banco, modelo, azar=Random(semilla), solo_grabadas=False)
+    motor = MotorAgenteAprendido(banco, modelo, azar=Random(semilla + 250_000), solo_grabadas=False)
     azar = Random(semilla + 500_000)
     curva = []
     for i, (animal, k) in enumerate(retos(banco, pasadas, semilla), 1):
@@ -267,15 +274,21 @@ def main() -> None:
     args = parser.parse_args()
     if args.orden == "entrenar":
         banco = BancoDatos(ampliado=True)
-        lista = etiquetas(leer_registros(args.registros))
+        huellas = banco.huellas
+        version = f"{huellas['expedicion/atributos_habitats.json']}:{huellas['expedicion/pistas.json']}"
+        filas = leer_registros(args.registros)
+        lista = etiquetas(filas, version)
+        descartadas = len(etiquetas(filas)) - len(lista)
         modelo = ModeloAyudas.nuevo(banco, "SESIONES_REGISTRADAS", {
             "registros": str(args.registros), "observaciones": len(lista),
+            "descartadas_por_otra_version_de_datos": descartadas,
             "origenes": dict(Counter(x["origen"] for x in lista)),
             "aviso": "Revisar quién jugó estas sesiones antes de usar el modelo."})
         for x in lista:
             modelo.actualizar(x["clave"], x["resultado"])
         modelo.guardar(args.salida)
-        print(json.dumps({"observaciones": len(lista), "modelo": str(args.salida)}, ensure_ascii=False))
+        print(json.dumps({"observaciones": len(lista), "descartadas_por_otra_version": descartadas,
+                          "modelo": str(args.salida)}, ensure_ascii=False))
     else:
         simular(args.salida, args.replicas, args.pasadas, args.cada)
 

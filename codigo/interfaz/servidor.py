@@ -14,6 +14,7 @@ import webbrowser
 
 from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, POLITICAS_6, SesionWeb
 from codigo.motores.agente import POLITICA_AGENTE
+from codigo.motores.aprendizaje6 import POLITICA_APRENDIDA, MotorAgenteAprendido
 from codigo.interfaz import idiomas, voz_grabada
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import TERMINALES
@@ -76,6 +77,8 @@ class Servidor(ThreadingHTTPServer):
         self.lock = RLock()
         self.registros, self.politica, self.parametros = registros, politica, parametros
         self.agente, self.modelo_agente = agente, modelo_agente
+        if agente == POLITICA_APRENDIDA:
+            MotorAgenteAprendido(self.banco, modelo_agente)  # falla al arrancar, no en la primera partida
         super().__init__(direccion, Manejador)
 
 
@@ -262,6 +265,8 @@ def main():
                              "demostración entrenado con jugadores simulados).")
     parser.add_argument("--registros", type=Path, default=RAIZ_PROYECTO / "registros/interfaz")
     args = parser.parse_args()
+    if args.modelo_agente and args.agente != POLITICA_APRENDIDA:
+        parser.error("--modelo-agente solo se usa con --agente AGENTE_APRENDIDO.")
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
                          politica=args.politica, parametros=args.parametros,
                          ampliado=not args.catalogo_original, agente=args.agente,

@@ -11,12 +11,12 @@
   "semilla_entrenamiento": 3002,
   "aviso": "Entrenado con jugadores SIMULADOS de probabilidades inventadas; no con personas."
  },
- "actualizaciones": 4683,
+ "actualizaciones": 4719,
  "parametros": {
   "PISTA|1|2|0|documentado": {
-   "alpha": 1.0,
+   "alpha": 2.0,
    "beta": 1.0,
-   "n": 0
+   "n": 1
   },
   "PISTA|1|2|0|sin_comprobar": {
    "alpha": 1.0,
@@ -24,9 +24,9 @@
    "n": 0
   },
   "PISTA|1|2|0|ninguno": {
-   "alpha": 8.0,
+   "alpha": 6.0,
    "beta": 6.0,
-   "n": 12
+   "n": 10
   },
   "PISTA|1|2|1|documentado": {
    "alpha": 1.0,
@@ -44,14 +44,14 @@
    "n": 0
   },
   "PISTA|1|4|0|documentado": {
-   "alpha": 23.0,
+   "alpha": 24.0,
    "beta": 4.0,
-   "n": 25
+   "n": 26
   },
   "PISTA|1|4|0|sin_comprobar": {
-   "alpha": 33.0,
-   "beta": 18.0,
-   "n": 49
+   "alpha": 23.0,
+   "beta": 15.0,
+   "n": 36
   },
   "PISTA|1|4|0|ninguno": {
    "alpha": 1.0,
@@ -74,14 +74,14 @@
    "n": 0
   },
   "PISTA|1|8|0|documentado": {
-   "alpha": 36.0,
-   "beta": 21.0,
-   "n": 55
+   "alpha": 57.0,
+   "beta": 15.0,
+   "n": 70
   },
   "PISTA|1|8|0|sin_comprobar": {
-   "alpha": 30.0,
-   "beta": 27.0,
-   "n": 55
+   "alpha": 19.0,
+   "beta": 17.0,
+   "n": 34
   },
   "PISTA|1|8|0|ninguno": {
    "alpha": 1.0,
@@ -94,9 +94,9 @@
    "n": 0
   },
   "PISTA|1|8|1|sin_comprobar": {
-   "alpha": 2.0,
+   "alpha": 1.0,
    "beta": 1.0,
-   "n": 1
+   "n": 0
   },
   "PISTA|1|8|1|ninguno": {
    "alpha": 1.0,
@@ -104,19 +104,19 @@
    "n": 0
   },
   "PISTA|2+|2|0|documentado": {
-   "alpha": 236.0,
-   "beta": 33.0,
-   "n": 267
+   "alpha": 230.0,
+   "beta": 38.0,
+   "n": 266
   },
   "PISTA|2+|2|0|sin_comprobar": {
-   "alpha": 383.0,
+   "alpha": 380.0,
    "beta": 178.0,
-   "n": 559
+   "n": 556
   },
   "PISTA|2+|2|0|ninguno": {
-   "alpha": 120.0,
-   "beta": 147.0,
-   "n": 265
+   "alpha": 131.0,
+   "beta": 127.0,
+   "n": 256
   },
   "PISTA|2+|2|1|documentado": {
    "alpha": 1.0,
@@ -124,9 +124,9 @@
    "n": 0
   },
   "PISTA|2+|2|1|sin_comprobar": {
-   "alpha": 1.0,
+   "alpha": 2.0,
    "beta": 1.0,
-   "n": 0
+   "n": 1
   },
   "PISTA|2+|2|1|ninguno": {
    "alpha": 1.0,
@@ -134,29 +134,29 @@
    "n": 0
   },
   "PISTA|2+|4|0|documentado": {
-   "alpha": 514.0,
-   "beta": 106.0,
-   "n": 618
+   "alpha": 456.0,
+   "beta": 146.0,
+   "n": 600
   },
   "PISTA|2+|4|0|sin_comprobar": {
-   "alpha": 368.0,
-   "beta": 266.0,
-   "n": 632
+   "alpha": 411.0,
+   "beta": 260.0,
+   "n": 669
   },
   "PISTA|2+|4|0|ninguno": {
-   "alpha": 9.0,
-   "beta": 7.0,
-   "n": 14
+   "alpha": 8.0,
+   "beta": 9.0,
+   "n": 15
   },
   "PISTA|2+|4|1|documentado": {
-   "alpha": 3.0,
-   "beta": 1.0,
+   "alpha": 2.0,
+   "beta": 2.0,
    "n": 2
   },
   "PISTA|2+|4|1|sin_comprobar": {
-   "alpha": 3.0,
+   "alpha": 4.0,
    "beta": 4.0,
-   "n": 5
+   "n": 6
   },
   "PISTA|2+|4|1|ninguno": {
    "alpha": 1.0,
@@ -164,14 +164,14 @@
    "n": 0
   },
   "PISTA|2+|8|0|documentado": {
-   "alpha": 631.0,
+   "alpha": 602.0,
    "beta": 259.0,
-   "n": 888
+   "n": 859
   },
   "PISTA|2+|8|0|sin_comprobar": {
-   "alpha": 196.0,
-   "beta": 202.0,
-   "n": 396
+   "alpha": 234.0,
+   "beta": 213.0,
+   "n": 445
   },
   "PISTA|2+|8|0|ninguno": {
    "alpha": 1.0,
@@ -179,14 +179,14 @@
    "n": 0
   },
   "PISTA|2+|8|1|documentado": {
-   "alpha": 1.0,
-   "beta": 4.0,
+   "alpha": 2.0,
+   "beta": 3.0,
    "n": 3
   },
   "PISTA|2+|8|1|sin_comprobar": {
-   "alpha": 1.0,
-   "beta": 4.0,
-   "n": 3
+   "alpha": 4.0,
+   "beta": 6.0,
+   "n": 8
   },
   "PISTA|2+|8|1|ninguno": {
    "alpha": 1.0,
@@ -195,12 +195,12 @@
   },
   "RASGO|1|2|0|documentado": {
    "alpha": 144.0,
-   "beta": 78.0,
-   "n": 220
+   "beta": 77.0,
+   "n": 219
   },
   "RASGO|1|2|0|sin_comprobar": {
-   "alpha": 92.0,
-   "beta": 91.0,
+   "alpha": 93.0,
+   "beta": 90.0,
    "n": 181
   },
   "RASGO|1|2|0|ninguno": {
@@ -209,9 +209,9 @@
    "n": 0
   },
   "RASGO|1|2|1|documentado": {
-   "alpha": 10.0,
-   "beta": 7.0,
-   "n": 15
+   "alpha": 15.0,
+   "beta": 6.0,
+   "n": 19
   },
   "RASGO|1|2|1|sin_comprobar": {
    "alpha": 1.0,
@@ -224,14 +224,14 @@
    "n": 0
   },
   "RASGO|1|4|0|documentado": {
-   "alpha": 37.0,
-   "beta": 28.0,
-   "n": 63
+   "alpha": 60.0,
+   "beta": 43.0,
+   "n": 101
   },
   "RASGO|1|4|0|sin_comprobar": {
-   "alpha": 23.0,
-   "beta": 64.0,
-   "n": 85
+   "alpha": 34.0,
+   "beta": 62.0,
+   "n": 94
   },
   "RASGO|1|4|0|ninguno": {
    "alpha": 1.0,
@@ -239,9 +239,9 @@
    "n": 0
   },
   "RASGO|1|4|1|documentado": {
-   "alpha": 11.0,
+   "alpha": 7.0,
    "beta": 8.0,
-   "n": 17
+   "n": 13
   },
   "RASGO|1|4|1|sin_comprobar": {
    "alpha": 1.0,
@@ -254,14 +254,14 @@
    "n": 0
   },
   "RASGO|1|8|0|documentado": {
-   "alpha": 44.0,
-   "beta": 73.0,
-   "n": 115
+   "alpha": 40.0,
+   "beta": 67.0,
+   "n": 105
   },
   "RASGO|1|8|0|sin_comprobar": {
-   "alpha": 28.0,
-   "beta": 64.0,
-   "n": 90
+   "alpha": 21.0,
+   "beta": 60.0,
+   "n": 79
   },
   "RASGO|1|8|0|ninguno": {
    "alpha": 1.0,
@@ -269,14 +269,14 @@
    "n": 0
   },
   "RASGO|1|8|1|documentado": {
-   "alpha": 14.0,
-   "beta": 19.0,
-   "n": 31
+   "alpha": 11.0,
+   "beta": 18.0,
+   "n": 27
   },
   "RASGO|1|8|1|sin_comprobar": {
-   "alpha": 2.0,
+   "alpha": 1.0,
    "beta": 5.0,
-   "n": 5
+   "n": 4
   },
   "RASGO|1|8|1|ninguno": {
    "alpha": 1.0,
@@ -284,9 +284,9 @@
    "n": 0
   },
   "RASGO|2+|2|0|documentado": {
-   "alpha": 1.0,
-   "beta": 1.0,
-   "n": 0
+   "alpha": 3.0,
+   "beta": 2.0,
+   "n": 3
   },
   "RASGO|2+|2|0|sin_comprobar": {
    "alpha": 1.0,
@@ -315,8 +315,8 @@
   },
   "RASGO|2+|4|0|documentado": {
    "alpha": 3.0,
-   "beta": 3.0,
-   "n": 4
+   "beta": 4.0,
+   "n": 5
   },
   "RASGO|2+|4|0|sin_comprobar": {
    "alpha": 1.0,
@@ -345,8 +345,8 @@
   },
   "RASGO|2+|8|0|documentado": {
    "alpha": 3.0,
-   "beta": 5.0,
-   "n": 6
+   "beta": 4.0,
+   "n": 5
   },
   "RASGO|2+|8|0|sin_comprobar": {
    "alpha": 1.0,
@@ -360,8 +360,8 @@
   },
   "RASGO|2+|8|1|documentado": {
    "alpha": 1.0,
-   "beta": 2.0,
-   "n": 1
+   "beta": 1.0,
+   "n": 0
   },
   "RASGO|2+|8|1|sin_comprobar": {
    "alpha": 1.0,
