@@ -54,7 +54,9 @@ def _llamadas_t(fuente: str) -> list[str]:
 def _pendientes_frontend() -> dict[str, str]:
     fuente = (RAIZ_PROYECTO / "frontend/src/i18n.ts").read_text("utf-8")
     bloque = fuente[fuente.index("TEXTOS_NUEVOS_PENDIENTES"):fuente.index("};", fuente.index("TEXTOS_NUEVOS_PENDIENTES"))]
-    pares = re.findall(r'"([^"]+)":\s*\n?\s*"([^"]+)"', bloque)
+    # Claves con comillas o sin ellas (Prettier quita las comillas a las que no las necesitan).
+    pares = re.findall(r'(?:"([^"]+)"|\b([A-Za-zÁÉÍÓÚáéíóúñÑ]+)):\s*\n?\s*"([^"]+)"', bloque)
+    pares = [(a or b, c) for a, b, c in pares]
     return dict(pares)
 
 

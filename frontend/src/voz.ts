@@ -117,11 +117,14 @@ export class GuiaVoz {
   ) {
     if (!ajustes.activa && contexto !== "prueba") return;
     this.parar();
-    // 1) Grabación completa del mensaje exacto (ElevenLabs). Nunca se unen audios: si
-    //    falta, el mensaje entero se lee con la voz alternativa. «Probar voz» siempre
-    //    prueba la voz alternativa elegida.
-    if (contexto !== "prueba" && ajustes.grabadas > 0 && (await this.hablarGrabada(vista, contexto, ajustes, textos)))
-      return;
+    // 1) Grabación completa del mensaje exacto (ElevenLabs). Nunca se unen audios.
+    //    «Probar voz» reproduce la grabación del mensaje que está en pantalla.
+    if (ajustes.grabadas > 0) {
+      const contextoGrabado = contexto === "modalidad" ? "modalidad" : "respuesta";
+      if (await this.hablarGrabada(vista, contextoGrabado, ajustes, textos)) return;
+    }
+    // Solo voz grabada: sin grabación para este mensaje, la guía no lo lee con otra voz.
+    if (SOLO_VOZ_GRABADA) return;
     const voz = voces.find((v) => v.id === ajustes.vozId && v.disponible);
     if (!voz) return;
     const turno = this.turno;
@@ -212,6 +215,12 @@ export class GuiaVoz {
     } catch (e) {
       if ((e as Error).name === "AbortError" || turno !== this.turno) return true;
       this.pedido = null;
+      // Solo voz grabada: un fallo de red se avisa (no hay otra voz con la que leer).
+      if (SOLO_VOZ_GRABADA) {
+        this.parar();
+        this.alError(textos.error);
+        return true;
+      }
       return false;
     }
   }
@@ -235,6 +244,16 @@ export class GuiaVoz {
   }
 }
 
+/** Idiomas con voz habilitada (decisión del propietario, 2026-11-14): por ahora solo español.
+ *  En pt-BR la voz queda bloqueada; se añadirán más idiomas después. */
+export const IDIOMAS_CON_VOZ: readonly Idioma[] = ["es"];
+
+/** La guía usa solo la voz grabada de Zoonauta (ElevenLabs, assets/voz/grabada). Piper, Kokoro y
+ *  las voces del navegador quedan sin ofrecer por decisión del propietario (2026-11-14); su código
+ *  y los modelos se conservan para un uso futuro. */
+export const SOLO_VOZ_GRABADA = true;
+
 export function vocesDisponibles(catalogo: VozCatalogo[], idioma: Idioma): OpcionVoz[] {
+  if (SOLO_VOZ_GRABADA || !IDIOMAS_CON_VOZ.includes(idioma)) return [];
   return [...catalogo, ...vocesNavegador()].filter((v) => v.idioma === idioma);
 }

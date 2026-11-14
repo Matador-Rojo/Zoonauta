@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#04141f">
   <title>Zoonauta · Animales y hábitats</title>
   <meta name="description" content="Juego educativo para descubrir dónde viven 288 animales en 48 hábitats, con pictogramas, pistas y una guía con voz.">
   <link rel="icon" href="/zoonauta-logo.svg" type="image/svg+xml">
-  <!-- portada:inicio — primer paisaje y su capa de hojas (LCP en móvil): el escáner de
-       precarga no los ve hasta que React pinta. El servidor quita este bloque fuera de la portada. -->
-  <link rel="preload" as="image" fetchpriority="high" href="/fondos/catalogo/H01.webp"
-    imagesrcset="/fondos/portada/H01-960.webp 960w, /fondos/catalogo/H01.webp 1920w" imagesizes="max(100vw, 177.78vh)">
-  <link rel="preload" as="image" href="/fondos/capas/H01-hojas.webp">
+  <!-- portada:inicio — fondo «Bosque de luz» (LCP): el escáner de precarga no lo ve hasta
+       que React pinta. El servidor quita este bloque fuera de la portada. -->
+  <link rel="preload" as="image" fetchpriority="high" href="/v6/assets/bosque-de-luz-1672-CyC2sW7T.webp"
+    imagesrcset="/v6/assets/bosque-de-luz-960-pfcgumK0.webp 960w, /v6/assets/bosque-de-luz-1672-CyC2sW7T.webp 1672w" imagesizes="max(100vw, 177.7vh)">
   <!-- portada:fin -->
-  <script type="module" crossorigin src="/v6/assets/index-BEpgwT6K.js"></script>
-  <link rel="stylesheet" crossorigin href="/v6/assets/index-DlGuDLLH.css">
+  <script type="module" crossorigin src="/v6/assets/index-CPT64jUr.js"></script>
+  <link rel="stylesheet" crossorigin href="/v6/assets/index-D5cZ6M7q.css">
 </head>
 <body>
   <div id="raiz"></div>

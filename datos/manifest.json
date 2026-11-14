@@ -5216,8 +5216,8 @@
     },
     {
       "ruta": "tests/verificar_portada.cjs",
-      "bytes": 11960,
-      "sha256": "40a65df9de7aa18234c7cba252be038e240bcd92b0592a215d35fd5fcdd2d4f6"
+      "bytes": 8368,
+      "sha256": "cdad5d1630564d4f1dde0b99856904b8b0c848e66721c463ae223fbb5ba5ebf1"
     },
     {
       "ruta": "frontend/.gitignore",
@@ -5226,8 +5226,8 @@
     },
     {
       "ruta": "frontend/index.html",
-      "bytes": 1163,
-      "sha256": "c85b29077b7409ad4681ed51ae6efc5f38fbce27c10aa7fd87f8ba069db23b1b"
+      "bytes": 1148,
+      "sha256": "8d48b30c19f43ff756d68710a47e545e8fd7eec692ce382a4ecf0282a16736b2"
     },
     {
       "ruta": "frontend/package-lock.json",
@@ -5241,8 +5241,8 @@
     },
     {
       "ruta": "frontend/src/App.tsx",
-      "bytes": 13611,
-      "sha256": "0552511d7d6cfc40cbca2f6fdaf97c87506e31199c7a5edec14fce5e27e5a40f"
+      "bytes": 13025,
+      "sha256": "7a961baa99bdbd5a29d2c7774f043cde838fcafbcafac1c44a6deda0a9924a4b"
     },
     {
       "ruta": "frontend/src/api/cliente.ts",
@@ -5256,18 +5256,18 @@
     },
     {
       "ruta": "frontend/src/componentes/Catalogo.tsx",
-      "bytes": 4670,
-      "sha256": "349e6dd1d48b039c1a7c728ba19e3251a900ed62fceaad1e414ada76298cf73e"
+      "bytes": 4984,
+      "sha256": "e609fd89b00025619440ecf810765ea45fe636b01877b1cbca03df25c59bd79d"
     },
     {
       "ruta": "frontend/src/componentes/Cierre.tsx",
-      "bytes": 2088,
-      "sha256": "c0708b2e871f2874deda424c5f8717ccecfef9882f99c6c404620aba1bdfb7f0"
+      "bytes": 2297,
+      "sha256": "8d1f1190ed10a4325246c255bd969b7f3dbb01e0249a26849f819fbae4d4809d"
     },
     {
       "ruta": "frontend/src/componentes/Encabezado.tsx",
-      "bytes": 879,
-      "sha256": "690874711adfb26d1ba0c857119fb69b001b31b3a574eb2bb181745abd4a3bb6"
+      "bytes": 997,
+      "sha256": "cbe0e4af85facce7a5226c0bfb668a5a85b5678f5a7e930d2d33725abbd06363"
     },
     {
       "ruta": "frontend/src/componentes/Icono.tsx",
@@ -5281,48 +5281,48 @@
     },
     {
       "ruta": "frontend/src/componentes/Portada.tsx",
-      "bytes": 14808,
-      "sha256": "eedcfb98b712d99cf9965617d4e729269684a4387181a92b6f2034cdcad75f2a"
+      "bytes": 4143,
+      "sha256": "75f44b39432c3f136e515bc752e5077e2ef102b6c45d99f5981cf259eee76f9a"
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
-      "bytes": 8109,
-      "sha256": "cbfd86202e5418d777535b0d0bc7abea169f074eb3ca8341a98947ab4be47fcf"
+      "bytes": 13599,
+      "sha256": "5aa2b97224a0cd0ddd2d6e26cd99518065f20638d97b69215d72a8bd674598c9"
     },
     {
       "ruta": "frontend/src/componentes/Reto.tsx",
-      "bytes": 6252,
-      "sha256": "e309f4ce972939a647f90fec83bfb3c297275bf0d679fa023f163e29b7afd26e"
+      "bytes": 6311,
+      "sha256": "ef2467d8b61e4fef2e5d989bd5485d7f9228e4a4f8f9d40236c0557b2a763012"
     },
     {
       "ruta": "frontend/src/estilos/base.css",
-      "bytes": 9630,
-      "sha256": "524ae6dc940a29d31e720bbf7691e560502e572bddf514a18cf4ddb3a5f7f2ff"
+      "bytes": 8700,
+      "sha256": "41e208cedf8c9e430d3a3e0cdc22e18c7169fc5ec76292af7dd28fd10e8466ef"
     },
     {
       "ruta": "frontend/src/estilos/pantallas.css",
-      "bytes": 10737,
-      "sha256": "5c17371acd40ae4794b063ae5f8cbe19de2fb81f1b8ea1fadb9e561dfae66400"
+      "bytes": 15318,
+      "sha256": "5d00d001139982cd7ef727bbda34d73f0dae78d0d6af5644aa1fbfe845fa45ad"
     },
     {
       "ruta": "frontend/src/estilos/portada.css",
-      "bytes": 14290,
-      "sha256": "7ee821fe0515bfacf4137ed34032391a1b70da937e6d7854566168332fca6709"
+      "bytes": 6441,
+      "sha256": "016d76e82edc2f3e507b2c48c164af05848338ba1c159a4beead63efc45260ee"
     },
     {
       "ruta": "frontend/src/i18n.ts",
-      "bytes": 1771,
-      "sha256": "02b0ea18d28c1b981b4fc81608d9f78d1f9c0d0d060e967f433eb002f284837f"
+      "bytes": 2269,
+      "sha256": "0196409a907bc864d24b0254d8f8aa54c40a939b0b55c1dde69a08cdd4e52ac9"
     },
     {
       "ruta": "frontend/src/main.tsx",
-      "bytes": 404,
-      "sha256": "7f4e0620e4340864305ff7cb2e72413659048109cf1f137bd7a10411250a3296"
+      "bytes": 441,
+      "sha256": "997158c3be9818f9b1b10c0079736bac4924af7849e90e09f272dbe75a5226d2"
     },
     {
       "ruta": "frontend/src/voz.ts",
-      "bytes": 7689,
-      "sha256": "e9ead637607db6ad57c531926beb2936d6f53075cfecc852aad3e39e0586a840"
+      "bytes": 8639,
+      "sha256": "efa025664810b43a206acefc6b1f1f142ad9f60ae471cb7862f7f6b87a428886"
     },
     {
       "ruta": "frontend/tsconfig.json",
@@ -5336,8 +5336,8 @@
     },
     {
       "ruta": "tests/verificar_v6.cjs",
-      "bytes": 11314,
-      "sha256": "35a08e605fb6a1ea7d981c92da2ce0f49dc47affd51a18b1ee5c429968c0164f"
+      "bytes": 9671,
+      "sha256": "94d0ca3bd943aa2d5f4eb4c0b1800e68f76b01143dcbc8af18130ce1be3a8919"
     },
     {
       "ruta": "tests/verificar_portada_5.cjs",
@@ -5386,8 +5386,8 @@
     },
     {
       "ruta": "codigo/interfaz/web6/index.html",
-      "bytes": 1265,
-      "sha256": "1290799b0ae20545a82fee65941348df2fccc498897ef5c0036db51ed2c041cd"
+      "bytes": 1268,
+      "sha256": "5a3cfa5bada80bde171459bac0d1e97f12b5621e0c99cb69a8cbee6d6ad8b55c"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -7681,8 +7681,8 @@
     },
     {
       "ruta": "tests/verificar_voz_v6.cjs",
-      "bytes": 8545,
-      "sha256": "f5cf489e52742d387e6cb047d214117a5668fc64268ac0e6a6a3054768c11710"
+      "bytes": 10130,
+      "sha256": "4c5c4cfef195e96ac0b2c174c99f19dc3c807c46374c96f36fb2fc47ffa963c7"
     },
     {
       "ruta": "assets/ilustraciones_ligeras/indice.json",
@@ -7961,8 +7961,8 @@
     },
     {
       "ruta": "tests/verificar_partidas_v6.cjs",
-      "bytes": 5530,
-      "sha256": "1dd7b5eed7203ceb2f4f1ea2164593c0d5988bab82be6906045e352ecc16c00e"
+      "bytes": 6496,
+      "sha256": "ad5aae7ffd59849c9d061b3242fcb3f7079a233d07c7e9b24b77a7c656e6f1c8"
     },
     {
       "ruta": "codigo/nucleo/hoja_revision_traducciones.py",
@@ -7976,8 +7976,8 @@
     },
     {
       "ruta": "codigo/nucleo/validar_textos_interfaz.py",
-      "bytes": 4952,
-      "sha256": "5ef3a882b954174f9c23536b558cd48210c29477dde02aacea83b7f826f1cf5c"
+      "bytes": 5137,
+      "sha256": "7005611d2931c500c70028a414c8709dfb6317533d958960a709151c13057748"
     },
     {
       "ruta": "tests/test_validacion_contenido.py",
@@ -8026,18 +8026,53 @@
     },
     {
       "ruta": "frontend/src/estilos/tema.css",
-      "bytes": 4692,
-      "sha256": "78832ce9fde2aa28bff3b5cc5d15390e2ac1e74a8f8eb157977350e908055eab"
+      "bytes": 6406,
+      "sha256": "75f2bf7b1f34a0d897e1ca541ae1dacce77596863cc97afc7d655ccdca2f4e98"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-BEpgwT6K.js",
-      "bytes": 253890,
-      "sha256": "114fbb99aaca4f57c0c6c413f9c678dd56320562335ef2f9a5668217490708a7"
+      "ruta": "assets/portada/bosque-de-luz-ciervo.png",
+      "bytes": 2876607,
+      "sha256": "45a030bd382a89df4fbc290beaf544e407cae9a9c2ae6cc2c166b9a80cd6c59a"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-DlGuDLLH.css",
-      "bytes": 28045,
-      "sha256": "6ab05d6a1e88c4454a4b25e632406e63a9de430aec2582f65c01718abf5c29b4"
+      "ruta": "codigo/interfaz/web6/assets/bosque-de-luz-1672-CyC2sW7T.webp",
+      "bytes": 351058,
+      "sha256": "7039e717677f94ae68d08ae88182cb06433d462ab536ddb5225583d2fce97801"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/bosque-de-luz-960-pfcgumK0.webp",
+      "bytes": 121024,
+      "sha256": "c79ab50c2e340c172ddd68157783855cf24c0ebedab6821418189850934f9f4d"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-CPT64jUr.js",
+      "bytes": 248758,
+      "sha256": "64de50770abb247690a3c9468e419ce1b20c1c58136b0b252f395499e4333c20"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-D5cZ6M7q.css",
+      "bytes": 34229,
+      "sha256": "4a61151770494d50c52f62b362a7eaeb204c42142d2bd49ea32b6dd1f418944c"
+    },
+    {
+      "ruta": "frontend/src/componentes/dialogos.ts",
+      "bytes": 1348,
+      "sha256": "8e1d8a6c6fa73d4cf90526b906ead013e4a3dca9fa47187f3b99057c19190a3b"
+    },
+    {
+      "ruta": "frontend/src/estilos/preferencias.css",
+      "bytes": 11774,
+      "sha256": "70b866927a77c9d65a162f7915e6eafb07eaa742553862bbceb082954382d919"
+    },
+    {
+      "ruta": "frontend/src/recursos/bosque-de-luz-1672.webp",
+      "bytes": 351058,
+      "sha256": "7039e717677f94ae68d08ae88182cb06433d462ab536ddb5225583d2fce97801"
+    },
+    {
+      "ruta": "frontend/src/recursos/bosque-de-luz-960.webp",
+      "bytes": 121024,
+      "sha256": "c79ab50c2e340c172ddd68157783855cf24c0ebedab6821418189850934f9f4d"
     }
   ],
   "nombre_proyecto": "Zoonauta",

@@ -46,7 +46,6 @@ export function App() {
   const [errorCarga, setErrorCarga] = useState(false);
   const [ocupado, setOcupado] = useState(false);
   const [avisos, setAvisos] = useState<Aviso[]>([]);
-  const [dialogoAbierto, setDialogoAbierto] = useState(false);
   const [versionVoces, setVersionVoces] = useState(0);
   const [prefs, setPrefs] = useState<ValoresPreferencias>(() => ({
     retos: "8",
@@ -232,10 +231,7 @@ export function App() {
     [guia, notificar, t],
   );
 
-  const abrirPreferencias = () => {
-    preferencias.current?.showModal();
-    setDialogoAbierto(true);
-  };
+  const abrirPreferencias = () => preferencias.current?.showModal();
 
   if (errorCarga)
     return (
@@ -258,14 +254,8 @@ export function App() {
     pantalla = (
       <Portada
         vista={vista}
-        movimientoReducido={movimientoReducido}
-        dialogoAbierto={dialogoAbierto}
-        onAbrirModalidad={() => {
-          setDialogoAbierto(true);
-          hablar(vista, "modalidad");
-        }}
+        onAbrirModalidad={() => hablar(vista, "modalidad")}
         onCerrarModalidad={() => {
-          setDialogoAbierto(false);
           if (vistaRef.current?.fase === "INICIO") guia.parar();
         }}
         onComenzar={(modalidad: Modalidad) => void accion("iniciar", { modalidad })}
@@ -297,7 +287,6 @@ export function App() {
             Zoonauta<span className="marca-subtitulo">{t("Animales y hábitats")}</span>
           </span>
         </a>
-        {enInicio && <span className="cabecera-nota">{t("Exploración con pictogramas")}</span>}
         <button type="button" className="boton-texto" aria-haspopup="dialog" onClick={abrirPreferencias}>
           <Icono nombre="ajustes" />
           <span>{t("Preferencias")}</span>
@@ -306,14 +295,6 @@ export function App() {
       <main id="juego" tabIndex={-1} aria-busy={ocupado} data-fase={vista.fase}>
         {pantalla}
       </main>
-      {enInicio && (
-        <footer className="creditos">
-          <span>
-            Zoonauta <span className="version">6.0 · prototipo</span>
-          </span>
-          <p>{t("Ilustraciones de animales, pictogramas y paisajes originales generados con IA.")}</p>
-        </footer>
-      )}
       <div className="avisos" role="region" aria-label={t("Notificaciones")}>
         {avisos.map((a) => (
           <article key={a.id} className="aviso" role="alert" aria-atomic="true">
@@ -334,6 +315,7 @@ export function App() {
         idioma={idioma}
         enInicio={enInicio}
         voces={voces}
+        grabadas={grabadas[idioma] ?? 0}
         sistemaReduce={sistemaReduce}
         valores={{ ...prefs, vozId }}
         onCambio={(cambios) => {
@@ -344,13 +326,19 @@ export function App() {
         }}
         onIdioma={(nuevo) => void cambiarIdioma(nuevo)}
         onProbarVoz={() =>
-          void guia.hablar(vista, voces, { activa: true, vozId, velocidad: prefs.velocidad, grabadas: 0 }, "prueba", {
-            prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
-            modalidad: "",
-            error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
-          })
+          void guia.hablar(
+            vista,
+            voces,
+            { activa: true, vozId, velocidad: prefs.velocidad, grabadas: grabadas[vista.idioma] ?? 0 },
+            "prueba",
+            {
+              prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
+              modalidad: "",
+              error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
+            },
+          )
         }
-        onCerrar={() => setDialogoAbierto(Boolean(document.querySelector("dialog[open]")))}
+        onCerrar={() => undefined}
       />
     </ContextoIdioma.Provider>
   );

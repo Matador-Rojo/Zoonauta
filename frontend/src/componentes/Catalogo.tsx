@@ -50,7 +50,12 @@ export function Catalogo({
 
   return (
     <section className="pantalla catalogo-pantalla" aria-labelledby="titulo-pantalla">
-      <Encabezado vista={vista} titulo="Elige un animal" subtitulo="Toca el animal con el que quieres jugar." />
+      <Encabezado
+        vista={vista}
+        etiqueta="Explora los animales"
+        titulo="Elige un animal"
+        subtitulo="Toca el animal con el que quieres jugar."
+      />
       <div className="catalogo-barra">
         <p className="catalogo-total" aria-live="polite" aria-atomic="true">
           {totalTexto}
@@ -82,7 +87,7 @@ export function Catalogo({
             role="group"
             aria-label={t("Animales de esta página")}
           >
-            {visibles.map((a) => (
+            {visibles.map((a, i) => (
               <button
                 key={a.id}
                 type="button"
@@ -90,10 +95,14 @@ export function Catalogo({
                 data-animal={a.id}
                 onClick={() => onElegir(a.id)}
               >
+                <span className="tarjeta-numero" aria-hidden="true">
+                  {String(paginaActual * POR_PAGINA + i + 1).padStart(2, "0")}
+                </span>
                 <span className="tarjeta-imagen">
                   <Pictograma id={a.pictograma_id} datos={vista.pictogramas[a.pictograma_id]} />
                 </span>
                 <span className="tarjeta-nombre">{a.nombre}</span>
+                <Icono nombre="flecha" className="tarjeta-flecha" />
               </button>
             ))}
           </div>

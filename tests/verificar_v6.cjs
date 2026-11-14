@@ -1,6 +1,6 @@
-/* Recorrido del prototipo 6.0 (React + TS + Vite servido por Python en /v6/).
-   Portada de 8 paisajes → modalidad → catálogo → reto → Pista → Repetir → recarga.
-   Sin descargar voces: la voz se desactiva para no depender de modelos. */
+/* Recorrido de la 6.0 (React + TS + Vite servido por Python en /v6/).
+   Portada «Bosque de luz» → modalidad → catálogo → reto → Pista → Repetir → recarga → pausa.
+   La voz se desactiva para no reproducir audio durante la prueba. */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -8,7 +8,6 @@ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/v6/';
 const out = path.resolve(process.env.INTERFAZ_SALIDA || 'output/v6/navegador');
 fs.mkdirSync(out, {recursive: true});
-const ORDEN = ['H01', 'H09', 'H17', 'H22', 'H20', 'H37', 'H21', 'H25'];
 const casos = [];
 async function axe(page, nombre) {
   if (!process.env.AXE_SOURCE) return [];
@@ -36,46 +35,20 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
     await page.goto(base);
     await page.locator('#titulo-pantalla').waitFor();
 
-    await caso('portada con exactamente ocho paisajes en orden', async () => {
-      const vistos = [];
-      for (let i = 0; i < 8; i++) {
-        vistos.push(await page.locator('.portada-capa[data-estado="actual"]').getAttribute('data-habitat'));
-        assert.equal(await page.locator('.carrusel-contador').textContent(), `${i + 1} / 8`);
-        await page.getByRole('button', {name: 'Siguiente paisaje'}).click();
-      }
-      assert.deepEqual(vistos, ORDEN);
-      assert.equal(await page.locator('.portada-capa[data-estado="actual"]').getAttribute('data-habitat'), 'H01');
-      // Solo se montan actual, anterior y siguiente: nunca los ocho a la vez.
-      assert.ok(await page.locator('.portada-capa').count() <= 3);
-      await page.waitForTimeout(1600); // fin del fundido para la captura
+    await caso('portada «Bosque de luz» sin desplazamiento', async () => {
+      await page.locator('.portada-paisaje').evaluate(i => i.decode());
+      assert.equal(await page.evaluate(() => document.documentElement.scrollHeight - innerHeight), 0);
       await page.screenshot({path: path.join(out, '01_portada.png')});
     });
 
-    await caso('anuncio solo en cambios pedidos y pausa sin aria-pressed', async () => {
-      assert.match(await page.locator('.carrusel [role="status"]').textContent(), /Paisaje \d de 8/);
-      const pausa = page.getByRole('button', {name: 'Pausar paisajes'});
-      assert.equal(await pausa.getAttribute('aria-pressed'), null);
-      await pausa.click();
-      await page.getByRole('button', {name: 'Reanudar paisajes'}).click();
-    });
-
-    await caso('reducir movimiento: fotos estáticas, sin pausa automática ni animaciones', async () => {
+    await caso('reducir movimiento desde Preferencias: sin animaciones', async () => {
       await page.getByRole('button', {name: 'Preferencias'}).click();
       await page.getByRole('switch', {name: /Reducir movimiento/}).check();
       await page.getByRole('switch', {name: /Una guía con voz/}).uncheck();
       await page.keyboard.press('Escape');
       assert.equal(await page.evaluate(() => document.documentElement.dataset.movimiento), 'reducido');
-      assert.equal(await page.getByRole('button', {name: /paisajes$/}).count(), 0);
-      // Los cambios de color de los botones se mantienen (no son movimiento).
-      const animaciones = () => page.evaluate(() => document.getAnimations()
-        .filter(a => !/(color|box-shadow)$/.test(a.transitionProperty || ''))
-        .map(a => `${a.constructor.name}:${a.animationName || a.transitionProperty}:${a.effect?.target?.className}`));
-      // Los fundidos iniciados antes de activar la opción duran como máximo 1,4 s.
-      await page.waitForTimeout(1500);
-      assert.deepEqual(await animaciones(), []);
-      await page.getByRole('button', {name: 'Siguiente paisaje'}).click();
-      assert.deepEqual(await animaciones(), [], 'el cambio manual es instantáneo');
-      assert.equal(await page.locator('.carrusel-contador').textContent(), '2 / 8');
+      await page.waitForTimeout(800);
+      assert.equal(await page.evaluate(() => document.getAnimations().filter(a => a.animationName).length), 0);
     });
 
     await caso('selector de modalidad nativo con foco inicial y Esc', async () => {
@@ -169,9 +142,11 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       await page.locator('.reto-pantalla').waitFor();
     });
 
-    await caso('móvil sin desplazamiento horizontal', async () => {
+    await caso('móvil sin desplazamiento vertical ni horizontal', async () => {
       await page.setViewportSize({width: 375, height: 812});
+      await page.waitForTimeout(300);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      assert.ok(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight));
       await page.screenshot({path: path.join(out, '04_reto_movil.png'), fullPage: true});
     });
 
