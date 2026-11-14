@@ -1,7 +1,7 @@
 import type { TipoAccion, Vista } from "../api/tipos";
 import { useT } from "../i18n";
 import { Pictograma } from "./Pictograma";
-import { Controles } from "./Reto";
+import { Controles, TiraPictogramas } from "./Reto";
 
 // Pausa y cierre reutilizan las ilustraciones existentes del robot.
 export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: TipoAccion) => void }) {
@@ -20,19 +20,11 @@ export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: Tip
         <figcaption>{t(pausa ? "A tu ritmo" : "Gracias por jugar")}</figcaption>
       </figure>
       <div className="cierre-contenido">
-        <p className="etiqueta">{t("Tu expedición")}</p>
         <h1 id="titulo-pantalla" tabIndex={-1}>
           {t(titulo)}
         </h1>
         <p className="introduccion">{t(vista.respuesta.texto_apoyo)}</p>
-        <div className="secuencia">
-          {vista.respuesta.pictogramas.map((id, i) => (
-            <figure key={`${i}-${id}`} className="simbolo">
-              <Pictograma id={id} datos={vista.pictogramas[id]} />
-              <figcaption>{vista.pictogramas[id]?.etiqueta}</figcaption>
-            </figure>
-          ))}
-        </div>
+        <TiraPictogramas ids={vista.respuesta.pictogramas} vista={vista} />
         <div className="cierre-resumen">
           <strong>
             {completados} / {total}

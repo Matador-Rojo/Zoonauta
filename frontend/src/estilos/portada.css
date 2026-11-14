@@ -92,8 +92,10 @@
   letter-spacing: -0.02em;
 }
 .portada h1 em {
+  /* Segunda línea del título: misma tinta, sin acento de color (evita el «tell»
+     de resaltar una sola frase). */
+  display: block;
   font-style: normal;
-  color: var(--ambar);
 }
 .portada .introduccion {
   font-size: clamp(1.1rem, 2vw, 1.35rem);

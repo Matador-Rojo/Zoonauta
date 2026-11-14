@@ -1,7 +1,7 @@
 // Lectura en voz alta. Porta la lógica de 5.0 (app.js): una sola lectura a la vez,
 // cancelación al cambiar de mensaje o pausar, voces locales (Piper/Kokoro vía
 // /api/voz) y voces compatibles del navegador (Microsoft/Google, es-419 y pt-BR).
-import { cancelarVoz, pedirVoz } from "./api/cliente";
+import { cancelarVoz, pedirGrabacion, pedirVoz } from "./api/cliente";
 import type { Idioma, Vista, VozCatalogo } from "./api/tipos";
 
 export interface OpcionVoz extends Omit<VozCatalogo, "motor"> {
@@ -71,6 +71,8 @@ export interface AjustesVoz {
   activa: boolean;
   vozId: string;
   velocidad: number;
+  /** Mensajes con grabación disponible en este idioma (0 = no se piden). */
+  grabadas: number;
 }
 
 export type ContextoLectura = "respuesta" | "modalidad" | "prueba";
@@ -115,6 +117,11 @@ export class GuiaVoz {
   ) {
     if (!ajustes.activa && contexto !== "prueba") return;
     this.parar();
+    // 1) Grabación completa del mensaje exacto (ElevenLabs). Nunca se unen audios: si
+    //    falta, el mensaje entero se lee con la voz alternativa. «Probar voz» siempre
+    //    prueba la voz alternativa elegida.
+    if (contexto !== "prueba" && ajustes.grabadas > 0 && (await this.hablarGrabada(vista, contexto, ajustes, textos)))
+      return;
     const voz = voces.find((v) => v.id === ajustes.vozId && v.disponible);
     if (!voz) return;
     const turno = this.turno;
@@ -166,27 +173,64 @@ export class GuiaVoz {
       const blob = await r.blob();
       if (turno !== this.turno) return;
       this.pedido = null;
-      this.audioURL = URL.createObjectURL(blob);
-      const audio = new Audio(this.audioURL);
-      this.audio = audio;
-      audio.playbackRate = ajustes.velocidad;
-      audio.preservesPitch = true;
-      audio.onended = () => {
-        if (turno === this.turno) this.parar();
-      };
-      audio.onerror = () => {
-        if (turno === this.turno) {
-          this.parar();
-          this.alError(textos.error);
-        }
-      };
-      await audio.play();
+      await this.reproducir(blob, turno, ajustes.velocidad, textos.error);
     } catch (e) {
       if ((e as Error).name !== "AbortError" && turno === this.turno) {
         this.parar();
         this.alError((e as Error).message);
       }
     }
+  }
+
+  /** Devuelve true si la lectura quedó a cargo de la grabación (o se canceló entretanto). */
+  private async hablarGrabada(
+    vista: Vista,
+    contexto: ContextoLectura,
+    ajustes: AjustesVoz,
+    textos: { error: string },
+  ): Promise<boolean> {
+    const turno = this.turno;
+    const control = new AbortController();
+    this.pedido = control;
+    try {
+      const r = await pedirGrabacion(
+        {
+          idioma: vista.idioma,
+          revision: vista.revision,
+          sesion_id: vista.sesion_id,
+          reto_id: vista.reto_id,
+          contexto: contexto === "modalidad" ? "modalidad" : "respuesta",
+        },
+        control.signal,
+      );
+      if (turno !== this.turno) return true;
+      this.pedido = null;
+      if (!r.ok) return false;
+      await this.reproducir(await r.blob(), turno, ajustes.velocidad, textos.error);
+      return true;
+    } catch (e) {
+      if ((e as Error).name === "AbortError" || turno !== this.turno) return true;
+      this.pedido = null;
+      return false;
+    }
+  }
+
+  private async reproducir(blob: Blob, turno: number, velocidad: number, error: string) {
+    this.audioURL = URL.createObjectURL(blob);
+    const audio = new Audio(this.audioURL);
+    this.audio = audio;
+    audio.playbackRate = velocidad;
+    audio.preservesPitch = true;
+    audio.onended = () => {
+      if (turno === this.turno) this.parar();
+    };
+    audio.onerror = () => {
+      if (turno === this.turno) {
+        this.parar();
+        this.alError(error);
+      }
+    };
+    await audio.play();
   }
 }
 

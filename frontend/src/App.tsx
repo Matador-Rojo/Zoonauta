@@ -42,6 +42,7 @@ export function App() {
   const [vista, setVista] = useState<Vista | null>(null);
   const [diccionarios, setDiccionarios] = useState<Diccionarios>({ es: {}, "pt-BR": {} });
   const [catalogoVoces, setCatalogoVoces] = useState<VozCatalogo[]>([]);
+  const [grabadas, setGrabadas] = useState<Partial<Record<Idioma, number>>>({});
   const [errorCarga, setErrorCarga] = useState(false);
   const [ocupado, setOcupado] = useState(false);
   const [avisos, setAvisos] = useState<Aviso[]>([]);
@@ -70,11 +71,21 @@ export function App() {
   const traductor = useMemo(() => crearTraductor(diccionarios, idioma), [diccionarios, idioma]);
   const { t } = traductor;
 
+  // Avisos persistentes: un error queda visible hasta que la persona lo cierra
+  // (Modern Web Guidance: persistent-toast-notifications). Se evita repetir el mismo.
   const notificar = useCallback((texto: string) => {
     const id = Date.now() + Math.random();
-    setAvisos((a) => [...a.slice(-2), { id, texto }]);
-    window.setTimeout(() => setAvisos((a) => a.filter((x) => x.id !== id)), 8000);
+    setAvisos((a) => (a.some((x) => x.texto === texto) ? a : [...a.slice(-2), { id, texto }]));
   }, []);
+  const cerrarAviso = (id: number) => {
+    const resto = avisos.filter((x) => x.id !== id);
+    setAvisos(resto);
+    // Si el foco estaba en el aviso cerrado, pasa al siguiente o vuelve al juego.
+    requestAnimationFrame(() => {
+      if (document.activeElement === document.body)
+        (document.querySelector<HTMLElement>(".aviso button") ?? document.getElementById("juego"))?.focus();
+    });
+  };
   const guia = useMemo(() => new GuiaVoz(notificar), [notificar]);
 
   // Carga inicial: la cookie de sesión permite recuperar la partida al recargar.
@@ -84,6 +95,7 @@ export function App() {
         setVista(v);
         setDiccionarios(d);
         setCatalogoVoces(c.voces);
+        setGrabadas(c.grabadas ?? {});
       })
       .catch(() => setErrorCarga(true));
   }, []);
@@ -150,13 +162,14 @@ export function App() {
 
   const hablar = useCallback(
     (v: Vista, contexto: ContextoLectura) => {
-      void guia.hablar(v, voces, { activa: prefs.vozActiva, vozId, velocidad: prefs.velocidad }, contexto, {
+      const ajustes = { activa: prefs.vozActiva, vozId, velocidad: prefs.velocidad, grabadas: grabadas[v.idioma] ?? 0 };
+      void guia.hablar(v, voces, ajustes, contexto, {
         prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
         modalidad: t("¿Quién elige el animal?"),
         error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
       });
     },
-    [guia, voces, prefs.vozActiva, prefs.velocidad, vozId, t],
+    [guia, voces, prefs.vozActiva, prefs.velocidad, vozId, grabadas, t],
   );
 
   const accion = useCallback(
@@ -302,13 +315,13 @@ export function App() {
       )}
       <div className="avisos" role="region" aria-label={t("Notificaciones")}>
         {avisos.map((a) => (
-          <article key={a.id} className="aviso" role="status" aria-atomic="true">
+          <article key={a.id} className="aviso" role="alert" aria-atomic="true">
             <p>{a.texto}</p>
             <button
               type="button"
               className="control-redondo"
               aria-label={t("Cerrar notificación")}
-              onClick={() => setAvisos((x) => x.filter((y) => y.id !== a.id))}
+              onClick={() => cerrarAviso(a.id)}
             >
               <Icono nombre="cerrar" />
             </button>
@@ -330,7 +343,7 @@ export function App() {
         }}
         onIdioma={(nuevo) => void cambiarIdioma(nuevo)}
         onProbarVoz={() =>
-          void guia.hablar(vista, voces, { activa: true, vozId, velocidad: prefs.velocidad }, "prueba", {
+          void guia.hablar(vista, voces, { activa: true, vozId, velocidad: prefs.velocidad, grabadas: 0 }, "prueba", {
             prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
             modalidad: "",
             error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),

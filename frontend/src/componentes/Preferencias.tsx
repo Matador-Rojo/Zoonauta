@@ -125,6 +125,7 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
             <input
               type="checkbox"
               role="switch"
+              {...{ switch: "" }}
               checked={valores.movimientoReducido || sistemaReduce}
               disabled={sistemaReduce}
               aria-describedby="nota-movimiento"
@@ -142,6 +143,7 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
             <input
               type="checkbox"
               role="switch"
+              {...{ switch: "" }}
               checked={valores.vozActiva}
               onChange={(e) => onCambio({ vozActiva: e.target.checked })}
             />
