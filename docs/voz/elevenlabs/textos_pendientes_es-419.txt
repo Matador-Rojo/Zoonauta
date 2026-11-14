@@ -1,0 +1,195 @@
+# Zoonauta 6.0 · mensajes nuevos pendientes de grabar en español (es-419)
+# Voz: Marcela (ElevenLabs), el mismo modelo y ajustes que las 350 grabaciones existentes.
+# Generado con: PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes
+# Formato: una línea con el nombre exacto del archivo MP3 y, en la siguiente, el texto
+# completo que se pronuncia (copiar tal cual). Las líneas que empiezan con # son comentarios.
+# Cada audio es el mensaje completo: no partir ni unir audios. Textos redactados con IA a partir
+# de pistas revisadas: necesitan revisión humana antes de gastar créditos.
+# Al terminar, copiar los MP3 en assets/voz/grabada/es-419/ (ver docs/voz/elevenlabs/README.md).
+# Total: 62 mensajes · 2669 caracteres
+
+AY_ATR_CALIDO.mp3
+Busca un lugar cálido.
+
+MSG_APOYO_AUTO__AY_ATR_CALIDO.mp3
+Vamos a buscar otro lugar. Busca un lugar cálido.
+
+AY_ATR_TEMPLADO.mp3
+Busca un lugar de clima templado.
+
+MSG_APOYO_AUTO__AY_ATR_TEMPLADO.mp3
+Vamos a buscar otro lugar. Busca un lugar de clima templado.
+
+AY_ATR_FRIO.mp3
+Busca un lugar frío.
+
+MSG_APOYO_AUTO__AY_ATR_FRIO.mp3
+Vamos a buscar otro lugar. Busca un lugar frío.
+
+AY_ATR_AGUA_DULCE.mp3
+Busca un lugar con agua dulce.
+
+MSG_APOYO_AUTO__AY_ATR_AGUA_DULCE.mp3
+Vamos a buscar otro lugar. Busca un lugar con agua dulce.
+
+AY_ATR_AGUA_SALADA.mp3
+Busca un lugar con agua salada.
+
+MSG_APOYO_AUTO__AY_ATR_AGUA_SALADA.mp3
+Vamos a buscar otro lugar. Busca un lugar con agua salada.
+
+AY_ATR_AGUA_SALOBRE.mp3
+Busca un lugar donde se mezclan agua dulce y salada.
+
+MSG_APOYO_AUTO__AY_ATR_AGUA_SALOBRE.mp3
+Vamos a buscar otro lugar. Busca un lugar donde se mezclan agua dulce y salada.
+
+AY_ATR_HUMEDO.mp3
+Busca un lugar húmedo.
+
+MSG_APOYO_AUTO__AY_ATR_HUMEDO.mp3
+Vamos a buscar otro lugar. Busca un lugar húmedo.
+
+AY_ATR_MUY_SECO.mp3
+Busca un lugar muy seco.
+
+MSG_APOYO_AUTO__AY_ATR_MUY_SECO.mp3
+Vamos a buscar otro lugar. Busca un lugar muy seco.
+
+AY_ATR_EPOCA_SECA.mp3
+Busca un lugar con una época seca.
+
+MSG_APOYO_AUTO__AY_ATR_EPOCA_SECA.mp3
+Vamos a buscar otro lugar. Busca un lugar con una época seca.
+
+AY_ATR_PASTO.mp3
+Busca un lugar con mucho pasto.
+
+MSG_APOYO_AUTO__AY_ATR_PASTO.mp3
+Vamos a buscar otro lugar. Busca un lugar con mucho pasto.
+
+AY_ATR_POCAS_PLANTAS.mp3
+Busca un lugar con pocas plantas.
+
+MSG_APOYO_AUTO__AY_ATR_POCAS_PLANTAS.mp3
+Vamos a buscar otro lugar. Busca un lugar con pocas plantas.
+
+AY_ATR_ARBOLES.mp3
+Busca un lugar con muchos árboles.
+
+MSG_APOYO_AUTO__AY_ATR_ARBOLES.mp3
+Vamos a buscar otro lugar. Busca un lugar con muchos árboles.
+
+AY_ATR_ABIERTO.mp3
+Busca un lugar abierto.
+
+MSG_APOYO_AUTO__AY_ATR_ABIERTO.mp3
+Vamos a buscar otro lugar. Busca un lugar abierto.
+
+AY_ATR_HOJAS_ANCHAS.mp3
+Busca árboles de hojas anchas.
+
+MSG_APOYO_AUTO__AY_ATR_HOJAS_ANCHAS.mp3
+Vamos a buscar otro lugar. Busca árboles de hojas anchas.
+
+AY_ATR_CONIFERAS.mp3
+Busca árboles con hojas en forma de aguja.
+
+MSG_APOYO_AUTO__AY_ATR_CONIFERAS.mp3
+Vamos a buscar otro lugar. Busca árboles con hojas en forma de aguja.
+
+AY_ATR_MONTANA.mp3
+Busca un lugar en la montaña.
+
+MSG_APOYO_AUTO__AY_ATR_MONTANA.mp3
+Vamos a buscar otro lugar. Busca un lugar en la montaña.
+
+AY_ATR_COSTA.mp3
+Busca un lugar cerca de la costa.
+
+MSG_APOYO_AUTO__AY_ATR_COSTA.mp3
+Vamos a buscar otro lugar. Busca un lugar cerca de la costa.
+
+AY_ATR_LEJOS_COSTA.mp3
+Busca un lugar lejos de la costa.
+
+MSG_APOYO_AUTO__AY_ATR_LEJOS_COSTA.mp3
+Vamos a buscar otro lugar. Busca un lugar lejos de la costa.
+
+AY_ATR_AGUA_CORRE.mp3
+Busca agua que corre.
+
+MSG_APOYO_AUTO__AY_ATR_AGUA_CORRE.mp3
+Vamos a buscar otro lugar. Busca agua que corre.
+
+AY_ATR_AGUA_QUIETA.mp3
+Busca agua que se mueve poco.
+
+MSG_APOYO_AUTO__AY_ATR_AGUA_QUIETA.mp3
+Vamos a buscar otro lugar. Busca agua que se mueve poco.
+
+AY_ATR_CORRIENTE_LENTA.mp3
+Busca agua que corre despacio.
+
+MSG_APOYO_AUTO__AY_ATR_CORRIENTE_LENTA.mp3
+Vamos a buscar otro lugar. Busca agua que corre despacio.
+
+AY_ATR_CORRIENTE_RAPIDA.mp3
+Busca agua que corre rápido.
+
+MSG_APOYO_AUTO__AY_ATR_CORRIENTE_RAPIDA.mp3
+Vamos a buscar otro lugar. Busca agua que corre rápido.
+
+AY_ATR_POCA_LUZ.mp3
+Busca un lugar con poca luz.
+
+MSG_APOYO_AUTO__AY_ATR_POCA_LUZ.mp3
+Vamos a buscar otro lugar. Busca un lugar con poca luz.
+
+AY_ATR_LUZ_SOL.mp3
+Busca agua con luz del sol.
+
+MSG_APOYO_AUTO__AY_ATR_LUZ_SOL.mp3
+Vamos a buscar otro lugar. Busca agua con luz del sol.
+
+AY_ATR_SUPERFICIE.mp3
+Busca la superficie del mar.
+
+MSG_APOYO_AUTO__AY_ATR_SUPERFICIE.mp3
+Vamos a buscar otro lugar. Busca la superficie del mar.
+
+AY_ATR_AGUA_PROFUNDA.mp3
+Busca agua muy profunda, por encima del fondo.
+
+MSG_APOYO_AUTO__AY_ATR_AGUA_PROFUNDA.mp3
+Vamos a buscar otro lugar. Busca agua muy profunda, por encima del fondo.
+
+AY_ATR_FONDO.mp3
+Busca el fondo del mar.
+
+MSG_APOYO_AUTO__AY_ATR_FONDO.mp3
+Vamos a buscar otro lugar. Busca el fondo del mar.
+
+AY_ATR_ARENA.mp3
+Busca un lugar con arena.
+
+MSG_APOYO_AUTO__AY_ATR_ARENA.mp3
+Vamos a buscar otro lugar. Busca un lugar con arena.
+
+AY_ATR_ROCAS.mp3
+Busca un lugar con rocas.
+
+MSG_APOYO_AUTO__AY_ATR_ROCAS.mp3
+Vamos a buscar otro lugar. Busca un lugar con rocas.
+
+AY_ATR_BARRO.mp3
+Busca un lugar con barro.
+
+MSG_APOYO_AUTO__AY_ATR_BARRO.mp3
+Vamos a buscar otro lugar. Busca un lugar con barro.
+
+AY_ATR_HIELO.mp3
+Busca un lugar con hielo.
+
+MSG_APOYO_AUTO__AY_ATR_HIELO.mp3
+Vamos a buscar otro lugar. Busca un lugar con hielo.

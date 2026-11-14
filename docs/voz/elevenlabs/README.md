@@ -7,6 +7,37 @@ Fecha: 2026-11-13 (modelo actualizado el 2026-11-14) · Rama: `experimental/zoon
 (tres reutilizan un duplicado); `tests/test_voz_grabada_cobertura.py` lo comprueba jugando todos los
 animales. En pt-BR no hay grabaciones y la voz está bloqueada en la 6.0.
 
+## Ayudas del agente 6.0 pendientes de grabar (2026-11-14)
+
+El agente de la 6.0 ([docs/agente/agente_6.md](../../agente/agente_6.md)) puede usar, además de las
+144 pistas grabadas, 32 **ayudas breves por rasgo** («Busca un lugar frío.», «Busca agua que corre
+despacio.»), definidas en `datos/expedicion/atributos_habitats.json`. Cada una necesita dos
+grabaciones: sola (al pulsar Pista) y precedida de «Vamos a buscar otro lugar.» (tras elegir un
+hábitat no confirmado). Una ya existe: «Busca un lugar con arbustos.» es idéntica a la pista
+`AY_H13_L1` y reutiliza su audio. Faltan **62 mensajes (2669 caracteres)**, listados en
+[`textos_pendientes_es-419.txt`](textos_pendientes_es-419.txt): una línea con el nombre exacto del
+MP3 y la siguiente con el texto completo. Los textos los redactó una IA a partir de pistas ya
+revisadas: revísalos antes de gastar créditos.
+
+**Qué hace el juego mientras falten.** El agente solo elige una ayuda por rasgo si existen sus dos
+grabaciones (`codigo/motores/agente.py`, `ayudas_con_grabacion`). Sin ellas usa las pistas ya
+grabadas, así que la guía nunca muestra un mensaje que la voz no pueda leer. Nada se une ni se
+sustituye por otra voz.
+
+**Cómo se incorporan.**
+
+1. Copia los MP3 con su nombre exacto en `assets/voz/grabada/es-419/`.
+2. `PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --verificar` (deben aparecer como presentes;
+   ninguno en `sobran_o_mal_nombrados` ni `demasiado_pequenos`).
+3. Reinicia el juego: el agente empieza a usarlos sin cambiar código.
+4. `PYTHONUTF8=1 python -m unittest tests.test_agente6 tests.test_catalogo_voz tests.test_voz_grabada_cobertura`.
+   `test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo` espera hoy una sola ayuda activa: actualiza
+   ese conjunto cuando lleguen los audios.
+5. `python -m codigo.nucleo.actualizar_manifiesto --incluir assets/voz/grabada/es-419/<archivo>.mp3 …`
+   y `python -m codigo.nucleo.verificar_paquete`.
+6. `PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes` vuelve a escribir el TXT con lo
+   que aún falte (vacío cuando estén todos).
+
 ## Reglas
 
 1. **Cada audio contiene un mensaje completo**: el `texto_voz` íntegro que la partida lee de una vez,
@@ -79,9 +110,11 @@ recurrir a Piper o Kokoro por exceso de combinaciones.
 | P2 | Los otros 40 hábitats: apoyo + pista | 119 | 119 | 16.734 |
 | P3 | Confirmaciones con contexto educativo (10 casos; 1 duplicado) | 9 | 9 | 1.850 |
 | **Total** | 353 mensajes por idioma, 3 duplicados exactos | **350** | **350** | **39.621** |
+| P2 · agente 6.0 | 32 ayudas por rasgo, solas y tras el apoyo (1 reutiliza `AY_H13_L1`); pendientes | 62 | 62 | 5.485 |
 
 Cada partida elige animales de los 288 y puede llegar a cualquiera de los 48 hábitats. Para cubrir
-cualquier partida hacen falta P1 + P2 + P3. Lo que falte se lee entero con la voz alternativa.
+cualquier partida hacen falta P1 + P2 + P3. En la 6.0 no hay voz alternativa: las ayudas del agente
+sin grabación simplemente no se usan (ver la sección anterior).
 
 Duplicados exactos (se graban una vez): `AY_H05_L1` = `AY_H04_L1`,
 `MSG_APOYO_AUTO__AY_H05_L1` = `MSG_APOYO_AUTO__AY_H04_L1` y `MSG_VALIDA__H12__A27` =

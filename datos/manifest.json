@@ -7925,8 +7925,8 @@
     },
     {
       "ruta": "codigo/nucleo/hoja_revision_traducciones.py",
-      "bytes": 5278,
-      "sha256": "132acfdc6dfe8f6713feb304bafb902ec6f3570cad315ad9e3e9db945d8c6014"
+      "bytes": 5849,
+      "sha256": "3ed7d7d171728871ab0399661873606df13af98017159806761ab3df315135d6"
     },
     {
       "ruta": "codigo/nucleo/validar_catalogo.py",
@@ -9805,8 +9805,8 @@
     },
     {
       "ruta": "docs/voz/elevenlabs/README.md",
-      "bytes": 12128,
-      "sha256": "9f5bfc8d0cc0ebe27d4ab6f26c06072cb6e848996dd86e2aacf4d15d8fb6a50e"
+      "bytes": 14416,
+      "sha256": "a0a7f8cefa48a4b65873c31db0c73e359fb9686f2bab7d32c50deb51ce8e9b3b"
     },
     {
       "ruta": "CLAUDE.md",
@@ -9820,8 +9820,8 @@
     },
     {
       "ruta": "docs/traducciones/revision_es_pt.csv",
-      "bytes": 125967,
-      "sha256": "0045b8186605ef291060f57a43999d0e28d470b098b6a9eefa929655429c9261"
+      "bytes": 134469,
+      "sha256": "f08e001eb8286067729e28abee666d3149036a5f8b6df3d8d17680fbe28d6de5"
     },
     {
       "ruta": "docs/voz/pendiente_fase5.md",
@@ -9857,6 +9857,11 @@
       "ruta": "docs/experimentos/agente6/evaluacion.json",
       "bytes": 26486,
       "sha256": "b9eb6d968d913fc70a81aa34188f97639f0b03e34a5dc5b72507f2108c966643"
+    },
+    {
+      "ruta": "docs/voz/elevenlabs/textos_pendientes_es-419.txt",
+      "bytes": 5325,
+      "sha256": "b6c02bac31b006d76c9037889d4ebb64c81a3456fc9a99cef9b9dad5e16fd21e"
     }
   ],
   "nombre_proyecto": "Zoonauta",
