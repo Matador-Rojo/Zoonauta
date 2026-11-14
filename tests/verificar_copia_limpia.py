@@ -1,4 +1,4 @@
-"""Probar un paquete extraído sin entorno ni voces, con seis partidas por HTTP."""
+"""Probar un paquete extraído, sin instalar nada, con seis partidas por HTTP."""
 from __future__ import annotations
 
 import argparse
@@ -54,7 +54,7 @@ def comprobar(raiz: Path, salida: Path) -> dict:
         return respuesta["vista"]
 
     entorno = {**os.environ, "PYTHONPATH": str(ganchos), "PYTHONUTF8": "1",
-               "PYTHONDONTWRITEBYTECODE": "1", "ZOONAUTA_VOCES_DIR": str(raiz / "modelos_voz")}
+               "PYTHONDONTWRITEBYTECODE": "1"}
     comando = [sys.executable, "-m", "codigo.interfaz.iniciar", "--puerto", str(puerto)]
     partidas = []
     with (salida / "inicio.log").open("wb") as log:
@@ -73,7 +73,8 @@ def comprobar(raiz: Path, salida: Path) -> dict:
             assert len(v["catalogo_animales"]) == 288
             assert len(v["opciones_habitat"]) == 48
             voces = obtener("/api/voz/config")["voces"]
-            assert len(voces) == 14 and not any(v["disponible"] for v in voces)
+            grabadas = obtener("/api/voz/config")["grabadas"]
+            assert voces == [] and grabadas["es"] >= 350, "solo la voz grabada de Zoonauta"
             for modalidad in ("AGENTE", "JUGADOR"):
                 for n in (2, 4, 8):
                     v = actuar("iniciar", modalidad=modalidad, retos=1, cantidad_opciones=n)
@@ -107,7 +108,7 @@ def comprobar(raiz: Path, salida: Path) -> dict:
             proceso.wait(timeout=10)
     resultado = {"schema_version": "1.0.0", "correcto": True, "integridad": integridad,
         "sin_instalaciones_ni_descargas": True, "sin_modelos_voz": True,
-        "voces_catalogadas_no_preparadas": len(voces), "partidas": partidas,
+        "grabaciones_es": grabadas["es"], "partidas": partidas,
         "alcance": "Iniciador real sin descargas y partidas HTTP completas. No verifica escucha de voz ni comprensión humana."}
     (salida / "revision_copia_limpia.json").write_text(
         json.dumps(resultado, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")

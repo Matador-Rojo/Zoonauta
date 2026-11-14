@@ -1,76 +1,16 @@
-// Lectura en voz alta. Porta la lógica de 5.0 (app.js): una sola lectura a la vez y
-// cancelación al cambiar de mensaje o pausar. En la 6.0 solo suena la voz grabada de
-// Zoonauta (Marcela, ElevenLabs, /api/voz/grabada) y solo en español (SOLO_VOZ_GRABADA,
-// IDIOMAS_CON_VOZ). El código de Piper/Kokoro (/api/voz) y del navegador se conserva.
-import { cancelarVoz, pedirGrabacion, pedirVoz } from "./api/cliente";
-import type { Idioma, Vista, VozCatalogo } from "./api/tipos";
+// Lectura en voz alta de la guía. Una sola lectura a la vez y cancelación al cambiar de
+// mensaje o pausar (lógica de la 5.0). La única voz es la grabada de Zoonauta (Marcela,
+// ElevenLabs, /api/voz/grabada), y solo en español (decisión del propietario, 2026-11-14:
+// sin Piper, Kokoro ni voces del navegador). Nunca se unen audios: si un mensaje no tiene
+// grabación, no se lee con otra voz.
+import { pedirGrabacion } from "./api/cliente";
+import type { Idioma, Vista } from "./api/tipos";
 
-export interface OpcionVoz extends Omit<VozCatalogo, "motor"> {
-  motor: VozCatalogo["motor"];
-  nativa?: SpeechSynthesisVoice;
-  idioma_voz?: string;
-  local?: boolean;
-}
-
-const REGIONES_LATAM = new Set([
-  "419",
-  "AR",
-  "BO",
-  "CL",
-  "CO",
-  "CR",
-  "CU",
-  "DO",
-  "EC",
-  "GT",
-  "HN",
-  "MX",
-  "NI",
-  "PA",
-  "PE",
-  "PR",
-  "PY",
-  "SV",
-  "UY",
-  "VE",
-  "US",
-]);
-
-export function vocesNavegador(): OpcionVoz[] {
-  if (!window.speechSynthesis || typeof window.SpeechSynthesisUtterance !== "function") return [];
-  const resultado: OpcionVoz[] = [];
-  const vistos = new Set<string>();
-  for (const voz of window.speechSynthesis.getVoices()) {
-    const idioma = voz.lang.replaceAll("_", "-");
-    const partes = idioma.split("-");
-    const lengua = partes[0].toLowerCase();
-    const region = partes.find((p) => /^(?:[A-Z]{2}|419)$/.test(p.toUpperCase()) && p !== partes[0])?.toUpperCase();
-    // No se presenta es-ES como latinoamericana ni pt-PT como brasileña.
-    if (!((lengua === "es" && region && REGIONES_LATAM.has(region)) || (lengua === "pt" && region === "BR"))) continue;
-    const nombre = `${voz.name} ${voz.voiceURI}`;
-    const motor = /\bmicrosoft\b/i.test(nombre) ? "microsoft" : /\bgoogle\b/i.test(nombre) ? "google" : null;
-    if (!motor) continue;
-    const id = "navegador:" + encodeURIComponent([voz.voiceURI, voz.name, idioma].join("|"));
-    if (vistos.has(id)) continue;
-    vistos.add(id);
-    resultado.push({
-      id,
-      nombre: voz.name,
-      motor,
-      idioma: lengua === "es" ? "es" : "pt-BR",
-      region: region!,
-      disponible: true,
-      nativa: voz,
-      idioma_voz: idioma,
-      local: voz.localService,
-    });
-  }
-  return resultado.sort((a, b) => a.nombre.localeCompare(b.nombre));
-}
+/** Idiomas con voz. En pt-BR la voz queda bloqueada hasta que existan grabaciones. */
+export const IDIOMAS_CON_VOZ: readonly Idioma[] = ["es"];
 
 export interface AjustesVoz {
   activa: boolean;
-  vozId: string;
   velocidad: number;
   /** Mensajes con grabación disponible en este idioma (0 = no se piden). */
   grabadas: number;
@@ -79,29 +19,21 @@ export interface AjustesVoz {
 export type ContextoLectura = "respuesta" | "modalidad" | "prueba";
 
 export class GuiaVoz {
-  private readonly canal = crypto.randomUUID();
   private turno = 0;
   private pedido: AbortController | null = null;
   private audio: HTMLAudioElement | null = null;
   private audioURL: string | null = null;
-  private lecturaNativa: SpeechSynthesisUtterance | null = null;
 
   constructor(private readonly alError: (mensaje: string) => void) {}
 
   parar() {
-    const pendiente = this.pedido;
     this.turno++;
-    pendiente?.abort();
+    this.pedido?.abort();
     this.pedido = null;
-    if (pendiente) void cancelarVoz(this.canal, this.turno);
     if (this.audio) {
       this.audio.pause();
       this.audio.removeAttribute("src");
       this.audio = null;
-    }
-    if (this.lecturaNativa) {
-      this.lecturaNativa = null;
-      window.speechSynthesis?.cancel();
     }
     if (this.audioURL) {
       URL.revokeObjectURL(this.audioURL);
@@ -109,97 +41,15 @@ export class GuiaVoz {
     }
   }
 
-  async hablar(
-    vista: Vista,
-    voces: OpcionVoz[],
-    ajustes: AjustesVoz,
-    contexto: ContextoLectura,
-    textos: { prueba: string; modalidad: string; error: string },
-  ) {
+  /** «Probar voz» (contexto "prueba") reproduce la grabación del mensaje que está en pantalla. */
+  async hablar(vista: Vista, ajustes: AjustesVoz, contexto: ContextoLectura, textos: { error: string }) {
     if (!ajustes.activa && contexto !== "prueba") return;
     this.parar();
-    // Idioma sin voz (pt-BR por ahora): la guía no habla aunque llegaran grabaciones.
-    if (!IDIOMAS_CON_VOZ.includes(vista.idioma)) return;
-    // 1) Grabación completa del mensaje exacto (ElevenLabs). Nunca se unen audios.
-    //    «Probar voz» reproduce la grabación del mensaje que está en pantalla.
-    if (ajustes.grabadas > 0) {
-      const contextoGrabado = contexto === "modalidad" ? "modalidad" : "respuesta";
-      if (await this.hablarGrabada(vista, contextoGrabado, ajustes, textos)) return;
-    }
-    // Solo voz grabada: sin grabación para este mensaje, la guía no lo lee con otra voz.
-    // Si era «Probar voz», se avisa para que la persona sepa por qué no suena nada.
-    if (SOLO_VOZ_GRABADA) {
+    if (!IDIOMAS_CON_VOZ.includes(vista.idioma) || ajustes.grabadas === 0) {
+      // Si la persona pulsó Probar voz, se le avisa de por qué no suena nada.
       if (contexto === "prueba") this.alError(textos.error);
       return;
     }
-    const voz = voces.find((v) => v.id === ajustes.vozId && v.disponible);
-    if (!voz) return;
-    const turno = this.turno;
-    if (voz.nativa) {
-      const texto =
-        contexto === "prueba" ? textos.prueba : contexto === "modalidad" ? textos.modalidad : vista.respuesta.texto_voz;
-      const lectura = new SpeechSynthesisUtterance(texto);
-      lectura.voice = voz.nativa;
-      lectura.lang = voz.idioma_voz ?? vista.idioma;
-      lectura.rate = ajustes.velocidad;
-      this.lecturaNativa = lectura;
-      lectura.onend = () => {
-        if (turno === this.turno) this.lecturaNativa = null;
-      };
-      lectura.onerror = () => {
-        if (turno === this.turno) {
-          this.parar();
-          this.alError(textos.error);
-        }
-      };
-      try {
-        window.speechSynthesis.speak(lectura);
-      } catch {
-        this.parar();
-        this.alError(textos.error);
-      }
-      return;
-    }
-    const control = new AbortController();
-    this.pedido = control;
-    const entrada = {
-      voz: voz.id,
-      idioma: vista.idioma,
-      prueba: contexto === "prueba",
-      revision: vista.revision,
-      sesion_id: vista.sesion_id,
-      reto_id: vista.reto_id,
-      canal_voz: this.canal,
-      turno_voz: turno,
-      contexto: contexto === "modalidad" ? "modalidad" : "respuesta",
-    };
-    try {
-      const r = await pedirVoz(entrada, control.signal);
-      if (!r.ok) {
-        const d = (await r.json()) as { error?: string; cancelada?: boolean };
-        if (d.cancelada) return;
-        throw new Error(d.error || textos.error);
-      }
-      const blob = await r.blob();
-      if (turno !== this.turno) return;
-      this.pedido = null;
-      await this.reproducir(blob, turno, ajustes.velocidad, textos.error);
-    } catch (e) {
-      if ((e as Error).name !== "AbortError" && turno === this.turno) {
-        this.parar();
-        // Un fallo de red (TypeError) se explica con el mensaje traducido, no con el del navegador.
-        this.alError(e instanceof TypeError ? textos.error : (e as Error).message);
-      }
-    }
-  }
-
-  /** Devuelve true si la lectura quedó a cargo de la grabación (o se canceló entretanto). */
-  private async hablarGrabada(
-    vista: Vista,
-    contexto: ContextoLectura,
-    ajustes: AjustesVoz,
-    textos: { error: string },
-  ): Promise<boolean> {
     const turno = this.turno;
     const control = new AbortController();
     this.pedido = control;
@@ -214,28 +64,23 @@ export class GuiaVoz {
         },
         control.signal,
       );
-      if (turno !== this.turno) return true;
+      if (turno !== this.turno) return;
       if (!r.ok) {
         this.pedido = null;
-        return false;
+        if (contexto === "prueba") this.alError(textos.error);
+        return;
       }
       // El pedido sigue cancelable mientras llega el audio; después se vuelve a comprobar el
       // turno para que una lectura ya sustituida nunca llegue a sonar (una sola voz a la vez).
       const blob = await r.blob();
-      if (turno !== this.turno) return true;
+      if (turno !== this.turno) return;
       this.pedido = null;
       await this.reproducir(blob, turno, ajustes.velocidad, textos.error);
-      return true;
     } catch (e) {
-      if ((e as Error).name === "AbortError" || turno !== this.turno) return true;
-      this.pedido = null;
-      // Solo voz grabada: un fallo de red se avisa (no hay otra voz con la que leer).
-      if (SOLO_VOZ_GRABADA) {
-        this.parar();
-        this.alError(textos.error);
-        return true;
-      }
-      return false;
+      if ((e as Error).name === "AbortError" || turno !== this.turno) return;
+      // Un fallo de red se avisa con el mensaje traducido, no con el del navegador.
+      this.parar();
+      this.alError(textos.error);
     }
   }
 
@@ -256,18 +101,4 @@ export class GuiaVoz {
     };
     await audio.play();
   }
-}
-
-/** Idiomas con voz habilitada (decisión del propietario, 2026-11-14): por ahora solo español.
- *  En pt-BR la voz queda bloqueada; se añadirán más idiomas después. */
-export const IDIOMAS_CON_VOZ: readonly Idioma[] = ["es"];
-
-/** La guía usa solo la voz grabada de Zoonauta (ElevenLabs, assets/voz/grabada). Piper, Kokoro y
- *  las voces del navegador quedan sin ofrecer por decisión del propietario (2026-11-14); su código
- *  y los modelos se conservan para un uso futuro. */
-export const SOLO_VOZ_GRABADA = true;
-
-export function vocesDisponibles(catalogo: VozCatalogo[], idioma: Idioma): OpcionVoz[] {
-  if (SOLO_VOZ_GRABADA || !IDIOMAS_CON_VOZ.includes(idioma)) return [];
-  return [...catalogo, ...vocesNavegador()].filter((v) => v.idioma === idioma);
 }

@@ -74,8 +74,8 @@ Funcionan sin Internet y sin descargar modelos. En portugués la voz está bloqu
 hasta que existan grabaciones. La prueba `tests.test_voz_grabada_cobertura` juega
 todos los animales y comprueba que cada mensaje tenga su grabación.
 
-Las voces locales Piper y Kokoro y las del navegador siguen en el código y las usa la
-5.0 (`/v5/`); la 6.0 no las ofrece.
+Las voces locales Piper y Kokoro se retiraron del proyecto el 14 de noviembre de 2026. La 5.0
+(`/v5/`) usa la misma voz grabada y, si falta, las voces compatibles del navegador.
 
 ## Cierre técnico e instrucciones de uso
 
@@ -121,8 +121,8 @@ controles, los nombres de animales y hábitats, las etiquetas de pictogramas, la
 pistas y las confirmaciones. No se sustituye es-419 por es-ES ni pt-BR por pt-PT. La
 voz solo está en español por ahora.
 
-La 5.0 (`/v5/`) conserva las voces compatibles del navegador. Sus voces locales Piper y
-Kokoro ya no se instalan; su historia está en [la guía de voces](docs/interfaz/alternativas_voz.md)
+La 5.0 (`/v5/`) conserva las voces compatibles del navegador. Sus antiguas voces locales Piper
+y Kokoro se retiraron; su historia está en [la guía de voces](docs/interfaz/alternativas_voz.md)
 y [la guía de interfaz](docs/guia_interfaz.md).
 
 ## Inteligencia artificial y revisión
@@ -208,11 +208,11 @@ probarse sin instalar voces ni reutilizar el entorno local:
 python -m tests.verificar_copia_limpia --carpeta ruta_de_la_copia_extraida --salida resultados_nuevos/copia_limpia
 ```
 
-La prueba ejecuta el iniciador real con `--sin-descargas`, suprime únicamente la
-apertura de una ventana y comprueba partidas completas en ambas modalidades con
-2, 4 y 8 opciones. Requiere Python y una carpeta sin `.venv-voz` ni `modelos_voz`.
+La prueba ejecuta el iniciador real, suprime únicamente la apertura de una ventana y
+comprueba partidas completas en ambas modalidades con 2, 4 y 8 opciones. Requiere Python
+y una carpeta sin `.venv-voz` ni `modelos_voz`.
 
-**Zoonauta 6.0 (2026-11-14):** pasan **106 pruebas Python** (incluida la cobertura de la
+**Zoonauta 6.0 (2026-11-14):** pasan **95 pruebas Python** (incluida la cobertura de la
 voz grabada, 343 de 343 mensajes) y las pruebas de navegador de la 6.0: portada (6 casos
 con axe), recorrido (9), cuatro partidas completas con teclado sin desplazamiento (2, 4 y 8
 hábitats, español, portugués y 320 px) y voz (9). `python -m tests.comparar_versiones`

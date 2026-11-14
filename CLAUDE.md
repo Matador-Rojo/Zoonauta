@@ -24,14 +24,14 @@ Responder al propietario en español.
 - Sin 3D, dioramas, WebGL de escenarios, zoom continuo, parallax intenso ni destellos.
   Todo movimiento es ambiental, leve y desactivable (control propio + `prefers-reduced-motion`).
 - Audio siempre bajo control del usuario: una sola voz a la vez; cancelar la lectura
-  anterior al cambiar de mensaje o pausar. Conservar el código de Piper, Kokoro y Web Speech
-  API (la 5.0 los usa; la 6.0 no los ofrece, ver la regla siguiente).
+  anterior al cambiar de mensaje o pausar.
 - Voces de la 6.0 (decidido 2026-11-14): **solo la voz grabada de Zoonauta (ElevenLabs)**, 350
   mp3 en `assets/voz/grabada/es-419/` (copiados de `Downloads/Voces Zoonauta`; cubren los 353
-  mensajes en español, 3 reutilizan un duplicado). Piper, Kokoro y las voces del navegador no se
-  ofrecen (`SOLO_VOZ_GRABADA` en `frontend/src/voz.ts`); su código y modelos se conservan. Un
-  mensaje sin grabación no se lee con otra voz. En pt-BR la voz queda bloqueada (cero voces).
-  Más idiomas llegarán después. La 5.0 en `/v5/` mantiene su sistema de voces.
+  mensajes en español, 3 reutilizan un duplicado). **Piper y Kokoro se retiraron del todo** el
+  2026-11-14 (código, `datos/voces_locales.json`, `/api/voz`, `/api/voz/cancelar` y sus pruebas);
+  la 6.0 tampoco ofrece voces del navegador. Un mensaje sin grabación no se lee con otra voz. En
+  pt-BR la voz queda bloqueada (cero voces). Más idiomas llegarán después. La 5.0 en `/v5/` usa
+  la voz grabada y, si falta, las voces del navegador (Web Speech API).
 - ElevenLabs u otro servicio externo: esperar autorización antes de consumir créditos o
   enviar textos. Claves solo en el entorno del servidor o de generación, nunca en el
   frontend ni en el repositorio.
@@ -78,7 +78,7 @@ Responder al propietario en español.
 
 ```bash
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
-PYTHONUTF8=1 python -m unittest discover -s tests -q   # 106 pruebas
+PYTHONUTF8=1 python -m unittest discover -s tests -q   # 95 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
 python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/): 6 casos + axe
 python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados
@@ -86,9 +86,10 @@ PYTHONUTF8=1 python -m unittest tests.test_voz_grabada_cobertura  # cada mensaje
 python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
 python -m tests.ejecutar_navegador --catalogo      # 16 casos
 python -m tests.ejecutar_navegador --hito3         # 16 casos (Preferencias, teclado)
-python -m tests.ejecutar_navegador                 # 20 casos (recorrido general)
+python -m tests.ejecutar_navegador                 # 19 casos (recorrido general de la 5.0, /v5/)
 python -m tests.ejecutar_navegador --partidas-v6    # 4 partidas completas con teclado (6.0)
 python -m tests.ejecutar_navegador --voz-v6         # cadena de voz 6.0 con audio simulado
+python -m tests.ejecutar_navegador --voz-v5         # voz grabada de la 5.0 (/v5/), 4 casos
 python -m tests.lighthouse_v6 --salida <carpeta>      # Lighthouse en 4 pantallas × 2 dispositivos
 py -3 -m codigo.interfaz.iniciar                   # juego en http://127.0.0.1:8766 (6.0; 5.0 en /v5/)
 ```
@@ -139,7 +140,7 @@ Detalles del entorno:
 ## Mapa del proyecto
 
 - `codigo/interfaz/servidor.py` — HTTP y API (`/api/vista`, `/api/accion`, `/api/idioma`,
-  `/api/voz`, `/api/voz/cancelar`, `/api/revision`, `/revision`). Acciones con
+  `/api/voz/config`, `/api/voz/grabada`, `/api/revision`, `/revision`). Acciones con
   `evento_id`, `revision`, `sesion_id`, `reto_id`.
 - `codigo/interfaz/iniciar.py` — iniciador: solo arranca el servidor con el Python del
   equipo (sin descargas ni entornos; `requirements_voz.txt` e `iniciar_sin_descargas.bat`
@@ -154,7 +155,8 @@ Detalles del entorno:
 - `datos/expedicion/` — catálogo ampliado (animales, hábitats, pictogramas, pistas).
 - `datos/*.json` — catálogo original, traducciones pt-BR, voces, procedencia de imágenes.
 - `assets/` — pictogramas, ilustraciones y robot. `datos/manifest.json` — huellas.
-- Locales, fuera de Git: `.venv-voz/`, `modelos_voz/`, `registros/`, `output/`,
+- Locales, fuera de Git: `registros/`, `output/`, `.venv-voz/` y `modelos_voz/` (estos dos ya
+  no se usan desde que se retiraron Piper y Kokoro; se pueden borrar a mano),
   `resultados_nuevos/`.
 
 ## Portada 6.0 (decidido 2026-11-14, sustituye al carrusel de ocho fondos)

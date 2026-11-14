@@ -52,9 +52,10 @@ async function actuar(p,nombre,fase){
   const c=await contexto(browser),p=await abrir(c);p.on('pageerror',e=>errores.push(e.message));
   const antes=await revision(p);
   await p.getByRole('button',{name:'Preferencias',exact:true}).click();
-  assert.equal(await p.locator('#voces option').count(),9);
-  assert.deepEqual(await p.locator('#voces optgroup').evaluateAll(gs=>gs.map(g=>g.label)),['Google','Microsoft','Piper','Kokoro']);
-  assert.equal(await p.locator('#voces option').filter({hasText:'España'}).count(),3); // Solo las tres voces Kokoro originales.
+  // Desde 2026-11-14 no hay voces locales Piper/Kokoro: solo las del navegador (2 en español).
+  assert.equal(await p.locator('#voces option').count(),2);
+  assert.deepEqual(await p.locator('#voces optgroup').evaluateAll(gs=>gs.map(g=>g.label)),['Google','Microsoft']);
+  assert.equal(await p.locator('#voces option').filter({hasText:'España'}).count(),0); // es-ES no se ofrece como latinoamericana.
   assert.equal(await p.locator('#voces option').filter({hasText:'Otro proveedor'}).count(),0);
   await p.locator('#velocidad').selectOption('0.8');
   const googleES=await elegir(p,'Google español latinoamericano');
@@ -62,7 +63,7 @@ async function actuar(p,nombre,fase){
   assert.match(await p.locator('#estado-voz').textContent(),/Puede necesitar Internet/);
   await elegir(p,'Microsoft Sabina');lectura=await probar(p);assert.equal(lectura.lang,'es-MX');assert.match(await p.locator('#estado-voz').textContent(),/instalada/);
   await p.locator('#idioma').selectOption('pt-BR');await p.waitForFunction(()=>document.documentElement.lang==='pt-BR');
-  assert.equal(await p.locator('#voces option').count(),9);assert.equal(await p.locator('#voces option').filter({hasText:'Portugal'}).count(),0);
+  assert.equal(await p.locator('#voces option').count(),2);assert.equal(await p.locator('#voces option').filter({hasText:'Portugal'}).count(),0);
   await elegir(p,'Google português');lectura=await probar(p);assert.equal(lectura.lang,'pt-BR');assert.equal(lectura.texto,'Olá. Vamos descobrir onde os animais vivem.');
   assert.match(await p.locator('#estado-voz').textContent(),/Pode precisar de Internet/);
   const microsoftPT=await elegir(p,'Microsoft Antonio');lectura=await probar(p);assert.equal(lectura.lang,'pt-BR');
@@ -70,7 +71,7 @@ async function actuar(p,nombre,fase){
   assert.match(await p.locator('#voces option:checked').textContent(),/Microsoft Sabina/);
   await p.locator('#voces').selectOption(googleES);
   await p.evaluate(v=>window.__actualizar([...v,v[0]]),inventario);
-  assert.equal(await p.locator('#voces').inputValue(),googleES);assert.equal(await p.locator('#voces option').count(),9);
+  assert.equal(await p.locator('#voces').inputValue(),googleES);assert.equal(await p.locator('#voces option').count(),2);
   const despues=await revision(p);despues.idioma=antes.idioma;assert.deepEqual(despues,antes);assert.equal(await p.evaluate(()=>window.__wav),0);
   resultados.push({caso:'Microsoft y Google en español latinoamericano y portugués brasileño: región real, saludo, ritmo, selección por idioma y modelo inmutable',resultado:'OK'});
 
@@ -95,16 +96,7 @@ async function actuar(p,nombre,fase){
   assert.equal(await pt.evaluate(()=>window.__wav),0);assert.equal((await revision(pt)).parametros_congelados,true);
   resultados.push({caso:'Voces que aparecen tarde o desaparecen, restauración de selección y partida con voz del navegador sin modelos locales',resultado:'OK'});
 
-  // Pasar de WAV pendiente a voz del navegador conserva la cancelación del servidor.
-  let recibida,liberar;const pendiente=new Promise(r=>recibida=r),fin=new Promise(r=>liberar=r);
-  await c.route('**/api/voz',async route=>{recibida();await fin;await route.abort().catch(()=>{});});
-  await p.getByRole('button',{name:'Preferências',exact:true}).click();await elegir(p,'Cadu');
-  await p.locator('#probar-voz').click();await pendiente;
-  const cancelada=p.waitForResponse(r=>r.url().endsWith('/api/voz/cancelar'));
-  await elegir(p,'Google português');assert.equal((await cancelada).status(),200);
-  lectura=await probar(p);assert.equal(lectura.lang,'pt-BR');liberar();
-  await p.waitForFunction(()=>document.querySelectorAll('.notificacion').length===0);
-  resultados.push({caso:'Cambio de una lectura WAV pendiente a Google: cancela la cola local y lee con el navegador',resultado:'OK'});
+  // (2026-11-14) Sin voces locales ya no hay lecturas WAV pendientes que cambiar por una del navegador.
 
   // La pregunta de modalidad solo se lee con el diálogo visible, en ambos idiomas.
   for(const idioma of ['es','pt-BR']){

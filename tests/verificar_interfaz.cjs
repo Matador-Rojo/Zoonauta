@@ -7,7 +7,11 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.INTERFAZ_URL||'http://127.0.0.1:8000';
 const out=process.env.INTERFAZ_SALIDA?path.resolve(process.env.INTERFAZ_SALIDA):path.resolve(__dirname,'../docs/interfaz');fs.mkdirSync(out,{recursive:true});
 const resultados=[];
-async function mockVoz(context,disponibles=true,vocesNativas=[]){
+// Voces del navegador simuladas (Google, es-419 y pt-BR). Desde 2026-11-14 no hay voces locales
+// Piper/Kokoro: la 5.0 lee con la voz grabada (solo catálogo ampliado) o con una voz del navegador.
+const VOCES_NAVEGADOR=[{name:'Google español de Latinoamérica',voiceURI:'Google es-419',lang:'es-419',localService:false},
+  {name:'Google português do Brasil',voiceURI:'Google pt-BR',lang:'pt-BR',localService:false}];
+async function mockVoz(context,disponibles=true,vocesNativas=disponibles?VOCES_NAVEGADOR:[]){
   await context.route('**/api/voz/config',async route=>{
     const r=await route.fetch(),d=await r.json();d.voces.forEach(v=>v.disponible=disponibles);await route.fulfill({json:d});
   });
@@ -20,8 +24,14 @@ async function mockVoz(context,disponibles=true,vocesNativas=[]){
     let lista=vocesNativas;
     window.__vozNativa=[];window.__cancelacionesNativas=0;
     sintesis.getVoices=()=>lista;
-    sintesis.speak=u=>{window.__nativaActual=u;window.__vozNativa.push({texto:u.text,voz:u.voice.name,lang:u.lang,rate:u.rate});};
-    sintesis.cancel=()=>{window.__cancelacionesNativas++;const antigua=window.__nativaActual;window.__nativaActual=null;queueMicrotask(()=>antigua?.onerror?.({error:'canceled'}));};
+    sintesis.speak=u=>{window.__nativaActual=u;window.__vozNativa.push({texto:u.text,voz:u.voice.name,lang:u.lang,rate:u.rate});
+      // También en __voz, con el mismo formato que las lecturas de audio (idioma, contexto y revisión).
+      const contexto=['¿Quién elige el animal?','Quem escolhe o animal?'].includes(u.text)?'modalidad':'respuesta';
+      // Se registra al instante (las comprobaciones de «no se leyó nada» no pueden adelantarse);
+      // la revisión de la vista se completa en cuanto llega.
+      const lectura={texto:u.text,voz:u.voice.name,lang:u.lang.startsWith('pt')?'pt-BR':'es',rate:u.rate,contexto,revision:null};
+      window.__voz.push(lectura);fetch('/api/vista').then(r=>r.json()).then(v=>{lectura.revision=v.revision;});};
+    sintesis.cancel=()=>{window.__cancelacionesNativas++;window.__cancelaciones++;const antigua=window.__nativaActual;window.__nativaActual=null;queueMicrotask(()=>antigua?.onerror?.({error:'canceled'}));};
     window.__actualizarVocesNativas=v=>{lista=v;sintesis.dispatchEvent(new Event('voiceschanged'));};
     Object.defineProperty(window,'speechSynthesis',{value:sintesis,configurable:true});
     window.SpeechSynthesisUtterance=class{constructor(texto){this.text=texto;}};
@@ -29,7 +39,8 @@ async function mockVoz(context,disponibles=true,vocesNativas=[]){
     const original=window.fetch.bind(window);
     window.fetch=async(url,opciones)=>{
       const r=await original(url,opciones);
-      if(url==='/api/voz'&&r.ok){
+      // Desde 2026-11-14 la 5.0 lee con la voz grabada de Zoonauta (/api/voz/grabada).
+      if((url==='/api/voz'||url==='/api/voz/grabada')&&r.ok){
         const e=JSON.parse(opciones.body),v=await (await original('/api/vista')).json();
         window.__pedido={...e,lang:e.idioma,texto:e.prueba?(e.idioma==='es'?'Hola. Vamos a descubrir dónde viven los animales.':'Olá. Vamos descobrir onde os animais vivem.'):e.contexto==='modalidad'?(e.idioma==='es'?'¿Quién elige el animal?':'Quem escolhe o animal?'):v.respuesta.texto_voz};
       }return r;
@@ -251,15 +262,18 @@ async function clicar(page,texto,fase){
   for(const ancho of [320,390,768,1024,1280]){
     await page.setViewportSize({width:ancho,height:1080});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-    await page.waitForFunction(()=>[...document.querySelectorAll('.catalogo .animal-imagenes img')].every(i=>{
-      const r=i.getBoundingClientRect(),p=i.closest('button').getBoundingClientRect(),n=i.closest('button').querySelector('span:not(.animal-numero)').getBoundingClientRect();
-      return r.width>=96&&r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<n.top;
-    }),null,{polling:20});
-    const posiciones=await page.locator('.catalogo .animal-imagenes img').evaluateAll(imgs=>imgs.map(i=>{
+    // Espera y medida en un solo paso (antes eran dos y la segunda podía medir una imagen recién
+    // creada por el repintado al cambiar de tamaño): al menos una imagen cargada y bien colocada.
+    const medir=()=>[...document.querySelectorAll('.catalogo .animal-imagenes img')].map(i=>{
       const r=i.getBoundingClientRect(),p=i.closest('button').getBoundingClientRect(),nombre=i.closest('button').querySelector('span:not(.animal-numero)').getBoundingClientRect();
-      return {ancho:r.width,dentro:r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<nombre.top};
-    }));
-    assert.ok(posiciones.every(m=>m.ancho>=96&&m.dentro),JSON.stringify({ancho,posiciones}));
+      return {ancho:r.width,cargada:i.complete&&i.naturalWidth>0,dentro:r.left>=p.left&&r.right<=p.right&&r.top>=p.top&&r.bottom<nombre.top};
+    });
+    let posiciones=[];
+    try{
+      posiciones=await (await page.waitForFunction(m=>{const ps=new Function('return '+m)()();
+        return ps.length>0&&ps.every(x=>x.cargada&&x.ancho>=96&&x.dentro)?ps:false;},medir.toString(),{polling:20,timeout:5000})).jsonValue();
+    }catch{posiciones=await page.evaluate(m=>new Function('return '+m)()(),medir.toString());}
+    assert.ok(posiciones.length>0&&posiciones.every(m=>m.cargada&&m.ancho>=96&&m.dentro),JSON.stringify({ancho,posiciones}));
   }
   await page.setViewportSize({width:1280,height:1080});
   await clicar(page,'Capibara o ronsoco','ESPERANDO_RESPUESTA');
@@ -388,7 +402,8 @@ async function clicar(page,texto,fase){
     await comenzar.click();await pa.locator('#ajustes').click();await comprobarAvisos();
     assert.equal(await pa.locator('#aviso').evaluate(e=>e.parentElement.id),'preferencias');
     // Un error real del reproductor se acumula con la advertencia existente.
-    await pa.evaluate(idioma=>{window.Audio.prototype.play=async()=>{throw new Error(idioma==='es'?'No se pudo reproducir la voz.':'Não foi possível reproduzir a voz.');};},idioma);
+    // «Probar voz» de la 5.0 usa la voz del navegador: el fallo se simula en la síntesis.
+    await pa.evaluate(()=>{window.__speakOriginal??=window.speechSynthesis.speak;window.speechSynthesis.speak=()=>{throw new Error('fallo de síntesis');};});
     await pa.locator('#probar-voz').click();await pa.locator('.notificacion[data-tipo="error"]').waitFor();
     assert.equal(await tarjetas.count(),2);await comprobarAvisos();
     const colores=await tarjetas.evaluateAll(cs=>cs.map(c=>{const s=getComputedStyle(c);return {borde:s.borderTopColor,fondo:s.backgroundColor};}));
@@ -433,8 +448,8 @@ async function clicar(page,texto,fase){
     assert.equal(await pa.locator('.hero-ficha button').first().isEnabled(),true);
     await pa.locator('.hero-ficha button').first().click();assert.equal(await tarjetas.count(),1);
     await pa.locator('#ajustes').click();await pa.locator('#retos').fill('1');await pa.locator('#retos').press('Tab');assert.equal(await tarjetas.count(),0);
-    // Restablecer el reproductor controlado para el diálogo de modalidad.
-    await pa.evaluate(()=>{window.Audio.prototype.play=async function(){window.__voz.push({...window.__pedido,rate:this.playbackRate});};});
+    // Restablecer la síntesis controlada para el diálogo de modalidad.
+    await pa.evaluate(()=>{window.speechSynthesis.speak=window.__speakOriginal;});
     await pa.locator('#cerrar-preferencias').click();await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();await pa.keyboard.press('Escape');
     await pa.locator('#ajustes').click();await pa.locator('#retos').fill('48');await pa.locator('#cerrar-preferencias').click();
     await comenzar.click();await pa.locator('#elegir-modalidad').waitFor();await pa.keyboard.press('Escape');
@@ -508,12 +523,12 @@ async function clicar(page,texto,fase){
   resultados.push({caso:'Teclado: iniciar, buscar y elegir un animal; progreso accesible y preferencia de movimiento reducido',resultado:'OK'});
   resultados.push({caso:'Inicio en una pantalla entre 320 × 568 y 1920 × 1080, con botones visibles; partida sin desbordamiento horizontal',resultado:'OK'});
   await teclado.close();
-  // Modelos ausentes: se informa de la preparación, sin recurrir a voces del navegador.
+  // Sin voces del navegador ni grabaciones (catálogo original): texto y pictogramas siguen operativos.
   const sinvoz=await browser.newContext();await mockVoz(sinvoz,false);
   const pv=await sinvoz.newPage();pv.on('pageerror',e=>errores.push(e.message));await pv.goto(base+'/v5/');await pv.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
-  await pv.getByRole('button',{name:'Preferencias'}).click();assert.match(await pv.locator('#estado-voz').textContent(),/No hay voces preparadas/);assert.equal(await pv.locator('#probar-voz').isDisabled(),true);
+  await pv.getByRole('button',{name:'Preferencias'}).click();assert.match(await pv.locator('#estado-voz').textContent(),/Sin voces disponibles/);assert.equal(await pv.locator('#probar-voz').isDisabled(),true);
   await pv.getByRole('button',{name:'Volver al juego',exact:true}).click();await clicar(pv,'El agente elige','ESPERANDO_RESPUESTA');assert.equal(await pv.locator('.habitats button:enabled').count(),8);
-  resultados.push({caso:'Modelos ausentes: preparación explícita, sin voces del navegador; texto y pictogramas operativos',resultado:'OK'});
+  resultados.push({caso:'Sin voces disponibles: aviso, Probar voz desactivado; texto y pictogramas operativos',resultado:'OK'});
   await sinvoz.close();
   console.log('Recursos, móvil y teclado completos; comprobando idioma y voz.');
   const bilingue=await browser.newContext();await mockVoz(bilingue);
@@ -522,11 +537,12 @@ async function clicar(page,texto,fase){
   const revisionIdioma=(await vista(pg)).revision;
   for(const idioma of ['es','pt-BR']){
     await pg.locator('#idioma').selectOption(idioma);await pg.waitForFunction(i=>document.documentElement.lang===i,idioma);
-    assert.equal(await pg.locator('#voces option').count(),7);
+    // Una voz del navegador por idioma (simulada); sin voces Piper ni Kokoro.
+    assert.equal(await pg.locator('#voces option').count(),1);
     for(const id of await pg.locator('#voces option').evaluateAll(os=>os.map(o=>o.value))){
       await pg.locator('#voces').selectOption(id);const antes=await pg.evaluate(()=>window.__voz.length);
       await pg.locator('#probar-voz').click();await pg.waitForFunction(n=>window.__voz.length>n,antes);
-      const voz=await pg.evaluate(()=>window.__voz.at(-1));assert.equal(voz.voz,id);assert.equal(voz.idioma,idioma);
+      const voz=await pg.evaluate(()=>window.__voz.at(-1));assert.ok(id.includes(encodeURIComponent(voz.voz)));assert.equal(voz.lang,idioma);
       assert.equal(voz.texto,idioma==='es'?'Hola. Vamos a descubrir dónde viven los animales.':'Olá. Vamos descobrir onde os animais vivem.');
     }
   }
@@ -561,14 +577,15 @@ async function clicar(page,texto,fase){
   assert.equal(await pg.locator('#ajustes').isVisible(),false);
   await pg.locator('#ajustes').evaluate(b=>b.click());
   await pg.locator('#idioma').selectOption('es');await pg.waitForFunction(()=>document.documentElement.lang==='es');
-  assert.equal(await pg.locator('#voces').inputValue(),'kokoro:em_santa');
-  await pg.locator('#voces').selectOption('piper:es_AR-daniela-high');await pg.locator('#velocidad').selectOption('0.8');
+  const vozEs=await pg.locator('#voces').inputValue();assert.match(vozEs,/^navegador:.*es-419/);
+  await pg.locator('#velocidad').selectOption('0.8');
   await pg.locator('#probar-voz').click();await pg.waitForFunction(()=>window.__voz.at(-1)?.rate===0.8);
   await pg.getByRole('button',{name:'Volver al juego',exact:true}).click();
   const tecnicaDespues=await pg.evaluate(async()=>await (await fetch('/api/revision')).json());tecnicaDespues.idioma=tecnicaAntes.idioma;assert.deepEqual(tecnicaDespues,tecnicaAntes);
-  await pg.locator('#ajustes').evaluate(b=>b.click());assert.equal(await pg.locator('#voces').inputValue(),'piper:es_AR-daniela-high');
+  await pg.locator('#ajustes').evaluate(b=>b.click());assert.equal(await pg.locator('#voces').inputValue(),vozEs);
   await pg.locator('#idioma').selectOption('pt-BR');await pg.waitForFunction(()=>document.documentElement.lang==='pt-BR');
-  assert.equal(await pg.locator('#voces').inputValue(),'kokoro:pm_santa');
+  assert.match(await pg.locator('#voces').inputValue(),/^navegador:.*pt-BR/);
+  assert.equal(await pg.locator('#voces optgroup[label="Piper"], #voces optgroup[label="Kokoro"]').count(),0,'sin voces Piper ni Kokoro');
   await pg.getByRole('button',{name:'Voltar ao jogo',exact:true}).click();
   await captura(pg,'10_reto_portugues.png');
   await clicar(pg,'Repetir');const cancelaciones=await pg.evaluate(()=>window.__cancelaciones);
@@ -579,7 +596,7 @@ async function clicar(page,texto,fase){
   await clicar(pg,'Retomar','ESPERANDO_RESPUESTA');assert.equal(await pg.evaluate(()=>window.__voz.length),lecturas);
   const revisionRecarga=(await vista(pg)).revision;
   await pg.reload();await pg.getByRole('button',{name:'Dica',exact:true}).waitFor();assert.equal((await vista(pg)).revision,revisionRecarga);assert.equal(await pg.evaluate(()=>window.__voz.length),0);
-  resultados.push({caso:'14 voces locales: 7 por idioma, muestras, ritmo, elección por idioma, cancelación y silencio',resultado:'OK',alcance:'API WAV y reproductor controlados.'});
+  resultados.push({caso:'Voces del navegador por idioma (sin Piper ni Kokoro): muestra, ritmo, elección por idioma, cancelación y silencio',resultado:'OK',alcance:'Síntesis del navegador simulada.'});
   resultados.push({caso:'Portugués brasileño: interfaz, catálogo, búsqueda, pictogramas, ayudas y recarga; adaptador de idioma sobre una sesión activa sin alterar estado, registros o modelo. Preferencias visible solo en inicio',resultado:'OK'});
   await clicar(pg,'Sair','ABANDONADA');await comprobarCierre(pg);await comprobarPictogramas(pg);await captura(pg,'cierre_portugues.png');
   await pg.goto(base+'/revision');await pg.locator('#datos').filter({hasText:'parametros_congelados'}).waitFor();
@@ -592,32 +609,7 @@ async function clicar(page,texto,fase){
   const tecnicos=JSON.parse(await page.locator('#datos').textContent());assert.equal(tecnicos.parametros_congelados,true);
   resultados.push({caso:'Consulta técnica separada y modelo congelado',resultado:'OK'});
   await contexto.close();
-  // Una muestra que todavía se descarga no debe bloquear el cambio de voz.
-  const cambios=await browser.newContext();await mockVoz(cambios);
-  let listo,liberar,primera,peticiones=0;
-  const pendiente=new Promise(r=>listo=r),continuar=new Promise(r=>liberar=r);
-  await cambios.route('**/api/voz',async route=>{
-    if(++peticiones===1){primera=route.request().postDataJSON();listo();await continuar;}
-    const b=Buffer.alloc(244);b.write('RIFF');b.writeUInt32LE(236,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(22050,24);b.writeUInt32LE(44100,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(200,40);
-    await route.fulfill({contentType:'audio/wav',body:b}).catch(e=>{if(!route.request().failure())throw e;});
-  });
-  const pc=await cambios.newPage();pc.on('pageerror',e=>errores.push(e.message));
-  await pc.goto(base+'/v5/');await pc.getByRole('button',{name:'Comenzar',exact:true}).waitFor();
-  const antesCambio=await vista(pc);
-  await pc.getByRole('button',{name:'Preferencias',exact:true}).click();
-  await pc.locator('#probar-voz').click();await pendiente;
-  const cancelada=pc.waitForResponse(r=>r.url().endsWith('/api/voz/cancelar'));
-  await pc.locator('#voces').selectOption('piper:es_MX-ald-medium');
-  const cancelacion=await cancelada;
-  assert.equal(cancelacion.status(),200);
-  const corte=cancelacion.request().postDataJSON();
-  assert.equal(corte.canal_voz,primera.canal_voz);assert.ok(corte.turno_voz>primera.turno_voz);
-  liberar();await pc.locator('#probar-voz').click();
-  await pc.waitForFunction(()=>window.__voz.length===1);
-  assert.equal(await pc.evaluate(()=>window.__voz[0].voz),'piper:es_MX-ald-medium');
-  assert.deepEqual(await vista(pc),antesCambio);
-  resultados.push({caso:'Cambiar de voz durante una descarga cancela la lectura en el servidor y reproduce solo la última muestra, sin modificar la partida',resultado:'OK',alcance:'Descarga de WAV y reproductor controlados.'});
-  await cambios.close();
+  // (2026-11-14) Sin síntesis en el servidor ya no hay descargas de voz que cancelar.
   assert.deepEqual(errores,[]);
   fs.writeFileSync(path.join(out,'revision_navegador.json'),JSON.stringify({fecha:process.env.VERIFICACION_FECHA||new Date().toISOString().slice(0,10),version:'5.0.0',navegador:browser.version(),resultados,errores_js:errores},null,2));
   console.log(JSON.stringify({casos:resultados.length,resultados:'OK',navegador:browser.version()}));

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cargarConfigVoz, cargarDiccionarios, cargarVista, enviarAccion, enviarIdioma } from "./api/cliente";
-import type { Diccionarios, Idioma, Modalidad, TipoAccion, Vista, VozCatalogo } from "./api/tipos";
+import type { Diccionarios, Idioma, Modalidad, TipoAccion, Vista } from "./api/tipos";
 import { Catalogo } from "./componentes/Catalogo";
 import { Cierre } from "./componentes/Cierre";
 import { useCerrarFuera } from "./componentes/dialogos";
@@ -9,7 +9,7 @@ import { Portada } from "./componentes/Portada";
 import { Preferencias, type ValoresPreferencias } from "./componentes/Preferencias";
 import { Controles, Reto } from "./componentes/Reto";
 import { ContextoIdioma, crearTraductor } from "./i18n";
-import { GuiaVoz, vocesDisponibles, type ContextoLectura } from "./voz";
+import { GuiaVoz, type ContextoLectura } from "./voz";
 
 interface Aviso {
   id: number;
@@ -42,17 +42,14 @@ function useSistemaReduceMovimiento(): boolean {
 export function App() {
   const [vista, setVista] = useState<Vista | null>(null);
   const [diccionarios, setDiccionarios] = useState<Diccionarios>({ es: {}, "pt-BR": {} });
-  const [catalogoVoces, setCatalogoVoces] = useState<VozCatalogo[]>([]);
   const [grabadas, setGrabadas] = useState<Partial<Record<Idioma, number>>>({});
   const [errorCarga, setErrorCarga] = useState(false);
   const [ocupado, setOcupado] = useState(false);
   const [avisos, setAvisos] = useState<Aviso[]>([]);
-  const [versionVoces, setVersionVoces] = useState(0);
   const [prefs, setPrefs] = useState<ValoresPreferencias>(() => ({
     retos: "8",
     opciones: 8,
     vozActiva: true,
-    vozId: "",
     velocidad: 0.95,
     movimientoReducido: movimientoInicial(),
   }));
@@ -66,7 +63,6 @@ export function App() {
   }, [vista]);
   const preferencias = useRef<HTMLDialogElement>(null);
   useCerrarFuera(preferencias);
-  const [eleccionesVoz, setEleccionesVoz] = useState<Partial<Record<Idioma, string>>>({});
 
   const idioma: Idioma = vista?.idioma ?? "es";
   const traductor = useMemo(() => crearTraductor(diccionarios, idioma), [diccionarios, idioma]);
@@ -95,39 +91,18 @@ export function App() {
       .then(([v, d, c]) => {
         setVista(v);
         setDiccionarios(d);
-        setCatalogoVoces(c.voces);
         setGrabadas(c.grabadas ?? {});
       })
       .catch(() => setErrorCarga(true));
   }, []);
 
   useEffect(() => {
-    const alCambiar = () => setVersionVoces((n) => n + 1);
-    window.speechSynthesis?.addEventListener("voiceschanged", alCambiar);
     const alSalir = () => guia.parar();
     window.addEventListener("pagehide", alSalir);
     return () => {
-      window.speechSynthesis?.removeEventListener("voiceschanged", alCambiar);
       window.removeEventListener("pagehide", alSalir);
     };
   }, [guia]);
-
-  const voces = useMemo(
-    () => vocesDisponibles(catalogoVoces, idioma),
-    // versionVoces fuerza la relectura cuando el navegador publica sus voces.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [catalogoVoces, idioma, versionVoces],
-  );
-  const vozId = useMemo(() => {
-    const recordada = eleccionesVoz[idioma];
-    return (
-      (
-        voces.find((v) => v.id === recordada && v.disponible) ??
-        voces.find((v) => v.id === prefs.vozId && v.disponible) ??
-        voces.find((v) => v.disponible)
-      )?.id ?? ""
-    );
-  }, [voces, idioma, prefs.vozId, eleccionesVoz]);
 
   useEffect(() => {
     document.documentElement.lang = idioma;
@@ -163,14 +138,12 @@ export function App() {
 
   const hablar = useCallback(
     (v: Vista, contexto: ContextoLectura) => {
-      const ajustes = { activa: prefs.vozActiva, vozId, velocidad: prefs.velocidad, grabadas: grabadas[v.idioma] ?? 0 };
-      void guia.hablar(v, voces, ajustes, contexto, {
-        prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
-        modalidad: t("¿Quién elige el animal?"),
+      const ajustes = { activa: prefs.vozActiva, velocidad: prefs.velocidad, grabadas: grabadas[v.idioma] ?? 0 };
+      void guia.hablar(v, ajustes, contexto, {
         error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
       });
     },
-    [guia, voces, prefs.vozActiva, prefs.velocidad, vozId, grabadas, t],
+    [guia, prefs.vozActiva, prefs.velocidad, grabadas, t],
   );
 
   const accion = useCallback(
@@ -320,26 +293,20 @@ export function App() {
         ref={preferencias}
         idioma={idioma}
         enInicio={enInicio}
-        voces={voces}
         grabadas={grabadas[idioma] ?? 0}
         sistemaReduce={sistemaReduce}
-        valores={{ ...prefs, vozId }}
+        valores={prefs}
         onCambio={(cambios) => {
-          if ("vozId" in cambios || "velocidad" in cambios || cambios.vozActiva === false) guia.parar();
-          const vozNueva = cambios.vozId;
-          if (vozNueva) setEleccionesVoz((e) => ({ ...e, [idioma]: vozNueva }));
+          if ("velocidad" in cambios || cambios.vozActiva === false) guia.parar();
           setPrefs((p) => ({ ...p, ...cambios }));
         }}
         onIdioma={(nuevo) => void cambiarIdioma(nuevo)}
         onProbarVoz={() =>
           void guia.hablar(
             vista,
-            voces,
-            { activa: true, vozId, velocidad: prefs.velocidad, grabadas: grabadas[vista.idioma] ?? 0 },
+            { activa: true, velocidad: prefs.velocidad, grabadas: grabadas[vista.idioma] ?? 0 },
             "prueba",
             {
-              prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
-              modalidad: "",
               error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
             },
           )

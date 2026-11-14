@@ -88,11 +88,9 @@
     "evaluacion_con_jugadores": false,
     "casos_navegador_correctos": 63,
     "validacion_caa_con_usuarios": false,
-    "voz_prueba": "SINTESIS_REAL_14_VOCES_Y_REPRODUCTOR_NATIVO_2_IDIOMAS",
+    "voz_prueba": "VOZ_GRABADA_ELEVENLABS_350_MP3_ES_419",
     "audio_audible_en_dispositivo_usuario_verificado": false,
     "claves_api_voz_requeridas": false,
-    "voces_locales_generadas_correctamente": 14,
-    "casos_audio_nativo_correctos": 2,
     "idiomas_interfaz": [
       "es",
       "pt-BR"
@@ -131,7 +129,8 @@
     "diagnostico_entrenamiento": "docs/experimentos/hito2/diagnostico_entrenamiento.json",
     "preferencias_dos_columnas_verificadas": true,
     "catalogo_escritorio_sin_scroll_y_tarjetas_grandes": true,
-    "catalogo_paginacion_adaptable_y_foco_verificados": true
+    "catalogo_paginacion_adaptable_y_foco_verificados": true,
+    "grabaciones_voz_es": 350
   },
   "archivos": [
     {
@@ -146,8 +145,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 14590,
-      "sha256": "4e78e3f414e0d61f5ae86e88b01166855c5a7a026332a46ddc4ebbb614f4307e"
+      "bytes": 14626,
+      "sha256": "0c53284448ff97d7b4aab489b1a45f08fb5355045cc5ba219fbef350cf84ff62"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -745,29 +744,19 @@
       "sha256": "79f20ce2f80721e75fd5aaa57a9401da2a5e20f80c4aae28a8cb3f215b8dd5bb"
     },
     {
-      "ruta": "codigo/interfaz/preparar_voces.py",
-      "bytes": 3546,
-      "sha256": "3f816d8ed8ebebd8a7f33e8d619c0f15e59e5ac57a03c0fe07380c0233c2f677"
-    },
-    {
       "ruta": "codigo/interfaz/servicio.py",
-      "bytes": 8884,
-      "sha256": "9b2eaee66485fb48614f3e2c9a34766716ac6a2e8efdff1f58b14a145e47b794"
+      "bytes": 8784,
+      "sha256": "b683148d7b6d6ab5b79b4f506e77e465d9ce87050fdff49f10412b664ce6bbee"
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 17372,
-      "sha256": "bc635521e996d6aba8b861e10f4c31694cb5010d3c4c7caf212b945f423307e4"
-    },
-    {
-      "ruta": "codigo/interfaz/voz.py",
-      "bytes": 8537,
-      "sha256": "7db93263a31b720a4d013b86acf30ed626b126153e675b90367cf801e58cb4c5"
+      "bytes": 15525,
+      "sha256": "120c854a8abab52eea6dbf6aece036350c56e92ebe31b437be18d3e316a615e3"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 36387,
-      "sha256": "1084dab62eb13d8f1864fe87e944b6ab87386a532dac4a89122de0a634029fea"
+      "bytes": 35226,
+      "sha256": "dace33939e1d4157bb6a70b5c7422ecfe6213c8ad676645e066d1d7c09378469"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -1036,18 +1025,13 @@
     },
     {
       "ruta": "datos/traducciones_pt_BR.json",
-      "bytes": 30755,
-      "sha256": "872eead3ee2d3b468b0b3d71d0db6604a1a9f5331be206c1cbdcb825df690504"
+      "bytes": 30045,
+      "sha256": "8e20b1d4b5fdbc1c597e37b6ae4e1a2af69a24210402949c11d59fb6c82e3042"
     },
     {
       "ruta": "datos/variantes_ayuda.json",
       "bytes": 65353,
       "sha256": "ce8998a5e8abf2095fd8d89efd9770fad9fbd00b09af74931ea5e7eae2b3824b"
-    },
-    {
-      "ruta": "datos/voces_locales.json",
-      "bytes": 11882,
-      "sha256": "86732433e6d26781bc932167febc8a888c4cb9743930cc39061379c71c7ef63b"
     },
     {
       "ruta": "docs/cierre_tecnico_hito3.md",
@@ -2211,8 +2195,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 22390,
-      "sha256": "68932c6ae3d9d6af788d8a460379097088866c15e100f70ce3c94f7394b4d987"
+      "bytes": 22369,
+      "sha256": "e9dec4b7414e2b55a76a12a889fd55100cd3878c5e58778dd5df4ed62cd37bb5"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2596,8 +2580,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 3876,
-      "sha256": "8379b5d24e7af20ae2c8dac9a158e3353584b47716976942036a623e79977142"
+      "bytes": 3871,
+      "sha256": "3d527d9331895c52de3c9d012af978737135dcdb8afbed15fa60bb2f86bfb075"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -2616,8 +2600,8 @@
     },
     {
       "ruta": "tests/test_idiomas_voz.py",
-      "bytes": 12762,
-      "sha256": "0ae5fb5ee42cdc2be78073bc9d0de96040422132aa3a613803002309fc5cad30"
+      "bytes": 7859,
+      "sha256": "9c193e68217a43a1e3bc0f26ff5f9f8c15f161d2d9d81d0ab8172baea2bc72f4"
     },
     {
       "ruta": "tests/test_inicio.py",
@@ -2640,24 +2624,14 @@
       "sha256": "9e15486131136cc73a790ddebd795f8c1f06148947418372b7f47a40f23987ed"
     },
     {
-      "ruta": "tests/test_rendimiento_voz.py",
-      "bytes": 9016,
-      "sha256": "0280a8cd0015793a3593533982032cecf65350bc67f9266c7caecadfbdaad289"
-    },
-    {
-      "ruta": "tests/verificar_audio_real.cjs",
-      "bytes": 3558,
-      "sha256": "9342b88a3255b3ed29bfe4d789fadb2305b3d60ec47869cf9e04e7d7fc14cee3"
-    },
-    {
       "ruta": "tests/verificar_catalogo.cjs",
       "bytes": 5879,
       "sha256": "7997c5416775313aea61427df9a896bb0c7f1d14904efa60c50209327d64385a"
     },
     {
       "ruta": "tests/verificar_copia_limpia.py",
-      "bytes": 6321,
-      "sha256": "57f1226a991bfcb7387c508ced09b3691bf177f615305f6b903b2588633c98db"
+      "bytes": 6331,
+      "sha256": "902048c481cb008b4ca37dc577c9587cfb73a792141d4c14f577208c0b7e114c"
     },
     {
       "ruta": "tests/verificar_hito2.cjs",
@@ -2671,18 +2645,13 @@
     },
     {
       "ruta": "tests/verificar_interfaz.cjs",
-      "bytes": 56846,
-      "sha256": "96ba46d85b48761c012c93baecf7baf89451d5f90d5002386108d23ed0e9c22a"
+      "bytes": 56537,
+      "sha256": "e3f0741a1919be1b09976b516f71465262fd363e8d8210eafc54fb3481ce189b"
     },
     {
       "ruta": "tests/verificar_voces_navegador.cjs",
-      "bytes": 12857,
-      "sha256": "d0eed815c5078997a6ddf65e40bc04ae1c54e3b5f0a9d6af600dca8979e10a79"
-    },
-    {
-      "ruta": "tests/verificar_voces_reales.py",
-      "bytes": 2397,
-      "sha256": "17e9dc68a6faac9a0a89ad1c8de563d4544cc9528d293ee2ced22061c56de5f0"
+      "bytes": 12148,
+      "sha256": "ee390150e7c4de762655d455f7c8881e67122a8b4636813d399dbd49ff390cd9"
     },
     {
       "ruta": "codigo/nucleo/catalogo.py",
@@ -5231,18 +5200,18 @@
     },
     {
       "ruta": "frontend/src/App.tsx",
-      "bytes": 13268,
-      "sha256": "3110cd11bed9aabc68c24a8cd1d475a332a28176d31eae148a910ec5c3398c91"
+      "bytes": 11679,
+      "sha256": "6df7d01dc0d810d5004d88f0219a3971c1d4e75fbcc893d4f6e5ae9540150ed6"
     },
     {
       "ruta": "frontend/src/api/cliente.ts",
-      "bytes": 2339,
-      "sha256": "6f6dfbc99ce824253c12220fc0041b407e405e0a8dc46d0718d9dc4f3cc74858"
+      "bytes": 1972,
+      "sha256": "7bd899708c5bbe02df0536b1a1b7727692aa216103f7247edd97d4bedde744f3"
     },
     {
       "ruta": "frontend/src/api/tipos.ts",
-      "bytes": 1917,
-      "sha256": "f994fd19b8735da20c17a4632bb702fc39a5b5c4dd1f7620f5cb9419871651a1"
+      "bytes": 1718,
+      "sha256": "85f79b556adc6f92dc9fe2aebd25e5c60cea2002d4292b81976b13e6536b8d5e"
     },
     {
       "ruta": "frontend/src/componentes/Catalogo.tsx",
@@ -5276,8 +5245,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
-      "bytes": 13591,
-      "sha256": "59f17f7083c60f7a736492bebfe36790fc6c695f7c41e9f2d81dd5d368783532"
+      "bytes": 10456,
+      "sha256": "d349d5a98f19276099129f44a867f599599ad8b0f146a935a07547a4712cb3dd"
     },
     {
       "ruta": "frontend/src/componentes/Reto.tsx",
@@ -5311,8 +5280,8 @@
     },
     {
       "ruta": "frontend/src/voz.ts",
-      "bytes": 9356,
-      "sha256": "c1af6b50614d784f0bb6faed6976094a8ff57b6280cdc3038d4ddee4c4652455"
+      "bytes": 3692,
+      "sha256": "a212a441483c1586d6c653501192509e3840e6e98459c31f9a3adf2ebd573e52"
     },
     {
       "ruta": "frontend/tsconfig.json",
@@ -5377,7 +5346,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 1268,
-      "sha256": "a405581eea39e002c2881c843338aba9a7ffcd2593184c0b2ce513bff93924b1"
+      "sha256": "9b0daf1cbbb84c6c02d3664bcacc33770d4552fb9edc04b8ac2517e513336b34"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -7671,8 +7640,8 @@
     },
     {
       "ruta": "tests/verificar_voz_v6.cjs",
-      "bytes": 10292,
-      "sha256": "db5478d5fba1fbeba90159bcd9d54efe3c6d3b5470bd4697e04e32d88e89372f"
+      "bytes": 9619,
+      "sha256": "e03273590466a4b4560cf2820e4ccb26c66cd0fdee00457a7e266048fbaf6758"
     },
     {
       "ruta": "assets/ilustraciones_ligeras/indice.json",
@@ -9810,11 +9779,6 @@
       "sha256": "0bae13364569dab056337a088a0412e32a9a305f6dae37226d1b17c785b5cbfa"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-BiPzNOaf.js",
-      "bytes": 248054,
-      "sha256": "d8f5b346f3a8f28e3a9c096366924568cac3870f1e6d317a2c68fa4a3ce51565"
-    },
-    {
       "ruta": "docs/interfaz/6.0/portada_bosque_de_luz.webp",
       "bytes": 123322,
       "sha256": "3962bf9d63298373457f74b1bc97a0a2f6504ddaf8c7968b79151af29efa7890"
@@ -9843,6 +9807,31 @@
       "ruta": "docs/voz/elevenlabs/README.md",
       "bytes": 12128,
       "sha256": "9f5bfc8d0cc0ebe27d4ab6f26c06072cb6e848996dd86e2aacf4d15d8fb6a50e"
+    },
+    {
+      "ruta": "CLAUDE.md",
+      "bytes": 12026,
+      "sha256": "b231e06fc973546893bc5ac99f558d78b32c7d46ee1cb4869788133b0b3325c0"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-BGmevnUX.js",
+      "bytes": 246823,
+      "sha256": "2a429b4ff0dfb590e438285113b105012120bb7ce8b6c210c2e99df56b5dc77f"
+    },
+    {
+      "ruta": "docs/traducciones/revision_es_pt.csv",
+      "bytes": 125967,
+      "sha256": "0045b8186605ef291060f57a43999d0e28d470b098b6a9eefa929655429c9261"
+    },
+    {
+      "ruta": "docs/voz/pendiente_fase5.md",
+      "bytes": 1934,
+      "sha256": "87561d0355d9f38f44af8aec84845fc1829a4894588a30201705abe3953c0943"
+    },
+    {
+      "ruta": "tests/verificar_voz_v5.cjs",
+      "bytes": 4455,
+      "sha256": "ad24bfdbcd5cb5fd9b8c49499223bf2db6e5dd0ef14fcff1f18f631042d8ad14"
     }
   ],
   "nombre_proyecto": "Zoonauta",

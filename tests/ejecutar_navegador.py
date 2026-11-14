@@ -34,26 +34,26 @@ def entorno_herramientas(base):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--audio-real", action="store_true", help="Comprueba WAV con el reproductor nativo; requiere voces preparadas.")
     parser.add_argument("--voces-navegador", action="store_true", help="Comprueba Microsoft/Google con voces controladas y sus reglas de región.")
     parser.add_argument("--hito2", action="store_true", help="Comprueba 2, 4 y 8 opciones, historial y recarga en ambos idiomas.")
     parser.add_argument("--hito3", action="store_true", help="Comprueba Preferencias en dos columnas, pantallas pequeñas y teclado.")
     parser.add_argument("--catalogo", action="store_true", help="Comprueba tarjetas grandes, paginación adaptable y controles visibles.")
     parser.add_argument("--partidas-v6", action="store_true", help="Juega partidas completas en la 6.0 («/») solo con teclado (2/4/8, pt-BR, 320 px), sin desplazamiento.")
+    parser.add_argument("--voz-v5", action="store_true", help="Voz grabada de la 5.0 («/v5/») con el catálogo ampliado.")
     parser.add_argument("--voz-v6", action="store_true", help="Comprueba la cadena de voz del frontend 6.0 con audio simulado.")
     parser.add_argument("--v6", action="store_true", help="Recorre la 6.0 («/»): portada, modalidad, catálogo, Pista, Repetir, recarga y pausa.")
     parser.add_argument("--portada", action="store_true", help="Comprueba la portada 6.0 «Bosque de luz» («/»): sin desplazamiento, diálogos, movimiento reducido y axe.")
     parser.add_argument("--portada-5", action="store_true", help="Comprueba los 48 fondos de la portada 5.0 («/v5/») y su correspondencia con el catálogo.")
     args = parser.parse_args()
     with TemporaryDirectory() as carpeta:
-        servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=args.portada or args.portada_5 or args.v6 or args.voz_v6 or args.partidas_v6)
+        servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=args.portada or args.portada_5 or args.v6 or args.voz_v6 or args.voz_v5 or args.partidas_v6)
         hilo = Thread(target=servidor.serve_forever, daemon=True)
         hilo.start()
         env = {**entorno_herramientas(os.environ), "INTERFAZ_URL": f"http://127.0.0.1:{servidor.server_port}"}
         try:
-            prueba = ("verificar_partidas_v6.cjs" if args.partidas_v6 else "verificar_voz_v6.cjs" if args.voz_v6 else "verificar_v6.cjs" if args.v6 else "verificar_portada.cjs" if args.portada else "verificar_portada_5.cjs" if args.portada_5 else
+            prueba = ("verificar_partidas_v6.cjs" if args.partidas_v6 else "verificar_voz_v6.cjs" if args.voz_v6 else "verificar_voz_v5.cjs" if args.voz_v5 else "verificar_v6.cjs" if args.v6 else "verificar_portada.cjs" if args.portada else "verificar_portada_5.cjs" if args.portada_5 else
                       "verificar_catalogo.cjs" if args.catalogo else "verificar_hito3.cjs" if args.hito3 else "verificar_hito2.cjs" if args.hito2 else "verificar_voces_navegador.cjs" if args.voces_navegador else
-                      "verificar_audio_real.cjs" if args.audio_real else "verificar_interfaz.cjs")
+                      "verificar_interfaz.cjs")
             resultado = subprocess.run(["node", str(Path(__file__).with_name(prueba))], env=env)
         finally:
             servidor.shutdown()

@@ -11,6 +11,9 @@
 - Entorno local de voces preparado en esta copia (`modelos_voz/`, `.venv-voz/`, fuera de Git):
   14 voces disponibles.
 
+> **Retirado el 2026-11-14:** Piper y Kokoro se quitaron del proyecto (`voz.py` y
+> `datos/voces_locales.json` ya no existen). Este hallazgo queda solo como historial.
+
 ## Hallazgo pendiente de decisión: Kokoro en español usa pronunciación de España
 
 `codigo/interfaz/voz.py` llama a Kokoro con `lang="es"`, que en espeak-ng es el español

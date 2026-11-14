@@ -1,7 +1,7 @@
 import { forwardRef, useState } from "react";
 import type { Idioma } from "../api/tipos";
 import { useT } from "../i18n";
-import { IDIOMAS_CON_VOZ, SOLO_VOZ_GRABADA, type OpcionVoz } from "../voz";
+import { IDIOMAS_CON_VOZ } from "../voz";
 import { CERRAR_FUERA } from "./dialogos";
 import { Icono } from "./Icono";
 
@@ -9,7 +9,6 @@ export interface ValoresPreferencias {
   retos: string;
   opciones: number;
   vozActiva: boolean;
-  vozId: string;
   velocidad: number;
   movimientoReducido: boolean;
 }
@@ -18,7 +17,6 @@ interface Props {
   idioma: Idioma;
   valores: ValoresPreferencias;
   enInicio: boolean;
-  voces: OpcionVoz[];
   /** Mensajes con grabación de la voz de Zoonauta en el idioma actual. */
   grabadas: number;
   sistemaReduce: boolean;
@@ -28,19 +26,6 @@ interface Props {
   onCerrar: () => void;
 }
 
-const MOTORES = [
-  ["google", "Google"],
-  ["microsoft", "Microsoft"],
-  ["piper", "Piper"],
-  ["kokoro", "Kokoro"],
-] as const;
-const CALIDAD: Record<string, string> = {
-  high: "Calidad alta",
-  medium: "Calidad media",
-  low: "Calidad baja",
-  x_low: "Ligera",
-};
-
 /**
  * Preferencias «Tu expedición / A tu manera.»: controles y textos de la 5.0 con el diseño
  * aprobado en la maqueta «Bosque de luz». Modal nativo con cabecera y pie fijos y contenido
@@ -48,39 +33,19 @@ const CALIDAD: Record<string, string> = {
  * prevent-page-scroll-under-modal-dialog, animate-to-from-top-layer, switch).
  */
 export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Preferencias(
-  { idioma, valores, enInicio, voces, grabadas, sistemaReduce, onCambio, onIdioma, onProbarVoz, onCerrar },
+  { idioma, valores, enInicio, grabadas, sistemaReduce, onCambio, onIdioma, onProbarVoz, onCerrar },
   ref,
 ) {
   const { t } = useT();
   const [hayMas, setHayMas] = useState(false);
-  const region = (codigo: string) => {
-    if (codigo === "419") return t("Latinoamérica");
-    try {
-      return new Intl.DisplayNames([idioma], { type: "region" }).of(codigo) ?? codigo;
-    } catch {
-      return codigo;
-    }
-  };
   const vozHabilitada = IDIOMAS_CON_VOZ.includes(idioma);
-  const hayVoz = SOLO_VOZ_GRABADA ? grabadas > 0 : voces.some((v) => v.disponible);
+  const hayVoz = grabadas > 0;
   const vozActiva = vozHabilitada && valores.vozActiva;
-  const elegida = voces.find((v) => v.id === valores.vozId);
   const notaVoz = !vozHabilitada
     ? "La voz en portugués todavía no está disponible."
-    : SOLO_VOZ_GRABADA
-      ? hayVoz
-        ? "Voz grabada de Zoonauta. Funciona en este equipo, sin Internet."
-        : "Faltan las grabaciones de la voz de Zoonauta en assets/voz/grabada."
-      : !hayVoz
-        ? "No hay voces preparadas para este idioma. Abre iniciar_juego.bat para descargar los modelos."
-        : elegida?.nativa
-          ? elegida.local
-            ? "Voz del navegador instalada en este equipo. No requiere descargar modelos."
-            : "Voz del navegador. Puede necesitar Internet; no requiere descargar modelos."
-          : "Las voces se reproducen en este equipo, sin conexión después de preparar los modelos.";
-  const notaNavegador = voces.some((v) => v.nativa)
-    ? "Microsoft y Google: se muestran las voces compatibles que ofrece tu navegador."
-    : "Este navegador no ofrece voces de Microsoft o Google para esta región. Puedes usar Piper o Kokoro.";
+    : hayVoz
+      ? "Voz grabada de Zoonauta. Funciona en este equipo, sin Internet."
+      : "Faltan las grabaciones de la voz de Zoonauta en assets/voz/grabada.";
 
   // Retos: se escribe libremente y se ajusta de 1 a 48 al salir o con − / +.
   const numero = Number.parseInt(valores.retos, 10);
@@ -208,66 +173,28 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
               onChange={(e) => onCambio({ vozActiva: e.target.checked })}
             />
           </label>
-          {SOLO_VOZ_GRABADA ? (
-            // Una sola voz por ahora: Marcela (ElevenLabs). En pt-BR el selector queda bloqueado.
-            <div className="pref-campo" data-apagado={!vozActiva || undefined}>
-              <label htmlFor="pref-voces">
-                {t(idioma === "pt-BR" ? "Voz en portugués brasileño" : "Voz en español")}
-              </label>
-              <select
-                id="pref-voces"
-                value={vozHabilitada ? "marcela" : ""}
-                disabled={!vozActiva || !hayVoz}
-                aria-describedby="nota-voz"
-                onChange={() => undefined}
-              >
-                {vozHabilitada ? (
-                  <option value="marcela">Marcela · ElevenLabs</option>
-                ) : (
-                  <option value="">{t("Sin voces disponibles")}</option>
-                )}
-              </select>
-              <p id="nota-voz" className="nota" role="status">
-                {t(notaVoz)}
-              </p>
-            </div>
-          ) : (
-            <div className="pref-campo" data-apagado={!vozActiva || undefined}>
-              <label htmlFor="pref-voces">
-                {t(idioma === "pt-BR" ? "Voz en portugués brasileño" : "Voz en español")}
-              </label>
-              <select
-                id="pref-voces"
-                value={vozHabilitada ? valores.vozId : ""}
-                disabled={!vozActiva || !hayVoz}
-                aria-describedby="nota-voz nota-navegador"
-                onChange={(e) => onCambio({ vozId: e.target.value })}
-              >
-                {!vozHabilitada && <option value="">{t("Sin voces disponibles")}</option>}
-                {MOTORES.map(([motor, nombre]) => {
-                  const grupo = voces.filter((v) => v.motor === motor);
-                  if (!grupo.length) return null;
-                  return (
-                    <optgroup key={motor} label={nombre}>
-                      {grupo.map((v) => (
-                        <option key={v.id} value={v.id} disabled={!v.disponible}>
-                          {`${v.nombre} · ${region(v.region)}${v.calidad ? " · " + t(CALIDAD[v.calidad] ?? v.calidad) : ""}`}
-                        </option>
-                      ))}
-                    </optgroup>
-                  );
-                })}
-              </select>
-              <p id="nota-voz" className="nota" role="status">
-                {t(notaVoz)}
-              </p>
-              {vozHabilitada && (
-                <p id="nota-navegador" className="nota">
-                  {t(notaNavegador)}
-                </p>
+          {/* Una sola voz por ahora: Marcela (ElevenLabs). En pt-BR el selector queda bloqueado. */}
+          <div className="pref-campo" data-apagado={!vozActiva || undefined}>
+            <label htmlFor="pref-voces">
+              {t(idioma === "pt-BR" ? "Voz en portugués brasileño" : "Voz en español")}
+            </label>
+            <select
+              id="pref-voces"
+              value={vozHabilitada ? "marcela" : ""}
+              disabled={!vozActiva || !hayVoz}
+              aria-describedby="nota-voz"
+              onChange={() => undefined}
+            >
+              {vozHabilitada ? (
+                <option value="marcela">Marcela · ElevenLabs</option>
+              ) : (
+                <option value="">{t("Sin voces disponibles")}</option>
               )}
-            </div>
-          )}
+            </select>
+            <p id="nota-voz" className="nota" role="status">
+              {t(notaVoz)}
+            </p>
+          </div>
           <div className="pref-campo" data-apagado={!vozActiva || undefined}>
             <label htmlFor="pref-velocidad">{t("Ritmo de lectura")}</label>
             <select

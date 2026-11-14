@@ -1,9 +1,8 @@
 "use strict";
 let vista = null, ocupado = false, voces = [], vozElegida = "", locucion = null;
-let diccionarios={es:{},"pt-BR":{}}, catalogoVoces=[], grabadas={}, pedidoVoz=null, turnoVoz=0, audioURL=null;
+let diccionarios={es:{},"pt-BR":{}}, grabadas={}, pedidoVoz=null, turnoVoz=0, audioURL=null;
 let locucionNativa=null;
 const eleccionesVoz={};
-const canalVoz=crypto.randomUUID();
 let carrusel = null, temporizadorPaisaje = null;
 let estadoCatalogo = {consulta:"", pagina:0, idioma:null};
 let ajustarCatalogo = null;
@@ -383,8 +382,6 @@ async function actualizarGuia(tablero,anterior) {
 function pararVoz() {
   const pendiente=pedidoVoz;
   turnoVoz++;pendiente?.abort();pedidoVoz=null;
-  if(pendiente)fetch("/api/voz/cancelar",{method:"POST",headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({canal_voz:canalVoz,turno_voz:turnoVoz}),keepalive:true}).catch(()=>{});
   if(locucion){locucion.pause();locucion.removeAttribute("src");locucion=null;}
   if(locucionNativa){locucionNativa=null;window.speechSynthesis?.cancel();}
   if(audioURL){URL.revokeObjectURL(audioURL);audioURL=null;}
@@ -414,30 +411,31 @@ function nombreRegion(region) {
   catch{return t({MX:"México",AR:"Argentina",ES:"España",BR:"Brasil",US:"Estados Unidos"}[region]||region);}
 }
 function notaVoz() {
-  const disponible=voces.some(v=>v.disponible);
+  // Desde 2026-11-14 no hay voces locales Piper/Kokoro: la voz grabada de Zoonauta y, si falta
+  // en este idioma, las voces del navegador.
+  const grabada=(grabadas[vista?.idioma||"es"]||0)>0;
+  const disponible=grabada||voces.some(v=>v.disponible);
   const seleccionada=voces.find(v=>v.id===vozElegida);
-  const mensaje=seleccionada?.nativa?(seleccionada.local?
+  const mensaje=grabada?"Voz grabada de Zoonauta. Funciona en este equipo, sin Internet.":seleccionada?.nativa?(seleccionada.local?
     "Voz del navegador instalada en este equipo. No requiere descargar modelos.":
     "Voz del navegador. Puede necesitar Internet; no requiere descargar modelos."):
-    disponible?"Las voces se reproducen en este equipo, sin conexión después de preparar los modelos.":
-    "No hay voces preparadas para este idioma. Abre iniciar_juego.bat para descargar los modelos.";
+    "Sin voces disponibles";
   $("estado-voz").textContent=t(mensaje);
   $("disponibilidad-voces-navegador").textContent=t(voces.some(v=>v.nativa)?
     "Microsoft y Google: se muestran las voces compatibles que ofrece tu navegador.":
-    "Este navegador no ofrece voces de Microsoft o Google para esta región. Puedes usar Piper o Kokoro.");
+    "Este navegador no ofrece voces de Microsoft o Google para esta región.");
   $("probar-voz").disabled=!disponible;
 }
 function cargarVoces() {
   const idioma=vista?.idioma||"es";
   const anterior=vozElegida;
-  voces=[...catalogoVoces,...vocesNavegador()].filter(v=>v.idioma===idioma);
+  voces=vocesNavegador().filter(v=>v.idioma===idioma);
   const sel=$("voces");sel.replaceChildren();
-  for(const motor of ["google","microsoft","piper","kokoro"]){
-    const grupo=nodo("optgroup");grupo.label={google:"Google",microsoft:"Microsoft",piper:"Piper",kokoro:"Kokoro"}[motor];
+  for(const motor of ["google","microsoft"]){
+    const grupo=nodo("optgroup");grupo.label={google:"Google",microsoft:"Microsoft"}[motor];
     for(const v of voces.filter(v=>v.motor===motor)){
-      const calidad=v.calidad?" · "+t({high:"Calidad alta",medium:"Calidad media",low:"Calidad baja",x_low:"Ligera"}[v.calidad]):"";
       const region=nombreRegion(v.region);
-      const o=nodo("option","",`${v.nombre} · ${region}${calidad}`);o.value=v.id;o.disabled=!v.disponible;grupo.append(o);
+      const o=nodo("option","",`${v.nombre} · ${region}`);o.value=v.id;o.disabled=!v.disponible;grupo.append(o);
     }
     if(grupo.children.length)sel.append(grupo);
   }
@@ -463,23 +461,12 @@ async function hablar(prueba=false,contexto="respuesta") {
   if(!prueba&&vista.fase==="INICIO"&&(contexto!=="modalidad"||!$("elegir-modalidad")?.open))return;
   pararVoz();
   // 1) Grabación completa del mensaje exacto (ElevenLabs). Nunca se unen audios:
-  // si falta, el mensaje entero se lee con la voz alternativa elegida.
-  // "Probar voz" siempre prueba esa voz alternativa.
-  if(!prueba&&grabadas[vista.idioma]>0&&await hablarGrabada(contexto))return;
+  // si falta, el mensaje entero se lee con la voz del navegador elegida (si hay alguna).
+  // "Probar voz" reproduce la grabación del mensaje en pantalla (o prueba la voz del navegador).
+  if(grabadas[vista.idioma]>0&&await hablarGrabada(prueba?"respuesta":contexto))return;
   if(!vozElegida){notaVoz();return;}
   const seleccionada=voces.find(v=>v.id===vozElegida);
-  if(seleccionada?.nativa){hablarNavegador(seleccionada,prueba,contexto);return;}
-  const turno=turnoVoz,control=new AbortController();pedidoVoz=control;
-  const entrada={voz:vozElegida,idioma:vista.idioma,prueba,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id,
-    canal_voz:canalVoz,turno_voz:turno,contexto};
-  $("estado-voz").textContent=t("Preparando la lectura…");
-  try {
-    const r=await fetch("/api/voz",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada),signal:control.signal});
-    if(!r.ok){const d=await r.json();throw Error(d.error||t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."));}
-    const blob=await r.blob();if(turno!==turnoVoz)return;
-    pedidoVoz=null;
-    await reproducir(blob,turno);
-  }catch(e){if(e.name!=="AbortError"&&turno===turnoVoz){pararVoz();notificar(e.message);notaVoz();}}
+  if(seleccionada?.nativa)hablarNavegador(seleccionada,prueba,contexto);
 }
 async function hablarGrabada(contexto) {
   // Devuelve true si la locución quedó a cargo de la grabación (o se canceló).
@@ -566,5 +553,5 @@ $("idioma").addEventListener("change",cambiarIdioma);
 window.speechSynthesis?.addEventListener("voiceschanged",()=>{if(vista)cargarVoces();});
 window.addEventListener("pagehide",()=>{pararVoz();detenerCarrusel();});
 Promise.all([fetch("/api/vista"),fetch("/api/idiomas"),fetch("/api/voz/config")].map(async p=>{const r=await p;if(!r.ok)throw Error();return r.json();}))
-.then(([v,d,c])=>{vista=v;diccionarios=d;catalogoVoces=c.voces;grabadas=c.grabadas||{};render();cargarVoces();})
+.then(([v,d,c])=>{vista=v;diccionarios=d;grabadas=c.grabadas||{};render();cargarVoces();})
 .catch(()=>{juego.replaceChildren(nodo("p","introduccion","No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página."));juego.setAttribute("aria-busy","false");});
