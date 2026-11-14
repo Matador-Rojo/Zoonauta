@@ -412,7 +412,20 @@
     "2 hábitats": "2 habitats",
     "4 hábitats": "4 habitats",
     "8 hábitats": "8 habitats",
-    "Menos opciones para empezar. Se aplica a la próxima partida.": "Menos opções para começar. Aplica-se à próxima partida."
+    "Menos opciones para empezar. Se aplica a la próxima partida.": "Menos opções para começar. Aplica-se à próxima partida.",
+    "Reducir movimiento": "Reduzir movimento",
+    "Tu equipo ya pide reducir el movimiento.": "Seu dispositivo já pede para reduzir o movimento.",
+    "Un bosque que cobra vida": "Uma floresta que ganha vida",
+    "Descubre el": "Descubra a",
+    "bosque de luz.": "floresta de luz.",
+    "Elige un animal. Sigue las pistas y descubre dónde vive.": "Escolha um animal. Siga as pistas e descubra onde ele vive.",
+    "Voz": "Voz",
+    "Pantalla": "Tela",
+    "Uno menos": "Um a menos",
+    "Uno más": "Um a mais",
+    "La voz en portugués todavía no está disponible.": "A voz em português ainda não está disponível.",
+    "Voz grabada de Zoonauta. Funciona en este equipo, sin Internet.": "Voz gravada do Zoonauta. Funciona neste dispositivo, sem Internet.",
+    "Faltan las grabaciones de la voz de Zoonauta en assets/voz/grabada.": "Faltam as gravações da voz do Zoonauta em assets/voz/grabada."
   },
   "errores": {
     "La pantalla ha cambiado. Se recuperó la vista actual.": "A tela mudou. A visualização atual foi recuperada.",

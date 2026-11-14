@@ -15,9 +15,13 @@ describe("traductor", () => {
       "Página 2 de 48",
     );
   });
-  it("recurre a los borradores pendientes solo en pt-BR", () => {
-    const [clave, borrador] = Object.entries(TEXTOS_NUEVOS_PENDIENTES)[0];
-    expect(crearTraductor(dic, "pt-BR").t(clave)).toBe(borrador);
-    expect(crearTraductor(dic, "es").t(clave)).toBe(clave);
+  it("recurre a los borradores pendientes solo en pt-BR (si los hay)", () => {
+    for (const [clave, borrador] of Object.entries(TEXTOS_NUEVOS_PENDIENTES)) {
+      expect(crearTraductor(dic, "pt-BR").t(clave)).toBe(borrador);
+      expect(crearTraductor(dic, "es").t(clave)).toBe(clave);
+    }
+  });
+  it("sin traducción ni borrador muestra el texto en español, nunca vacío", () => {
+    expect(crearTraductor(dic, "pt-BR").t("Texto sin traducir")).toBe("Texto sin traducir");
   });
 });

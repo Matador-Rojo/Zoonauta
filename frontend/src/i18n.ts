@@ -7,27 +7,9 @@ import type { Diccionarios, Idioma } from "./api/tipos";
 // Textos nuevos de la 6.0 que todavía no están en el diccionario del servidor.
 // BORRADOR pt-BR: pendiente de revisión humana antes de trasladarlos a
 // datos/traducciones_pt_BR.json.
-export const TEXTOS_NUEVOS_PENDIENTES: Record<string, string> = {
-  "Reducir movimiento": "Reduzir movimento",
-  "Tu equipo ya pide reducir el movimiento.": "Seu dispositivo já pede para reduzir o movimento.",
-  // Portada «Bosque de luz» (2026-11-14)
-  "Un bosque que cobra vida": "Uma floresta que ganha vida",
-  "Descubre el": "Descubra a",
-  "bosque de luz.": "floresta de luz.",
-  "Elige un animal. Sigue las pistas y descubre dónde vive.":
-    "Escolha um animal. Siga as pistas e descubra onde ele vive.",
-  // Preferencias 6.0
-  Voz: "Voz",
-  Pantalla: "Tela",
-  "Uno menos": "Um a menos",
-  "Uno más": "Um a mais",
-  "La voz en portugués todavía no está disponible.": "A voz em português ainda não está disponível.",
-  "Sin voces disponibles": "Sem vozes disponíveis",
-  "Voz grabada de Zoonauta. Funciona en este equipo, sin Internet.":
-    "Voz gravada do Zoonauta. Funciona neste dispositivo, sem Internet.",
-  "Faltan las grabaciones de la voz de Zoonauta en assets/voz/grabada.":
-    "Faltam as gravações da voz do Zoonauta em assets/voz/grabada.",
-};
+// Vacío: los textos de la portada «Bosque de luz» y de Preferencias 6.0 se aprobaron el
+// 2026-11-14 y están en datos/traducciones_pt_BR.json (sección «interfaz»).
+export const TEXTOS_NUEVOS_PENDIENTES: Record<string, string> = {};
 
 export interface Traductor {
   idioma: Idioma;
