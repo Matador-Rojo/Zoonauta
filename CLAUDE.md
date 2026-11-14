@@ -24,6 +24,10 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
   Todo movimiento es ambiental, leve y desactivable (control propio + `prefers-reduced-motion`).
 - Audio siempre bajo control del usuario: una sola voz a la vez; cancelar la lectura
   anterior al cambiar de mensaje o pausar. Conservar Piper, Kokoro y Web Speech API.
+- Voces (decidido 2026-11-14): por ahora solo español. En español se ofrecen todas las voces
+  descargadas (Piper y Kokoro, más las grabaciones es-419) y las del navegador. En pt-BR la voz
+  queda bloqueada: cero voces y controles desactivados, aunque existan modelos pt-BR. Más
+  idiomas de voz llegarán después; no borrar modelos ni `datos/voces_locales.json`.
 - ElevenLabs u otro servicio externo: esperar autorización antes de consumir créditos o
   enviar textos. Claves solo en el entorno del servidor o de generación, nunca en el
   frontend ni en el repositorio.
@@ -52,8 +56,12 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
   no es mejorar y no se presenta como mejora.
 - Cambios visuales: compáralos con la versión anterior en capturas lado a lado y di qué es mejor
   y qué es peor. Avisa siempre que quites un rasgo que existía.
-- La identidad visual del propietario (oscura, acento lima, titular grande y ligero) manda sobre
-  cualquier guía genérica de diseño. Ante la duda, pregunta.
+- La identidad visual del propietario manda sobre cualquier guía genérica de diseño. Desde el
+  2026-11-14 la 6.0 entera es azul noche con acento cian/turquesa (botones, foco, brillos),
+  titular serif grande sobre la portada «Bosque de luz». La 5.0 en `/` conserva su verde y lima.
+  Contrato completo en `docs/interfaz/6.0/identidad.md`. Ante la duda, pregunta.
+- Antes de rediseñar una pieza, captúrala en la 5.0 y parte de ella (controles, textos,
+  estructura); no la imagines de cero. Leer `referencias-externas/LEEME.md` y aplicar sus guías.
 - Búsquedas y lecturas amplias: delégalas en `investigador`.
 - Cambios visuales: ejecuta `python -m tests.comparar_versiones --salida <carpeta temporal>` (5.0
   izquierda, 6.0 derecha, escritorio y móvil), MIRA las imágenes y contrasta con
@@ -142,9 +150,13 @@ Detalles del entorno:
 - Locales, fuera de Git: `.venv-voz/`, `modelos_voz/`, `registros/`, `output/`,
   `resultados_nuevos/`.
 
-## Portada 6.0 (decidido)
+## Portada 6.0 (decidido 2026-11-14, sustituye al carrusel de ocho fondos)
 
-Exactamente ocho fondos, en este orden: H01 Selva tropical húmeda, H09 Sabana seca,
-H17 Desierto cálido, H22 Hielo marino polar, H20 Alta montaña rocosa, H37 Arrecife de
-coral, H21 Cueva terrestre (estática), H25 Lago de agua dulce. Reutilizar los WebP de
-`fondos/catalogo/`. El catálogo jugable conserva los 48 hábitats.
+Un único fondo aprobado: «Bosque de luz» (ciervo y búho bajo la luna,
+`prototipo-bosque-de-luz/bosque-de-luz-ciervo.png`). No se sustituye, ni se le aplican
+filtros, animaciones o capas; conserva su encuadre y su velo oscuro. La portada ocupa
+exactamente la vista, sin desplazamiento; Preferencias se abre encima sin empujar nada.
+**Sin pictogramas en la portada.** Textos: «Descubre el bosque de luz.» y «Elige un animal.
+Sigue las pistas y descubre dónde vive.». Comenzar abre «¿Quién elige el animal?». El
+catálogo jugable conserva los 48 hábitats. Los ocho paisajes y capas del carrusel anterior
+siguen en `fondos/` sin uso en la 6.0.
