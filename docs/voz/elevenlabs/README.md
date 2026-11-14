@@ -107,15 +107,17 @@ cuesta 1 crédito por carácter, igual que los demás modelos de voz completos (
 | Eleven Multilingual v2 / Eleven v3 | 1 | 39.621 | 59.432 |
 | Flash / Turbo v2.5 | 0,5 | 19.811 | 29.716 |
 
-Saldo disponible: **36.698 créditos**, con renovación el **15 de noviembre de 2026**. Con v4 no
-alcanza para todo en este ciclo. Propuesta en dos fases:
+Saldo disponible: **36.698 créditos**, con renovación el **15 de noviembre de 2026**.
 
-- **Fase A, con el saldo actual** — P1 + P3 + las confirmaciones y pistas de P2: 22.887 créditos.
-  Deja unos 13.800 para repeticiones (≈ 60 %).
-- **Fase B, con el saldo renovado** — apoyo + pista de P2: 16.734 créditos.
+Plan decidido el 2026-11-14: **primero solo español; el portugués, otro día.**
+
+- **Ahora — es-419 completo** (P1, P2 y P3): 350 audios, **19.912 créditos**. Quedan unos 16.800
+  para repeticiones (≈ 84 %). Orden: P1 → P2 → P3, siguiendo la columna `orden`.
+- **Más adelante — pt-BR completo**: 350 audios, 19.709 créditos, con el saldo de un ciclo
+  posterior. Mientras tanto, el portugués se lee entero con Piper, Kokoro o el navegador.
 
 Si los créditos no usados no pasan al ciclo siguiente en tu plan (compruébalo en *Subscription*),
-conviene usar la Fase A antes del 15. Recomiendo escuchar primero una muestra de P1.
+conviene grabar el español antes del 15. Recomiendo escuchar primero una muestra de P1.
 
 ## Elegir voz y modelo (una sola vez por idioma)
 
