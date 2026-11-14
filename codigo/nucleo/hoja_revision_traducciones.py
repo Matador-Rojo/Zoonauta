@@ -92,8 +92,7 @@ def generar() -> dict:
             f[c] = previa.get(c, "")
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
     with SALIDA.open("w", encoding="utf-8-sig", newline="") as f:
-        escritor = csv.DictWriter(f, fieldnames=COLUMNAS, lineterminator="
-")
+        escritor = csv.DictWriter(f, fieldnames=COLUMNAS, lineterminator="\n")
         escritor.writeheader()
         escritor.writerows(filas)
     grupos = {}

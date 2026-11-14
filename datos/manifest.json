@@ -7976,8 +7976,8 @@
     },
     {
       "ruta": "codigo/nucleo/hoja_revision_traducciones.py",
-      "bytes": 5277,
-      "sha256": "09dd79c029e5265b3e4722497f2618daa374d14524bb37c66be760732eeb8525"
+      "bytes": 5278,
+      "sha256": "132acfdc6dfe8f6713feb304bafb902ec6f3570cad315ad9e3e9db945d8c6014"
     },
     {
       "ruta": "codigo/nucleo/validar_catalogo.py",
