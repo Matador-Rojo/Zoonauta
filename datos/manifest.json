@@ -130,7 +130,7 @@
     "preferencias_dos_columnas_verificadas": true,
     "catalogo_escritorio_sin_scroll_y_tarjetas_grandes": true,
     "catalogo_paginacion_adaptable_y_foco_verificados": true,
-    "grabaciones_voz_es": 350,
+    "grabaciones_voz_es": 412,
     "agente_6": {
       "politica_partida": "AGENTE_ADAPTATIVO",
       "linea_base": "ID3_OPCIONES",
@@ -139,8 +139,9 @@
       "parametros_fijados_a_mano": true,
       "evaluacion": "docs/experimentos/agente6/evaluacion.json",
       "evaluacion_con_jugadores": false,
-      "ayudas_rasgo_con_grabacion": 1,
-      "mensajes_pendientes_de_grabar_es": 62,
+      "ayudas_rasgo_con_grabacion": 32,
+      "mensajes_pendientes_de_grabar_es": 0,
+      "ayudas_rasgo_revision_humana": "PENDIENTE",
       "pruebas_python_correctas": 122,
       "documentacion": "docs/agente/agente_6.md",
       "politica_aprendida": "AGENTE_APRENDIDO",
@@ -9828,8 +9829,8 @@
     },
     {
       "ruta": "docs/voz/elevenlabs/README.md",
-      "bytes": 15276,
-      "sha256": "975fe3dce435da7ee1ec3f7e339b68e4353f242aec7714f58ef14ecc74c405a4"
+      "bytes": 15277,
+      "sha256": "93f857d486501c42e62e66be4dc0a5cb11486658b7e91da3a33a875a3f785143"
     },
     {
       "ruta": "CLAUDE.md",
@@ -9873,13 +9874,13 @@
     },
     {
       "ruta": "tests/test_agente6.py",
-      "bytes": 13987,
-      "sha256": "4a669fc3a02d847d93a21223d2dd9d6390f1036d348922a552d99916edb415ef"
+      "bytes": 13988,
+      "sha256": "ddf1454a940d70d5ac2b1fcf9870d374f8caf3ca41714bcdb7b59c3c54c609e2"
     },
     {
       "ruta": "docs/agente/agente_6.md",
-      "bytes": 39182,
-      "sha256": "0707fcadfe3e63e13d3ed79247c267b7ce9adeec5c4a28d765c9ef40ae05e383"
+      "bytes": 39203,
+      "sha256": "1db88f0d58106b919938b69d538048b6fae89bcbd5721ce422c6e93b4e2a54dc"
     },
     {
       "ruta": "docs/experimentos/agente6/evaluacion.json",

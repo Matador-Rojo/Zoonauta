@@ -464,10 +464,10 @@ recuperación de lo plantado; con el resto, 122 en total):
   o tres ayudas; Repetir exacto; Pausar y Reanudar sin efecto; sin grabación no se usa la ayuda
   por rasgo y, con una grabación de prueba, sí; ID3 elige la mayor ganancia de información;
 - cobertura de voz con el agente en la partida real (`test_voz_grabada_cobertura`). Lee unos
-  300 mensajes distintos, porque el agente no recorre todas las pistas en orden. Las demás
+  270 mensajes distintos (269 el 2026-11-14), porque el agente no recorre todas las pistas en orden. Las demás
   ramas quedan cubiertas porque el agente solo construye candidatas con grabación: las pistas
   y apoyos ya grabados, y las ayudas por rasgo filtradas por `ayudas_con_grabacion`, que
-  `test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo` comprueba;
+  `test_solo_se_usan_ayudas_por_rasgo_con_grabacion` comprueba;
 - navegador: las suites de la 6.0 (`--v6`, `--partidas-v6`, `--voz-v6`, `--portada`) y de la
   5.0 en `/v5/` (`--hito2`, `--hito3`, `--catalogo`, general, `--voz-v5`, `--voces-navegador`).
 

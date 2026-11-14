@@ -213,7 +213,7 @@ class Controles(Base):
 
 
 class VozYBaseline(Base):
-    def test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo(self):
+    def test_solo_se_usan_ayudas_por_rasgo_con_grabacion(self):
         activas = ayudas_con_grabacion(self.banco)
         # Desde el 2026-11-14 las 32 ayudas por rasgo tienen sus dos grabaciones (sola y tras
         # «Vamos a buscar otro lugar.»); «arbustos» reutiliza la de AY_H13_L1. Si falta una
