@@ -294,7 +294,7 @@ def escribir_pendientes(filas_pendientes: list[dict], ruta: Path = PENDIENTES) -
     total = sum(f["caracteres"] for f in filas_pendientes)
     cabecera = [
         "# Zoonauta 6.0 · mensajes nuevos pendientes de grabar en español (es-419)",
-        "# Voz: Marcela (ElevenLabs), el mismo modelo y ajustes que las 350 grabaciones existentes.",
+        "# Voz: Marcela (ElevenLabs), el mismo modelo y ajustes que las grabaciones existentes.",
         "# Generado con: PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes",
         "# Formato: una línea con el nombre exacto del archivo MP3 y, en la siguiente, el texto",
         "# completo que se pronuncia (copiar tal cual). Las líneas que empiezan con # son comentarios.",

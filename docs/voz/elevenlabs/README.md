@@ -2,24 +2,28 @@
 
 Fecha: 2026-11-13 (modelo actualizado el 2026-11-14) · Rama: `experimental/zoonauta-v6-modern-web`
 
-**Estado (2026-11-14): grabaciones completas en español.** Las 350 grabaciones de Marcela
-(modelo `eleven_v4`) están en `assets/voz/grabada/es-419/` y cubren los 353 mensajes del juego
-(tres reutilizan un duplicado); `tests/test_voz_grabada_cobertura.py` lo comprueba jugando todos los
-animales. En pt-BR no hay grabaciones y la voz está bloqueada en la 6.0.
+**Estado (2026-11-14): grabaciones completas en español.** Las 412 grabaciones de Marcela
+(modelo `eleven_v4`) están en `assets/voz/grabada/es-419/`: las 350 de los 353 mensajes del juego
+(tres reutilizan un duplicado) y las 62 de las ayudas por rasgo del agente, incorporadas el mismo
+día. `tests/test_voz_grabada_cobertura.py` lo comprueba jugando todos los animales. En pt-BR no hay
+grabaciones y la voz está bloqueada en la 6.0.
 
-## Ayudas del agente 6.0 pendientes de grabar (2026-11-14)
+## Ayudas del agente 6.0 (grabadas el 2026-11-14)
 
 El agente de la 6.0 ([docs/agente/agente_6.md](../../agente/agente_6.md)) puede usar, además de las
 144 pistas grabadas, 32 **ayudas breves por rasgo** («Busca un lugar frío.», «Busca agua que corre
 despacio.»), definidas en `datos/expedicion/atributos_habitats.json`. Cada una necesita dos
 grabaciones: sola (al pulsar Pista) y precedida de «Vamos a buscar otro lugar.» (tras elegir un
 hábitat no confirmado). Una ya existe: «Busca un lugar con arbustos.» es idéntica a la pista
-`AY_H13_L1` y reutiliza su audio. Faltan **62 mensajes (2669 caracteres)**, listados en
-[`textos_pendientes_es-419.txt`](textos_pendientes_es-419.txt): una línea con el nombre exacto del
-MP3 y la siguiente con el texto completo. Los textos los redactó una IA a partir de pistas ya
-revisadas: revísalos antes de gastar créditos.
+`AY_H13_L1` y reutiliza su audio. Los otros **62 mensajes (2669 caracteres)** los grabó el
+propietario el 2026-11-14 (mismo formato que el resto: MP3 de 128 kbps, 44,1 kHz, mono) y están en
+`assets/voz/grabada/es-419/`. Al incorporarlos se corrigió un nombre
+(`MSG_APOYO_AUTO__AY_ATR_TEMPLAD.mp3` → `MSG_APOYO_AUTO__AY_ATR_TEMPLADO.mp3`).
+[`textos_pendientes_es-419.txt`](textos_pendientes_es-419.txt) queda vacío (0 mensajes); se vuelve a
+llenar si se añaden mensajes nuevos. Los textos los redactó una IA a partir de pistas ya revisadas:
+su revisión humana sigue anotada como pendiente en `datos/expedicion/atributos_habitats.json`.
 
-**Qué hace el juego mientras falten.** El agente solo elige una ayuda por rasgo si existen sus dos
+**Si falta alguna grabación.** El agente solo elige una ayuda por rasgo si existen sus dos
 grabaciones (`codigo/motores/agente.py`, `ayudas_con_grabacion`). Sin ellas usa las pistas ya
 grabadas, así que la guía nunca muestra un mensaje que la voz no pueda leer. Nada se une ni se
 sustituye por otra voz.
@@ -37,8 +41,8 @@ el agente también usará estas ayudas en las partidas en portugués, con su tex
    ninguno en `sobran_o_mal_nombrados` ni `demasiado_pequenos`).
 3. Reinicia el juego: el agente empieza a usarlos sin cambiar código.
 4. `PYTHONUTF8=1 python -m unittest tests.test_agente6 tests.test_catalogo_voz tests.test_voz_grabada_cobertura`.
-   `test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo` espera hoy una sola ayuda activa: actualiza
-   ese conjunto cuando lleguen los audios.
+   `test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo` espera las 32 ayudas activas: actualízala si
+   cambia el número de ayudas por rasgo.
 5. `python -m codigo.nucleo.actualizar_manifiesto --incluir assets/voz/grabada/es-419/<archivo>.mp3 …`
    y `python -m codigo.nucleo.verificar_paquete`.
 6. `PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes` vuelve a escribir el TXT con lo
@@ -116,7 +120,7 @@ recurrir a Piper o Kokoro por exceso de combinaciones.
 | P2 | Los otros 40 hábitats: apoyo + pista | 119 | 119 | 16.734 |
 | P3 | Confirmaciones con contexto educativo (10 casos; 1 duplicado) | 9 | 9 | 1.850 |
 | **Total** | 353 mensajes por idioma, 3 duplicados exactos | **350** | **350** | **39.621** |
-| P2 · agente 6.0 | 32 ayudas por rasgo, solas y tras el apoyo (1 reutiliza `AY_H13_L1`); pendientes | 62 | 62 | 5.485 |
+| P2 · agente 6.0 | 32 ayudas por rasgo, solas y tras el apoyo (1 reutiliza `AY_H13_L1`); grabadas el 2026-11-14 | 62 | 62 | 5.485 |
 
 Cada partida elige animales de los 288 y puede llegar a cualquiera de los 48 hábitats. Para cubrir
 cualquier partida hacen falta P1 + P2 + P3. En la 6.0 no hay voz alternativa: las ayudas del agente

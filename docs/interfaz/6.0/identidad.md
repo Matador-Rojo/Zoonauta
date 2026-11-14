@@ -28,8 +28,8 @@ conserva su identidad verde y lima; este contrato rige solo la 6.0 (`/`, versió
 
 ## Voz
 
-Solo la voz grabada de Zoonauta (ElevenLabs), en español: 350 grabaciones que cubren los 353
-mensajes. Sin Piper, Kokoro ni voces del navegador en la 6.0. En pt-BR la voz está bloqueada
+Solo la voz grabada de Zoonauta (ElevenLabs), en español: 412 grabaciones que cubren los 353
+mensajes y las 32 ayudas por rasgo del agente (solas y tras el apoyo). Sin Piper, Kokoro ni voces del navegador en la 6.0. En pt-BR la voz está bloqueada
 (cero voces, controles desactivados).
 
 ## Movimiento y accesibilidad

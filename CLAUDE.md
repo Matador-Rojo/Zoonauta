@@ -25,9 +25,10 @@ Responder al propietario en español.
   Todo movimiento es ambiental, leve y desactivable (control propio + `prefers-reduced-motion`).
 - Audio siempre bajo control del usuario: una sola voz a la vez; cancelar la lectura
   anterior al cambiar de mensaje o pausar.
-- Voces de la 6.0 (decidido 2026-11-14): **solo la voz grabada de Zoonauta (ElevenLabs)**, 350
-  mp3 en `assets/voz/grabada/es-419/` (copiados de `Downloads/Voces Zoonauta`; cubren los 353
-  mensajes en español, 3 reutilizan un duplicado). **Piper y Kokoro se retiraron del todo** el
+- Voces de la 6.0 (decidido 2026-11-14): **solo la voz grabada de Zoonauta (ElevenLabs)**, 412
+  mp3 en `assets/voz/grabada/es-419/`: 350 copiados de `Downloads/Voces Zoonauta` (los 353
+  mensajes en español, 3 reutilizan un duplicado) y 62 de las ayudas por rasgo del agente
+  (2026-11-14; «arbustos» reutiliza `AY_H13_L1`). **Piper y Kokoro se retiraron del todo** el
   2026-11-14 (código, `datos/voces_locales.json`, `/api/voz`, `/api/voz/cancelar` y sus pruebas);
   la 6.0 tampoco ofrece voces del navegador. Un mensaje sin grabación no se lee con otra voz. En
   pt-BR la voz queda bloqueada (cero voces). Más idiomas llegarán después. La 5.0 en `/v5/` usa
