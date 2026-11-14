@@ -63,6 +63,7 @@ cd frontend && npm run mwg -- search "toggle switch"   # Modern Web Guidance (CL
 python -m uv tool run ruff@0.15.0 check codigo tests    # 18 avisos de base (ver ruff.toml)
 python -m uv tool run --python 3.12 pip-audit@2.10.0 -r requirements_voz.txt --disable-pip --no-deps
 python -m codigo.nucleo.actualizar_manifiesto [--incluir RUTA]  # tras compilar o editar
+python -m codigo.interfaz.preparar_pictogramas_ligeros         # si cambia un pictograma (Pillow)
 ```
 
 Flujo de Modern Web Guidance: `search` → `retrieve` → aplicar y verificar → cerrar la

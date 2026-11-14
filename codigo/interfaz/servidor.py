@@ -45,6 +45,12 @@ class Servidor(ThreadingHTTPServer):
         self.imagenes_animal = {f"{a['id']}.webp": RAIZ_PROYECTO /
             self.banco.pictogramas[a["pictograma_id"]]["archivo_imagen"]
             for a in self.banco.animales.values()}
+        # Copias ligeras de los pictogramas (assets/pictogramas_ligeros, ver
+        # preparar_pictogramas_ligeros). Si falta alguna, se sirve el original.
+        ligeros = RAIZ_PROYECTO / "assets/pictogramas_ligeros"
+        indice = ligeros / "indice.json"
+        self.pictogramas_ligeros = ({pid: ligeros / f"{pid}.webp" for pid in json.loads(indice.read_text("utf-8"))["items"]}
+                                    if indice.is_file() else {})
         self.sesiones = {}
         self.voz = MotorVoz()
         self.lock = RLock()
@@ -148,6 +154,9 @@ class Manejador(BaseHTTPRequestHandler):
             picto = self.server.banco.pictogramas.get(ruta.removeprefix("/media/"))
             if not picto:
                 return self._enviar({"error": "Recurso no encontrado."}, codigo=404)
+            ligero = self.server.pictogramas_ligeros.get(picto["id"])
+            if ligero is not None and ligero.is_file():
+                return self._enviar(ligero.read_bytes(), "image/webp")
             archivo = (RAIZ_PROYECTO / picto["archivo_imagen"]).resolve()
             if not archivo.is_relative_to(RAIZ_PROYECTO / "assets"):
                 return self._enviar({"error": "Recurso no permitido."}, codigo=404)

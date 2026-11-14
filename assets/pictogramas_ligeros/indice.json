@@ -1,0 +1,1772 @@
+{
+  "schema_version": "1.0.0",
+  "lado_maximo": 384,
+  "calidad_webp": 82,
+  "procedencia": "Derivadas de los originales sin otra edición que el cambio de tamaño; conservan la licencia y los créditos del original.",
+  "items": {
+    "P_A01": {
+      "original": "assets/expedicion/animales/A01.webp",
+      "sha256_original": "1f34c9ea9b6a64b9c560be10d7a699140ba2595889e95d19e19305972ca6a185"
+    },
+    "P_A02": {
+      "original": "assets/expedicion/animales/A02.webp",
+      "sha256_original": "84b03929e22cfd8bc63966a8bd419faebf758f7eecb49123570126db54d94f34"
+    },
+    "P_A03": {
+      "original": "assets/expedicion/animales/A03.webp",
+      "sha256_original": "a8f119059ecfebacb31a7c4c92442d7528a25e0c4e8e62cc3d45dca58a2b2f99"
+    },
+    "P_A04": {
+      "original": "assets/expedicion/animales/A04.webp",
+      "sha256_original": "1c6f84f982e3825cd35ed8c4dec1149e87041410b645fb174b259734d89edb12"
+    },
+    "P_A05": {
+      "original": "assets/expedicion/animales/A05.webp",
+      "sha256_original": "d30e01544d123795f313f7a12f88683fc589aba23ac3998a9bafa6ca39e0a638"
+    },
+    "P_A06": {
+      "original": "assets/expedicion/animales/A06.webp",
+      "sha256_original": "6e1c2361d9e68e43c1480bb607ab6523eefd55769d80998326a5f305ad74d972"
+    },
+    "P_A07": {
+      "original": "assets/expedicion/animales/A07.webp",
+      "sha256_original": "58064da152e3fe7e06ba6c41e5748d9e4e9423161a23fac29eb849fa06a0b3d3"
+    },
+    "P_A08": {
+      "original": "assets/expedicion/animales/A08.webp",
+      "sha256_original": "de3d0377c6459f2e79e2cc30ae02d7119452a9c8a50c24d288adf042069f408f"
+    },
+    "P_A09": {
+      "original": "assets/expedicion/animales/A09.webp",
+      "sha256_original": "df2151cc98ee25de055c9aaa89e87e8a7cd1b48be531fa63b9876baa6bff473f"
+    },
+    "P_A10": {
+      "original": "assets/expedicion/animales/A10.webp",
+      "sha256_original": "610779939681694a6a489bef56e4984305c0fadb4095fb1280dad1b93ac2fff0"
+    },
+    "P_A11": {
+      "original": "assets/expedicion/animales/A11.webp",
+      "sha256_original": "5146662fb4fb39f481a003682413c3b2a1092c4afcc64b3fa8d2c4e09cc61e0b"
+    },
+    "P_A12": {
+      "original": "assets/expedicion/animales/A12.webp",
+      "sha256_original": "03d57fb91afc37aefab474a2303a0fe28fc7e2218039b201a625b94781a1339c"
+    },
+    "P_A13": {
+      "original": "assets/expedicion/animales/A13.webp",
+      "sha256_original": "27f79e35bb518b118e8688375121bd3ae35d561ee518b0d86e3815a600c2cdf4"
+    },
+    "P_A14": {
+      "original": "assets/expedicion/animales/A14.webp",
+      "sha256_original": "a462e172d99349b50e2dc0e0107e5a567b16819083514c0bb7c7e584a63eaa21"
+    },
+    "P_A15": {
+      "original": "assets/expedicion/animales/A15.webp",
+      "sha256_original": "225d856f702b6b334dc1c0fee18556be28627f886aba3362b1989e7c640f0af2"
+    },
+    "P_A16": {
+      "original": "assets/expedicion/animales/A16.webp",
+      "sha256_original": "7042cf9173964371ed29d6373374f81f0bba88b6deab31544b94214a063301e8"
+    },
+    "P_A17": {
+      "original": "assets/expedicion/animales/A17.webp",
+      "sha256_original": "c3becb16d9674c586a3bb7b112b061aa0eff15c0c87ba66c46a5ab17a9bdc165"
+    },
+    "P_A18": {
+      "original": "assets/expedicion/animales/A18.webp",
+      "sha256_original": "bdde80bd6623151a8a2829ee85319dab44f27e6b54153590499f03b3732ab389"
+    },
+    "P_A19": {
+      "original": "assets/expedicion/animales/A19.webp",
+      "sha256_original": "b3ff149bad008eff3caf99227121a284304a897dd3d99b2f858f366b2313784c"
+    },
+    "P_A20": {
+      "original": "assets/expedicion/animales/A20.webp",
+      "sha256_original": "f2f09a30a46e8ff07b7651ffe6318d301d6354c2f944d754a0aaf1b033fb93c4"
+    },
+    "P_A21": {
+      "original": "assets/expedicion/animales/A21.webp",
+      "sha256_original": "1d5b75821b9a008f2438feb3a0ed53f5a4ec6a57a6d3f7d801e09358fbd6c047"
+    },
+    "P_A22": {
+      "original": "assets/expedicion/animales/A22.webp",
+      "sha256_original": "02d2610544b84921b8d3d57915cb646c5a13803a033436dd9af1327c95326ec9"
+    },
+    "P_A23": {
+      "original": "assets/expedicion/animales/A23.webp",
+      "sha256_original": "b6759bf018d1e96b7350cd1a588dabb7bde596f9f5c4204ffeb9f9136e5b5816"
+    },
+    "P_A24": {
+      "original": "assets/expedicion/animales/A24.webp",
+      "sha256_original": "8466888a1e497af440fd1ac3d6e731413361697b4e90016b14114f5b1a019cba"
+    },
+    "P_A25": {
+      "original": "assets/expedicion/animales/A25.webp",
+      "sha256_original": "aff919f935a4eec050f16580e5eaad45ac19af18d58df49c959324c1243405b5"
+    },
+    "P_A26": {
+      "original": "assets/expedicion/animales/A26.webp",
+      "sha256_original": "caa53bd30de366b3dde1e84e4b427cb51e0c49a78c8cc974020578710214762f"
+    },
+    "P_A27": {
+      "original": "assets/expedicion/animales/A27.webp",
+      "sha256_original": "43ece050f518e1d914a2641feeef32bf05474b24c361d2f1a64bac8e500a9f6f"
+    },
+    "P_A28": {
+      "original": "assets/expedicion/animales/A28.webp",
+      "sha256_original": "6c6cb18fe8fe092df7e7f0c3554a5ea563550b749cac1dd99249f5652f15e26a"
+    },
+    "P_A29": {
+      "original": "assets/expedicion/animales/A29.webp",
+      "sha256_original": "e78e5ec92a8f6c668a369adf604a650c51ba060d3be0b2666b3698d0895b9c03"
+    },
+    "P_A30": {
+      "original": "assets/expedicion/animales/A30.webp",
+      "sha256_original": "039a526e953950c02c018cf8a9c9f0d21ab9305e3de5cb0c8e39c2169215930e"
+    },
+    "P_A31": {
+      "original": "assets/expedicion/animales/A31.webp",
+      "sha256_original": "176e9d6472fb8bac09f5224576aac18ed06e73e76d3e4e1414c42606136e8a4e"
+    },
+    "P_A32": {
+      "original": "assets/expedicion/animales/A32.webp",
+      "sha256_original": "e907d130f718a0c34d289e8c948523659891cee7fc6419132f19cda7be2cd143"
+    },
+    "P_A33": {
+      "original": "assets/expedicion/animales/A33.webp",
+      "sha256_original": "d1a5754b672cbc077ce785e6629b098b9be45aacd07f28b0d43389e423f852b0"
+    },
+    "P_A34": {
+      "original": "assets/expedicion/animales/A34.webp",
+      "sha256_original": "7439a0e81ce978cf11ec373facaa65d54ede3e4480074fc132599d43676398c0"
+    },
+    "P_A35": {
+      "original": "assets/expedicion/animales/A35.webp",
+      "sha256_original": "e832de027d76cbcfde85d1cc55079938c63e9d082d04b52e220ba32dce0d1033"
+    },
+    "P_A36": {
+      "original": "assets/expedicion/animales/A36.webp",
+      "sha256_original": "b72c5d3f10a325cc567537aa7499e5348d119213f266644bad1ba395c5323635"
+    },
+    "P_A37": {
+      "original": "assets/expedicion/animales/A37.webp",
+      "sha256_original": "1611a98eca70d1ac2e1e82934a998dcaadf094c5da486249b6cfcce242a96384"
+    },
+    "P_A38": {
+      "original": "assets/expedicion/animales/A38.webp",
+      "sha256_original": "6bc76d9d6f2225e14d92570b6d528fb6fd8f2c48c099d046310f0a26e7b8bdad"
+    },
+    "P_A39": {
+      "original": "assets/expedicion/animales/A39.webp",
+      "sha256_original": "6dad1cba0e592776154dc936fb59f5fda1934a5f03d34e7753543df2ab039f6b"
+    },
+    "P_A40": {
+      "original": "assets/expedicion/animales/A40.webp",
+      "sha256_original": "f68b8b5324ddd71ffa3f160663f18dc18028b3bfa07b7d33c4dcf78ce85d9627"
+    },
+    "P_A41": {
+      "original": "assets/expedicion/animales/A41.webp",
+      "sha256_original": "029fb565b7566563b26bac312a85807590b5bb80f4e109bedf9af13dc61738d4"
+    },
+    "P_A42": {
+      "original": "assets/expedicion/animales/A42.webp",
+      "sha256_original": "5b9fa507a69bf251e9739eadd2da4601627b821d43381de8d0ceec218efd0f61"
+    },
+    "P_A43": {
+      "original": "assets/expedicion/animales/A43.webp",
+      "sha256_original": "e5bfb1ea6bc6dcf4cad1bf489f75f3bcd64c7060f70514af44b4cea80323914d"
+    },
+    "P_A44": {
+      "original": "assets/expedicion/animales/A44.webp",
+      "sha256_original": "3a4536f1b910600cdf0de12b51ff5b05d16a31bbbfc7b8e46d38e45e9458e8d4"
+    },
+    "P_A45": {
+      "original": "assets/expedicion/animales/A45.webp",
+      "sha256_original": "de1dcaed45dcec102200acb0a5abb99802a631665e0b3373f293b70e86782b5e"
+    },
+    "P_A46": {
+      "original": "assets/expedicion/animales/A46.webp",
+      "sha256_original": "0def3206d3de084c430246e4dc4a4f66b197058ac64b28145c222b11d7f2fa2c"
+    },
+    "P_A47": {
+      "original": "assets/expedicion/animales/A47.webp",
+      "sha256_original": "f4e75b410c267e5b38a8bb7bb6542d303d97c8730295280899009978d2cf6a40"
+    },
+    "P_A48": {
+      "original": "assets/expedicion/animales/A48.webp",
+      "sha256_original": "45f239b7c461f2f6deb7a54ef7e4b6637072550af186201e69a9d133e0b9017c"
+    },
+    "P_AGENTE": {
+      "original": "assets/pictogramas/P_AGENTE.webp",
+      "sha256_original": "31cc65da0d7b29e0d321f8325c66481794526b1ac88b46539657c91e09f65500"
+    },
+    "P_AGUA_DULCE": {
+      "original": "assets/pictogramas/P_AGUA_DULCE.webp",
+      "sha256_original": "1f9443e6159f22f19ca37f60e0acceffb19679e62f9ae1dcdf3fa140c671d527"
+    },
+    "P_AGUA_SALADA": {
+      "original": "assets/pictogramas/P_AGUA_SALADA.webp",
+      "sha256_original": "95a908b2628fbeaf1cba054d9868a3105d923d36b895dfdbe76db69e68029ab9"
+    },
+    "P_ARBOLES_SEPARADOS": {
+      "original": "assets/pictogramas/P_ARBOLES_SEPARADOS.webp",
+      "sha256_original": "935af85864d0630e269ebde466db74c333dd1ac2f3f1d3562e480907c875aae6"
+    },
+    "P_AYUDA": {
+      "original": "assets/pictogramas/P_AYUDA.webp",
+      "sha256_original": "4a015ed6f79a5acea52ec098c4b69e3545526990eb68ae119983a681baabf398"
+    },
+    "P_BOSQUE": {
+      "original": "assets/pictogramas/P_BOSQUE.webp",
+      "sha256_original": "ae489d0ea4c34acc96ac228e0e5330ab79c6a50a8e6d24eed50598965f129eb9"
+    },
+    "P_BUSCAR": {
+      "original": "assets/pictogramas/P_BUSCAR.webp",
+      "sha256_original": "51e6dc449a6c8039369a2c7cc122e21f41603c930a0a18fe0d0f461dcb826894"
+    },
+    "P_CALOR": {
+      "original": "assets/pictogramas/P_CALOR.webp",
+      "sha256_original": "227a9dbfd52c984a9689a9428f40a045717cf03259b72cc5e058d24b2d1c0087"
+    },
+    "P_CLIMA_TEMPLADO": {
+      "original": "assets/pictogramas/P_CLIMA_TEMPLADO.webp",
+      "sha256_original": "9c72fa4206c6a14447a8e8eb82c5a5671baf3d4bba9c205df0d62bf1e2c882c8"
+    },
+    "P_CONFIRMAR": {
+      "original": "assets/pictogramas/P_CONFIRMAR.webp",
+      "sha256_original": "42069eae159a637ffccf3190dc98dfc34ee6812a21ab356fc69d23006dacf03f"
+    },
+    "P_CONTINUAR": {
+      "original": "assets/pictogramas/P_CONTINUAR.webp",
+      "sha256_original": "ac3aaea8b625e70382f18857efde36ca15abfed3ee4499f2d6849d99accdf295"
+    },
+    "P_ELEGIR": {
+      "original": "assets/pictogramas/P_ELEGIR.webp",
+      "sha256_original": "a0ae9572b4a5ca898a2dbee50b60f9c8c688a05a74b250d20e6103b06a9fa95a"
+    },
+    "P_EXPLORAR": {
+      "original": "assets/pictogramas/P_EXPLORAR.webp",
+      "sha256_original": "ce0bb74336acaf2339ac0da25c85d6793392523315d55e14b5d8a4dc9752fb51"
+    },
+    "P_FIN": {
+      "original": "assets/pictogramas/P_FIN.webp",
+      "sha256_original": "61d68f4a37ee430d52b726689f4051b6180052e71dabb30094980e4fdb5dc70c"
+    },
+    "P_H01": {
+      "original": "assets/expedicion/pictogramas/H01.webp",
+      "sha256_original": "2a73be263243e12f9896230857904fcdba221e62cc82cd5aaa4f8905fc506739"
+    },
+    "P_H02": {
+      "original": "assets/expedicion/pictogramas/H02.webp",
+      "sha256_original": "87dde4603cdb10639da6aff88f8cea9260f9f43768193452f4e74524ca77c938"
+    },
+    "P_H03": {
+      "original": "assets/expedicion/pictogramas/H03.webp",
+      "sha256_original": "ac9706f8e557d3cfb2f99a40b186b2611795a8d97571ae90224343074bd3f6fd"
+    },
+    "P_H04": {
+      "original": "assets/expedicion/pictogramas/H04.webp",
+      "sha256_original": "458087e98b66f2a844590f640115ac9486ff09082c9246fca389343f9a8593e2"
+    },
+    "P_H05": {
+      "original": "assets/expedicion/pictogramas/H05.webp",
+      "sha256_original": "28f158cbb3aa8b0857ca24f3fc59d9c0740c846e67c166a67353f709977cb04a"
+    },
+    "P_H06": {
+      "original": "assets/expedicion/pictogramas/H06.webp",
+      "sha256_original": "10a86e2fced9315cf2ad5e9759bf73baaf2292aa8f61f3dd252267b0b920f957"
+    },
+    "P_H07": {
+      "original": "assets/expedicion/pictogramas/H07.webp",
+      "sha256_original": "e39c796e506987e0c2e608682896f20d61f3c5d80d94b06103e932f0e12058c2"
+    },
+    "P_H08": {
+      "original": "assets/expedicion/pictogramas/H08.webp",
+      "sha256_original": "0ed0f4ec1f738fc8202cd2c63c0a143b1df5de34694a950b0d79892b6fe65619"
+    },
+    "P_H09": {
+      "original": "assets/expedicion/pictogramas/H09.webp",
+      "sha256_original": "868fb4ec80ad0be35d8fef260745809cf29732e9d4503c77ea816eb1abe6a5db"
+    },
+    "P_H10": {
+      "original": "assets/expedicion/pictogramas/H10.webp",
+      "sha256_original": "660ab3954a6acb69841952ba64e537e49bb68e4fb727101fa770e5e0f9204f64"
+    },
+    "P_H11": {
+      "original": "assets/expedicion/pictogramas/H11.webp",
+      "sha256_original": "4a0d595419b1757606e78bc52f061ac5f3eaaf364c836e32ca720024f4e2c453"
+    },
+    "P_H12": {
+      "original": "assets/expedicion/pictogramas/H12.webp",
+      "sha256_original": "15c78a377527bfdd625fc45897c076a3d12c0ea8d77787081c33da3678f43005"
+    },
+    "P_H13": {
+      "original": "assets/expedicion/pictogramas/H13.webp",
+      "sha256_original": "737cd438a51c814fc2631ae6f118fdba9593301d35d01029e8ed5c55643ad87d"
+    },
+    "P_H14": {
+      "original": "assets/expedicion/pictogramas/H14.webp",
+      "sha256_original": "bc40619ac6ff75c9c8ce5b29283f25ed0ca570abacea82321996bcee1a372d73"
+    },
+    "P_H15": {
+      "original": "assets/expedicion/pictogramas/H15.webp",
+      "sha256_original": "f4b08a9a07a9cf1f4fd95da573d2be0f503edc186663181032fd17e67c06d642"
+    },
+    "P_H16": {
+      "original": "assets/expedicion/pictogramas/H16.webp",
+      "sha256_original": "52b3290a7795396422fb115257a401a2a4d1babd5cb7752c532809193b1c1bb6"
+    },
+    "P_H17": {
+      "original": "assets/expedicion/pictogramas/H17.webp",
+      "sha256_original": "3416d7bc1b8db6a6e78555a8662ab5b153ec6e6f1845d541210fbb3d8bbdb8e5"
+    },
+    "P_H18": {
+      "original": "assets/expedicion/pictogramas/H18.webp",
+      "sha256_original": "0ec5607a7c76b15d3b5e1d8409a4bbe33a6305eaca4f22623b3470bb1e691cca"
+    },
+    "P_H19": {
+      "original": "assets/expedicion/pictogramas/H19.webp",
+      "sha256_original": "de33826dd89c5fffbe19521b3db393b8e43e3a6ea3fb9df0eda44f7cc91831e1"
+    },
+    "P_H20": {
+      "original": "assets/expedicion/pictogramas/H20.webp",
+      "sha256_original": "144ffc30ccc02772bca5d1d5c1316ba7f281b7754967e143fd0e047ab68be9af"
+    },
+    "P_H21": {
+      "original": "assets/expedicion/pictogramas/H21.webp",
+      "sha256_original": "32355b4e86863579cf7ecfdb2a60fdf67b5a3cf11118dde579282583212660f0"
+    },
+    "P_H22": {
+      "original": "assets/expedicion/pictogramas/H22.webp",
+      "sha256_original": "c14f2bd73a07a9fcaab5c0d55777d3e677594540c30ebc4ef077c8bf88bdf68b"
+    },
+    "P_H23": {
+      "original": "assets/expedicion/pictogramas/H23.webp",
+      "sha256_original": "166386ff7b17ce9a0c644e10ff7c68c71d93ef72aa67d224c2e6c342687e38bf"
+    },
+    "P_H24": {
+      "original": "assets/expedicion/pictogramas/H24.webp",
+      "sha256_original": "77fab0bdb5be1e43966f0b4eaa84804d1f4e0d73821d8ce4971b712f0e8f8801"
+    },
+    "P_H25": {
+      "original": "assets/expedicion/pictogramas/H25.webp",
+      "sha256_original": "998a3155bf17c914b5db44e8dc592b96a63a115f128bc20f6ec44ebb256ba90c"
+    },
+    "P_H26": {
+      "original": "assets/expedicion/pictogramas/H26.webp",
+      "sha256_original": "c31fce8a188ffe2bd9afb8ba2dd3a62912c84e5acb9c135d508b0d326c9f8dff"
+    },
+    "P_H27": {
+      "original": "assets/expedicion/pictogramas/H27.webp",
+      "sha256_original": "81dca9aab26002efcb7ed2d63350d5a4a65639658af252f587dd570a82d1bd55"
+    },
+    "P_H28": {
+      "original": "assets/expedicion/pictogramas/H28.webp",
+      "sha256_original": "e3bf327ba5e716b3e51d172659a12c3722e2206a0e38ff06793f01c7c6efe248"
+    },
+    "P_H29": {
+      "original": "assets/expedicion/pictogramas/H29.webp",
+      "sha256_original": "5e1297307cc3fe12099bcb29ca35a1d81bfc359692878eeccab84493cc45c8b6"
+    },
+    "P_H30": {
+      "original": "assets/expedicion/pictogramas/H30.webp",
+      "sha256_original": "8c5035f2d8ae7962925c96cd32f6377fba8a0e95f5d8f68a8ab9c2efbf5d3363"
+    },
+    "P_H31": {
+      "original": "assets/expedicion/pictogramas/H31.webp",
+      "sha256_original": "f3dafb54a83fc5aa2f6505d703833f9f9a4741de57f403f021db9e2a6eaf689a"
+    },
+    "P_H32": {
+      "original": "assets/expedicion/pictogramas/H32.webp",
+      "sha256_original": "2bdc2ebb813920e2a538f4ada3b97feb1d67f35d80becbdaa550953c3078cf8b"
+    },
+    "P_H33": {
+      "original": "assets/expedicion/pictogramas/H33.webp",
+      "sha256_original": "e17f0397d1d14d4be7d47ace7f157e0fcaf779b29878cd27283485d7d6ee68a2"
+    },
+    "P_H34": {
+      "original": "assets/expedicion/pictogramas/H34.webp",
+      "sha256_original": "b039775663d400796e2dfe179eece67d64da9e271f57607a8a9058a722f8faa3"
+    },
+    "P_H35": {
+      "original": "assets/expedicion/pictogramas/H35.webp",
+      "sha256_original": "ac08d41ad13e4d29fc373dc7149cc79d2effb2f312eda16c88cccb9e532c5d63"
+    },
+    "P_H36": {
+      "original": "assets/expedicion/pictogramas/H36.webp",
+      "sha256_original": "ccd7b6249ca2cdfc84973f7808013bf9c0fd8483a28a6ea610ab1cffe1596d63"
+    },
+    "P_H37": {
+      "original": "assets/expedicion/pictogramas/H37.webp",
+      "sha256_original": "4da20fca55a4a872ae1f0ba2932f39709cc23e4772d8660aa02cc809b98b123c"
+    },
+    "P_H38": {
+      "original": "assets/expedicion/pictogramas/H38.webp",
+      "sha256_original": "3ec655979c3ee43209b53d3f71c3943799b9b4961bfac70513fb6c3107f73084"
+    },
+    "P_H39": {
+      "original": "assets/expedicion/pictogramas/H39.webp",
+      "sha256_original": "5cb536eaf0aafd99a6dd0800a999ef13560a1ce6a77c4687e9504899523a00f7"
+    },
+    "P_H40": {
+      "original": "assets/expedicion/pictogramas/H40.webp",
+      "sha256_original": "d3b562488f7f3642a8f9f66ca5f8e37c98f6954146ebb1843db9145bbba40634"
+    },
+    "P_H41": {
+      "original": "assets/expedicion/pictogramas/H41.webp",
+      "sha256_original": "2796c9d04c39e50943cb1ab11ec42721fabf38275c315c8af363f04356b95baa"
+    },
+    "P_H42": {
+      "original": "assets/expedicion/pictogramas/H42.webp",
+      "sha256_original": "2df1de5751e6552773b6561aecb51ca88ff8dea79a0080a88eb18010fc02cc75"
+    },
+    "P_H43": {
+      "original": "assets/expedicion/pictogramas/H43.webp",
+      "sha256_original": "789d4ef4d5ce8c25e05aa8d6f9bf4e26099b026bf76f935074c03270ae6c222c"
+    },
+    "P_H44": {
+      "original": "assets/expedicion/pictogramas/H44.webp",
+      "sha256_original": "a91050f25b77dbb3977faaede80120d547e1855f4dfbdac5ab6109e408dddc05"
+    },
+    "P_H45": {
+      "original": "assets/expedicion/pictogramas/H45.webp",
+      "sha256_original": "1d99381326d6714f4be28d2d764fb0417cbce38559fa1b985d316f762e13461a"
+    },
+    "P_H46": {
+      "original": "assets/expedicion/pictogramas/H46.webp",
+      "sha256_original": "5975a61b4e298d15cc2c65b4e03c040ab63cfe130aafe99328855ab5e3dc4161"
+    },
+    "P_H47": {
+      "original": "assets/expedicion/pictogramas/H47.webp",
+      "sha256_original": "93dcf0d7d46a0a02d4f29b26fa97b7256a373f5d66e0848d843a065a2407d506"
+    },
+    "P_H48": {
+      "original": "assets/expedicion/pictogramas/H48.webp",
+      "sha256_original": "6302ee103a3829ec68741681bc65c260d3cb15bf3a9f7527f4742cc9d11d78d3"
+    },
+    "P_HUMEDAD": {
+      "original": "assets/pictogramas/P_HUMEDAD.webp",
+      "sha256_original": "bf0d695d28a2bda02177f8e722a3674ae665d3d5e2d4d2b4156cb7ec00ad8a99"
+    },
+    "P_INICIAR": {
+      "original": "assets/pictogramas/P_INICIAR.webp",
+      "sha256_original": "ddbd6d83a5375f5b9a51840ed9a0c4939308f8833ca4fed42f65a3cabfe11042"
+    },
+    "P_JUGADOR": {
+      "original": "assets/pictogramas/P_JUGADOR.webp",
+      "sha256_original": "41eaaba9a83dd561698ce6140f75fb9b3db93a89a35c0d8e03a8be1e68c4619b"
+    },
+    "P_LUGAR_ABIERTO": {
+      "original": "assets/pictogramas/P_LUGAR_ABIERTO.webp",
+      "sha256_original": "b405461a23e93f1cc58d697ecea6c352e10db8d81dcf4c9ca55de7bcfe147ce5"
+    },
+    "P_MONTANAS_ALTAS": {
+      "original": "assets/pictogramas/P_MONTANAS_ALTAS.webp",
+      "sha256_original": "6d97c233da9730ac678edf41a80f4bea1e80ac85660de212875ee041a8180af0"
+    },
+    "P_MUCHA_AGUA": {
+      "original": "assets/pictogramas/P_MUCHA_AGUA.webp",
+      "sha256_original": "4c1f16e8cd61017d14bef19ea5da9b761bf659875215a922049358af62308763"
+    },
+    "P_MUCHOS_ARBOLES": {
+      "original": "assets/pictogramas/P_MUCHOS_ARBOLES.webp",
+      "sha256_original": "6a3d8af272d8f00924c0274ddfcc129ec857569f9061c37bd69e1adb2fc224d2"
+    },
+    "P_N001": {
+      "original": "assets/expedicion/animales/N001.webp",
+      "sha256_original": "efe0b212f777dd07c8d7a0d766e783ad21fd92c8a8886ea3aafe0baf0bda3b4c"
+    },
+    "P_N002": {
+      "original": "assets/expedicion/animales/N002.webp",
+      "sha256_original": "e29a7daedc044cedfc3c204ddabe32a1f27c78855aaa2f1d602f861ea8a849ac"
+    },
+    "P_N003": {
+      "original": "assets/expedicion/animales/N003.webp",
+      "sha256_original": "13320ef2cb7e2710a02e46c1bac1c5264444c2b0c12c27535e640adde74ae535"
+    },
+    "P_N004": {
+      "original": "assets/expedicion/animales/N004.webp",
+      "sha256_original": "739befd72fc2f9bdd9484e10f4e72545f9a2e1015428adae6ce02a2cf36e5a99"
+    },
+    "P_N005": {
+      "original": "assets/expedicion/animales/N005.webp",
+      "sha256_original": "6d5e0a41537ffdf40444d43fc3e93dc64c650d6da98234a7b6b776d5d38c72bd"
+    },
+    "P_N006": {
+      "original": "assets/expedicion/animales/N006.webp",
+      "sha256_original": "724e6963ba7fd1b64be790abc37910676fe5272fa338017e98ec05fcaba74eca"
+    },
+    "P_N007": {
+      "original": "assets/expedicion/animales/N007.webp",
+      "sha256_original": "f8752400aa467f2b97494c1090b72ab7a49f5923b1db88dbb012d39e18cce4f3"
+    },
+    "P_N008": {
+      "original": "assets/expedicion/animales/N008.webp",
+      "sha256_original": "31d584a54613ebb28b3f9cbaac7d741442eea4acaff0c66dc4a8c4c62aea8ca7"
+    },
+    "P_N009": {
+      "original": "assets/expedicion/animales/N009.webp",
+      "sha256_original": "4cb885dac9e9ac76f31dff610ec82dba7f7047665d8e1cd2fe4de1b22fef8ecb"
+    },
+    "P_N010": {
+      "original": "assets/expedicion/animales/N010.webp",
+      "sha256_original": "a4db78ffc3d93dd14702f1a6852d31f50f72944fdd96b066ecd5187f98e6758f"
+    },
+    "P_N011": {
+      "original": "assets/expedicion/animales/N011.webp",
+      "sha256_original": "c0efb783ac52c69835e78d9ce2cabe272f94af200eaf96b4af190789ea523782"
+    },
+    "P_N012": {
+      "original": "assets/expedicion/animales/N012.webp",
+      "sha256_original": "224ec8b38d85132746f7910a4626591c46cdd0884805abdb3f9c962293d78a1e"
+    },
+    "P_N013": {
+      "original": "assets/expedicion/animales/N013.webp",
+      "sha256_original": "7be78f553074cf1b08a211b6b786b34972620950288f705501804dd040443604"
+    },
+    "P_N014": {
+      "original": "assets/expedicion/animales/N014.webp",
+      "sha256_original": "47514590d54642db66100a2220f0f9d763443f26ada50b8881a898e412665a6d"
+    },
+    "P_N015": {
+      "original": "assets/expedicion/animales/N015.webp",
+      "sha256_original": "73bef0ae50de73ac8b7e1ff105863da84deabc3f062279b9c099538500a34204"
+    },
+    "P_N016": {
+      "original": "assets/expedicion/animales/N016.webp",
+      "sha256_original": "ce137ecc2faf9f03664d0c40aeb4670f416d96f9bbc69ba37dea34e3aa235d6b"
+    },
+    "P_N017": {
+      "original": "assets/expedicion/animales/N017.webp",
+      "sha256_original": "20afe4e1d7a986ec800dae9f9629d048e296df29ee6d38fc0295bd21ea162702"
+    },
+    "P_N018": {
+      "original": "assets/expedicion/animales/N018.webp",
+      "sha256_original": "957a2d4299f9e3f41e519557fddad77cb1c3934228dfd25530d93e5d7751a2c9"
+    },
+    "P_N019": {
+      "original": "assets/expedicion/animales/N019.webp",
+      "sha256_original": "a49a8470a020ab35197be169204cdb5664b0c6534a892351dabcf146effe9ffd"
+    },
+    "P_N020": {
+      "original": "assets/expedicion/animales/N020.webp",
+      "sha256_original": "7fdf494ec410044eb303ea28673e392b7c7bf86a9c9f644f60d60460d96135d6"
+    },
+    "P_N021": {
+      "original": "assets/expedicion/animales/N021.webp",
+      "sha256_original": "e1f50ec82a66ea3f51e8ec6e549dc6e8ffc7a77b77fd19bdf1af6c0d71313778"
+    },
+    "P_N022": {
+      "original": "assets/expedicion/animales/N022.webp",
+      "sha256_original": "e15c4a22db504ee561b2049fe9a2c21baa61ee6044a9b77db11d13774d3f27f6"
+    },
+    "P_N023": {
+      "original": "assets/expedicion/animales/N023.webp",
+      "sha256_original": "676271978bc4f3ca12aff2cd8f5966bd5325645df3ebc768e14c6f9218db6a7b"
+    },
+    "P_N024": {
+      "original": "assets/expedicion/animales/N024.webp",
+      "sha256_original": "cd7800459c21b3ff3bec8867432293eb76388f34369bcb80dd706b3fa036d285"
+    },
+    "P_N025": {
+      "original": "assets/expedicion/animales/N025.webp",
+      "sha256_original": "7ca77d3ffa7be1027db21c993a628f80a3355b60ca30a256fc4aba78558158b0"
+    },
+    "P_N026": {
+      "original": "assets/expedicion/animales/N026.webp",
+      "sha256_original": "831be810927837aa6d9aa651b76602317f96e131668c0a94b01d91ea471774aa"
+    },
+    "P_N027": {
+      "original": "assets/expedicion/animales/N027.webp",
+      "sha256_original": "d83a02b4a3a27b6eec89b35c1fdb6b2b56613c0f9b66ee9a8e05513c50a355ec"
+    },
+    "P_N028": {
+      "original": "assets/expedicion/animales/N028.webp",
+      "sha256_original": "e1b3207252e23694b4d0c1897c7e89c04979d266f6b63cbee9860dc545a5ee2f"
+    },
+    "P_N029": {
+      "original": "assets/expedicion/animales/N029.webp",
+      "sha256_original": "5e8f8f70e442075a6bf302a94679ef8493d966a4a514af2d795d309e67db04a6"
+    },
+    "P_N030": {
+      "original": "assets/expedicion/animales/N030.webp",
+      "sha256_original": "e5893342e1ca78d7c1e6154841a6e96766f9f38a3bb2478b04306ce9cb610122"
+    },
+    "P_N031": {
+      "original": "assets/expedicion/animales/N031.webp",
+      "sha256_original": "66c2cc8d70d8aa0ab87a6572a6d042eeda67b99e433290d85c619cd4f776f70a"
+    },
+    "P_N032": {
+      "original": "assets/expedicion/animales/N032.webp",
+      "sha256_original": "6284d2a3c098fbbec83c49c4a172f8258ad9d39e6c686e2ef3584d9fdd57ad9f"
+    },
+    "P_N033": {
+      "original": "assets/expedicion/animales/N033.webp",
+      "sha256_original": "6a446ade789502ea9356032882553095f36a41eea274bedfda21e06bd39dc5ea"
+    },
+    "P_N034": {
+      "original": "assets/expedicion/animales/N034.webp",
+      "sha256_original": "937a874f28a873270a57789cdbd7461a7e644ad161546442402b5d529093054f"
+    },
+    "P_N035": {
+      "original": "assets/expedicion/animales/N035.webp",
+      "sha256_original": "156417704cc8e5bf588cf53bcec3dd247bee597d344858046e796aff8a98c8b6"
+    },
+    "P_N036": {
+      "original": "assets/expedicion/animales/N036.webp",
+      "sha256_original": "7cdcba68deddd5aeb1a04b9d728ff39c0c2f763a7f4737772ed6ecb3debc9f92"
+    },
+    "P_N037": {
+      "original": "assets/expedicion/animales/N037.webp",
+      "sha256_original": "2191680225739d09e3ec6d98d4a4bdd6cee79c5701f25b41aa6349a976c873d1"
+    },
+    "P_N038": {
+      "original": "assets/expedicion/animales/N038.webp",
+      "sha256_original": "fa47fab994cda03409188d427aa72c68be5716fd8181c0e681ab68109a724fed"
+    },
+    "P_N039": {
+      "original": "assets/expedicion/animales/N039.webp",
+      "sha256_original": "9a20c19d7e935814453e57f860b8e5c4543ba207bb5f6c08930d5b462ceaeb63"
+    },
+    "P_N040": {
+      "original": "assets/expedicion/animales/N040.webp",
+      "sha256_original": "6a8632b454cac23ee3862f7101fac604962751e029c5846f592a5aad89013e3d"
+    },
+    "P_N041": {
+      "original": "assets/expedicion/animales/N041.webp",
+      "sha256_original": "1855f2395a75e59747cc5e4f5bb97f31b5a91461a9e4aec3c839f1949477a555"
+    },
+    "P_N042": {
+      "original": "assets/expedicion/animales/N042.webp",
+      "sha256_original": "0b4f67e7ecdb79026da155fe0f8b70ecb9f169318ae48c0a4ed4e6141f274711"
+    },
+    "P_N043": {
+      "original": "assets/expedicion/animales/N043.webp",
+      "sha256_original": "35e72c8c6298a8a168de3c547908caa27f724eb563fdd038f38e9c0d9842cfa9"
+    },
+    "P_N044": {
+      "original": "assets/expedicion/animales/N044.webp",
+      "sha256_original": "88495538422efb0e236c8ee6476bfdbb88172a47ceee055bea928a83bea1c250"
+    },
+    "P_N045": {
+      "original": "assets/expedicion/animales/N045.webp",
+      "sha256_original": "7ba5733e80e3bbd33b26d9281a50b13c465f469562d450ae4b502ef8f1ba3070"
+    },
+    "P_N046": {
+      "original": "assets/expedicion/animales/N046.webp",
+      "sha256_original": "06a8db483d206db85b3cc4fbdf61d0747a5eafd54b1177169ceba66a1403f7e6"
+    },
+    "P_N047": {
+      "original": "assets/expedicion/animales/N047.webp",
+      "sha256_original": "36eb92a390bd257e5c97c75531e39f36417dcbb5ceda8408fe55ac9c443d3a42"
+    },
+    "P_N048": {
+      "original": "assets/expedicion/animales/N048.webp",
+      "sha256_original": "6d45942f9a86bef8536b70c6e9d06703cfb59577c10ebdea1f367099a00daefb"
+    },
+    "P_N049": {
+      "original": "assets/expedicion/animales/N049.webp",
+      "sha256_original": "444ceb553725c8ba455847b67a14083bbcd23790a75dc09fbfe3685af3931ec6"
+    },
+    "P_N050": {
+      "original": "assets/expedicion/animales/N050.webp",
+      "sha256_original": "9ce27226dff3fdefc8916f8f98872494b064c8a76078efa3a171ebcaf1aa0cfc"
+    },
+    "P_N051": {
+      "original": "assets/expedicion/animales/N051.webp",
+      "sha256_original": "6e815458c6a46a79130e52c95c08bc0a284244397ee4d1ec67a4e07ba4b34369"
+    },
+    "P_N052": {
+      "original": "assets/expedicion/animales/N052.webp",
+      "sha256_original": "283d86804d8644cccf44dc1ba4ce8ab16a3b161d66e6f779c2b31d53b85055cb"
+    },
+    "P_N053": {
+      "original": "assets/expedicion/animales/N053.webp",
+      "sha256_original": "5441b99ab43b7a0cf1d6c0b89941b617b84639cff0b4988aeac1e9615c6c9c00"
+    },
+    "P_N054": {
+      "original": "assets/expedicion/animales/N054.webp",
+      "sha256_original": "10e23a22541a9e311184c910e8350de0e254c3fe1de93ccbd54024995e44be66"
+    },
+    "P_N055": {
+      "original": "assets/expedicion/animales/N055.webp",
+      "sha256_original": "0190534911044b30f5dfaba94cfe7919b64036914eb92206f28b7097b0dab030"
+    },
+    "P_N056": {
+      "original": "assets/expedicion/animales/N056.webp",
+      "sha256_original": "132fd61b511abb5b0a4c2efa21c493d7d2ee91069342ec01abe9bd250e7f85d7"
+    },
+    "P_N057": {
+      "original": "assets/expedicion/animales/N057.webp",
+      "sha256_original": "be5b27e2b436869f94544e3f35f4d3ed846d78b381bc0abe79a4ececd8ee4bdb"
+    },
+    "P_N058": {
+      "original": "assets/expedicion/animales/N058.webp",
+      "sha256_original": "0320f4936b02d12e683d139da55e3b8ed021f0a773e3b0d60d980632e2ddf397"
+    },
+    "P_N059": {
+      "original": "assets/expedicion/animales/N059.webp",
+      "sha256_original": "5a1ff223d701ce5afaa3d85e5a71e94c2b74bbf773b0aba830a811d614db2fce"
+    },
+    "P_N060": {
+      "original": "assets/expedicion/animales/N060.webp",
+      "sha256_original": "638102d9f000559982a195c3763c5abcb7867f8e0874a765bee4c7ade0ef5076"
+    },
+    "P_N061": {
+      "original": "assets/expedicion/animales/N061.webp",
+      "sha256_original": "9f9370394b71f2bd46d68a56d43f025827ee775173f183f2d6516780d16a058e"
+    },
+    "P_N062": {
+      "original": "assets/expedicion/animales/N062.webp",
+      "sha256_original": "eb6074a57511ff0a2269a73a8cb253fdb5b757a84c583892d233dfc721d5defa"
+    },
+    "P_N063": {
+      "original": "assets/expedicion/animales/N063.webp",
+      "sha256_original": "542c1271b584b9e09a0826a68e3a85ac476771343cb29e9dc429fd681b1ccdd7"
+    },
+    "P_N064": {
+      "original": "assets/expedicion/animales/N064.webp",
+      "sha256_original": "a4893f120e5b54fd09866b10904153b94a69eb0089f7563bc43925bd17b16d03"
+    },
+    "P_N065": {
+      "original": "assets/expedicion/animales/N065.webp",
+      "sha256_original": "53ad3258582e8095f71e72f2b81dfcc2c08aa93d31ee5f7567f3a398ea3156a5"
+    },
+    "P_N066": {
+      "original": "assets/expedicion/animales/N066.webp",
+      "sha256_original": "e7c4dc0c3020b2204fea95e2fff456a832baa3cddbffc7d79c70535f5689a276"
+    },
+    "P_N067": {
+      "original": "assets/expedicion/animales/N067.webp",
+      "sha256_original": "45f0e9dc030fdc84af07d6d0d1438635789bb17e381a51c1abecf64c3904a135"
+    },
+    "P_N068": {
+      "original": "assets/expedicion/animales/N068.webp",
+      "sha256_original": "85d7d0c32c498ee50219a37557d0772d9f89dede7ffa71351548e2c30c0f5e68"
+    },
+    "P_N069": {
+      "original": "assets/expedicion/animales/N069.webp",
+      "sha256_original": "15dd3a2c958c7e52c3d310d24c0e3578c989073fe65fd520ab60c17e1410a70f"
+    },
+    "P_N070": {
+      "original": "assets/expedicion/animales/N070.webp",
+      "sha256_original": "f69efa5f6c42b3528ad8fcd7a2871d36a6fb051c46f16b6ca9d60dfa806a2f40"
+    },
+    "P_N071": {
+      "original": "assets/expedicion/animales/N071.webp",
+      "sha256_original": "148fbfc15c2fc3c7f0b7d5c97c9af064919a377ee8ced934aeaef9c2145d9617"
+    },
+    "P_N072": {
+      "original": "assets/expedicion/animales/N072.webp",
+      "sha256_original": "8cdaa6a8495812a57a92ea0739b83f4dd0a4066b21dee2874e81d0dea5cf95d2"
+    },
+    "P_N073": {
+      "original": "assets/expedicion/animales/N073.webp",
+      "sha256_original": "0c8d63372d479af4b1f2a0a8b0e343513528680f5f4ed2c109c31eef4d7e5068"
+    },
+    "P_N074": {
+      "original": "assets/expedicion/animales/N074.webp",
+      "sha256_original": "4a8f73d3da29df52536b58a8a01a120443ea5039be237a5aa88ca02834e234ad"
+    },
+    "P_N075": {
+      "original": "assets/expedicion/animales/N075.webp",
+      "sha256_original": "9bc2956c0ae746375df8b4469a258289419047724af90aeaf73fdd53e99723a9"
+    },
+    "P_N076": {
+      "original": "assets/expedicion/animales/N076.webp",
+      "sha256_original": "fadf69b9e4d7f77d29c0e578d1c75a36432f3a3222d8f842f677d923237f9c88"
+    },
+    "P_N077": {
+      "original": "assets/expedicion/animales/N077.webp",
+      "sha256_original": "425ad4c8d07e80ae4ebc6113a6036d7a78f6a634dbae8b13e7c966429fc85152"
+    },
+    "P_N078": {
+      "original": "assets/expedicion/animales/N078.webp",
+      "sha256_original": "2e46ff0614669f278cd8c8f1c0ed6880a3af65dc809d34f0dbbc1d0af44e4fec"
+    },
+    "P_N079": {
+      "original": "assets/expedicion/animales/N079.webp",
+      "sha256_original": "6630f8c4b0794cb719f8a7aec1adc26e07d62ffd8e89d9eba1ce77523f7121c6"
+    },
+    "P_N080": {
+      "original": "assets/expedicion/animales/N080.webp",
+      "sha256_original": "f94caf49084941f3e7f6bc63d68ca7ce1c8d3f33a0085324f09c34f2fc0b1ada"
+    },
+    "P_N081": {
+      "original": "assets/expedicion/animales/N081.webp",
+      "sha256_original": "caaae0b3b1cbee5fe1af2420870e561f9bcc92d735a691a1b4b85bad4fa13b9a"
+    },
+    "P_N082": {
+      "original": "assets/expedicion/animales/N082.webp",
+      "sha256_original": "145eefad22e5ceefa0667acab3b253f63b2eb8665b5d42b8209c07123ad9a443"
+    },
+    "P_N083": {
+      "original": "assets/expedicion/animales/N083.webp",
+      "sha256_original": "dc6264a98f29dc36a9b20008832f266758087ef5e1691f45d5480ddc06a5b055"
+    },
+    "P_N084": {
+      "original": "assets/expedicion/animales/N084.webp",
+      "sha256_original": "70235d3af3f8325861317f33d673cd05f2363ee1cb4b4306e5c4140e67c9dd3a"
+    },
+    "P_N085": {
+      "original": "assets/expedicion/animales/N085.webp",
+      "sha256_original": "ea09019b44b18a189a50f95fad9af59a7bd74727768b5951eacdeb78170b1cba"
+    },
+    "P_N086": {
+      "original": "assets/expedicion/animales/N086.webp",
+      "sha256_original": "f5c89793d1c6291580c0a2ca65c82df1abea8123ead1000ab0d331a31479e630"
+    },
+    "P_N087": {
+      "original": "assets/expedicion/animales/N087.webp",
+      "sha256_original": "2dde25974950a7b3e686cadb3046e22ea555dc036ad59e44034077ed112c8b8b"
+    },
+    "P_N088": {
+      "original": "assets/expedicion/animales/N088.webp",
+      "sha256_original": "e30da0c0b4fd026b00f292d0109f4aa844397f6eb7a17b1436dfebe950bab756"
+    },
+    "P_N089": {
+      "original": "assets/expedicion/animales/N089.webp",
+      "sha256_original": "1ad8e537fb1eb6197c5616e0590924b59b1c51ab297f9fdf67f0d995c25e5b55"
+    },
+    "P_N090": {
+      "original": "assets/expedicion/animales/N090.webp",
+      "sha256_original": "7931ca31215f19a1fb0aa63ab389a718c8db39dd0c29cf291be2ebec17353646"
+    },
+    "P_N091": {
+      "original": "assets/expedicion/animales/N091.webp",
+      "sha256_original": "65ffa3a852134e6f3883100474305c1c60b71844dd7a5c9c919353bdbab8f4f5"
+    },
+    "P_N092": {
+      "original": "assets/expedicion/animales/N092.webp",
+      "sha256_original": "44701b28b28af7db7d633dc5ad274ed7be9769a765e0ea81cd642cf07b70f069"
+    },
+    "P_N093": {
+      "original": "assets/expedicion/animales/N093.webp",
+      "sha256_original": "72b777a981a5378810989f7471d65ff9b37cada32d2f66b159d57ece8ed5717f"
+    },
+    "P_N094": {
+      "original": "assets/expedicion/animales/N094.webp",
+      "sha256_original": "32e3f000db969912d20c1c22171273bff27bf23d97fa01e313cb64b2e8dc8db5"
+    },
+    "P_N095": {
+      "original": "assets/expedicion/animales/N095.webp",
+      "sha256_original": "22656ccc5789b313f5a43b69afd5f82e03cc670f77bc5a562129ffba4c1155cf"
+    },
+    "P_N096": {
+      "original": "assets/expedicion/animales/N096.webp",
+      "sha256_original": "79a1cd949c62520c43a9788983271439d86f5439cfee72b58ee57587b8aace40"
+    },
+    "P_N097": {
+      "original": "assets/expedicion/animales/N097.webp",
+      "sha256_original": "fec85087abc05e95f7a00da243eda46eeff990b990e81ecc334a95e3937cda0a"
+    },
+    "P_N098": {
+      "original": "assets/expedicion/animales/N098.webp",
+      "sha256_original": "7dd93087a5775ac07041140ad803259af8c5d0c27414f150a093bd73ff4d896b"
+    },
+    "P_N099": {
+      "original": "assets/expedicion/animales/N099.webp",
+      "sha256_original": "73bf55639f03c06692f235f6afe12a53e5b844612018702a9fb5610136e0264d"
+    },
+    "P_N100": {
+      "original": "assets/expedicion/animales/N100.webp",
+      "sha256_original": "f6319f858e663230f87748cb7a6a3fe2597645801e366bcca601875497a625bd"
+    },
+    "P_N101": {
+      "original": "assets/expedicion/animales/N101.webp",
+      "sha256_original": "097629eedf896d3d546d39b87b69311de79500b2a1bedda17f87822339df8234"
+    },
+    "P_N102": {
+      "original": "assets/expedicion/animales/N102.webp",
+      "sha256_original": "b6f7abe97701d4d904cf62f467edfa7bcd31581f981604dc2e30fb51b9c24e31"
+    },
+    "P_N103": {
+      "original": "assets/expedicion/animales/N103.webp",
+      "sha256_original": "39ff32cd9e13ea28b3d31d77e99075ef356a1987282dc701362610b8cf5fa69d"
+    },
+    "P_N104": {
+      "original": "assets/expedicion/animales/N104.webp",
+      "sha256_original": "784d206536862bd60a7ab7eff362c734e5da6b9106c1ac51bb2a113b7454ab60"
+    },
+    "P_N105": {
+      "original": "assets/expedicion/animales/N105.webp",
+      "sha256_original": "f26a5f55310a57b238708714bdd11e817d78f9e1a2ad68c5392ab156a9845a16"
+    },
+    "P_N106": {
+      "original": "assets/expedicion/animales/N106.webp",
+      "sha256_original": "a7d9325b5076b1e623a40fa3c07b1e09ced258b761689604e85e932210c3b2f5"
+    },
+    "P_N107": {
+      "original": "assets/expedicion/animales/N107.webp",
+      "sha256_original": "47c01fbb96e892f27a8a665edbad83cc098e37c558f7144b647c4e57f4ddc7cd"
+    },
+    "P_N108": {
+      "original": "assets/expedicion/animales/N108.webp",
+      "sha256_original": "3577bfb78b1334bef75f13f3fa21c5c81694a7f625fdd660f4c5099d3879f505"
+    },
+    "P_N109": {
+      "original": "assets/expedicion/animales/N109.webp",
+      "sha256_original": "e98d129fcf27a43ca22987660b2ef91beb143ad8b4cf64fbe4331879cd16960a"
+    },
+    "P_N110": {
+      "original": "assets/expedicion/animales/N110.webp",
+      "sha256_original": "7f567ddf8cfc6d02427d50d7d1b58737c389aee6538a3dbd4e7f529b853a9a4b"
+    },
+    "P_N111": {
+      "original": "assets/expedicion/animales/N111.webp",
+      "sha256_original": "27b43f26fd28e4874cb2e2ce1ec33a974e51d7f1953e7c63c1a6aa3cab6f5bf9"
+    },
+    "P_N112": {
+      "original": "assets/expedicion/animales/N112.webp",
+      "sha256_original": "22d003b9b411afd9a062a07c2155c0281e875dfcdbc029162130f70319f4e40d"
+    },
+    "P_N113": {
+      "original": "assets/expedicion/animales/N113.webp",
+      "sha256_original": "28a83248ed516876faab218c419dcf4a1815906335af069f0cf8a0e167492df1"
+    },
+    "P_N114": {
+      "original": "assets/expedicion/animales/N114.webp",
+      "sha256_original": "47894036f3e7b597558a95f170c1e4c88f0a85544336d3530d09faab6ae68a8d"
+    },
+    "P_N115": {
+      "original": "assets/expedicion/animales/N115.webp",
+      "sha256_original": "7ce2d5f885c55ab02d788f2a95bbfaeeceb43cbe045a59c89f7907c7ed17f2c0"
+    },
+    "P_N116": {
+      "original": "assets/expedicion/animales/N116.webp",
+      "sha256_original": "0967d71a3899e5dc96e3b3481cc35b87413561dcb69a4eae2e8b930d30a5cc07"
+    },
+    "P_N117": {
+      "original": "assets/expedicion/animales/N117.webp",
+      "sha256_original": "5c1df41cd906518e6cd6495c38cfc123f724dcc61e4f5b0a78277a8d5ac83e6f"
+    },
+    "P_N118": {
+      "original": "assets/expedicion/animales/N118.webp",
+      "sha256_original": "30a4627f4f7c73a50ace4a42c3ff2caa64f6ff9ddca971d5c65edd5c9d386a9d"
+    },
+    "P_N119": {
+      "original": "assets/expedicion/animales/N119.webp",
+      "sha256_original": "25e0a2e09718eaeac9d0a4461fe29b6a0b417ea7df1e2511a9d18f0248bdc9b9"
+    },
+    "P_N120": {
+      "original": "assets/expedicion/animales/N120.webp",
+      "sha256_original": "8cd53ae80e50cff994603091c9a30856739b38c5441840c2f715cc417ab9f702"
+    },
+    "P_N121": {
+      "original": "assets/expedicion/animales/N121.webp",
+      "sha256_original": "eb289a48f83048a7a375d70b76c5eaa1aaca087ed4d09f8f57bdf994b8e931a9"
+    },
+    "P_N122": {
+      "original": "assets/expedicion/animales/N122.webp",
+      "sha256_original": "35016222a0169c9c4e3e7b6b4bbf09815b1f9cb78dea31583a482678ef013497"
+    },
+    "P_N123": {
+      "original": "assets/expedicion/animales/N123.webp",
+      "sha256_original": "b91cb0330f65ca7828b2fa22e577fac4ef5185bf828e3c7d1ee56b199829688f"
+    },
+    "P_N124": {
+      "original": "assets/expedicion/animales/N124.webp",
+      "sha256_original": "5c9086d83bd6a286afe7095252a3dff8cc09d304f63651350e525150602cae4b"
+    },
+    "P_N125": {
+      "original": "assets/expedicion/animales/N125.webp",
+      "sha256_original": "a635f15c686a6cfe490dd430f1485707943ed4f2e53f91e1a669c6b7b0d03379"
+    },
+    "P_N126": {
+      "original": "assets/expedicion/animales/N126.webp",
+      "sha256_original": "3be449e2e7156a8c782d2a8f457a513ce4a13613aa0547cb3de144e3525975f4"
+    },
+    "P_N127": {
+      "original": "assets/expedicion/animales/N127.webp",
+      "sha256_original": "0f7862faa9e0bcfbeefe56f00ea3d0557afeea5c135711d8cad5629f75192c6b"
+    },
+    "P_N128": {
+      "original": "assets/expedicion/animales/N128.webp",
+      "sha256_original": "01b71cfebb0b11e6c7ba05faa18b0e5a1e3f8b0f45ebaf3c122c2ff0ad09067f"
+    },
+    "P_N129": {
+      "original": "assets/expedicion/animales/N129.webp",
+      "sha256_original": "1483425f7b287223dd90c0176f8ac9bc61e3dfb94950e267f0dccab2eb39ef3f"
+    },
+    "P_N130": {
+      "original": "assets/expedicion/animales/N130.webp",
+      "sha256_original": "243814fbaf1de24bc0a126c357190f3a609f4a78c5bf10bc401f693116b693b7"
+    },
+    "P_N131": {
+      "original": "assets/expedicion/animales/N131.webp",
+      "sha256_original": "b4ed11d4d06ce7b06614f7e12f6657d6bbbaa01628ac881a0c4ddc81b6633beb"
+    },
+    "P_N132": {
+      "original": "assets/expedicion/animales/N132.webp",
+      "sha256_original": "6be657fe4c216e5d61e5b39b4094668bfacfbeea03f6692c900bc0593de3a182"
+    },
+    "P_N133": {
+      "original": "assets/expedicion/animales/N133.webp",
+      "sha256_original": "7b23f636d058c7bb6d258d9746e1064ce835109f93d3d42186ea2d47bbfb58cd"
+    },
+    "P_N134": {
+      "original": "assets/expedicion/animales/N134.webp",
+      "sha256_original": "3245a3b91cfedbef081ea9ccd6c769fb9200c486ab8ea49b7521f1d2551c20d3"
+    },
+    "P_N135": {
+      "original": "assets/expedicion/animales/N135.webp",
+      "sha256_original": "d9440ff48bfafcff90d2210618c4a7fe8cdb77056bf07223ec622252d7997f7d"
+    },
+    "P_N136": {
+      "original": "assets/expedicion/animales/N136.webp",
+      "sha256_original": "9d0592ede24dd9e48a455640cb2d8a434a6a2456238d660ae56d4c85b87b8ed5"
+    },
+    "P_N137": {
+      "original": "assets/expedicion/animales/N137.webp",
+      "sha256_original": "ee364245ae1c0e836b3b2584c8e420327935e6c2991f59a9312bc944e82c33af"
+    },
+    "P_N138": {
+      "original": "assets/expedicion/animales/N138.webp",
+      "sha256_original": "8f38c4ad1a86b7f82a8c74d452dee437d45690c242367b4512e3f0a9b6022a31"
+    },
+    "P_N139": {
+      "original": "assets/expedicion/animales/N139.webp",
+      "sha256_original": "92a940e7e07ed3926ac95538954ae19d121364e0480951af0410784ff8572393"
+    },
+    "P_N140": {
+      "original": "assets/expedicion/animales/N140.webp",
+      "sha256_original": "ff3b4530002e395872999082261303ea4f8ae5e010ec387ce4e4eb8397c87fe9"
+    },
+    "P_N141": {
+      "original": "assets/expedicion/animales/N141.webp",
+      "sha256_original": "091d28bb26483c435ac03bbc63d44899aab43351ad62c797489370db3380e3b9"
+    },
+    "P_N142": {
+      "original": "assets/expedicion/animales/N142.webp",
+      "sha256_original": "1995462b1e0298e92d9c1a3b4f78bae2693085d841a60faca8c074a2c9df8b71"
+    },
+    "P_N143": {
+      "original": "assets/expedicion/animales/N143.webp",
+      "sha256_original": "14fbdbe12caf635bdc264b10b1579ce5bbb3d870a0fc29039b3be8dd975a1200"
+    },
+    "P_N144": {
+      "original": "assets/expedicion/animales/N144.webp",
+      "sha256_original": "77b937bb0ed38c03f942241e49c50693ea54a292b3b3b56ef1df3c67467086bc"
+    },
+    "P_N145": {
+      "original": "assets/expedicion/animales/N145.webp",
+      "sha256_original": "425a8b5e8dd79c553936d673a1253d4d9c5c6a20d230bcffc725058af7f1ebcd"
+    },
+    "P_N146": {
+      "original": "assets/expedicion/animales/N146.webp",
+      "sha256_original": "509a319a167c17188cbe26924ded352bd8d868c97546fc94218840b86443cfee"
+    },
+    "P_N147": {
+      "original": "assets/expedicion/animales/N147.webp",
+      "sha256_original": "71074eb74a9c62edbed6d4392170141c76486e89e543440e16db88c9a11325e5"
+    },
+    "P_N148": {
+      "original": "assets/expedicion/animales/N148.webp",
+      "sha256_original": "971967867acdf521d1f0df343b9f58af32eccd52555fd3cd6e89a0165e7d7b36"
+    },
+    "P_N149": {
+      "original": "assets/expedicion/animales/N149.webp",
+      "sha256_original": "dc7a94c69e20952d86011b81db4848ab1ed34856c1353c6343f117076a71bacb"
+    },
+    "P_N150": {
+      "original": "assets/expedicion/animales/N150.webp",
+      "sha256_original": "be9d8339dab45716348bc44704cb0337a0c0851de55e69253676d7bbaff3aad3"
+    },
+    "P_N151": {
+      "original": "assets/expedicion/animales/N151.webp",
+      "sha256_original": "8e24302382a053ebb11bd588c9327a323170afc5630679e4d8fd93a1c84ad708"
+    },
+    "P_N152": {
+      "original": "assets/expedicion/animales/N152.webp",
+      "sha256_original": "d05f50d0c453cd656e26dfc0ec27f13952a3299e4689da390b4f4b1a932ce486"
+    },
+    "P_N153": {
+      "original": "assets/expedicion/animales/N153.webp",
+      "sha256_original": "6453139952bd84cdcffe9d0fac290103284912fd86b847dfc116b763d67cc8b0"
+    },
+    "P_N154": {
+      "original": "assets/expedicion/animales/N154.webp",
+      "sha256_original": "13faa7f780b4303b413f87c5a4639c24cc4d23c66a76ff47a04575c2e695464e"
+    },
+    "P_N155": {
+      "original": "assets/expedicion/animales/N155.webp",
+      "sha256_original": "c1ead3f2ddebb71802686ba8bdd009f37c6068600dd4d12cb5a7ab5413a2bcde"
+    },
+    "P_N156": {
+      "original": "assets/expedicion/animales/N156.webp",
+      "sha256_original": "e34ef6fe3c683e7d45779f2cfb7bc2f478cfc36de1746afe138e08c49f19fb99"
+    },
+    "P_N157": {
+      "original": "assets/expedicion/animales/N157.webp",
+      "sha256_original": "5fa23b44ca0ba555cbcc26171870c9b6503f2d48f183982dd6b254c06314c627"
+    },
+    "P_N158": {
+      "original": "assets/expedicion/animales/N158.webp",
+      "sha256_original": "ea5ecbcb527f7c63daffc6bad8b94e6ea2b37cbdd7546c2b8805cc39d5cd21de"
+    },
+    "P_N159": {
+      "original": "assets/expedicion/animales/N159.webp",
+      "sha256_original": "9a983c22da21e0a5ceefa7e81c9cc193fdc859ae4342dc8bdf70950b74d62187"
+    },
+    "P_N160": {
+      "original": "assets/expedicion/animales/N160.webp",
+      "sha256_original": "b59fe54d603266b19844dc816ca9e205291ec1adedb65322f1ff7d7af7355fb3"
+    },
+    "P_N161": {
+      "original": "assets/expedicion/animales/N161.webp",
+      "sha256_original": "8084f0d0f9fa7c5b501f1d6fc9d0a3a99c536ddd6fc23051d56879e82929893d"
+    },
+    "P_N162": {
+      "original": "assets/expedicion/animales/N162.webp",
+      "sha256_original": "afc8d5d24949276d1a27d1feef0c0dc420e45b762894b305fadc176afb094c47"
+    },
+    "P_N163": {
+      "original": "assets/expedicion/animales/N163.webp",
+      "sha256_original": "d47a907185e73fb74e021a57dae5e9681f809ecfb0fbf7f07a4cabf3b486ad12"
+    },
+    "P_N164": {
+      "original": "assets/expedicion/animales/N164.webp",
+      "sha256_original": "e64638bbae06852bfacbb5e5327064d579408483f813c865d792b42bf34e3956"
+    },
+    "P_N165": {
+      "original": "assets/expedicion/animales/N165.webp",
+      "sha256_original": "c592b6b403cdb4615494195e8b5a0c4cfb503463ae3a9aa9a1b9437dfb9c21f1"
+    },
+    "P_N166": {
+      "original": "assets/expedicion/animales/N166.webp",
+      "sha256_original": "0b1f8049af4039cc621966898e501493749401161660ec22196e154987a45c88"
+    },
+    "P_N167": {
+      "original": "assets/expedicion/animales/N167.webp",
+      "sha256_original": "24a0e8358472fbcedf92d398e67a0fe978d5efb3dccf104629ea83dcdaff49ec"
+    },
+    "P_N168": {
+      "original": "assets/expedicion/animales/N168.webp",
+      "sha256_original": "ee0f13af38d767c5f73da5429db275952a91e83a6e98fcdef7407a7a3fd395a9"
+    },
+    "P_N169": {
+      "original": "assets/expedicion/animales/N169.webp",
+      "sha256_original": "f26cb99cc8aa810ba29fd841750a56830dc7cefa740b7f87d0758e9e9df22fdd"
+    },
+    "P_N170": {
+      "original": "assets/expedicion/animales/N170.webp",
+      "sha256_original": "f766eb5c60a8088daa8c340a9f9600fe3f5e30c5571acfd1cfcc11d6062e796e"
+    },
+    "P_N171": {
+      "original": "assets/expedicion/animales/N171.webp",
+      "sha256_original": "1f8d9cbd1aba095ee534f8160c7c5e998d1f200106b70841c0b72160211bf2d6"
+    },
+    "P_N172": {
+      "original": "assets/expedicion/animales/N172.webp",
+      "sha256_original": "c891bdf5ede95f407485ecbb0c43693d996db34bd9655e0ab6dada87a271473d"
+    },
+    "P_N173": {
+      "original": "assets/expedicion/animales/N173.webp",
+      "sha256_original": "70642739b426312f3b5487fae6c5e06e8dc7c3728215a856c2b73ac8be887e10"
+    },
+    "P_N174": {
+      "original": "assets/expedicion/animales/N174.webp",
+      "sha256_original": "01ce7f112b692f324165b061ad38a81d4a3055312a381e81404e54ebb3fd9ff5"
+    },
+    "P_N175": {
+      "original": "assets/expedicion/animales/N175.webp",
+      "sha256_original": "ab24cfe4f6e3bc1ab1f1a7d6f82ad5c5d72966294ed9e8553d7e8340e7b18f65"
+    },
+    "P_N176": {
+      "original": "assets/expedicion/animales/N176.webp",
+      "sha256_original": "d1566177f94d3f0f3751e859e085c7f761d5c5e888b4a9c6ecaf1d6e75547f11"
+    },
+    "P_N177": {
+      "original": "assets/expedicion/animales/N177.webp",
+      "sha256_original": "e2bb08bfd39a1396a6bcd3ae47c7d1bb8f0a41991f3551ce61daf1d25360a7ba"
+    },
+    "P_N178": {
+      "original": "assets/expedicion/animales/N178.webp",
+      "sha256_original": "723452d734e4a44a4bfc9ab41da075cdc3d564b239d6b047d4ea7906246914c2"
+    },
+    "P_N179": {
+      "original": "assets/expedicion/animales/N179.webp",
+      "sha256_original": "69a8d8abae05950e4c730f114d4ef1c8f92d9f6fcfe8d198db890dc1711d1590"
+    },
+    "P_N180": {
+      "original": "assets/expedicion/animales/N180.webp",
+      "sha256_original": "bfbe5d01c59247891f5855c66c4a359c14eedc4fc16f905105412fc62c1d7935"
+    },
+    "P_N181": {
+      "original": "assets/expedicion/animales/N181.webp",
+      "sha256_original": "7f3beced1c848a3510309befe46580eb82120ebb49ad3d64451c3dc331da6be7"
+    },
+    "P_N182": {
+      "original": "assets/expedicion/animales/N182.webp",
+      "sha256_original": "b427153ffb6244547d9722b4dbba05060d65a96695eba5dd41d749fad3ea1741"
+    },
+    "P_N183": {
+      "original": "assets/expedicion/animales/N183.webp",
+      "sha256_original": "cd8ffa18b76d224224f9a67fb4b2c641a6f2802d4e62808bd815cabe1a9705fb"
+    },
+    "P_N184": {
+      "original": "assets/expedicion/animales/N184.webp",
+      "sha256_original": "deaa4c2cf4f29f90266a3ba3a83bed6269777b032bab95fed707ee705925b5ba"
+    },
+    "P_N185": {
+      "original": "assets/expedicion/animales/N185.webp",
+      "sha256_original": "3c8a374db27b6ad4e3a44a6764d845529d611e77aa617cd6e664ae0d02c64d84"
+    },
+    "P_N186": {
+      "original": "assets/expedicion/animales/N186.webp",
+      "sha256_original": "a17c36f1a031146c1e740a8f6c7147f381f2c6c1b387e1e4725a8c1b8b15115a"
+    },
+    "P_N187": {
+      "original": "assets/expedicion/animales/N187.webp",
+      "sha256_original": "dbd3f36317ae01d6b462d1fb708b27da3c14d179c89cf6e64fe13999f71c9d6f"
+    },
+    "P_N188": {
+      "original": "assets/expedicion/animales/N188.webp",
+      "sha256_original": "302fe01d3a337c99fc22f5f4fed6682ce4cfdc48a813395a81ea15cb2cd2943a"
+    },
+    "P_N189": {
+      "original": "assets/expedicion/animales/N189.webp",
+      "sha256_original": "92978318eb7a61691b1b9681f1fb5430f32feb945ac5059d103fc27fd6bc3a3e"
+    },
+    "P_N190": {
+      "original": "assets/expedicion/animales/N190.webp",
+      "sha256_original": "66f6684dfd8a28931dc7d5023054ed398558a5fd358a373e4bf80c6329e4f679"
+    },
+    "P_N191": {
+      "original": "assets/expedicion/animales/N191.webp",
+      "sha256_original": "c1eb728d26017a3c554ef7f01388b563f6fa0b8ab4c2870e6d1c90574adfd0de"
+    },
+    "P_N192": {
+      "original": "assets/expedicion/animales/N192.webp",
+      "sha256_original": "63194423f168b18bdc1d892b1e6c8ccdc5a78ba9c290f375139e981287bf2d71"
+    },
+    "P_N193": {
+      "original": "assets/expedicion/animales/N193.webp",
+      "sha256_original": "240c9e8b64faabc9a70cbc4ac722bb87d549589bc99f1ee5ba43d7dbaae41a95"
+    },
+    "P_N194": {
+      "original": "assets/expedicion/animales/N194.webp",
+      "sha256_original": "f1caf2c921d78876a8074968d17b49be8a903deb6ef836fb0e9c34d648fccfc5"
+    },
+    "P_N195": {
+      "original": "assets/expedicion/animales/N195.webp",
+      "sha256_original": "50d1ae2deb5ec653bf0be324fbba42026f94b1cbb85fea96d8f614f3dc013048"
+    },
+    "P_N196": {
+      "original": "assets/expedicion/animales/N196.webp",
+      "sha256_original": "b28fbad607d42880b477b9a23dc1f27f8f41857f37bc255f69b567e83a2b5964"
+    },
+    "P_N197": {
+      "original": "assets/expedicion/animales/N197.webp",
+      "sha256_original": "a81cd35a1d8e7b6fbd237ef8f50b0a596f1317a34e8f0b1fedbd04b57c74011f"
+    },
+    "P_N198": {
+      "original": "assets/expedicion/animales/N198.webp",
+      "sha256_original": "18dc66a51d946e368ab930d7b13f0b11afab2883348df9e57587066ad253bd47"
+    },
+    "P_N199": {
+      "original": "assets/expedicion/animales/N199.webp",
+      "sha256_original": "10eacd443df13a4ffa6c3fade5b8e80fe1f62b2bd4ae6253c188f48bdcea55ec"
+    },
+    "P_N200": {
+      "original": "assets/expedicion/animales/N200.webp",
+      "sha256_original": "7592c9212240a450f6ffa6e37c4845589385b7bca17f5948f8598ca07b9c4a76"
+    },
+    "P_N201": {
+      "original": "assets/expedicion/animales/N201.webp",
+      "sha256_original": "49443e2aa001f74881fadaf44bf8a578b847961036659a3d8a04841dee315d1c"
+    },
+    "P_N202": {
+      "original": "assets/expedicion/animales/N202.webp",
+      "sha256_original": "e1bdf64193b8bbaead22da484d22d0fe1fbb91c223f63e45dc0a6d4344d56e9a"
+    },
+    "P_N203": {
+      "original": "assets/expedicion/animales/N203.webp",
+      "sha256_original": "0a39c1c05a7df69661dbcd83c24abec1b28118a19cbbbcee8226a916c913418a"
+    },
+    "P_N204": {
+      "original": "assets/expedicion/animales/N204.webp",
+      "sha256_original": "f6757c8ad290420b70f9d8ae56d862078f880ff61903251b2ac0fae9e65933df"
+    },
+    "P_N205": {
+      "original": "assets/expedicion/animales/N205.webp",
+      "sha256_original": "a6894de4b2ae719dad27e44f7aca6d56bbfb3c09d606f10f232a569d5f05f883"
+    },
+    "P_N206": {
+      "original": "assets/expedicion/animales/N206.webp",
+      "sha256_original": "3a7920daa6437316b24552eb18d1b12d3f9e4c8cc07d865117a40a11c8fa2f25"
+    },
+    "P_N207": {
+      "original": "assets/expedicion/animales/N207.webp",
+      "sha256_original": "54dfc567eb0f4002ac37908c231e9c531fc8cead3547470c24ab2a575a44f333"
+    },
+    "P_N208": {
+      "original": "assets/expedicion/animales/N208.webp",
+      "sha256_original": "6a26e27f826d406c947fbd118036805a3e6e6dce559ed826516ec27867146037"
+    },
+    "P_N209": {
+      "original": "assets/expedicion/animales/N209.webp",
+      "sha256_original": "6879a0cead23124cbc315eefbd6ca2697ee8b52cecdb35597cece0aba72a394e"
+    },
+    "P_N210": {
+      "original": "assets/expedicion/animales/N210.webp",
+      "sha256_original": "fb477dec9ceea01b79c1c020ef794f50bf51f409e3bfdffba0fe370caa03ba7c"
+    },
+    "P_N211": {
+      "original": "assets/expedicion/animales/N211.webp",
+      "sha256_original": "e9aed609b5f87b4e371250ce5f0a4a57890f5b4498cf307170aae3d24a368e2a"
+    },
+    "P_N212": {
+      "original": "assets/expedicion/animales/N212.webp",
+      "sha256_original": "8ffac519aa2eb967ded3bf3ece0b45c4c94194f93e3eae6a7738bbc5c9e5179b"
+    },
+    "P_N213": {
+      "original": "assets/expedicion/animales/N213.webp",
+      "sha256_original": "5082ecb14311e118c8e868625d2826081a3269e1070d0dbd409fab1a7951f2e9"
+    },
+    "P_N214": {
+      "original": "assets/expedicion/animales/N214.webp",
+      "sha256_original": "d818934e42697eacf544d48ea7eda8f1ccff1c8f3de060299254c8ef355859df"
+    },
+    "P_N215": {
+      "original": "assets/expedicion/animales/N215.webp",
+      "sha256_original": "93562fee3f8284ebdc5b57a27bf8125e27b973d3faa0ec087b24886c6f59db5c"
+    },
+    "P_N216": {
+      "original": "assets/expedicion/animales/N216.webp",
+      "sha256_original": "f836f4a8e9846a08b3a389020ce01c0d990cfea6918086efc4f5dff02466bb37"
+    },
+    "P_N217": {
+      "original": "assets/expedicion/animales/N217.webp",
+      "sha256_original": "759049d186508429e4bd0a21834c38548ef062a553c856e8eb2dd1af7c18ceb0"
+    },
+    "P_N218": {
+      "original": "assets/expedicion/animales/N218.webp",
+      "sha256_original": "e337881abc5e8f54c5d08ceeb3b274a643bed94156dc5f236d844f741cbfa81e"
+    },
+    "P_N219": {
+      "original": "assets/expedicion/animales/N219.webp",
+      "sha256_original": "74ea615a6b945d874868f9492355facc778853c5ac1f6d502ad239d04ec84103"
+    },
+    "P_N220": {
+      "original": "assets/expedicion/animales/N220.webp",
+      "sha256_original": "52c08db778b91be244ecac6fc3a5ec7e215899f07f17159611fa9aeae1497825"
+    },
+    "P_N221": {
+      "original": "assets/expedicion/animales/N221.webp",
+      "sha256_original": "57ca3c668279d3b54dd5225bf9f189c9c9049c64d75ab70ca11242ce8c3a42b6"
+    },
+    "P_N222": {
+      "original": "assets/expedicion/animales/N222.webp",
+      "sha256_original": "f692faaab052b3e901b026156d2d441bd75424ed22f1a748d804e7f25891061f"
+    },
+    "P_N223": {
+      "original": "assets/expedicion/animales/N223.webp",
+      "sha256_original": "ca32ef28c305e808b305f2b4023132d977f12b5e6164b218e46996e09c04beb0"
+    },
+    "P_N224": {
+      "original": "assets/expedicion/animales/N224.webp",
+      "sha256_original": "eb565c73a32cfa4a94fe3d05b231a533a0208d5627c9dbec16f7b2a7333a5506"
+    },
+    "P_N225": {
+      "original": "assets/expedicion/animales/N225.webp",
+      "sha256_original": "e6a79e22c359b8b999f47f046403dea676272fe4cd8daf7902c7b1ea1b2951b7"
+    },
+    "P_N226": {
+      "original": "assets/expedicion/animales/N226.webp",
+      "sha256_original": "8e80e40c51945c5ee21f330220df133f3a979d88a1d0f2fd5465a3f60a2e346a"
+    },
+    "P_N227": {
+      "original": "assets/expedicion/animales/N227.webp",
+      "sha256_original": "c246ec4c3acbc99d83ff1fd871d6fc8e4920dec3a183e309fd86d27d938a96d1"
+    },
+    "P_N228": {
+      "original": "assets/expedicion/animales/N228.webp",
+      "sha256_original": "969eddd6219605af79f8240479e40868303259cce6bb6e3a4b188261e49b2c2b"
+    },
+    "P_N229": {
+      "original": "assets/expedicion/animales/N229.webp",
+      "sha256_original": "7ace74ca6856b69398ec286bd07462ae2940141116ae1733210a9fa0bbe757cf"
+    },
+    "P_N230": {
+      "original": "assets/expedicion/animales/N230.webp",
+      "sha256_original": "dee64b80dfb3bd133d16df64017767e776fd83a09023b52d9ff17940c35f9887"
+    },
+    "P_N231": {
+      "original": "assets/expedicion/animales/N231.webp",
+      "sha256_original": "626828e85b27212330fe4b08984d1ea4e11254ead27f11685aa6d96d1219ac16"
+    },
+    "P_N232": {
+      "original": "assets/expedicion/animales/N232.webp",
+      "sha256_original": "7bd50b443ba6c0e5df4fd13ae5d051de31c9a9a77647bd0febe86ede8e9e315d"
+    },
+    "P_N233": {
+      "original": "assets/expedicion/animales/N233.webp",
+      "sha256_original": "b0b0345fc2287aa10ae1a6770806eaf736bccf301c866ba46ee5ec0cbda7011d"
+    },
+    "P_N234": {
+      "original": "assets/expedicion/animales/N234.webp",
+      "sha256_original": "b21688067e29c087c000edc93ebfd4175d8e023170d242622cdfe374315bb292"
+    },
+    "P_N235": {
+      "original": "assets/expedicion/animales/N235.webp",
+      "sha256_original": "90d1a10832f7d845773c728a5a1336d22d1d5f8ecfc174a6bd6e998dfcc8608a"
+    },
+    "P_N236": {
+      "original": "assets/expedicion/animales/N236.webp",
+      "sha256_original": "9a80cc34f2303ffbb44847b6949541cc2f702a40bcf903b3eaab6a6ef0022aa7"
+    },
+    "P_N237": {
+      "original": "assets/expedicion/animales/N237.webp",
+      "sha256_original": "8096645b3d16a8dfc63447969b4ad2ce7355922b4901bccb076889f3eca980c6"
+    },
+    "P_N238": {
+      "original": "assets/expedicion/animales/N238.webp",
+      "sha256_original": "cb0b51646f408ebb03eb503248ccfe84f73cf891ee90f3233a2f680f2d5af520"
+    },
+    "P_N239": {
+      "original": "assets/expedicion/animales/N239.webp",
+      "sha256_original": "2bb95ed38312ebf25ac42b542083c2fb65fdf06ea098c99b9aa0ce3c6b9daf92"
+    },
+    "P_N240": {
+      "original": "assets/expedicion/animales/N240.webp",
+      "sha256_original": "0fcabab923902ee9125a3137e51ec2fc16cdafd4b4f0949fa25a32d58d12a027"
+    },
+    "P_OPCION": {
+      "original": "assets/pictogramas/P_OPCION.webp",
+      "sha256_original": "de848824c918b1f10df924e2e8c4a6082810f85f502cefeb6b3cf2bbdbd3a054"
+    },
+    "P_PAISAJE_FRIO": {
+      "original": "assets/pictogramas/P_PAISAJE_FRIO.webp",
+      "sha256_original": "7a8bf2137588228be93d372a8152e4fd0b7322b7bd43cbfc2ecd31abae9c0275"
+    },
+    "P_PASTO_ABUNDANTE": {
+      "original": "assets/pictogramas/P_PASTO_ABUNDANTE.webp",
+      "sha256_original": "9bfbb3afae395f5703ea172c08078e0c80fe9ddff3c4d57b5141c0bc7be9c3f7"
+    },
+    "P_PAUSAR": {
+      "original": "assets/pictogramas/P_PAUSAR.webp",
+      "sha256_original": "c1b302bc11b7a1765d2b6e65ecef3aca42b3091fff9aeb0b9ef8a8fe7bbb4d6e"
+    },
+    "P_PLANETA": {
+      "original": "assets/pictogramas/P_PLANETA.webp",
+      "sha256_original": "8db03ad6b1f1a15a414d5c5a86672d6b411665cd6731e008948472de6ec949ab"
+    },
+    "P_POCAS_PLANTAS": {
+      "original": "assets/pictogramas/P_POCAS_PLANTAS.webp",
+      "sha256_original": "44415a99cbf715eaa6216417ccbe074cb01050a73eaef70c50dd008167f5aa19"
+    },
+    "P_POLOS": {
+      "original": "assets/pictogramas/P_POLOS.webp",
+      "sha256_original": "47c3a152999c8596d84857a4849e0620717a77b7d58dfeef8d3a92f16d50b207"
+    },
+    "P_PREGUNTAR": {
+      "original": "assets/pictogramas/P_PREGUNTAR.webp",
+      "sha256_original": "ea8bfec649446bd82575d01e9887af3e9b309bd42d772051417ab200c5f05f7b"
+    },
+    "P_PROBAR": {
+      "original": "assets/pictogramas/P_PROBAR.webp",
+      "sha256_original": "57e96a2a4f41555a5698fbcc81dbcf3246a8519cc35a97f53f2822f04efe92ef"
+    },
+    "P_QUE_LUGAR": {
+      "original": "assets/pictogramas/P_QUE_LUGAR.webp",
+      "sha256_original": "3c12df299dd025e7e19f1e0fc580380c956c8d109aa6fb1e0758200d23f3ba27"
+    },
+    "P_R01": {
+      "original": "assets/expedicion/pictogramas/R01.webp",
+      "sha256_original": "35020295e78eef5b66e50c5f46066807cf6314576c45c041540e38e6f4714324"
+    },
+    "P_R02": {
+      "original": "assets/expedicion/pictogramas/R02.webp",
+      "sha256_original": "561c3b2b41e77ea58bfa582484514eb387122b71bc14f1406bcfad1b4b826fff"
+    },
+    "P_R03": {
+      "original": "assets/expedicion/pictogramas/R03.webp",
+      "sha256_original": "12a189e3b12d61c6a0f421f419853ad0ca386b3db6c0686b24034eb7bb590e36"
+    },
+    "P_R04": {
+      "original": "assets/expedicion/pictogramas/R04.webp",
+      "sha256_original": "096991f2098fad1ffe4bf219800a9779969ef99e6568f8ebe0f0b75440b86a8d"
+    },
+    "P_R05": {
+      "original": "assets/expedicion/pictogramas/R05.webp",
+      "sha256_original": "7a6044bfd94d5e8b13a49c25e04190a9f94c3967b106e077d132379355a060e9"
+    },
+    "P_R06": {
+      "original": "assets/expedicion/pictogramas/R06.webp",
+      "sha256_original": "e8255dd77431d5c30c1f65ec16ca224bff9b29716c29b0e2c72c682378109a49"
+    },
+    "P_R07": {
+      "original": "assets/expedicion/pictogramas/R07.webp",
+      "sha256_original": "8fb94a2ba1632b16482fc79abc862de405e410ecc3af0968db847e3652f7b5c2"
+    },
+    "P_R08": {
+      "original": "assets/expedicion/pictogramas/R08.webp",
+      "sha256_original": "d19491f8a4901a2ca06ec9a0b7209ef6b802732dd70c99a2c6ccdca8d03a0a92"
+    },
+    "P_R09": {
+      "original": "assets/expedicion/pictogramas/R09.webp",
+      "sha256_original": "0b3ab65bf30dd8b71908afc32829fafa4ebed940e77a2a7d27802877036ee907"
+    },
+    "P_R10": {
+      "original": "assets/expedicion/pictogramas/R10.webp",
+      "sha256_original": "dbae3cdba3b5f3b1945beb5b94c533b0d271e486eae464620ca0bab000117d3a"
+    },
+    "P_R11": {
+      "original": "assets/expedicion/pictogramas/R11.webp",
+      "sha256_original": "1df5d80dd8513a8ae5176c9e174942d0929a7743fe8901e5de94cd6c0f71811a"
+    },
+    "P_R12": {
+      "original": "assets/expedicion/pictogramas/R12.webp",
+      "sha256_original": "2f5624844e6bed584e161dca25c034ea4e94056851a3c962dc587d1c6cf495f9"
+    },
+    "P_R13": {
+      "original": "assets/expedicion/pictogramas/R13.webp",
+      "sha256_original": "7aa2fc0966c6a7e595ea239381732fb01e7d9752a4a39e63a4a032d72eabe894"
+    },
+    "P_R14": {
+      "original": "assets/expedicion/pictogramas/R14.webp",
+      "sha256_original": "79824b274fb780f2109db18311dc5c66f9c0b3e0a1ca68750c0a0c1b004a8d12"
+    },
+    "P_R15": {
+      "original": "assets/expedicion/pictogramas/R15.webp",
+      "sha256_original": "3bbe62b773ee7e02d1142cda85285d670cbf148764232f8e996be6881b97bd67"
+    },
+    "P_R16": {
+      "original": "assets/expedicion/pictogramas/R16.webp",
+      "sha256_original": "acf6dfa44585c0ff949eb8792b9051700622cc28d810545e7802561cd5360a82"
+    },
+    "P_R17": {
+      "original": "assets/expedicion/pictogramas/R17.webp",
+      "sha256_original": "4dd568114a9c174034c19ee7a98beab3defdc4cb947d0ec27fb1a5ad53e0275a"
+    },
+    "P_R18": {
+      "original": "assets/expedicion/pictogramas/R18.webp",
+      "sha256_original": "95032a55af869e8b95b25ad06f06c33132401e40927582db138a15247ac1eb84"
+    },
+    "P_R19": {
+      "original": "assets/expedicion/pictogramas/R19.webp",
+      "sha256_original": "739414b93ea6acc63adde570c23c19a288042c2fafc7ed546a99c42a976c9fac"
+    },
+    "P_R20": {
+      "original": "assets/expedicion/pictogramas/R20.webp",
+      "sha256_original": "b46d8568366aac99a9420b1b631d517e9d9404a2733d05d985aab6cf43e4713d"
+    },
+    "P_R21": {
+      "original": "assets/expedicion/pictogramas/R21.webp",
+      "sha256_original": "ed24ac9cd3fe955d1344cfe6f7b7118d945ec5e0a243289c5216b271c6290e94"
+    },
+    "P_R22": {
+      "original": "assets/expedicion/pictogramas/R22.webp",
+      "sha256_original": "97a675b80a1737fafe1680a169d8e792024902c1f11861bb42ac3906384ba9d0"
+    },
+    "P_R23": {
+      "original": "assets/expedicion/pictogramas/R23.webp",
+      "sha256_original": "7abb92bd86f688b52d9e0eaa7327ac615f729eb1145130530c9aaeb04dffc033"
+    },
+    "P_R24": {
+      "original": "assets/expedicion/pictogramas/R24.webp",
+      "sha256_original": "e29f1efb53156213b596a80cdfb6af6ed8cb69033c6693838d2e5d9a14c09d64"
+    },
+    "P_R25": {
+      "original": "assets/expedicion/pictogramas/R25.webp",
+      "sha256_original": "3855deffd8d4e18a8aca20ccb8335d382486bbb7091d23974255df69c9cfdebd"
+    },
+    "P_R26": {
+      "original": "assets/expedicion/pictogramas/R26.webp",
+      "sha256_original": "288b9637b524475c1634d31a9f81e9cdd18b5a5845857b18c145fb94cc0515cd"
+    },
+    "P_R27": {
+      "original": "assets/expedicion/pictogramas/R27.webp",
+      "sha256_original": "dcc90f88dde6f3247b3b63f9202c2c5a27622e0ef9c90cfe9503295ddc809a99"
+    },
+    "P_R28": {
+      "original": "assets/expedicion/pictogramas/R28.webp",
+      "sha256_original": "5c61b9a54be235ff9015158e49ffa82264eea5cb04671d8d98ce9a2e2e889d91"
+    },
+    "P_R29": {
+      "original": "assets/expedicion/pictogramas/R29.webp",
+      "sha256_original": "b79953e9de191c73048f572338b53151cf05bddde35bac9f0d2bff85b84fab1f"
+    },
+    "P_R30": {
+      "original": "assets/expedicion/pictogramas/R30.webp",
+      "sha256_original": "aad4e3ce0816454b094ff6cffcb11510ae1ceb47c1f839bfe92bad349e6b07e4"
+    },
+    "P_R31": {
+      "original": "assets/expedicion/pictogramas/R31.webp",
+      "sha256_original": "11ddbdd7daa8716e500601d997a3d8b14219a71165208ac6ea4a4c582291248a"
+    },
+    "P_R32": {
+      "original": "assets/expedicion/pictogramas/R32.webp",
+      "sha256_original": "f2bb989ae117c9f72be181e001dfba67e22ce9cbaad6e322562a9b40c3f4f2e4"
+    },
+    "P_R33": {
+      "original": "assets/expedicion/pictogramas/R33.webp",
+      "sha256_original": "53912d88cb5d228876283a61a21d1417ff151280ecf4398e0ca3cd5fae9900eb"
+    },
+    "P_R34": {
+      "original": "assets/expedicion/pictogramas/R34.webp",
+      "sha256_original": "49f5d8e97fa0cd20cf1de1d67afa77b9ec01271838d6ce61ee58594c2df47419"
+    },
+    "P_R35": {
+      "original": "assets/expedicion/pictogramas/R35.webp",
+      "sha256_original": "61e2a2f08828ae1e42da87114079616f0a4d3fffd574ebd98f1ef77998c45863"
+    },
+    "P_R36": {
+      "original": "assets/expedicion/pictogramas/R36.webp",
+      "sha256_original": "76dd3264d22fdbec77ee422a305a4356fbba08b7ec253570a71973a52bfad1d4"
+    },
+    "P_R37": {
+      "original": "assets/expedicion/pictogramas/R37.webp",
+      "sha256_original": "24fca3d86e604dd56f8e0f1e19f0e4e7253fefb9643fd9969b245896fb8d8ab1"
+    },
+    "P_R38": {
+      "original": "assets/expedicion/pictogramas/R38.webp",
+      "sha256_original": "3d02e1c046b276d34b7e687f771567fe7c7f66300c5ff3440576809bbbb93d97"
+    },
+    "P_R39": {
+      "original": "assets/expedicion/pictogramas/R39.webp",
+      "sha256_original": "396cce6640cad89da2fe6a8bde8d42ef356537b1d788e0d30cb16cb37cd7b654"
+    },
+    "P_R40": {
+      "original": "assets/expedicion/pictogramas/R40.webp",
+      "sha256_original": "8e645e50d9fbff756ca3cc4a62e3622d5d4c224d0634b182c0b0e12763f01bc8"
+    },
+    "P_R41": {
+      "original": "assets/expedicion/pictogramas/R41.webp",
+      "sha256_original": "efec777d56e7e666f196fe8fef7376520a1a921223201aabcdaa2d28dfb3a562"
+    },
+    "P_R42": {
+      "original": "assets/expedicion/pictogramas/R42.webp",
+      "sha256_original": "85d0c34b353d4fae36bc8bf54cd08f38bc5c27ba850601e86cd8779fd9021777"
+    },
+    "P_R43": {
+      "original": "assets/expedicion/pictogramas/R43.webp",
+      "sha256_original": "ce741e8ae4a3d69251fa267571a8dca0c3e74c34d69fc9494959a74065126538"
+    },
+    "P_R44": {
+      "original": "assets/expedicion/pictogramas/R44.webp",
+      "sha256_original": "f27d77fe7d638e2540c41f8193cdefe5b537904861005ee0814c02020c24508a"
+    },
+    "P_R45": {
+      "original": "assets/expedicion/pictogramas/R45.webp",
+      "sha256_original": "ddbaa2551bd09a5faa620acddb1b3a17904966652bd2c87196d1159ad0bec289"
+    },
+    "P_R46": {
+      "original": "assets/expedicion/pictogramas/R46.webp",
+      "sha256_original": "2c295ff565106213855eb39b359e8b4addd6f3eef9ae0d5eab109ac2631dbc17"
+    },
+    "P_R47": {
+      "original": "assets/expedicion/pictogramas/R47.webp",
+      "sha256_original": "7fb80449604ab87517bb475a31ba1882047ab30284c27b693532d45072a83951"
+    },
+    "P_R48": {
+      "original": "assets/expedicion/pictogramas/R48.webp",
+      "sha256_original": "22d510670508a60a101842dd868b33898488370cdc98b6ae4b9e403c6cd2a6c6"
+    },
+    "P_R49": {
+      "original": "assets/expedicion/pictogramas/R49.webp",
+      "sha256_original": "f5fd9bbeec036fd89b8cd223417ff444b426f7276b2231d1dea50da58d075b26"
+    },
+    "P_R50": {
+      "original": "assets/expedicion/pictogramas/R50.webp",
+      "sha256_original": "4aeebfb4e4a8cd6bd2c42e7432f1c8dd7025b4c2face4fef4ffb898073e61e6f"
+    },
+    "P_R51": {
+      "original": "assets/expedicion/pictogramas/R51.webp",
+      "sha256_original": "4747b6bd71e90923bfd975213dae5c9fd37aca174ecb431366cd708b1902d6ee"
+    },
+    "P_R52": {
+      "original": "assets/expedicion/pictogramas/R52.webp",
+      "sha256_original": "f3527b40bdee8e8fcb642e65c65b585437a0cfcf16906d7196353902b0e5bc34"
+    },
+    "P_R53": {
+      "original": "assets/expedicion/pictogramas/R53.webp",
+      "sha256_original": "8fe4a69add82b3ddc40f5233b4a28856269aee9f831c52640fd3f77a49bb54d5"
+    },
+    "P_R54": {
+      "original": "assets/expedicion/pictogramas/R54.webp",
+      "sha256_original": "b7918c5e93c3bdeb52d8b4db86030f57933968b09a584b879699b179434ae2b1"
+    },
+    "P_R55": {
+      "original": "assets/expedicion/pictogramas/R55.webp",
+      "sha256_original": "4fa17bb919ea829d511b050772cfe0b7bbf4ce8f4d35903bbf090283b38471cf"
+    },
+    "P_R56": {
+      "original": "assets/expedicion/pictogramas/R56.webp",
+      "sha256_original": "38a781df191fba7afb23cb962a87880935fcd9db2486b00218179fd2b5f3bb37"
+    },
+    "P_R57": {
+      "original": "assets/expedicion/pictogramas/R57.webp",
+      "sha256_original": "406d6c6a362f1c4a0abb555afd3724c752f550e5c4c31ad4fe0cc01fbf555a33"
+    },
+    "P_R58": {
+      "original": "assets/expedicion/pictogramas/R58.webp",
+      "sha256_original": "f9cba57a81a6f84db034c2761f3c8fb2b2150429f0b3147b5f1eab9c2092b28f"
+    },
+    "P_R59": {
+      "original": "assets/expedicion/pictogramas/R59.webp",
+      "sha256_original": "0cd1b9019350203cab388d29cce27e6f3d6ed7c8dcb1fe0f25eb1fb97b66c77e"
+    },
+    "P_R60": {
+      "original": "assets/expedicion/pictogramas/R60.webp",
+      "sha256_original": "bd10d38fee4c88369a90615cbf6e7749b8a9d9421ae73c8e09af0320e7866841"
+    },
+    "P_R61": {
+      "original": "assets/expedicion/pictogramas/R61.webp",
+      "sha256_original": "85d7406585664c67a33225d2659f8dd8941af3ac219a6d5323f69eadb2a23dab"
+    },
+    "P_R62": {
+      "original": "assets/expedicion/pictogramas/R62.webp",
+      "sha256_original": "f8158eef29de4cafe65411dbceea6c9fecdb48b05ce44c30c65d71856e17d2d8"
+    },
+    "P_R63": {
+      "original": "assets/expedicion/pictogramas/R63.webp",
+      "sha256_original": "117d6ec77448d313ac13f8a119400792c19dfade76be4ce40c2c2f5b2b1bdc0f"
+    },
+    "P_R64": {
+      "original": "assets/expedicion/pictogramas/R64.webp",
+      "sha256_original": "8b74de800f34bd59c41094daa19cd92ca10235b13fc5713f0fadcfe4b2b529a7"
+    },
+    "P_R65": {
+      "original": "assets/expedicion/pictogramas/R65.webp",
+      "sha256_original": "c01fdbc768fa4e045607f4dfad4dfc91da379f02144eb2395b477ee7c215c2bb"
+    },
+    "P_R66": {
+      "original": "assets/expedicion/pictogramas/R66.webp",
+      "sha256_original": "552472d7e1e16a2f8ea31b0a91c831ca7d15f5803de6bb67a92196f354d4eeeb"
+    },
+    "P_REANUDAR": {
+      "original": "assets/pictogramas/P_REANUDAR.webp",
+      "sha256_original": "49bc17645d893d09f8724ff09978169adbe0228f0bac3624bf9c51ff55355aee"
+    },
+    "P_REPETIR": {
+      "original": "assets/pictogramas/P_REPETIR.webp",
+      "sha256_original": "e551002b452f7bf8dce45f3f3957349ddba166feb7e91be1f71046f6d9f380ac"
+    },
+    "P_RIO": {
+      "original": "assets/pictogramas/P_RIO.webp",
+      "sha256_original": "458383bf8b1fe43eabf9661283e37a6f5e65a1e20fb8856a8dbc125773ccc7cc"
+    },
+    "P_SALIR": {
+      "original": "assets/pictogramas/P_SALIR.webp",
+      "sha256_original": "ae121141233f42c2dbdf67ca0db5db65a222b8a0d728aef050ff9e08f94574e0"
+    },
+    "P_SECO": {
+      "original": "assets/pictogramas/P_SECO.webp",
+      "sha256_original": "56e5ae1c555c7d40bae7af97eab60561ac814b9b0bc25d5a5e7fe66b9ba30d4e"
+    },
+    "P_SENALAR": {
+      "original": "assets/pictogramas/P_SENALAR.webp",
+      "sha256_original": "73d476904a25b2e0a0c5893020d12e6019e2d03c7c9217fdd345330eca23184d"
+    },
+    "P_TOCAR": {
+      "original": "assets/pictogramas/P_TOCAR.webp",
+      "sha256_original": "8ccc98f7fd0b13f2e08f5d3cc68524dfa49fc826e003b5326859754b7dabdf0a"
+    },
+    "P_VIVIR": {
+      "original": "assets/pictogramas/P_VIVIR.webp",
+      "sha256_original": "8715ba0e467586680b3e2ed6949ab29eb56776ff8c47bcccd3abea71590ed664"
+    }
+  }
+}
