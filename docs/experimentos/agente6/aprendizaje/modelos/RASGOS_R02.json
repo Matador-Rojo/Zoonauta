@@ -1,0 +1,377 @@
+{
+ "esquema": "zoonauta-agente6-modelo/1",
+ "origen": "SIMULACION_ENTRENAMIENTO_AGENTE6",
+ "huellas": {
+  "atributos": "f7bb978ad85d6ecab73e43f86692ea89742b55b277fbdb7bcca21de24a69a82f",
+  "pistas": "5ee90d42aa850af4df2b0d00ec6f28c9020a693e136eefff409214d2f41864f5"
+ },
+ "metadatos": {
+  "condicion": "RASGOS",
+  "replica": 2,
+  "semilla_entrenamiento": 2002,
+  "aviso": "Entrenado con jugadores SIMULADOS de probabilidades inventadas; no con personas."
+ },
+ "actualizaciones": 4670,
+ "parametros": {
+  "PISTA|1|2|0|documentado": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|2|0|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|2|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 15.0,
+   "n": 14
+  },
+  "PISTA|1|2|1|documentado": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|2|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|2|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|4|0|documentado": {
+   "alpha": 13.0,
+   "beta": 8.0,
+   "n": 19
+  },
+  "PISTA|1|4|0|sin_comprobar": {
+   "alpha": 11.0,
+   "beta": 17.0,
+   "n": 26
+  },
+  "PISTA|1|4|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 3.0,
+   "n": 2
+  },
+  "PISTA|1|4|1|documentado": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|4|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|4|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|8|0|documentado": {
+   "alpha": 19.0,
+   "beta": 15.0,
+   "n": 32
+  },
+  "PISTA|1|8|0|sin_comprobar": {
+   "alpha": 10.0,
+   "beta": 22.0,
+   "n": 30
+  },
+  "PISTA|1|8|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|8|1|documentado": {
+   "alpha": 1.0,
+   "beta": 4.0,
+   "n": 3
+  },
+  "PISTA|1|8|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|1|8|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|2+|2|0|documentado": {
+   "alpha": 9.0,
+   "beta": 6.0,
+   "n": 13
+  },
+  "PISTA|2+|2|0|sin_comprobar": {
+   "alpha": 200.0,
+   "beta": 235.0,
+   "n": 433
+  },
+  "PISTA|2+|2|0|ninguno": {
+   "alpha": 46.0,
+   "beta": 159.0,
+   "n": 203
+  },
+  "PISTA|2+|2|1|documentado": {
+   "alpha": 7.0,
+   "beta": 5.0,
+   "n": 10
+  },
+  "PISTA|2+|2|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|2+|2|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|2+|4|0|documentado": {
+   "alpha": 33.0,
+   "beta": 29.0,
+   "n": 60
+  },
+  "PISTA|2+|4|0|sin_comprobar": {
+   "alpha": 106.0,
+   "beta": 182.0,
+   "n": 286
+  },
+  "PISTA|2+|4|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 10.0,
+   "n": 9
+  },
+  "PISTA|2+|4|1|documentado": {
+   "alpha": 2.0,
+   "beta": 7.0,
+   "n": 7
+  },
+  "PISTA|2+|4|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 4.0,
+   "n": 3
+  },
+  "PISTA|2+|4|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|2+|8|0|documentado": {
+   "alpha": 47.0,
+   "beta": 59.0,
+   "n": 104
+  },
+  "PISTA|2+|8|0|sin_comprobar": {
+   "alpha": 67.0,
+   "beta": 158.0,
+   "n": 223
+  },
+  "PISTA|2+|8|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "PISTA|2+|8|1|documentado": {
+   "alpha": 11.0,
+   "beta": 10.0,
+   "n": 19
+  },
+  "PISTA|2+|8|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 4.0,
+   "n": 3
+  },
+  "PISTA|2+|8|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|2|0|documentado": {
+   "alpha": 415.0,
+   "beta": 47.0,
+   "n": 460
+  },
+  "RASGO|1|2|0|sin_comprobar": {
+   "alpha": 212.0,
+   "beta": 89.0,
+   "n": 299
+  },
+  "RASGO|1|2|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|2|1|documentado": {
+   "alpha": 3.0,
+   "beta": 1.0,
+   "n": 2
+  },
+  "RASGO|1|2|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|2|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|4|0|documentado": {
+   "alpha": 529.0,
+   "beta": 111.0,
+   "n": 638
+  },
+  "RASGO|1|4|0|sin_comprobar": {
+   "alpha": 273.0,
+   "beta": 174.0,
+   "n": 445
+  },
+  "RASGO|1|4|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|4|1|documentado": {
+   "alpha": 4.0,
+   "beta": 2.0,
+   "n": 4
+  },
+  "RASGO|1|4|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|4|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|8|0|documentado": {
+   "alpha": 686.0,
+   "beta": 337.0,
+   "n": 1021
+  },
+  "RASGO|1|8|0|sin_comprobar": {
+   "alpha": 125.0,
+   "beta": 129.0,
+   "n": 252
+  },
+  "RASGO|1|8|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|1|8|1|documentado": {
+   "alpha": 6.0,
+   "beta": 5.0,
+   "n": 9
+  },
+  "RASGO|1|8|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 2.0,
+   "n": 1
+  },
+  "RASGO|1|8|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|2|0|documentado": {
+   "alpha": 7.0,
+   "beta": 1.0,
+   "n": 6
+  },
+  "RASGO|2+|2|0|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|2|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|2|1|documentado": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|2|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|2|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|4|0|documentado": {
+   "alpha": 7.0,
+   "beta": 4.0,
+   "n": 9
+  },
+  "RASGO|2+|4|0|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|4|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|4|1|documentado": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|4|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|4|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|8|0|documentado": {
+   "alpha": 18.0,
+   "beta": 9.0,
+   "n": 25
+  },
+  "RASGO|2+|8|0|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|8|0|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|8|1|documentado": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|8|1|sin_comprobar": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  },
+  "RASGO|2+|8|1|ninguno": {
+   "alpha": 1.0,
+   "beta": 1.0,
+   "n": 0
+  }
+ }
+}

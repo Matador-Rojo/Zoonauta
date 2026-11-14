@@ -140,7 +140,10 @@ frío.»), que solo usa cuando existe su grabación. Solo afirma rasgos que una 
 revisada ya dice; lo que no está documentado se trata como desconocido, nunca como
 falso, y un hábitat no confirmado no se presenta como incorrecto. Tras elegir un
 hábitat parecido, no repite algo que también lo describa. Es un modelo de decisión con
-reglas y una utilidad de parámetros fijos: no aprende durante la partida. La 5.0 en
+reglas y una utilidad de parámetros fijos: no aprende durante la partida. Para el Hito 2
+existe además `--agente AGENTE_APRENDIDO`: un modelo probabilístico (Beta-Bernoulli) entrenado
+**fuera de la partida** a partir de registros de partidas y congelado al jugar. Hoy está
+entrenado con jugadores **simulados**, no con personas. La 5.0 en
 `/v5/` comparte servidor y también lo usa; `--agente PISTAS_PROGRESIVAS` devuelve a las dos
 versiones la secuencia anterior (pista 1 → 2 → 3).
 
@@ -181,6 +184,8 @@ Otros comandos desde esta carpeta, que contiene codigo, datos, docs, assets y te
 python -m codigo.poc.consola --modalidad JUGADOR --retos 2
 python -m codigo.interfaz.servidor --agente ID3_OPCIONES --puerto 8003
 python -m codigo.entrenamiento.evaluar_agente6 --salida resultados_nuevos/agente6
+python -m codigo.entrenamiento.entrenar_agente6 simular --salida resultados_nuevos/aprendizaje6
+python -m codigo.interfaz.servidor --agente AGENTE_APRENDIDO --puerto 8005
 python -m codigo.interfaz.servidor --catalogo-original --politica ID3 --puerto 8001
 python -m codigo.interfaz.servidor --catalogo-original --politica ROTACION --puerto 8002
 python -m codigo.poc.consola --modalidad AGENTE --retos 2
@@ -239,7 +244,7 @@ La prueba ejecuta el iniciador real, suprime únicamente la apertura de una vent
 comprueba partidas completas en ambas modalidades con 2, 4 y 8 opciones. Requiere Python
 y una carpeta sin `.venv-voz` ni `modelos_voz`.
 
-**Zoonauta 6.0 (2026-11-14):** pasan **110 pruebas Python** (incluidas las 15 del agente
+**Zoonauta 6.0 (2026-11-14):** pasan **120 pruebas Python** (incluidas las 25 del agente y su aprendizaje
 y la cobertura de la voz grabada jugando todos los animales con el agente) y las pruebas de
 navegador de la 6.0: portada (6 casos
 con axe), recorrido (9), cuatro partidas completas con teclado sin desplazamiento (2, 4 y 8
