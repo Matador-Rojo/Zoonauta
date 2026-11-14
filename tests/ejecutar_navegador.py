@@ -19,15 +19,16 @@ def main():
     parser.add_argument("--hito2", action="store_true", help="Comprueba 2, 4 y 8 opciones, historial y recarga en ambos idiomas.")
     parser.add_argument("--hito3", action="store_true", help="Comprueba Preferencias en dos columnas, pantallas pequeñas y teclado.")
     parser.add_argument("--catalogo", action="store_true", help="Comprueba tarjetas grandes, paginación adaptable y controles visibles.")
+    parser.add_argument("--v6", action="store_true", help="Comprueba el prototipo 6.0 en /v6/: portada de 8 paisajes, Pista, Repetir y recarga.")
     parser.add_argument("--portada", action="store_true", help="Comprueba los 48 fondos de portada y su correspondencia con el catálogo.")
     args = parser.parse_args()
     with TemporaryDirectory() as carpeta:
-        servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=args.portada)
+        servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=args.portada or args.v6)
         hilo = Thread(target=servidor.serve_forever, daemon=True)
         hilo.start()
         env = {**os.environ, "INTERFAZ_URL": f"http://127.0.0.1:{servidor.server_port}"}
         try:
-            prueba = ("verificar_portada.cjs" if args.portada else
+            prueba = ("verificar_v6.cjs" if args.v6 else "verificar_portada.cjs" if args.portada else
                       "verificar_catalogo.cjs" if args.catalogo else "verificar_hito3.cjs" if args.hito3 else "verificar_hito2.cjs" if args.hito2 else "verificar_voces_navegador.cjs" if args.voces_navegador else
                       "verificar_audio_real.cjs" if args.audio_real else "verificar_interfaz.cjs")
             resultado = subprocess.run(["node", str(Path(__file__).with_name(prueba))], env=env)
