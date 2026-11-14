@@ -123,7 +123,6 @@ export function Reto({
         )}
         <Guia vista={vista} fotoHabitat={elegido} />
       </div>
-      <Controles vista={vista} onAccion={onAccion} />
       <section className="habitats-panel" aria-labelledby="titulo-habitats">
         <h2 id="titulo-habitats" className="instruccion">
           {t(vista.fase === "ESPERANDO_RESPUESTA" ? "Toca un lugar donde pueda vivir." : "Hábitats para elegir")}
@@ -158,6 +157,8 @@ export function Reto({
           ))}
         </div>
       </section>
+      {/* Después de los hábitats: así el orden del foco coincide con el visual en móvil. */}
+      <Controles vista={vista} onAccion={onAccion} />
     </section>
   );
 }

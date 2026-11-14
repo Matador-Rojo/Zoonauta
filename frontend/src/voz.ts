@@ -1,6 +1,7 @@
-// Lectura en voz alta. Porta la lógica de 5.0 (app.js): una sola lectura a la vez,
-// cancelación al cambiar de mensaje o pausar, voces locales (Piper/Kokoro vía
-// /api/voz) y voces compatibles del navegador (Microsoft/Google, es-419 y pt-BR).
+// Lectura en voz alta. Porta la lógica de 5.0 (app.js): una sola lectura a la vez y
+// cancelación al cambiar de mensaje o pausar. En la 6.0 solo suena la voz grabada de
+// Zoonauta (Marcela, ElevenLabs, /api/voz/grabada) y solo en español (SOLO_VOZ_GRABADA,
+// IDIOMAS_CON_VOZ). El código de Piper/Kokoro (/api/voz) y del navegador se conserva.
 import { cancelarVoz, pedirGrabacion, pedirVoz } from "./api/cliente";
 import type { Idioma, Vista, VozCatalogo } from "./api/tipos";
 
@@ -117,6 +118,8 @@ export class GuiaVoz {
   ) {
     if (!ajustes.activa && contexto !== "prueba") return;
     this.parar();
+    // Idioma sin voz (pt-BR por ahora): la guía no habla aunque llegaran grabaciones.
+    if (!IDIOMAS_CON_VOZ.includes(vista.idioma)) return;
     // 1) Grabación completa del mensaje exacto (ElevenLabs). Nunca se unen audios.
     //    «Probar voz» reproduce la grabación del mensaje que está en pantalla.
     if (ajustes.grabadas > 0) {
@@ -124,7 +127,11 @@ export class GuiaVoz {
       if (await this.hablarGrabada(vista, contextoGrabado, ajustes, textos)) return;
     }
     // Solo voz grabada: sin grabación para este mensaje, la guía no lo lee con otra voz.
-    if (SOLO_VOZ_GRABADA) return;
+    // Si era «Probar voz», se avisa para que la persona sepa por qué no suena nada.
+    if (SOLO_VOZ_GRABADA) {
+      if (contexto === "prueba") this.alError(textos.error);
+      return;
+    }
     const voz = voces.find((v) => v.id === ajustes.vozId && v.disponible);
     if (!voz) return;
     const turno = this.turno;
@@ -208,9 +215,16 @@ export class GuiaVoz {
         control.signal,
       );
       if (turno !== this.turno) return true;
+      if (!r.ok) {
+        this.pedido = null;
+        return false;
+      }
+      // El pedido sigue cancelable mientras llega el audio; después se vuelve a comprobar el
+      // turno para que una lectura ya sustituida nunca llegue a sonar (una sola voz a la vez).
+      const blob = await r.blob();
+      if (turno !== this.turno) return true;
       this.pedido = null;
-      if (!r.ok) return false;
-      await this.reproducir(await r.blob(), turno, ajustes.velocidad, textos.error);
+      await this.reproducir(blob, turno, ajustes.velocidad, textos.error);
       return true;
     } catch (e) {
       if ((e as Error).name === "AbortError" || turno !== this.turno) return true;

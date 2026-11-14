@@ -94,7 +94,8 @@ def extraer(banco: BancoDatos | None = None) -> list[Locucion]:
             "Al abrir el selector de modalidad (Comenzar).",
             "codigo/interfaz/servicio.py; datos/traducciones_pt_BR.json#interfaz",
             pregunta, idiomas.PORTUGUES["interfaz"][pregunta])
-    # El saludo de "Probar voz" no se graba: ese botón prueba la voz alternativa elegida.
+    # El saludo de "Probar voz" no se graba: en la 5.0 ese botón prueba la voz alternativa;
+    # en la 6.0 reproduce la grabación del mensaje que está en pantalla.
     for mid, (categoria, contexto) in FIJOS.items():
         agregar(mid, mid, categoria, "fijo", "P1", contexto, "datos/mensajes_sistema.json",
                 g.mensaje(mid, "A01").texto_voz)  # el texto no depende del animal

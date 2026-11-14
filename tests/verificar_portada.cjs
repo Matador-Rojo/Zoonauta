@@ -110,7 +110,10 @@ async function axe(page, nombre) {
     await quieta.locator('.portada-comenzar').waitFor();
     await caso('con prefers-reduced-motion: sin animaciones y el interruptor lo refleja', async () => {
       assert.equal(await quieta.evaluate(() => document.documentElement.dataset.movimiento), 'reducido');
-      assert.equal(await quieta.evaluate(() => document.getAnimations().filter(a => a.animationName).length), 0);
+      // Ni animaciones ni transiciones de movimiento (los cambios de color no son movimiento).
+      assert.deepEqual(await quieta.evaluate(() => document.getAnimations()
+        .filter(a => a.animationName || /transform|translate|scale/.test(a.transitionProperty || ''))
+        .map(a => a.animationName || a.transitionProperty)), []);
       await quieta.getByRole('button', {name: 'Preferencias'}).click();
       const interruptor = quieta.getByRole('switch', {name: /Reducir movimiento/});
       assert.ok(await interruptor.isChecked());

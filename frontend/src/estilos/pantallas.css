@@ -697,3 +697,142 @@ progress::-moz-progress-bar {
     display: none;
   }
 }
+
+/* ===== Tamaños mínimos (revisión 2026-11-14) =====
+   En una vista grande todo cabe sin desplazar. Si la vista es demasiado baja (zoom del
+   navegador, móvil apaisado o pequeño), nada se aplasta: las tarjetas conservan un tamaño
+   jugable y, solo entonces, la página se desplaza (WCAG 1.4.4, 1.4.10 y 2.5.8). Las filas
+   flexibles usan minmax(min-content, 1fr) para que su mínimo sea el de su contenido. */
+:root {
+  --min-habitat: 6.5rem;
+  --min-animal-catalogo: 9rem;
+}
+.reto-pantalla {
+  grid-template-rows: auto auto minmax(min-content, 1fr) auto;
+}
+.habitats-panel,
+.habitats,
+.catalogo {
+  min-height: auto;
+}
+.habitats {
+  grid-auto-rows: minmax(var(--min-habitat), 1fr);
+}
+.animal-actual {
+  min-height: auto;
+}
+.animal-actual img {
+  min-height: 6rem;
+}
+.catalogo-pantalla {
+  grid-template-rows: auto auto minmax(min-content, 1fr) auto auto;
+}
+.catalogo {
+  grid-auto-rows: minmax(var(--min-animal-catalogo), 1fr);
+}
+.tarjeta-imagen {
+  min-height: 4rem;
+}
+.cierre-visual img {
+  min-height: 8rem;
+}
+@media (max-width: 899px) {
+  :root {
+    --min-habitat: 4.5rem;
+    --min-animal-catalogo: 7.5rem;
+  }
+  .reto-pantalla {
+    grid-template-rows: auto auto auto minmax(min-content, 1fr) auto;
+  }
+  .animal-actual img {
+    min-height: 0;
+  }
+  .catalogo-pantalla {
+    grid-template-rows: auto auto minmax(min-content, 1fr) auto auto;
+  }
+  .tarjeta-imagen {
+    min-height: 3rem;
+  }
+  .cierre {
+    grid-template-rows: minmax(10rem, 1fr) auto;
+  }
+}
+/* Vista baja y ancha (móvil apaisado, zoom): dos columnas en la pausa y el cierre. */
+@media (max-height: 520px) and (min-width: 600px) {
+  .cierre {
+    grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.3fr);
+    grid-template-rows: none;
+  }
+  .cierre-contenido h1 {
+    font-size: 1.6rem;
+  }
+  .cierre .tira-celda {
+    width: 3.5rem;
+  }
+  .selector-modalidad .opcion-modalidad img {
+    width: 4.5rem;
+  }
+  .selector-modalidad .opcion-modalidad {
+    padding: 0.6rem;
+  }
+}
+/* Las fotos e ilustraciones se adaptan a su celda y no imponen su tamaño natural al mínimo
+   de la fila (contención de tamaño); el mínimo lo dan --min-habitat y los min-height. */
+.tarjeta-habitat .paisaje,
+.tarjeta-imagen img,
+.animal-actual img,
+.cierre-visual img {
+  contain: size;
+}
+/* En móvil la foto del acierto no cabe: el hábitat acertado ya se ve resaltado con ✓. */
+@media (max-width: 899px) {
+  .guia-foto {
+    display: none;
+  }
+  .guia:has(.guia-foto) {
+    display: block;
+  }
+}
+@media (max-height: 520px) {
+  .cierre {
+    padding-top: 0;
+  }
+}
+@media (max-width: 899px) {
+  .cabecera:not([data-fase="INICIO"]) .marca-subtitulo {
+    display: none;
+  }
+  .tira {
+    gap: 0.25rem 0.75rem;
+  }
+}
+/* Móvil: compacto para que también quepan las confirmaciones largas. */
+@media (max-width: 899px) {
+  :root {
+    --min-habitat: 3.75rem;
+  }
+  .animal-actual {
+    padding: 0.35rem 0.75rem;
+  }
+  .animal-actual img {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  .guia h2 {
+    font-size: 0.9375rem;
+    margin-bottom: 0.35rem;
+  }
+  .tira-celda {
+    width: clamp(3rem, 7vh, 4.25rem);
+    font-size: 0.75rem;
+  }
+  .reto-pantalla {
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 899px) {
+  .tarjeta-habitat span {
+    padding-top: 0.85rem;
+    line-height: 1.15;
+  }
+}
