@@ -15,7 +15,7 @@ conserva su identidad verde y lima; este contrato rige solo la 6.0 (`/v6/`).
   **Sin pictogramas en la portada.**
 - Titulares de pantalla en serif (Georgia) como la portada; cuerpo en Atkinson Hyperlegible
   Next (la tipografía del cuerpo queda pendiente de confirmar por el propietario).
-- Pictogramas e ilustraciones dentro del juego, siempre sobre base clara; logo y robot sin cambios.
+- Pictogramas e ilustraciones sin fondo, directamente sobre el panel (como la 5.0); logo y robot sin cambios.
 
 ## Rasgos de la 5.0 que deben conservarse o mejorarse
 
@@ -28,8 +28,9 @@ conserva su identidad verde y lima; este contrato rige solo la 6.0 (`/v6/`).
 
 ## Voz
 
-Solo español por ahora: todas las voces descargadas (Piper y Kokoro), las grabaciones es-419 y
-las del navegador. En pt-BR la voz está bloqueada (cero voces, controles desactivados).
+Solo la voz grabada de Zoonauta (ElevenLabs), en español: 350 grabaciones que cubren los 353
+mensajes. Sin Piper, Kokoro ni voces del navegador en la 6.0. En pt-BR la voz está bloqueada
+(cero voces, controles desactivados).
 
 ## Movimiento y accesibilidad
 
