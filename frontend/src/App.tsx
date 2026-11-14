@@ -287,7 +287,7 @@ export function App() {
         {t("Ir al juego")}
       </a>
       <header className="cabecera" data-fase={vista.fase}>
-        <a className="marca" href="/v6/">
+        <a className="marca" href="/">
           <img src="/zoonauta-logo.svg" alt="" width={44} height={44} />
           <span className="marca-texto">
             Zoonauta<span className="marca-subtitulo">{t("Animales y hábitats")}</span>

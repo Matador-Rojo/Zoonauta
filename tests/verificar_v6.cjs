@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/v6/';
+const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/';
 const out = path.resolve(process.env.INTERFAZ_SALIDA || 'output/v6/navegador');
 fs.mkdirSync(out, {recursive: true});
 const casos = [];

@@ -33,7 +33,7 @@ async function contexto(browser,voces=inventario,locales=true){
  },voces);
  return c;
 }
-async function abrir(c){const p=await c.newPage();await p.goto(base);await p.getByRole('button',{name:'Comenzar',exact:true}).waitFor();return p;}
+async function abrir(c){const p=await c.newPage();await p.goto(base+'/v5/');await p.getByRole('button',{name:'Comenzar',exact:true}).waitFor();return p;}
 async function revision(p){return p.evaluate(async()=>await(await fetch('/api/revision')).json());}
 async function elegir(p,nombre){const o=await p.locator('#voces option').filter({hasText:nombre}).getAttribute('value');await p.locator('#voces').selectOption(o);return o;}
 async function probar(p){const n=await p.evaluate(()=>window.__lecturas.length);await p.locator('#probar-voz').click();await p.waitForFunction(n=>window.__lecturas.length>n,n);return p.evaluate(()=>window.__lecturas.at(-1));}

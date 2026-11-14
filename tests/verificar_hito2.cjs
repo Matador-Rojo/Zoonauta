@@ -84,7 +84,7 @@ async function comprobarContinuidad(page,nombre,tipo){
    const context=await browser.newContext({viewport:{width:1280,height:720}});
    const page=await context.newPage(),errores=[];
    page.on('pageerror',e=>errores.push(e.message));
-   await page.goto(base);await page.locator('#ajustes').click();
+   await page.goto(base+'/v5/');await page.locator('#ajustes').click();
    await page.locator('#voz').uncheck();await page.locator('#retos').fill('1');
    await page.locator('#cantidad-opciones').selectOption(String(n));
    if(idioma==='pt-BR'){
