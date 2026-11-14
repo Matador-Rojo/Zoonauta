@@ -59,6 +59,8 @@ class DatosRasgos(Base):
         self.assertEqual(111, total)
         # Sin datos no se inventan: dos hábitats quedan sin rasgos (pendiente de revisión).
         self.assertEqual({"H28", "H30"}, {h for h, r in self.banco.rasgos_habitat.items() if not r})
+        # «Hay mucho pasto y pocos árboles en altura.» es la pista 2 de H16, no la 1.
+        self.assertEqual(("pasto", "AY_H16_L2"), self.banco.rasgos_habitat["H16"]["vegetacion"])
 
     def test_ayudas_por_rasgo_breves_con_pictogramas_y_traduccion(self):
         apoyo = self.banco.mensajes["MSG_APOYO_AUTO"]["texto"]
@@ -113,15 +115,21 @@ class Decisiones(Base):
                                 # El agente nunca repite algo que también describe lo elegido.
                                 self.assertNotIn(self.rep.relacion(c, d), ("compartida", "parcial"))
 
-    def test_primera_pista_del_agente_siempre_aporta_algo(self):
-        for animal, ficha in self.banco.animales.items():
-            for k in (2, 4, 8):
-                g = self.reto(animal, k, self.agente_grabadas)
-                distractores = [o for o in g.estado.opciones_habitat if o not in ficha["habitats_confirmados"]]
-                c = self.candidata(g.estado.habitat_guia_id, self.pista(g).respuesta.contenido_id)
-                if distractores and c.tipo != "SENALAR":
-                    with self.subTest(animal=animal, k=k):
-                        self.assertTrue(any(self.rep.relacion(c, d) != "compartida" for d in distractores))
+    def test_primera_pista_nunca_revela_y_ninguna_frase_se_repite(self):
+        for motor in (self.agente, self.agente_grabadas):
+            for animal in self.banco.animales:
+                for k in (2, 4, 8):
+                    with self.subTest(politica=motor.politica, animal=animal, k=k):
+                        g = self.reto(animal, k, motor)
+                        # Sin errores previos, la primera Pista no es «Señala el hábitat …».
+                        self.assertNotEqual(3, self.pista(g).respuesta.nivel)
+                        textos = [g.estado.respuesta_educativa.texto_voz]
+                        for _ in range(3):
+                            r = self.pista(g).respuesta
+                            if r.nivel == 3:
+                                break
+                            textos.append(r.texto_voz)
+                        self.assertEqual(len(textos), len(set(textos)))
 
     def test_salta_la_pista_identica_al_habitat_parecido(self):
         # H04 y H05 comparten la pista 1 («Busca un bosque de clima templado.»).

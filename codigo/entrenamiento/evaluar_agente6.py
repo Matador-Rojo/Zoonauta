@@ -129,6 +129,7 @@ def estructural(banco: BancoDatos, motores: dict) -> dict:
                 "ideas_media_primera": round(mean(ideas), 3),
                 "tasa_primera_descarta_documentado": _tasa(c["primera_descarta_documentado"], c["retos_con_distractores"]),
                 "tasa_primera_sin_valor": _tasa(c["primera_sin_valor"], c["retos_con_distractores"]),
+                "tasa_primera_senala": _tasa(c["primera_senala"], c["retos"]),
                 "fraccion_distractores_descartados_primera": _tasa(c["distractores_descartados_primera"], c["distractores"]),
                 "tasa_tras_eleccion_distingue_documentado": _tasa(c["tras_eleccion_distingue_documentado"], c["tras_eleccion"]),
                 "tasa_tras_eleccion_describe_lo_elegido": _tasa(c["tras_eleccion_describe_lo_elegido"], c["tras_eleccion"]),

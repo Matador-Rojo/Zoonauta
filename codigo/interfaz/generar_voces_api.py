@@ -31,10 +31,16 @@ PAUSA_SEG = 0.5
 REINTENTOS = 3
 
 
+# Textos nuevos del agente 6.0 redactados con IA: no se gastan créditos en ellos hasta que la
+# columna revision_humana del CSV diga que están revisados.
+SIN_REVISAR = ("pista_rasgo", "apoyo_con_pista_rasgo")
+
+
 def pendientes(tabla: list[dict], idioma: str = "es-419", prioridad: str | None = None) -> list[dict]:
     """Mensajes que tienen que grabarse y todavía no tienen audio ni fueron generados."""
     return [f for f in tabla if f["idioma"] == idioma and f["grabar"] == "si"
             and f["estado_generacion"] == "pendiente"
+            and (f["categoria"] not in SIN_REVISAR or f.get("revision_humana", "").strip())
             and (prioridad is None or f["prioridad"] == prioridad)]
 
 

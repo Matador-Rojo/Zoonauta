@@ -158,8 +158,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 16355,
-      "sha256": "d565010a151ecd8e7ed94fe3248504ad3d1e3957a88b7e08a296df971d6372bb"
+      "bytes": 16513,
+      "sha256": "fdeb9cff7ed4323cca236bfd4c91c1d6a837fcf02db9ab684baaabb8400b6bfd"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -9848,33 +9848,33 @@
     },
     {
       "ruta": "codigo/entrenamiento/evaluar_agente6.py",
-      "bytes": 13174,
-      "sha256": "23ff6b933086d91e9784943f46c7f09d5331d122aa6242ccba83ce510e0f1afe"
+      "bytes": 13253,
+      "sha256": "e2c44aef6b873d394234d2aad6c26efa7e36bb1ca994c306f8e5020ee216d702"
     },
     {
       "ruta": "codigo/motores/agente.py",
-      "bytes": 16892,
-      "sha256": "930a431025d085dbb33817fa0a5f0e626f11e1caa0ba3e3bca34dc3602a58eb1"
+      "bytes": 17632,
+      "sha256": "add7e6443a67376f6d3ef222608e4807074cd4357fcf850ea7d93ec8657c80fb"
     },
     {
       "ruta": "datos/expedicion/atributos_habitats.json",
       "bytes": 18885,
-      "sha256": "857ba1093b7d5ccd569b486e8b01d95a39c32c7206c55ad37f7690b8dbfc9e8e"
+      "sha256": "f7bb978ad85d6ecab73e43f86692ea89742b55b277fbdb7bcca21de24a69a82f"
     },
     {
       "ruta": "tests/test_agente6.py",
-      "bytes": 12164,
-      "sha256": "dac0cf1b86fbfbea8c2a6d8e1e5ce6867e903780a90a24a05a871f5d5c4cf7c6"
+      "bytes": 12611,
+      "sha256": "85e4a2320b075a60518ac3ebe765fa37dc6e5374e83c76bde4e323e3b27a55f7"
     },
     {
       "ruta": "docs/agente/agente_6.md",
-      "bytes": 24990,
-      "sha256": "75dcb72926e6f0e8a24cc872d4fd97557347f34dc108a3b06834287b5876bb0b"
+      "bytes": 27538,
+      "sha256": "02f1a0443ad8d9ab8e954e1b04a86d84e72595fda28c1f83ca506b2d35b72940"
     },
     {
       "ruta": "docs/experimentos/agente6/evaluacion.json",
-      "bytes": 26486,
-      "sha256": "b9eb6d968d913fc70a81aa34188f97639f0b03e34a5dc5b72507f2108c966643"
+      "bytes": 27017,
+      "sha256": "d7089773d1bbd9baf4f2152805b56e4d568ec4ef555cedf1ff1369cf12099cab"
     },
     {
       "ruta": "docs/voz/elevenlabs/textos_pendientes_es-419.txt",

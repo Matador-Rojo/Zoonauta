@@ -90,8 +90,8 @@ la pista 3. **No mira lo que hace el jugador.**
 Decide en cada petición con el estado actual del reto:
 
 1. **Apoyo explícito (pista 3)** si ya se mostró, si el jugador eligió **dos** hábitats no
-   confirmados en el reto (la misma regla que el selector probabilístico del catálogo
-   original) o si ya vio **tres** ayudas.
+   confirmados distintos en el reto (como el selector probabilístico del catálogo original,
+   que cuenta todas las elecciones, incluso repetidas) o si ya vio **tres** ayudas.
 2. **Excluye** las ayudas que también describen (del todo o en parte) un hábitat ya elegido
    en el reto: parecerían señalarlo otra vez.
 3. Para cada candidata restante calcula una **utilidad esperada**:
@@ -106,8 +106,13 @@ Decide en cada petición con el estado actual del reto:
      la diferencia no está comprobada);
    - **penalización** = 1 por cada otra respuesta válida visible (secundario documentado) de
      la que la ayuda alejaría.
-4. Si ninguna candidata aporta nada, ofrece la pista 3. Si ya no quedan opciones no
+4. Si ninguna candidata aporta nada (o todas tienen utilidad ≤ 0): **sin errores previos**
+   sigue la secuencia editorial (pista 1, luego 2), de modo que la primera Pista nunca revela
+   la respuesta; **tras un error** ofrece la pista 3. Si ya no quedan opciones no
    confirmadas, sigue la secuencia editorial sin repetir lo elegido.
+5. Una ayuda por rasgo con la misma frase que una pista del hábitat (hoy «Busca un lugar con
+   arbustos.» = `AY_H13_L1`) no se ofrece aparte para ese hábitat: ninguna frase se repite en
+   un reto.
 
 Los parámetros (0,5 / 0,25 / 0,85 / 0,6 / 1 / 1, tres ayudas, dos elecciones) **se fijaron a
 mano** con los criterios anteriores; no se ajustaron con datos de jugadores, que no existen.
@@ -116,12 +121,21 @@ mano** con los criterios anteriores; no se ajustaron con datos de jugadores, que
 ### Qué no cambia
 
 - **Repetir** devuelve exactamente el mensaje mostrado (mismo texto, pictogramas e ID) y no
-  cambia el estado; solo marca la señal de dificultad para la siguiente ayuda.
+  cambia lo mostrado. Sí activa la señal de dificultad del agente, que dura el resto del
+  reto (también si se repite la pregunta antes de pedir pistas).
 - **Pausar** y **Reanudar** no alteran la decisión siguiente.
 - **Salir**, Continuar, las opciones visibles y el progreso siguen igual. No hay tiempo,
   puntos ni castigos.
 - Los 288 animales, 48 hábitats, 2/4/8 opciones y los secundarios documentados se conservan;
   cualquier secundario visible completa el reto.
+
+### Qué cambia también en la 5.0 (`/v5/`)
+
+La 5.0 comparte servidor, API y sesión con la 6.0, así que **también usa el agente**: ya no
+muestra siempre la secuencia pista 1 → 2 → 3. Para recuperar la secuencia anterior hay que
+arrancar el servidor con `--agente PISTAS_PROGRESIVAS`, lo que afecta a las dos versiones a la
+vez. Sus pruebas de navegador (`--hito2`, `--hito3`, `--catalogo`, general, `--voz-v5`) pasan
+con el agente.
 
 ### Cómo se ejecuta
 
@@ -151,41 +165,46 @@ audios).
 
 Los 288 animales con 2, 4 y 8 opciones (864 retos por política). Para cada reto se mide la
 primera pista y, por separado, la ayuda que sigue a elegir cada hábitat no confirmado visible
-(265, 833 y 1985 casos). «Documentado» significa que la diferencia consta en los rasgos.
+(265, 833 y 1985 casos). «Documentado» significa que la diferencia consta en los rasgos;
+«sin valor», que todo lo que muestra la pista aparece también en las pistas de todas las
+opciones no confirmadas.
 
-| Política | Opciones | 1.ª pista descarta algo (documentado) | 1.ª pista sin valor | Ideas en la 1.ª | Tras un error: distingue lo elegido | Tras un error: también lo describe | Tras un error: pasa a «Señala» | 1.ª pista aleja de un secundario visible | Incompatibles |
-|---|---|---|---|---|---|---|---|---|---|
-| PISTAS_PROGRESIVAS | 2 | 23 % | 52 % | 2,02 | 23 % | 66 % | 0 % | 9 | 0 |
-| PISTAS_PROGRESIVAS | 4 | 42 % | 19 % | 2,02 | 20 % | 62 % | 0 % | 10 | 0 |
-| PISTAS_PROGRESIVAS | 8 | 62 % | 2 % | 2,02 | 22 % | 47 % | 0 % | 10 | 0 |
-| ID3_OPCIONES (grabadas) | 2 | 40 % | 38 % | 2,08 | 40 % | 51 % | 0 % | 16 | 0 |
-| ID3_OPCIONES (grabadas) | 4 | 61 % | 8 % | 2,10 | 30 % | 50 % | 0 % | 17 | 0 |
-| ID3_OPCIONES (grabadas) | 8 | 83 % | 0 % | 2,11 | 32 % | 37 % | 0 % | 15 | 0 |
-| **AGENTE (grabadas)** | 2 | 40 % | **0 %** | 2,08 | 40 % | **0 %** | 16 % | 1 | 0 |
-| **AGENTE (grabadas)** | 4 | 49 % | **0 %** | 2,04 | 30 % | **0 %** | 17 % | 5 | 0 |
-| **AGENTE (grabadas)** | 8 | 69 % | **0 %** | 2,07 | 34 % | **0 %** | 8 % | 1 | 0 |
-| AGENTE (todas) | 2 | 40 % | 0 % | 1,44 | 40 % | 0 % | 13 % | 1 | 0 |
-| AGENTE (todas) | 4 | 55 % | 0 % | 1,38 | 30 % | 0 % | 13 % | 3 | 0 |
-| AGENTE (todas) | 8 | 74 % | 0 % | 1,49 | 34 % | 0 % | 5 % | 0 | 0 |
+| Política | Opciones | 1.ª pista descarta algo (documentado) | 1.ª pista sin valor | 1.ª pista es «Señala» | Ideas en la 1.ª | Tras un error: distingue lo elegido | Tras un error: también lo describe | Tras un error: pasa a «Señala» | 1.ª pista aleja de un secundario visible | Incompatibles |
+|---|---|---|---|---|---|---|---|---|---|---|
+| PISTAS_PROGRESIVAS | 2 | 20 % | 36 % | 0 % | 2,02 | 20 % | 68 % | 0 % | 9 | 0 |
+| PISTAS_PROGRESIVAS | 4 | 40 % | 2 % | 0 % | 2,02 | 18 % | 63 % | 0 % | 10 | 0 |
+| PISTAS_PROGRESIVAS | 8 | 60 % | 0 % | 0 % | 2,02 | 21 % | 48 % | 0 % | 10 | 0 |
+| ID3_OPCIONES (grabadas) | 2 | 40 % | 26 % | 0 % | 2,08 | 40 % | 51 % | 0 % | 16 | 0 |
+| ID3_OPCIONES (grabadas) | 4 | 61 % | 0 % | 0 % | 2,10 | 30 % | 49 % | 0 % | 17 | 0 |
+| ID3_OPCIONES (grabadas) | 8 | 83 % | 0 % | 0 % | 2,11 | 32 % | 36 % | 0 % | 15 | 0 |
+| **AGENTE (grabadas)** | 2 | 40 % | 0 % | 0 % | 2,08 | 40 % | 0 % | 16 % | 1 | 0 |
+| **AGENTE (grabadas)** | 4 | 49 % | 0 % | 0 % | 2,05 | 31 % | 0 % | 14 % | 1 | 0 |
+| **AGENTE (grabadas)** | 8 | 69 % | 0 % | 0 % | 2,09 | 34 % | 0 % | 9 % | 1 | 0 |
+| AGENTE (todas) | 2 | 40 % | 0 % | 0 % | 1,44 | 40 % | 0 % | 13 % | 1 | 0 |
+| AGENTE (todas) | 4 | 55 % | 0 % | 0 % | 1,53 | 31 % | 0 % | 10 % | 0 | 0 |
+| AGENTE (todas) | 8 | 74 % | 0 % | 0 % | 1,61 | 34 % | 0 % | 6 % | 0 | 0 |
 
-(«1.ª pista sin valor»: todo lo que dice también vale para todas las opciones no confirmadas.
-`ID3_OPCIONES (todas)` da casi los mismos números que con grabadas; están en el JSON.)
+(`ID3_OPCIONES (todas)` da casi los mismos números que con grabadas; están en el JSON.)
 
 Lectura:
 
-- **Mejor que la secuencia anterior.** El agente nunca da una primera pista sin valor
-  (la secuencia fija: 52 % con 2 opciones). Tras un error, nunca repite algo que también
-  describe lo elegido (la secuencia: 47–66 %). Distingue lo elegido con un rasgo documentado
-  más a menudo (30–40 % frente a 20–23 %) y casi nunca aleja de un secundario visible.
+- **Frente a la secuencia anterior.**
+  - El agente nunca da una primera pista sin valor. La secuencia fija lo hace en el 36 % de
+    los retos de 2 opciones.
+  - Nunca revela la respuesta en la primera petición.
+  - Tras un error, nunca repite algo que también describe lo elegido; la secuencia lo hace
+    en el 48–68 % de los casos.
+  - Distingue lo elegido con un rasgo documentado más a menudo (31–40 % frente a 18–21 %) y
+    casi nunca aleja de un secundario visible.
 - **Frente a ID3.** ID3 descarta más opciones con la primera pista con 4 y 8 opciones (61 % y
   83 % frente a 49 % y 69 %), porque solo maximiza la diferencia documentada. El agente
-  además pondera la comprensión, las diferencias no comprobadas y los secundarios. Ese ID3
-  da pistas sin valor (38 % con 2 opciones) y repite lo elegido en el 37–51 % de los casos.
-- **Coste.** Cuando ninguna ayuda restante distingue lo elegido sin describirlo también, el
-  agente pasa al apoyo explícito: tras el primer error, en el 8–17 % de los casos. La
-  secuencia fija nunca lo hace tan pronto, pero en esos casos ofrecía una pista que también
-  valía para lo elegido.
-- **Límite de los datos:** con 2 opciones, solo el 40 % de los retos tiene alguna diferencia
+  además pondera la comprensión, las diferencias no comprobadas y los secundarios. ID3 da
+  pistas sin valor (26 % con 2 opciones) y repite lo elegido en el 36–51 % de los casos.
+- **Coste.** Tras el primer error, cuando ninguna ayuda restante distingue lo elegido sin
+  describirlo también, el agente pasa al apoyo explícito: en el 9–16 % de los casos con las
+  grabaciones de hoy y en el 6–13 % con todas las ayudas. La secuencia fija nunca lo hace tan
+  pronto, pero en esos casos ofrecía una pista que también valía para lo elegido.
+- **Límite de los datos.** Con 2 opciones, solo el 40 % de los retos tiene alguna diferencia
   documentada. Ninguna política puede superar ese techo sin rasgos nuevos (apartado 8).
 - **Cero ayudas incompatibles** en todas las políticas: siempre hablan del hábitat guía visible
   y solo afirman rasgos documentados de él.
@@ -195,40 +214,49 @@ Lectura:
 Tres perfiles inventados (`autonomo`, `apoyo_medio`, `apoyo_alto`) con probabilidades fijas de
 acertar sin ayuda, entender una frase de una idea y pedir pista (`PERFILES` en el script). Se
 simulan 5 réplicas × 288 animales × 3 tamaños × 3 perfiles por política (12 960 retos), con
-los mismos sorteos para todas. El jugador simulado descarta siempre las opciones con una
-diferencia documentada si entiende la ayuda, a veces las de una diferencia no documentada, y
-acierta tras «Señala» con probabilidad 0,95. Todos los retos se resuelven en todas las
-políticas.
+los mismos sorteos para todas.
+
+- Si entiende la ayuda, el jugador simulado descarta siempre las opciones con una diferencia
+  documentada y, a veces, las de una diferencia no documentada.
+- Tras «Señala» acierta con probabilidad 0,95.
+- Todos los retos se resuelven en todas las políticas.
 
 | Política | Perfil | Elecciones no confirmadas por reto (2/4/8) | Ayudas por reto (2/4/8) | Llega a «Señala» (2/4/8) | Ideas por ayuda |
 |---|---|---|---|---|---|
-| PISTAS_PROGRESIVAS | autonomo | 0,23 / 0,50 / 0,68 | 0,72 / 1,07 / 1,31 | 6 / 14 / 23 % | 2,06 |
-| PISTAS_PROGRESIVAS | apoyo_medio | 0,26 / 0,53 / 0,75 | 1,28 / 1,73 / 2,01 | 22 / 37 / 50 % | 2,06 |
-| PISTAS_PROGRESIVAS | apoyo_alto | 0,27 / 0,45 / 0,60 | 1,96 / 2,35 / 2,54 | 49 / 66 / 75 % | 2,06 |
-| ID3_OPCIONES (grabadas) | autonomo | 0,23 / 0,50 / 0,65 | 0,72 / 1,07 / 1,28 | 6 / 14 / 22 % | 2,08 |
-| ID3_OPCIONES (grabadas) | apoyo_medio | 0,25 / 0,52 / 0,74 | 1,27 / 1,71 / 1,99 | 22 / 37 / 49 % | 2,08 |
-| ID3_OPCIONES (grabadas) | apoyo_alto | 0,26 / 0,44 / 0,60 | 1,95 / 2,33 / 2,54 | 48 / 65 / 75 % | 2,07 |
-| **AGENTE (grabadas)** | autonomo | 0,21 / 0,44 / 0,59 | 0,64 / 0,94 / 1,14 | 17 / 27 / 31 % | 2,06 |
-| **AGENTE (grabadas)** | apoyo_medio | 0,22 / 0,44 / 0,67 | 1,07 / 1,47 / 1,77 | 34 / 46 / 55 % | 2,06 |
-| **AGENTE (grabadas)** | apoyo_alto | 0,20 / 0,39 / 0,57 | 1,56 / 2,06 / 2,37 | 58 / 70 / 77 % | 2,05 |
-| AGENTE (todas) | autonomo | 0,21 / 0,44 / 0,61 | 0,66 / 0,98 / 1,20 | 12 / 20 / 25 % | 1,61 |
-| AGENTE (todas) | apoyo_medio | 0,21 / 0,46 / 0,72 | 1,14 / 1,63 / 2,00 | 25 / 33 / 43 % | 1,64 |
-| AGENTE (todas) | apoyo_alto | 0,20 / 0,45 / 0,67 | 1,78 / 2,49 / 2,89 | 48 / 59 / 70 % | 1,67 |
+| PISTAS_PROGRESIVAS | autonomo | 0,23 / 0,50 / 0,66 | 0,72 / 1,07 / 1,29 | 6 / 14 / 22 % | 2,06 |
+| PISTAS_PROGRESIVAS | apoyo_medio | 0,25 / 0,51 / 0,74 | 1,28 / 1,71 / 2,00 | 22 / 36 / 49 % | 2,06 |
+| PISTAS_PROGRESIVAS | apoyo_alto | 0,26 / 0,44 / 0,59 | 1,96 / 2,34 / 2,54 | 49 / 65 / 75 % | 2,06 |
+| ID3_OPCIONES (grabadas) | autonomo | 0,23 / 0,49 / 0,64 | 0,71 / 1,06 / 1,26 | 6 / 13 / 21 % | 2,09 |
+| ID3_OPCIONES (grabadas) | apoyo_medio | 0,25 / 0,50 / 0,72 | 1,27 / 1,69 / 1,97 | 21 / 36 / 48 % | 2,08 |
+| ID3_OPCIONES (grabadas) | apoyo_alto | 0,25 / 0,43 / 0,59 | 1,94 / 2,32 / 2,54 | 48 / 64 / 75 % | 2,07 |
+| **AGENTE (grabadas)** | autonomo | 0,22 / 0,44 / 0,58 | 0,68 / 0,95 / 1,14 | 12 / 26 / 32 % | 2,06 |
+| **AGENTE (grabadas)** | apoyo_medio | 0,24 / 0,45 / 0,66 | 1,20 / 1,51 / 1,75 | 27 / 44 / 54 % | 2,06 |
+| **AGENTE (grabadas)** | apoyo_alto | 0,24 / 0,40 / 0,57 | 1,84 / 2,15 / 2,35 | 51 / 68 / 77 % | 2,05 |
+| AGENTE (todas) | autonomo | 0,22 / 0,44 / 0,61 | 0,69 / 0,98 / 1,21 | 8 / 19 / 25 % | 1,65 |
+| AGENTE (todas) | apoyo_medio | 0,23 / 0,46 / 0,71 | 1,25 / 1,65 / 1,98 | 19 / 31 / 42 % | 1,68 |
+| AGENTE (todas) | apoyo_alto | 0,24 / 0,45 / 0,66 | 2,03 / 2,54 / 2,87 | 42 / 58 / 70 % | 1,71 |
 
 Lectura, con cautela:
 
-- **Con las grabaciones de hoy**, el agente necesita menos elecciones no confirmadas y menos
-  ayudas que la secuencia anterior y que ID3 en los nueve casos, pero llega más veces al apoyo
-  explícito «Señala».
-- **Con las 32 ayudas por rasgo** las frases son más cortas (1,6 ideas frente a 2,1) y se llega
-  menos a «Señala» que con las grabadas. En el perfil `apoyo_alto` con 4 y 8 opciones hacen
-  falta más ayudas (2,49 y 2,89) que con la secuencia (2,35 y 2,54), y con 8 opciones algo más
-  de elecciones: cada frase corta lleva menos información. Es el cambio de compromiso que
-  habría que observar con personas.
-- **Límites.** Los perfiles y probabilidades son inventados. El jugador simulado usa la misma
-  representación de rasgos que el agente, lo que favorece a las políticas que la usan. No mide
-  comprensión real, motivación, fatiga ni el papel del educador. **No son resultados de
-  usuarios** ni se usaron para entrenar nada.
+- **Con las grabaciones de hoy:**
+  - Elecciones no confirmadas: el agente necesita menos que la secuencia anterior en los
+    nueve casos. Con 2 opciones la diferencia es mínima (0,22–0,24 frente a 0,23–0,26).
+  - Ayudas: también necesita menos.
+  - Apoyo explícito: llega a «Señala» más veces (p. ej. autónomo, 12/26/32 % frente a
+    6/14/22 %). Parte de la reducción de ayudas viene de ahí.
+- **Con las 32 ayudas por rasgo:**
+  - Las frases son más cortas (1,7 ideas frente a 2,1) y se llega menos a «Señala» que con
+    las grabadas.
+  - En el perfil `apoyo_alto` hacen falta más ayudas que con la secuencia (2,03 / 2,54 / 2,87
+    frente a 1,96 / 2,34 / 2,54), y con 8 opciones algo más de elecciones: cada frase corta
+    lleva menos información.
+  - Es un cambio de compromiso que habría que observar con personas.
+- **Límites.**
+  - Los perfiles y probabilidades son inventados.
+  - El jugador simulado usa la misma representación de rasgos que el agente, lo que favorece
+    a las políticas que la usan.
+  - No mide comprensión real, motivación, fatiga ni el papel del educador.
+  - **No son resultados de usuarios** ni se usaron para entrenar nada.
 
 ## 6. Voces
 
@@ -258,11 +286,14 @@ Lectura, con cautela:
 - exhaustiva: los 288 animales con 2, 4 y 8 opciones y las tres políticas. Las opciones
   conservan los confirmados que caben, toda ayuda habla del hábitat guía visible y solo
   afirma rasgos documentados, y la del agente tras un error nunca describe lo elegido;
+- exhaustiva: la primera Pista nunca es «Señala» y ninguna frase se repite en un reto;
 - casos: salta la pista 1 idéntica entre H04 y H05; distingue la última elección (H06 frente a
   H05); no aleja del secundario documentado (jaguar y H04); apoyo explícito tras dos elecciones
   o tres ayudas; Repetir exacto; Pausar y Reanudar sin efecto; sin grabación no se usa la ayuda
   por rasgo y, con una grabación de prueba, sí; ID3 elige la mayor ganancia de información;
-- cobertura de voz con el agente en la partida real (`test_voz_grabada_cobertura`);
+- cobertura de voz con el agente en la partida real (`test_voz_grabada_cobertura`; lee unos
+  300 mensajes distintos porque el agente no recorre todas las pistas en orden; una simulación
+  aparte de la revisión, con cinco estrategias de juego, no encontró mensajes sin grabación);
 - navegador: las suites de la 6.0 (`--v6`, `--partidas-v6`, `--voz-v6`, `--portada`) y de la
   5.0 en `/v5/` (`--hito2`, `--hito3`, `--catalogo`, general, `--voz-v5`, `--voces-navegador`).
 
@@ -280,7 +311,17 @@ a personas con discapacidad intelectual jugando con sus educadores. Queda pendie
    sus pistas. En el **65 %** de las apariciones de una opción no confirmada (2002 de 3083),
    ninguna ayuda puede distinguirla de forma documentada. Los pares más frecuentes están en la
    segunda tabla. Distinguirlos exigiría documentar rasgos nuevos con fuente y revisión, por
-   ejemplo «agua dulce» en H24, H26 y H30 o «templado» en H13. Esta entrega **no** los añade.
+   ejemplo «agua dulce» en H24 y H30 o «templado» en H13. Esta entrega **no** los añade.
+4. **Lecturas apoyadas solo en un pictograma:** en H19 y H26, «agua dulce» consta en el
+   pictograma `P_AGUA_DULCE` de la pista, no en el texto. H41 «costa» se deduce de «desemboca…
+   se mezcla con el mar».
+5. **Los valores sin revisar ya deciden qué pista se muestra.** Las frases que ve el jugador
+   son las pistas revisadas (y, cuando haya audio, las ayudas por rasgo), pero el orden y el
+   paso al apoyo explícito dependen de estas lecturas, todavía sin confirmar por una persona.
+   Si el propietario prefiere esperar a la revisión, `--agente PISTAS_PROGRESIVAS` restablece
+   la secuencia anterior sin tocar código.
+6. `codigo/interfaz/generar_voces_api.py` no genera las ayudas por rasgo mientras la columna
+   `revision_humana` de `catalogo_voces.csv` esté vacía.
 
 ### Rasgos documentados por hábitat
 
@@ -301,7 +342,7 @@ a personas con discapacidad intelectual jugando con sus educadores. Queda pendie
 | H13 Matorral mediterráneo | Humedad del clima: epoca_seca (pista 2); Plantas que dominan: arbustos (pista 1) |
 | H14 Matorral tropical seco | Humedad del clima: epoca_seca (pista 2); Temperatura: calido (pista 1); Plantas que dominan: arbustos (pista 1) |
 | H15 Matorral de alta montaña | Ubicación: montana (pista 1); Plantas que dominan: arbustos (pista 2) |
-| H16 Pastizal de alta montaña | Paisaje: abierto (pista 1); Ubicación: montana (pista 1); Plantas que dominan: pasto (pista 1) |
+| H16 Pastizal de alta montaña | Paisaje: abierto (pista 1); Ubicación: montana (pista 1); Plantas que dominan: pasto (pista 2) |
 | H17 Desierto cálido | Humedad del clima: seco (pista 1); Temperatura: calido (pista 1); Plantas que dominan: pocas_plantas (pista 2) |
 | H18 Desierto frío | Humedad del clima: seco (pista 1); Temperatura: frio (pista 1); Plantas que dominan: pocas_plantas (pista 2) |
 | H19 Oasis | Tipo de agua: dulce (pista 1) |

@@ -2,7 +2,7 @@
   "fecha": "2026-11-14",
   "aviso": "Parte estructural: exhaustiva y determinista, sin personas. Parte sintética: jugador simulado con parámetros inventados; no son resultados de usuarios reales. El jugador simulado usa la misma representación de rasgos que el agente, lo que favorece a las políticas que la usan. Ningún parámetro se aprendió de datos.",
   "versiones": {
-    "atributos": "857ba1093b7d5ccd569b486e8b01d95a39c32c7206c55ad37f7690b8dbfc9e8e",
+    "atributos": "f7bb978ad85d6ecab73e43f86692ea89742b55b277fbdb7bcca21de24a69a82f",
     "pistas": "5ee90d42aa850af4df2b0d00ec6f28c9020a693e136eefff409214d2f41864f5"
   },
   "ayudas_por_rasgo_con_grabacion": [
@@ -40,19 +40,20 @@
         "primera_senala": 0,
         "primera_aleja_de_valida": 9,
         "retos_con_distractores": 265,
-        "primera_descarta_documentado": 60,
-        "primera_sin_valor": 139,
+        "primera_descarta_documentado": 54,
+        "primera_sin_valor": 95,
         "distractores": 265,
-        "distractores_descartados_primera": 60,
+        "distractores_descartados_primera": 54,
         "tras_eleccion": 265,
-        "tras_eleccion_distingue_documentado": 60,
-        "tras_eleccion_describe_lo_elegido": 174,
+        "tras_eleccion_distingue_documentado": 54,
+        "tras_eleccion_describe_lo_elegido": 180,
         "ideas_media_primera": 2.021,
-        "tasa_primera_descarta_documentado": 0.2264,
-        "tasa_primera_sin_valor": 0.5245,
-        "fraccion_distractores_descartados_primera": 0.2264,
-        "tasa_tras_eleccion_distingue_documentado": 0.2264,
-        "tasa_tras_eleccion_describe_lo_elegido": 0.6566,
+        "tasa_primera_descarta_documentado": 0.2038,
+        "tasa_primera_sin_valor": 0.3585,
+        "tasa_primera_senala": 0.0,
+        "fraccion_distractores_descartados_primera": 0.2038,
+        "tasa_tras_eleccion_distingue_documentado": 0.2038,
+        "tasa_tras_eleccion_describe_lo_elegido": 0.6792,
         "tasa_tras_eleccion_senala": 0.0
       },
       "4": {
@@ -61,19 +62,20 @@
         "primera_senala": 0,
         "primera_aleja_de_valida": 10,
         "retos_con_distractores": 287,
-        "primera_descarta_documentado": 121,
-        "primera_sin_valor": 55,
+        "primera_descarta_documentado": 115,
+        "primera_sin_valor": 7,
         "distractores": 833,
-        "distractores_descartados_primera": 163,
+        "distractores_descartados_primera": 151,
         "tras_eleccion": 833,
-        "tras_eleccion_distingue_documentado": 163,
-        "tras_eleccion_describe_lo_elegido": 514,
+        "tras_eleccion_distingue_documentado": 151,
+        "tras_eleccion_describe_lo_elegido": 526,
         "ideas_media_primera": 2.021,
-        "tasa_primera_descarta_documentado": 0.4216,
-        "tasa_primera_sin_valor": 0.1916,
-        "fraccion_distractores_descartados_primera": 0.1957,
-        "tasa_tras_eleccion_distingue_documentado": 0.1957,
-        "tasa_tras_eleccion_describe_lo_elegido": 0.617,
+        "tasa_primera_descarta_documentado": 0.4007,
+        "tasa_primera_sin_valor": 0.0244,
+        "tasa_primera_senala": 0.0,
+        "fraccion_distractores_descartados_primera": 0.1813,
+        "tasa_tras_eleccion_distingue_documentado": 0.1813,
+        "tasa_tras_eleccion_describe_lo_elegido": 0.6315,
         "tasa_tras_eleccion_senala": 0.0
       },
       "8": {
@@ -82,19 +84,20 @@
         "primera_senala": 0,
         "primera_aleja_de_valida": 10,
         "retos_con_distractores": 288,
-        "primera_descarta_documentado": 179,
-        "primera_sin_valor": 7,
+        "primera_descarta_documentado": 173,
+        "primera_sin_valor": 0,
         "distractores": 1985,
-        "distractores_descartados_primera": 432,
+        "distractores_descartados_primera": 414,
         "tras_eleccion": 1985,
-        "tras_eleccion_distingue_documentado": 432,
-        "tras_eleccion_describe_lo_elegido": 935,
+        "tras_eleccion_distingue_documentado": 414,
+        "tras_eleccion_describe_lo_elegido": 947,
         "ideas_media_primera": 2.021,
-        "tasa_primera_descarta_documentado": 0.6215,
-        "tasa_primera_sin_valor": 0.0243,
-        "fraccion_distractores_descartados_primera": 0.2176,
-        "tasa_tras_eleccion_distingue_documentado": 0.2176,
-        "tasa_tras_eleccion_describe_lo_elegido": 0.471,
+        "tasa_primera_descarta_documentado": 0.6007,
+        "tasa_primera_sin_valor": 0.0,
+        "tasa_primera_senala": 0.0,
+        "fraccion_distractores_descartados_primera": 0.2086,
+        "tasa_tras_eleccion_distingue_documentado": 0.2086,
+        "tasa_tras_eleccion_describe_lo_elegido": 0.4771,
         "tasa_tras_eleccion_senala": 0.0
       }
     },
@@ -106,7 +109,7 @@
         "primera_aleja_de_valida": 16,
         "retos_con_distractores": 265,
         "primera_descarta_documentado": 106,
-        "primera_sin_valor": 102,
+        "primera_sin_valor": 68,
         "distractores": 265,
         "distractores_descartados_primera": 106,
         "tras_eleccion": 265,
@@ -114,7 +117,8 @@
         "tras_eleccion_describe_lo_elegido": 134,
         "ideas_media_primera": 2.083,
         "tasa_primera_descarta_documentado": 0.4,
-        "tasa_primera_sin_valor": 0.3849,
+        "tasa_primera_sin_valor": 0.2566,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.4,
         "tasa_tras_eleccion_distingue_documentado": 0.4,
         "tasa_tras_eleccion_describe_lo_elegido": 0.5057,
@@ -127,18 +131,19 @@
         "primera_aleja_de_valida": 17,
         "retos_con_distractores": 287,
         "primera_descarta_documentado": 176,
-        "primera_sin_valor": 24,
+        "primera_sin_valor": 1,
         "distractores": 833,
         "distractores_descartados_primera": 253,
         "tras_eleccion": 833,
         "tras_eleccion_distingue_documentado": 253,
-        "tras_eleccion_describe_lo_elegido": 415,
+        "tras_eleccion_describe_lo_elegido": 409,
         "ideas_media_primera": 2.101,
         "tasa_primera_descarta_documentado": 0.6132,
-        "tasa_primera_sin_valor": 0.0836,
+        "tasa_primera_sin_valor": 0.0035,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.3037,
         "tasa_tras_eleccion_distingue_documentado": 0.3037,
-        "tasa_tras_eleccion_describe_lo_elegido": 0.4982,
+        "tasa_tras_eleccion_describe_lo_elegido": 0.491,
         "tasa_tras_eleccion_senala": 0.0
       },
       "8": {
@@ -153,13 +158,14 @@
         "distractores_descartados_primera": 637,
         "tras_eleccion": 1985,
         "tras_eleccion_distingue_documentado": 637,
-        "tras_eleccion_describe_lo_elegido": 731,
+        "tras_eleccion_describe_lo_elegido": 719,
         "ideas_media_primera": 2.108,
         "tasa_primera_descarta_documentado": 0.8299,
         "tasa_primera_sin_valor": 0.0,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.3209,
         "tasa_tras_eleccion_distingue_documentado": 0.3209,
-        "tasa_tras_eleccion_describe_lo_elegido": 0.3683,
+        "tasa_tras_eleccion_describe_lo_elegido": 0.3622,
         "tasa_tras_eleccion_senala": 0.0
       }
     },
@@ -171,7 +177,7 @@
         "primera_aleja_de_valida": 16,
         "retos_con_distractores": 265,
         "primera_descarta_documentado": 106,
-        "primera_sin_valor": 102,
+        "primera_sin_valor": 68,
         "distractores": 265,
         "distractores_descartados_primera": 106,
         "tras_eleccion": 265,
@@ -179,7 +185,8 @@
         "tras_eleccion_describe_lo_elegido": 134,
         "ideas_media_primera": 2.083,
         "tasa_primera_descarta_documentado": 0.4,
-        "tasa_primera_sin_valor": 0.3849,
+        "tasa_primera_sin_valor": 0.2566,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.4,
         "tasa_tras_eleccion_distingue_documentado": 0.4,
         "tasa_tras_eleccion_describe_lo_elegido": 0.5057,
@@ -192,18 +199,19 @@
         "primera_aleja_de_valida": 16,
         "retos_con_distractores": 287,
         "primera_descarta_documentado": 176,
-        "primera_sin_valor": 24,
+        "primera_sin_valor": 1,
         "distractores": 833,
         "distractores_descartados_primera": 248,
         "tras_eleccion": 833,
         "tras_eleccion_distingue_documentado": 248,
-        "tras_eleccion_describe_lo_elegido": 420,
+        "tras_eleccion_describe_lo_elegido": 414,
         "ideas_media_primera": 2.076,
         "tasa_primera_descarta_documentado": 0.6132,
-        "tasa_primera_sin_valor": 0.0836,
+        "tasa_primera_sin_valor": 0.0035,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.2977,
         "tasa_tras_eleccion_distingue_documentado": 0.2977,
-        "tasa_tras_eleccion_describe_lo_elegido": 0.5042,
+        "tasa_tras_eleccion_describe_lo_elegido": 0.497,
         "tasa_tras_eleccion_senala": 0.0
       },
       "8": {
@@ -218,13 +226,14 @@
         "distractores_descartados_primera": 626,
         "tras_eleccion": 1985,
         "tras_eleccion_distingue_documentado": 626,
-        "tras_eleccion_describe_lo_elegido": 739,
+        "tras_eleccion_describe_lo_elegido": 727,
         "ideas_media_primera": 2.062,
         "tasa_primera_descarta_documentado": 0.8299,
         "tasa_primera_sin_valor": 0.0,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.3154,
         "tasa_tras_eleccion_distingue_documentado": 0.3154,
-        "tasa_tras_eleccion_describe_lo_elegido": 0.3723,
+        "tasa_tras_eleccion_describe_lo_elegido": 0.3662,
         "tasa_tras_eleccion_senala": 0.0
       }
     },
@@ -232,7 +241,7 @@
       "2": {
         "retos": 288,
         "incompatibles": 0,
-        "primera_senala": 34,
+        "primera_senala": 0,
         "primera_aleja_de_valida": 1,
         "retos_con_distractores": 265,
         "primera_descarta_documentado": 106,
@@ -246,6 +255,7 @@
         "ideas_media_primera": 2.08,
         "tasa_primera_descarta_documentado": 0.4,
         "tasa_primera_sin_valor": 0.0,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.4,
         "tasa_tras_eleccion_distingue_documentado": 0.4,
         "tasa_tras_eleccion_describe_lo_elegido": 0.0,
@@ -255,23 +265,24 @@
         "retos": 288,
         "incompatibles": 0,
         "primera_senala": 0,
-        "primera_aleja_de_valida": 5,
+        "primera_aleja_de_valida": 1,
         "retos_con_distractores": 287,
-        "primera_descarta_documentado": 141,
+        "primera_descarta_documentado": 140,
         "primera_sin_valor": 0,
         "distractores": 833,
-        "distractores_descartados_primera": 221,
+        "distractores_descartados_primera": 220,
         "tras_eleccion": 833,
-        "tras_eleccion_distingue_documentado": 249,
+        "tras_eleccion_distingue_documentado": 255,
         "tras_eleccion_describe_lo_elegido": 0,
-        "tras_eleccion_senala": 142,
-        "ideas_media_primera": 2.035,
-        "tasa_primera_descarta_documentado": 0.4913,
+        "tras_eleccion_senala": 114,
+        "ideas_media_primera": 2.049,
+        "tasa_primera_descarta_documentado": 0.4878,
         "tasa_primera_sin_valor": 0.0,
-        "fraccion_distractores_descartados_primera": 0.2653,
-        "tasa_tras_eleccion_distingue_documentado": 0.2989,
+        "tasa_primera_senala": 0.0,
+        "fraccion_distractores_descartados_primera": 0.2641,
+        "tasa_tras_eleccion_distingue_documentado": 0.3061,
         "tasa_tras_eleccion_describe_lo_elegido": 0.0,
-        "tasa_tras_eleccion_senala": 0.1705
+        "tasa_tras_eleccion_senala": 0.1369
       },
       "8": {
         "retos": 288,
@@ -282,25 +293,26 @@
         "primera_descarta_documentado": 199,
         "primera_sin_valor": 0,
         "distractores": 1985,
-        "distractores_descartados_primera": 564,
+        "distractores_descartados_primera": 570,
         "tras_eleccion": 1985,
-        "tras_eleccion_distingue_documentado": 675,
+        "tras_eleccion_distingue_documentado": 677,
         "tras_eleccion_describe_lo_elegido": 0,
-        "tras_eleccion_senala": 154,
-        "ideas_media_primera": 2.069,
+        "tras_eleccion_senala": 172,
+        "ideas_media_primera": 2.087,
         "tasa_primera_descarta_documentado": 0.691,
         "tasa_primera_sin_valor": 0.0,
-        "fraccion_distractores_descartados_primera": 0.2841,
-        "tasa_tras_eleccion_distingue_documentado": 0.3401,
+        "tasa_primera_senala": 0.0,
+        "fraccion_distractores_descartados_primera": 0.2872,
+        "tasa_tras_eleccion_distingue_documentado": 0.3411,
         "tasa_tras_eleccion_describe_lo_elegido": 0.0,
-        "tasa_tras_eleccion_senala": 0.0776
+        "tasa_tras_eleccion_senala": 0.0866
       }
     },
     "AGENTE_todas": {
       "2": {
         "retos": 288,
         "incompatibles": 0,
-        "primera_senala": 34,
+        "primera_senala": 0,
         "primera_aleja_de_valida": 1,
         "retos_con_distractores": 265,
         "primera_descarta_documentado": 106,
@@ -314,6 +326,7 @@
         "ideas_media_primera": 1.438,
         "tasa_primera_descarta_documentado": 0.4,
         "tasa_primera_sin_valor": 0.0,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.4,
         "tasa_tras_eleccion_distingue_documentado": 0.4,
         "tasa_tras_eleccion_describe_lo_elegido": 0.0,
@@ -323,23 +336,24 @@
         "retos": 288,
         "incompatibles": 0,
         "primera_senala": 0,
-        "primera_aleja_de_valida": 3,
+        "primera_aleja_de_valida": 0,
         "retos_con_distractores": 287,
         "primera_descarta_documentado": 159,
         "primera_sin_valor": 0,
         "distractores": 833,
         "distractores_descartados_primera": 234,
         "tras_eleccion": 833,
-        "tras_eleccion_distingue_documentado": 250,
+        "tras_eleccion_distingue_documentado": 256,
         "tras_eleccion_describe_lo_elegido": 0,
-        "tras_eleccion_senala": 110,
-        "ideas_media_primera": 1.382,
+        "tras_eleccion_senala": 87,
+        "ideas_media_primera": 1.531,
         "tasa_primera_descarta_documentado": 0.554,
         "tasa_primera_sin_valor": 0.0,
+        "tasa_primera_senala": 0.0,
         "fraccion_distractores_descartados_primera": 0.2809,
-        "tasa_tras_eleccion_distingue_documentado": 0.3001,
+        "tasa_tras_eleccion_distingue_documentado": 0.3073,
         "tasa_tras_eleccion_describe_lo_elegido": 0.0,
-        "tasa_tras_eleccion_senala": 0.1321
+        "tasa_tras_eleccion_senala": 0.1044
       },
       "8": {
         "retos": 288,
@@ -347,21 +361,22 @@
         "primera_senala": 0,
         "primera_aleja_de_valida": 0,
         "retos_con_distractores": 288,
-        "primera_descarta_documentado": 213,
+        "primera_descarta_documentado": 214,
         "primera_sin_valor": 0,
         "distractores": 1985,
-        "distractores_descartados_primera": 560,
+        "distractores_descartados_primera": 567,
         "tras_eleccion": 1985,
-        "tras_eleccion_distingue_documentado": 667,
+        "tras_eleccion_distingue_documentado": 673,
         "tras_eleccion_describe_lo_elegido": 0,
-        "tras_eleccion_senala": 107,
-        "ideas_media_primera": 1.493,
-        "tasa_primera_descarta_documentado": 0.7396,
+        "tras_eleccion_senala": 112,
+        "ideas_media_primera": 1.611,
+        "tasa_primera_descarta_documentado": 0.7431,
         "tasa_primera_sin_valor": 0.0,
-        "fraccion_distractores_descartados_primera": 0.2821,
-        "tasa_tras_eleccion_distingue_documentado": 0.336,
+        "tasa_primera_senala": 0.0,
+        "fraccion_distractores_descartados_primera": 0.2856,
+        "tasa_tras_eleccion_distingue_documentado": 0.339,
         "tasa_tras_eleccion_describe_lo_elegido": 0.0,
-        "tasa_tras_eleccion_senala": 0.0539
+        "tasa_tras_eleccion_senala": 0.0564
       }
     }
   },
@@ -372,28 +387,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.234,
-          "ayudas_media": 0.7208,
-          "llego_a_senalar": 0.0632,
-          "ideas_por_ayuda": 2.0626
+          "elecciones_no_confirmadas_media": 0.2333,
+          "ayudas_media": 0.7201,
+          "llego_a_senalar": 0.0618,
+          "ideas_por_ayuda": 2.0627
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5014,
-          "ayudas_media": 1.0736,
-          "llego_a_senalar": 0.1403,
-          "ideas_por_ayuda": 2.0589
+          "elecciones_no_confirmadas_media": 0.4965,
+          "ayudas_media": 1.0701,
+          "llego_a_senalar": 0.1368,
+          "ideas_por_ayuda": 2.0591
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.6757,
-          "ayudas_media": 1.3069,
-          "llego_a_senalar": 0.2347,
-          "ideas_por_ayuda": 2.06
+          "elecciones_no_confirmadas_media": 0.6618,
+          "ayudas_media": 1.2917,
+          "llego_a_senalar": 0.2236,
+          "ideas_por_ayuda": 2.0602
         }
       ],
       "apoyo_medio": [
@@ -401,28 +416,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2562,
-          "ayudas_media": 1.2826,
-          "llego_a_senalar": 0.2188,
-          "ideas_por_ayuda": 2.0633
+          "elecciones_no_confirmadas_media": 0.2542,
+          "ayudas_media": 1.2799,
+          "llego_a_senalar": 0.2167,
+          "ideas_por_ayuda": 2.0629
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5278,
-          "ayudas_media": 1.7264,
-          "llego_a_senalar": 0.3715,
-          "ideas_por_ayuda": 2.0611
+          "elecciones_no_confirmadas_media": 0.5083,
+          "ayudas_media": 1.7056,
+          "llego_a_senalar": 0.359,
+          "ideas_por_ayuda": 2.0599
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.7479,
-          "ayudas_media": 2.0104,
-          "llego_a_senalar": 0.4972,
-          "ideas_por_ayuda": 2.0642
+          "elecciones_no_confirmadas_media": 0.7375,
+          "ayudas_media": 1.9972,
+          "llego_a_senalar": 0.4903,
+          "ideas_por_ayuda": 2.0636
         }
       ],
       "apoyo_alto": [
@@ -430,28 +445,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.266,
-          "ayudas_media": 1.9646,
-          "llego_a_senalar": 0.4917,
-          "ideas_por_ayuda": 2.0615
+          "elecciones_no_confirmadas_media": 0.2618,
+          "ayudas_media": 1.9583,
+          "llego_a_senalar": 0.4875,
+          "ideas_por_ayuda": 2.0606
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4479,
-          "ayudas_media": 2.3465,
-          "llego_a_senalar": 0.6583,
-          "ideas_por_ayuda": 2.0624
+          "elecciones_no_confirmadas_media": 0.4417,
+          "ayudas_media": 2.3368,
+          "llego_a_senalar": 0.6521,
+          "ideas_por_ayuda": 2.0627
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5965,
-          "ayudas_media": 2.5431,
-          "llego_a_senalar": 0.7528,
-          "ideas_por_ayuda": 2.0623
+          "elecciones_no_confirmadas_media": 0.5903,
+          "ayudas_media": 2.5354,
+          "llego_a_senalar": 0.7472,
+          "ideas_por_ayuda": 2.0622
         }
       ]
     },
@@ -461,28 +476,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2306,
-          "ayudas_media": 0.7167,
-          "llego_a_senalar": 0.0632,
-          "ideas_por_ayuda": 2.0901
+          "elecciones_no_confirmadas_media": 0.2285,
+          "ayudas_media": 0.7146,
+          "llego_a_senalar": 0.0618,
+          "ideas_por_ayuda": 2.0904
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4965,
-          "ayudas_media": 1.0674,
-          "llego_a_senalar": 0.141,
-          "ideas_por_ayuda": 2.0865
+          "elecciones_no_confirmadas_media": 0.4868,
+          "ayudas_media": 1.0576,
+          "llego_a_senalar": 0.1347,
+          "ideas_por_ayuda": 2.0867
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.6528,
-          "ayudas_media": 1.2757,
-          "llego_a_senalar": 0.2229,
-          "ideas_por_ayuda": 2.0784
+          "elecciones_no_confirmadas_media": 0.6403,
+          "ayudas_media": 1.2632,
+          "llego_a_senalar": 0.2146,
+          "ideas_por_ayuda": 2.0792
         }
       ],
       "apoyo_medio": [
@@ -490,28 +505,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2486,
-          "ayudas_media": 1.2701,
-          "llego_a_senalar": 0.216,
-          "ideas_por_ayuda": 2.0831
+          "elecciones_no_confirmadas_media": 0.2465,
+          "ayudas_media": 1.2674,
+          "llego_a_senalar": 0.2139,
+          "ideas_por_ayuda": 2.0827
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5181,
-          "ayudas_media": 1.7132,
-          "llego_a_senalar": 0.3688,
-          "ideas_por_ayuda": 2.0726
+          "elecciones_no_confirmadas_media": 0.4972,
+          "ayudas_media": 1.6896,
+          "llego_a_senalar": 0.3556,
+          "ideas_por_ayuda": 2.0723
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.7368,
-          "ayudas_media": 1.9944,
-          "llego_a_senalar": 0.491,
-          "ideas_por_ayuda": 2.0714
+          "elecciones_no_confirmadas_media": 0.7201,
+          "ayudas_media": 1.9743,
+          "llego_a_senalar": 0.4806,
+          "ideas_por_ayuda": 2.0721
         }
       ],
       "apoyo_alto": [
@@ -519,28 +534,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2562,
-          "ayudas_media": 1.9486,
-          "llego_a_senalar": 0.4847,
-          "ideas_por_ayuda": 2.0699
+          "elecciones_no_confirmadas_media": 0.2507,
+          "ayudas_media": 1.9403,
+          "llego_a_senalar": 0.4799,
+          "ideas_por_ayuda": 2.0694
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4382,
-          "ayudas_media": 2.3347,
-          "llego_a_senalar": 0.6507,
-          "ideas_por_ayuda": 2.0678
+          "elecciones_no_confirmadas_media": 0.4299,
+          "ayudas_media": 2.3215,
+          "llego_a_senalar": 0.6444,
+          "ideas_por_ayuda": 2.0682
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5979,
-          "ayudas_media": 2.5444,
-          "llego_a_senalar": 0.7535,
-          "ideas_por_ayuda": 2.0639
+          "elecciones_no_confirmadas_media": 0.5931,
+          "ayudas_media": 2.5368,
+          "llego_a_senalar": 0.7486,
+          "ideas_por_ayuda": 2.0641
         }
       ]
     },
@@ -550,28 +565,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2306,
-          "ayudas_media": 0.7167,
-          "llego_a_senalar": 0.0632,
-          "ideas_por_ayuda": 2.0901
+          "elecciones_no_confirmadas_media": 0.2285,
+          "ayudas_media": 0.7146,
+          "llego_a_senalar": 0.0618,
+          "ideas_por_ayuda": 2.0904
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4993,
-          "ayudas_media": 1.0708,
-          "llego_a_senalar": 0.1403,
+          "elecciones_no_confirmadas_media": 0.4896,
+          "ayudas_media": 1.0611,
+          "llego_a_senalar": 0.134,
           "ideas_por_ayuda": 2.072
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.6562,
-          "ayudas_media": 1.2826,
-          "llego_a_senalar": 0.2215,
-          "ideas_por_ayuda": 2.0596
+          "elecciones_no_confirmadas_media": 0.6431,
+          "ayudas_media": 1.2694,
+          "llego_a_senalar": 0.2125,
+          "ideas_por_ayuda": 2.0602
         }
       ],
       "apoyo_medio": [
@@ -579,28 +594,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2486,
-          "ayudas_media": 1.2701,
-          "llego_a_senalar": 0.216,
-          "ideas_por_ayuda": 2.0831
+          "elecciones_no_confirmadas_media": 0.2465,
+          "ayudas_media": 1.2674,
+          "llego_a_senalar": 0.2139,
+          "ideas_por_ayuda": 2.0827
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5167,
-          "ayudas_media": 1.7132,
-          "llego_a_senalar": 0.3646,
-          "ideas_por_ayuda": 2.0612
+          "elecciones_no_confirmadas_media": 0.4958,
+          "ayudas_media": 1.6896,
+          "llego_a_senalar": 0.3514,
+          "ideas_por_ayuda": 2.0608
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.7431,
-          "ayudas_media": 2.0069,
-          "llego_a_senalar": 0.4882,
-          "ideas_por_ayuda": 2.0581
+          "elecciones_no_confirmadas_media": 0.7264,
+          "ayudas_media": 1.9868,
+          "llego_a_senalar": 0.4778,
+          "ideas_por_ayuda": 2.0587
         }
       ],
       "apoyo_alto": [
@@ -608,28 +623,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2562,
-          "ayudas_media": 1.9486,
-          "llego_a_senalar": 0.4847,
-          "ideas_por_ayuda": 2.0699
+          "elecciones_no_confirmadas_media": 0.2507,
+          "ayudas_media": 1.9403,
+          "llego_a_senalar": 0.4799,
+          "ideas_por_ayuda": 2.0694
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4389,
-          "ayudas_media": 2.3438,
-          "llego_a_senalar": 0.6479,
-          "ideas_por_ayuda": 2.059
+          "elecciones_no_confirmadas_media": 0.4306,
+          "ayudas_media": 2.3306,
+          "llego_a_senalar": 0.6417,
+          "ideas_por_ayuda": 2.0593
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5993,
-          "ayudas_media": 2.5583,
-          "llego_a_senalar": 0.7493,
-          "ideas_por_ayuda": 2.0543
+          "elecciones_no_confirmadas_media": 0.5944,
+          "ayudas_media": 2.5507,
+          "llego_a_senalar": 0.7444,
+          "ideas_por_ayuda": 2.0545
         }
       ]
     },
@@ -639,28 +654,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2132,
-          "ayudas_media": 0.6431,
-          "llego_a_senalar": 0.1715,
-          "ideas_por_ayuda": 2.0907
+          "elecciones_no_confirmadas_media": 0.2229,
+          "ayudas_media": 0.6785,
+          "llego_a_senalar": 0.1229,
+          "ideas_por_ayuda": 2.0747
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4417,
-          "ayudas_media": 0.9389,
-          "llego_a_senalar": 0.2715,
-          "ideas_por_ayuda": 2.0451
+          "elecciones_no_confirmadas_media": 0.4382,
+          "ayudas_media": 0.9465,
+          "llego_a_senalar": 0.2562,
+          "ideas_por_ayuda": 2.0572
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5868,
-          "ayudas_media": 1.1431,
-          "llego_a_senalar": 0.3063,
-          "ideas_por_ayuda": 2.051
+          "elecciones_no_confirmadas_media": 0.5847,
+          "ayudas_media": 1.1354,
+          "llego_a_senalar": 0.316,
+          "ideas_por_ayuda": 2.0581
         }
       ],
       "apoyo_medio": [
@@ -668,28 +683,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2181,
-          "ayudas_media": 1.0688,
-          "llego_a_senalar": 0.3417,
-          "ideas_por_ayuda": 2.0806
+          "elecciones_no_confirmadas_media": 0.2403,
+          "ayudas_media": 1.2014,
+          "llego_a_senalar": 0.2729,
+          "ideas_por_ayuda": 2.063
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4375,
-          "ayudas_media": 1.4667,
-          "llego_a_senalar": 0.4625,
-          "ideas_por_ayuda": 2.0426
+          "elecciones_no_confirmadas_media": 0.4479,
+          "ayudas_media": 1.5146,
+          "llego_a_senalar": 0.4389,
+          "ideas_por_ayuda": 2.055
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.6694,
-          "ayudas_media": 1.7708,
-          "llego_a_senalar": 0.5486,
-          "ideas_por_ayuda": 2.049
+          "elecciones_no_confirmadas_media": 0.6562,
+          "ayudas_media": 1.7493,
+          "llego_a_senalar": 0.5437,
+          "ideas_por_ayuda": 2.056
         }
       ],
       "apoyo_alto": [
@@ -697,28 +712,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2028,
-          "ayudas_media": 1.5562,
-          "llego_a_senalar": 0.5778,
-          "ideas_por_ayuda": 2.0759
+          "elecciones_no_confirmadas_media": 0.241,
+          "ayudas_media": 1.8389,
+          "llego_a_senalar": 0.509,
+          "ideas_por_ayuda": 2.051
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.391,
-          "ayudas_media": 2.0625,
-          "llego_a_senalar": 0.6972,
-          "ideas_por_ayuda": 2.0424
+          "elecciones_no_confirmadas_media": 0.4007,
+          "ayudas_media": 2.1514,
+          "llego_a_senalar": 0.675,
+          "ideas_por_ayuda": 2.0481
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.5743,
-          "ayudas_media": 2.3708,
-          "llego_a_senalar": 0.7743,
-          "ideas_por_ayuda": 2.0395
+          "elecciones_no_confirmadas_media": 0.5667,
+          "ayudas_media": 2.3549,
+          "llego_a_senalar": 0.7715,
+          "ideas_por_ayuda": 2.0472
         }
       ]
     },
@@ -728,28 +743,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2118,
-          "ayudas_media": 0.659,
-          "llego_a_senalar": 0.1229,
-          "ideas_por_ayuda": 1.5943
+          "elecciones_no_confirmadas_media": 0.2201,
+          "ayudas_media": 0.6889,
+          "llego_a_senalar": 0.0806,
+          "ideas_por_ayuda": 1.5968
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4444,
-          "ayudas_media": 0.9826,
-          "llego_a_senalar": 0.1993,
-          "ideas_por_ayuda": 1.5859
+          "elecciones_no_confirmadas_media": 0.4417,
+          "ayudas_media": 0.984,
+          "llego_a_senalar": 0.1896,
+          "ideas_por_ayuda": 1.6584
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.6069,
-          "ayudas_media": 1.2049,
-          "llego_a_senalar": 0.2479,
-          "ideas_por_ayuda": 1.6421
+          "elecciones_no_confirmadas_media": 0.6097,
+          "ayudas_media": 1.2076,
+          "llego_a_senalar": 0.2507,
+          "ideas_por_ayuda": 1.6883
         }
       ],
       "apoyo_medio": [
@@ -757,28 +772,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2118,
-          "ayudas_media": 1.1375,
-          "llego_a_senalar": 0.2493,
-          "ideas_por_ayuda": 1.6642
+          "elecciones_no_confirmadas_media": 0.2313,
+          "ayudas_media": 1.2549,
+          "llego_a_senalar": 0.1896,
+          "ideas_por_ayuda": 1.6768
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4618,
-          "ayudas_media": 1.6292,
-          "llego_a_senalar": 0.3306,
-          "ideas_por_ayuda": 1.6061
+          "elecciones_no_confirmadas_media": 0.4646,
+          "ayudas_media": 1.6528,
+          "llego_a_senalar": 0.3132,
+          "ideas_por_ayuda": 1.6718
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.7181,
-          "ayudas_media": 1.9951,
-          "llego_a_senalar": 0.4299,
-          "ideas_por_ayuda": 1.6366
+          "elecciones_no_confirmadas_media": 0.7076,
+          "ayudas_media": 1.9799,
+          "llego_a_senalar": 0.4229,
+          "ideas_por_ayuda": 1.6945
         }
       ],
       "apoyo_alto": [
@@ -786,28 +801,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2007,
-          "ayudas_media": 1.7785,
-          "llego_a_senalar": 0.4847,
-          "ideas_por_ayuda": 1.7275
+          "elecciones_no_confirmadas_media": 0.2382,
+          "ayudas_media": 2.0285,
+          "llego_a_senalar": 0.4222,
+          "ideas_por_ayuda": 1.7258
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
           "elecciones_no_confirmadas_media": 0.4528,
-          "ayudas_media": 2.4944,
-          "llego_a_senalar": 0.5944,
-          "ideas_por_ayuda": 1.6411
+          "ayudas_media": 2.5424,
+          "llego_a_senalar": 0.5806,
+          "ideas_por_ayuda": 1.7023
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.666,
-          "ayudas_media": 2.8861,
-          "llego_a_senalar": 0.6993,
-          "ideas_por_ayuda": 1.6499
+          "elecciones_no_confirmadas_media": 0.6569,
+          "ayudas_media": 2.8715,
+          "llego_a_senalar": 0.6951,
+          "ideas_por_ayuda": 1.6948
         }
       ]
     }
