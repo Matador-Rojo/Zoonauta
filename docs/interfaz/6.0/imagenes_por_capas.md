@@ -1,4 +1,8 @@
-# Imágenes por capas para la portada 6.0 (opcional)
+# Imágenes por capas para la portada 6.0
+
+> **Estado (2026-11-13):** recibidas e integradas las cinco capas de la tabla
+> (`codigo/interfaz/web/fondos/capas/`, procedencia y ajustes en `procedencia.json`).
+> Pendientes y opcionales: los recortes verticales para móvil.
 
 Hoy el movimiento de la portada usa luz y copias recortadas de la misma foto. Para que
 la hierba, las hojas, las algas o las nubes se muevan de verdad, hace falta separar

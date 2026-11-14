@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "generador": "ChatGPT Image (propietario del proyecto, 2026-11-13)",
+  "descripcion": "Capas de primer plano de la portada 6.0, superpuestas a las fotos de fondos/catalogo. Sin animales ni personas.",
+  "items": {
+    "H01-hojas": {
+      "original_recibido": "1.png",
+      "sha256_original": "3691a7010505179710b98093b9ebcb2fe61a9412a4ff9d71d59ccd29e71e0cd5",
+      "fondo": "H01",
+      "caja_px": [
+        1480,
+        670,
+        1920,
+        1080
+      ],
+      "escena_px": [
+        1920,
+        1080
+      ],
+      "ajuste": "sin cambios de color",
+      "bytes": 55500
+    },
+    "H01-niebla": {
+      "original_recibido": "2.png",
+      "sha256_original": "ea7aa93fbda927f39f9cd4bb0f89f0d237a3f956c2dcdd3dd4d8c73b6f3a6a19",
+      "fondo": "H01",
+      "caja_px": [
+        25,
+        12,
+        981,
+        526
+      ],
+      "escena_px": [
+        1920,
+        1080
+      ],
+      "ajuste": "recoloreada a RGB(240, 244, 240) conservando el alfa",
+      "bytes": 27890
+    },
+    "H20-nubes": {
+      "original_recibido": "3.png",
+      "sha256_original": "fb7bb3aed36faeece4ddff3397395e9db8f6f8ff36f6eaf548db1acdef08f1dd",
+      "fondo": "H20",
+      "caja_px": [
+        189,
+        282,
+        1178,
+        480
+      ],
+      "escena_px": [
+        1920,
+        1080
+      ],
+      "ajuste": "recoloreada a RGB(248, 240, 230) conservando el alfa",
+      "bytes": 5800
+    },
+    "H37-algas": {
+      "original_recibido": "4.png",
+      "sha256_original": "533ecf1f7f7bbcbe0d2ad08e1d6c345259c9b7eebd1eb624780f269320d2d89d",
+      "fondo": "H37",
+      "caja_px": [
+        909,
+        840,
+        1853,
+        1080
+      ],
+      "escena_px": [
+        1920,
+        1080
+      ],
+      "ajuste": "brillo al 88 % para integrarla en el arrecife",
+      "bytes": 35270
+    },
+    "H09-hierba": {
+      "original_recibido": "5.png",
+      "sha256_original": "ecbd0c92742821fc13cb2caf35fde834aff1d6507a504640964d748e8a1544b9",
+      "fondo": "H09",
+      "caja_px": [
+        80,
+        893,
+        1774,
+        1080
+      ],
+      "escena_px": [
+        1920,
+        1080
+      ],
+      "ajuste": "sin cambios de color",
+      "bytes": 111084
+    }
+  }
+}

@@ -120,6 +120,18 @@ async function axe(page, nombre) {
       });
     });
 
+    await caso('las capas con transparencia cargan sobre su paisaje', async () => {
+      const capas = {H01: ['niebla', 'hojas'], H09: ['hierba'], H20: ['nubes'], H37: ['algas']};
+      for (const [id, nombres] of Object.entries(capas)) {
+        await page.locator('.marca-paisaje').nth(ORDEN.indexOf(id)).click();
+        for (const nombre of nombres) {
+          const capa = page.locator(`.portada-capa[data-estado="actual"] .capa-${nombre}`);
+          await capa.evaluate(i => i.decode());
+          assert.ok(await capa.evaluate(i => i.naturalWidth > 0 && i.getAnimations().length === 1), `${id}-${nombre}`);
+        }
+      }
+    });
+
     await caso('el movimiento ambiental es lento y sin cámara ni zoom', async () => {
       while (await actual(page) !== 'H09') await page.getByRole('button', {name: 'Siguiente paisaje'}).click();
       await page.locator('#titulo-pantalla').focus();
@@ -157,6 +169,9 @@ async function axe(page, nombre) {
       assert.equal(await actual(quieta), 'H09');
       assert.deepEqual(await animaciones(quieta), [], 'cambio instantáneo');
       assert.equal(await quieta.locator('.efecto').evaluateAll(e => e.filter(x => getComputedStyle(x).display !== 'none').length), 0);
+      // Las capas siguen visibles (forman parte de la escena), pero quietas.
+      await quieta.locator('.marca-paisaje').nth(ORDEN.indexOf('H01')).click();
+      assert.equal(await quieta.locator('.portada-capa[data-estado="actual"] .capa').count(), 2);
       await quieta.getByRole('button', {name: 'Preferencias'}).click();
       const interruptor = quieta.getByRole('switch', {name: /Reducir movimiento/});
       assert.ok(await interruptor.isChecked());

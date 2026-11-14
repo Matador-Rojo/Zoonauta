@@ -25,6 +25,14 @@ base nunca se anima: los efectos son capas de luz o copias recortadas de la mism
 | H21 Cueva | estática | — |
 | H25 Lago | el agua ondula 1–2 px en la mitad inferior | 9 s |
 
+**Capas reales (2026-11-13).** Cinco capas con transparencia generadas por el
+propietario con ChatGPT Image sustituyen a las imitaciones de niebla, nubes e hierba:
+hojas (H01, balanceo ±0,5°, 9 s), niebla (H01, deriva ±3 %, 50 s), hierba (H09,
+±0,6°, 7 s), nubes (H20, ±6 %, 90 s) y algas (H37, ±1,5°, 8 s). Recortadas a su área
+útil y convertidas a WebP con alfa (228 KB en total). La niebla y las nubes se
+recolorearon en blanco y las algas se oscurecieron un 12 % para integrarlas. Las capas
+siguen visibles con movimiento reducido; solo se detiene su movimiento.
+
 Sin zoom, cámara, parallax ni destellos. La pausa del carrusel detiene también el
 movimiento ambiental (WCAG 2.2.2). La oscilación real de hojas o hierba por elementos
 separados requeriría imágenes por capas, que no existen.

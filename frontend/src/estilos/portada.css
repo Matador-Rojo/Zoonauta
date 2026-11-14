@@ -44,7 +44,7 @@
   left: calc((100cqw - max(100cqw, 177.78cqh)) * var(--fx, 0.5));
   top: calc((100cqh - max(100cqh, 56.25cqw)) * var(--fy, 0.5));
 }
-.escena > img {
+.escena > img:not(.capa) {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -58,6 +58,13 @@
     linear-gradient(180deg, rgb(8 18 12 / 60%) 0%, rgb(8 18 12 / 0%) 20%),
     linear-gradient(0deg, rgb(8 18 12 / 88%) 0%, rgb(8 18 12 / 50%) 38%, rgb(8 18 12 / 0%) 68%),
     linear-gradient(90deg, rgb(8 18 12 / 45%) 0%, rgb(8 18 12 / 0%) 55%);
+}
+
+/* Capas con transparencia: parte de la escena, colocadas por estilo en línea (%). */
+.capa {
+  position: absolute;
+  pointer-events: none;
+  object-fit: fill;
 }
 
 /* Capas de efecto: no se muestran mientras el movimiento no esté permitido. */
@@ -233,18 +240,35 @@
   :root[data-movimiento="normal"] .efecto {
     display: block;
   }
-  :root[data-movimiento="normal"] .portada[data-ambiente="pausado"] .efecto {
+  :root[data-movimiento="normal"] .portada[data-ambiente="pausado"] :is(.efecto, .capa) {
     animation-play-state: paused;
   }
 
-  /* Selva: niebla que deriva despacio sobre el bosque. */
-  :root[data-movimiento="normal"] .efecto-niebla {
-    inset: -5% -10%;
-    background:
-      radial-gradient(40% 22% at 25% 25%, rgb(235 245 240 / 16%), transparent 70%),
-      radial-gradient(35% 18% at 55% 45%, rgb(235 245 240 / 10%), transparent 70%);
-    animation: deriva-lenta 48s ease-in-out infinite alternate;
+  /* Capas reales (fondos/capas): solo se mueven en el paisaje visible. */
+  /* Selva: las hojas del primer plano se balancean desde su base (±0,5°). */
+  :root[data-movimiento="normal"] [data-estado="actual"] .capa-hojas {
+    transform-origin: 100% 100%;
+    animation: balanceo 9s ease-in-out infinite alternate;
   }
+  /* Selva: la niebla deriva despacio. */
+  :root[data-movimiento="normal"] [data-estado="actual"] .capa-niebla {
+    animation: deriva-lenta 50s ease-in-out infinite alternate;
+  }
+  /* Sabana: la hierba oscila desde el suelo. */
+  :root[data-movimiento="normal"] [data-estado="actual"] .capa-hierba {
+    transform-origin: 50% 100%;
+    animation: brisa 7s ease-in-out infinite alternate;
+  }
+  /* Montaña: nubes bajas que cruzan muy despacio. */
+  :root[data-movimiento="normal"] [data-estado="actual"] .capa-nubes {
+    animation: cruzar 90s ease-in-out infinite alternate;
+  }
+  /* Arrecife: las algas oscilan con la corriente. */
+  :root[data-movimiento="normal"] [data-estado="actual"] .capa-algas {
+    transform-origin: 50% 100%;
+    animation: corriente 8s ease-in-out infinite alternate;
+  }
+
   /* Selva: el agua de la cascada baja con una textura muy tenue. */
   :root[data-movimiento="normal"] .efecto-cascada {
     left: 71%;
@@ -257,12 +281,6 @@
     animation: caer 6s linear infinite;
   }
 
-  /* Sabana: una copia de la franja de hierba oscila 0,4° desde el suelo. */
-  :root[data-movimiento="normal"] .efecto-hierba {
-    mask-image: linear-gradient(0deg, #000 0%, #000 22%, transparent 34%);
-    transform-origin: 50% 100%;
-    animation: brisa 7s ease-in-out infinite alternate;
-  }
   /* Sabana: halo del sol que respira apenas. */
   :root[data-movimiento="normal"] .efecto-sol {
     background: radial-gradient(18% 22% at 86% 42%, rgb(255 190 90 / 22%), transparent 70%);
@@ -280,15 +298,6 @@
     inset: 45% -10% 0;
     background: linear-gradient(100deg, transparent 30%, rgb(220 240 255 / 8%) 48%, transparent 66%);
     animation: deriva-lenta 50s ease-in-out infinite alternate;
-  }
-
-  /* Montaña: nubes suaves que cruzan muy despacio. */
-  :root[data-movimiento="normal"] .efecto-nubes {
-    inset: 0 -20% 50% -20%;
-    background:
-      radial-gradient(22% 30% at 20% 55%, rgb(255 255 255 / 14%), transparent 70%),
-      radial-gradient(18% 24% at 62% 40%, rgb(255 255 255 / 10%), transparent 70%);
-    animation: cruzar 90s linear infinite alternate;
   }
 
   /* Arrecife: los rayos de luz varían apenas; brillo submarino que se desplaza. */
@@ -343,10 +352,26 @@
 }
 @keyframes brisa {
   from {
-    transform: skewX(-0.4deg);
+    transform: skewX(-0.6deg);
   }
   to {
-    transform: skewX(0.4deg);
+    transform: skewX(0.6deg);
+  }
+}
+@keyframes balanceo {
+  from {
+    rotate: -0.5deg;
+  }
+  to {
+    rotate: 0.5deg;
+  }
+}
+@keyframes corriente {
+  from {
+    transform: skewX(-1.5deg);
+  }
+  to {
+    transform: skewX(1.5deg);
   }
 }
 @keyframes ondular {

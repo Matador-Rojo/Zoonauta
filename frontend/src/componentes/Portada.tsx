@@ -9,20 +9,54 @@ import { Pictograma } from "./Pictograma";
  * presentación: el catálogo jugable conserva los 48 hábitats.
  *
  * `fx`/`fy` fijan el punto de la foto que se conserva al recortarla en pantallas
- * con otra proporción. `efectos` son capas de nivel 1 hechas con CSS sobre la misma foto
- * (sin recursos nuevos): niebla, luz, nubes o agua. Ninguna mueve la cámara,
- * hace zoom ni destella; todas son opcionales (ver portada.css).
+ * con otra proporción. `efectos` son luces hechas con CSS. `capas` son imágenes con
+ * transparencia (fondos/capas, ver procedencia.json) superpuestas a la foto en su
+ * posición exacta: `caja` = [izquierda, arriba, derecha, abajo] en píxeles de 1920×1080.
+ * Las capas forman parte de la escena (también con movimiento reducido); solo su
+ * movimiento es opcional. Nada mueve la cámara, hace zoom ni destella (ver portada.css).
  */
-export const PAISAJES_PORTADA = [
-  { id: "H01", fx: 0.86, fy: 0.5, efectos: ["niebla", "cascada"] },
-  { id: "H09", fx: 0.92, fy: 0.6, efectos: ["hierba", "sol"] },
-  { id: "H17", fx: 0.88, fy: 0.5, efectos: ["luz-calida"] },
-  { id: "H22", fx: 0.9, fy: 0.55, efectos: ["reflejo-frio"] },
-  { id: "H20", fx: 0.88, fy: 0.4, efectos: ["nubes"] },
-  { id: "H37", fx: 0.9, fy: 0.55, efectos: ["rayos", "ondas-luz"] },
-  { id: "H21", fx: 0.8, fy: 0.5, efectos: [] },
-  { id: "H25", fx: 0.65, fy: 0.55, efectos: ["agua"] },
-] as const;
+type Capa = { nombre: string; caja: readonly [number, number, number, number] };
+export const PAISAJES_PORTADA: readonly {
+  id: string;
+  fx: number;
+  fy: number;
+  efectos: readonly string[];
+  capas: readonly Capa[];
+}[] = [
+  {
+    id: "H01",
+    fx: 0.86,
+    fy: 0.5,
+    efectos: ["cascada"],
+    capas: [
+      { nombre: "niebla", caja: [25, 12, 981, 526] },
+      { nombre: "hojas", caja: [1480, 670, 1920, 1080] },
+    ],
+  },
+  { id: "H09", fx: 0.92, fy: 0.6, efectos: ["sol"], capas: [{ nombre: "hierba", caja: [80, 893, 1774, 1080] }] },
+  { id: "H17", fx: 0.88, fy: 0.5, efectos: ["luz-calida"], capas: [] },
+  { id: "H22", fx: 0.9, fy: 0.55, efectos: ["reflejo-frio"], capas: [] },
+  { id: "H20", fx: 0.88, fy: 0.4, efectos: [], capas: [{ nombre: "nubes", caja: [189, 282, 1178, 480] }] },
+  {
+    id: "H37",
+    fx: 0.9,
+    fy: 0.55,
+    efectos: ["rayos", "ondas-luz"],
+    capas: [{ nombre: "algas", caja: [909, 840, 1853, 1080] }],
+  },
+  { id: "H21", fx: 0.8, fy: 0.5, efectos: [], capas: [] },
+  { id: "H25", fx: 0.65, fy: 0.55, efectos: ["agua"], capas: [] },
+];
+
+/** Posición de una capa en porcentajes de la escena 1920×1080. */
+function estiloCapa([x1, y1, x2, y2]: Capa["caja"]): CSSProperties {
+  return {
+    left: `${(x1 / 1920) * 100}%`,
+    top: `${(y1 / 1080) * 100}%`,
+    width: `${((x2 - x1) / 1920) * 100}%`,
+    height: `${((y2 - y1) / 1080) * 100}%`,
+  };
+}
 export const ORDEN_PORTADA = PAISAJES_PORTADA.map((p) => p.id);
 const INTERVALO_MS = 10_000;
 
@@ -141,10 +175,22 @@ export function Portada({
                   sobre ella en porcentajes de la foto, sea cual sea la pantalla. */}
               <div className="escena" style={{ "--fx": p.fx, "--fy": p.fy } as CSSProperties}>
                 <Foto id={p.id} prioridad={esActual ? (i === 0 ? "high" : undefined) : "low"} />
+                {p.capas.map((capa) => (
+                  <img
+                    key={capa.nombre}
+                    className={`capa capa-${capa.nombre}`}
+                    src={`/fondos/capas/${p.id}-${capa.nombre}.webp`}
+                    alt=""
+                    draggable={false}
+                    decoding="async"
+                    fetchPriority={esActual ? undefined : "low"}
+                    style={estiloCapa(capa.caja)}
+                  />
+                ))}
                 {esActual &&
                   p.efectos.map((efecto) =>
-                    // La hierba y el agua mueven una copia recortada de la misma foto (ya en caché).
-                    efecto === "hierba" || efecto === "agua" ? (
+                    // El agua mueve una copia recortada de la misma foto (ya en caché).
+                    efecto === "agua" ? (
                       <Foto key={efecto} id={p.id} clase={`efecto efecto-${efecto}`} />
                     ) : (
                       <span key={efecto} className={`efecto efecto-${efecto}`} />
