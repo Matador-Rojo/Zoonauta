@@ -56,9 +56,17 @@ banda, cada uno en una celda con borde fuerte. El resto es sereno.
 
 axe-core 4.14: 0 incidencias en portada, selector, catálogo, tablero y pausa.
 
+## Pictogramas ligeros
+
+`/media/<id>` sirve copias derivadas de 384 px (WebP, calidad 82) de
+`assets/pictogramas_ligeros/`; los 441 originales (87 MB) se conservan sin cambios.
+`indice.json` guarda la huella de cada original y `tests/test_pictogramas_ligeros.py`
+falla si alguna copia queda desactualizada. Regenerar con
+`python -m codigo.interfaz.preparar_pictogramas_ligeros` (requiere Pillow).
+Medición (catálogo + tablero, Chrome 157): 1.173 KB → 53 KB en pictogramas.
+
 ## Pendiente
 
-- Pictogramas de hasta 746 KB (87 MB en total): servir copias derivadas ligeras.
 - Prueba automatizada específica de los avisos persistentes.
 - Lector de pantalla real (NVDA) y Lighthouse.
 - Textos pt-BR nuevos pendientes de revisión humana.
