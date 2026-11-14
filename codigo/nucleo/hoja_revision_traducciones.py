@@ -67,6 +67,14 @@ def _filas() -> list[dict]:
         fila("habitat_frase", h["id"], h["frase_locativa"], h["frase_locativa_pt"], "voz (confirmación)")
     for p in leer("pistas.json"):
         fila("pista", p["id"], p["texto"], p["texto_pt"], "pantalla y voz")
+    # Ayudas breves por rasgo del agente 6.0: redactadas con IA, pendientes de revisión.
+    rasgos = json.loads((exp / "atributos_habitats.json").read_text("utf-8"))["atributos"]
+    for atributo in rasgos:
+        for valor in atributo["valores"]:
+            a = valor["ayuda"]
+            fila("ayuda_rasgo", a["id"], a["texto"], a["texto_pt"],
+                 f"pantalla y voz (agente 6.0, cuando exista su grabación); rasgo {atributo['id']}={valor['id']}",
+                 "Texto nuevo redactado con IA a partir de pistas revisadas: revisar en ambos idiomas.")
     for p in leer("pictogramas.json"):
         fila("pictograma", p["id"], p["etiqueta"], p["etiqueta_pt"], "pantalla (bajo el pictograma)")
     return filas
