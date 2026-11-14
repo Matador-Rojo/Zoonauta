@@ -1,0 +1,158 @@
+{
+  "fecha": "2026-11-13",
+  "creditos_por_caracter_web": {
+    "eleven_multilingual_v2": 1.0,
+    "eleven_v3": 1.0,
+    "eleven_flash_v2_5": 0.5,
+    "eleven_turbo_v2_5": 0.5
+  },
+  "margen_repeticiones": 0.5,
+  "por_idioma": {
+    "es-419": {
+      "mensajes": 353,
+      "a_grabar": 350,
+      "duplicados": 3,
+      "caracteres_a_grabar": 19912,
+      "creditos": {
+        "eleven_multilingual_v2": 19912,
+        "eleven_v3": 19912,
+        "eleven_flash_v2_5": 9956,
+        "eleven_turbo_v2_5": 9956
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 29868,
+        "eleven_v3": 29868,
+        "eleven_flash_v2_5": 14934,
+        "eleven_turbo_v2_5": 14934
+      }
+    },
+    "pt-BR": {
+      "mensajes": 353,
+      "a_grabar": 350,
+      "duplicados": 3,
+      "caracteres_a_grabar": 19709,
+      "creditos": {
+        "eleven_multilingual_v2": 19709,
+        "eleven_v3": 19709,
+        "eleven_flash_v2_5": 9854,
+        "eleven_turbo_v2_5": 9854
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 29564,
+        "eleven_v3": 29564,
+        "eleven_flash_v2_5": 14782,
+        "eleven_turbo_v2_5": 14782
+      }
+    }
+  },
+  "por_prioridad": {
+    "P1 es-419": {
+      "mensajes": 63,
+      "a_grabar": 63,
+      "duplicados": 0,
+      "caracteres_a_grabar": 3376,
+      "creditos": {
+        "eleven_multilingual_v2": 3376,
+        "eleven_v3": 3376,
+        "eleven_flash_v2_5": 1688,
+        "eleven_turbo_v2_5": 1688
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 5064,
+        "eleven_v3": 5064,
+        "eleven_flash_v2_5": 2532,
+        "eleven_turbo_v2_5": 2532
+      }
+    },
+    "P3 es-419": {
+      "mensajes": 10,
+      "a_grabar": 9,
+      "duplicados": 1,
+      "caracteres_a_grabar": 950,
+      "creditos": {
+        "eleven_multilingual_v2": 950,
+        "eleven_v3": 950,
+        "eleven_flash_v2_5": 475,
+        "eleven_turbo_v2_5": 475
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 1425,
+        "eleven_v3": 1425,
+        "eleven_flash_v2_5": 712,
+        "eleven_turbo_v2_5": 712
+      }
+    },
+    "P2 es-419": {
+      "mensajes": 280,
+      "a_grabar": 278,
+      "duplicados": 2,
+      "caracteres_a_grabar": 15586,
+      "creditos": {
+        "eleven_multilingual_v2": 15586,
+        "eleven_v3": 15586,
+        "eleven_flash_v2_5": 7793,
+        "eleven_turbo_v2_5": 7793
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 23379,
+        "eleven_v3": 23379,
+        "eleven_flash_v2_5": 11690,
+        "eleven_turbo_v2_5": 11690
+      }
+    },
+    "P1 pt-BR": {
+      "mensajes": 63,
+      "a_grabar": 63,
+      "duplicados": 0,
+      "caracteres_a_grabar": 3331,
+      "creditos": {
+        "eleven_multilingual_v2": 3331,
+        "eleven_v3": 3331,
+        "eleven_flash_v2_5": 1666,
+        "eleven_turbo_v2_5": 1666
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 4996,
+        "eleven_v3": 4996,
+        "eleven_flash_v2_5": 2498,
+        "eleven_turbo_v2_5": 2498
+      }
+    },
+    "P3 pt-BR": {
+      "mensajes": 10,
+      "a_grabar": 9,
+      "duplicados": 1,
+      "caracteres_a_grabar": 900,
+      "creditos": {
+        "eleven_multilingual_v2": 900,
+        "eleven_v3": 900,
+        "eleven_flash_v2_5": 450,
+        "eleven_turbo_v2_5": 450
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 1350,
+        "eleven_v3": 1350,
+        "eleven_flash_v2_5": 675,
+        "eleven_turbo_v2_5": 675
+      }
+    },
+    "P2 pt-BR": {
+      "mensajes": 280,
+      "a_grabar": 278,
+      "duplicados": 2,
+      "caracteres_a_grabar": 15478,
+      "creditos": {
+        "eleven_multilingual_v2": 15478,
+        "eleven_v3": 15478,
+        "eleven_flash_v2_5": 7739,
+        "eleven_turbo_v2_5": 7739
+      },
+      "creditos_con_margen": {
+        "eleven_multilingual_v2": 23217,
+        "eleven_v3": 23217,
+        "eleven_flash_v2_5": 11608,
+        "eleven_turbo_v2_5": 11608
+      }
+    }
+  }
+}
