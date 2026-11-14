@@ -9834,6 +9834,11 @@
       "sha256": "ad24bfdbcd5cb5fd9b8c49499223bf2db6e5dd0ef14fcff1f18f631042d8ad14"
     },
     {
+      "ruta": "codigo/entrenamiento/evaluar_agente6.py",
+      "bytes": 13174,
+      "sha256": "23ff6b933086d91e9784943f46c7f09d5331d122aa6242ccba83ce510e0f1afe"
+    },
+    {
       "ruta": "codigo/motores/agente.py",
       "bytes": 16892,
       "sha256": "930a431025d085dbb33817fa0a5f0e626f11e1caa0ba3e3bca34dc3602a58eb1"
@@ -9847,6 +9852,11 @@
       "ruta": "tests/test_agente6.py",
       "bytes": 12164,
       "sha256": "dac0cf1b86fbfbea8c2a6d8e1e5ce6867e903780a90a24a05a871f5d5c4cf7c6"
+    },
+    {
+      "ruta": "docs/experimentos/agente6/evaluacion.json",
+      "bytes": 26486,
+      "sha256": "b9eb6d968d913fc70a81aa34188f97639f0b03e34a5dc5b72507f2108c966643"
     }
   ],
   "nombre_proyecto": "Zoonauta",
