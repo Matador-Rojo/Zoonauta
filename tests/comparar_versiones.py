@@ -37,7 +37,19 @@ def _sesion(base: str, hasta: str) -> str:
         resultado, cookie = _pedir(base, "/api/accion", cookie, entrada)
         vista = resultado["vista"]
 
-    if hasta == "portada":
+    if hasta in ("portada", "modalidad"):
+        return cookie
+    if hasta == "agente":
+        actuar("iniciar", {"modalidad": "AGENTE", "retos": 8, "cantidad_opciones": 8})
+        return cookie
+    if hasta == "completada":
+        actuar("iniciar", {"modalidad": "JUGADOR", "retos": 1, "cantidad_opciones": 2})
+        actuar("elegir_animal", {"animal_id": vista["catalogo_animales"][0]["id"]})
+        for habitat in list(vista["opciones_habitat"]):
+            if vista["fase"] != "ESPERANDO_RESPUESTA":
+                break
+            actuar("seleccionar_habitat", {"habitat_id": habitat["id"]})
+        actuar("continuar")
         return cookie
     actuar(*INICIO)
     if hasta == "catalogo":
@@ -54,10 +66,13 @@ def _sesion(base: str, hasta: str) -> str:
     if hasta == "pausa":
         actuar("pausar")
         return cookie
+    if hasta == "pista":
+        actuar("ayuda")
+        return cookie
     raise ValueError(f"Pantalla desconocida: {hasta}")
 
 
-PANTALLAS = ["portada", "catalogo", "tablero", "acierto", "pausa"]
+PANTALLAS = ["portada", "modalidad", "catalogo", "tablero", "pista", "acierto", "pausa", "completada", "agente"]
 
 
 def juntar(carpeta: Path, pantalla: str, dispositivo: str) -> Path:

@@ -8,6 +8,8 @@ const [, , base, salida, cookiesJson] = process.argv;
 const cookies = JSON.parse(cookiesJson);
 const VIEWPORTS = {escritorio: {width: 1440, height: 900}, movil: {width: 390, height: 844}};
 const VERSIONES = {'5.0': '/', '6.0': '/v6/'};
+// Pantallas que se abren desde la interfaz (no desde la API): botón a pulsar en cada versión.
+const PULSAR = {modalidad: {'5.0': 'button.comenzar', '6.0': 'main [aria-haspopup="dialog"]'}};
 
 (async () => {
   fs.mkdirSync(salida, {recursive: true});
@@ -23,6 +25,7 @@ const VERSIONES = {'5.0': '/', '6.0': '/v6/'};
           await page.goto(base + ruta);
           await page.waitForLoadState('load');
           await page.waitForTimeout(2200);
+          if (PULSAR[pantalla]) { await page.click(PULSAR[pantalla][version]); await page.waitForTimeout(800); }
           await page.screenshot({path: path.join(salida, `${version}_${pantalla}_${nombreVp}.png`), fullPage: false});
           await context.close();
         }
