@@ -42,11 +42,13 @@ const PULSAR = {modalidad: {'5.0': 'button.comenzar', '6.0': 'main [aria-haspopu
             desplazamientoHorizontal: Math.max(0, document.documentElement.scrollWidth - innerWidth),
             // Alto mínimo de lo que se pulsa o se mira (solo selectores de la 6.0). Que no haya
             // desplazamiento no basta: también debe verse y poder pulsarse cada elemento.
-            aplastados: [...document.querySelectorAll('.tarjeta-habitat, .tarjeta-animal, .control, .animal-actual img, .cierre-visual img')]
-              .filter(e => getComputedStyle(e).display !== 'none')
+            aplastados: [...document.querySelectorAll('.tarjeta-habitat, .tarjeta-animal, .control, .animal-actual img, .cierre-visual img, .tarjeta-imagen img, .tarjeta-habitat .paisaje, .opcion-modalidad, dialog[open]')]
+              .filter(e => getComputedStyle(e).display !== 'none' && !e.closest('dialog:not([open])'))
               .map(e => {
                 const r = e.getBoundingClientRect();
                 // Controles ≥ 44 px (objetivo táctil); fotos e ilustraciones ≥ 48 px; tarjetas ≥ 56 px.
+                // Un diálogo abierto no debe desplazarse por dentro (se aplica abajo, no por altura).
+                if (e.matches('dialog')) return e.scrollHeight > e.clientHeight + 1 ? `dialogo-con-desplazamiento:${e.scrollHeight - e.clientHeight}px` : null;
                 const minimo = e.matches('.control') ? 44 : e.matches('img') ? 48 : 56;
                 const texto = e.querySelector('span:not(.tarjeta-numero)');
                 const recortado = texto && e.matches('.tarjeta-habitat') && texto.getBoundingClientRect().height > r.height + 0.5;

@@ -1,5 +1,10 @@
 # Portada 6.0 — registro de la Fase 3
 
+> **Superado el 2026-11-14.** La portada 6.0 ya no es el carrusel de ocho paisajes: es
+> «Bosque de luz» (ver `docs/interfaz/6.0/identidad.md` y CLAUDE.md). Este documento se
+> conserva como historial; los paisajes y capas siguen en `fondos/` sin uso en la 6.0.
+
+
 Rama `experimental/zoonauta-v6-modern-web`, 2026-11-13. Interfaz en `/v6/`.
 
 ## Paisajes

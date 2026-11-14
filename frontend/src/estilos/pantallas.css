@@ -615,9 +615,17 @@ progress::-moz-progress-bar {
     flex-direction: row;
     align-items: center;
   }
-  .catalogo-pantalla .subtitulo,
-  .catalogo-total {
+  .catalogo-pantalla .subtitulo {
     display: none;
+  }
+  /* El recuento sigue anunciándose a los lectores de pantalla (aria-live) aunque no se vea. */
+  .catalogo-total {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .catalogo {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -755,6 +763,30 @@ progress::-moz-progress-bar {
   }
   .cierre {
     grid-template-rows: minmax(10rem, 1fr) auto;
+  }
+}
+/* «¿Quién elige?» compacto en vistas bajas o estrechas: sin desplazamiento dentro del diálogo. */
+@media (max-height: 700px), (max-width: 420px) {
+  .selector-modalidad {
+    padding: 1rem;
+  }
+  .selector-modalidad h2 {
+    margin-bottom: 0.75rem;
+  }
+  .opciones-modalidad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+  .selector-modalidad .opcion-modalidad {
+    padding: 0.6rem;
+    gap: 0.4rem;
+    font-size: var(--texto-m);
+  }
+  .selector-modalidad .opcion-modalidad img {
+    width: min(5.5rem, 28vw);
+  }
+  .selector-modalidad form {
+    margin-top: 0.75rem;
   }
 }
 /* Vista baja y ancha (móvil apaisado, zoom): dos columnas en la pausa y el cierre. */
