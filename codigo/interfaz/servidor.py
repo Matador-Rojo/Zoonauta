@@ -12,7 +12,7 @@ from uuid import uuid4
 import webbrowser
 
 from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, SesionWeb
-from codigo.interfaz import idiomas
+from codigo.interfaz import idiomas, voz_grabada
 from codigo.interfaz.voz import LecturaCancelada, MotorVoz, VozNoDisponible
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import TERMINALES
@@ -119,7 +119,8 @@ class Manejador(BaseHTTPRequestHandler):
         elif ruta == "/api/idiomas":
             self._enviar({"es": {}, "pt-BR": idiomas.PORTUGUES["interfaz"]})
         elif ruta == "/api/voz/config":
-            self._enviar(self.server.voz.configuracion())
+            self._enviar({**self.server.voz.configuracion(),
+                          "grabadas": voz_grabada.disponibles(self.server.banco)})
         elif ruta.startswith("/media/"):
             picto = self.server.banco.pictogramas.get(ruta.removeprefix("/media/"))
             if not picto:
@@ -134,7 +135,7 @@ class Manejador(BaseHTTPRequestHandler):
 
     def do_POST(self):
         ruta = urlsplit(self.path).path
-        if ruta not in {"/api/accion", "/api/idioma", "/api/voz", "/api/voz/cancelar"}:
+        if ruta not in {"/api/accion", "/api/idioma", "/api/voz", "/api/voz/grabada", "/api/voz/cancelar"}:
             return self._enviar({"error": "Ruta no encontrada."}, codigo=404)
         origin = self.headers.get("Origin")
         if origin and origin != f"http://{self.headers.get('Host')}":
@@ -154,6 +155,16 @@ class Manejador(BaseHTTPRequestHandler):
                 self._enviar({"cancelada": True})
             elif ruta == "/api/idioma":
                 self._enviar({"vista": sesion.cambiar_idioma(entrada)})
+            elif ruta == "/api/voz/grabada":
+                # Grabación completa del mensaje exacto; sin ella, el cliente
+                # lee el mensaje entero con la voz alternativa (nunca se unen audios).
+                if "texto" in entrada or "texto_voz" in entrada or entrada.get("prueba"):
+                    raise ValueError("La voz solo puede leer contenido de la partida.")
+                archivo = voz_grabada.buscar(sesion.texto_voz(entrada), sesion.idioma, self.server.banco)
+                if archivo is None:
+                    self._enviar({"grabada": False}, codigo=404)
+                else:
+                    self._enviar(archivo.read_bytes(), voz_grabada.TIPOS[archivo.suffix])
             elif ruta == "/api/voz":
                 if "texto" in entrada or "texto_voz" in entrada:
                     raise ValueError("La voz solo puede leer contenido de la partida.")
