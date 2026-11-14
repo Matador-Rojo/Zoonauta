@@ -177,7 +177,8 @@ export class GuiaVoz {
     } catch (e) {
       if ((e as Error).name !== "AbortError" && turno === this.turno) {
         this.parar();
-        this.alError((e as Error).message);
+        // Un fallo de red (TypeError) se explica con el mensaje traducido, no con el del navegador.
+        this.alError(e instanceof TypeError ? textos.error : (e as Error).message);
       }
     }
   }
