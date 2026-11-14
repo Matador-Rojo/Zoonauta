@@ -41,7 +41,7 @@ el agente también usará estas ayudas en las partidas en portugués, con su tex
    ninguno en `sobran_o_mal_nombrados` ni `demasiado_pequenos`).
 3. Reinicia el juego: el agente empieza a usarlos sin cambiar código.
 4. `PYTHONUTF8=1 python -m unittest tests.test_agente6 tests.test_catalogo_voz tests.test_voz_grabada_cobertura`.
-   `test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo` espera las 32 ayudas activas: actualízala si
+   `test_solo_se_usan_ayudas_por_rasgo_con_grabacion` espera las 32 ayudas activas: actualízala si
    cambia el número de ayudas por rasgo.
 5. `python -m codigo.nucleo.actualizar_manifiesto --incluir assets/voz/grabada/es-419/<archivo>.mp3 …`
    y `python -m codigo.nucleo.verificar_paquete`.
