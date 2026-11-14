@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 16987,
-      "sha256": "89c17ddb572aed9026b262c4ab4cbfdd3f1d00f2384a0ca86c1343fc7dc7ef21"
+      "bytes": 17036,
+      "sha256": "cc0ee46fedbfaad43b602a61968e9ce45557259580a48627e2d6163d58289abd"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -5216,8 +5216,8 @@
     },
     {
       "ruta": "tests/verificar_portada.cjs",
-      "bytes": 11947,
-      "sha256": "10237eda5577002a263ccacded03e768b733c4b0df33a95cb770ee7810541c9d"
+      "bytes": 11960,
+      "sha256": "40a65df9de7aa18234c7cba252be038e240bcd92b0592a215d35fd5fcdd2d4f6"
     },
     {
       "ruta": "frontend/.gitignore",
@@ -5241,8 +5241,8 @@
     },
     {
       "ruta": "frontend/src/App.tsx",
-      "bytes": 13514,
-      "sha256": "16e418860260c728b2d7c751de7c196789cc0ec48d8738344aa40d18f846a467"
+      "bytes": 13611,
+      "sha256": "0552511d7d6cfc40cbca2f6fdaf97c87506e31199c7a5edec14fce5e27e5a40f"
     },
     {
       "ruta": "frontend/src/api/cliente.ts",
@@ -5281,8 +5281,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Portada.tsx",
-      "bytes": 13565,
-      "sha256": "04b4bf408fdc80255fd86ec48edf3dc1abdfc21e97c05d82ee15a11d2e90d47d"
+      "bytes": 14808,
+      "sha256": "eedcfb98b712d99cf9965617d4e729269684a4387181a92b6f2034cdcad75f2a"
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
@@ -5291,13 +5291,13 @@
     },
     {
       "ruta": "frontend/src/componentes/Reto.tsx",
-      "bytes": 5234,
-      "sha256": "581c605b733e91a47fe74c1dde766268f66f8475c0940c64f8578a0c9d148da5"
+      "bytes": 6252,
+      "sha256": "e309f4ce972939a647f90fec83bfb3c297275bf0d679fa023f163e29b7afd26e"
     },
     {
       "ruta": "frontend/src/estilos/base.css",
-      "bytes": 9047,
-      "sha256": "1a5fa0dd623acd9366240d29ce8631a3af3895c2aa53128932f37fc54ac132ec"
+      "bytes": 9630,
+      "sha256": "524ae6dc940a29d31e720bbf7691e560502e572bddf514a18cf4ddb3a5f7f2ff"
     },
     {
       "ruta": "frontend/src/estilos/pantallas.css",
@@ -5306,8 +5306,8 @@
     },
     {
       "ruta": "frontend/src/estilos/portada.css",
-      "bytes": 9618,
-      "sha256": "31cd57efac9317814f8991d7923e67dbefa9dc548e71f4a9872b03a63eea6178"
+      "bytes": 14290,
+      "sha256": "7ee821fe0515bfacf4137ed34032391a1b70da937e6d7854566168332fca6709"
     },
     {
       "ruta": "frontend/src/i18n.ts",
@@ -5316,8 +5316,8 @@
     },
     {
       "ruta": "frontend/src/main.tsx",
-      "bytes": 375,
-      "sha256": "1e4d92bd5466ce2c56d64130796e9135240a8ede015d31e94464d9d9c5f8b9d3"
+      "bytes": 404,
+      "sha256": "7f4e0620e4340864305ff7cb2e72413659048109cf1f137bd7a10411250a3296"
     },
     {
       "ruta": "frontend/src/voz.ts",
@@ -5336,8 +5336,8 @@
     },
     {
       "ruta": "tests/verificar_v6.cjs",
-      "bytes": 11301,
-      "sha256": "f37a01180c21e912b1c04bfe1ff47ab96e7369e41be657ae964b5bdd4dfec103"
+      "bytes": 11314,
+      "sha256": "35a08e605fb6a1ea7d981c92da2ce0f49dc47affd51a18b1ee5c429968c0164f"
     },
     {
       "ruta": "tests/verificar_portada_5.cjs",
@@ -5387,7 +5387,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 1265,
-      "sha256": "2fad6c657f0ac3563e227ed046d32fc8bfb14958a67b4015a2a6736786f7e051"
+      "sha256": "1290799b0ae20545a82fee65941348df2fccc498897ef5c0036db51ed2c041cd"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -7950,11 +7950,6 @@
       "sha256": "012aff89fe60d7a948dbabb48b24516561ac98aee795963e0848f3367cac676d"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-BJr8NTnh.css",
-      "bytes": 20916,
-      "sha256": "ffc306ed92b5c5becc479934a3120fcbea66dd85978faee7ba66492a202c5ea3"
-    },
-    {
       "ruta": "tests/lighthouse_v6.py",
       "bytes": 4894,
       "sha256": "4c272a82b9c3c0dd9f9b725f36deaed6f54043d759261fefe5f2042d27a436f2"
@@ -7968,11 +7963,6 @@
       "ruta": "tests/verificar_partidas_v6.cjs",
       "bytes": 5530,
       "sha256": "1dd7b5eed7203ceb2f4f1ea2164593c0d5988bab82be6906045e352ecc16c00e"
-    },
-    {
-      "ruta": "codigo/interfaz/web6/assets/index-T0AjREK5.js",
-      "bytes": 252479,
-      "sha256": "c6a4c41bbec2f7c0577c5dcdf9b7de8691a0ef64c41e513c0199c9088f3ff651"
     },
     {
       "ruta": "codigo/nucleo/hoja_revision_traducciones.py",
@@ -7993,6 +7983,61 @@
       "ruta": "tests/test_validacion_contenido.py",
       "bytes": 1266,
       "sha256": "c0bdab71e28f34a7244777fd9ea9019b495bb5f524966ee7d4c501b69098f91d"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H01-160.webp",
+      "bytes": 1778,
+      "sha256": "b1f2aee6b7d520a050f569c93bc230c9778eacd2e604b013829b63b65fb334b0"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H09-160.webp",
+      "bytes": 1540,
+      "sha256": "fa9b9f11d08cb8263557888628b55770224c75a2701d4cdf666b4f148997e361"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H17-160.webp",
+      "bytes": 1242,
+      "sha256": "1a3af62490fb34f0fe9379377cae2c93037a7081789c8d2be9e7bbde02e7569d"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H20-160.webp",
+      "bytes": 1466,
+      "sha256": "7a0e88bd6cc9c81f5de2d7a89f1ca8c21173cd76991f70c9a033157c83048062"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H21-160.webp",
+      "bytes": 2284,
+      "sha256": "b68faced0d2009b61507495236a3aa6db7658c08f8072dfbae49942633a596cc"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H22-160.webp",
+      "bytes": 1896,
+      "sha256": "20b6651cdfcdf5a30c349d572962ef6f82c2aee81aebb93afe3a2d25de7a4b2f"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H25-160.webp",
+      "bytes": 2708,
+      "sha256": "e7a38a7a5b3141db1fc9282bcfa7cc522ba0c3bc39448b6533636428180e585b"
+    },
+    {
+      "ruta": "codigo/interfaz/web/fondos/portada/H37-160.webp",
+      "bytes": 2312,
+      "sha256": "49dc349c77aaef16ea3296ec1e4c4b27734054d1058c97b075128ffbf552fa35"
+    },
+    {
+      "ruta": "frontend/src/estilos/tema.css",
+      "bytes": 4692,
+      "sha256": "78832ce9fde2aa28bff3b5cc5d15390e2ac1e74a8f8eb157977350e908055eab"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-BEpgwT6K.js",
+      "bytes": 253890,
+      "sha256": "114fbb99aaca4f57c0c6c413f9c678dd56320562335ef2f9a5668217490708a7"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-DlGuDLLH.css",
+      "bytes": 28045,
+      "sha256": "6ab05d6a1e88c4454a4b25e632406e63a9de430aec2582f65c01718abf5c29b4"
     }
   ],
   "nombre_proyecto": "Zoonauta",

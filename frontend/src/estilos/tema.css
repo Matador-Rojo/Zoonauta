@@ -1,0 +1,201 @@
+/* Tema oscuro y lima de Zoonauta en todas las pantallas (la portada ya lo era).
+   Redefine las variables del sistema y ajusta lo pensado para fondo claro. Los
+   pictogramas y las ilustraciones se dibujaron para fondo claro: siempre van sobre
+   una base clara (--base-pictograma), nunca directamente sobre el fondo oscuro. */
+:root {
+  color-scheme: dark;
+  --niebla: #0b1a14;
+  --tinta: #ecf0e8;
+  --tinta-suave: #b9c9bd; /* 8,9:1 sobre --superficie */
+  --superficie: #13291f;
+  --linea: #2c4a3c;
+  --linea-fuerte: #6f9a83; /* 4,9:1 sobre --superficie */
+  --expedicion: #d2ee8b; /* lima: acento principal */
+  --expedicion-oscuro: #b6d66c;
+  --agua: #7cc7e2;
+  --agua-claro: #10303d;
+  --exito-fondo: #17402c;
+  --neutro-fondo: #10241b;
+  --alerta: #ff9f8f;
+  --alerta-fondo: #3b1b16;
+  --foco: #a8c8ff;
+  --base-pictograma: #f4f6ef;
+  --tinta-sobre-pictograma: #1b2b24;
+}
+
+body {
+  background:
+    radial-gradient(1100px 560px at 85% -8%, #1a3d2e 0, transparent 70%),
+    radial-gradient(900px 500px at -10% 105%, #12301f 0, transparent 70%), var(--niebla);
+  background-attachment: fixed;
+}
+
+/* --- Pictogramas e ilustraciones sobre base clara --- */
+.tarjeta-imagen,
+.animal-actual img,
+.cierre-visual img,
+.opcion-modalidad img {
+  background: var(--base-pictograma);
+  border-radius: var(--radio-tarjeta);
+}
+.tarjeta-imagen img {
+  padding: 0.4rem;
+}
+.animal-actual img {
+  padding: 0.5rem;
+}
+.control img {
+  background: var(--base-pictograma);
+  border-radius: 50%;
+  padding: 3px;
+}
+.boton-principal img {
+  background: var(--base-pictograma);
+  border-radius: 50%;
+  padding: 2px;
+}
+.tira-celda {
+  background: var(--base-pictograma);
+  color: var(--tinta-sobre-pictograma);
+  border-color: var(--base-pictograma);
+}
+.tira {
+  background: var(--neutro-fondo);
+}
+
+/* --- Botones y controles --- */
+.boton-texto:hover,
+.control-redondo:hover,
+.boton-secundario:hover:not(:disabled) {
+  background: #1d3a2d;
+}
+.control[data-control="ayuda"] {
+  color: var(--ambar-tinta);
+}
+.control:is([data-control="continuar"], [data-control="reanudar"]) {
+  color: #132d1f;
+}
+.control:hover {
+  border-color: var(--expedicion);
+}
+.control[data-control="ayuda"]:hover {
+  border-color: #fff;
+}
+.tarjeta-animal:hover,
+.tarjeta-habitat:hover:not(:disabled) {
+  border-color: var(--expedicion);
+}
+.opcion-modalidad {
+  background: var(--neutro-fondo);
+}
+.opcion-modalidad:hover {
+  background: #1b3a2c;
+}
+
+/* --- Progreso y avisos --- */
+progress::-webkit-progress-bar {
+  background: var(--superficie);
+}
+
+/* --- Interruptor: la bolita oscura sobre lima cuando está activo --- */
+.interruptor input:checked::before {
+  background: #0b1a14;
+}
+
+/* --- Diálogos --- */
+dialog {
+  border: 1px solid var(--linea);
+}
+dialog::backdrop {
+  background: rgb(3 10 7 / 72%);
+}
+
+/* --- Guía y hábitats --- */
+.guia h2 {
+  color: var(--tinta);
+}
+.tarjeta-habitat span,
+.tarjeta-nombre {
+  color: var(--tinta);
+}
+
+/* --- Momento de acierto: el hábitat elegido se destaca y los demás se atenúan --- */
+.habitats[data-resuelto="true"] .tarjeta-habitat {
+  opacity: 0.4;
+}
+.habitats[data-resuelto="true"] .tarjeta-habitat.elegido {
+  opacity: 1;
+  border-color: var(--expedicion);
+  box-shadow: 0 0 0 3px var(--expedicion);
+}
+.tarjeta-habitat {
+  position: relative;
+}
+.tarjeta-habitat .insignia {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--expedicion);
+  color: #132d1f;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-movimiento="normal"] .tarjeta-habitat.elegido .insignia {
+    animation: aparece 0.35s ease-out both;
+  }
+}
+@keyframes aparece {
+  from {
+    opacity: 0;
+    scale: 0.6;
+  }
+}
+
+/* La foto del hábitat acertado, junto a la frase de confirmación. */
+.guia:has(.guia-foto) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 26rem);
+  grid-template-areas:
+    "cabecera foto"
+    "titulo foto"
+    "tira foto";
+  column-gap: 1.5rem;
+  align-content: start;
+}
+.guia:has(.guia-foto) .guia-cabecera {
+  grid-area: cabecera;
+}
+.guia:has(.guia-foto) h2 {
+  grid-area: titulo;
+}
+.guia:has(.guia-foto) .tira {
+  grid-area: tira;
+  align-self: start;
+}
+.guia-foto {
+  grid-area: foto;
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  object-fit: cover;
+  border-radius: var(--radio-tarjeta);
+  border: 3px solid var(--expedicion);
+}
+@media (max-width: 900px) {
+  .guia:has(.guia-foto) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "cabecera" "titulo" "tira" "foto";
+  }
+  .guia-foto {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin-top: 1rem;
+  }
+}

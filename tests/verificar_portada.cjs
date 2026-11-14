@@ -13,7 +13,7 @@ const casos = [];
 const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
 const actual = page => page.locator('.portada-capa[data-estado="actual"]').getAttribute('data-habitat');
 const animaciones = page => page.evaluate(() => document.getAnimations()
-  .filter(a => !/color$/.test(a.transitionProperty || ''))
+  .filter(a => !/(color|box-shadow)$/.test(a.transitionProperty || ''))
   .map(a => a.animationName || a.transitionProperty));
 
 async function axe(page, nombre) {

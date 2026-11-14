@@ -23,6 +23,9 @@
   --alerta: #9b2c1f;
   --alerta-fondo: #fbe9e5;
   --foco: #0b57d0;
+  /* Portada oscura: identidad de Zoonauta desde la 5.0. */
+  --bosque: #091713;
+  --lima: #d2ee8b;
 
   /* Forma: el radio crece con la jerarquía (control < tarjeta < panel). */
   --radio-control: 14px;
@@ -252,7 +255,29 @@ p {
   opacity: 0.85;
 }
 .cabecera[data-fase="INICIO"] .boton-texto {
-  color: var(--tinta);
+  background: #0a1b17a6;
+  color: #fff;
+  border-color: #ffffff50;
+  backdrop-filter: blur(16px);
+}
+.cabecera[data-fase="INICIO"] .boton-texto:hover {
+  border-color: var(--lima);
+  background: #294638;
+}
+.cabecera[data-fase="INICIO"] :focus-visible {
+  outline-color: #fff;
+  box-shadow: 0 0 0 6px rgb(11 87 208 / 85%);
+}
+.cabecera-nota {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #cad6ca;
+}
+@media (max-width: 900px) {
+  .cabecera-nota {
+    display: none;
+  }
 }
 
 main {

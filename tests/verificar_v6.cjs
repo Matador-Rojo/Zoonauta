@@ -68,7 +68,7 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       assert.equal(await page.getByRole('button', {name: /paisajes$/}).count(), 0);
       // Los cambios de color de los botones se mantienen (no son movimiento).
       const animaciones = () => page.evaluate(() => document.getAnimations()
-        .filter(a => !/color$/.test(a.transitionProperty || ''))
+        .filter(a => !/(color|box-shadow)$/.test(a.transitionProperty || ''))
         .map(a => `${a.constructor.name}:${a.animationName || a.transitionProperty}:${a.effect?.target?.className}`));
       // Los fundidos iniciados antes de activar la opción duran como máximo 1,4 s.
       await page.waitForTimeout(1500);

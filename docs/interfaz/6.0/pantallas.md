@@ -70,3 +70,22 @@ Medición (catálogo + tablero, Chrome 157): 1.173 KB → 53 KB en pictogramas.
 - Prueba automatizada específica de los avisos persistentes.
 - Lector de pantalla real (NVDA) y Lighthouse.
 - Textos pt-BR nuevos pendientes de revisión humana.
+
+## Revisión visual (2026-11-14): identidad oscura y lima, con mejoras sobre la 5.0
+
+La primera versión de la 6.0 usó una paleta clara genérica y perdió rasgos de la 5.0
+(franja de cifras, nota de cabecera, acento lima, titular grande y ligero). Se corrigió
+partiendo de la identidad de la 5.0 y añadiendo lo siguiente:
+
+- **Acento por paisaje** en la portada: lima (selva), ámbar (sabana), arena (desierto),
+  celeste (hielo), crema (montaña), turquesa (arrecife), arena clara (cueva) y verde
+  claro (lago). Cambia título, botón, línea y etiquetas; la transición es de color.
+- **Miniaturas** de los 8 paisajes (acceso directo) y **línea de tiempo** de 10 s que
+  muestra cuándo cambia el siguiente; solo existe con movimiento permitido y mientras
+  la rotación corre.
+- **Tema oscuro y lima en todas las pantallas** (`tema.css`); los pictogramas y las
+  ilustraciones, pensados para fondo claro, van siempre sobre una base clara.
+- **Momento de acierto**: el hábitat elegido se destaca con ✓ y los demás se atenúan; la
+  foto del hábitat acertado aparece junto a la frase de confirmación.
+- Corregidas variables de radio inexistentes en `portada.css` y el foco visible sobre
+  fondo oscuro (blanco + anillo azul).

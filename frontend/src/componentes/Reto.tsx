@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { TipoAccion, Vista } from "../api/tipos";
 import { useT } from "../i18n";
 import { Encabezado } from "./Encabezado";
@@ -61,7 +62,7 @@ export function TiraPictogramas({ ids, vista }: { ids: string[]; vista: Vista })
   );
 }
 
-export function Guia({ vista }: { vista: Vista }) {
+export function Guia({ vista, fotoHabitat }: { vista: Vista; fotoHabitat?: string | null }) {
   const { t } = useT();
   // Texto y pictogramas cambian juntos cuando las imágenes nuevas están listas.
   const respuesta = useContenidoListo(vista.respuesta, vista.pictogramas);
@@ -81,6 +82,10 @@ export function Guia({ vista }: { vista: Vista }) {
         {t(respuesta.texto_apoyo)}
       </h2>
       <TiraPictogramas ids={respuesta.pictogramas} vista={vista} />
+      {fotoHabitat && (
+        // El hábitat acertado, a la vista junto a la frase que lo nombra.
+        <img className="guia-foto" src={`/habitats/${fotoHabitat}.webp`} alt="" draggable={false} />
+      )}
     </section>
   );
 }
@@ -95,6 +100,10 @@ export function Reto({
   const { t } = useT();
   const resuelto = vista.fase === "RETO_RESUELTO";
   const animal = vista.animal;
+  // Último hábitat pulsado en este reto: al resolverse es el acertado. Tras recargar la
+  // página no se conoce y simplemente no se destaca nada (sin atenuar las demás).
+  const [pulsado, setPulsado] = useState<{ reto: string | null; id: string } | null>(null);
+  const elegido = resuelto && pulsado && pulsado.reto === vista.reto_id ? pulsado.id : null;
   return (
     <section className="pantalla reto-pantalla" aria-labelledby="titulo-pantalla">
       <Encabezado vista={vista} titulo={resuelto ? "¡Encontraste un lugar!" : "Elige un hábitat"} />
@@ -108,7 +117,7 @@ export function Reto({
             </figcaption>
           </figure>
         )}
-        <Guia vista={vista} />
+        <Guia vista={vista} fotoHabitat={elegido} />
       </div>
       <Controles vista={vista} onAccion={onAccion} />
       <section className="habitats-panel" aria-labelledby="titulo-habitats">
@@ -120,18 +129,27 @@ export function Reto({
           role="group"
           aria-labelledby="titulo-habitats"
           data-cantidad={vista.opciones_habitat.length}
+          data-resuelto={elegido ? "true" : undefined}
         >
           {vista.opciones_habitat.map((h) => (
             <button
               key={h.id}
               type="button"
-              className="tarjeta-habitat"
+              className={`tarjeta-habitat${elegido === h.id ? " elegido" : ""}`}
               data-habitat={h.id}
               disabled={!vista.seleccion_habilitada}
-              onClick={() => onAccion("seleccionar_habitat", { habitat_id: h.id })}
+              onClick={() => {
+                setPulsado({ reto: vista.reto_id, id: h.id });
+                onAccion("seleccionar_habitat", { habitat_id: h.id });
+              }}
             >
               <img className="paisaje" src={`/habitats/${h.id}.webp`} alt="" draggable={false} loading="lazy" />
               <span>{h.nombre}</span>
+              {elegido === h.id && (
+                <b className="insignia" aria-hidden="true">
+                  ✓
+                </b>
+              )}
             </button>
           ))}
         </div>
