@@ -200,7 +200,7 @@ export function App() {
     <ContextoIdioma.Provider value={traductor}>
       <a className="saltar" href="#juego">{t("Ir al juego")}</a>
       <header className="cabecera" data-fase={vista.fase}>
-        <a className="marca" href="/v6/" aria-label={t("Zoonauta, recuperar pantalla")}>
+        <a className="marca" href="/v6/">
           <img src="/zoonauta-logo.svg" alt="" width={44} height={44} />
           <span className="marca-texto">Zoonauta<span className="marca-subtitulo">{t("Animales y hábitats")}</span></span>
         </a>
