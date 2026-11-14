@@ -24,10 +24,12 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
   Todo movimiento es ambiental, leve y desactivable (control propio + `prefers-reduced-motion`).
 - Audio siempre bajo control del usuario: una sola voz a la vez; cancelar la lectura
   anterior al cambiar de mensaje o pausar. Conservar Piper, Kokoro y Web Speech API.
-- Voces (decidido 2026-11-14): por ahora solo español. En español se ofrecen todas las voces
-  descargadas (Piper y Kokoro, más las grabaciones es-419) y las del navegador. En pt-BR la voz
-  queda bloqueada: cero voces y controles desactivados, aunque existan modelos pt-BR. Más
-  idiomas de voz llegarán después; no borrar modelos ni `datos/voces_locales.json`.
+- Voces de la 6.0 (decidido 2026-11-14): **solo la voz grabada de Zoonauta (ElevenLabs)**, 350
+  mp3 en `assets/voz/grabada/es-419/` (copiados de `Downloads/Voces Zoonauta`; cubren los 353
+  mensajes en español, 3 reutilizan un duplicado). Piper, Kokoro y las voces del navegador no se
+  ofrecen (`SOLO_VOZ_GRABADA` en `frontend/src/voz.ts`); su código y modelos se conservan. Un
+  mensaje sin grabación no se lee con otra voz. En pt-BR la voz queda bloqueada (cero voces).
+  Más idiomas llegarán después. La 5.0 en `/` mantiene su sistema de voces.
 - ElevenLabs u otro servicio externo: esperar autorización antes de consumir créditos o
   enviar textos. Claves solo en el entorno del servidor o de generación, nunca en el
   frontend ni en el repositorio.
