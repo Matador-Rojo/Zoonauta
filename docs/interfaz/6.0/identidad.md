@@ -1,8 +1,8 @@
 # Contrato de identidad visual — Zoonauta 6.0
 
 Lo que no se puede quitar ni empeorar sin avisar. Se revisa en cada cambio visual con
-`python -m tests.comparar_versiones` (5.0 a la izquierda, 6.0 a la derecha). La 5.0 (`/`)
-conserva su identidad verde y lima; este contrato rige solo la 6.0 (`/v6/`).
+`python -m tests.comparar_versiones` (5.0 a la izquierda, 6.0 a la derecha). La 5.0 (`/v5/`)
+conserva su identidad verde y lima; este contrato rige solo la 6.0 (`/`, versión principal).
 
 ## Identidad (decidida por el propietario el 2026-11-14)
 

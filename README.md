@@ -1,97 +1,90 @@
-# Zoonauta 5.0.0
+# Zoonauta 6.0.0
 
 Juego de animales y hábitats con pictogramas y una guía de inteligencia artificial.
-Disponible en español y portugués brasileño, con voces locales Piper y Kokoro
-y voces compatibles de Microsoft y Google del navegador.
+Disponible en español y portugués brasileño. La guía habla con la voz grabada de
+Zoonauta (Marcela, ElevenLabs) en español; en portugués se juega con texto y
+pictogramas, sin voz por ahora.
 
-![Pantalla principal de una versión anterior de Zoonauta](docs/interfaz/3.8/inicio.webp)
+![Portada «Bosque de luz» de Zoonauta 6.0](docs/interfaz/6.0/portada_bosque_de_luz.webp)
+
+La 6.0 es la versión principal desde el 14 de noviembre de 2026. Conserva las reglas,
+los 288 animales, los 48 hábitats, las pistas y los dos modos de la 5.0; cambia la
+interfaz (React + TypeScript + Vite, servida por el mismo servidor Python) y la voz.
+La 5.0 sigue disponible en `/v5/` con su aspecto y sus voces.
 
 ## Cómo se juega
 
-Pulsa **Comenzar** y escoge **Yo elijo** o **El agente elige**.
-La guía lee «¿Quién elige el animal?» al abrir ese diálogo; al volver a la
-portada o comenzar otra partida no se reproduce esa pregunta. Cerrar el diálogo
-cancela la lectura.
-El catálogo permite elegir cualquiera de los 288 animales, con búsqueda global por
-nombre y páginas que se adaptan a la ventana. En escritorio, el panel izquierdo
-reúne título, progreso, búsqueda, páginas, Pausar y Salir; las tarjetas ocupan el
-resto de la pantalla. Conservan al menos 435 × 264 px: si caben menos, se muestran
-menos por página, sin reducir los animales. Una pantalla amplia muestra seis.
-En móvil o ventanas muy bajas se permite desplazamiento para conservar el contenido.
-La elección sigue siendo de un animal por reto y comienza al tocar su tarjeta.
-En modo agente, cada partida mezcla los 288 animales
-y presenta tantos como hayas elegido en Preferencias (de 1 a 48; ocho por defecto).
-No se repiten animales dentro de la partida y una nueva partida comienza con otro animal.
-Pausar, repetir o recargar conserva el orden de la partida en curso.
+La portada «Bosque de luz» explica el juego en una frase: *Elige un animal. Sigue las
+pistas y descubre dónde vive.* Pulsa **Comenzar** y escoge **Yo elijo** o
+**El agente elige**. La guía lee «¿Quién elige el animal?» al abrir ese diálogo.
 
-El número de retos debe ser un entero del **1 al 48**. Si falta o no es válido,
-Comenzar indica cómo corregirlo en Preferencias. Los avisos son tarjetas compactas
-con fondo oscuro y borde según su tipo, abajo a la derecha. Los nuevos aparecen
-debajo y los anteriores suben sin superponerse. Se muestran **hasta tres** a la vez;
-si falta altura, se reduce la cantidad y se retiran los más antiguos, sin scroll
-ni tarjetas cortadas. Cada tarjeta desaparece a los
-**8 segundos** o se cierra con su **×** circular sobre la esquina superior derecha.
-Créditos visuales, dentro de Preferencias, muestra la versión del programa.
+- **Yo elijo:** el catálogo muestra los 288 animales, con búsqueda por nombre y
+  páginas de seis. En escritorio, la columna izquierda reúne título, progreso,
+  búsqueda, páginas, Pausar y Salir.
+- **El agente elige:** cada partida mezcla los 288 animales, sin repetir, y presenta
+  tantos como hayas elegido en Preferencias (de 1 a 48; ocho por defecto).
 
-En **Preferencias → Hábitats para elegir** se pueden configurar **2, 4 u 8 opciones**
-(ocho por defecto). El juego toma las opciones de una lista de afinidad por animal.
-Primero incluye el hábitat principal y luego los secundarios documentados que
-quepan. Completa el panel con hábitats afines por el medio, la salinidad, el clima,
-la altitud y la vegetación, con ajustes para especies concretas. Cualquiera de los
-secundarios documentados que se muestren también permite completar el reto. Al
-pasar de 2 a 4 o a 8 opciones, se añaden hábitats a la misma lista de prioridades.
-Solo se mezcla su posición visual. Las opciones permanecen estables al pedir
-pistas, repetir, pausar o recargar la partida.
+Cada reto presenta el animal grande a la izquierda con **Pista**, **Repetir**,
+**Pausar** y **Salir** debajo; a la derecha, la guía con su frase y sus pictogramas, y
+los hábitats para elegir (2, 4 u 8, según Preferencias). La guía ofrece tres pistas
+progresivas por hábitat; tras una selección pendiente ofrece otra pista sin castigo.
+Al acertar, el hábitat elegido se marca con ✓ y **Continuar** pasa al siguiente reto.
+Pausar muestra al robot sentado en su banco; al terminar, el robot se despide y
+**Comenzar otra partida** vuelve a la portada. No hay puntos, límite de tiempo ni de
+intentos.
 
-Cada reto presenta el animal, una pregunta y los hábitats configurados. Las tarjetas usan paisajes
-realistas generados específicamente para ellas, con composición central y el nombre
-sobre un degradado oscuro. La guía ofrece tres pistas progresivas por hábitat, con pictogramas,
-con texto de apoyo y lectura en voz alta. Una selección pendiente ofrece una pista
-nueva automáticamente, sin castigo. **Pista** usa un foco; **Repetir** conserva el
-contenido, **Pausar** suspende el reto y **Salir** permite terminarlo.
-El cierre presenta al robot guía despidiéndose con su cuaderno; al pausar,
-el robot descansa sentado en un banco. Ambas imágenes mantienen el estilo de
-caricatura y la transparencia, sin mostrar el último animal. El progreso indica
-los retos realmente completados mediante texto y barra; **Comenzar otra partida**
-vuelve a la portada en silencio. **Reanudar** conserva el animal y el reto.
-No hay puntos competitivos ni límite de tiempo o intentos.
+Las opciones de hábitat salen de una lista de afinidad por animal: primero el
+principal, luego los secundarios documentados y después hábitats afines por medio,
+salinidad, clima, altitud y vegetación. Cualquier secundario documentado que se
+muestre también completa el reto. Las opciones no cambian al pedir pistas, repetir,
+pausar o recargar.
 
-En computadora, el tablero aprovecha el ancho y la altura disponibles, con un
-fondo continuo. El animal aparece grande y completo, con su nombre debajo; los
-cuatro controles quedan bajo él en dos filas. La guía y las tarjetas de hábitat se
-alinean a la derecha, con pictogramas y etiquetas más grandes. El tablero cabe
-sin scroll en las resoluciones probadas, incluidas 1024 × 768 y 1280 × 720.
-La cabecera, el logo y Preferencias quedan en el inicio; el pie se oculta durante
-el juego. En móvil se apila el contenido. Una ventana muy baja permite scroll
-para conservar imágenes, nombres y controles completos.
+### Pantalla completa, sin desplazamiento
 
-El catálogo web incluye seis animales de referencia por hábitat. Los recursos
-educativos activos son 288 ilustraciones de animales, 48 símbolos de hábitat,
-66 pictogramas nuevos de rasgos y 39 apoyos o controles del catálogo original.
-Explorar y Buscar tienen representaciones distintas. Los pictogramas de preguntas,
-pistas y controles se muestran sin recuadros blancos. Su comprensión CAA sigue
-pendiente de evaluación con usuarios de Kallpa.
+Cada pantalla ocupa exactamente la ventana en escritorio (1440 × 900), portátil
+(1280 × 720) y móvil (390 × 844): no hay que subir ni bajar. En ventanas muy bajas
+(zoom del 200 %, móvil apaisado o de 360 × 640) la página se desplaza como último
+recurso, sin aplastar tarjetas, imágenes ni controles.
 
-La portada recorre los 48 hábitats con paisajes propios en Full HD y el motivo principal hacia
-la derecha, y cambia de fondo cada diez segundos.
-Pausar actúa al pulsarlo; play o las flechas reanudan y reinician el intervalo.
-Preferencias y una pestaña inactiva suspenden temporalmente el carrusel.
-La interfaz se adapta a móvil y permite selección con teclado.
+### Identidad visual
+
+Azul noche con acento cian, titulares en serif y el fondo aprobado «Bosque de luz» en
+la portada (sin pictogramas en ella). Los pictogramas del juego van sin fondo. El
+movimiento es breve y opcional: **Reducir movimiento** en Preferencias o la
+preferencia del sistema lo desactivan.
+
+## Preferencias y voz
+
+**Preferencias** («Tu expedición · A tu manera.») se abre encima de cualquier pantalla:
+
+- **Idioma:** Español o Português (Brasil).
+- **La partida:** cuántos animales explorar (1 a 48, con − y +) y hábitats para elegir
+  (2, 4 u 8). Se aplican al comenzar.
+- **Voz:** *Una guía con voz*, la voz (**Marcela · ElevenLabs**), el ritmo de lectura
+  y **Probar voz**, que reproduce el mensaje que está en pantalla.
+- **Pantalla:** *Reducir movimiento*.
+- **Créditos visuales** con la versión del programa y **Volver al juego**.
+
+Se cierra con Volver al juego, la ×, Escape o tocando fuera.
+
+La voz de la guía son 350 grabaciones completas en español latinoamericano
+(`assets/voz/grabada/es-419`), una por mensaje: cubren los 353 mensajes del juego
+(tres comparten texto). Nunca se unen fragmentos y suena una sola voz a la vez.
+Funcionan sin Internet y sin descargar modelos. En portugués la voz está bloqueada
+hasta que existan grabaciones. La prueba `tests.test_voz_grabada_cobertura` juega
+todos los animales y comprueba que cada mensaje tenga su grabación.
+
+Las voces locales Piper y Kokoro y las del navegador siguen en el código y las usa la
+5.0 (`/v5/`); la 6.0 no las ofrece.
 
 ## Cierre técnico e instrucciones de uso
 
-Preferencias aprovecha el ancho de la pantalla: idioma y partida a la izquierda,
-voz y ritmo a la derecha. En escritorio se muestran juntos; en ventanas pequeñas
-se apilan y permiten desplazamiento para conservar los controles completos.
-Tab y Mayús+Tab recorren los controles del diálogo; Escape lo cierra.
-
 El [manual de usuario](docs/manual_usuario.md) explica el inicio y los controles.
-El [cierre técnico del Hito 3](docs/cierre_tecnico_hito3.md) reúne ejecución,
-casos de borde y límites de las comprobaciones. El informe, el video y la
+El [contrato de identidad 6.0](docs/interfaz/6.0/identidad.md) recoge las decisiones de
+diseño, y [accesibilidad y rendimiento](docs/interfaz/6.0/accesibilidad_rendimiento.md)
+las mediciones de Lighthouse. El [cierre técnico del Hito 3](docs/cierre_tecnico_hito3.md)
+reúne ejecución, casos de borde y límites de la versión 5.0. El informe, el video y la
 evaluación con usuarios son entregables distintos de estas verificaciones.
-
-La ampliación de los textos de audio y la integración de ElevenLabs quedan
-pendientes de definir el contenido. Las voces disponibles permanecen sin cambios.
 
 ## Ejecutar el juego
 
@@ -106,34 +99,13 @@ En Windows abre **iniciar_juego.bat**. En Linux/macOS ejecuta
 py -3 -m codigo.interfaz.iniciar
 ```
 
-En Linux/macOS utiliza `python3` en lugar de `py -3`. El iniciador prepara un
-entorno aislado con Python 3.12, los motores y los modelos, y abre
-http://127.0.0.1:8766. Puedes conservar tu Python 3.14: el juego prepara su propia
-versión compatible. Mantén la terminal abierta; Ctrl+C detiene el servidor.
+En Linux/macOS utiliza `python3` en lugar de `py -3`. El iniciador abre
+http://127.0.0.1:8766, que es **Zoonauta 6.0**. La versión 5.0 sigue en
+http://127.0.0.1:8766/v5/. Mantén la terminal abierta; Ctrl+C detiene el servidor.
 
-Esa dirección abre **Zoonauta 6.0** (portada «Bosque de luz», voz grabada de Zoonauta en
-español). La versión 5.0 sigue disponible en http://127.0.0.1:8766/v5/.
-
-La primera preparación requiere Internet y descarga unos **656 MB de modelos**,
-además de Python y las dependencias que falten. Las descargas se verifican por
-huella y tamaño. Si se interrumpen, vuelve a abrir el iniciador: conserva los
-archivos completos comprobados. Después puedes jugar y escuchar las voces locales sin
-conexión, claves de API ni cuentas adicionales.
-
-Si la preparación falla por la conexión o por restricciones del equipo, el juego
-abre con los recursos disponibles. Para omitir todas las instalaciones y descargas,
-abre **iniciar_sin_descargas.bat** en Windows, o ejecuta:
-
-```console
-py -3 -m codigo.interfaz.iniciar --sin-descargas
-```
-
-En Linux/macOS usa `python3`. Puedes elegir en Preferencias las voces locales ya
-completas o las voces compatibles del navegador. Si no hay ninguna disponible,
-puedes jugar con texto y pictogramas. Esta opción requiere Python, pero no los
-paquetes de voz. Para preparar las voces más adelante, abre `iniciar_juego.bat`
-con una conexión que permita las descargas. `--solo-preparar` sigue indicando un
-error si no logra completar la instalación.
+No se descarga ni se instala nada: la voz de la guía (las grabaciones de Zoonauta) viene
+en el repositorio y el servidor solo usa la biblioteca estándar de Python. Basta con
+tener Python 3.10 o posterior.
 
 Para usar otro puerto:
 
@@ -142,34 +114,16 @@ iniciar_juego.bat --puerto 8767
 ```
 
 Para actualizar una copia descargada como ZIP, detén el servidor, descarga el ZIP
-actual y extrae la nueva versión. Puedes copiar la carpeta `modelos_voz` de la
-versión anterior para evitar descargarla otra vez; el iniciador la comprobará.
-Un ZIP anterior no se actualiza automáticamente.
+actual y extrae la nueva versión.
 
-Antes de comenzar, abre **Preferencias → Idioma** en la portada para elegir Español o Português (Brasil). Cambian
-los controles, los 48 nombres de animales, los ocho hábitats, las etiquetas de
-pictogramas, las pistas, las confirmaciones y las voces. El selector conserva siete opciones
-locales por idioma y añade las voces compatibles de Microsoft y Google del navegador,
-agrupadas por proveedor; **Probar voz** reproduce una muestra. La selección
-manual se conserva por idioma mientras la página está abierta. Las voces del navegador
-no necesitan descargar modelos ni claves de API; algunas requieren Internet.
-Se aceptan las regiones latinoamericanas del español (incluidos es-419 y es-US)
-y pt-BR. No se presenta una voz es-ES como latinoamericana ni pt-PT como brasileña.
-Su disponibilidad depende del navegador y de las voces instaladas.
+**Idioma:** en Preferencias puedes elegir Español o Português (Brasil). Cambian los
+controles, los nombres de animales y hábitats, las etiquetas de pictogramas, las
+pistas y las confirmaciones. No se sustituye es-419 por es-ES ni pt-BR por pt-PT. La
+voz solo está en español por ahora.
 
-| Idioma | Motor | Opciones |
-|---|---|---|
-| Español | Piper | Claude (México), Ald (México, media y ligera), Daniela (Argentina) |
-| Español | Kokoro | Dora, Alex, Santa |
-| Português (Brasil) | Piper | Cadu, Edresson, Faber, Jeff |
-| Português (Brasil) | Kokoro | Dora, Alex, Santa |
-| Español latinoamericano | Microsoft / Google | Las voces regionales que expone el navegador |
-| Português (Brasil) | Microsoft / Google | Las voces pt-BR que expone el navegador |
-
-Ald ofrece dos variantes del mismo hablante. El ZIP contiene el catálogo y el
-instalador; los pesos grandes se descargan al preparar el juego. Consulta
-[la guía de voces](docs/interfaz/alternativas_voz.md) y
-[la guía de interfaz](docs/guia_interfaz.md).
+La 5.0 (`/v5/`) conserva las voces compatibles del navegador. Sus voces locales Piper y
+Kokoro ya no se instalan; su historia está en [la guía de voces](docs/interfaz/alternativas_voz.md)
+y [la guía de interfaz](docs/guia_interfaz.md).
 
 ## Inteligencia artificial y revisión
 
@@ -258,7 +212,13 @@ La prueba ejecuta el iniciador real con `--sin-descargas`, suprime únicamente l
 apertura de una ventana y comprueba partidas completas en ambas modalidades con
 2, 4 y 8 opciones. Requiere Python y una carpeta sin `.venv-voz` ni `modelos_voz`.
 
-La revisión local pasó **96 pruebas Python**, los ocho casos de aceptación de
+**Zoonauta 6.0 (2026-11-14):** pasan **106 pruebas Python** (incluida la cobertura de la
+voz grabada, 343 de 343 mensajes) y las pruebas de navegador de la 6.0: portada (6 casos
+con axe), recorrido (9), cuatro partidas completas con teclado sin desplazamiento (2, 4 y 8
+hábitats, español, portugués y 320 px) y voz (9). `python -m tests.comparar_versiones`
+compara la 5.0 y la 6.0 en seis tamaños de pantalla y mide desplazamiento y tarjetas aplastadas.
+
+Historial de la 5.0: la revisión local pasó **96 pruebas Python**, los ocho casos de aceptación de
 consola y **63 casos de navegador**: 20 de revisión general, seis del modo 2/4/8
 en ambos idiomas, cinco de voces controladas, 16 de Preferencias y teclado y
 16 del catálogo adaptable, incluidos ambos idiomas y conservación del foco.
@@ -287,8 +247,9 @@ Las rutas, prompts, transparencia y huellas de integridad se documentan en:
 - [Apoyos de preguntas y pistas, versión 3.8](datos/imagenes_apoyos_ia.json).
 - [Paisajes centrados de las tarjetas](datos/imagenes_paisajes_tarjetas_ia.json).
 
-La expedición usa [48 fondos panorámicos de portada](codigo/interfaz/web/fondos/catalogo)
-y 48 paisajes centrados para las tarjetas, además de sus pictogramas e ilustraciones del robot.
+La portada de la 6.0 usa el fondo «Bosque de luz» ([original](assets/portada/bosque-de-luz-ciervo.png)).
+La 5.0 usa [48 fondos panorámicos de portada](codigo/interfaz/web/fondos/catalogo). Las dos
+versiones comparten los 48 paisajes centrados de las tarjetas, los pictogramas y el robot.
 Los créditos de ARASAAC y de los SVG del prototipo se mantienen como antecedentes;
 esos recursos no son las imágenes activas. Las ilustraciones originales se ofrecen
 bajo CC BY-NC-SA 4.0. Consulta [créditos](docs/creditos_pictogramas.md),

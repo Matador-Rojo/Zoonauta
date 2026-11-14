@@ -1,11 +1,8 @@
-"""El fallo de preparación no debe bloquear el juego ni ocultar un fallo del servidor."""
-from pathlib import Path
+"""El iniciador solo abre el juego: no descarga ni instala nada (Zoonauta 6.0, 2026-11-14)."""
 import json
-import os
 import socket
 import subprocess
 import sys
-from tempfile import TemporaryDirectory
 import time
 import unittest
 from unittest.mock import patch
@@ -15,110 +12,71 @@ from codigo.interfaz import iniciar
 
 
 class Inicio(unittest.TestCase):
-    def invocar(self, argumentos, fallo=None):
-        with patch.object(sys, "argv", ["iniciar", *argumentos]), \
-                patch.object(iniciar, "preparar", return_value=Path("python-local"), side_effect=fallo) as preparar, \
-                patch.object(iniciar, "python_disponible", return_value=Path("python-disponible")), \
-                patch.object(iniciar, "ejecutar") as ejecutar:
+    def test_abre_el_servidor_con_el_python_actual_y_el_puerto_pedido(self):
+        with patch.object(sys, "argv", ["iniciar", "--puerto", "8767"]), \
+                patch.object(iniciar.subprocess, "run") as ejecutar:
             iniciar.main()
-            return preparar, ejecutar
+        orden = ejecutar.call_args.args[0]
+        self.assertEqual([sys.executable, "-m", "codigo.interfaz.servidor", "--abrir", "--puerto", "8767"], orden)
 
-    def test_descarga_fallida_abre_juego_y_conserva_puerto(self):
-        _, ejecutar = self.invocar(["--puerto", "8767"], subprocess.CalledProcessError(1, "preparar_voces"))
-        ejecutar.assert_called_once_with(Path("python-disponible"), "-m", "codigo.interfaz.servidor", "--abrir", "--puerto", 8767)
-
-    def test_instalacion_fallida_tambien_abre_juego(self):
-        _, ejecutar = self.invocar([], OSError("Sin conexión"))
-        self.assertEqual(Path("python-disponible"), ejecutar.call_args.args[0])
-
-    def test_sin_descargas_no_prepara_ni_instala(self):
-        preparar, ejecutar = self.invocar(["--sin-descargas"])
-        preparar.assert_not_called()
+    def test_fallo_del_servidor_se_informa_sin_reintentar(self):
+        with patch.object(sys, "argv", ["iniciar"]), \
+                patch.object(iniciar.subprocess, "run", side_effect=OSError("Puerto ocupado")) as ejecutar:
+            with self.assertRaises(SystemExit) as error:
+                iniciar.main()
+        self.assertEqual(1, error.exception.code)
         ejecutar.assert_called_once()
 
-    def test_preparacion_completa_utiliza_entorno_local(self):
-        _, ejecutar = self.invocar([])
-        self.assertEqual(Path("python-local"), ejecutar.call_args.args[0])
-
-    def test_solo_preparar_no_abre_juego(self):
-        _, ejecutar = self.invocar(["--solo-preparar"])
-        ejecutar.assert_not_called()
-
-    def test_solo_preparar_fallido_sigue_informando_error(self):
-        with self.assertRaises(SystemExit) as error:
-            self.invocar(["--solo-preparar"], OSError("Sin conexión"))
-        self.assertEqual(1, error.exception.code)
-
-    def test_opciones_contradictorias_se_rechazan(self):
-        with self.assertRaises(SystemExit) as error:
-            self.invocar(["--solo-preparar", "--sin-descargas"])
-        self.assertEqual(2, error.exception.code)
-
-    def test_fallo_del_servidor_no_se_reintenta(self):
-        with patch.object(sys, "argv", ["iniciar", "--sin-descargas"]), \
-                patch.object(iniciar, "python_disponible", return_value=Path("python-disponible")), \
-                patch.object(iniciar, "ejecutar", side_effect=OSError("Puerto ocupado")) as ejecutar:
-            with self.assertRaises(SystemExit):
+    def test_no_quedan_opciones_de_descarga(self):
+        with patch.object(sys, "argv", ["iniciar", "--sin-descargas"]), patch.object(iniciar.subprocess, "run"):
+            with self.assertRaises(SystemExit) as error:
                 iniciar.main()
-            ejecutar.assert_called_once()
+        self.assertEqual(2, error.exception.code, "--sin-descargas ya no existe")
 
-    def test_sin_entorno_utiliza_python_actual(self):
-        with TemporaryDirectory() as carpeta, patch.object(iniciar, "RAIZ_PROYECTO", Path(carpeta)):
-            self.assertEqual(Path(sys.executable), iniciar.python_disponible())
+    def test_servidor_real_abre_la_6_0_con_su_voz_grabada(self):
+        # Arranca el iniciador de verdad (sin abrir el navegador) y comprueba el juego.
+        with socket.socket() as reserva:
+            reserva.bind(("127.0.0.1", 0))
+            puerto = reserva.getsockname()[1]
+        # Proceso hijo: el iniciador real, con el navegador desactivado y el servidor en el
+        # mismo proceso (en lugar de un subprocess), para poder terminarlo al final.
+        programa = """
+import runpy, sys
+from unittest.mock import patch
+import codigo.interfaz.iniciar as iniciar
 
-    def test_con_entorno_reutiliza_python_local(self):
-        with TemporaryDirectory() as carpeta, patch.object(iniciar, "RAIZ_PROYECTO", Path(carpeta)):
-            python = Path(carpeta) / ".venv-voz" / ("Scripts/python.exe" if iniciar.os.name == "nt" else "bin/python")
-            python.parent.mkdir(parents=True)
-            python.touch()
-            self.assertEqual(python, iniciar.python_disponible())
+def servidor_en_este_proceso(orden, **_):
+    sys.argv = ["servidor", *orden[3:]]
+    runpy.run_module("codigo.interfaz.servidor", run_name="__main__")
 
-    def test_servidor_real_abre_sin_modelos_tras_fallo_o_sin_descargas(self):
-        # Usa el Python de las pruebas y una carpeta vacía para simular un equipo
-        # que no tiene modelos; no instala paquetes ni abre ventanas del navegador.
-        with TemporaryDirectory() as carpeta:
-            for opcion in ("", "--sin-descargas"):
-                with self.subTest(opcion=opcion), socket.socket() as reserva:
-                    reserva.bind(("127.0.0.1", 0))
-                    puerto = reserva.getsockname()[1]
-                    reserva.close()
-                    programa = (
-                        "from unittest.mock import patch\nfrom pathlib import Path\nimport sys, runpy\n"
-                        "from codigo.interfaz import iniciar\n"
-                        "def abrir_servidor(*argumentos):\n"
-                        "    sys.argv = ['servidor', *map(str, argumentos[3:])]\n"
-                        "    runpy.run_module('codigo.interfaz.servidor', run_name='__main__')\n"
-                        "patch('webbrowser.open').start()\n"
-                        "patch.object(iniciar, 'ejecutar', side_effect=abrir_servidor).start()\n"
-                        "patch.object(iniciar, 'preparar', side_effect=OSError('Sin conexion')).start()\n"
-                        "patch.object(iniciar, 'python_disponible', return_value=Path(sys.executable)).start()\n"
-                        "iniciar.main()"
-                    )
-                    proceso = subprocess.Popen(
-                        [sys.executable, "-c", programa, "--puerto", str(puerto), *([opcion] if opcion else [])],
-                        cwd=iniciar.RAIZ_PROYECTO,
-                        env={**os.environ, "ZOONAUTA_VOCES_DIR": carpeta},
-                        stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                    )
-                    try:
-                        limite = time.monotonic() + 15
-                        while True:
-                            try:
-                                with urlopen(f"http://127.0.0.1:{puerto}/api/vista", timeout=1) as respuesta:
-                                    vista = json.load(respuesta)
-                                break
-                            except OSError:
-                                if proceso.poll() is not None or time.monotonic() >= limite:
-                                    self.fail("El iniciador no abrió el servidor sin modelos de voz.")
-                                time.sleep(0.1)
-                        self.assertEqual(288, len(vista["catalogo_animales"]))
-                        self.assertEqual(48, len(vista["opciones_habitat"]))
-                        with urlopen(f"http://127.0.0.1:{puerto}/api/voz/config", timeout=2) as respuesta:
-                            voces = json.load(respuesta)["voces"]
-                        self.assertEqual(14, len(voces))
-                        self.assertFalse(any(v["disponible"] for v in voces))
-                        with urlopen(f"http://127.0.0.1:{puerto}/animales/A01.webp", timeout=2) as respuesta:
-                            self.assertEqual(200, respuesta.status)
-                    finally:
-                        proceso.terminate()
-                        proceso.communicate(timeout=5)
+patch("webbrowser.open").start()
+patch.object(iniciar.subprocess, "run", servidor_en_este_proceso).start()
+sys.argv = ["iniciar", "--puerto", PUERTO]
+iniciar.main()
+""".replace("PUERTO", repr(str(puerto)))
+        proceso = subprocess.Popen([sys.executable, "-c", programa], cwd=iniciar.RAIZ_PROYECTO,
+                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try:
+            limite = time.monotonic() + 20
+            while True:
+                try:
+                    with urlopen(f"http://127.0.0.1:{puerto}/api/vista", timeout=1) as respuesta:
+                        vista = json.load(respuesta)
+                    break
+                except OSError:
+                    if proceso.poll() is not None or time.monotonic() >= limite:
+                        self.fail("El iniciador no abrió el servidor: " + proceso.stderr.read().decode(errors="replace")[-500:])
+                    time.sleep(0.1)
+            self.assertEqual(288, len(vista["catalogo_animales"]))
+            with urlopen(f"http://127.0.0.1:{puerto}/", timeout=2) as respuesta:
+                self.assertIn(b"/v6/assets/", respuesta.read(), "«/» sirve la 6.0")
+            with urlopen(f"http://127.0.0.1:{puerto}/api/voz/config", timeout=2) as respuesta:
+                grabadas = json.load(respuesta)["grabadas"]
+            self.assertGreaterEqual(grabadas["es"], 350, "la voz grabada de Zoonauta está disponible")
+        finally:
+            proceso.terminate()
+            proceso.communicate(timeout=5)
+
+
+if __name__ == "__main__":
+    unittest.main()

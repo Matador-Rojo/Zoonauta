@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "version_proyecto": "5.0.0",
+  "version_proyecto": "6.0.0",
   "fecha_preparacion": "2026-10-18",
   "paquete": "poc_interfaz_animales_habitats_v3",
   "derivado_del_paquete": "poc_aprendizaje_animales_habitats_v2",
@@ -146,8 +146,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 17710,
-      "sha256": "fa571b134ba1a186bcc4387fd16db080742eb656c78d33a162f3d35033799718"
+      "bytes": 14590,
+      "sha256": "4e78e3f414e0d61f5ae86e88b01166855c5a7a026332a46ddc4ebbb614f4307e"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -736,8 +736,8 @@
     },
     {
       "ruta": "codigo/interfaz/iniciar.py",
-      "bytes": 3645,
-      "sha256": "25896203a0f322e6d9aa8bff5ca0070d986712f7419e62fe2a8778074766d933"
+      "bytes": 1054,
+      "sha256": "730bef364ef36d4162d21a813564af166dabbe214350f830b1765bc321dd6eb1"
     },
     {
       "ruta": "codigo/interfaz/preparar_recursos.py",
@@ -747,7 +747,7 @@
     {
       "ruta": "codigo/interfaz/preparar_voces.py",
       "bytes": 3546,
-      "sha256": "130d650b9cf5e828bcb940c07ccbc8f53d66160df2cf3180d7a4122994474da0"
+      "sha256": "3f816d8ed8ebebd8a7f33e8d619c0f15e59e5ac57a03c0fe07380c0233c2f677"
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 17339,
-      "sha256": "4300b28930a346132a4b246c39eb06a2718d174989b42635744ce060d0d6f5ba"
+      "bytes": 17357,
+      "sha256": "4d932b3cc4e7e98245bf3761bb74e07d8c0d05658b359d4abf6de2c6b17e9509"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -2551,8 +2551,8 @@
     },
     {
       "ruta": "docs/manual_usuario.md",
-      "bytes": 3556,
-      "sha256": "317965c6856ac8208715f584f5377510df54739a0659df2fd43cbc97713fe1b2"
+      "bytes": 3663,
+      "sha256": "4d1bbe4c3195e586e01076c64ada06cb8f9d7b1d6450ded8a694df86feb3c0aa"
     },
     {
       "ruta": "docs/resultados/arbol_id3.json",
@@ -2590,16 +2590,6 @@
       "sha256": "afe82eefc2dd680086264f1a00b20c19aac1c189edd34dbd3e1b3bdbd3dfc301"
     },
     {
-      "ruta": "iniciar_sin_descargas.bat",
-      "bytes": 82,
-      "sha256": "79f6291f0520c027187cccd57e1f8f74f3817b4c9d181174d644dae8b01f5f93"
-    },
-    {
-      "ruta": "requirements_voz.txt",
-      "bytes": 667,
-      "sha256": "9e54e3b8775197aa9bf514912e88f48a7769b1005d457a8679845bad9ae34e4c"
-    },
-    {
       "ruta": "tests/__init__.py",
       "bytes": 35,
       "sha256": "6c804c1b591dc704778b909cf3e409b376f07de888b11033754492f3ec227ad6"
@@ -2631,8 +2621,8 @@
     },
     {
       "ruta": "tests/test_inicio.py",
-      "bytes": 6704,
-      "sha256": "9ea156a04636d34f067ecfc882e5dd6e3d160860835c77808b2fa25f26a31b44"
+      "bytes": 3769,
+      "sha256": "2bbd8a5886e6fdcafa99110034b5c83e12b3485c6b0866155aeb16a53ff42e51"
     },
     {
       "ruta": "tests/test_interfaz.py",
@@ -2666,8 +2656,8 @@
     },
     {
       "ruta": "tests/verificar_copia_limpia.py",
-      "bytes": 6340,
-      "sha256": "21ba0aa92f6878b0eb9533be720437d41bd8753eb7f9034d8faff427f747c7f6"
+      "bytes": 6321,
+      "sha256": "57f1226a991bfcb7387c508ced09b3691bf177f615305f6b903b2588633c98db"
     },
     {
       "ruta": "tests/verificar_hito2.cjs",
@@ -5231,13 +5221,13 @@
     },
     {
       "ruta": "frontend/package-lock.json",
-      "bytes": 202055,
-      "sha256": "8b17632dccc44c39b892286591f7b41c92e522aa5d50b8352f0a32016b640ab4"
+      "bytes": 202035,
+      "sha256": "c5bfec2306a32a3de3e95cf50e3662d95c0b9055cf8a105230c681d3ba476ece"
     },
     {
       "ruta": "frontend/package.json",
-      "bytes": 1398,
-      "sha256": "c091d8b7675c3871c233f5cb3e42bbd1b8b4f7102259393c8ce822a956e4f5ae"
+      "bytes": 1388,
+      "sha256": "562e4a9350bbc465fd707cad23d43042a9b5fb292059e94dfe7abab198660ac0"
     },
     {
       "ruta": "frontend/src/App.tsx",
@@ -5286,8 +5276,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
-      "bytes": 13589,
-      "sha256": "1c22284c5a2ebeeaf79a7ddb19f224ba72613f641af45a32d1d46b36887dc194"
+      "bytes": 13591,
+      "sha256": "59f17f7083c60f7a736492bebfe36790fc6c695f7c41e9f2d81dd5d368783532"
     },
     {
       "ruta": "frontend/src/componentes/Reto.tsx",
@@ -5387,7 +5377,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 1268,
-      "sha256": "75284011c32de610bd574644129499c275804566da0ef71349d4cbd9913d7dd9"
+      "sha256": "a405581eea39e002c2881c843338aba9a7ffcd2593184c0b2ce513bff93924b1"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -9820,9 +9810,29 @@
       "sha256": "0bae13364569dab056337a088a0412e32a9a305f6dae37226d1b17c785b5cbfa"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-DhmEaATr.js",
-      "bytes": 248052,
-      "sha256": "be6ddd3518ccd8592b3e50b03f88792da0ed1788570f0a110864ca9145f013b3"
+      "ruta": "codigo/interfaz/web6/assets/index-BiPzNOaf.js",
+      "bytes": 248054,
+      "sha256": "d8f5b346f3a8f28e3a9c096366924568cac3870f1e6d317a2c68fa4a3ce51565"
+    },
+    {
+      "ruta": "docs/interfaz/6.0/portada_bosque_de_luz.webp",
+      "bytes": 123322,
+      "sha256": "3962bf9d63298373457f74b1bc97a0a2f6504ddaf8c7968b79151af29efa7890"
+    },
+    {
+      "ruta": "docs/interfaz/6.0/tablero.webp",
+      "bytes": 201740,
+      "sha256": "a3c417d8d1608979397041e8bf9aca19cc2078046c3a554b2e1b16390361be2a"
+    },
+    {
+      "ruta": "docs/interfaz/6.0/identidad.md",
+      "bytes": 2449,
+      "sha256": "dd8bc045c43239b7af6ef36e84ae8312c5de43942cfa37697f12baae3c31cefc"
+    },
+    {
+      "ruta": "docs/interfaz/6.0/pantallas.md",
+      "bytes": 5532,
+      "sha256": "26bfc88ac1829a660b3d66347f8ab44e7145c7e8e4b57884d9c86c3f8c0e2d32"
     }
   ],
   "nombre_proyecto": "Zoonauta",
