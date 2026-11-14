@@ -130,6 +130,23 @@ def extraer(banco: BancoDatos | None = None) -> list[Locucion]:
                     "datos/mensajes_sistema.json#MSG_VALIDA; datos/expedicion/animales.json#secundarios",
                     g.mensaje("MSG_VALIDA", animal, h, contexto).texto_voz)
 
+    # Ayudas breves por rasgo del agente 6.0 (datos/expedicion/atributos_habitats.json).
+    # Van al final para que un texto idéntico a una pista ya grabada reutilice esa grabación.
+    # El agente solo las usa cuando existen sus dos grabaciones (sola y tras el apoyo).
+    for ayuda_id, ayuda in banco.ayudas_rasgo.items():
+        guias = ", ".join(sorted(h for h, rasgos in banco.rasgos_habitat.items()
+                                 if rasgos.get(ayuda["atributo"], ("",))[0] == ayuda["valor"]))
+        plantilla = {"id": ayuda_id, "texto": ayuda["texto"], "pictogramas": ayuda["pictogramas"],
+                     "nivel": 1, "variante_id": "RASGO"}
+        agregar(ayuda_id, ayuda_id, "pista_rasgo", "variable", "P2",
+                f"Agente 6.0, al pulsar Pista: rasgo «{ayuda['atributo']} = {ayuda['valor']}» "
+                f"de {guias}.", "datos/expedicion/atributos_habitats.json",
+                g.ayuda(plantilla, "A01").texto_voz, ayuda["texto_pt"])
+        agregar(f"MSG_APOYO_AUTO__{ayuda_id}", f"MSG_APOYO_AUTO+{ayuda_id}", "apoyo_con_pista_rasgo",
+                "dinamico", "P2", f"Agente 6.0, al elegir un hábitat no confirmado; sigue {ayuda_id}.",
+                "datos/mensajes_sistema.json#MSG_APOYO_AUTO; datos/expedicion/atributos_habitats.json",
+                g.ayuda(plantilla, "A01", apoyo).texto_voz)
+
     for n, loc in enumerate(lista, 1):
         loc.orden = n
         loc.notas = {i: revisar_pronunciacion(t, i) for i, t in loc.textos.items()}
@@ -263,14 +280,51 @@ def verificar_audios(tabla: list[dict], carpeta: Path = CARPETA_AUDIO) -> dict:
             "sobran_o_mal_nombrados": sobran, "demasiado_pequenos": pequenos}
 
 
+PENDIENTES = CARPETA_DOCS / "textos_pendientes_es-419.txt"
+
+
+def pendientes(tabla: list[dict], idioma: str = "es-419", carpeta: Path = CARPETA_AUDIO) -> list[dict]:
+    """Filas que hay que grabar y cuyo audio todavía no está en la carpeta del idioma."""
+    return [f for f in tabla if f["idioma"] == idioma and f["grabar"] == "si"
+            and not any((carpeta / (f["archivo"].rsplit(".", 1)[0] + ext)).is_file() for ext in EXTENSIONES)]
+
+
+def escribir_pendientes(filas_pendientes: list[dict], ruta: Path = PENDIENTES) -> None:
+    """Lista para grabar: el nombre exacto del MP3 en una línea y el texto en la siguiente."""
+    total = sum(f["caracteres"] for f in filas_pendientes)
+    cabecera = [
+        "# Zoonauta 6.0 · mensajes nuevos pendientes de grabar en español (es-419)",
+        "# Voz: Marcela (ElevenLabs), el mismo modelo y ajustes que las 350 grabaciones existentes.",
+        "# Generado con: PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes",
+        "# Formato: una línea con el nombre exacto del archivo MP3 y, en la siguiente, el texto",
+        "# completo que se pronuncia (copiar tal cual). Las líneas que empiezan con # son comentarios.",
+        "# Cada audio es el mensaje completo: no partir ni unir audios. Textos redactados con IA a partir",
+        "# de pistas revisadas: necesitan revisión humana antes de gastar créditos.",
+        "# Al terminar, copiar los MP3 en assets/voz/grabada/es-419/ (ver docs/voz/elevenlabs/README.md).",
+        f"# Total: {len(filas_pendientes)} mensajes · {total} caracteres",
+        "",
+    ]
+    cuerpo = []
+    for f in filas_pendientes:
+        cuerpo += [f["archivo"].split("/", 1)[1], f["texto"], ""]
+    ruta.write_text("\n".join(cabecera + cuerpo), encoding="utf-8", newline="\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--verificar", action="store_true", help="solo comparar con assets/voz/grabada")
+    parser.add_argument("--pendientes", action="store_true",
+                        help=f"escribir {PENDIENTES.name} con los mensajes es-419 sin grabación")
     args = parser.parse_args()
     tabla = filas(extraer(), leer_csv())
     if args.verificar:
         print(json.dumps(verificar_audios(tabla), ensure_ascii=False, indent=2))
+        return
+    if args.pendientes:
+        lista = pendientes(tabla)
+        escribir_pendientes(lista)
+        print(f"{len(lista)} mensajes, {sum(f['caracteres'] for f in lista)} caracteres -> {PENDIENTES}")
         return
     escribir(tabla)
     print(json.dumps(resumen(tabla)["por_idioma"], ensure_ascii=False, indent=2))

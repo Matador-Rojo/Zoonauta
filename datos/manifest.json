@@ -730,8 +730,8 @@
     },
     {
       "ruta": "codigo/interfaz/idiomas.py",
-      "bytes": 4040,
-      "sha256": "eb324c6c187d085ea2baa6eb1ab0e674286d7d19b777b5a6637fd40bdd171158"
+      "bytes": 4237,
+      "sha256": "a197cdd480ca151fbb6ffd417a90c3c56aa9d49c5c174c2c651a3105d4f859cb"
     },
     {
       "ruta": "codigo/interfaz/iniciar.py",
@@ -745,13 +745,13 @@
     },
     {
       "ruta": "codigo/interfaz/servicio.py",
-      "bytes": 8784,
-      "sha256": "b683148d7b6d6ab5b79b4f506e77e465d9ce87050fdff49f10412b664ce6bbee"
+      "bytes": 9467,
+      "sha256": "d671f47278a474e3a493bbea2e32f4d66930634d4c458cbc036b483e5e58487c"
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 15525,
-      "sha256": "120c854a8abab52eea6dbf6aece036350c56e92ebe31b437be18d3e316a615e3"
+      "bytes": 15997,
+      "sha256": "45bdb663598150111c2d5a462fae595518a3253a6d7e201aac57aab35d621636"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
@@ -875,8 +875,8 @@
     },
     {
       "ruta": "codigo/nucleo/gestor.py",
-      "bytes": 22190,
-      "sha256": "87c734cd628ed463bb424317ee14c6a5632b65d8b362299ad0399891b6bdf983"
+      "bytes": 23479,
+      "sha256": "cb7a7168ddf031790cb8cccb4b5141a679b28e1a0239e84bbb04bce1fd549703"
     },
     {
       "ruta": "codigo/nucleo/registro.py",
@@ -2655,8 +2655,8 @@
     },
     {
       "ruta": "codigo/nucleo/catalogo.py",
-      "bytes": 3819,
-      "sha256": "32d719bd78e3814f5d9f3fd1fb14ab1ed709afff360607059c0673ac3cd39c8e"
+      "bytes": 6088,
+      "sha256": "ccf3a1c2e26e2c99b8aee04eeba02b24de23db340f35c1083b7902b70421c70c"
     },
     {
       "ruta": "tests/test_catalogo_ampliado.py",
@@ -9832,6 +9832,21 @@
       "ruta": "tests/verificar_voz_v5.cjs",
       "bytes": 4455,
       "sha256": "ad24bfdbcd5cb5fd9b8c49499223bf2db6e5dd0ef14fcff1f18f631042d8ad14"
+    },
+    {
+      "ruta": "codigo/motores/agente.py",
+      "bytes": 16892,
+      "sha256": "930a431025d085dbb33817fa0a5f0e626f11e1caa0ba3e3bca34dc3602a58eb1"
+    },
+    {
+      "ruta": "datos/expedicion/atributos_habitats.json",
+      "bytes": 18885,
+      "sha256": "857ba1093b7d5ccd569b486e8b01d95a39c32c7206c55ad37f7690b8dbfc9e8e"
+    },
+    {
+      "ruta": "tests/test_agente6.py",
+      "bytes": 12164,
+      "sha256": "dac0cf1b86fbfbea8c2a6d8e1e5ce6867e903780a90a24a05a871f5d5c4cf7c6"
     }
   ],
   "nombre_proyecto": "Zoonauta",

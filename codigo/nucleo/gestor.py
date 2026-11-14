@@ -7,6 +7,7 @@ from dataclasses import asdict
 from random import Random
 from uuid import uuid4
 
+from codigo.motores.agente import MOTORES_6, POLITICA_AGENTE, MotorAgente, MotorID3Opciones
 from codigo.motores.guia import MotorGuia, MotorPistas
 from codigo.nucleo.datos import BancoDatos
 from codigo.nucleo.estado import Estado, Evento, PAUSABLES, Respuesta, Salida, TERMINALES
@@ -18,7 +19,8 @@ class GestorPartida:
     def __init__(self, banco: BancoDatos, retos: int | None = None, politica: str | None = None,
                  orden_escenarios: list[str] | None = None, origen: str = "CONSOLA_MANUAL",
                  sesion_id: str | None = None, registro: Registro | None = None,
-                 motor: MotorGuia | MotorPistas | None = None, traza_completa: bool = True,
+                 motor: MotorGuia | MotorPistas | MotorAgente | MotorID3Opciones | None = None,
+                 traza_completa: bool = True,
                  ayuda_en_pendiente: bool = False, cantidad_opciones: int = 8,
                  semilla_opciones: int | str | None = None):
         self.banco = banco
@@ -44,9 +46,13 @@ class GestorPartida:
         self.sesion_id = sesion_id or f"S-{uuid4().hex}"
         self.estado = Estado()
         if politica is None:
-            politica = MotorPistas.politica if banco.ampliado else "ID3"
+            politica = motor.politica if motor is not None else (
+                POLITICA_AGENTE if banco.ampliado else "ID3")
         if motor is None:
-            motor = MotorPistas(banco) if banco.ampliado else MotorGuia(banco, politica)
+            if banco.ampliado:
+                motor = MOTORES_6[politica](banco) if politica in MOTORES_6 else MotorPistas(banco)
+            else:
+                motor = MotorGuia(banco, politica)
         self.motor = motor
         if self.motor.banco is not banco or self.motor.politica != politica:
             raise ValueError("El motor debe compartir el banco y la política del gestor.")
@@ -276,13 +282,27 @@ class GestorPartida:
                prefijo: Respuesta | None = None,
                resultado_cierre: int | None = 0) -> tuple[Respuesta, dict]:
         s = self.estado
-        nivel, motivo_nivel = self._nivel_ayuda(motivo_cierre)
-        # Cerrar primero permite que el entrenamiento externo incorpore y=0
-        # antes de elegir la nueva variante. La evaluación no actualiza parámetros.
-        self._cerrar_observacion(resultado_cierre, motivo_cierre, evento)
-        usadas = [a["variante_id"] for a in s.ayudas_reto if a["nivel"] == nivel]
-        plantilla, nodo_id, traza = self.motor.decidir(s.habitat_guia_id, nivel,
-            s.repeticion_previa, s.variantes_anteriores, usadas=usadas)
+        if hasattr(self.motor, "decidir_reto"):
+            # Agente 6.0: decide con el reto completo (opciones visibles, elecciones,
+            # ayudas ya mostradas y Repetir); el nivel lo fija la ayuda elegida.
+            self._cerrar_observacion(resultado_cierre, motivo_cierre, evento)
+            plantilla, nodo_id, traza = self.motor.decidir_reto({
+                "animal_id": s.animal_id, "habitat_guia_id": s.habitat_guia_id,
+                "opciones": list(s.opciones_habitat),
+                "confirmados": [h for h in s.opciones_habitat
+                                if self.banco.evaluar(s.animal_id, h)["estado"] == "VALIDA"],
+                "elecciones": copy.deepcopy(s.elecciones_reto),
+                "mostradas": [a["contenido_id"] for a in s.ayudas_reto],
+                "repeticion_previa": s.repeticion_previa, "motivo": motivo_cierre})
+            nivel, motivo_nivel = plantilla["nivel"], traza["regla"]
+        else:
+            nivel, motivo_nivel = self._nivel_ayuda(motivo_cierre)
+            # Cerrar primero permite que el entrenamiento externo incorpore y=0
+            # antes de elegir la nueva variante. La evaluación no actualiza parámetros.
+            self._cerrar_observacion(resultado_cierre, motivo_cierre, evento)
+            usadas = [a["variante_id"] for a in s.ayudas_reto if a["nivel"] == nivel]
+            plantilla, nodo_id, traza = self.motor.decidir(s.habitat_guia_id, nivel,
+                s.repeticion_previa, s.variantes_anteriores, usadas=usadas)
         traza["adaptacion_reto"] = {"regla": motivo_nivel,
             "elecciones": copy.deepcopy(s.elecciones_reto), "nivel_anterior": s.nivel,
             "nivel_elegido": nivel, "cantidad_opciones": self.cantidad_opciones}

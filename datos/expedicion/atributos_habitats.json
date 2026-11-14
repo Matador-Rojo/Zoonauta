@@ -1,0 +1,711 @@
+{
+  "schema_version": "1.0.0",
+  "fecha": "2026-11-14",
+  "descripcion": "Rasgos de los 48 hábitats para el agente de la 6.0. Cada valor procede de una pista ya revisada del mismo hábitat (campo habitats: hábitat -> pista que lo dice). No se añade información biológica nueva. Los valores de un mismo atributo se tratan como excluyentes; un hábitat sin valor en un atributo es desconocido y nunca se descarta por ese atributo.",
+  "revision_humana": {
+    "valores": "PENDIENTE: confirmar la lectura de cada pista y que los valores de cada atributo son excluyentes.",
+    "textos_es": "PENDIENTE: frases nuevas de las ayudas por rasgo (redactadas con IA).",
+    "textos_pt": "PENDIENTE: traducción pt-BR propuesta con IA; revisar en pt-BR, no pt-PT."
+  },
+  "atributos": [
+    {
+      "id": "temperatura",
+      "nombre": "Temperatura",
+      "valores": [
+        {
+          "id": "calido",
+          "habitats": {
+            "H01": "AY_H01_L1",
+            "H02": "AY_H02_L1",
+            "H08": "AY_H08_L1",
+            "H09": "AY_H09_L1",
+            "H14": "AY_H14_L1",
+            "H17": "AY_H17_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_CALIDO",
+            "texto": "Busca un lugar cálido.",
+            "texto_pt": "Procure um lugar quente.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_CALOR"
+              }
+            ]
+          }
+        },
+        {
+          "id": "templado",
+          "habitats": {
+            "H04": "AY_H04_L1",
+            "H05": "AY_H05_L1",
+            "H11": "AY_H11_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_TEMPLADO",
+            "texto": "Busca un lugar de clima templado.",
+            "texto_pt": "Procure um lugar de clima temperado.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_CLIMA_TEMPLADO"
+              }
+            ]
+          }
+        },
+        {
+          "id": "frio",
+          "habitats": {
+            "H06": "AY_H06_L1",
+            "H12": "AY_H12_L1",
+            "H18": "AY_H18_L1",
+            "H22": "AY_H22_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_FRIO",
+            "texto": "Busca un lugar frío.",
+            "texto_pt": "Procure um lugar frio.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_PAISAJE_FRIO"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "agua",
+      "nombre": "Tipo de agua",
+      "valores": [
+        {
+          "id": "dulce",
+          "habitats": {
+            "H08": "AY_H08_L1",
+            "H19": "AY_H19_L1",
+            "H23": "AY_H23_L1",
+            "H25": "AY_H25_L1",
+            "H26": "AY_H26_L1",
+            "H27": "AY_H27_L1",
+            "H31": "AY_H31_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_AGUA_DULCE",
+            "texto": "Busca un lugar con agua dulce.",
+            "texto_pt": "Procure um lugar com água doce.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_AGUA_DULCE"
+              }
+            ]
+          }
+        },
+        {
+          "id": "salada",
+          "habitats": {
+            "H22": "AY_H22_L1",
+            "H32": "AY_H32_L2",
+            "H33": "AY_H33_L1",
+            "H34": "AY_H34_L1",
+            "H35": "AY_H35_L1",
+            "H36": "AY_H36_L1",
+            "H37": "AY_H37_L1",
+            "H38": "AY_H38_L1",
+            "H39": "AY_H39_L1",
+            "H40": "AY_H40_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_AGUA_SALADA",
+            "texto": "Busca un lugar con agua salada.",
+            "texto_pt": "Procure um lugar com água salgada.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_AGUA_SALADA"
+              }
+            ]
+          }
+        },
+        {
+          "id": "salobre",
+          "habitats": {
+            "H41": "AY_H41_L1",
+            "H42": "AY_H42_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_AGUA_SALOBRE",
+            "texto": "Busca un lugar donde se mezclan agua dulce y salada.",
+            "texto_pt": "Procure um lugar onde a água doce se mistura com a salgada.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R55"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "humedad",
+      "nombre": "Humedad del clima",
+      "valores": [
+        {
+          "id": "humedo",
+          "habitats": {
+            "H01": "AY_H01_L1",
+            "H03": "AY_H03_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_HUMEDO",
+            "texto": "Busca un lugar húmedo.",
+            "texto_pt": "Procure um lugar úmido.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_HUMEDAD"
+              }
+            ]
+          }
+        },
+        {
+          "id": "seco",
+          "habitats": {
+            "H17": "AY_H17_L1",
+            "H18": "AY_H18_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_MUY_SECO",
+            "texto": "Busca un lugar muy seco.",
+            "texto_pt": "Procure um lugar muito seco.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_SECO"
+              }
+            ]
+          }
+        },
+        {
+          "id": "epoca_seca",
+          "habitats": {
+            "H02": "AY_H02_L1",
+            "H09": "AY_H09_L2",
+            "H13": "AY_H13_L2",
+            "H14": "AY_H14_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_EPOCA_SECA",
+            "texto": "Busca un lugar con una época seca.",
+            "texto_pt": "Procure um lugar com uma estação seca.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R02"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "vegetacion",
+      "nombre": "Plantas que dominan",
+      "valores": [
+        {
+          "id": "pasto",
+          "habitats": {
+            "H09": "AY_H09_L2",
+            "H10": "AY_H10_L1",
+            "H11": "AY_H11_L1",
+            "H16": "AY_H16_L1",
+            "H43": "AY_H43_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_PASTO",
+            "texto": "Busca un lugar con mucho pasto.",
+            "texto_pt": "Procure um lugar com muito capim.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_PASTO_ABUNDANTE"
+              }
+            ]
+          }
+        },
+        {
+          "id": "arbustos",
+          "habitats": {
+            "H13": "AY_H13_L1",
+            "H14": "AY_H14_L1",
+            "H15": "AY_H15_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_ARBUSTOS",
+            "texto": "Busca un lugar con arbustos.",
+            "texto_pt": "Procure um lugar com arbustos.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R15"
+              }
+            ]
+          }
+        },
+        {
+          "id": "pocas_plantas",
+          "habitats": {
+            "H17": "AY_H17_L2",
+            "H18": "AY_H18_L2",
+            "H20": "AY_H20_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_POCAS_PLANTAS",
+            "texto": "Busca un lugar con pocas plantas.",
+            "texto_pt": "Procure um lugar com poucas plantas.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_POCAS_PLANTAS"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "paisaje",
+      "nombre": "Paisaje",
+      "valores": [
+        {
+          "id": "bosque",
+          "habitats": {
+            "H01": "AY_H01_L1",
+            "H02": "AY_H02_L1",
+            "H03": "AY_H03_L1",
+            "H04": "AY_H04_L1",
+            "H05": "AY_H05_L1",
+            "H06": "AY_H06_L1",
+            "H07": "AY_H07_L1",
+            "H08": "AY_H08_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_ARBOLES",
+            "texto": "Busca un lugar con muchos árboles.",
+            "texto_pt": "Procure um lugar com muitas árvores.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_MUCHOS_ARBOLES"
+              }
+            ]
+          }
+        },
+        {
+          "id": "abierto",
+          "habitats": {
+            "H09": "AY_H09_L1",
+            "H10": "AY_H10_L1",
+            "H11": "AY_H11_L1",
+            "H12": "AY_H12_L1",
+            "H16": "AY_H16_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_ABIERTO",
+            "texto": "Busca un lugar abierto.",
+            "texto_pt": "Procure um lugar aberto.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_LUGAR_ABIERTO"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "tipo_arbol",
+      "nombre": "Tipo de árbol",
+      "valores": [
+        {
+          "id": "hojas_anchas",
+          "habitats": {
+            "H04": "AY_H04_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_HOJAS_ANCHAS",
+            "texto": "Busca árboles de hojas anchas.",
+            "texto_pt": "Procure árvores de folhas largas.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R05"
+              }
+            ]
+          }
+        },
+        {
+          "id": "coniferas",
+          "habitats": {
+            "H05": "AY_H05_L2",
+            "H06": "AY_H06_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_CONIFERAS",
+            "texto": "Busca árboles con hojas en forma de aguja.",
+            "texto_pt": "Procure árvores com folhas em forma de agulha.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R06"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "relieve",
+      "nombre": "Ubicación",
+      "valores": [
+        {
+          "id": "montana",
+          "habitats": {
+            "H03": "AY_H03_L1",
+            "H15": "AY_H15_L1",
+            "H16": "AY_H16_L1",
+            "H20": "AY_H20_L1",
+            "H24": "AY_H24_L1",
+            "H29": "AY_H29_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_MONTANA",
+            "texto": "Busca un lugar en la montaña.",
+            "texto_pt": "Procure um lugar na montanha.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_MONTANAS_ALTAS"
+              }
+            ]
+          }
+        },
+        {
+          "id": "costa",
+          "habitats": {
+            "H07": "AY_H07_L1",
+            "H33": "AY_H33_L1",
+            "H41": "AY_H41_L2",
+            "H42": "AY_H42_L1",
+            "H43": "AY_H43_L1",
+            "H44": "AY_H44_L1",
+            "H45": "AY_H45_L1",
+            "H46": "AY_H46_L1",
+            "H47": "AY_H47_L1",
+            "H48": "AY_H48_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_COSTA",
+            "texto": "Busca un lugar cerca de la costa.",
+            "texto_pt": "Procure um lugar perto da costa.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R08"
+              }
+            ]
+          }
+        },
+        {
+          "id": "lejos_costa",
+          "habitats": {
+            "H34": "AY_H34_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_LEJOS_COSTA",
+            "texto": "Busca un lugar lejos de la costa.",
+            "texto_pt": "Procure um lugar longe da costa.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R44"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "movimiento_agua",
+      "nombre": "Movimiento del agua",
+      "valores": [
+        {
+          "id": "corre",
+          "habitats": {
+            "H23": "AY_H23_L1",
+            "H24": "AY_H24_L2",
+            "H31": "AY_H31_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_AGUA_CORRE",
+            "texto": "Busca agua que corre.",
+            "texto_pt": "Procure água que corre.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_RIO"
+              }
+            ]
+          }
+        },
+        {
+          "id": "quieta",
+          "habitats": {
+            "H25": "AY_H25_L2",
+            "H27": "AY_H27_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_AGUA_QUIETA",
+            "texto": "Busca agua que se mueve poco.",
+            "texto_pt": "Procure água que se move pouco.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R34"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "corriente",
+      "nombre": "Velocidad del agua",
+      "valores": [
+        {
+          "id": "lenta",
+          "habitats": {
+            "H23": "AY_H23_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_CORRIENTE_LENTA",
+            "texto": "Busca agua que corre despacio.",
+            "texto_pt": "Procure água que corre devagar.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R30"
+              }
+            ]
+          }
+        },
+        {
+          "id": "rapida",
+          "habitats": {
+            "H24": "AY_H24_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_CORRIENTE_RAPIDA",
+            "texto": "Busca agua que corre rápido.",
+            "texto_pt": "Procure água que corre depressa.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R32"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "luz",
+      "nombre": "Luz",
+      "valores": [
+        {
+          "id": "oscuro",
+          "habitats": {
+            "H21": "AY_H21_L1",
+            "H35": "AY_H35_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_POCA_LUZ",
+            "texto": "Busca un lugar con poca luz.",
+            "texto_pt": "Procure um lugar com pouca luz.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R25"
+              }
+            ]
+          }
+        },
+        {
+          "id": "con_luz",
+          "habitats": {
+            "H34": "AY_H34_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_LUZ_SOL",
+            "texto": "Busca agua con luz del sol.",
+            "texto_pt": "Procure água com luz do sol.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R43"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "zona_marina",
+      "nombre": "Zona del mar",
+      "valores": [
+        {
+          "id": "superficie",
+          "habitats": {
+            "H22": "AY_H22_L2",
+            "H34": "AY_H34_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_SUPERFICIE",
+            "texto": "Busca la superficie del mar.",
+            "texto_pt": "Procure a superfície do mar.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R29"
+              }
+            ]
+          }
+        },
+        {
+          "id": "agua_profunda",
+          "habitats": {
+            "H35": "AY_H35_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_AGUA_PROFUNDA",
+            "texto": "Busca agua muy profunda, por encima del fondo.",
+            "texto_pt": "Procure água muito profunda, acima do fundo.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R46"
+              },
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R47"
+              }
+            ]
+          }
+        },
+        {
+          "id": "fondo",
+          "habitats": {
+            "H36": "AY_H36_L2",
+            "H37": "AY_H37_L2",
+            "H38": "AY_H38_L2",
+            "H39": "AY_H39_L2",
+            "H40": "AY_H40_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_FONDO",
+            "texto": "Busca el fondo del mar.",
+            "texto_pt": "Procure o fundo do mar.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R48"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sustrato",
+      "nombre": "Suelo o superficie",
+      "valores": [
+        {
+          "id": "arena",
+          "habitats": {
+            "H46": "AY_H46_L1",
+            "H47": "AY_H47_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_ARENA",
+            "texto": "Busca un lugar con arena.",
+            "texto_pt": "Procure um lugar com areia.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R21"
+              }
+            ]
+          }
+        },
+        {
+          "id": "roca",
+          "habitats": {
+            "H20": "AY_H20_L2",
+            "H40": "AY_H40_L1",
+            "H44": "AY_H44_L1",
+            "H45": "AY_H45_L1",
+            "H48": "AY_H48_L1"
+          },
+          "ayuda": {
+            "id": "AY_ATR_ROCAS",
+            "texto": "Busca un lugar con rocas.",
+            "texto_pt": "Procure um lugar com rochas.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R20"
+              }
+            ]
+          }
+        },
+        {
+          "id": "barro",
+          "habitats": {
+            "H43": "AY_H43_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_BARRO",
+            "texto": "Busca un lugar con barro.",
+            "texto_pt": "Procure um lugar com lama.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R59"
+              }
+            ]
+          }
+        },
+        {
+          "id": "hielo",
+          "habitats": {
+            "H22": "AY_H22_L2"
+          },
+          "ayuda": {
+            "id": "AY_ATR_HIELO",
+            "texto": "Busca un lugar con hielo.",
+            "texto_pt": "Procure um lugar com gelo.",
+            "pictogramas": [
+              {
+                "tipo": "PICTOGRAMA",
+                "id": "P_R28"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

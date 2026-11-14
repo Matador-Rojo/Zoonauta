@@ -20,6 +20,9 @@ def _textos_catalogo(banco: BancoDatos) -> tuple[dict, list[str]]:
             f"Sim! Este animal pode viver {habitat['frase_locativa_pt']}.")
     for pista in banco.variantes.values():
         textos[pista["texto"]] = pista["texto_pt"]
+    # Ayudas breves por rasgo del agente 6.0 (traducción pendiente de revisión humana).
+    for ayuda in banco.ayudas_rasgo.values():
+        textos.setdefault(ayuda["texto"], ayuda["texto_pt"])
     for animal in banco.animales.values():
         for secundario in animal["secundarios"].values():
             if secundario.get("contexto"):

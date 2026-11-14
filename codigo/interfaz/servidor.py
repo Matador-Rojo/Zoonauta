@@ -12,7 +12,8 @@ from urllib.parse import urlsplit
 from uuid import uuid4
 import webbrowser
 
-from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, SesionWeb
+from codigo.interfaz.servicio import ConflictoVista, MODELO_DEMO, POLITICAS_6, SesionWeb
+from codigo.motores.agente import POLITICA_AGENTE
 from codigo.interfaz import idiomas, voz_grabada
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.nucleo.estado import TERMINALES
@@ -52,7 +53,7 @@ class Servidor(ThreadingHTTPServer):
     daemon_threads = True
 
     def __init__(self, direccion, *, registros=None, politica="PROBABILISTICO",
-                 parametros=MODELO_DEMO, ampliado=True):
+                 parametros=MODELO_DEMO, ampliado=True, agente=POLITICA_AGENTE):
         self.banco = BancoDatos(ampliado=ampliado)
         for p in self.banco.pictogramas.values():
             archivo = p.get("archivo_imagen")
@@ -74,6 +75,7 @@ class Servidor(ThreadingHTTPServer):
         self.sesiones = {}
         self.lock = RLock()
         self.registros, self.politica, self.parametros = registros, politica, parametros
+        self.agente = agente
         super().__init__(direccion, Manejador)
 
 
@@ -96,7 +98,8 @@ class Manejador(BaseHTTPRequestHandler):
             if sid not in self.server.sesiones:
                 sid = uuid4().hex
                 self.server.sesiones[sid] = SesionWeb(self.server.banco,
-                    self.server.registros, self.server.politica, self.server.parametros)
+                    self.server.registros, self.server.politica, self.server.parametros,
+                    agente=self.server.agente)
                 self.nueva_cookie = f"habitats={sid}; HttpOnly; SameSite=Strict; Path=/"
             return self.server.sesiones[sid]
 
@@ -251,11 +254,14 @@ def main():
                         help="Política de guía para el catálogo original.")
     parser.add_argument("--parametros", type=Path, default=MODELO_DEMO,
                         help="Modelo de guía para el catálogo original.")
+    parser.add_argument("--agente", choices=POLITICAS_6, default=POLITICA_AGENTE,
+                        help="Quién elige las pistas con el catálogo ampliado (por defecto, el agente "
+                             "adaptativo; ID3_OPCIONES y PISTAS_PROGRESIVAS sirven para comparar).")
     parser.add_argument("--registros", type=Path, default=RAIZ_PROYECTO / "registros/interfaz")
     args = parser.parse_args()
     servidor = Servidor(("127.0.0.1", args.puerto), registros=args.registros,
                          politica=args.politica, parametros=args.parametros,
-                         ampliado=not args.catalogo_original)
+                         ampliado=not args.catalogo_original, agente=args.agente)
     url = f"http://127.0.0.1:{servidor.server_port}"
     print(f"Zoonauta 6.0.0: {url}  (5.0: {url}/v5/)\nCarpeta: {RAIZ_PROYECTO}\nRevisión técnica: {url}/revision\nCtrl+C para detener.", flush=True)
     if args.abrir:
