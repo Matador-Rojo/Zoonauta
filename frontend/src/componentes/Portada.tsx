@@ -18,6 +18,7 @@ import { Pictograma } from "./Pictograma";
 type Capa = { nombre: string; caja: readonly [number, number, number, number] };
 export const PAISAJES_PORTADA: readonly {
   id: string;
+  acento: string;
   fx: number;
   fy: number;
   efectos: readonly string[];
@@ -25,6 +26,7 @@ export const PAISAJES_PORTADA: readonly {
 }[] = [
   {
     id: "H01",
+    acento: "#d2ee8b",
     fx: 0.86,
     fy: 0.5,
     efectos: ["cascada"],
@@ -33,19 +35,34 @@ export const PAISAJES_PORTADA: readonly {
       { nombre: "hojas", caja: [1480, 670, 1920, 1080] },
     ],
   },
-  { id: "H09", fx: 0.92, fy: 0.6, efectos: ["sol"], capas: [{ nombre: "hierba", caja: [80, 893, 1774, 1080] }] },
-  { id: "H17", fx: 0.88, fy: 0.5, efectos: ["luz-calida"], capas: [] },
-  { id: "H22", fx: 0.9, fy: 0.55, efectos: ["reflejo-frio"], capas: [] },
-  { id: "H20", fx: 0.88, fy: 0.4, efectos: [], capas: [{ nombre: "nubes", caja: [189, 282, 1178, 480] }] },
+  {
+    id: "H09",
+    acento: "#ffc46b",
+    fx: 0.92,
+    fy: 0.6,
+    efectos: ["sol"],
+    capas: [{ nombre: "hierba", caja: [80, 893, 1774, 1080] }],
+  },
+  { id: "H17", acento: "#ffb27a", fx: 0.88, fy: 0.5, efectos: ["luz-calida"], capas: [] },
+  { id: "H22", acento: "#a9dcff", fx: 0.9, fy: 0.55, efectos: ["reflejo-frio"], capas: [] },
+  {
+    id: "H20",
+    acento: "#ffd9a0",
+    fx: 0.88,
+    fy: 0.4,
+    efectos: [],
+    capas: [{ nombre: "nubes", caja: [189, 282, 1178, 480] }],
+  },
   {
     id: "H37",
+    acento: "#7fe3e0",
     fx: 0.9,
     fy: 0.55,
     efectos: ["rayos", "ondas-luz"],
     capas: [{ nombre: "algas", caja: [909, 840, 1853, 1080] }],
   },
-  { id: "H21", fx: 0.8, fy: 0.5, efectos: [], capas: [] },
-  { id: "H25", fx: 0.65, fy: 0.55, efectos: ["agua"], capas: [] },
+  { id: "H21", acento: "#e8d3a0", fx: 0.8, fy: 0.5, efectos: [], capas: [] },
+  { id: "H25", acento: "#b8e08a", fx: 0.65, fy: 0.55, efectos: ["agua"], capas: [] },
 ];
 
 /** Posición de una capa en porcentajes de la escena 1920×1080. */
@@ -175,6 +192,7 @@ export function Portada({
       className="portada"
       aria-labelledby="titulo-pantalla"
       data-ambiente={pausado || !visible ? "pausado" : "activo"}
+      style={{ "--acento": paisajes[indice]?.acento } as CSSProperties}
     >
       <div className="portada-fondo" aria-hidden="true">
         {paisajes.map((p, i) => {
@@ -256,7 +274,7 @@ export function Portada({
         </div>
 
         <section
-          className="carrusel"
+          className="carrusel hero-ficha"
           aria-roledescription="carousel"
           aria-label={t("Paisajes de la portada")}
           onFocus={() => setFocoDentro(true)}
@@ -304,6 +322,7 @@ export function Portada({
               </button>
             </div>
           </div>
+          {rota && <span key={indice} className="ficha-tiempo" aria-hidden="true" />}
           <nav className="carrusel-marcas" aria-label={t("Elige un paisaje")}>
             {paisajes.map((p, i) => (
               <button
@@ -313,7 +332,16 @@ export function Portada({
                 aria-label={p.habitat.nombre}
                 aria-current={i === indice ? "true" : undefined}
                 onClick={() => irA(i)}
-              />
+              >
+                <img
+                  src={`/fondos/portada/${p.id}-160.webp`}
+                  alt=""
+                  width={160}
+                  height={90}
+                  draggable={false}
+                  fetchPriority="low"
+                />
+              </button>
             ))}
           </nav>
           <p className="solo-lectores" role="status" aria-live="polite">
@@ -321,6 +349,21 @@ export function Portada({
           </p>
         </section>
       </div>
+
+      <ul className="resumen-inicio">
+        <li className="resumen-item">
+          <strong>{vista.catalogo_animales.length}</strong>
+          <span>{t("Animales por descubrir")}</span>
+        </li>
+        <li className="resumen-item">
+          <strong>{String(vista.opciones_habitat.length).padStart(2, "0")}</strong>
+          <span>{t("Hábitats para explorar")}</span>
+        </li>
+        <li className="resumen-item">
+          <strong>{t("A tu ritmo")}</strong>
+          <span>{t("Pistas, repetición y pausa")}</span>
+        </li>
+      </ul>
 
       <dialog
         ref={selector}

@@ -21,7 +21,8 @@ from codigo.nucleo.estado import TERMINALES
 FONDOS_PORTADA = {f"H{i:02}.webp" for i in range(1, 49)}
 FONDOS_HISTORICOS = {f"H0{i}.webp" for i in range(2, 9)}
 # Versiones de 960 px de los ocho paisajes de la portada 6.0 (derivadas de fondos/catalogo).
-FONDOS_PORTADA_960 = {f"{h}-960.webp" for h in ("H01", "H09", "H17", "H22", "H20", "H37", "H21", "H25")}
+FONDOS_PORTADA_960 = {f"{h}-{ancho}.webp" for h in ("H01", "H09", "H17", "H22", "H20", "H37", "H21", "H25")
+                     for ancho in (960, 160)}
 # Capas con transparencia superpuestas a cinco paisajes (ver fondos/capas/procedencia.json).
 CAPAS_PORTADA = {f"{c}.webp" for c in ("H01-hojas", "H01-niebla", "H09-hierba", "H20-nubes", "H37-algas")}
 WEB6 = (Path(__file__).parent / "web6").resolve()

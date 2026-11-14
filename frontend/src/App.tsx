@@ -297,6 +297,7 @@ export function App() {
             Zoonauta<span className="marca-subtitulo">{t("Animales y hábitats")}</span>
           </span>
         </a>
+        {enInicio && <span className="cabecera-nota">{t("Exploración con pictogramas")}</span>}
         <button type="button" className="boton-texto" aria-haspopup="dialog" onClick={abrirPreferencias}>
           <Icono nombre="ajustes" />
           <span>{t("Preferencias")}</span>
