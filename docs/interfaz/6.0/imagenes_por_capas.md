@@ -1,5 +1,10 @@
 # Imágenes por capas para la portada 6.0
 
+> **Superado el 2026-11-14.** La portada 6.0 ya no es el carrusel de ocho paisajes: es
+> «Bosque de luz» (ver `docs/interfaz/6.0/identidad.md` y CLAUDE.md). Este documento se
+> conserva como historial; los paisajes y capas siguen en `fondos/` sin uso en la 6.0.
+
+
 > **Estado (2026-11-13):** recibidas e integradas las cinco capas de la tabla
 > (`codigo/interfaz/web/fondos/capas/`, procedencia y ajustes en `procedencia.json`).
 > Pendientes y opcionales: los recortes verticales para móvil.

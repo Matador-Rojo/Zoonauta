@@ -78,3 +78,24 @@ completa; las otras tres pasaron. No se conservó la salida del fallo: vigilarla
 - **Comprensión de pictogramas y mensajes** por el público objetivo: cumplir WCAG no
   equivale a validar la comprensión. Requiere pruebas con usuarios, con autorización,
   acompañamiento y criterios apropiados.
+
+## Medición tras el rediseño azul y «Bosque de luz» (2026-11-14)
+
+`python -m tests.lighthouse_v6 --salida output/lighthouse-azul`. Accesibilidad, buenas prácticas
+y SEO: 100 en las 8 mediciones.
+
+| Pantalla | Escritorio | Móvil (antes → ahora) | LCP móvil |
+| --- | --- | --- | --- |
+| Portada «Bosque de luz» | 99 | 79 → 81 | 5,1 s |
+| Catálogo | 99 | 87 → 84 | 4,5 s |
+| Tablero | 95 | 77 → 75 | 8,9 s |
+| Pausa | 100 | 89 → 89 | 3,8 s |
+
+El tablero en móvil no mejora: las fotos de los hábitats ahora llenan la pantalla y son el LCP.
+Pendiente: servir en móvil una copia de 560 px de las fotos de hábitat (`paisajes_ligeros`).
+Las diferencias de ±3 puntos están dentro de la variación habitual de Lighthouse.
+
+Sin desplazamiento (medido con `comparar_versiones`, `medidas.json`): ninguna pantalla se
+desplaza en 1440×900, 1280×720 ni 390×844. En vistas bajas (720×450 = zoom 200 %, 360×640,
+844×390) la página se desplaza como último recurso y ninguna tarjeta queda por debajo de su
+tamaño mínimo (hábitats ≥ 56 px, controles ≥ 44 px, imágenes ≥ 48 px).

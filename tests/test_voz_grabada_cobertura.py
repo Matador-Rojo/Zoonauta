@@ -64,9 +64,12 @@ class CoberturaVozGrabada(unittest.TestCase):
                         actuar("nueva_partida")
                         actuar("iniciar", {"modalidad": "JUGADOR", "retos": 48, "cantidad_opciones": 8})
                     actuar("elegir_animal", {"animal_id": animal})
-                    for _ in range(3):
-                        if "ayuda" in vista["controles_disponibles"]:
-                            actuar("ayuda")
+                    # La mitad de los animales pide las tres pistas antes de elegir; la otra
+                    # mitad falla antes de pedir ayuda (apoyo automático tras los fallos).
+                    if indice % 2 == 0:
+                        for _ in range(3):
+                            if "ayuda" in vista["controles_disponibles"]:
+                                actuar("ayuda")
                     if indice % 24 == 0:  # controles de partida en una muestra de retos
                         actuar("repetir")
                         actuar("pausar")
@@ -79,6 +82,11 @@ class CoberturaVozGrabada(unittest.TestCase):
                     jugados += 1
                 actuar("salir")
                 self.assertEqual(jugados, total)
+                # La pregunta del selector de modalidad (Comenzar) también tiene grabación.
+                pregunta = "¿Quién elige el animal?"
+                leidos.add(pregunta)
+                if voz_grabada.buscar(pregunta, "es", banco) is None:
+                    faltan[pregunta] = "INTERFAZ_MODALIDAD"
             finally:
                 servidor.shutdown()
                 servidor.server_close()

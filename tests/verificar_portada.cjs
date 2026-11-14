@@ -72,6 +72,8 @@ async function axe(page, nombre) {
         await p.screenshot({path: path.join(out, `${nombre}_portada.png`)});
         await p.locator('.portada-comenzar').click();
         assert.deepEqual(await encaje(p), {vertical: 0, horizontal: 0, fuera: []}, `${nombre} selector`);
+        // «Volver al inicio» a la vista: el selector no se desplaza por dentro.
+        assert.ok(await p.locator('dialog.selector-modalidad').evaluate(d => d.scrollHeight <= d.clientHeight + 1), `${nombre}: selector sin desplazamiento interno`);
         await p.keyboard.press('Escape');
         await p.getByRole('button', {name: 'Preferencias'}).click();
         assert.deepEqual(await encaje(p), {vertical: 0, horizontal: 0, fuera: []}, `${nombre} preferencias`);
