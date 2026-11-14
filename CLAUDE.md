@@ -67,6 +67,9 @@ python -m uv tool run ruff@0.15.0 check codigo tests    # 18 avisos de base (ver
 python -m uv tool run --python 3.12 pip-audit@2.10.0 -r requirements_voz.txt --disable-pip --no-deps
 python -m codigo.nucleo.actualizar_manifiesto [--incluir RUTA]  # tras compilar o editar
 python -m codigo.interfaz.preparar_imagenes_ligeras            # si cambia un pictograma, paisaje o robot (Pillow)
+python -m codigo.nucleo.validar_catalogo                      # integridad del catálogo ampliado (0 errores)
+python -m codigo.nucleo.validar_textos_interfaz               # traducciones de interfaz 5.0 y 6.0
+python -m codigo.nucleo.hoja_revision_traducciones            # docs/traducciones/revision_es_pt.csv
 ```
 
 Flujo de Modern Web Guidance: `search` → `retrieve` → aplicar y verificar → cerrar la

@@ -5311,8 +5311,8 @@
     },
     {
       "ruta": "frontend/src/i18n.ts",
-      "bytes": 1821,
-      "sha256": "c0e2289d39e3415dbc38b485c13c7eb81d5de0b3e42e4398ed6b6257a2b47f71"
+      "bytes": 1771,
+      "sha256": "02b0ea18d28c1b981b4fc81608d9f78d1f9c0d0d060e967f433eb002f284837f"
     },
     {
       "ruta": "frontend/src/main.tsx",
@@ -5387,7 +5387,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 1265,
-      "sha256": "4df68a162a6f053af7e6f0b72f0e659ad2044ca21637f9a44ae94834465b05f7"
+      "sha256": "2fad6c657f0ac3563e227ed046d32fc8bfb14958a67b4015a2a6736786f7e051"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -7955,11 +7955,6 @@
       "sha256": "ffc306ed92b5c5becc479934a3120fcbea66dd85978faee7ba66492a202c5ea3"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-CHDm-LHh.js",
-      "bytes": 252525,
-      "sha256": "b614e86bd42c98e928156600e1b72dbf400291c0729f7b4b58f082989256d65f"
-    },
-    {
       "ruta": "tests/lighthouse_v6.py",
       "bytes": 4894,
       "sha256": "4c272a82b9c3c0dd9f9b725f36deaed6f54043d759261fefe5f2042d27a436f2"
@@ -7973,6 +7968,31 @@
       "ruta": "tests/verificar_partidas_v6.cjs",
       "bytes": 5530,
       "sha256": "1dd7b5eed7203ceb2f4f1ea2164593c0d5988bab82be6906045e352ecc16c00e"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-T0AjREK5.js",
+      "bytes": 252479,
+      "sha256": "c6a4c41bbec2f7c0577c5dcdf9b7de8691a0ef64c41e513c0199c9088f3ff651"
+    },
+    {
+      "ruta": "codigo/nucleo/hoja_revision_traducciones.py",
+      "bytes": 5257,
+      "sha256": "7e201941c8fe564aa6ad8238c87c893265b115f61fc35f40f9d96d7e530fc97e"
+    },
+    {
+      "ruta": "codigo/nucleo/validar_catalogo.py",
+      "bytes": 8972,
+      "sha256": "1cc213fba446c0ad113c8b8332337a034c2392dc6008407de7673d74df7494c9"
+    },
+    {
+      "ruta": "codigo/nucleo/validar_textos_interfaz.py",
+      "bytes": 4952,
+      "sha256": "5ef3a882b954174f9c23536b558cd48210c29477dde02aacea83b7f826f1cf5c"
+    },
+    {
+      "ruta": "tests/test_validacion_contenido.py",
+      "bytes": 1266,
+      "sha256": "c0bdab71e28f34a7244777fd9ea9019b495bb5f524966ee7d4c501b69098f91d"
     }
   ],
   "nombre_proyecto": "Zoonauta",
