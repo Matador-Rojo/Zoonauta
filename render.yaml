@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: zoonauta
+    runtime: python
+    plan: free
+    branch: deploy/render
+    buildCommand: "true"
+    startCommand: python -m codigo.interfaz.publicar
+    healthCheckPath: /api/idiomas
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
