@@ -130,7 +130,20 @@
     "preferencias_dos_columnas_verificadas": true,
     "catalogo_escritorio_sin_scroll_y_tarjetas_grandes": true,
     "catalogo_paginacion_adaptable_y_foco_verificados": true,
-    "grabaciones_voz_es": 350
+    "grabaciones_voz_es": 350,
+    "agente_6": {
+      "politica_partida": "AGENTE_ADAPTATIVO",
+      "linea_base": "ID3_OPCIONES",
+      "comparacion": "PISTAS_PROGRESIVAS",
+      "aprendizaje_en_vivo": false,
+      "parametros_fijados_a_mano": true,
+      "evaluacion": "docs/experimentos/agente6/evaluacion.json",
+      "evaluacion_con_jugadores": false,
+      "ayudas_rasgo_con_grabacion": 1,
+      "mensajes_pendientes_de_grabar_es": 62,
+      "pruebas_python_correctas": 109,
+      "documentacion": "docs/agente/agente_6.md"
+    }
   },
   "archivos": [
     {
@@ -145,8 +158,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 14626,
-      "sha256": "0c53284448ff97d7b4aab489b1a45f08fb5355045cc5ba219fbef350cf84ff62"
+      "bytes": 16355,
+      "sha256": "d565010a151ecd8e7ed94fe3248504ad3d1e3957a88b7e08a296df971d6372bb"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -9810,8 +9823,8 @@
     },
     {
       "ruta": "CLAUDE.md",
-      "bytes": 12026,
-      "sha256": "b231e06fc973546893bc5ac99f558d78b32c7d46ee1cb4869788133b0b3325c0"
+      "bytes": 12606,
+      "sha256": "dc69c21257f4560f36360137e9b8c9fd89000a619d5d697f690f8e93c4275d02"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/index-BGmevnUX.js",
@@ -9854,6 +9867,11 @@
       "sha256": "dac0cf1b86fbfbea8c2a6d8e1e5ce6867e903780a90a24a05a871f5d5c4cf7c6"
     },
     {
+      "ruta": "docs/agente/agente_6.md",
+      "bytes": 24990,
+      "sha256": "75dcb72926e6f0e8a24cc872d4fd97557347f34dc108a3b06834287b5876bb0b"
+    },
+    {
       "ruta": "docs/experimentos/agente6/evaluacion.json",
       "bytes": 26486,
       "sha256": "b9eb6d968d913fc70a81aa34188f97639f0b03e34a5dc5b72507f2108c966643"
@@ -9873,6 +9891,9 @@
     "pictogramas": 441,
     "pistas": 144,
     "asociaciones_secundarias_documentadas": 31,
-    "fondos_portada": 48
+    "fondos_portada": 48,
+    "atributos_habitat": 12,
+    "valores_rasgo_documentados": 111,
+    "ayudas_rasgo": 32
   }
 }

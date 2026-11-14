@@ -78,11 +78,14 @@ Responder al propietario en español.
 
 ```bash
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
-PYTHONUTF8=1 python -m unittest discover -s tests -q   # 95 pruebas
+PYTHONUTF8=1 python -m unittest discover -s tests -q   # 109 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
 python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/): 6 casos + axe
 python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados
 PYTHONUTF8=1 python -m unittest tests.test_voz_grabada_cobertura  # cada mensaje tiene grabación
+PYTHONUTF8=1 python -m unittest tests.test_agente6       # agente 6.0: decisiones, 2/4/8, voz
+PYTHONUTF8=1 python -m codigo.entrenamiento.evaluar_agente6 --salida <carpeta>  # evaluación (~3 min)
+PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes  # TXT de audios que faltan
 python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
 python -m tests.ejecutar_navegador --catalogo      # 16 casos
 python -m tests.ejecutar_navegador --hito3         # 16 casos (Preferencias, teclado)
@@ -148,11 +151,14 @@ Detalles del entorno:
 - `codigo/interfaz/web/` — frontend de la 5.0, servido en `/v5/` (`index.html`, `app.js`, `estilos.css`,
   `expedicion.css`, `fondos/catalogo/H01..H48.webp` de 1920×1080).
 - `codigo/nucleo/` — estado, gestor de sesión, catálogo, registro, auditoría, manifiesto.
-- `codigo/motores/` — `guia.py` (pistas progresivas del catálogo ampliado, ambas
-  modalidades) e `id3.py` (catálogo original: ID3, rotación y política probabilística,
-  `--catalogo-original`).
+- `codigo/motores/` — `agente.py` (agente 6.0 del catálogo ampliado: `AGENTE_ADAPTATIVO`,
+  línea base `ID3_OPCIONES`; ver `docs/agente/agente_6.md`), `guia.py` (`MotorPistas`, la
+  secuencia editorial anterior, y `MotorGuia` del catálogo original: ID3, rotación y
+  probabilística, `--catalogo-original`) e `id3.py` (árbol ID3 que usan ambos).
 - `codigo/entrenamiento/`, `codigo/poc/` — experimentos, simulador, consola, aceptación.
-- `datos/expedicion/` — catálogo ampliado (animales, hábitats, pictogramas, pistas).
+- `datos/expedicion/` — catálogo ampliado (animales, hábitats, pictogramas, pistas y
+  `atributos_habitats.json`: rasgos citados de las pistas y 32 ayudas por rasgo; textos y
+  traducción pendientes de revisión humana).
 - `datos/*.json` — catálogo original, traducciones pt-BR, voces, procedencia de imágenes.
 - `assets/` — pictogramas, ilustraciones y robot. `datos/manifest.json` — huellas.
 - Locales, fuera de Git: `registros/`, `output/`, `.venv-voz/` y `modelos_voz/` (estos dos ya
