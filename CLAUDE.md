@@ -38,6 +38,24 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
 - Si se cambia un archivo listado en `datos/manifest.json`, actualizar su `bytes` y
   `sha256` en el mismo commit.
 
+## Modelos, advisor y calidad (decidido 2026-11-14)
+
+- Modelo principal: Sonnet (`.claude/settings.json`). Advisor: Fable (`advisorModel`). Para que
+  el advisor funcione, el propietario debe haber aceptado una vez `/model fable` (créditos de uso).
+  Subagentes en `.claude/agents/`: `investigador` (Haiku, solo lectura) y `revisor` (Opus).
+- **Consulta al advisor siempre en estos tres momentos**, y solo en ellos:
+  1. antes de fijar un plan o una arquitectura cuando haya más de una opción real;
+  2. cuando un error se repite o una prueba falla por segunda vez;
+  3. antes de dar un trabajo por terminado.
+- **Antes de dar algo por terminado**, pasa por `revisor` si el cambio es grande.
+- **«Mejorar» debe superar lo anterior**, en lo que se ve y en lo que se mide. Igualar o empeorar
+  no es mejorar y no se presenta como mejora.
+- Cambios visuales: compáralos con la versión anterior en capturas lado a lado y di qué es mejor
+  y qué es peor. Avisa siempre que quites un rasgo que existía.
+- La identidad visual del propietario (oscura, acento lima, titular grande y ligero) manda sobre
+  cualquier guía genérica de diseño. Ante la duda, pregunta.
+- Búsquedas y lecturas amplias: delégalas en `investigador`.
+
 ## Comandos verificados (Windows, 2026-11-13)
 
 ```bash
