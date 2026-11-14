@@ -168,8 +168,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 16959,
-      "sha256": "a0920c5b7833e437d668c030ca5c99765b06252cf379d3e17010c877b6263846"
+      "bytes": 17091,
+      "sha256": "35933102c904976fbaaa2f9914533888b15d30a611c715234b97385e9beb656f"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -9813,8 +9813,8 @@
     },
     {
       "ruta": "docs/interfaz/6.0/identidad.md",
-      "bytes": 2449,
-      "sha256": "dd8bc045c43239b7af6ef36e84ae8312c5de43942cfa37697f12baae3c31cefc"
+      "bytes": 2510,
+      "sha256": "794f893487d2efc8a2334db49fdac9f3ae7db39bdfa211a6f945ce3feafc3e2f"
     },
     {
       "ruta": "docs/interfaz/6.0/pantallas.md",
@@ -9828,13 +9828,13 @@
     },
     {
       "ruta": "docs/voz/elevenlabs/README.md",
-      "bytes": 14893,
-      "sha256": "972aa2acecda416999bab26013188e02859595c45a83752f58ecea7460e51190"
+      "bytes": 15276,
+      "sha256": "975fe3dce435da7ee1ec3f7e339b68e4353f242aec7714f58ef14ecc74c405a4"
     },
     {
       "ruta": "CLAUDE.md",
-      "bytes": 13200,
-      "sha256": "7a6034bbb2cc919867dc705639903a4cc2e066c1d633f7d0630e1c7dc54e1f0c"
+      "bytes": 13288,
+      "sha256": "045e833e7939d5ed477e60daae0aeb09a6297cde627fd8a9f608a9f37d122c36"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/index-BGmevnUX.js",
@@ -9873,13 +9873,13 @@
     },
     {
       "ruta": "tests/test_agente6.py",
-      "bytes": 13456,
-      "sha256": "c6cb9d72206e621d126f629c439f052382cd5c03479eec2b251d4acd744ee157"
+      "bytes": 13987,
+      "sha256": "4a669fc3a02d847d93a21223d2dd9d6390f1036d348922a552d99916edb415ef"
     },
     {
       "ruta": "docs/agente/agente_6.md",
-      "bytes": 38714,
-      "sha256": "45a744c1da5d18cfeef73f5c3e2ac06da63825da327293c5d15eb60729f41fd5"
+      "bytes": 39182,
+      "sha256": "0707fcadfe3e63e13d3ed79247c267b7ce9adeec5c4a28d765c9ef40ae05e383"
     },
     {
       "ruta": "docs/experimentos/agente6/evaluacion.json",
@@ -9888,8 +9888,8 @@
     },
     {
       "ruta": "docs/voz/elevenlabs/textos_pendientes_es-419.txt",
-      "bytes": 5325,
-      "sha256": "b6c02bac31b006d76c9037889d4ebb64c81a3456fc9a99cef9b9dad5e16fd21e"
+      "bytes": 734,
+      "sha256": "f28b0dc605e8759963ce172a58a3d2356779d6ad83e42e9636e7a94a8f91251d"
     },
     {
       "ruta": "codigo/entrenamiento/entrenar_agente6.py",
@@ -9955,6 +9955,316 @@
       "ruta": "tests/test_aprendizaje6.py",
       "bytes": 10583,
       "sha256": "e479258dbd3568422e2fd0321be336faaa12f72d671578f4e7d65a7de39d371e"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_TEMPLADO.mp3",
+      "bytes": 78794,
+      "sha256": "916f1870cf83f27c51b11639114aacd2f12962c624eddfbaed1899f925647551"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_ABIERTO.mp3",
+      "bytes": 44522,
+      "sha256": "c2d7140e2117d79ebeef0d1267e39b9f09cd5ebdd251e6b41a097bfc525392d3"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_AGUA_CORRE.mp3",
+      "bytes": 47030,
+      "sha256": "6d683ebe6f6bea077aa6b074fc202fac5aeb646189c1ae93525fc13d9b7347ed"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_AGUA_DULCE.mp3",
+      "bytes": 50791,
+      "sha256": "035aa23a125e5337d44c148fc22a10c48d81979abc9c57dec73b8404c3623213"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_AGUA_PROFUNDA.mp3",
+      "bytes": 75033,
+      "sha256": "3524e657fce4ae03c8b4489f297fdb2e17f025c8ba0c9f4d0413c783adc9449c"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_AGUA_QUIETA.mp3",
+      "bytes": 53299,
+      "sha256": "8ea7647c88143f8cb58c422e08335a7f3d4bfbe090e4280379dc29a8a914ded2"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_AGUA_SALADA.mp3",
+      "bytes": 52045,
+      "sha256": "a4705b35d67ff46afbc88eacb3f4c909382bf1cbe2a304797e13eafc5faf199e"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_AGUA_SALOBRE.mp3",
+      "bytes": 73779,
+      "sha256": "03758889bfe4bcbf7b84fcd42388214943ab1b51dc54792b5acaa7dba5946702"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_ARBOLES.mp3",
+      "bytes": 54553,
+      "sha256": "a3397a96a112402223a23a9244c392b33c859759bc1396d352575bb0e9943e22"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_ARENA.mp3",
+      "bytes": 48283,
+      "sha256": "bb54af46f874b52976a183b4eef4af0cfbf482f528983eb66ef8101c668ad101"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_BARRO.mp3",
+      "bytes": 45776,
+      "sha256": "ac33921291edad852d9ca3c1f55e7f4465264b668abe645493d0ef894ce64fa2"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_CALIDO.mp3",
+      "bytes": 45776,
+      "sha256": "254e26dd65c3ab47d2c9ebec66c09a10b4e3fc77b76805c1dccfe84e6cec6fdb"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_CONIFERAS.mp3",
+      "bytes": 63748,
+      "sha256": "6982e57c2915fa7d6e43c879ea4a368dadd3dac6be2bdbd52e2664f5669d6772"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_CORRIENTE_LENTA.mp3",
+      "bytes": 55807,
+      "sha256": "b95a5537c87e9084f347ba78040890f5051cd9085096c21c53a476f9c4fccc2b"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_CORRIENTE_RAPIDA.mp3",
+      "bytes": 50791,
+      "sha256": "d52e4ee1efe09a41af854718fd7ed87b1c7b97a9736f5776e6c476960134a914"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_COSTA.mp3",
+      "bytes": 53299,
+      "sha256": "48e612e3cb830df5a5803cf302d375a03e84a166d42831cd792dcda7d1789cd4"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_EPOCA_SECA.mp3",
+      "bytes": 57061,
+      "sha256": "4c3f1e750dca2f0daf259c1e059dd5e48e92450092c7019ddba5240390a0ff8b"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_FONDO.mp3",
+      "bytes": 47030,
+      "sha256": "9ed8271235e46d647f60edb1af5b6550e898497c00bda74b0b5cd3dd188fcec4"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_FRIO.mp3",
+      "bytes": 43268,
+      "sha256": "4826ff140972728858d7f2fd6377be9ace49c4392bc69fd9d6079bcef36b809c"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_HIELO.mp3",
+      "bytes": 44522,
+      "sha256": "c2882e08935dfd73c4212900d46d1b07feaf3bc621a6ff88b9e6be7170652868"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_HOJAS_ANCHAS.mp3",
+      "bytes": 54553,
+      "sha256": "3a5026186c87b59bd14f1d54e4a23e39f453b84de2da30bf1f9c214992b7c34b"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_HUMEDO.mp3",
+      "bytes": 44522,
+      "sha256": "ea40c877b60f29f4a868e512e6b3002a4119eaf4e9a7aa7abdb13e531916bfdd"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_LEJOS_COSTA.mp3",
+      "bytes": 53299,
+      "sha256": "74552a6b2ac12ede4a06c315338180277eb877e2c96e57f69bbc5bb8fa689062"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_LUZ_SOL.mp3",
+      "bytes": 49537,
+      "sha256": "1b2d626edd230b794361f32b3681730b02447109a8a09c79941645d066551473"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_MONTANA.mp3",
+      "bytes": 48283,
+      "sha256": "998609ebc179e081ec0412532235130378aa9c18789aeb02acea4a552286dc65"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_MUY_SECO.mp3",
+      "bytes": 48283,
+      "sha256": "28a00b11824116b4c4e25d00be526c7c115c37fbe3526a0da98c7a5a70c1c19c"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_PASTO.mp3",
+      "bytes": 53299,
+      "sha256": "269426effeee32a7afd47f62f2dfd37d45293b3d042af996ad3a0d3e04726037"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_POCAS_PLANTAS.mp3",
+      "bytes": 54553,
+      "sha256": "e2eab89e1ee4323d471c0816990ac8a02ad5420ef9e80c5711bb8eda4b433367"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_POCA_LUZ.mp3",
+      "bytes": 50791,
+      "sha256": "73533b7e6c1de609b1dc04582b4b50fa9b1e06eeab47767374438841765e50e8"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_ROCAS.mp3",
+      "bytes": 48283,
+      "sha256": "d16324df3189eeb39c4b95aed9a061ede875f39ad4217258d34b06f0a4c73c69"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_SUPERFICIE.mp3",
+      "bytes": 48283,
+      "sha256": "ea7d5ce5ff838f8aeeb927ab1cfcfe0951a49ff360b2c5df6e60c9ca39063b64"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/AY_ATR_TEMPLADO.mp3",
+      "bytes": 50791,
+      "sha256": "5b757df2934c52709e8efd8b3409c2eb6e41360d02abf49fbbbe66a09779173f"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_ABIERTO.mp3",
+      "bytes": 68763,
+      "sha256": "b0508c47807dcdd0dd01f9d5fabe1741a0a319e1df35e27591150fd94c55c1b2"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_AGUA_CORRE.mp3",
+      "bytes": 73779,
+      "sha256": "b084764e506b4059db0918eb11660c8ce55c95491fc47199bb978eb7c1b680e7"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_AGUA_DULCE.mp3",
+      "bytes": 75033,
+      "sha256": "66645b5bb43a4058717acdf87264bb6de3ac8433cfa3ca1c56e596a77ca72310"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_AGUA_PROFUNDA.mp3",
+      "bytes": 100946,
+      "sha256": "cd9850b258facd8d0725ef70e271a9a5289dac523246117a6b2530c1bbae7502"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_AGUA_QUIETA.mp3",
+      "bytes": 78794,
+      "sha256": "0d1d35986760a93573651870c32713e0302d909d710a9fa412f178b2c3b2c5de"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_AGUA_SALADA.mp3",
+      "bytes": 78794,
+      "sha256": "1dde0f6efc58cb3a8a88c57ac9ff321fdcae1cbf5bf032da075774e48e22757b"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_AGUA_SALOBRE.mp3",
+      "bytes": 102200,
+      "sha256": "6fd0bab305d16442a4b04d91814437886f4ef6d9af9d050e58d1758e4074c84d"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_ARBOLES.mp3",
+      "bytes": 82974,
+      "sha256": "41d1fa0fd8bd52a45db18c4690f6cd01145a65dd48e3d60d9623b428771602da"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_ARENA.mp3",
+      "bytes": 71271,
+      "sha256": "922e8f2d821059ae2c4797f519c729396d00d03936d8fbd7f8290a9a630c3068"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_BARRO.mp3",
+      "bytes": 71271,
+      "sha256": "8b2d79a9808cb7a5ab2d462082ac70906ad19a5c9400ee40fb90773f330f3411"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_CALIDO.mp3",
+      "bytes": 70017,
+      "sha256": "639671f33e240cd706203608e3569426fd33a0b8f83a9b9f2e73f84fa88d13a7"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_CONIFERAS.mp3",
+      "bytes": 89243,
+      "sha256": "870759dc9b37a7147480453e07ac6065e089243d5a7467f4fc59480fdf976430"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_CORRIENTE_LENTA.mp3",
+      "bytes": 82974,
+      "sha256": "e1dbe4dc83129d6800e6328f828a46b7a275f67739ae330ae674d596348d8c5e"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_CORRIENTE_RAPIDA.mp3",
+      "bytes": 80466,
+      "sha256": "a55d19dc6cc3e04dc1e8c18a524189af9ab991ba1361babe9005657694e3971e"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_COSTA.mp3",
+      "bytes": 78794,
+      "sha256": "131b185061e0d7d36fd5f775a137cc1cb3b9e518cc483ff58280087d944864d4"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_EPOCA_SECA.mp3",
+      "bytes": 84228,
+      "sha256": "4dc75622d7fbc50dae55aaa38027d89250d4abc4e20f1ea139a2ebe7c546dd68"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_FONDO.mp3",
+      "bytes": 75033,
+      "sha256": "adfde2854576abb01aebcc48f87c683213746581294d8eb9322272f583bfe9fb"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_FRIO.mp3",
+      "bytes": 70017,
+      "sha256": "aa95705041345a342c342763d2b2e325fc775dfe95294cfe2360e1d58f8ab5fb"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_HIELO.mp3",
+      "bytes": 71271,
+      "sha256": "4b03626bb728cf025a7925c88a3f1460eaf555a6f14fc7b7ecc0dfc1baf73a1d"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_HOJAS_ANCHAS.mp3",
+      "bytes": 81720,
+      "sha256": "18d7fcaf237ca2dc98dcb861c87c94f1c9fcf6e9e0476648a07d1167bc526aff"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_HUMEDO.mp3",
+      "bytes": 70017,
+      "sha256": "af5748be86f5185b69ba26c49c0e1bfe3b8aec88df58ba88fa98dea2a5ae0b6b"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_LEJOS_COSTA.mp3",
+      "bytes": 80466,
+      "sha256": "e4151bd25a3acfb86225b01779b184facd990a2007c3c5391f871da9ad16bf55"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_LUZ_SOL.mp3",
+      "bytes": 78794,
+      "sha256": "46c8972f0dce91ec894135a7cd60ae22b83987ebc52d6a8d4e793215b56a67ea"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_MONTANA.mp3",
+      "bytes": 72525,
+      "sha256": "7f1ce33669711b41c4e10ca39a3de0e782740e172f24d26d50b864492b034f4c"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_MUY_SECO.mp3",
+      "bytes": 76287,
+      "sha256": "ed07be8c45e94b92ef4ca648a16b0efb44d1e4a1a2ca48755c762f5b6354a098"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_PASTO.mp3",
+      "bytes": 78794,
+      "sha256": "1520f205c6c3f436d59c1197334a6abef62104141d653f4de48c96e51107b528"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_POCAS_PLANTAS.mp3",
+      "bytes": 82974,
+      "sha256": "2d26fae3f4c97981aea5a1f89f8a3fe5463bc67c105ecf8453199f1055e78d89"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_POCA_LUZ.mp3",
+      "bytes": 77541,
+      "sha256": "2497d1b26d4f1d11a5cdd80169ecc9e90b3b6c7254c2dac76ec06d3762698661"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_ROCAS.mp3",
+      "bytes": 72525,
+      "sha256": "9b0fd765a21aff29b91ddd27f05fca14d33df30681cd8625bcf6319f84802f6c"
+    },
+    {
+      "ruta": "assets/voz/grabada/es-419/MSG_APOYO_AUTO__AY_ATR_SUPERFICIE.mp3",
+      "bytes": 77541,
+      "sha256": "f52ca32fe1f6a85def62cb17aca6d625adbb0593a852372a40496d27b6de21c4"
     }
   ],
   "nombre_proyecto": "Zoonauta",

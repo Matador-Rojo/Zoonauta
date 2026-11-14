@@ -149,7 +149,10 @@ class Decisiones(Base):
         g = self.reto(animal, 4, self.agente_grabadas)
         self.assertIn("H05", g.estado.opciones_habitat)
         salida = self.pista(g)
-        self.assertEqual("AY_H04_L2", salida.respuesta.contenido_id)
+        # Con las grabaciones de 2026-11-14 elige «Busca un bosque de hojas anchas.» (una idea);
+        # antes, la pista 2. Lo que importa: no repite la compartida y distingue H04 de H05.
+        self.assertNotEqual("AY_H04_L1", salida.respuesta.contenido_id)
+        self.assertEqual("conflicto", self.rep.relacion(self.candidata("H04", salida.respuesta.contenido_id), "H05"))
         self.assertEqual("conflicto", self.rep.relacion(self.candidata("H04", "AY_H04_L2"), "H05"))
         # Sin motor explícito, la partida del catálogo ampliado usa el agente.
         self.assertEqual("AGENTE_ADAPTATIVO", GestorPartida(self.banco, 1).motor.politica)
@@ -212,8 +215,11 @@ class Controles(Base):
 class VozYBaseline(Base):
     def test_sin_grabacion_no_se_usa_la_ayuda_por_rasgo(self):
         activas = ayudas_con_grabacion(self.banco)
-        # Hoy solo «Busca un lugar con arbustos.» tiene grabación (es idéntica a AY_H13_L1).
-        self.assertEqual({"AY_ATR_ARBUSTOS"}, activas)
+        # Desde el 2026-11-14 las 32 ayudas por rasgo tienen sus dos grabaciones (sola y tras
+        # «Vamos a buscar otro lugar.»); «arbustos» reutiliza la de AY_H13_L1. Si falta una
+        # grabación, su ayuda deja de usarse (ver la prueba siguiente).
+        self.assertEqual(set(self.banco.ayudas_rasgo), activas)
+        self.assertEqual(32, len(activas))
         for animal in list(self.banco.animales)[::7]:
             g = self.reto(animal, 8, self.agente_grabadas)
             for _ in range(3):

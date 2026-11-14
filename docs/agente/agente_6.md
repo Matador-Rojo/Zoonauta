@@ -157,9 +157,14 @@ PYTHONUTF8=1 python -m codigo.entrenamiento.evaluar_agente6 --salida docs/experi
 ```
 
 Compara cinco variantes con el gestor real: la secuencia anterior (`PISTAS_PROGRESIVAS`),
-`ID3_OPCIONES` y `AGENTE` con las ayudas que tienen grabación hoy (`grabadas`: pistas y una
-ayuda por rasgo) y con las 32 ayudas por rasgo (`todas`, como quedará cuando lleguen los
-audios).
+`ID3_OPCIONES` y `AGENTE` con las ayudas que tenían grabación al medir (`grabadas`: pistas y una
+ayuda por rasgo) y con las 32 ayudas por rasgo (`todas`).
+
+> **Desde el 2026-11-14 el juego usa `todas`.** Las tablas se midieron antes de incorporar las 62
+> grabaciones de las ayudas por rasgo; ese mismo día llegaron y ahora las 32 tienen audio. Las filas
+> `AGENTE (todas)` describen el agente de la partida actual; las filas `(grabadas)` quedan como
+> referencia del estado anterior. Si se vuelve a ejecutar la evaluación, las variantes `grabadas`
+> y `todas` darán lo mismo.
 
 ### 5.1 Estructural y exhaustiva (sin personas, sin azar)
 
@@ -201,8 +206,8 @@ Lectura:
   además pondera la comprensión, las diferencias no comprobadas y los secundarios. ID3 da
   pistas sin valor (26 % con 2 opciones) y repite lo elegido en el 36–51 % de los casos.
 - **Coste.** Tras el primer error, cuando ninguna ayuda restante distingue lo elegido sin
-  describirlo también, el agente pasa al apoyo explícito: en el 9–16 % de los casos con las
-  grabaciones de hoy y en el 6–13 % con todas las ayudas. La secuencia fija nunca lo hace tan
+  describirlo también, el agente pasa al apoyo explícito: en el 6–13 % de los casos con todas
+  las ayudas (el juego actual) y en el 9–16 % con solo las grabadas antes del 2026-11-14. La secuencia fija nunca lo hace tan
   pronto, pero en esos casos ofrecía una pista que también valía para lo elegido.
 - **Límite de los datos.** Con 2 opciones, solo el 40 % de los retos tiene alguna diferencia
   documentada. Ninguna política puede superar ese techo sin rasgos nuevos (apartado 8).
@@ -238,13 +243,13 @@ los mismos sorteos para todas.
 
 Lectura, con cautela:
 
-- **Con las grabaciones de hoy:**
+- **Con solo las grabadas antes del 2026-11-14 (una ayuda por rasgo):**
   - Elecciones no confirmadas: el agente necesita menos que la secuencia anterior en los
     nueve casos. Con 2 opciones la diferencia es mínima (0,22–0,24 frente a 0,23–0,26).
   - Ayudas: también necesita menos.
   - Apoyo explícito: llega a «Señala» más veces (p. ej. autónomo, 12/26/32 % frente a
     6/14/22 %). Parte de la reducción de ayudas viene de ahí.
-- **Con las 32 ayudas por rasgo:**
+- **Con las 32 ayudas por rasgo (el juego desde el 2026-11-14):**
   - Las frases son más cortas (1,7 ideas frente a 2,1) y se llega menos a «Señala» que con
     las grabadas.
   - En el perfil `apoyo_alto` hacen falta más ayudas que con la secuencia (2,02 / 2,54 / 2,87
@@ -402,9 +407,9 @@ Lectura:
   agente: la secuencia y ID3 se puntúan con el criterio que el agente maximiza.
   - En sentido contrario, el jugador simulado no castiga una pista que también describe lo
     ya elegido. El agente paga un coste por evitarla que en la simulación no se ve.
-- **No refleja la partida de hoy.** El experimento usa las 32 ayudas por rasgo, pero hoy
-  solo una tiene grabación. Con las grabaciones actuales, la condición `RASGOS` casi no se
-  da. Aun así, el modelo de demostración cambia alguna decisión frente al agente fijo.
+- **Ayudas disponibles.** El experimento usa las 32 ayudas por rasgo. Hasta el 2026-11-14 solo
+  una tenía grabación y la condición `RASGOS` casi no se daba en el juego; desde ese día las 32
+  tienen audio y el juego ofrece las mismas ayudas que la simulación.
 - **Etiqueta de las elecciones no confirmadas.** El registro de la partida marca la elección
   de un hábitat no confirmado como «sin etiqueta», según el protocolo del catálogo original.
   El entrenamiento la cuenta como 0, por la recompensa aceptada para la 6.0. Quien lea los
@@ -428,18 +433,17 @@ Lectura:
 
 - **Se reutilizan** las 350 grabaciones: las 144 pistas solas, las 144 precedidas del apoyo y
   el resto de mensajes. El agente nunca une audios.
-- **Hacen falta 62 grabaciones nuevas** (2669 caracteres): las 32 ayudas por rasgo, solas y
-  tras «Vamos a buscar otro lugar.», menos «Busca un lugar con arbustos.», idéntica a
-  `AY_H13_L1`, que reutiliza su audio. Están en
+- **62 grabaciones nuevas, incorporadas el 2026-11-14** (2669 caracteres): las 32 ayudas por
+  rasgo, solas y tras «Vamos a buscar otro lugar.», menos «Busca un lugar con arbustos.»,
+  idéntica a `AY_H13_L1`, que reutiliza su audio. En total hay 412 grabaciones en
+  `assets/voz/grabada/es-419/` y las 32 ayudas por rasgo están activas.
   [`docs/voz/elevenlabs/textos_pendientes_es-419.txt`](../voz/elevenlabs/textos_pendientes_es-419.txt)
-  (una línea con el nombre exacto del MP3 y otra con el texto) y se regeneran con
-  `PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes`.
-- **Mientras falten**, el agente no usa esas ayudas (`ayudas_con_grabacion`): la guía nunca
-  muestra un mensaje que la voz no pueda leer. `tests/test_voz_grabada_cobertura.py` juega
-  todos los animales con el agente y comprueba que cada mensaje tenga grabación.
-- **Cuando lleguen**, basta con copiarlas en `assets/voz/grabada/es-419/` con su nombre:
-  el agente las usa al reiniciar el juego, sin cambiar código. Los pasos de verificación están
-  en [`docs/voz/elevenlabs/README.md`](../voz/elevenlabs/README.md).
+  queda vacío; se regenera con `PYTHONUTF8=1 python -m codigo.interfaz.catalogo_voz --pendientes`
+  si se añaden mensajes.
+- **Si faltara una grabación**, el agente no usa esa ayuda (`ayudas_con_grabacion`): la guía
+  nunca muestra un mensaje que la voz no pueda leer. `tests/test_voz_grabada_cobertura.py`
+  juega todos los animales con el agente y comprueba que cada mensaje tenga grabación. Los pasos
+  para incorporar audios nuevos están en [`docs/voz/elevenlabs/README.md`](../voz/elevenlabs/README.md).
 - En pt-BR la voz sigue bloqueada. Las ayudas por rasgo tienen una traducción propuesta,
   marcada como pendiente en `docs/traducciones/revision_es_pt.csv` (grupo `ayuda_rasgo`).
 
@@ -455,7 +459,7 @@ recuperación de lo plantado; con el resto, 122 en total):
   conservan los confirmados que caben, toda ayuda habla del hábitat guía visible y solo
   afirma rasgos documentados, y la del agente tras un error nunca describe lo elegido;
 - exhaustiva: la primera Pista nunca es «Señala» y ninguna frase se repite en un reto;
-- casos: salta la pista 1 idéntica entre H04 y H05; distingue la última elección (H06 frente a
+- casos: salta la pista 1 idéntica entre H04 y H05 y dice algo que los distingue; distingue la última elección (H06 frente a
   H05); no aleja del secundario documentado (jaguar y H04); apoyo explícito tras dos elecciones
   o tres ayudas; Repetir exacto; Pausar y Reanudar sin efecto; sin grabación no se usa la ayuda
   por rasgo y, con una grabación de prueba, sí; ID3 elige la mayor ganancia de información;

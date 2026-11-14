@@ -69,9 +69,10 @@ preferencia del sistema lo desactivan.
 
 Se cierra con Volver al juego, la ×, Escape o tocando fuera.
 
-La voz de la guía son 350 grabaciones completas en español latinoamericano
+La voz de la guía son 412 grabaciones completas en español latinoamericano
 (`assets/voz/grabada/es-419`), una por mensaje: cubren los 353 mensajes del juego
-(tres comparten texto). Nunca se unen fragmentos y suena una sola voz a la vez.
+(tres comparten texto) y las 32 ayudas breves por rasgo del agente, solas y tras «Vamos a buscar
+otro lugar.» (una reutiliza la grabación de una pista). Nunca se unen fragmentos y suena una sola voz a la vez.
 Funcionan sin Internet y sin descargar modelos. En portugués la voz está bloqueada
 hasta que existan grabaciones. La prueba `tests.test_voz_grabada_cobertura` juega
 todos los animales y comprueba que cada mensaje tenga su grabación.
