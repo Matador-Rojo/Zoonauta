@@ -128,8 +128,11 @@ function boton(texto,tipo,payload={},clase="accion",picto=null) {
   if(picto)b.append(imagen(picto)); if(texto)b.append(nodo("span","",texto));
   b.addEventListener("click",()=>accion(tipo,payload)); return b;
 }
+function claseRespuesta(r) {
+  return "respuesta "+(r.tipo_respuesta==="CONFIRMACION"?"confirmacion":r.tipo_respuesta==="NEUTRAL"?"neutral":"");
+}
 function respuesta(r) {
-  const bloque=nodo("section","respuesta "+(r.tipo_respuesta==="CONFIRMACION"?"confirmacion":r.tipo_respuesta==="NEUTRAL"?"neutral":""));
+  const bloque=nodo("section",claseRespuesta(r));
   const guia=nodo("div","guia-cabecera"),marca=nodo("img");
   marca.src="/zoonauta-logo.svg";marca.alt="";guia.append(marca,nodo("span","","Tu guía")); bloque.append(guia);
   const titulo=nodo("h2","",r.texto_apoyo); titulo.id="mensaje"; titulo.tabIndex=-1; bloque.append(titulo);
@@ -360,6 +363,23 @@ function render(enfocar=false,conservarPaisaje=false) {
     if(f==="PAUSADA")juego.querySelector("button")?.focus();
   }
 }
+async function actualizarGuia(tablero,anterior) {
+  if(!tablero||anterior.fase!==vista.fase||anterior.sesion_id!==vista.sesion_id||
+    anterior.reto_id!==vista.reto_id||anterior.idioma!==vista.idioma)return false;
+
+  const previa=anterior.respuesta,nueva=vista.respuesta;
+  const panel=tablero.querySelector(".respuesta");
+  const pictogramasCambiaron=previa.pictogramas.length!==nueva.pictogramas.length||
+    previa.pictogramas.some((id,indice)=>id!==nueva.pictogramas[indice]);
+  if(pictogramasCambiaron){
+    const nuevos=secuencia(nueva);
+    await Promise.allSettled([...nuevos.querySelectorAll("img")].map(im=>im.decode()));
+    panel.querySelector(".secuencia").replaceWith(nuevos);
+  }
+  if(previa.texto_apoyo!==nueva.texto_apoyo)panel.querySelector("h2").textContent=t(nueva.texto_apoyo);
+  if(previa.tipo_respuesta!==nueva.tipo_respuesta)panel.className=claseRespuesta(nueva);
+  return true;
+}
 function pararVoz() {
   const pendiente=pedidoVoz;
   turnoVoz++;pendiente?.abort();pedidoVoz=null;
@@ -474,19 +494,29 @@ async function cambiarIdioma() {
   finally{ocupado=false;$("idioma").disabled=false;$("idioma").value=vista.idioma;}
 }
 async function accion(tipo,payload) {
-  if(ocupado||!vista)return; ocupado=true; const antes=vista.fase;
+  if(ocupado||!vista)return; ocupado=true; const anterior=vista;
   if(tipo==="iniciar") {const n=validarRetos(true);if(n===null){ocupado=false;return;} payload={...payload,retos:n,cantidad_opciones:Number($("cantidad-opciones").value)};}
   pararVoz();
-  for(const b of juego.querySelectorAll("button"))b.disabled=true;
+  const tablero=juego.querySelector(".tablero");
+  const bloqueados=tablero?[]:[...juego.querySelectorAll("button:enabled")];
+  for(const b of bloqueados)b.disabled=true;
   juego.setAttribute("aria-busy","true");
   const entrada={tipo,payload,evento_id:crypto.randomUUID(),revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id};
   try {
     const r=await fetch("/api/accion",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada)}),d=await r.json();
-    if(d.vista){vista=d.vista;render(true);} if(!r.ok){notificar(d.error||t("No se pudo aplicar la acción."));return;}
+    if(d.vista){
+      vista=d.vista;
+      if(!await actualizarGuia(tablero,anterior))render(true);
+    }
+    if(!r.ok){notificar(d.error||t("No se pudo aplicar la acción."));return;}
     if(d.aceptada&&d.respuesta_emitida&&tipo!=="pausar"&&tipo!=="nueva_partida")hablar();
-    if(antes!==vista.fase)window.scrollTo({top:0,behavior:"instant"});
-  } catch(e) {notificar(t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida."));juego.setAttribute("aria-busy","false");}
-  finally {ocupado=false;}
+    if(anterior.fase!==vista.fase)window.scrollTo({top:0,behavior:"instant"});
+  } catch(e) {notificar(t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida."));}
+  finally {
+    for(const b of bloqueados)b.disabled=false;
+    juego.setAttribute("aria-busy","false");
+    ocupado=false;
+  }
 }
 $("ajustes").addEventListener("click",()=>{$("retos").disabled=vista&&vista.fase!=="INICIO";$("cantidad-opciones").disabled=vista&&vista.fase!=="INICIO";cargarVoces();$("preferencias").showModal();ubicarAviso();ritmoCarrusel();});
 $("cerrar-preferencias").addEventListener("click",()=>$("preferencias").close());

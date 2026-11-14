@@ -766,8 +766,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 33938,
-      "sha256": "5f3695973d1d4cac22361e5eaa2a122906dcb78f3b85a7ecf1be9ffbd1ea6812"
+      "bytes": 35140,
+      "sha256": "01923c90367ba4eb71e711248f8635a285ccba9b1e5b6994859fe8f9d41958bd"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",
@@ -2671,8 +2671,8 @@
     },
     {
       "ruta": "tests/verificar_hito2.cjs",
-      "bytes": 5092,
-      "sha256": "06056cd2f08d726e64440b2788fb40f5beaa4e56fcf2db43a0e19b14e9a4a329"
+      "bytes": 8005,
+      "sha256": "3e5ceee37ccc9bac58bb46fb91f2521cdbc1c0c4e25c70374a556e559b0b0122"
     },
     {
       "ruta": "tests/verificar_hito3.cjs",

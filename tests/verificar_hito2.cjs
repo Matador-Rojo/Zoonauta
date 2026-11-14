@@ -14,6 +14,69 @@ async function clicar(page,nombre){
   await page.waitForFunction(async r=>(await(await fetch('/api/vista')).json()).revision>r,antes);
   await page.waitForFunction(()=>document.querySelector('#juego').getAttribute('aria-busy')==='false');
 }
+async function comprobarContinuidad(page,nombre,tipo){
+  const retrato=await page.locator('.animal-retrato img').elementHandle();
+  const paisaje=await page.locator('.habitats .paisaje').first().elementHandle();
+  const boton=page.getByRole('button',{name:nombre,exact:true});
+  const mensaje=page.locator('#mensaje');
+  const secuencia=await page.locator('.mesa .secuencia').elementHandle();
+  const texto=await mensaje.textContent();
+  let liberar,recibida,reanudacion;
+  const pendiente=new Promise(resolve=>{liberar=resolve;});
+  const interceptada=new Promise(resolve=>{recibida=resolve;});
+  let liberarImagenes;
+  const imagenesPendientes=new Promise(resolve=>{liberarImagenes=resolve;});
+  const solicitudesImagen=[];
+  const esperarImagen=route=>{
+    const solicitud=imagenesPendientes.then(()=>route.continue());
+    solicitudesImagen.push(solicitud);
+    return solicitud;
+  };
+  const esperar=async route=>{
+    if(route.request().postDataJSON().tipo===tipo){
+      reanudacion=pendiente.then(()=>route.continue());
+      recibida();
+      return reanudacion;
+    }
+    await route.continue();
+  };
+  await page.route('**/api/accion',esperar);
+  if(tipo==='ayuda')await page.route('**/media/*',esperarImagen);
+  try{
+    await boton.click();
+    await interceptada;
+    assert.equal(await page.locator('#juego').getAttribute('aria-busy'),'true');
+    assert.equal(await page.locator('.habitats button:enabled').count(),await page.locator('.habitats button').count());
+    assert.equal(await mensaje.textContent(),texto);
+    const siguienteImagen=tipo==='ayuda'?page.waitForRequest('**/media/*'):null;
+    liberar();
+    if(siguienteImagen){
+      await siguienteImagen;
+      assert.equal(await mensaje.textContent(),texto);
+      assert.ok(await secuencia.evaluate(elemento=>elemento.isConnected));
+      liberarImagenes();
+    }
+    await page.waitForFunction(()=>document.querySelector('#juego').getAttribute('aria-busy')==='false');
+    assert.ok(await retrato.evaluate(imagen=>imagen===document.querySelector('.animal-retrato img')));
+    assert.ok(await paisaje.evaluate(imagen=>imagen===document.querySelector('.habitats .paisaje')));
+    assert.ok(await boton.evaluate(elemento=>elemento===document.activeElement));
+    if(tipo==='ayuda'){
+      assert.notEqual(await mensaje.textContent(),texto);
+      assert.ok(await page.locator('.mesa .secuencia img').evaluateAll(
+        imgs=>imgs.length>0&&imgs.every(im=>im.complete&&im.naturalWidth>0)));
+    }else{
+      assert.equal(await mensaje.textContent(),texto);
+      assert.ok(await secuencia.evaluate(elemento=>elemento.isConnected));
+    }
+  }finally{
+    liberar();
+    liberarImagenes();
+    await reanudacion;
+    await Promise.allSettled(solicitudesImagen);
+    await page.unroute('**/api/accion',esperar);
+    if(tipo==='ayuda')await page.unroute('**/media/*',esperarImagen);
+  }
+}
 (async()=>{
  const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{})});
  try{
@@ -49,9 +112,9 @@ async function clicar(page,nombre){
     if(width===1280||width===390)await page.screenshot({path:path.join(out,`opciones_${n}_${idioma}_${width}.png`),fullPage:true});
    }
    await page.setViewportSize({width:1280,height:720});
-   await clicar(page,idioma==='es'?'Pista':'Dica');
+    await comprobarContinuidad(page,idioma==='es'?'Pista':'Dica','ayuda');
    const ayuda=(await vista(page)).respuesta;
-   await clicar(page,'Repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);
+    await comprobarContinuidad(page,'Repetir','repetir');assert.deepEqual((await vista(page)).respuesta,ayuda);
    await clicar(page,idioma==='es'?'Pausar':'Pausar');
    await clicar(page,idioma==='es'?'Reanudar':'Retomar');
    assert.deepEqual((await vista(page)).opciones_habitat,opciones);
