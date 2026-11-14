@@ -35,9 +35,9 @@ EXTENSIONES = (".mp3", ".wav")
 ESTADOS = ("pendiente", "generado", "descargado", "verificado", "rechazado", "usa_duplicado")
 
 # Créditos por carácter al generar en la web de ElevenLabs (consultado el
-# 2026-11-13). Confirmar en la pantalla de generación: la tarifa puede cambiar.
-MODELO_PROPUESTO = "eleven_multilingual_v2"
-TARIFAS = {"eleven_multilingual_v2": 1.0, "eleven_v3": 1.0,
+# 2026-11-14). Confirmar en la pantalla de generación: la tarifa puede cambiar.
+MODELO_PROPUESTO = "eleven_v4"  # elegido por el propietario el 2026-11-14
+TARIFAS = {"eleven_v4": 1.0, "eleven_multilingual_v2": 1.0, "eleven_v3": 1.0,
            "eleven_flash_v2_5": 0.5, "eleven_turbo_v2_5": 0.5}
 MARGEN_REPETICIONES = 0.5  # 50 % extra para tomas descartadas
 
@@ -207,7 +207,7 @@ def filas(locuciones: list[Locucion], anteriores: dict | None = None) -> list[di
 
 
 def resumen(tabla: list[dict]) -> dict:
-    datos = {"fecha": "2026-11-13", "creditos_por_caracter_web": TARIFAS,
+    datos = {"fecha": "2026-11-14", "creditos_por_caracter_web": TARIFAS,
              "margen_repeticiones": MARGEN_REPETICIONES, "por_idioma": {}, "por_prioridad": {}}
     for fila in tabla:
         for grupo, clave in (("por_idioma", fila["idioma"]),

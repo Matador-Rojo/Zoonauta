@@ -1,6 +1,7 @@
 {
-  "fecha": "2026-11-13",
+  "fecha": "2026-11-14",
   "creditos_por_caracter_web": {
+    "eleven_v4": 1.0,
     "eleven_multilingual_v2": 1.0,
     "eleven_v3": 1.0,
     "eleven_flash_v2_5": 0.5,
@@ -14,12 +15,14 @@
       "duplicados": 3,
       "caracteres_a_grabar": 19912,
       "creditos": {
+        "eleven_v4": 19912,
         "eleven_multilingual_v2": 19912,
         "eleven_v3": 19912,
         "eleven_flash_v2_5": 9956,
         "eleven_turbo_v2_5": 9956
       },
       "creditos_con_margen": {
+        "eleven_v4": 29868,
         "eleven_multilingual_v2": 29868,
         "eleven_v3": 29868,
         "eleven_flash_v2_5": 14934,
@@ -32,12 +35,14 @@
       "duplicados": 3,
       "caracteres_a_grabar": 19709,
       "creditos": {
+        "eleven_v4": 19709,
         "eleven_multilingual_v2": 19709,
         "eleven_v3": 19709,
         "eleven_flash_v2_5": 9854,
         "eleven_turbo_v2_5": 9854
       },
       "creditos_con_margen": {
+        "eleven_v4": 29564,
         "eleven_multilingual_v2": 29564,
         "eleven_v3": 29564,
         "eleven_flash_v2_5": 14782,
@@ -52,12 +57,14 @@
       "duplicados": 0,
       "caracteres_a_grabar": 3376,
       "creditos": {
+        "eleven_v4": 3376,
         "eleven_multilingual_v2": 3376,
         "eleven_v3": 3376,
         "eleven_flash_v2_5": 1688,
         "eleven_turbo_v2_5": 1688
       },
       "creditos_con_margen": {
+        "eleven_v4": 5064,
         "eleven_multilingual_v2": 5064,
         "eleven_v3": 5064,
         "eleven_flash_v2_5": 2532,
@@ -70,12 +77,14 @@
       "duplicados": 1,
       "caracteres_a_grabar": 950,
       "creditos": {
+        "eleven_v4": 950,
         "eleven_multilingual_v2": 950,
         "eleven_v3": 950,
         "eleven_flash_v2_5": 475,
         "eleven_turbo_v2_5": 475
       },
       "creditos_con_margen": {
+        "eleven_v4": 1425,
         "eleven_multilingual_v2": 1425,
         "eleven_v3": 1425,
         "eleven_flash_v2_5": 712,
@@ -88,12 +97,14 @@
       "duplicados": 2,
       "caracteres_a_grabar": 15586,
       "creditos": {
+        "eleven_v4": 15586,
         "eleven_multilingual_v2": 15586,
         "eleven_v3": 15586,
         "eleven_flash_v2_5": 7793,
         "eleven_turbo_v2_5": 7793
       },
       "creditos_con_margen": {
+        "eleven_v4": 23379,
         "eleven_multilingual_v2": 23379,
         "eleven_v3": 23379,
         "eleven_flash_v2_5": 11690,
@@ -106,12 +117,14 @@
       "duplicados": 0,
       "caracteres_a_grabar": 3331,
       "creditos": {
+        "eleven_v4": 3331,
         "eleven_multilingual_v2": 3331,
         "eleven_v3": 3331,
         "eleven_flash_v2_5": 1666,
         "eleven_turbo_v2_5": 1666
       },
       "creditos_con_margen": {
+        "eleven_v4": 4996,
         "eleven_multilingual_v2": 4996,
         "eleven_v3": 4996,
         "eleven_flash_v2_5": 2498,
@@ -124,12 +137,14 @@
       "duplicados": 1,
       "caracteres_a_grabar": 900,
       "creditos": {
+        "eleven_v4": 900,
         "eleven_multilingual_v2": 900,
         "eleven_v3": 900,
         "eleven_flash_v2_5": 450,
         "eleven_turbo_v2_5": 450
       },
       "creditos_con_margen": {
+        "eleven_v4": 1350,
         "eleven_multilingual_v2": 1350,
         "eleven_v3": 1350,
         "eleven_flash_v2_5": 675,
@@ -142,12 +157,14 @@
       "duplicados": 2,
       "caracteres_a_grabar": 15478,
       "creditos": {
+        "eleven_v4": 15478,
         "eleven_multilingual_v2": 15478,
         "eleven_v3": 15478,
         "eleven_flash_v2_5": 7739,
         "eleven_turbo_v2_5": 7739
       },
       "creditos_con_margen": {
+        "eleven_v4": 23217,
         "eleven_multilingual_v2": 23217,
         "eleven_v3": 23217,
         "eleven_flash_v2_5": 11608,
