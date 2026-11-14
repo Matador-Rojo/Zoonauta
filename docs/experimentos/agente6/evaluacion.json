@@ -361,20 +361,20 @@
         "primera_senala": 0,
         "primera_aleja_de_valida": 0,
         "retos_con_distractores": 288,
-        "primera_descarta_documentado": 214,
+        "primera_descarta_documentado": 213,
         "primera_sin_valor": 0,
         "distractores": 1985,
-        "distractores_descartados_primera": 567,
+        "distractores_descartados_primera": 566,
         "tras_eleccion": 1985,
-        "tras_eleccion_distingue_documentado": 673,
+        "tras_eleccion_distingue_documentado": 672,
         "tras_eleccion_describe_lo_elegido": 0,
         "tras_eleccion_senala": 112,
-        "ideas_media_primera": 1.611,
-        "tasa_primera_descarta_documentado": 0.7431,
+        "ideas_media_primera": 1.628,
+        "tasa_primera_descarta_documentado": 0.7396,
         "tasa_primera_sin_valor": 0.0,
         "tasa_primera_senala": 0.0,
-        "fraccion_distractores_descartados_primera": 0.2856,
-        "tasa_tras_eleccion_distingue_documentado": 0.339,
+        "fraccion_distractores_descartados_primera": 0.2851,
+        "tasa_tras_eleccion_distingue_documentado": 0.3385,
         "tasa_tras_eleccion_describe_lo_elegido": 0.0,
         "tasa_tras_eleccion_senala": 0.0564
       }
@@ -745,8 +745,8 @@
           "resueltos": 1.0,
           "elecciones_no_confirmadas_media": 0.2201,
           "ayudas_media": 0.6889,
-          "llego_a_senalar": 0.0806,
-          "ideas_por_ayuda": 1.5968
+          "llego_a_senalar": 0.0819,
+          "ideas_por_ayuda": 1.6038
         },
         {
           "cantidad_opciones": 4,
@@ -761,10 +761,10 @@
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.6097,
-          "ayudas_media": 1.2076,
+          "elecciones_no_confirmadas_media": 0.609,
+          "ayudas_media": 1.2069,
           "llego_a_senalar": 0.2507,
-          "ideas_por_ayuda": 1.6883
+          "ideas_por_ayuda": 1.7031
         }
       ],
       "apoyo_medio": [
@@ -772,28 +772,28 @@
           "cantidad_opciones": 2,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.2313,
-          "ayudas_media": 1.2549,
-          "llego_a_senalar": 0.1896,
-          "ideas_por_ayuda": 1.6768
+          "elecciones_no_confirmadas_media": 0.2299,
+          "ayudas_media": 1.2514,
+          "llego_a_senalar": 0.191,
+          "ideas_por_ayuda": 1.6881
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4646,
-          "ayudas_media": 1.6528,
-          "llego_a_senalar": 0.3132,
-          "ideas_por_ayuda": 1.6718
+          "elecciones_no_confirmadas_media": 0.4653,
+          "ayudas_media": 1.6535,
+          "llego_a_senalar": 0.3139,
+          "ideas_por_ayuda": 1.6737
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.7076,
-          "ayudas_media": 1.9799,
+          "elecciones_no_confirmadas_media": 0.7069,
+          "ayudas_media": 1.9792,
           "llego_a_senalar": 0.4229,
-          "ideas_por_ayuda": 1.6945
+          "ideas_por_ayuda": 1.7053
         }
       ],
       "apoyo_alto": [
@@ -802,27 +802,27 @@
           "retos": 1440,
           "resueltos": 1.0,
           "elecciones_no_confirmadas_media": 0.2382,
-          "ayudas_media": 2.0285,
-          "llego_a_senalar": 0.4222,
-          "ideas_por_ayuda": 1.7258
+          "ayudas_media": 2.0243,
+          "llego_a_senalar": 0.4229,
+          "ideas_por_ayuda": 1.7482
         },
         {
           "cantidad_opciones": 4,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.4528,
-          "ayudas_media": 2.5424,
-          "llego_a_senalar": 0.5806,
-          "ideas_por_ayuda": 1.7023
+          "elecciones_no_confirmadas_media": 0.4535,
+          "ayudas_media": 2.5431,
+          "llego_a_senalar": 0.5813,
+          "ideas_por_ayuda": 1.7037
         },
         {
           "cantidad_opciones": 8,
           "retos": 1440,
           "resueltos": 1.0,
-          "elecciones_no_confirmadas_media": 0.6569,
-          "ayudas_media": 2.8715,
+          "elecciones_no_confirmadas_media": 0.6562,
+          "ayudas_media": 2.8701,
           "llego_a_senalar": 0.6951,
-          "ideas_por_ayuda": 1.6948
+          "ideas_por_ayuda": 1.7034
         }
       ]
     }

@@ -78,7 +78,7 @@ Responder al propietario en español.
 
 ```bash
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
-PYTHONUTF8=1 python -m unittest discover -s tests -q   # 109 pruebas
+PYTHONUTF8=1 python -m unittest discover -s tests -q   # 110 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
 python -m tests.ejecutar_navegador --portada       # portada 6.0 «Bosque de luz» (/): 6 casos + axe
 python -m tests.comparar_versiones --salida <carpeta>  # 5.0 vs 6.0 en 6 vistas; medidas.json: desplazamiento y aplastados

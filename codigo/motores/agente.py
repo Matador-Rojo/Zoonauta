@@ -13,8 +13,10 @@ Qué puede decir (candidatas): solo frases verdaderas del hábitat guía del ani
 
 Cómo compara una candidata con otra opción visible ``d``:
   * ``conflicto``: ``d`` documenta otro valor del mismo rasgo → la ayuda la distingue;
-  * ``compartida``: ``d`` documenta lo mismo → la ayuda no sirve para separarlas;
-  * ``propia``: no consta en ``d`` → probablemente la distingue, pero no está comprobado.
+  * ``compartida``: todo lo que muestra la ayuda (sus pictogramas, o el único rasgo de una
+    ayuda por rasgo) también consta en ``d`` → no sirve para separarlas;
+  * ``parcial``: parte de lo que dice vale para ``d`` y el resto no consta en ``d``;
+  * ``propia``: nada de lo que dice consta en ``d`` → probablemente la distingue, sin comprobar.
 Nada de esto se muestra al jugador: las frases siempre describen el hábitat guía en
 positivo. Un hábitat no confirmado para el animal es una relación desconocida, no
 «incorrecta», y una ayuda nunca afirma algo de las otras opciones.
@@ -110,6 +112,9 @@ class Representacion:
         # «compartida» solo si todo lo que la ayuda muestra (sus pictogramas) también aparece en
         # las pistas de d; si dice algo que d no documenta, eso es desconocido, no igual.
         if c.conceptos <= self.conceptos[d]:
+            return "compartida"
+        # Una ayuda por rasgo solo dice ese rasgo: si d lo documenta igual, dice lo mismo de d.
+        if c.tipo == "RASGO" and all(a in rd and rd[a][0] == v for a, v in c.rasgos.items()):
             return "compartida"
         if any(a in rd and rd[a][0] == v for a, v in c.rasgos.items()):
             return "parcial"   # dice algo que también vale para d; el resto no consta en d

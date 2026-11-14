@@ -81,6 +81,18 @@ class DatosRasgos(Base):
             for c in self.rep.candidatas(g):
                 self.assertNotEqual("conflicto", self.rep.relacion(c, "H28"))
 
+    def test_relaciones(self):
+        def cand(g, i):
+            return next(c for c in self.rep._candidatas[g] if c.id == i)
+        # Una ayuda por rasgo dice lo mismo de otro hábitat que documenta ese rasgo igual.
+        for g, i, d in (("H01", "AY_ATR_ARBOLES", "H08"), ("H07", "AY_ATR_COSTA", "H41"),
+                        ("H44", "AY_ATR_ROCAS", "H20"), ("H21", "AY_ATR_POCA_LUZ", "H35")):
+            self.assertEqual("compartida", self.rep.relacion(cand(g, i), d))
+        # Una pista que añade algo no documentado en d no es «igual» (desconocido ≠ igual).
+        self.assertEqual("parcial", self.rep.relacion(cand("H37", "AY_H37_L2"), "H40"))
+        self.assertEqual("parcial", self.rep.relacion(cand("H01", "AY_H01_L1"), "H08"))
+        self.assertEqual("conflicto", self.rep.relacion(cand("H06", "AY_ATR_FRIO"), "H05"))
+
 
 class Decisiones(Base):
     def comprobar_compatible(self, g, salida):

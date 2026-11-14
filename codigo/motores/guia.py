@@ -129,7 +129,11 @@ class MotorGuia:
 
 
 class MotorPistas:
-    """Presenta las tres pistas revisadas de cada hábitat del catálogo ampliado."""
+    """Secuencia editorial anterior del catálogo ampliado: pista 1 → 2 → 3 del hábitat guía.
+
+    Desde el 2026-11-14 la partida usa el agente (``codigo/motores/agente.py``); esta
+    secuencia queda como comparación (``--agente PISTAS_PROGRESIVAS``).
+    """
 
     politica = "PISTAS_PROGRESIVAS"
     nodo_inicial = "INICIO_PISTAS"
