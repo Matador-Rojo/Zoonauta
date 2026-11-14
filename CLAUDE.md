@@ -44,7 +44,8 @@ pueden necesitar apoyos visuales, pictográficos y auditivos. Base estable: Zoon
 python -m codigo.nucleo.verificar_paquete          # 1017 archivos, "correcto": true
 PYTHONUTF8=1 python -m unittest discover -s tests -q   # 100 pruebas
 python -m tests.ejecutar_navegador --hito2         # 6 casos (Pista/Repetir 2/4/8)
-python -m tests.ejecutar_navegador --portada       # hoy: 48 fondos; pasar a 8 en la 6.0
+python -m tests.ejecutar_navegador --portada       # portada 6.0 (/v6/): 8 paisajes, 7 casos + axe
+python -m tests.ejecutar_navegador --portada-5     # portada 5.0 (/): 48 fondos
 python -m tests.ejecutar_navegador --catalogo      # 16 casos
 python -m tests.ejecutar_navegador --hito3         # 16 casos (Preferencias, teclado)
 python -m tests.ejecutar_navegador                 # 20 casos (recorrido general)
@@ -56,6 +57,7 @@ Entorno necesario para las pruebas de navegador (no hay Playwright en el repo):
 - `PLAYWRIGHT_MODULE=<ruta absoluta a node_modules/playwright-core>`
 - `CHROMIUM_EXECUTABLE="C:/Program Files/Google/Chrome/Application/chrome.exe"`
 - `INTERFAZ_SALIDA=<carpeta temporal>` para no escribir capturas en `output/`.
+- `AXE_SOURCE=<ruta a axe-core/axe.min.js>` (axe-core 4.10.3) para que `--portada` ejecute axe.
 
 Detalles del entorno:
 

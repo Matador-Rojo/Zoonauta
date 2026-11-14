@@ -2,107 +2,168 @@
    Por defecto todo es estático. El movimiento solo existe si el sistema no pide
    reducirlo Y la persona no activó «Reducir movimiento» (Modern Web Guidance,
    motion: opt-in con prefers-reduced-motion: no-preference). Sin zoom, parallax,
-   cámara ni destellos: solo opacidad y desplazamientos lentos de capas de luz. */
+   cámara ni destellos: solo opacidad y desplazamientos lentos (variaciones de luz
+   de ciclo largo y ≤ 22 % de opacidad), muy por debajo de tres destellos por segundo.
+   La pausa del carrusel detiene también el movimiento ambiental (WCAG 2.2.2). */
 
 .portada {
   position: relative; isolation: isolate; min-height: 100dvh; display: grid; align-items: end;
   color: #fff; overflow: hidden;
 }
-.portada-fondo { position: absolute; inset: 0; z-index: -1; background: #20302a; }
+.portada-fondo { position: absolute; inset: 0; z-index: -1; background: #1c2a24; overflow: hidden; container-type: size; }
 .portada-capa { position: absolute; inset: 0; opacity: 0; }
 .portada-capa[data-estado="previo"] { opacity: 1; z-index: 1; }
 .portada-capa[data-estado="actual"] { opacity: 1; z-index: 2; }
-.portada-capa img { width: 100%; height: 100%; object-fit: cover; }
+/* Caja 16:9 que cubre la pantalla como object-fit: cover, desplazada según --fx/--fy. */
+.escena {
+  position: absolute;
+  width: max(100cqw, 177.78cqh); height: max(100cqh, 56.25cqw);
+  left: calc((100cqw - max(100cqw, 177.78cqh)) * var(--fx, .5));
+  top: calc((100cqh - max(100cqh, 56.25cqw)) * var(--fy, .5));
+}
+.escena > img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .portada-sombra {
   position: absolute; inset: 0; z-index: 3;
   background:
-    linear-gradient(180deg, rgb(8 18 12 / 55%) 0%, rgb(8 18 12 / 0%) 22%),
-    linear-gradient(0deg, rgb(8 18 12 / 85%) 0%, rgb(8 18 12 / 45%) 40%, rgb(8 18 12 / 0%) 70%);
+    linear-gradient(180deg, rgb(8 18 12 / 60%) 0%, rgb(8 18 12 / 0%) 20%),
+    linear-gradient(0deg, rgb(8 18 12 / 88%) 0%, rgb(8 18 12 / 50%) 38%, rgb(8 18 12 / 0%) 68%),
+    linear-gradient(90deg, rgb(8 18 12 / 45%) 0%, rgb(8 18 12 / 0%) 55%);
 }
-.ambiente { position: absolute; inset: 0 -3%; pointer-events: none; opacity: 0; }
 
+/* Capas de efecto: no se muestran mientras el movimiento no esté permitido. */
+.efecto { position: absolute; inset: 0; pointer-events: none; display: none; }
+
+/* --- Contenido --- */
 .portada-contenido {
   position: relative; z-index: 1; width: 100%;
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 2rem;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem); align-items: end; gap: 2rem;
   padding: 7rem clamp(1rem, 5vw, 4rem) clamp(1.5rem, 5vh, 3.5rem);
 }
-.portada-texto { max-width: 40rem; }
+.portada-texto { max-width: 40rem; text-shadow: 0 1px 12px rgb(0 0 0 / 35%); }
 .portada-texto .etiqueta { color: var(--ambar); }
 .portada h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); font-weight: 800; letter-spacing: -.02em; }
 .portada h1 em { font-style: normal; color: var(--ambar); }
 .portada .introduccion { font-size: clamp(1.1rem, 2vw, 1.35rem); max-width: 34rem; margin: 1rem 0 1.75rem; }
 .entrada { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+.entrada .boton-principal { text-shadow: none; box-shadow: 0 6px 24px rgb(0 0 0 / 30%); }
 .entrada .flecha { margin-left: .25rem; }
-.portada .nota { display: inline-flex; align-items: center; gap: .5rem; color: #e9efe9; margin: 0; }
+.portada .nota { display: inline-flex; align-items: center; gap: .5rem; color: #eef3ee; margin: 0; }
 .portada .nota svg { width: 1.25rem; height: 1.25rem; }
 
+/* --- Carrusel --- */
 .carrusel {
-  display: grid; gap: .75rem; justify-items: end; text-align: right;
-  padding: 1rem 1.25rem; border-radius: var(--radio-grande);
-  background: rgb(10 22 16 / 55%); backdrop-filter: blur(6px);
+  display: grid; gap: .9rem; padding: 1rem 1.1rem; border-radius: var(--radio-grande);
+  background: rgb(10 22 16 / 62%); border: 1px solid rgb(255 255 255 / 14%);
+  backdrop-filter: blur(8px);
 }
-.carrusel-nombre { margin: 0; display: grid; }
-.carrusel-nombre strong { font-size: 1.15rem; }
-.carrusel-contador { font-variant-numeric: tabular-nums; color: #dbe5dd; font-size: .95rem; }
-.carrusel-controles { display: flex; gap: .5rem; }
+.carrusel-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.carrusel-nombre { margin: 0; display: grid; min-width: 0; }
+.carrusel-nombre strong { font-size: 1.15rem; line-height: 1.25; }
+.carrusel-contador { font-variant-numeric: tabular-nums; color: #dbe5dd; font-size: .9rem; font-weight: 600; }
+.carrusel-controles { display: flex; gap: .4rem; flex: none; }
 .carrusel .control-redondo { color: var(--tinta); }
+.carrusel :focus-visible { outline-color: #fff; box-shadow: 0 0 0 6px rgb(11 87 208 / 85%); }
 
-@media (max-width: 760px) {
-  .portada-contenido { grid-template-columns: 1fr; padding-top: 6rem; }
-  .carrusel { justify-items: start; text-align: left; grid-template-columns: 1fr auto; align-items: center; }
+/* Marcas: 8 botones con área táctil de 32 × 32 px (WCAG 2.5.8) y punto visible. */
+.carrusel-marcas { display: flex; justify-content: space-between; gap: .15rem; }
+.marca-paisaje {
+  width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%; background: transparent;
+  display: grid; place-items: center;
+}
+.marca-paisaje::before {
+  content: ""; width: 12px; height: 12px; border-radius: 50%;
+  background: rgb(255 255 255 / 45%); border: 2px solid rgb(255 255 255 / 85%);
+}
+.marca-paisaje:hover::before { background: rgb(255 255 255 / 75%); }
+.marca-paisaje[aria-current="true"]::before { width: 16px; height: 16px; background: var(--ambar); border-color: var(--ambar); }
+
+@media (max-width: 820px) {
+  .portada-contenido { grid-template-columns: 1fr; padding-top: 6rem; gap: 1.25rem; }
+}
+@media (max-width: 420px) {
+  .carrusel { padding: .8rem; }
+  .carrusel-marcas { gap: 0; }
+  .marca-paisaje { width: 30px; height: 32px; }
 }
 
 /* --- Movimiento opcional ------------------------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
-
   :root[data-movimiento="normal"] .portada-capa { transition: opacity 1.4s ease-in-out; }
-  :root[data-movimiento="normal"] .portada-capa[data-estado="actual"] .ambiente { opacity: 1; }
+  :root[data-movimiento="normal"] .efecto { display: block; }
+  :root[data-movimiento="normal"] .portada[data-ambiente="pausado"] .efecto { animation-play-state: paused; }
 
-  /* Selva: niebla muy suave que se desplaza despacio. */
-  :root[data-movimiento="normal"] [data-habitat="H01"] .ambiente {
-    background: radial-gradient(60% 35% at 30% 70%, rgb(255 255 255 / 14%), transparent 70%);
-    animation: deriva 46s ease-in-out infinite alternate;
+  /* Selva: niebla que deriva despacio sobre el bosque. */
+  :root[data-movimiento="normal"] .efecto-niebla {
+    inset: -5% -10%;
+    background:
+      radial-gradient(40% 22% at 25% 25%, rgb(235 245 240 / 16%), transparent 70%),
+      radial-gradient(35% 18% at 55% 45%, rgb(235 245 240 / 10%), transparent 70%);
+    animation: deriva-lenta 48s ease-in-out infinite alternate;
   }
-  /* Sabana: brisa cálida (aproximación; la oscilación real de la hierba requiere capas). */
-  :root[data-movimiento="normal"] [data-habitat="H09"] .ambiente {
-    background: linear-gradient(100deg, transparent 30%, rgb(255 220 150 / 10%) 50%, transparent 70%);
-    animation: deriva 38s ease-in-out infinite alternate;
+  /* Selva: el agua de la cascada baja con una textura muy tenue. */
+  :root[data-movimiento="normal"] .efecto-cascada {
+    left: 71%; right: 22%; top: 8%; bottom: 14%;
+    background: repeating-linear-gradient(180deg, rgb(255 255 255 / 0%) 0 22px, rgb(255 255 255 / 7%) 22px 30px);
+    background-size: 100% 60px;
+    mask-image: radial-gradient(45% 50% at 50% 50%, #000 40%, transparent 100%);
+    animation: caer 6s linear infinite;
   }
-  /* Desierto: cambio mínimo de luz. */
-  :root[data-movimiento="normal"] [data-habitat="H17"] .ambiente {
-    background: rgb(255 200 120 / 9%);
+
+  /* Sabana: una copia de la franja de hierba oscila 0,4° desde el suelo. */
+  :root[data-movimiento="normal"] .efecto-hierba {
+    mask-image: linear-gradient(0deg, #000 0%, #000 22%, transparent 34%);
+    transform-origin: 50% 100%;
+    animation: brisa 7s ease-in-out infinite alternate;
+  }
+  /* Sabana: halo del sol que respira apenas. */
+  :root[data-movimiento="normal"] .efecto-sol {
+    background: radial-gradient(18% 22% at 86% 42%, rgb(255 190 90 / 22%), transparent 70%);
+    animation: respiro 24s ease-in-out infinite alternate;
+  }
+
+  /* Desierto: cambio mínimo de luz sobre las dunas. */
+  :root[data-movimiento="normal"] .efecto-luz-calida {
+    background: linear-gradient(160deg, rgb(255 190 110 / 12%) 0%, transparent 55%);
     animation: respiro 30s ease-in-out infinite alternate;
   }
-  /* Hielo: reflejo frío casi imperceptible, sin destellos. */
-  :root[data-movimiento="normal"] [data-habitat="H22"] .ambiente {
-    background: linear-gradient(120deg, transparent 35%, rgb(220 240 255 / 9%) 50%, transparent 65%);
-    animation: deriva 52s ease-in-out infinite alternate;
+
+  /* Hielo: reflejo frío casi imperceptible en el agua, sin destellos. */
+  :root[data-movimiento="normal"] .efecto-reflejo-frio {
+    inset: 45% -10% 0;
+    background: linear-gradient(100deg, transparent 30%, rgb(220 240 255 / 8%) 48%, transparent 66%);
+    animation: deriva-lenta 50s ease-in-out infinite alternate;
   }
-  /* Montaña: nubes lentas. */
-  :root[data-movimiento="normal"] [data-habitat="H20"] .ambiente {
-    background: radial-gradient(45% 18% at 40% 22%, rgb(255 255 255 / 16%), transparent 75%);
-    animation: deriva 60s linear infinite alternate;
+
+  /* Montaña: nubes suaves que cruzan muy despacio. */
+  :root[data-movimiento="normal"] .efecto-nubes {
+    inset: 0 -20% 50% -20%;
+    background:
+      radial-gradient(22% 30% at 20% 55%, rgb(255 255 255 / 14%), transparent 70%),
+      radial-gradient(18% 24% at 62% 40%, rgb(255 255 255 / 10%), transparent 70%);
+    animation: cruzar 90s linear infinite alternate;
   }
-  /* Arrecife: variación ligera de luz submarina. */
-  :root[data-movimiento="normal"] [data-habitat="H37"] .ambiente {
-    background: radial-gradient(70% 40% at 50% 0%, rgb(170 230 255 / 12%), transparent 70%);
-    animation: respiro 26s ease-in-out infinite alternate;
+
+  /* Arrecife: los rayos de luz varían apenas; brillo submarino que se desplaza. */
+  :root[data-movimiento="normal"] .efecto-rayos {
+    background: linear-gradient(200deg, rgb(190 240 255 / 14%) 0%, transparent 45%);
+    animation: respiro 22s ease-in-out infinite alternate;
   }
-  /* Cueva: estática por decisión de diseño. */
-  :root[data-movimiento="normal"] [data-habitat="H21"] .ambiente { animation: none; }
-  /* Lago: ondulación suave en la franja del agua. */
-  :root[data-movimiento="normal"] [data-habitat="H25"] .ambiente {
-    background: repeating-linear-gradient(0deg, transparent 0 14px, rgb(255 255 255 / 5%) 14px 16px);
-    mask-image: linear-gradient(0deg, #000 0%, #000 35%, transparent 55%);
-    animation: deriva 34s ease-in-out infinite alternate;
+  :root[data-movimiento="normal"] .efecto-ondas-luz {
+    inset: 60% -10% 0;
+    background: radial-gradient(30% 40% at 30% 60%, rgb(170 240 255 / 10%), transparent 70%);
+    animation: deriva-lenta 28s ease-in-out infinite alternate;
+  }
+
+  /* Lago: copia del agua que ondula 2 px en vertical, solo en la mitad inferior. */
+  :root[data-movimiento="normal"] .efecto-agua {
+    mask-image: linear-gradient(0deg, #000 0%, #000 38%, transparent 50%);
+    animation: ondular 9s ease-in-out infinite alternate;
   }
 }
 
-@keyframes deriva {
-  from { translate: -2% 0; }
-  to { translate: 2% 0; }
-}
-@keyframes respiro {
-  from { opacity: .35; }
-  to { opacity: 1; }
-}
+@keyframes deriva-lenta { from { translate: -3% 0; } to { translate: 3% 0; } }
+@keyframes cruzar { from { translate: -6% 0; } to { translate: 6% 0; } }
+@keyframes respiro { from { opacity: .4; } to { opacity: 1; } }
+@keyframes caer { from { background-position: 0 0; } to { background-position: 0 60px; } }
+@keyframes brisa { from { transform: skewX(-0.4deg); } to { transform: skewX(0.4deg); } }
+@keyframes ondular { from { translate: 0 -1px; } to { translate: 0 2px; } }

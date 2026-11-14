@@ -18,6 +18,7 @@ interface Props {
   valores: ValoresPreferencias;
   enInicio: boolean;
   voces: OpcionVoz[];
+  sistemaReduce: boolean;
   onCambio: (cambios: Partial<ValoresPreferencias>) => void;
   onIdioma: (idioma: Idioma) => void;
   onProbarVoz: () => void;
@@ -29,7 +30,7 @@ const CALIDAD: Record<string, string> = { high: "Calidad alta", medium: "Calidad
 
 // Diálogo modal nativo (Modern Web Guidance, dialog: showModal, sin role ni trampa de foco manual).
 export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Preferencias(
-  { idioma, valores, enInicio, voces, onCambio, onIdioma, onProbarVoz, onCerrar }, ref,
+  { idioma, valores, enInicio, voces, sistemaReduce, onCambio, onIdioma, onProbarVoz, onCerrar }, ref,
 ) {
   const { t } = useT();
   const region = (codigo: string) => {
@@ -75,9 +76,12 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
           <label className="interruptor">
             <span>
               <span className="interruptor-titulo">{t("Reducir movimiento")}</span>
-              <span className="nota">{t("Muestra fotografías fijas y cambia de paisaje solo con los botones.")}</span>
+              <span className="nota" id="nota-movimiento">{t(sistemaReduce
+                ? "Tu equipo ya pide reducir el movimiento. Las fotografías quedan fijas."
+                : "Muestra fotografías fijas y cambia de paisaje solo con los botones.")}</span>
             </span>
-            <input type="checkbox" role="switch" checked={valores.movimientoReducido}
+            <input type="checkbox" role="switch" checked={valores.movimientoReducido || sistemaReduce}
+              disabled={sistemaReduce} aria-describedby="nota-movimiento"
               onChange={(e) => onCambio({ movimientoReducido: e.target.checked })} />
           </label>
         </div>

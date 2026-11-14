@@ -6,6 +6,9 @@
   <meta name="color-scheme" content="light">
   <title>Zoonauta · Animales y hábitats</title>
   <link rel="icon" href="/zoonauta-logo.svg" type="image/svg+xml">
+  <!-- Primer paisaje de la portada (LCP): el preload scanner no lo ve hasta que React lo pinta. -->
+  <link rel="preload" as="image" fetchpriority="high" href="/fondos/catalogo/H01.webp"
+    imagesrcset="/fondos/portada/H01-960.webp 960w, /fondos/catalogo/H01.webp 1920w" imagesizes="max(100vw, 177.78vh)">
 </head>
 <body>
   <div id="raiz"></div>

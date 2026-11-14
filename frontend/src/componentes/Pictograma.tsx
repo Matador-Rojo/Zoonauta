@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import type { Pictograma as DatosPictograma } from "../api/tipos";
 
-export function Pictograma({ id, datos, className }: { id: string; datos: DatosPictograma | undefined; className?: string }) {
+export function Pictograma({ id, datos, className, perezosa }: {
+  id: string; datos: DatosPictograma | undefined; className?: string; perezosa?: boolean;
+}) {
   if (!datos) return null;
   const clases = [className, /^P_A\d+$/.test(id) ? "animal-ilustracion" : ""].filter(Boolean).join(" ");
-  return <img className={clases || undefined} src={datos.imagen} alt="" draggable={false} decoding="async" />;
+  return <img className={clases || undefined} src={datos.imagen} alt="" draggable={false} decoding="async"
+    loading={perezosa ? "lazy" : undefined} />;
 }
 
 /**
