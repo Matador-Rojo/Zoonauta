@@ -52,12 +52,22 @@ python -m tests.ejecutar_navegador                 # 20 casos (recorrido general
 py -3 -m codigo.interfaz.iniciar --sin-descargas   # juego en http://127.0.0.1:8766
 ```
 
-Entorno necesario para las pruebas de navegador (no hay Playwright en el repo):
+Herramientas de prueba: `cd frontend && npm ci` instala Playwright core, axe-core y
+Lighthouse fijados; `ejecutar_navegador` los usa por defecto junto con el Chrome del
+sistema (variables `PLAYWRIGHT_MODULE`, `AXE_SOURCE`, `CHROMIUM_EXECUTABLE` las
+sustituyen). `INTERFAZ_SALIDA=<carpeta temporal>` evita escribir capturas en `output/`.
 
-- `PLAYWRIGHT_MODULE=<ruta absoluta a node_modules/playwright-core>`
-- `CHROMIUM_EXECUTABLE="C:/Program Files/Google/Chrome/Application/chrome.exe"`
-- `INTERFAZ_SALIDA=<carpeta temporal>` para no escribir capturas en `output/`.
-- `AXE_SOURCE=<ruta a axe-core/axe.min.js>` (axe-core 4.10.3) para que `--portada` ejecute axe.
+```bash
+cd frontend && npm run check        # tsc + ESLint 10 + Prettier + Vitest
+cd frontend && npm run mwg -- search "toggle switch"   # Modern Web Guidance (CLI 1.0.0)
+python -m uv tool run ruff@0.15.0 check codigo tests    # 18 avisos de base (ver ruff.toml)
+python -m uv tool run --python 3.12 pip-audit@2.10.0 -r requirements_voz.txt --disable-pip --no-deps
+python -m codigo.nucleo.actualizar_manifiesto [--incluir RUTA]  # tras compilar o editar
+```
+
+Flujo de Modern Web Guidance: `search` → `retrieve` → aplicar y verificar → cerrar la
+entrega con una sección «Modern Web Guidance» (id de guía, decisión y cita breve).
+Skills del proyecto en `.claude/skills/` (frontend-design, webapp-testing).
 
 Detalles del entorno:
 

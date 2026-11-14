@@ -12,7 +12,27 @@ export interface OpcionVoz extends Omit<VozCatalogo, "motor"> {
 }
 
 const REGIONES_LATAM = new Set([
-  "419", "AR", "BO", "CL", "CO", "CR", "CU", "DO", "EC", "GT", "HN", "MX", "NI", "PA", "PE", "PR", "PY", "SV", "UY", "VE", "US",
+  "419",
+  "AR",
+  "BO",
+  "CL",
+  "CO",
+  "CR",
+  "CU",
+  "DO",
+  "EC",
+  "GT",
+  "HN",
+  "MX",
+  "NI",
+  "PA",
+  "PE",
+  "PR",
+  "PY",
+  "SV",
+  "UY",
+  "VE",
+  "US",
 ]);
 
 export function vocesNavegador(): OpcionVoz[] {
@@ -33,8 +53,15 @@ export function vocesNavegador(): OpcionVoz[] {
     if (vistos.has(id)) continue;
     vistos.add(id);
     resultado.push({
-      id, nombre: voz.name, motor, idioma: lengua === "es" ? "es" : "pt-BR", region: region!,
-      disponible: true, nativa: voz, idioma_voz: idioma, local: voz.localService,
+      id,
+      nombre: voz.name,
+      motor,
+      idioma: lengua === "es" ? "es" : "pt-BR",
+      region: region!,
+      disponible: true,
+      nativa: voz,
+      idioma_voz: idioma,
+      local: voz.localService,
     });
   }
   return resultado.sort((a, b) => a.nombre.localeCompare(b.nombre));
@@ -79,30 +106,54 @@ export class GuiaVoz {
     }
   }
 
-  async hablar(vista: Vista, voces: OpcionVoz[], ajustes: AjustesVoz, contexto: ContextoLectura,
-    textos: { prueba: string; modalidad: string; error: string }) {
+  async hablar(
+    vista: Vista,
+    voces: OpcionVoz[],
+    ajustes: AjustesVoz,
+    contexto: ContextoLectura,
+    textos: { prueba: string; modalidad: string; error: string },
+  ) {
     if (!ajustes.activa && contexto !== "prueba") return;
     this.parar();
     const voz = voces.find((v) => v.id === ajustes.vozId && v.disponible);
     if (!voz) return;
     const turno = this.turno;
     if (voz.nativa) {
-      const texto = contexto === "prueba" ? textos.prueba : contexto === "modalidad" ? textos.modalidad : vista.respuesta.texto_voz;
+      const texto =
+        contexto === "prueba" ? textos.prueba : contexto === "modalidad" ? textos.modalidad : vista.respuesta.texto_voz;
       const lectura = new SpeechSynthesisUtterance(texto);
       lectura.voice = voz.nativa;
       lectura.lang = voz.idioma_voz ?? vista.idioma;
       lectura.rate = ajustes.velocidad;
       this.lecturaNativa = lectura;
-      lectura.onend = () => { if (turno === this.turno) this.lecturaNativa = null; };
-      lectura.onerror = () => { if (turno === this.turno) { this.parar(); this.alError(textos.error); } };
-      try { window.speechSynthesis.speak(lectura); } catch { this.parar(); this.alError(textos.error); }
+      lectura.onend = () => {
+        if (turno === this.turno) this.lecturaNativa = null;
+      };
+      lectura.onerror = () => {
+        if (turno === this.turno) {
+          this.parar();
+          this.alError(textos.error);
+        }
+      };
+      try {
+        window.speechSynthesis.speak(lectura);
+      } catch {
+        this.parar();
+        this.alError(textos.error);
+      }
       return;
     }
     const control = new AbortController();
     this.pedido = control;
     const entrada = {
-      voz: voz.id, idioma: vista.idioma, prueba: contexto === "prueba", revision: vista.revision,
-      sesion_id: vista.sesion_id, reto_id: vista.reto_id, canal_voz: this.canal, turno_voz: turno,
+      voz: voz.id,
+      idioma: vista.idioma,
+      prueba: contexto === "prueba",
+      revision: vista.revision,
+      sesion_id: vista.sesion_id,
+      reto_id: vista.reto_id,
+      canal_voz: this.canal,
+      turno_voz: turno,
       contexto: contexto === "modalidad" ? "modalidad" : "respuesta",
     };
     try {
@@ -120,8 +171,15 @@ export class GuiaVoz {
       this.audio = audio;
       audio.playbackRate = ajustes.velocidad;
       audio.preservesPitch = true;
-      audio.onended = () => { if (turno === this.turno) this.parar(); };
-      audio.onerror = () => { if (turno === this.turno) { this.parar(); this.alError(textos.error); } };
+      audio.onended = () => {
+        if (turno === this.turno) this.parar();
+      };
+      audio.onerror = () => {
+        if (turno === this.turno) {
+          this.parar();
+          this.alError(textos.error);
+        }
+      };
       await audio.play();
     } catch (e) {
       if ((e as Error).name !== "AbortError" && turno === this.turno) {

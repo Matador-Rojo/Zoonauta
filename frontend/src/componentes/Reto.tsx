@@ -21,8 +21,13 @@ export function Controles({ vista, onAccion }: { vista: Vista; onAccion: (tipo: 
         if (!control) return null;
         const [texto, picto, variante] = control;
         return (
-          <button key={tipo} type="button" className={`control ${variante}`.trim()} data-control={tipo}
-            onClick={() => onAccion(tipo as TipoAccion)}>
+          <button
+            key={tipo}
+            type="button"
+            className={`control ${variante}`.trim()}
+            data-control={tipo}
+            onClick={() => onAccion(tipo as TipoAccion)}
+          >
             <Pictograma id={picto} datos={vista.pictogramas[picto]} />
             <span>{t(texto)}</span>
           </button>
@@ -36,12 +41,21 @@ export function Guia({ vista }: { vista: Vista }) {
   const { t } = useT();
   // Texto y pictogramas cambian juntos cuando las imágenes nuevas están listas.
   const respuesta = useContenidoListo(vista.respuesta, vista.pictogramas);
-  const tono = respuesta.tipo_respuesta === "CONFIRMACION" ? "confirmacion"
-    : respuesta.tipo_respuesta === "NEUTRAL" ? "neutral" : "";
+  const tono =
+    respuesta.tipo_respuesta === "CONFIRMACION"
+      ? "confirmacion"
+      : respuesta.tipo_respuesta === "NEUTRAL"
+        ? "neutral"
+        : "";
   return (
     <section className={`guia ${tono}`.trim()} aria-labelledby="mensaje">
-      <p className="guia-cabecera"><img src="/zoonauta-logo.svg" alt="" width={28} height={28} />{t("Tu guía")}</p>
-      <h2 id="mensaje" tabIndex={-1}>{t(respuesta.texto_apoyo)}</h2>
+      <p className="guia-cabecera">
+        <img src="/zoonauta-logo.svg" alt="" width={28} height={28} />
+        {t("Tu guía")}
+      </p>
+      <h2 id="mensaje" tabIndex={-1}>
+        {t(respuesta.texto_apoyo)}
+      </h2>
       <div className="secuencia" aria-label={t("Secuencia de pictogramas")}>
         {respuesta.pictogramas.map((id, i) => (
           <figure key={`${i}-${id}`} className="simbolo">
@@ -54,7 +68,10 @@ export function Guia({ vista }: { vista: Vista }) {
   );
 }
 
-export function Reto({ vista, onAccion }: {
+export function Reto({
+  vista,
+  onAccion,
+}: {
   vista: Vista;
   onAccion: (tipo: TipoAccion, payload?: Record<string, unknown>) => void;
 }) {
@@ -63,8 +80,11 @@ export function Reto({ vista, onAccion }: {
   const animal = vista.animal;
   return (
     <section className="pantalla reto-pantalla" aria-labelledby="titulo-pantalla">
-      <Encabezado vista={vista} etiqueta="Encuentra su hábitat"
-        titulo={resuelto ? "¡Encontraste un lugar!" : "Elige un hábitat"} />
+      <Encabezado
+        vista={vista}
+        etiqueta="Encuentra su hábitat"
+        titulo={resuelto ? "¡Encontraste un lugar!" : "Elige un hábitat"}
+      />
       <div className="tablero">
         <aside className="panel-animal">
           {animal && (
@@ -80,12 +100,23 @@ export function Reto({ vista, onAccion }: {
         </aside>
         <Guia vista={vista} />
         <div className="habitats-panel">
-          {vista.fase === "ESPERANDO_RESPUESTA" && <p className="instruccion">{t("Toca un lugar donde pueda vivir.")}</p>}
-          <div className="habitats" data-cantidad={vista.opciones_habitat.length} aria-label={t("Hábitats para elegir")}>
+          {vista.fase === "ESPERANDO_RESPUESTA" && (
+            <p className="instruccion">{t("Toca un lugar donde pueda vivir.")}</p>
+          )}
+          <div
+            className="habitats"
+            data-cantidad={vista.opciones_habitat.length}
+            aria-label={t("Hábitats para elegir")}
+          >
             {vista.opciones_habitat.map((h) => (
-              <button key={h.id} type="button" className="tarjeta-habitat" data-habitat={h.id}
+              <button
+                key={h.id}
+                type="button"
+                className="tarjeta-habitat"
+                data-habitat={h.id}
                 disabled={!vista.seleccion_habilitada}
-                onClick={() => onAccion("seleccionar_habitat", { habitat_id: h.id })}>
+                onClick={() => onAccion("seleccionar_habitat", { habitat_id: h.id })}
+              >
                 <img className="paisaje" src={`/habitats/${h.id}.webp`} alt="" draggable={false} loading="lazy" />
                 <span>{h.nombre}</span>
               </button>

@@ -4,13 +4,7 @@
 export type Idioma = "es" | "pt-BR";
 
 export type Fase =
-  | "INICIO"
-  | "SELECCION_ANIMAL"
-  | "ESPERANDO_RESPUESTA"
-  | "RETO_RESUELTO"
-  | "PAUSADA"
-  | "COMPLETADA"
-  | "ABANDONADA";
+  "INICIO" | "SELECCION_ANIMAL" | "ESPERANDO_RESPUESTA" | "RETO_RESUELTO" | "PAUSADA" | "COMPLETADA" | "ABANDONADA";
 
 export type Modalidad = "JUGADOR" | "AGENTE";
 

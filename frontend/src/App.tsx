@@ -10,14 +10,19 @@ import { Controles, Reto } from "./componentes/Reto";
 import { ContextoIdioma, crearTraductor } from "./i18n";
 import { GuiaVoz, vocesDisponibles, type ContextoLectura } from "./voz";
 
-interface Aviso { id: number; texto: string }
+interface Aviso {
+  id: number;
+  texto: string;
+}
 const CLAVE_MOVIMIENTO = "zoonauta.movimientoReducido";
 
 function movimientoInicial(): boolean {
   try {
     const guardado = localStorage.getItem(CLAVE_MOVIMIENTO);
     if (guardado !== null) return guardado === "1";
-  } catch { /* almacenamiento no disponible */ }
+  } catch {
+    /* almacenamiento no disponible */
+  }
   return false;
 }
 
@@ -43,15 +48,23 @@ export function App() {
   const [dialogoAbierto, setDialogoAbierto] = useState(false);
   const [versionVoces, setVersionVoces] = useState(0);
   const [prefs, setPrefs] = useState<ValoresPreferencias>(() => ({
-    retos: "8", opciones: 8, vozActiva: true, vozId: "", velocidad: 0.95, movimientoReducido: movimientoInicial(),
+    retos: "8",
+    opciones: 8,
+    vozActiva: true,
+    vozId: "",
+    velocidad: 0.95,
+    movimientoReducido: movimientoInicial(),
   }));
   const sistemaReduce = useSistemaReduceMovimiento();
   const movimientoReducido = prefs.movimientoReducido || sistemaReduce;
   const ocupadoRef = useRef(false);
   const vistaRef = useRef<Vista | null>(null);
-  vistaRef.current = vista;
+  // El ref sigue a la vista confirmada para los manejadores asíncronos (no se lee al renderizar).
+  useEffect(() => {
+    vistaRef.current = vista;
+  }, [vista]);
   const preferencias = useRef<HTMLDialogElement>(null);
-  const eleccionesVoz = useRef<Partial<Record<Idioma, string>>>({});
+  const [eleccionesVoz, setEleccionesVoz] = useState<Partial<Record<Idioma, string>>>({});
 
   const idioma: Idioma = vista?.idioma ?? "es";
   const traductor = useMemo(() => crearTraductor(diccionarios, idioma), [diccionarios, idioma]);
@@ -67,7 +80,11 @@ export function App() {
   // Carga inicial: la cookie de sesión permite recuperar la partida al recargar.
   useEffect(() => {
     Promise.all([cargarVista(), cargarDiccionarios(), cargarConfigVoz()])
-      .then(([v, d, c]) => { setVista(v); setDiccionarios(d); setCatalogoVoces(c.voces); })
+      .then(([v, d, c]) => {
+        setVista(v);
+        setDiccionarios(d);
+        setCatalogoVoces(c.voces);
+      })
       .catch(() => setErrorCarga(true));
   }, []);
 
@@ -82,15 +99,22 @@ export function App() {
     };
   }, [guia]);
 
-  const voces = useMemo(() => vocesDisponibles(catalogoVoces, idioma),
+  const voces = useMemo(
+    () => vocesDisponibles(catalogoVoces, idioma),
     // versionVoces fuerza la relectura cuando el navegador publica sus voces.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [catalogoVoces, idioma, versionVoces]);
+    [catalogoVoces, idioma, versionVoces],
+  );
   const vozId = useMemo(() => {
-    const recordada = eleccionesVoz.current[idioma];
-    return (voces.find((v) => v.id === recordada && v.disponible) ?? voces.find((v) => v.id === prefs.vozId && v.disponible)
-      ?? voces.find((v) => v.disponible))?.id ?? "";
-  }, [voces, idioma, prefs.vozId]);
+    const recordada = eleccionesVoz[idioma];
+    return (
+      (
+        voces.find((v) => v.id === recordada && v.disponible) ??
+        voces.find((v) => v.id === prefs.vozId && v.disponible) ??
+        voces.find((v) => v.disponible)
+      )?.id ?? ""
+    );
+  }, [voces, idioma, prefs.vozId, eleccionesVoz]);
 
   useEffect(() => {
     document.documentElement.lang = idioma;
@@ -100,7 +124,11 @@ export function App() {
     document.documentElement.dataset.movimiento = movimientoReducido ? "reducido" : "normal";
   }, [movimientoReducido]);
   useEffect(() => {
-    try { localStorage.setItem(CLAVE_MOVIMIENTO, prefs.movimientoReducido ? "1" : "0"); } catch { /* sin almacenamiento */ }
+    try {
+      localStorage.setItem(CLAVE_MOVIMIENTO, prefs.movimientoReducido ? "1" : "0");
+    } catch {
+      /* sin almacenamiento */
+    }
   }, [prefs.movimientoReducido]);
 
   // Al cambiar de fase se lleva el foco al título de la pantalla nueva.
@@ -108,88 +136,136 @@ export function App() {
   const primeraFase = useRef(true);
   useEffect(() => {
     if (!fase) return;
-    if (primeraFase.current) { primeraFase.current = false; return; }
+    if (primeraFase.current) {
+      primeraFase.current = false;
+      return;
+    }
     window.scrollTo({ top: 0, behavior: "instant" });
-    const destino = fase === "PAUSADA" ? document.querySelector<HTMLElement>(".cierre .control")
-      : document.getElementById("titulo-pantalla");
+    const destino =
+      fase === "PAUSADA"
+        ? document.querySelector<HTMLElement>(".cierre .control")
+        : document.getElementById("titulo-pantalla");
     destino?.focus({ preventScroll: true });
   }, [fase]);
 
-  const hablar = useCallback((v: Vista, contexto: ContextoLectura) => {
-    void guia.hablar(v, voces, { activa: prefs.vozActiva, vozId, velocidad: prefs.velocidad }, contexto, {
-      prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
-      modalidad: t("¿Quién elige el animal?"),
-      error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
-    });
-  }, [guia, voces, prefs.vozActiva, prefs.velocidad, vozId, t]);
+  const hablar = useCallback(
+    (v: Vista, contexto: ContextoLectura) => {
+      void guia.hablar(v, voces, { activa: prefs.vozActiva, vozId, velocidad: prefs.velocidad }, contexto, {
+        prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
+        modalidad: t("¿Quién elige el animal?"),
+        error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
+      });
+    },
+    [guia, voces, prefs.vozActiva, prefs.velocidad, vozId, t],
+  );
 
-  const accion = useCallback(async (tipo: TipoAccion, payload: Record<string, unknown> = {}) => {
-    const actual = vistaRef.current;
-    if (ocupadoRef.current || !actual) return;
-    if (tipo === "iniciar") {
-      const n = Number(prefs.retos);
-      if (!Number.isInteger(n) || n < 1 || n > 48) {
-        notificar(t("Para comenzar, abre Preferencias y escribe un número entero del 1 al 48."));
-        return;
+  const accion = useCallback(
+    async (tipo: TipoAccion, payload: Record<string, unknown> = {}) => {
+      const actual = vistaRef.current;
+      if (ocupadoRef.current || !actual) return;
+      if (tipo === "iniciar") {
+        const n = Number(prefs.retos);
+        if (!Number.isInteger(n) || n < 1 || n > 48) {
+          notificar(t("Para comenzar, abre Preferencias y escribe un número entero del 1 al 48."));
+          return;
+        }
+        payload = { ...payload, retos: n, cantidad_opciones: prefs.opciones };
       }
-      payload = { ...payload, retos: n, cantidad_opciones: prefs.opciones };
-    }
-    ocupadoRef.current = true;
-    setOcupado(true);
-    guia.parar();
-    try {
-      const { ok, datos } = await enviarAccion(actual, tipo, payload);
-      // El tablero no se reconstruye: React solo actualiza lo que cambió.
-      if (datos.vista) setVista(datos.vista);
-      if (!ok) { notificar(datos.error || t("No se pudo aplicar la acción.")); return; }
-      if (datos.aceptada && datos.respuesta_emitida && datos.vista && tipo !== "pausar" && tipo !== "nueva_partida")
-        hablar(datos.vista, "respuesta");
-    } catch {
-      notificar(t("No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida."));
-    } finally {
-      ocupadoRef.current = false;
-      setOcupado(false);
-    }
-  }, [prefs.retos, prefs.opciones, guia, hablar, notificar, t]);
+      ocupadoRef.current = true;
+      setOcupado(true);
+      guia.parar();
+      try {
+        const { ok, datos } = await enviarAccion(actual, tipo, payload);
+        // El tablero no se reconstruye: React solo actualiza lo que cambió.
+        if (datos.vista) setVista(datos.vista);
+        if (!ok) {
+          notificar(datos.error || t("No se pudo aplicar la acción."));
+          return;
+        }
+        if (datos.aceptada && datos.respuesta_emitida && datos.vista && tipo !== "pausar" && tipo !== "nueva_partida")
+          hablar(datos.vista, "respuesta");
+      } catch {
+        notificar(
+          t(
+            "No se pudo conectar con el juego. Comprueba que el servidor siga abierto y recarga la página para recuperar la partida.",
+          ),
+        );
+      } finally {
+        ocupadoRef.current = false;
+        setOcupado(false);
+      }
+    },
+    [prefs.retos, prefs.opciones, guia, hablar, notificar, t],
+  );
 
-  const cambiarIdioma = useCallback(async (nuevo: Idioma) => {
-    const actual = vistaRef.current;
-    if (ocupadoRef.current || !actual || nuevo === actual.idioma) return;
-    ocupadoRef.current = true;
-    setOcupado(true);
-    guia.parar();
-    try {
-      const { ok, datos } = await enviarIdioma(actual, nuevo);
-      if (datos.vista) setVista(datos.vista);
-      if (!ok) notificar(datos.error || t("No se pudo cambiar el idioma."));
-    } catch {
-      notificar(t("No se pudo cambiar el idioma."));
-    } finally {
-      ocupadoRef.current = false;
-      setOcupado(false);
-    }
-  }, [guia, notificar, t]);
+  const cambiarIdioma = useCallback(
+    async (nuevo: Idioma) => {
+      const actual = vistaRef.current;
+      if (ocupadoRef.current || !actual || nuevo === actual.idioma) return;
+      ocupadoRef.current = true;
+      setOcupado(true);
+      guia.parar();
+      try {
+        const { ok, datos } = await enviarIdioma(actual, nuevo);
+        if (datos.vista) setVista(datos.vista);
+        if (!ok) notificar(datos.error || t("No se pudo cambiar el idioma."));
+      } catch {
+        notificar(t("No se pudo cambiar el idioma."));
+      } finally {
+        ocupadoRef.current = false;
+        setOcupado(false);
+      }
+    },
+    [guia, notificar, t],
+  );
 
   const abrirPreferencias = () => {
     preferencias.current?.showModal();
     setDialogoAbierto(true);
   };
 
-  if (errorCarga) return <main id="juego"><p className="introduccion">No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página.</p></main>;
-  if (!vista) return <main id="juego" aria-busy="true"><p className="cargando" role="status">Preparando tu expedición…</p></main>;
+  if (errorCarga)
+    return (
+      <main id="juego">
+        <p className="introduccion">No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página.</p>
+      </main>
+    );
+  if (!vista)
+    return (
+      <main id="juego" aria-busy="true">
+        <p className="cargando" role="status">
+          Preparando tu expedición…
+        </p>
+      </main>
+    );
 
   const enInicio = vista.fase === "INICIO";
   let pantalla: React.ReactNode;
   if (enInicio) {
     pantalla = (
-      <Portada vista={vista} movimientoReducido={movimientoReducido} dialogoAbierto={dialogoAbierto}
-        onAbrirModalidad={() => { setDialogoAbierto(true); hablar(vista, "modalidad"); }}
-        onCerrarModalidad={() => { setDialogoAbierto(false); if (vistaRef.current?.fase === "INICIO") guia.parar(); }}
-        onComenzar={(modalidad: Modalidad) => void accion("iniciar", { modalidad })} />
+      <Portada
+        vista={vista}
+        movimientoReducido={movimientoReducido}
+        dialogoAbierto={dialogoAbierto}
+        onAbrirModalidad={() => {
+          setDialogoAbierto(true);
+          hablar(vista, "modalidad");
+        }}
+        onCerrarModalidad={() => {
+          setDialogoAbierto(false);
+          if (vistaRef.current?.fase === "INICIO") guia.parar();
+        }}
+        onComenzar={(modalidad: Modalidad) => void accion("iniciar", { modalidad })}
+      />
     );
   } else if (vista.fase === "SELECCION_ANIMAL") {
-    pantalla = <Catalogo vista={vista} onElegir={(id) => void accion("elegir_animal", { animal_id: id })}
-      controles={<Controles vista={vista} onAccion={(tipo) => void accion(tipo)} />} />;
+    pantalla = (
+      <Catalogo
+        vista={vista}
+        onElegir={(id) => void accion("elegir_animal", { animal_id: id })}
+        controles={<Controles vista={vista} onAccion={(tipo) => void accion(tipo)} />}
+      />
+    );
   } else if (vista.fase === "PAUSADA" || vista.fase === "COMPLETADA" || vista.fase === "ABANDONADA") {
     pantalla = <Cierre vista={vista} onAccion={(tipo) => void accion(tipo)} />;
   } else {
@@ -198,20 +274,29 @@ export function App() {
 
   return (
     <ContextoIdioma.Provider value={traductor}>
-      <a className="saltar" href="#juego">{t("Ir al juego")}</a>
+      <a className="saltar" href="#juego">
+        {t("Ir al juego")}
+      </a>
       <header className="cabecera" data-fase={vista.fase}>
         <a className="marca" href="/v6/">
           <img src="/zoonauta-logo.svg" alt="" width={44} height={44} />
-          <span className="marca-texto">Zoonauta<span className="marca-subtitulo">{t("Animales y hábitats")}</span></span>
+          <span className="marca-texto">
+            Zoonauta<span className="marca-subtitulo">{t("Animales y hábitats")}</span>
+          </span>
         </a>
         <button type="button" className="boton-texto" aria-haspopup="dialog" onClick={abrirPreferencias}>
-          <Icono nombre="ajustes" /><span>{t("Preferencias")}</span>
+          <Icono nombre="ajustes" />
+          <span>{t("Preferencias")}</span>
         </button>
       </header>
-      <main id="juego" tabIndex={-1} aria-busy={ocupado} data-fase={vista.fase}>{pantalla}</main>
+      <main id="juego" tabIndex={-1} aria-busy={ocupado} data-fase={vista.fase}>
+        {pantalla}
+      </main>
       {enInicio && (
         <footer className="creditos">
-          <span>Zoonauta <span className="version">6.0 · prototipo</span></span>
+          <span>
+            Zoonauta <span className="version">6.0 · prototipo</span>
+          </span>
           <p>{t("Ilustraciones de animales, pictogramas y paisajes originales generados con IA.")}</p>
         </footer>
       )}
@@ -219,23 +304,40 @@ export function App() {
         {avisos.map((a) => (
           <article key={a.id} className="aviso" role="status" aria-atomic="true">
             <p>{a.texto}</p>
-            <button type="button" className="control-redondo" aria-label={t("Cerrar notificación")}
-              onClick={() => setAvisos((x) => x.filter((y) => y.id !== a.id))}><Icono nombre="cerrar" /></button>
+            <button
+              type="button"
+              className="control-redondo"
+              aria-label={t("Cerrar notificación")}
+              onClick={() => setAvisos((x) => x.filter((y) => y.id !== a.id))}
+            >
+              <Icono nombre="cerrar" />
+            </button>
           </article>
         ))}
       </div>
-      <Preferencias ref={preferencias} idioma={idioma} enInicio={enInicio} voces={voces} sistemaReduce={sistemaReduce}
+      <Preferencias
+        ref={preferencias}
+        idioma={idioma}
+        enInicio={enInicio}
+        voces={voces}
+        sistemaReduce={sistemaReduce}
         valores={{ ...prefs, vozId }}
         onCambio={(cambios) => {
           if ("vozId" in cambios || "velocidad" in cambios || cambios.vozActiva === false) guia.parar();
-          if (cambios.vozId) eleccionesVoz.current[idioma] = cambios.vozId;
+          const vozNueva = cambios.vozId;
+          if (vozNueva) setEleccionesVoz((e) => ({ ...e, [idioma]: vozNueva }));
           setPrefs((p) => ({ ...p, ...cambios }));
         }}
         onIdioma={(nuevo) => void cambiarIdioma(nuevo)}
-        onProbarVoz={() => void guia.hablar(vista, voces, { activa: true, vozId, velocidad: prefs.velocidad }, "prueba", {
-          prueba: t("Hola. Vamos a descubrir dónde viven los animales."), modalidad: "", error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
-        })}
-        onCerrar={() => setDialogoAbierto(Boolean(document.querySelector("dialog[open]")))} />
+        onProbarVoz={() =>
+          void guia.hablar(vista, voces, { activa: true, vozId, velocidad: prefs.velocidad }, "prueba", {
+            prueba: t("Hola. Vamos a descubrir dónde viven los animales."),
+            modalidad: "",
+            error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
+          })
+        }
+        onCerrar={() => setDialogoAbierto(Boolean(document.querySelector("dialog[open]")))}
+      />
     </ContextoIdioma.Provider>
   );
 }
