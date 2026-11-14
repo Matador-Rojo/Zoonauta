@@ -1,5 +1,8 @@
 # Zoonauta: interfaz digital con pictogramas y voz
 
+> **Histórico (2026-11-14).** Guía de la interfaz 4.4/5.0 (hoy en `/v5/`). Para la 6.0 ver el README, el manual de usuario y `docs/interfaz/6.0/`. El iniciador ya no descarga modelos ni tiene `--sin-descargas`.
+
+
 Versión 4.4.0.
 
 Esta guía documenta la interfaz del catálogo original. El inicio habitual

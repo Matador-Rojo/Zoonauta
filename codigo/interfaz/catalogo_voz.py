@@ -2,8 +2,8 @@
 
 Regla: cada audio contiene el mensaje completo que la partida lee de una vez
 (``texto_voz``), con su entonación natural. No se graban palabras sueltas ni se
-unen fragmentos: si un mensaje no tiene grabación, se lee entero con Piper,
-Kokoro o la voz del navegador.
+unen fragmentos. La 6.0 solo usa estas grabaciones; la 5.0 (/v5/) leía un mensaje
+sin grabación con Piper, Kokoro o la voz del navegador.
 
 Los textos se obtienen con el mismo generador y la misma traducción que usa el
 servidor, así que son idénticos a lo que se reproduce. Este módulo no redacta

@@ -228,8 +228,8 @@ class Manejador(BaseHTTPRequestHandler):
             elif ruta == "/api/idioma":
                 self._enviar({"vista": sesion.cambiar_idioma(entrada)})
             elif ruta == "/api/voz/grabada":
-                # Grabación completa del mensaje exacto; sin ella, el cliente
-                # lee el mensaje entero con la voz alternativa (nunca se unen audios).
+                # Grabación completa del mensaje exacto (nunca se unen audios). Sin ella, la 6.0
+                # no lee ese mensaje; la 5.0 lo lee entero con su voz alternativa.
                 if "texto" in entrada or "texto_voz" in entrada or entrada.get("prueba"):
                     raise ValueError("La voz solo puede leer contenido de la partida.")
                 archivo = voz_grabada.buscar(sesion.texto_voz(entrada), sesion.idioma, self.server.banco)

@@ -38,6 +38,8 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
         return reproducir.call(this);
       };
     });
+    // El catálogo simulado incluye una voz Piper a propósito: la prueba comprueba que la 6.0
+    // NO la usa (solo voz grabada; pedidos.voz debe quedar vacío).
     await context.route('**/api/voz/config', r => r.fulfill({json: {
       voces: [{id: 'piper:prueba', nombre: 'Prueba', motor: 'piper', idioma: 'es', region: 'MX', disponible: true}],
       grabadas: {es: estado.grabadas, 'pt-BR': 0},

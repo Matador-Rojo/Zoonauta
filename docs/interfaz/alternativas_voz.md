@@ -1,5 +1,8 @@
 # Voces locales y del navegador de Zoonauta 3.4
 
+> **Histórico (2026-11-14).** Describe las voces Piper, Kokoro y del navegador de versiones anteriores. Zoonauta 6.0 usa solo la voz grabada de Zoonauta (ver `docs/voz/elevenlabs/README.md`); el iniciador ya no descarga modelos ni usa `requirements_voz.txt`.
+
+
 Piper y Kokoro están integrados. El servidor del equipo genera WAV a partir de
 la respuesta preparada por la guía; no utiliza un proveedor remoto de voz.
 
