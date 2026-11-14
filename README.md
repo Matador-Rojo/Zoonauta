@@ -140,7 +140,9 @@ frío.»), que solo usa cuando existe su grabación. Solo afirma rasgos que una 
 revisada ya dice; lo que no está documentado se trata como desconocido, nunca como
 falso, y un hábitat no confirmado no se presenta como incorrecto. Tras elegir un
 hábitat parecido, no repite algo que también lo describa. Es un modelo de decisión con
-reglas y una utilidad de parámetros fijos: no aprende durante la partida.
+reglas y una utilidad de parámetros fijos: no aprende durante la partida. La 5.0 en
+`/v5/` comparte servidor y también lo usa; `--agente PISTAS_PROGRESIVAS` devuelve a las dos
+versiones la secuencia anterior (pista 1 → 2 → 3).
 
 Junto a él hay una línea base ID3 (ganancia de información sobre las opciones
 visibles) y la secuencia editorial anterior, que se pueden comparar con

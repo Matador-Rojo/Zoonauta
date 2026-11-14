@@ -83,8 +83,11 @@ class Representacion:
             rasgos = {a: v for a, (v, evidencia) in self.rasgos[g].items() if evidencia == pista["id"]}
             lista.append(Candidata(pista, "PISTA", rasgos,
                                    frozenset(t["id"] for t in pista["pictogramas"])))
+        textos_pistas = {c.plantilla["texto"] for c in lista}
         for atributo, (valor, evidencia) in sorted(self.rasgos[g].items()):
             ayuda = self.ayuda_de[atributo, valor]
+            if ayuda["texto"] in textos_pistas:
+                continue  # misma frase que una pista del hábitat: se usa la pista, no se repite
             plantilla = {"id": ayuda["id"], "texto": ayuda["texto"], "texto_pt": ayuda["texto_pt"],
                          "pictogramas": ayuda["pictogramas"], "habitat_guia_id": g,
                          "nivel": self.banco.variantes[evidencia]["nivel"], "variante_id": "RASGO",
@@ -104,10 +107,11 @@ class Representacion:
         rd = self.rasgos[d]
         if any(a in rd and rd[a][0] != v for a, v in c.rasgos.items()):
             return "conflicto"
-        comunes = [a for a, v in c.rasgos.items() if a in rd and rd[a][0] == v]
-        if (c.rasgos and len(comunes) == len(c.rasgos)) or c.conceptos <= self.conceptos[d]:
+        # «compartida» solo si todo lo que la ayuda muestra (sus pictogramas) también aparece en
+        # las pistas de d; si dice algo que d no documenta, eso es desconocido, no igual.
+        if c.conceptos <= self.conceptos[d]:
             return "compartida"
-        if comunes:
+        if any(a in rd and rd[a][0] == v for a, v in c.rasgos.items()):
             return "parcial"   # dice algo que también vale para d; el resto no consta en d
         return "propia"
 
@@ -276,8 +280,15 @@ class MotorAgente(_MotorReto):
                          else "SECUENCIA_SIN_OPCIONES_QUE_DESCARTAR")
                 return salida(c, regla, evaluaciones)
             return salida(senalar, "SIN_AYUDA_QUE_DISTINGA" if ultima else "APOYO_EXPLICITO", evaluaciones)
-        utiles = [(c, e) for c, e in zip(nuevas, evaluaciones, strict=True) if e["informativa"]]
+        utiles = [(c, e) for c, e in zip(nuevas, evaluaciones, strict=True)
+                  if e["informativa"] and e["utilidad"] > 0]
         if not utiles:
+            if not pendientes:
+                # Sin errores previos no se revela la respuesta en la primera petición: se sigue
+                # la secuencia editorial (de menos a más apoyo).
+                siguiente = self._editorial(g, mostradas)
+                if siguiente:
+                    return salida(siguiente, "SECUENCIA_SIN_AYUDA_QUE_DISTINGA", evaluaciones)
             return salida(senalar, "SIN_AYUDA_QUE_DISTINGA", evaluaciones)
         orden_tipo = {"RASGO": 0, "PISTA": 1}
         c, e = max(utiles, key=lambda par: (par[1]["utilidad"], -par[1]["ideas"],
