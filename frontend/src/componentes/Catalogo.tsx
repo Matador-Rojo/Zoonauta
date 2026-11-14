@@ -7,9 +7,13 @@ import { Encabezado } from "./Encabezado";
 
 const POR_PAGINA = 6;
 const normalizar = (texto: string, idioma: string) =>
-  texto.normalize("NFD").replace(/[̀-ͯ]/g, "").toLocaleLowerCase(idioma).trim();
+  texto.normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase(idioma).trim();
 
-export function Catalogo({ vista, onElegir, controles }: {
+export function Catalogo({
+  vista,
+  onElegir,
+  controles,
+}: {
   vista: Vista;
   onElegir: (animalId: string) => void;
   controles: React.ReactNode;
@@ -39,15 +43,29 @@ export function Catalogo({ vista, onElegir, controles }: {
 
   return (
     <section className="pantalla catalogo-pantalla" aria-labelledby="titulo-pantalla">
-      <Encabezado vista={vista} etiqueta="Explora los animales" titulo="Elige un animal"
-        subtitulo="Toca el animal con el que quieres jugar." />
+      <Encabezado
+        vista={vista}
+        etiqueta="Explora los animales"
+        titulo="Elige un animal"
+        subtitulo="Toca el animal con el que quieres jugar."
+      />
       <div className="catalogo-barra">
-        <p className="catalogo-total" aria-live="polite" aria-atomic="true">{totalTexto}</p>
+        <p className="catalogo-total" aria-live="polite" aria-atomic="true">
+          {totalTexto}
+        </p>
         <label className="busqueda">
           <Icono nombre="buscar" />
-          <input type="search" value={consulta} autoComplete="off" placeholder={t("Busca un animal…")}
+          <input
+            type="search"
+            value={consulta}
+            autoComplete="off"
+            placeholder={t("Busca un animal…")}
             aria-label={t("Buscar animal")}
-            onChange={(e) => { setConsulta(e.target.value); setPagina(0); }} />
+            onChange={(e) => {
+              setConsulta(e.target.value);
+              setPagina(0);
+            }}
+          />
         </label>
       </div>
 
@@ -57,25 +75,47 @@ export function Catalogo({ vista, onElegir, controles }: {
         <>
           <div ref={rejilla} id="catalogo-animales" className="catalogo" aria-label={t("Animales de esta página")}>
             {visibles.map((a) => (
-              <button key={a.id} type="button" className="tarjeta-animal" data-animal={a.id}
-                aria-label={a.nombre} onClick={() => onElegir(a.id)}>
-                <span className="tarjeta-numero" aria-hidden="true">{a.id.slice(1)}</span>
-                <span className="tarjeta-imagen"><Pictograma id={a.pictograma_id} datos={vista.pictogramas[a.pictograma_id]} /></span>
+              <button
+                key={a.id}
+                type="button"
+                className="tarjeta-animal"
+                data-animal={a.id}
+                aria-label={a.nombre}
+                onClick={() => onElegir(a.id)}
+              >
+                <span className="tarjeta-numero" aria-hidden="true">
+                  {a.id.slice(1)}
+                </span>
+                <span className="tarjeta-imagen">
+                  <Pictograma id={a.pictograma_id} datos={vista.pictogramas[a.pictograma_id]} />
+                </span>
                 <span className="tarjeta-nombre">{a.nombre}</span>
               </button>
             ))}
           </div>
           <nav className="paginacion" aria-label={t("Páginas de animales")}>
-            <button type="button" className="boton-secundario" aria-controls="catalogo-animales"
-              disabled={paginaActual === 0} onClick={() => irA(-1)}>
-              <Icono nombre="anterior" /><span>{t("Anteriores")}</span>
+            <button
+              type="button"
+              className="boton-secundario"
+              aria-controls="catalogo-animales"
+              disabled={paginaActual === 0}
+              onClick={() => irA(-1)}
+            >
+              <Icono nombre="anterior" />
+              <span>{t("Anteriores")}</span>
             </button>
             <span className="paginacion-estado" aria-live="polite" aria-atomic="true">
               {t("Página {pagina} de {total}", { pagina: paginaActual + 1, total: paginas })}
             </span>
-            <button type="button" className="boton-secundario" aria-controls="catalogo-animales"
-              disabled={paginaActual >= paginas - 1} onClick={() => irA(1)}>
-              <span>{t("Siguientes")}</span><Icono nombre="flecha" />
+            <button
+              type="button"
+              className="boton-secundario"
+              aria-controls="catalogo-animales"
+              disabled={paginaActual >= paginas - 1}
+              onClick={() => irA(1)}
+            >
+              <span>{t("Siguientes")}</span>
+              <Icono nombre="flecha" />
             </button>
           </nav>
         </>

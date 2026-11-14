@@ -12,12 +12,18 @@ export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: Tip
   return (
     <section className="pantalla cierre" data-estado={vista.fase} aria-labelledby="titulo-pantalla">
       <figure className="cierre-visual">
-        <img src={`/ilustraciones/${pausa ? "robot_pausa" : "robot_despedida"}.webp`} alt={t("Tu guía")} draggable={false} />
+        <img
+          src={`/ilustraciones/${pausa ? "robot_pausa" : "robot_despedida"}.webp`}
+          alt={t("Tu guía")}
+          draggable={false}
+        />
         <figcaption>{t(pausa ? "A tu ritmo" : "Gracias por jugar")}</figcaption>
       </figure>
       <div className="cierre-contenido">
         <p className="etiqueta">{t("Tu expedición")}</p>
-        <h1 id="titulo-pantalla" tabIndex={-1}>{t(titulo)}</h1>
+        <h1 id="titulo-pantalla" tabIndex={-1}>
+          {t(titulo)}
+        </h1>
         <p className="introduccion">{t(vista.respuesta.texto_apoyo)}</p>
         <div className="secuencia">
           {vista.respuesta.pictogramas.map((id, i) => (
@@ -28,11 +34,15 @@ export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: Tip
           ))}
         </div>
         <div className="cierre-resumen">
-          <strong>{completados} / {total}</strong>
+          <strong>
+            {completados} / {total}
+          </strong>
           <span>{t("Retos completados")}</span>
           <progress max={total} value={completados} aria-label={t("Progreso de la partida")} />
         </div>
-        {pausa ? <Controles vista={vista} onAccion={onAccion} /> : (
+        {pausa ? (
+          <Controles vista={vista} onAccion={onAccion} />
+        ) : (
           <button type="button" className="boton-principal" onClick={() => onAccion("nueva_partida")}>
             <Pictograma id="P_INICIAR" datos={vista.pictogramas.P_INICIAR} />
             <span>{t("Comenzar otra partida")}</span>

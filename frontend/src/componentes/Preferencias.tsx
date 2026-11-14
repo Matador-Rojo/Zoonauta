@@ -25,17 +25,32 @@ interface Props {
   onCerrar: () => void;
 }
 
-const MOTORES = [["google", "Google"], ["microsoft", "Microsoft"], ["piper", "Piper"], ["kokoro", "Kokoro"]] as const;
-const CALIDAD: Record<string, string> = { high: "Calidad alta", medium: "Calidad media", low: "Calidad baja", x_low: "Ligera" };
+const MOTORES = [
+  ["google", "Google"],
+  ["microsoft", "Microsoft"],
+  ["piper", "Piper"],
+  ["kokoro", "Kokoro"],
+] as const;
+const CALIDAD: Record<string, string> = {
+  high: "Calidad alta",
+  medium: "Calidad media",
+  low: "Calidad baja",
+  x_low: "Ligera",
+};
 
 // Diálogo modal nativo (Modern Web Guidance, dialog: showModal, sin role ni trampa de foco manual).
 export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Preferencias(
-  { idioma, valores, enInicio, voces, sistemaReduce, onCambio, onIdioma, onProbarVoz, onCerrar }, ref,
+  { idioma, valores, enInicio, voces, sistemaReduce, onCambio, onIdioma, onProbarVoz, onCerrar },
+  ref,
 ) {
   const { t } = useT();
   const region = (codigo: string) => {
     if (codigo === "419") return t("Latinoamérica");
-    try { return new Intl.DisplayNames([idioma], { type: "region" }).of(codigo) ?? codigo; } catch { return codigo; }
+    try {
+      return new Intl.DisplayNames([idioma], { type: "region" }).of(codigo) ?? codigo;
+    } catch {
+      return codigo;
+    }
   };
   const hayVoz = voces.some((v) => v.disponible);
   return (
@@ -46,7 +61,9 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
           <h2 id="titulo-preferencias">{t("A tu manera.")}</h2>
         </div>
         <form method="dialog">
-          <button className="control-redondo" aria-label={t("Cerrar Preferencias")}><Icono nombre="cerrar" /></button>
+          <button className="control-redondo" aria-label={t("Cerrar Preferencias")}>
+            <Icono nombre="cerrar" />
+          </button>
         </form>
       </div>
 
@@ -61,28 +78,58 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
           </label>
           <label className="campo">
             <span>{t("Retos por partida")}</span>
-            <input type="number" min={1} max={48} step={1} inputMode="numeric" value={valores.retos} disabled={!enInicio}
-              aria-describedby="nota-retos" onChange={(e) => onCambio({ retos: e.target.value })} />
+            <input
+              type="number"
+              min={1}
+              max={48}
+              step={1}
+              inputMode="numeric"
+              value={valores.retos}
+              disabled={!enInicio}
+              aria-describedby="nota-retos"
+              onChange={(e) => onCambio({ retos: e.target.value })}
+            />
           </label>
-          <p id="nota-retos" className="nota">{t("De 1 a 48. Se aplica al comenzar; todos los animales siguen disponibles.")}</p>
+          <p id="nota-retos" className="nota">
+            {t("De 1 a 48. Se aplica al comenzar; todos los animales siguen disponibles.")}
+          </p>
           <label className="campo">
             <span>{t("Hábitats para elegir")}</span>
-            <select value={valores.opciones} disabled={!enInicio} aria-describedby="nota-opciones"
-              onChange={(e) => onCambio({ opciones: Number(e.target.value) })}>
-              {[2, 4, 8].map((n) => <option key={n} value={n}>{t(`${n} hábitats`)}</option>)}
+            <select
+              value={valores.opciones}
+              disabled={!enInicio}
+              aria-describedby="nota-opciones"
+              onChange={(e) => onCambio({ opciones: Number(e.target.value) })}
+            >
+              {[2, 4, 8].map((n) => (
+                <option key={n} value={n}>
+                  {t(`${n} hábitats`)}
+                </option>
+              ))}
             </select>
           </label>
-          <p id="nota-opciones" className="nota">{t("Menos opciones para empezar. Se aplica a la próxima partida.")}</p>
+          <p id="nota-opciones" className="nota">
+            {t("Menos opciones para empezar. Se aplica a la próxima partida.")}
+          </p>
           <label className="interruptor">
             <span>
               <span className="interruptor-titulo">{t("Reducir movimiento")}</span>
-              <span className="nota" id="nota-movimiento">{t(sistemaReduce
-                ? "Tu equipo ya pide reducir el movimiento. Las fotografías quedan fijas."
-                : "Muestra fotografías fijas y cambia de paisaje solo con los botones.")}</span>
+              <span className="nota" id="nota-movimiento">
+                {t(
+                  sistemaReduce
+                    ? "Tu equipo ya pide reducir el movimiento. Las fotografías quedan fijas."
+                    : "Muestra fotografías fijas y cambia de paisaje solo con los botones.",
+                )}
+              </span>
             </span>
-            <input type="checkbox" role="switch" checked={valores.movimientoReducido || sistemaReduce}
-              disabled={sistemaReduce} aria-describedby="nota-movimiento"
-              onChange={(e) => onCambio({ movimientoReducido: e.target.checked })} />
+            <input
+              type="checkbox"
+              role="switch"
+              checked={valores.movimientoReducido || sistemaReduce}
+              disabled={sistemaReduce}
+              aria-describedby="nota-movimiento"
+              onChange={(e) => onCambio({ movimientoReducido: e.target.checked })}
+            />
           </label>
         </div>
 
@@ -92,8 +139,12 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
               <span className="interruptor-titulo">{t("Una guía con voz")}</span>
               <span className="nota">{t("Leer las respuestas en voz alta.")}</span>
             </span>
-            <input type="checkbox" role="switch" checked={valores.vozActiva}
-              onChange={(e) => onCambio({ vozActiva: e.target.checked })} />
+            <input
+              type="checkbox"
+              role="switch"
+              checked={valores.vozActiva}
+              onChange={(e) => onCambio({ vozActiva: e.target.checked })}
+            />
           </label>
           <label className="campo">
             <span>{t(idioma === "pt-BR" ? "Voz en portugués brasileño" : "Voz en español")}</span>
@@ -122,13 +173,16 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
             </select>
           </label>
           <button type="button" className="boton-secundario" disabled={!hayVoz} onClick={onProbarVoz}>
-            <Icono nombre="reproducir" /><span>{t("Probar voz")}</span>
+            <Icono nombre="reproducir" />
+            <span>{t("Probar voz")}</span>
           </button>
         </div>
       </div>
 
       <form method="dialog" className="preferencias-pie">
-        <button className="boton-principal" autoFocus>{t("Volver al juego")}</button>
+        <button className="boton-principal" autoFocus>
+          {t("Volver al juego")}
+        </button>
       </form>
     </dialog>
   );

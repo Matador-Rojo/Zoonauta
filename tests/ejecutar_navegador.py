@@ -11,6 +11,26 @@ from threading import Thread
 
 from codigo.interfaz.servidor import Servidor
 
+FRONTEND = Path(__file__).resolve().parent.parent / "frontend" / "node_modules"
+CHROME_WINDOWS = Path("C:/Program Files/Google/Chrome/Application/chrome.exe")
+
+
+def entorno_herramientas(base):
+    """Usa por defecto las herramientas fijadas en frontend/ (npm ci) y Chrome del sistema.
+
+    Las variables de entorno que ya estén definidas tienen prioridad.
+    """
+    env = dict(base)
+    defectos = {
+        "PLAYWRIGHT_MODULE": FRONTEND / "playwright-core",
+        "AXE_SOURCE": FRONTEND / "axe-core" / "axe.min.js",
+        "CHROMIUM_EXECUTABLE": CHROME_WINDOWS,
+    }
+    for clave, ruta in defectos.items():
+        if clave not in env and ruta.exists():
+            env[clave] = str(ruta)
+    return env
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -27,7 +47,7 @@ def main():
         servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=args.portada or args.portada_5 or args.v6)
         hilo = Thread(target=servidor.serve_forever, daemon=True)
         hilo.start()
-        env = {**os.environ, "INTERFAZ_URL": f"http://127.0.0.1:{servidor.server_port}"}
+        env = {**entorno_herramientas(os.environ), "INTERFAZ_URL": f"http://127.0.0.1:{servidor.server_port}"}
         try:
             prueba = ("verificar_v6.cjs" if args.v6 else "verificar_portada.cjs" if args.portada else "verificar_portada_5.cjs" if args.portada_5 else
                       "verificar_catalogo.cjs" if args.catalogo else "verificar_hito3.cjs" if args.hito3 else "verificar_hito2.cjs" if args.hito2 else "verificar_voces_navegador.cjs" if args.voces_navegador else

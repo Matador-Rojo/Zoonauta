@@ -1,0 +1,9 @@
+# Ruff (ejecutar con: python -m uv tool run ruff@0.15.0 check codigo tests).
+# Se respeta el estilo compacto existente (varias sentencias por línea).
+target-version = "py312"
+line-length = 160
+extend-exclude = ["frontend", "codigo/interfaz/web6", "output", "resultados_nuevos", "modelos_voz", ".venv-voz"]
+
+[lint]
+select = ["E", "F", "W", "B"]
+ignore = ["E701", "E702", "E731", "E741", "E501"]
