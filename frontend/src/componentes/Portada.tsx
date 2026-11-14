@@ -69,7 +69,17 @@ interface Props {
   onCerrarModalidad: () => void;
 }
 
-function Foto({ id, prioridad, clase }: { id: string; prioridad?: "high" | "low"; clase?: string }) {
+function Foto({
+  id,
+  prioridad,
+  clase,
+  onLoad,
+}: {
+  id: string;
+  prioridad?: "high" | "low";
+  clase?: string;
+  onLoad?: () => void;
+}) {
   return (
     <img
       className={clase}
@@ -82,6 +92,7 @@ function Foto({ id, prioridad, clase }: { id: string; prioridad?: "high" | "low"
       sizes="max(100vw, 177.78vh)"
       fetchPriority={prioridad}
       decoding="async"
+      onLoad={onLoad}
     />
   );
 }
@@ -105,6 +116,9 @@ export function Portada({
   const [punteroDentro, setPunteroDentro] = useState(false);
   const [visible, setVisible] = useState(() => document.visibilityState === "visible");
   const [anuncio, setAnuncio] = useState("");
+  // El siguiente paisaje se precarga solo cuando el primero ya cargó, para no competir
+  // con él por la red (LCP en móvil).
+  const [primeroCargado, setPrimeroCargado] = useState(false);
   const selector = useRef<HTMLDialogElement>(null);
   const total = paisajes.length;
   const actual: Elemento | undefined = paisajes[indice]?.habitat;
@@ -168,13 +182,18 @@ export function Portada({
           const esSiguiente = i === (indice + 1) % total;
           // Se montan el paisaje actual, el anterior (para el fundido) y el siguiente (precarga).
           if (!esActual && !esSiguiente && i !== previo) return null;
+          if (esSiguiente && !esActual && i !== previo && !primeroCargado) return null;
           const estado = esActual ? "actual" : i === previo ? "previo" : "siguiente";
           return (
             <div key={p.id} className="portada-capa" data-habitat={p.id} data-estado={estado}>
               {/* La escena recorta la foto como object-fit: cover, y los efectos se colocan
                   sobre ella en porcentajes de la foto, sea cual sea la pantalla. */}
               <div className="escena" style={{ "--fx": p.fx, "--fy": p.fy } as CSSProperties}>
-                <Foto id={p.id} prioridad={esActual ? (i === 0 ? "high" : undefined) : "low"} />
+                <Foto
+                  id={p.id}
+                  prioridad={esActual ? (i === 0 ? "high" : undefined) : "low"}
+                  onLoad={esActual ? () => setPrimeroCargado(true) : undefined}
+                />
                 {p.capas.map((capa) => (
                   <img
                     key={capa.nombre}

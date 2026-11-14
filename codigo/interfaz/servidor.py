@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -29,6 +30,24 @@ TIPOS_V6 = {".html": "text/html; charset=utf-8", ".js": "text/javascript; charse
             ".woff2": "font/woff2"}
 
 
+def _ligeros(carpeta: str) -> dict[str, Path]:
+    indice = RAIZ_PROYECTO / "assets" / carpeta / "indice.json"
+    if not indice.is_file():
+        return {}
+    return {clave: RAIZ_PROYECTO / "assets" / carpeta / f"{clave}.webp"
+            for clave in json.loads(indice.read_text("utf-8"))["items"]}
+
+
+def _ligero_o_original(ligeros: dict[str, Path], clave: str, original: Path) -> Path:
+    copia = ligeros.get(clave)
+    return copia if copia is not None and copia.is_file() else original
+
+
+# Precarga del primer paisaje (y su capa) en index.html de la 6.0: solo se envía
+# cuando la sesión está en la portada (en otras pantallas descargaría 338 KB inútiles).
+PRECARGA_PORTADA = re.compile(rb"\s*<!-- portada:inicio.*?<!-- portada:fin -->", re.S)
+
+
 class Servidor(ThreadingHTTPServer):
     daemon_threads = True
 
@@ -47,12 +66,11 @@ class Servidor(ThreadingHTTPServer):
         self.imagenes_animal = {f"{a['id']}.webp": RAIZ_PROYECTO /
             self.banco.pictogramas[a["pictograma_id"]]["archivo_imagen"]
             for a in self.banco.animales.values()}
-        # Copias ligeras de los pictogramas (assets/pictogramas_ligeros, ver
-        # preparar_pictogramas_ligeros). Si falta alguna, se sirve el original.
-        ligeros = RAIZ_PROYECTO / "assets/pictogramas_ligeros"
-        indice = ligeros / "indice.json"
-        self.pictogramas_ligeros = ({pid: ligeros / f"{pid}.webp" for pid in json.loads(indice.read_text("utf-8"))["items"]}
-                                    if indice.is_file() else {})
+        # Copias ligeras (ver preparar_imagenes_ligeras): pictogramas, paisajes de las
+        # tarjetas y robot. Si falta alguna, se sirve el original.
+        self.pictogramas_ligeros = _ligeros("pictogramas_ligeros")
+        self.paisajes_ligeros = _ligeros("paisajes_ligeros")
+        self.ilustraciones_ligeras = _ligeros("ilustraciones_ligeras")
         self.sesiones = {}
         self.voz = MotorVoz()
         self.lock = RLock()
@@ -83,13 +101,13 @@ class Manejador(BaseHTTPRequestHandler):
                 self.nueva_cookie = f"habitats={sid}; HttpOnly; SameSite=Strict; Path=/"
             return self.server.sesiones[sid]
 
-    def _enviar(self, contenido, tipo="application/json; charset=utf-8", codigo=200):
+    def _enviar(self, contenido, tipo="application/json; charset=utf-8", codigo=200, cache="no-store"):
         if not isinstance(contenido, bytes):
             contenido = json.dumps(contenido, ensure_ascii=False).encode()
         self.send_response(codigo)
         self.send_header("Content-Type", tipo)
         self.send_header("Content-Length", str(len(contenido)))
-        self.send_header("Cache-Control", "no-store")
+        self.send_header("Cache-Control", cache)
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Content-Security-Policy", "default-src 'self'; img-src 'self'; media-src 'self' blob:; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'")
         if getattr(self, "nueva_cookie", None):
@@ -97,7 +115,7 @@ class Manejador(BaseHTTPRequestHandler):
         self.end_headers()
         try:
             self.wfile.write(contenido)
-        except (BrokenPipeError, ConnectionResetError):
+        except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
             # El navegador puede cancelar una descarga al pausar la lectura.
             pass
 
@@ -112,7 +130,13 @@ class Manejador(BaseHTTPRequestHandler):
         mime = TIPOS_V6.get(archivo.suffix)
         if not mime or not archivo.is_file():
             return self._enviar({"error": "Ruta no encontrada."}, codigo=404)
-        self._enviar(archivo.read_bytes(), mime)
+        if archivo.name == "index.html":
+            contenido = archivo.read_bytes()
+            if self._sesion().vista()["fase"] != "INICIO":
+                contenido = PRECARGA_PORTADA.sub(b"", contenido)
+            return self._enviar(contenido, mime)
+        # Los compilados llevan una huella en el nombre: pueden guardarse para siempre.
+        self._enviar(archivo.read_bytes(), mime, cache="public, max-age=31536000, immutable")
 
     def do_GET(self):
         ruta = urlsplit(self.path).path
@@ -142,9 +166,15 @@ class Manejador(BaseHTTPRequestHandler):
         elif ruta.startswith("/fondos/") and ruta.removeprefix("/fondos/") in FONDOS_HISTORICOS:
             self._enviar((Path(__file__).parent / "web" / ruta.lstrip("/")).read_bytes(), "image/webp")
         elif ruta.startswith("/habitats/") and ruta.removeprefix("/habitats/") in self.server.imagenes_habitat:
-            self._enviar(self.server.imagenes_habitat[ruta.removeprefix("/habitats/")].read_bytes(), "image/webp")
+            nombre = ruta.removeprefix("/habitats/")
+            archivo = _ligero_o_original(self.server.paisajes_ligeros, nombre.removesuffix(".webp"),
+                                         self.server.imagenes_habitat[nombre])
+            self._enviar(archivo.read_bytes(), "image/webp")
         elif ruta in ("/ilustraciones/robot_despedida.webp", "/ilustraciones/robot_pausa.webp"):
-            self._enviar((RAIZ_PROYECTO / "assets" / "ilustraciones" / ruta.removeprefix("/ilustraciones/")).read_bytes(), "image/webp")
+            nombre = ruta.removeprefix("/ilustraciones/")
+            archivo = _ligero_o_original(self.server.ilustraciones_ligeras, nombre.removesuffix(".webp"),
+                                         RAIZ_PROYECTO / "assets" / "ilustraciones" / nombre)
+            self._enviar(archivo.read_bytes(), "image/webp")
         elif ruta == "/api/vista":
             self._enviar(self._sesion().vista())
         elif ruta == "/api/revision":

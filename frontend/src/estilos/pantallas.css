@@ -156,6 +156,13 @@ progress::-moz-progress-bar {
   border-color: var(--expedicion);
   box-shadow: 0 0 0 2px var(--expedicion);
 }
+/* La caja de la imagen reserva su espacio antes de que cargue (sin saltos, CLS). */
+.tarjeta-imagen {
+  display: block;
+  width: 100%;
+  max-width: 11rem;
+  aspect-ratio: 1;
+}
 .tarjeta-imagen img {
   width: 100%;
   max-width: 11rem;
@@ -429,6 +436,7 @@ progress::-moz-progress-bar {
 }
 .cierre-visual img {
   width: 100%;
+  height: auto;
   max-width: 20rem;
   border-radius: var(--radio-panel);
   background: var(--superficie);
