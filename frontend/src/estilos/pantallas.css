@@ -1,49 +1,95 @@
-/* Pantallas del juego: catálogo, tablero, cierre, selector y Preferencias.
-   Pieza protagonista: la tira de pictogramas de la guía (.tira). Todo lo demás es
-   sereno: bordes en lugar de sombras y radios que crecen con la jerarquía. */
+/* Pantallas del juego 6.0: catálogo, tablero, pausa/cierre y selector de modalidad.
+   Composición de la 5.0 (decisión del propietario, 2026-11-14): cada pantalla ocupa
+   exactamente la vista, sin desplazar; el animal grande a la izquierda con los controles
+   debajo y los hábitats a la derecha. Los pictogramas van sin fondo, como en la 5.0. */
 
+/* --- Marco: cabecera compacta + pantalla que llena el resto de la vista --- */
+/* La altura es la de la vista: las imágenes se adaptan a su celda en lugar de estirar la página. */
+#raiz {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.cabecera:not([data-fase="INICIO"]) {
+  flex: none;
+  padding: 0.5rem clamp(1rem, 3vw, 2.5rem);
+}
+.cabecera:not([data-fase="INICIO"]) .marca img {
+  width: 38px;
+  height: 38px;
+}
+.cabecera:not([data-fase="INICIO"]) .marca {
+  font-size: var(--texto-m);
+}
+main#juego {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
 .pantalla {
-  width: min(78rem, 100%);
+  flex: 1 1 auto;
+  min-height: 0;
+  width: min(92rem, 100%);
   margin: 0 auto;
-  padding: 0.5rem clamp(1rem, 4vw, 2.5rem) 3rem;
+  padding: 0 clamp(1rem, 3vw, 2.5rem) clamp(0.75rem, 2vh, 1.5rem);
+}
+
+/* --- Encabezado de pantalla: rótulo, título y progreso --- */
+.rotulo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--expedicion);
+}
+.rotulo::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
 }
 .encabezado-pantalla {
   display: flex;
   flex-wrap: wrap;
   align-items: end;
   justify-content: space-between;
-  gap: 1rem 2rem;
-  margin-bottom: 1.25rem;
+  gap: 0.5rem 2rem;
 }
 .encabezado-pantalla h1 {
-  font-size: var(--texto-xxl);
-  letter-spacing: -0.01em;
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.75rem);
 }
 .subtitulo {
-  margin: 0.35rem 0 0;
+  margin: 0.25rem 0 0;
   color: var(--tinta-suave);
   max-width: 60ch;
 }
-
-/* Progreso (Modern Web Guidance: progress — contraste barra/pista ≥ 3:1). */
 .progreso {
   display: grid;
   gap: 0.35rem;
-  min-width: min(16rem, 100%);
+  min-width: min(15rem, 100%);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radio-tarjeta);
+  background: var(--superficie);
+  box-shadow: inset 0 0 0 1px var(--linea);
+  font-size: var(--texto-s);
   font-weight: 700;
 }
+/* Progreso (Modern Web Guidance: progress — contraste barra/pista ≥ 3:1). */
 .progreso progress,
 .cierre-resumen progress {
   appearance: none;
   width: 100%;
-  height: 0.85rem;
+  height: 0.7rem;
   border: 2px solid var(--expedicion);
   border-radius: 999px;
-  background: var(--superficie);
   overflow: hidden;
-}
-progress::-webkit-progress-bar {
-  background: var(--superficie);
 }
 progress::-webkit-progress-value {
   background: var(--expedicion);
@@ -52,52 +98,219 @@ progress::-moz-progress-bar {
   background: var(--expedicion);
 }
 
-/* --- Selector de modalidad --- */
-.selector-modalidad {
-  width: min(40rem, calc(100vw - 2rem));
+/* --- Controles de partida: pictograma grande sobre la etiqueta, sin fondo --- */
+.controles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+.controles-grupo {
+  display: contents;
+}
+.control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-height: clamp(4.5rem, 11vh, 6.75rem);
+  padding: 0.4rem;
+  border-radius: 22px;
+  border: 2px solid var(--linea-fuerte);
+  font-weight: 800;
+  font-size: var(--texto-m);
+  line-height: 1.1;
+}
+.control img {
+  width: clamp(2.4rem, 6vh, 3.6rem);
+  height: clamp(2.4rem, 6vh, 3.6rem);
+  object-fit: contain;
+}
+
+/* --- Tablero del reto --- */
+.reto-pantalla {
+  display: grid;
+  grid-template-columns: clamp(15rem, 23vw, 21rem) minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "enc enc"
+    "animal guia"
+    "animal habitats"
+    "controles habitats";
+  gap: 0.9rem 1.25rem;
+}
+.reto-pantalla > .encabezado-pantalla {
+  grid-area: enc;
+}
+.tablero {
+  display: contents;
+}
+.reto-pantalla .controles {
+  grid-area: controles;
+}
+.animal-actual {
+  grid-area: animal;
+  min-height: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem;
+  border-radius: var(--radio-panel);
+  box-shadow: inset 0 0 0 1px var(--linea);
   text-align: center;
 }
-.selector-modalidad h2 {
+.animal-actual img {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+}
+.animal-actual strong {
   font-size: var(--texto-xl);
-  margin-bottom: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
 }
-.opciones-modalidad {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-  gap: 1rem;
+
+/* Guía: texto de apoyo y la tira de pictogramas, centrados como en la 5.0. */
+.guia {
+  grid-area: guia;
+  padding: clamp(0.75rem, 2vh, 1.25rem) clamp(1rem, 2vw, 1.5rem);
+  border-radius: var(--radio-panel);
+  box-shadow: inset 0 0 0 1px var(--linea);
+  text-align: center;
 }
-.opcion-modalidad {
+.guia.confirmacion {
+  background: var(--exito-fondo);
+  box-shadow: inset 0 0 0 2px var(--expedicion);
+}
+.guia.neutral {
+  background: var(--neutro-fondo);
+}
+.guia-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--expedicion);
+}
+.guia-cabecera img {
+  width: 28px;
+  height: 28px;
+}
+.guia h2 {
+  max-width: 48ch;
+  margin: 0 auto 0.5rem;
+  font-size: clamp(1.1rem, 0.9rem + 0.7vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.tira {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+}
+.tira-celda {
   display: grid;
   justify-items: center;
-  gap: 0.75rem;
-  padding: 1.25rem;
-  border-radius: var(--radio-tarjeta);
-  border: 3px solid var(--linea);
-  background: var(--niebla);
-  font-size: var(--texto-l);
-  font-weight: 800;
+  gap: 0.2rem;
+  width: clamp(4.5rem, 10vh, 7rem);
+  font-size: var(--texto-s);
+  font-weight: 700;
+  line-height: 1.2;
 }
-.opcion-modalidad:hover {
-  border-color: var(--expedicion);
-  background: var(--superficie);
-}
-.opcion-modalidad img {
-  width: min(9rem, 40vw);
+.tira-celda img {
+  width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
 }
-.selector-modalidad form {
-  margin-top: 1.25rem;
+
+/* Hábitats: llenan el alto disponible; la foto se ajusta a su celda. */
+.habitats-panel {
+  grid-area: habitats;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.instruccion {
+  margin: 0;
+  font-size: var(--texto-m);
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+.habitats {
+  min-height: 0;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+}
+.habitats[data-cantidad="4"],
+.habitats[data-cantidad="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.tarjeta-habitat {
+  position: relative;
+  min-height: 0;
+  display: block;
+  padding: 0;
+  overflow: hidden; /* recorta solo las esquinas de la foto */
+  border-radius: var(--radio-tarjeta);
+  border: 2px solid var(--linea);
+  text-align: left;
+}
+.tarjeta-habitat .paisaje {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* El nombre va sobre la foto, abajo, con un degradado que asegura la lectura (como la 5.0). */
+.tarjeta-habitat span {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1.75rem 0.85rem 0.7rem;
+  background: linear-gradient(transparent, rgb(2 12 20 / 0.88) 55%);
+  font-weight: 800;
+  font-size: var(--texto-m);
+  line-height: 1.2;
+  color: #fff;
 }
 
-/* --- Catálogo --- */
+/* --- Catálogo: barra lateral (título, búsqueda, páginas, controles) y rejilla --- */
+.catalogo-pantalla {
+  display: grid;
+  grid-template-columns: clamp(16rem, 22vw, 20rem) minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  grid-template-areas:
+    "enc rejilla"
+    "barra rejilla"
+    ". rejilla"
+    "pag rejilla"
+    "ctrl rejilla";
+  gap: 1rem 1.5rem;
+}
+.catalogo-pantalla > .encabezado-pantalla {
+  grid-area: enc;
+  flex-direction: column;
+  align-items: stretch;
+}
+.catalogo-pantalla .progreso {
+  min-width: 0;
+}
 .catalogo-barra {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  grid-area: barra;
+  display: grid;
+  gap: 0.6rem;
 }
 .catalogo-total {
   margin: 0;
@@ -111,8 +324,6 @@ progress::-moz-progress-bar {
   padding: 0 1rem;
   border: 2px solid var(--linea-fuerte);
   border-radius: 999px;
-  background: var(--superficie);
-  width: min(26rem, 100%);
 }
 .busqueda:hover {
   border-color: var(--expedicion);
@@ -137,372 +348,352 @@ progress::-moz-progress-bar {
   outline-offset: 3px;
 }
 .catalogo {
+  grid-area: rejilla;
+  min-height: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(14rem, 100%), 1fr));
-  gap: 1rem;
-}
-/* Tarjeta de animal: es una elección, así que es un botón (Modern Web Guidance: card). */
-.tarjeta-animal {
-  display: grid;
-  justify-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1rem 0.9rem;
-  border-radius: var(--radio-tarjeta);
-  border: 2px solid var(--linea);
-  background: var(--superficie);
-  text-align: center;
-}
-.tarjeta-animal:hover {
-  border-color: var(--expedicion);
-  box-shadow: 0 0 0 2px var(--expedicion);
-}
-/* La caja de la imagen reserva su espacio antes de que cargue (sin saltos, CLS). */
-.tarjeta-imagen {
-  display: block;
-  width: 100%;
-  max-width: 11rem;
-  aspect-ratio: 1;
-}
-.tarjeta-imagen img {
-  width: 100%;
-  max-width: 11rem;
-  aspect-ratio: 1;
-  object-fit: contain;
-}
-.tarjeta-nombre {
-  font-size: var(--texto-l);
-  font-weight: 800;
-  line-height: 1.2;
-}
-.paginacion {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
-  flex-wrap: wrap;
-}
-.paginacion-estado {
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  min-width: 9ch;
-  text-align: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 0.9rem;
 }
 .busqueda-vacia {
+  grid-area: rejilla;
+  align-self: start;
   padding: 2rem;
   text-align: center;
   font-weight: 700;
   border: 2px dashed var(--linea-fuerte);
   border-radius: var(--radio-tarjeta);
 }
-
-/* --- Controles de partida --- */
-.controles {
+/* Tarjeta de animal: es una elección, así que es un botón (Modern Web Guidance: card). */
+.tarjeta-animal {
+  position: relative;
+  min-height: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.75rem 1.5rem;
-  margin: 1.25rem 0;
-}
-.controles-grupo {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-.control {
-  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.55rem;
-  min-height: 60px;
-  padding: 0.35rem 1.15rem 0.35rem 0.45rem;
-  border-radius: var(--radio-control);
-  border: 2px solid var(--linea-fuerte);
-  background: var(--superficie);
-  font-weight: 800;
-  font-size: var(--texto-m);
-}
-.control img {
-  width: 2.75rem;
-  height: 2.75rem;
-  object-fit: contain;
-}
-.control:hover {
-  border-color: var(--tinta);
-}
-.control[data-control="ayuda"] {
-  background: var(--ambar);
-  border-color: var(--ambar);
-  color: var(--ambar-tinta);
-}
-.control[data-control="ayuda"]:hover {
-  border-color: var(--ambar-tinta);
-}
-.control[data-control="repetir"] {
-  background: var(--agua-claro);
-  border-color: var(--agua);
-}
-.control:is([data-control="continuar"], [data-control="reanudar"]) {
-  background: var(--expedicion);
-  border-color: var(--expedicion);
-  color: #fff;
-}
-.catalogo-pantalla .controles {
-  margin-top: 0.5rem;
-}
-
-/* --- Tablero del reto --- */
-.tablero {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: minmax(13rem, 18rem) minmax(0, 1fr);
-  align-items: stretch;
-}
-.animal-actual {
-  margin: 0;
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
+  gap: 0.35rem;
+  padding: 0.9rem 0.9rem 0.8rem;
   border-radius: var(--radio-panel);
-  background: var(--superficie);
   border: 2px solid var(--linea);
   text-align: center;
 }
-.animal-actual img {
-  width: min(13rem, 100%);
-  aspect-ratio: 1;
-  object-fit: contain;
-}
-.animal-actual figcaption {
-  display: grid;
-}
-.animal-actual strong {
-  font-size: var(--texto-xl);
-  line-height: 1.15;
-}
-
-/* Guía: el texto de apoyo y, debajo, la tira de frase. */
-.guia {
-  padding: clamp(1rem, 2.5vw, 1.5rem);
-  border-radius: var(--radio-panel);
-  background: var(--superficie);
-  border: 2px solid var(--linea);
-}
-.guia.confirmacion {
-  background: var(--exito-fondo);
-  border-color: var(--expedicion);
-}
-.guia.neutral {
-  background: var(--neutro-fondo);
-}
-.guia-cabecera {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 0.5rem;
+.tarjeta-numero {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--expedicion);
+  color: var(--tinta-suave);
+  font-variant-numeric: tabular-nums;
 }
-.guia h2 {
-  font-size: var(--texto-xl);
-  margin-bottom: 1rem;
-  max-width: 34ch;
-}
-
-/* La tira: celdas iguales unidas sobre una banda, leídas de izquierda a derecha. */
-.tira {
-  list-style: none;
-  margin: 0;
-  padding: 0.6rem;
+.tarjeta-imagen {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  background: var(--niebla);
-  border-radius: var(--radio-tarjeta);
-  counter-reset: none;
+  justify-content: center;
 }
-.tira-celda {
-  display: grid;
-  justify-items: center;
-  gap: 0.3rem;
-  width: clamp(6.5rem, 14vw, 9rem);
-  padding: 0.5rem 0.5rem 0.6rem;
-  background: var(--superficie);
-  border: 2px solid var(--tinta);
-  border-radius: var(--radio-control);
-  text-align: center;
+.tarjeta-imagen img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.tarjeta-nombre {
+  font-size: var(--texto-m);
   font-weight: 700;
   line-height: 1.2;
 }
-.tira-celda img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: contain;
-}
-
-/* --- Hábitats --- */
-.habitats-panel {
-  margin-top: 0.5rem;
-}
-.instruccion {
-  margin: 0 0 0.75rem;
-  font-size: var(--texto-l);
-}
-.habitats {
+.paginacion {
+  grid-area: pag;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
 }
-.habitats[data-cantidad="2"] {
-  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+.paginacion-estado {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
-.tarjeta-habitat {
-  display: grid;
-  padding: 0;
-  overflow: hidden;
-  border-radius: var(--radio-tarjeta);
-  border: 3px solid var(--linea);
-  background: var(--superficie);
-  text-align: left;
-}
-.tarjeta-habitat:hover:not(:disabled) {
-  border-color: var(--expedicion);
-}
-.tarjeta-habitat .paisaje {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-.tarjeta-habitat span {
-  padding: 0.7rem 1rem 0.8rem;
-  font-weight: 800;
-  font-size: var(--texto-m);
-  line-height: 1.25;
-}
-
-@media (max-width: 760px) {
-  .tablero {
-    grid-template-columns: 1fr;
-  }
-  .animal-actual {
-    grid-template-columns: 6rem 1fr;
-    justify-items: start;
-    text-align: left;
-  }
-  .animal-actual img {
-    width: 6rem;
-  }
-  .animal-actual figcaption {
-    justify-items: start;
-  }
-  /* Dos columnas para comparar hábitats sin un desplazamiento largo. */
-  .habitats,
-  .habitats[data-cantidad="2"] {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
-  }
-  .tarjeta-habitat .paisaje {
-    aspect-ratio: 4 / 3;
-  }
-  .tarjeta-habitat span {
-    padding: 0.5rem 0.65rem 0.6rem;
-    font-size: var(--texto-s);
-  }
-  .tira-celda {
-    width: calc((100% - 1.2rem) / 3);
-  }
-  .controles {
-    justify-content: stretch;
-  }
+.catalogo-pantalla .controles {
+  grid-area: ctrl;
 }
 
 /* --- Pausa y cierre (robot existente) --- */
 .cierre {
   display: grid;
-  grid-template-columns: minmax(12rem, 22rem) minmax(0, 1fr);
-  gap: 2rem;
-  align-items: center;
-  padding-top: 1.5rem;
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: stretch;
+  padding-top: 0.5rem;
 }
 .cierre-visual {
+  min-height: 0;
   margin: 0;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
-  text-align: center;
-  font-weight: 700;
-  color: var(--tinta-suave);
-}
-.cierre-visual img {
-  width: 100%;
-  height: auto;
-  max-width: 20rem;
+  padding: 1rem;
   border-radius: var(--radio-panel);
   background: var(--superficie);
-  border: 2px solid var(--linea);
+  box-shadow: inset 0 0 0 1px var(--linea);
+  text-align: center;
+}
+.cierre-visual img {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+}
+.cierre-visual figcaption {
+  font-size: var(--texto-xl);
+  font-family: var(--serif);
+}
+.cierre-contenido {
+  align-self: center;
 }
 .cierre-contenido h1 {
-  font-size: var(--texto-xxl);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3.25rem);
 }
 .cierre-contenido .introduccion {
   font-size: var(--texto-l);
   margin: 0.5rem 0 1rem;
 }
-.cierre-resumen {
-  display: grid;
-  gap: 0.3rem;
-  margin: 1.25rem 0;
-  max-width: 24rem;
-}
-.cierre-resumen strong {
-  font-size: var(--texto-xl);
-  font-variant-numeric: tabular-nums;
-}
-@media (max-width: 760px) {
-  .cierre {
-    grid-template-columns: 1fr;
-  }
-  .cierre-visual img {
-    max-width: 12rem;
-  }
-}
-
-/* --- Preferencias --- */
-.preferencias-cabecera {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: 1rem;
-}
-.preferencias-cabecera h2 {
-  font-size: var(--texto-xl);
-}
-.preferencias-columnas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-  gap: 0 2rem;
-}
-.preferencias-columna .boton-secundario {
-  margin-top: 1.1rem;
-}
-.preferencias-pie {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
-}
-
-/* Ajustes: grupos vacíos fuera; en pausa y cierre los controles siguen al contenido. */
-.controles-grupo:empty {
-  display: none;
-}
-.cierre .controles {
+.cierre .tira {
   justify-content: flex-start;
 }
-.preferencias-columna {
-  min-width: 0;
+.cierre-resumen {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 0.3rem 1rem;
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: inset 0 0 0 1px var(--linea);
+  max-width: 34rem;
 }
-.campo :is(select, input) {
-  width: 100%;
-  max-width: 100%;
+.cierre-resumen strong {
+  font-size: var(--texto-xxl);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.cierre-resumen progress {
+  grid-column: 1 / -1;
+}
+.cierre .controles {
+  max-width: 26rem;
+}
+
+/* --- Selector de modalidad --- */
+.selector-modalidad {
+  width: min(40rem, calc(100vw - 2rem));
+  text-align: center;
+}
+.selector-modalidad h2 {
+  font-size: var(--texto-xl);
+  margin-bottom: 1.25rem;
+}
+.opciones-modalidad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+.opcion-modalidad {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: var(--radio-panel);
+  border: 2px solid var(--linea-fuerte);
+  font-size: var(--texto-l);
+  font-weight: 800;
+}
+.opcion-modalidad:hover {
+  border-color: var(--expedicion);
+}
+.opcion-modalidad img {
+  width: min(9rem, 36vw);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.selector-modalidad form {
+  margin-top: 1.25rem;
+}
+
+/* ===== Móvil y tableta vertical: una columna que sigue llenando la vista ===== */
+@media (max-width: 899px) {
+  .reto-pantalla {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+    grid-template-areas: "enc" "animal" "guia" "habitats" "controles";
+    gap: 0.6rem;
+  }
+  .encabezado-pantalla .rotulo {
+    display: none;
+  }
+  .encabezado-pantalla {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .encabezado-pantalla h1 {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+  .progreso {
+    min-width: 0;
+    width: 9.5rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8125rem;
+  }
+  .animal-actual {
+    flex-direction: row;
+    padding: 0.5rem 0.9rem;
+    text-align: left;
+  }
+  .animal-actual .rotulo {
+    display: none;
+  }
+  .animal-actual img {
+    flex: none;
+    width: clamp(3.5rem, 9vh, 5.5rem);
+    height: clamp(3.5rem, 9vh, 5.5rem);
+  }
+  .animal-actual strong {
+    font-size: var(--texto-l);
+  }
+  .guia {
+    padding: 0.6rem 0.75rem;
+  }
+  .guia-cabecera {
+    display: none;
+  }
+  .guia h2 {
+    font-size: var(--texto-m);
+  }
+  .tira-celda {
+    width: clamp(3.5rem, 8vh, 5rem);
+    font-size: 0.8125rem;
+  }
+  .instruccion {
+    font-size: var(--texto-s);
+  }
+  .habitats,
+  .habitats[data-cantidad="4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+  .habitats[data-cantidad="2"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tarjeta-habitat span {
+    padding: 1.25rem 0.6rem 0.45rem;
+    font-size: 0.875rem;
+  }
+  .controles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+  .control {
+    min-height: 4.25rem;
+    font-size: 0.875rem;
+    border-radius: 16px;
+  }
+  .control img {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .catalogo-pantalla {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+    grid-template-areas: "enc" "barra" "rejilla" "pag" "ctrl";
+    gap: 0.6rem;
+  }
+  .catalogo-pantalla > .encabezado-pantalla {
+    flex-direction: row;
+    align-items: center;
+  }
+  .catalogo-pantalla .subtitulo,
+  .catalogo-total {
+    display: none;
+  }
+  .catalogo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+  .tarjeta-animal {
+    padding: 0.5rem;
+    border-radius: var(--radio-tarjeta);
+  }
+  .tarjeta-nombre {
+    font-size: 0.9375rem;
+  }
+  .paginacion {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+  .paginacion-estado {
+    grid-column: 2;
+    font-size: var(--texto-s);
+  }
+
+  .cierre {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+  .cierre-visual {
+    padding: 0.5rem;
+  }
+  .cierre-contenido .introduccion {
+    font-size: var(--texto-m);
+    margin: 0.25rem 0 0.5rem;
+  }
+  .cierre-resumen {
+    margin: 0.5rem 0;
+    padding: 0.6rem 0.9rem;
+  }
+  .cierre .controles {
+    max-width: none;
+  }
+}
+
+/* Pantallas bajas (portátil apaisado): se compacta el encabezado y la guía. */
+@media (max-height: 760px) and (min-width: 900px) {
+  .encabezado-pantalla .subtitulo {
+    display: none;
+  }
+  .encabezado-pantalla h1 {
+    font-size: clamp(1.5rem, 1rem + 1.4vw, 2.25rem);
+  }
+  .progreso {
+    padding: 0.45rem 0.75rem;
+  }
+  .reto-pantalla,
+  .catalogo-pantalla {
+    row-gap: 0.6rem;
+  }
+}
+
+/* Rasgos recuperados de la 5.0: flecha de las tarjetas del catálogo y lema del cierre. */
+.tarjeta-flecha {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.8rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--expedicion);
+}
+.cierre-lema {
+  margin-top: 0.9rem;
+}
+.catalogo-pantalla .encabezado-pantalla h1 {
+  font-size: clamp(1.6rem, 1.1rem + 1.1vw, 2.4rem);
+}
+@media (max-width: 899px) {
+  .tarjeta-flecha {
+    display: none;
+  }
 }

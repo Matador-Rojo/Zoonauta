@@ -32,28 +32,38 @@ async function partida(browser, {modalidad, opciones, retos, idioma = 'es', anch
   const errores = [];
   page.on('pageerror', e => errores.push(e.message));
   await page.goto(base);
-  await page.locator('.carrusel').waitFor();
+  await page.locator('.portada-comenzar').waitFor();
   // Voz desactivada y ajustes de la partida, todo con teclado.
   await tabularYActivar(page, '.cabecera .boton-texto');
   const dialogo = page.locator('dialog.preferencias');
   assert.ok(await dialogo.evaluate(d => d.open));
   if (idioma !== 'es') {
-    await page.locator('dialog.preferencias select').first().focus();
+    await page.locator('#pref-idioma').focus();
     await page.keyboard.press(idioma === 'pt-BR' ? 'ArrowDown' : 'ArrowUp');
+    // Con el select de estilo propio (appearance: base-select) la flecha abre la lista:
+    // se baja a la opción y se confirma con Intro, como en cualquier lista desplegable.
+    if (await page.locator('#pref-idioma').evaluate(s => s.matches(':open'))) {
+      await page.keyboard.press(idioma === 'pt-BR' ? 'ArrowDown' : 'ArrowUp');
+      await page.keyboard.press('Enter');
+    }
     await page.waitForFunction(i => document.documentElement.lang === i, idioma);
   }
-  await page.locator('dialog.preferencias input[type="number"]').focus();
+  await page.locator('#pref-retos').focus();
   await page.keyboard.press('Control+A');
   await page.keyboard.type(String(retos));
+  await page.keyboard.press('Tab'); // al salir del campo se ajusta de 1 a 48
   await page.locator('dialog.preferencias select').nth(1).selectOption(String(opciones));
-  const voz = page.locator('dialog.preferencias input[role="switch"]').nth(1);
-  await voz.focus();
-  await page.keyboard.press('Space');
+  const voz = page.locator('.pref-voz input[role="switch"]');
+  // En pt-BR la voz está bloqueada (apagada y desactivada); en español se apaga con teclado.
+  if (idioma === 'es') {
+    await voz.focus();
+    await page.keyboard.press('Space');
+  } else assert.ok(await voz.isDisabled());
   assert.equal(await voz.isChecked(), false);
   await page.keyboard.press('Escape');
   assert.equal(await dialogo.evaluate(d => d.open), false);
 
-  await tabularYActivar(page, '.portada-texto .boton-principal');
+  await tabularYActivar(page, '.portada-comenzar');
   await page.locator('dialog.selector-modalidad').waitFor();
   // El foco inicial está en «Yo elijo»; Tab lleva a «El agente elige».
   if (modalidad === 'AGENTE') await page.keyboard.press('Tab');
@@ -78,7 +88,10 @@ async function partida(browser, {modalidad, opciones, retos, idioma = 'es', anch
     }
     assert.equal(v.fase, 'RETO_RESUELTO', `reto ${reto + 1} resuelto`);
     assert.ok(await page.locator('.guia.confirmacion').count() === 1);
-    if (ancho <= 320) assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'sin desplazamiento horizontal');
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'sin desplazamiento horizontal');
+    const sobra = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
+    if (sobra > 0) await page.screenshot({path: require('node:path').resolve(process.env.INTERFAZ_SALIDA || 'output', `desplaza_${modalidad}_${opciones}_${idioma}_${ancho}.png`)});
+    assert.equal(sobra, 0, `sin desplazamiento vertical (${modalidad}, ${opciones} hábitats, ${idioma}, ${ancho}px, reto ${reto + 1})`);
     await tabularYActivar(page, 'button[data-control="continuar"]', reto % 2 ? 'Space' : 'Enter');
     await esperarRevision(page, v.revision);
     v = await vista(page);
@@ -88,7 +101,7 @@ async function partida(browser, {modalidad, opciones, retos, idioma = 'es', anch
   assert.equal(await page.evaluate(() => document.activeElement.id), 'titulo-pantalla', 'el foco va al título del cierre');
   assert.match(await page.locator('.cierre-resumen strong').textContent(), new RegExp(`${retos}\\s*/\\s*${retos}`));
   await tabularYActivar(page, '.cierre .boton-principal');
-  await page.locator('.carrusel').waitFor();
+  await page.locator('.portada-comenzar').waitFor();
   assert.equal((await vista(page)).fase, 'INICIO');
   assert.deepEqual(errores, []);
   await context.close();

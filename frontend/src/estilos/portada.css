@@ -1,601 +1,246 @@
-/* Portada 6.0: ocho fotografías con movimiento ambiental de nivel 1.
-   Por defecto todo es estático. El movimiento solo existe si el sistema no pide
-   reducirlo Y la persona no activó «Reducir movimiento» (Modern Web Guidance,
-   motion: opt-in con prefers-reduced-motion: no-preference). Sin zoom, parallax,
-   cámara ni destellos: solo opacidad y desplazamientos lentos (variaciones de luz
-   de ciclo largo y ≤ 22 % de opacidad), muy por debajo de tres destellos por segundo.
-   La pausa del carrusel detiene también el movimiento ambiental (WCAG 2.2.2). */
+/* Portada «Bosque de luz» (6.0). Fondo aprobado sin filtros, capas ni animaciones; la
+   interfaz se adapta al fondo. Ocupa exactamente la vista: sin desplazamiento vertical ni
+   horizontal, también con Preferencias o «¿Quién elige?» abiertos (son diálogos encima).
+   Sin pictogramas en la portada. Movimiento: solo una entrada breve del texto. */
 
 .portada {
   position: relative;
   isolation: isolate;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   color: #fff;
-  overflow: hidden;
-  background: var(--bosque);
+  background: var(--noche);
 }
-.portada-fondo {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: #1c2a24;
-  overflow: hidden;
-  container-type: size;
-}
-.portada-capa {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-}
-.portada-capa[data-estado="previo"] {
-  opacity: 1;
-  z-index: 1;
-}
-.portada-capa[data-estado="actual"] {
-  opacity: 1;
-  z-index: 2;
-}
-/* Caja 16:9 que cubre la pantalla como object-fit: cover, desplazada según --fx/--fy. */
-.escena {
-  position: absolute;
-  width: max(100cqw, 177.78cqh);
-  height: max(100cqh, 56.25cqw);
-  left: calc((100cqw - max(100cqw, 177.78cqh)) * var(--fx, 0.5));
-  top: calc((100cqh - max(100cqh, 56.25cqw)) * var(--fy, 0.5));
-}
-.escena > img:not(.capa) {
+/* El fondo y el velo cubren la vista; no recortan contenido (solo se posicionan). */
+.portada-paisaje,
+.portada-velo {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
-.portada-sombra {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background:
-    linear-gradient(90deg, #06100de8 0, #06100db8 26%, #06100d40 52%, #06100d08 80%),
-    linear-gradient(0deg, #06100de8 0, transparent 40%, #06100d30 100%);
+.portada-paisaje {
+  z-index: -3;
+  object-fit: cover;
+  object-position: center;
+}
+.portada-velo {
+  z-index: -2;
+  background-color: rgb(0 0 0 / 0.2);
+  background-image:
+    linear-gradient(180deg, rgb(0 9 15 / 0.44), rgb(0 9 15 / 0.08) 24%, rgb(0 9 15 / 0.08) 78%, rgb(0 9 15 / 0.28)),
+    radial-gradient(ellipse at 21% 44%, rgb(1 9 14 / 0.76), rgb(1 9 14 / 0.42) 37%, transparent 67%);
 }
 
-/* Capas con transparencia: parte de la escena, colocadas por estilo en línea (%). */
-.capa {
+/* En la portada la cabecera queda encima del bosque: solo logo, nombre y Preferencias. */
+.cabecera[data-fase="INICIO"] {
   position: absolute;
-  pointer-events: none;
-  object-fit: fill;
+  inset: 0 0 auto;
+  padding: clamp(10px, 2.4vh, 24px) clamp(16px, 5vw, 80px);
+  color: #fff;
 }
-
-/* Capas de efecto: no se muestran mientras el movimiento no esté permitido. */
-.efecto {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.cabecera[data-fase="INICIO"] .marca {
+  font-size: 1.8rem;
+  letter-spacing: -0.04em;
+}
+.cabecera[data-fase="INICIO"] .marca img {
+  width: 52px;
+  height: 52px;
+}
+.cabecera[data-fase="INICIO"] .marca-subtitulo {
   display: none;
 }
+.cabecera[data-fase="INICIO"] .boton-texto {
+  border-color: var(--expedicion);
+  background: rgb(4 20 31 / 0.72);
+  color: #fff;
+}
+.cabecera[data-fase="INICIO"] .boton-texto:hover {
+  background: rgb(8 34 53 / 0.92);
+}
 
-/* --- Contenido (composición de la 5.0, con titular grande y ligero) --- */
-.portada :focus-visible {
-  outline: 3px solid #fff;
-  box-shadow: 0 0 0 6px rgb(11 87 208 / 85%);
+.portada-bienvenida {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(100%, 56rem);
+  padding: 4.5rem 1.5rem clamp(0.8rem, 4vh, 3rem) clamp(1.5rem, 6.7vw, 7rem);
 }
-.portada-contenido {
-  position: relative;
-  z-index: 4;
-  flex: 1;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 116px clamp(24px, 4vw, 64px) 48px;
+.portada-introduccion {
   display: flex;
   align-items: center;
-}
-.portada-texto {
-  width: 55%;
-  max-width: 710px;
-  text-shadow: 0 1px 14px rgb(0 0 0 / 40%);
-}
-.portada-texto .etiqueta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 clamp(14px, 2.5vh, 28px);
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 2.3px;
+  gap: 0.85rem;
+  margin: 0 0 clamp(0.5rem, 1.6vh, 1.2rem);
+  font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
-  color: var(--acento, var(--lima));
+  color: var(--expedicion-claro);
+  text-shadow: 0 2px 10px #001018;
 }
-.portada-texto .etiqueta::before {
+.portada-introduccion::before {
   content: "";
-  flex: none;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
+  flex: 0 0 clamp(1.5rem, 3.2vw, 3.4rem);
+  border-top: 0.13rem solid currentColor;
 }
 .portada h1 {
-  font-size: clamp(3rem, min(6.7vw, 11vh), 7rem);
-  line-height: 1.01;
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  margin: 0;
+  font: 700 clamp(2.4rem, min(4.2rem + 1.6vw, 12.5vh), 6.2rem) / 0.96 var(--serif);
+  letter-spacing: -0.045em;
+  color: #fbfeff;
+  text-shadow: 0 0.15rem 0.9rem #020d14d9;
+  text-wrap: initial;
 }
-.portada h1 span,
-.portada h1 em {
+.portada h1 span {
   display: block;
+  color: var(--expedicion);
+  text-shadow:
+    0 0 0.12em rgb(94 234 212 / 0.35),
+    0 0 0.33em rgb(34 211 238 / 0.22),
+    0 0.1em 0.22em #01121bc9;
 }
-.portada h1 em {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--acento, var(--lima));
+.portada-descripcion {
+  max-width: 34ch;
+  margin: clamp(0.6rem, 1.8vh, 1.4rem) 0 clamp(0.8rem, 2.6vh, 2rem);
+  font-size: clamp(1.1rem, 0.93rem + 0.48vw, 1.5rem);
+  line-height: 1.4;
+  color: #fff;
+  text-shadow:
+    0 2px 8px #001018,
+    0 2px 16px #001018;
 }
-.portada .introduccion {
-  color: #e0e6d9;
-  font-size: clamp(1rem, 1.7vh, 1.15rem);
-  max-width: 28rem;
-  margin: clamp(18px, 3vh, 30px) 0 0;
-}
-.entrada {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.5rem;
-  margin-top: clamp(24px, 4vh, 42px);
-}
-.entrada .boton-principal {
-  min-height: 58px;
-  padding: 14px 24px;
-  gap: 13px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #17271c;
-  background: color-mix(in srgb, var(--acento, var(--lima)) 91%, transparent);
-  border-color: var(--acento, var(--lima));
-  backdrop-filter: blur(18px);
-  text-shadow: none;
-}
-.entrada .boton-principal:hover {
-  background: color-mix(in srgb, var(--acento, var(--lima)) 70%, white);
-  border-color: color-mix(in srgb, var(--acento, var(--lima)) 70%, white);
-}
-.entrada .flecha {
-  margin-left: 0.15rem;
-}
-.portada .nota {
+.portada-comenzar {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #d7e0d2;
-  font-size: 0.8125rem;
-  margin: 0;
-}
-.portada .nota svg {
-  width: 1rem;
-  height: 1rem;
-  color: var(--acento, var(--lima));
-}
-
-/* --- Ficha del paisaje: nombre, controles y marcas --- */
-.hero-ficha {
-  position: absolute;
-  right: clamp(24px, 4vw, 64px);
-  bottom: clamp(24px, 6vh, 72px);
-  width: 260px;
-  display: grid;
-  gap: 0.9rem;
-  padding-left: 22px;
-  border-left: 1px solid var(--acento, var(--lima));
-  text-shadow: 0 2px 12px #000;
-}
-.carrusel-cabecera {
-  display: grid;
-  gap: 0.8rem;
-}
-.carrusel-nombre {
-  margin: 0;
-  display: grid;
-  min-width: 0;
-}
-.carrusel-nombre strong {
-  font-size: 1.45rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-.carrusel-contador {
-  font-variant-numeric: tabular-nums;
-  color: #d3ddcc;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-.carrusel-controles {
-  display: flex;
-  gap: 4px;
-  margin-left: -10px;
-}
-.carrusel .control-redondo {
-  width: 46px;
-  min-height: 46px;
-  color: #fff;
-  background: #0c1b164f;
-  border-color: #ffffff30;
-  backdrop-filter: blur(10px);
-}
-.carrusel .control-redondo:hover {
-  background: #ffffff25;
-  border-color: var(--acento, var(--lima));
-}
-
-/* Marcas: 8 botones con área táctil de 32 × 32 px (WCAG 2.5.8) y punto visible. */
-.carrusel-marcas {
-  display: flex;
-  margin-left: -8px;
-}
-.marca-paisaje {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  display: grid;
-  place-items: center;
-}
-.marca-paisaje::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgb(255 255 255 / 45%);
-}
-.marca-paisaje:hover::before {
-  background: rgb(255 255 255 / 80%);
-}
-.marca-paisaje[aria-current="true"]::before {
-  width: 12px;
-  height: 12px;
-  background: var(--acento, var(--lima));
-}
-
-/* --- Franja de cifras --- */
-.resumen-inicio {
-  position: relative;
-  z-index: 4;
-  width: 100%;
-  max-width: 1472px;
-  margin: 0 auto;
-  padding: clamp(18px, 3vh, 30px) 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid #ffffff35;
-}
-.resumen-item {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 0 20px;
-}
-.resumen-item + .resumen-item {
-  border-left: 1px solid #ffffff35;
-}
-.resumen-item strong {
-  font-size: 2.25rem;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-.resumen-item:last-child strong {
-  font-size: 1.55rem;
-  letter-spacing: -0.02em;
-}
-.resumen-item span {
-  font-size: 0.75rem;
-  color: #d3ddcc;
-  max-width: 8rem;
-  line-height: 1.35;
-}
-
-@media (max-width: 1000px) {
-  .portada-texto {
-    width: 68%;
-  }
-  .hero-ficha {
-    width: 200px;
-  }
-}
-@media (max-width: 760px) {
-  .portada-contenido {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 1.75rem;
-    padding-top: 96px;
-  }
-  .portada-texto {
-    width: 100%;
-  }
-  .portada-texto .etiqueta {
-    display: none;
-  }
-  .hero-ficha {
-    position: static;
-    width: 100%;
-  }
-  .resumen-inicio {
-    padding: 14px 0;
-  }
-  .resumen-item {
-    flex-direction: column;
-    gap: 4px;
-    padding: 0 8px;
-    text-align: center;
-  }
-  .resumen-item strong {
-    font-size: 1.6rem;
-  }
-  .resumen-item:last-child strong {
-    font-size: 1.15rem;
-  }
-  .resumen-item span {
-    font-size: 0.6875rem;
-  }
-}
-@media (max-height: 500px) {
-  .portada-texto .etiqueta,
-  .portada .introduccion {
-    display: none;
-  }
-}
-
-/* --- Movimiento opcional ------------------------------------------------- */
-@media (prefers-reduced-motion: no-preference) {
-  :root[data-movimiento="normal"] .portada-capa {
-    transition: opacity 1.4s ease-in-out;
-  }
-  :root[data-movimiento="normal"] .efecto {
-    display: block;
-  }
-  :root[data-movimiento="normal"] .portada[data-ambiente="pausado"] :is(.efecto, .capa) {
-    animation-play-state: paused;
-  }
-
-  /* Capas reales (fondos/capas): solo se mueven en el paisaje visible. */
-  /* Selva: las hojas del primer plano se balancean desde su base (±0,5°). */
-  :root[data-movimiento="normal"] [data-estado="actual"] .capa-hojas {
-    transform-origin: 100% 100%;
-    animation: balanceo 9s ease-in-out infinite alternate;
-  }
-  /* Selva: la niebla deriva despacio. */
-  :root[data-movimiento="normal"] [data-estado="actual"] .capa-niebla {
-    animation: deriva-lenta 50s ease-in-out infinite alternate;
-  }
-  /* Sabana: la hierba oscila desde el suelo. */
-  :root[data-movimiento="normal"] [data-estado="actual"] .capa-hierba {
-    transform-origin: 50% 100%;
-    animation: brisa 7s ease-in-out infinite alternate;
-  }
-  /* Montaña: nubes bajas que cruzan muy despacio. */
-  :root[data-movimiento="normal"] [data-estado="actual"] .capa-nubes {
-    animation: cruzar 90s ease-in-out infinite alternate;
-  }
-  /* Arrecife: las algas oscilan con la corriente. */
-  :root[data-movimiento="normal"] [data-estado="actual"] .capa-algas {
-    transform-origin: 50% 100%;
-    animation: corriente 8s ease-in-out infinite alternate;
-  }
-
-  /* Selva: el agua de la cascada baja con una textura muy tenue. */
-  :root[data-movimiento="normal"] .efecto-cascada {
-    left: 71%;
-    right: 22%;
-    top: 8%;
-    bottom: 14%;
-    background: repeating-linear-gradient(180deg, rgb(255 255 255 / 0%) 0 22px, rgb(255 255 255 / 7%) 22px 30px);
-    background-size: 100% 60px;
-    mask-image: radial-gradient(45% 50% at 50% 50%, #000 40%, transparent 100%);
-    animation: caer 6s linear infinite;
-  }
-
-  /* Sabana: halo del sol que respira apenas. */
-  :root[data-movimiento="normal"] .efecto-sol {
-    background: radial-gradient(18% 22% at 86% 42%, rgb(255 190 90 / 22%), transparent 70%);
-    animation: respiro 24s ease-in-out infinite alternate;
-  }
-
-  /* Desierto: cambio mínimo de luz sobre las dunas. */
-  :root[data-movimiento="normal"] .efecto-luz-calida {
-    background: linear-gradient(160deg, rgb(255 190 110 / 12%) 0%, transparent 55%);
-    animation: respiro 30s ease-in-out infinite alternate;
-  }
-
-  /* Hielo: reflejo frío casi imperceptible en el agua, sin destellos. */
-  :root[data-movimiento="normal"] .efecto-reflejo-frio {
-    inset: 45% -10% 0;
-    background: linear-gradient(100deg, transparent 30%, rgb(220 240 255 / 8%) 48%, transparent 66%);
-    animation: deriva-lenta 50s ease-in-out infinite alternate;
-  }
-
-  /* Arrecife: los rayos de luz varían apenas; brillo submarino que se desplaza. */
-  :root[data-movimiento="normal"] .efecto-rayos {
-    background: linear-gradient(200deg, rgb(190 240 255 / 14%) 0%, transparent 45%);
-    animation: respiro 22s ease-in-out infinite alternate;
-  }
-  :root[data-movimiento="normal"] .efecto-ondas-luz {
-    inset: 60% -10% 0;
-    background: radial-gradient(30% 40% at 30% 60%, rgb(170 240 255 / 10%), transparent 70%);
-    animation: deriva-lenta 28s ease-in-out infinite alternate;
-  }
-
-  /* Lago: copia del agua que ondula 2 px en vertical, solo en la mitad inferior. */
-  :root[data-movimiento="normal"] .efecto-agua {
-    mask-image: linear-gradient(0deg, #000 0%, #000 38%, transparent 50%);
-    animation: ondular 9s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes deriva-lenta {
-  from {
-    translate: -3% 0;
-  }
-  to {
-    translate: 3% 0;
-  }
-}
-@keyframes cruzar {
-  from {
-    translate: -6% 0;
-  }
-  to {
-    translate: 6% 0;
-  }
-}
-@keyframes respiro {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes caer {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 60px;
-  }
-}
-@keyframes brisa {
-  from {
-    transform: skewX(-0.6deg);
-  }
-  to {
-    transform: skewX(0.6deg);
-  }
-}
-@keyframes balanceo {
-  from {
-    rotate: -0.5deg;
-  }
-  to {
-    rotate: 0.5deg;
-  }
-}
-@keyframes corriente {
-  from {
-    transform: skewX(-1.5deg);
-  }
-  to {
-    transform: skewX(1.5deg);
-  }
-}
-@keyframes ondular {
-  from {
-    translate: 0 -1px;
-  }
-  to {
-    translate: 0 2px;
-  }
-}
-
-/* Legibilidad: velo suave tras la ficha y, en móvil, más oscuro bajo el texto. */
-.hero-ficha {
-  isolation: isolate;
-}
-.hero-ficha::before {
-  content: "";
-  position: absolute;
-  inset: -28px -32px -28px -12px;
-  z-index: -1;
-  background: radial-gradient(closest-side, rgb(6 16 13 / 62%), rgb(6 16 13 / 0%));
-  pointer-events: none;
-}
-@media (max-width: 760px) {
-  .portada-sombra {
-    background: linear-gradient(0deg, #06100dfa 0, #06100dd9 38%, #06100d9c 72%, #06100d80 100%);
-  }
-}
-
-/* Acento del paisaje: el color cambia con la foto (transición de color, no de movimiento). */
-.portada :is(h1 em, .etiqueta, .boton-principal, .hero-ficha, .nota svg) {
+  gap: 0.9rem;
+  min-height: 56px;
+  padding: 0.7em 1.7em;
+  border: 2px solid var(--expedicion-claro);
+  border-radius: 999px;
+  background: linear-gradient(164deg, #8ff7e6 0%, var(--expedicion) 45%, var(--expedicion-oscuro) 100%);
+  box-shadow:
+    inset 0 0 0.7rem rgb(255 255 255 / 0.45),
+    0 0 1.45rem rgb(34 211 238 / 0.45),
+    0 0.45rem 1.65rem rgb(1 14 22 / 0.7);
+  color: var(--tinta-sobre-acento);
+  font-size: clamp(1.15rem, 0.95rem + 0.62vw, 1.75rem);
+  font-weight: 750;
+  line-height: 1.15;
   transition:
-    color 0.9s ease,
-    background-color 0.9s ease,
-    border-color 0.9s ease;
+    transform 0.2s,
+    box-shadow 0.2s;
 }
-
-/* Miniaturas: vista previa de cada paisaje y acceso directo. */
-.carrusel-marcas {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  margin-left: 0;
+.portada-comenzar svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
 }
-.marca-paisaje {
-  width: auto;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  min-height: 32px;
-  padding: 0;
-  overflow: hidden;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  background: #0c1b16;
-  display: block;
-  opacity: 0.62;
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root[data-movimiento="normal"] .marca-paisaje {
-    transition:
-      opacity 0.2s,
-      border-color 0.2s;
-  }
-}
-.marca-paisaje::before {
-  display: none;
-}
-.marca-paisaje img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.marca-paisaje:hover {
-  opacity: 1;
-}
-.marca-paisaje[aria-current="true"] {
-  opacity: 1;
-  border-color: var(--acento, var(--lima));
-}
-@media (max-width: 760px) {
-  .carrusel-marcas {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 4px;
+@media (hover: hover) and (pointer: fine) {
+  .portada-comenzar:hover {
+    box-shadow:
+      inset 0 0 0.7rem rgb(255 255 255 / 0.5),
+      0 0 2rem rgb(34 211 238 / 0.65),
+      0 0.6rem 1.8rem rgb(1 14 22 / 0.7);
   }
 }
 
-/* Línea de tiempo: cuánto falta para el siguiente paisaje (10 s). Solo con movimiento permitido. */
-.ficha-tiempo {
-  display: none;
-  height: 2px;
-  margin-top: -0.35rem;
-  background: var(--acento, var(--lima));
-  transform-origin: left;
-}
+/* Entrada breve del texto: solo con movimiento permitido. */
 @media (prefers-reduced-motion: no-preference) {
-  :root[data-movimiento="normal"] .ficha-tiempo {
-    display: block;
-    animation: tiempo 10s linear forwards;
+  :root[data-movimiento="normal"] .portada-bienvenida > * {
+    animation: portada-entra 0.55s ease-out both;
+  }
+  :root[data-movimiento="normal"] .portada-bienvenida > :nth-child(2) {
+    animation-delay: 0.06s;
+  }
+  :root[data-movimiento="normal"] .portada-bienvenida > :nth-child(3) {
+    animation-delay: 0.12s;
+  }
+  :root[data-movimiento="normal"] .portada-bienvenida > :nth-child(4) {
+    animation-delay: 0.18s;
+  }
+  :root[data-movimiento="normal"] .portada-comenzar:hover {
+    transform: translateY(-2px);
   }
 }
-@keyframes tiempo {
+@keyframes portada-entra {
   from {
-    transform: scaleX(0);
+    opacity: 0;
+    transform: translateY(10px);
   }
-  to {
-    transform: scaleX(1);
+}
+
+/* Móvil vertical */
+@media (max-width: 700px) {
+  .portada-paisaje {
+    object-position: 82% center;
+  }
+  .portada-velo {
+    background-image:
+      linear-gradient(180deg, rgb(0 9 15 / 0.45), rgb(0 9 15 / 0.1) 23%, rgb(0 9 15 / 0.1) 80%, rgb(0 9 15 / 0.27)),
+      radial-gradient(
+        ellipse at 8% 48%,
+        rgb(1 9 14 / 0.87),
+        rgb(1 9 14 / 0.68) 44%,
+        rgb(1 9 14 / 0.16) 88%,
+        transparent
+      );
+  }
+  .cabecera[data-fase="INICIO"] {
+    padding: 12px 16px;
+  }
+  .cabecera[data-fase="INICIO"] .marca {
+    font-size: 1.45rem;
+  }
+  .cabecera[data-fase="INICIO"] .marca img {
+    width: 40px;
+    height: 40px;
+  }
+  .cabecera[data-fase="INICIO"] .boton-texto {
+    padding-inline: 14px;
+  }
+  .portada-bienvenida {
+    padding: 4rem 1.25rem 1.2rem;
+  }
+  .portada h1 {
+    font-size: clamp(2.35rem, 11.5vw, 3.6rem);
+  }
+  .portada-introduccion {
+    letter-spacing: 0.12em;
+  }
+}
+
+/* Pantalla baja o apaisada: se compacta y se quita el adorno superior. */
+@media (max-height: 560px) {
+  .cabecera[data-fase="INICIO"] .marca img {
+    width: 36px;
+    height: 36px;
+  }
+  .cabecera[data-fase="INICIO"] .marca {
+    font-size: 1.4rem;
+  }
+  .portada-introduccion {
+    display: none;
+  }
+  .portada-bienvenida {
+    padding-top: 3.5rem;
+  }
+  .portada h1 {
+    font-size: clamp(2rem, 11vh, 3.4rem);
+  }
+  .portada-descripcion {
+    font-size: 1rem;
+    margin-block: 0.4rem 0.6rem;
+  }
+  .portada-comenzar {
+    min-height: 48px;
+    font-size: 1.1rem;
+    padding-block: 0.45em;
   }
 }

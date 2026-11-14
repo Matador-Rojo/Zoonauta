@@ -106,13 +106,17 @@ export function Reto({
   const elegido = resuelto && pulsado && pulsado.reto === vista.reto_id ? pulsado.id : null;
   return (
     <section className="pantalla reto-pantalla" aria-labelledby="titulo-pantalla">
-      <Encabezado vista={vista} titulo={resuelto ? "¡Encontraste un lugar!" : "Elige un hábitat"} />
+      <Encabezado
+        vista={vista}
+        etiqueta="Encuentra su hábitat"
+        titulo={resuelto ? "¡Encontraste un lugar!" : "Elige un hábitat"}
+      />
       <div className="tablero">
         {animal && (
           <figure className="animal-actual">
+            <span className="rotulo">{t("Tu animal")}</span>
             <Pictograma id={animal.pictograma_id} datos={vista.pictogramas[animal.pictograma_id]} />
             <figcaption>
-              <span className="etiqueta">{t("Tu animal")}</span>
               <strong>{animal.nombre}</strong>
             </figcaption>
           </figure>

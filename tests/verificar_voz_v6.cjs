@@ -1,8 +1,9 @@
 /* Cadena de voz del frontend 6.0 (/v6/). Las respuestas de audio se simulan para que
    la prueba sea determinista; las acciones de la partida usan el servidor real.
-   Comprueba: grabación primero, voz alternativa con el mensaje completo, una sola voz
-   a la vez, velocidad, cancelación al pausar, interruptor de voz, fallo de red y
-   que sin grabaciones no se piden. */
+   La 6.0 usa solo la voz grabada de Zoonauta (Marcela, ElevenLabs): sin grabación no se lee
+   con otra voz. Comprueba: grabación, una sola voz a la vez, velocidad, cancelación al
+   pausar, interruptor de voz, fallo de red, que sin grabaciones no se piden y que en pt-BR
+   la voz está bloqueada. */
 const assert = require('node:assert/strict');
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const base = (process.env.INTERFAZ_URL || 'http://127.0.0.1:8000') + '/v6/';
@@ -43,7 +44,9 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
     }}));
     await context.route('**/api/voz/grabada', async r => {
       pedidos.grabada++;
-      if (estado.grabada) await r.fulfill({body: AUDIO, contentType: 'audio/wav'});
+      if (estado.retraso) await new Promise(f => setTimeout(f, estado.retraso));
+      if (estado.fallo) return r.abort('internetdisconnected');
+      if (estado.grabada) { try { await r.fulfill({body: AUDIO, contentType: 'audio/wav'}); } catch { /* cancelada */ } }
       else await r.fulfill({status: 404, json: {grabada: false}});
     });
     await context.route('**/api/voz', async r => {
@@ -85,15 +88,15 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       assert.ok(await page.evaluate(() => window.__audios.slice(0, -1).every(a => a.paused)), 'la lectura anterior se detuvo');
     });
 
-    await caso('sin grabación se lee el mensaje completo con la voz elegida', async () => {
+    await caso('sin grabación la guía no lee con otra voz', async () => {
       estado.grabada = false;
+      const antes = await page.evaluate(() => window.__audios.length);
       await repetir();
-      await esperarActivo();
-      const ultimo = pedidos.voz.at(-1);
-      assert.equal(ultimo.voz, 'piper:prueba');
-      assert.equal('texto' in ultimo || 'texto_voz' in ultimo, false, 'el cliente nunca envía texto');
-      assert.ok(ultimo.reto_id && ultimo.sesion_id && Number.isInteger(ultimo.revision));
-      assert.equal(await activos(), 1);
+      await page.waitForTimeout(800);
+      assert.equal(pedidos.voz.length, 0, 'no se pide voz sintetizada');
+      assert.equal(await page.evaluate(() => window.__audios.length), antes);
+      assert.equal(await activos(), 0);
+      estado.grabada = true;
     });
 
     await caso('la velocidad elegida se aplica a la lectura', async () => {
@@ -152,14 +155,36 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       assert.equal(await page.getByRole('alert').count(), 0);
     });
 
-    await caso('sin grabaciones en el idioma no se piden', async () => {
+    await caso('Preferencias: una sola voz (Marcela) y bloqueada en pt-BR', async () => {
+      await page.getByRole('button', {name: 'Preferencias'}).click();
+      const selector = page.locator('#pref-voces');
+      assert.deepEqual(await selector.locator('option').allTextContents(), ['Marcela · ElevenLabs']);
+      assert.equal(await selector.isDisabled(), false);
+      await page.locator('#pref-idioma').selectOption('pt-BR');
+      await page.waitForFunction(() => document.documentElement.lang === 'pt-BR');
+      assert.ok(await selector.isDisabled(), 'selector bloqueado en pt-BR');
+      assert.ok(await page.getByRole('switch', {name: /voz/i}).first().isDisabled());
+      assert.ok(await page.locator('.pref-probar').isDisabled());
+      const antes = pedidos.grabada + pedidos.voz.length;
+      await page.keyboard.press('Escape');
+      await repetir();
+      await page.waitForTimeout(800);
+      assert.equal(pedidos.grabada + pedidos.voz.length, antes, 'en pt-BR no se pide audio');
+      await page.getByRole('button', {name: /Preferências|Preferencias/}).click();
+      await page.locator('#pref-idioma').selectOption('es');
+      await page.waitForFunction(() => document.documentElement.lang === 'es');
+      await page.keyboard.press('Escape');
+    });
+
+    await caso('sin grabaciones en el idioma no se piden ni suena nada', async () => {
       estado.grabadas = 0;
       await page.reload();
       await page.locator('.reto-pantalla').waitFor();
       const antes = pedidos.grabada;
       await repetir();
-      await esperarActivo();
+      await page.waitForTimeout(800);
       assert.equal(pedidos.grabada, antes);
+      assert.equal(pedidos.voz.length, 0);
     });
 
     assert.deepEqual(errores, []);

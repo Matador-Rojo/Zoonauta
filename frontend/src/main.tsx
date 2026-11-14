@@ -6,6 +6,7 @@ import "./estilos/base.css";
 import "./estilos/portada.css";
 import "./estilos/pantallas.css";
 import "./estilos/tema.css";
+import "./estilos/preferencias.css";
 
 createRoot(document.getElementById("raiz")!).render(
   <StrictMode>

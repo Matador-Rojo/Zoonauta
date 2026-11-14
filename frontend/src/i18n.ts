@@ -9,13 +9,24 @@ import type { Diccionarios, Idioma } from "./api/tipos";
 // datos/traducciones_pt_BR.json.
 export const TEXTOS_NUEVOS_PENDIENTES: Record<string, string> = {
   "Reducir movimiento": "Reduzir movimento",
-  "Muestra fotografías fijas y cambia de paisaje solo con los botones.":
-    "Mostra fotografias fixas e muda de paisagem só com os botões.",
-  "Paisaje {n} de {total}": "Paisagem {n} de {total}",
-  "Paisajes de la portada": "Paisagens da página inicial",
-  "Elige un paisaje": "Escolha uma paisagem",
-  "Tu equipo ya pide reducir el movimiento. Las fotografías quedan fijas.":
-    "Seu dispositivo já pede para reduzir o movimento. As fotografias ficam fixas.",
+  "Tu equipo ya pide reducir el movimiento.": "Seu dispositivo já pede para reduzir o movimento.",
+  // Portada «Bosque de luz» (2026-11-14)
+  "Un bosque que cobra vida": "Uma floresta que ganha vida",
+  "Descubre el": "Descubra a",
+  "bosque de luz.": "floresta de luz.",
+  "Elige un animal. Sigue las pistas y descubre dónde vive.":
+    "Escolha um animal. Siga as pistas e descubra onde ele vive.",
+  // Preferencias 6.0
+  Voz: "Voz",
+  Pantalla: "Tela",
+  "Uno menos": "Um a menos",
+  "Uno más": "Um a mais",
+  "La voz en portugués todavía no está disponible.": "A voz em português ainda não está disponível.",
+  "Sin voces disponibles": "Sem vozes disponíveis",
+  "Voz grabada de Zoonauta. Funciona en este equipo, sin Internet.":
+    "Voz gravada do Zoonauta. Funciona neste dispositivo, sem Internet.",
+  "Faltan las grabaciones de la voz de Zoonauta en assets/voz/grabada.":
+    "Faltam as gravações da voz do Zoonauta em assets/voz/grabada.",
 };
 
 export interface Traductor {

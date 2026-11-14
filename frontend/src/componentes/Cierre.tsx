@@ -12,6 +12,7 @@ export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: Tip
   return (
     <section className="pantalla cierre" data-estado={vista.fase} aria-labelledby="titulo-pantalla">
       <figure className="cierre-visual">
+        <span className="rotulo">{t("Tu guía")}</span>
         <img
           src={`/ilustraciones/${pausa ? "robot_pausa" : "robot_despedida"}.webp`}
           // Proporciones reales (1:1 y 2:3) para reservar el espacio y evitar saltos.
@@ -23,6 +24,7 @@ export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: Tip
         <figcaption>{t(pausa ? "A tu ritmo" : "Gracias por jugar")}</figcaption>
       </figure>
       <div className="cierre-contenido">
+        <p className="rotulo">{t("Tu expedición")}</p>
         <h1 id="titulo-pantalla" tabIndex={-1}>
           {t(titulo)}
         </h1>
@@ -43,6 +45,7 @@ export function Cierre({ vista, onAccion }: { vista: Vista; onAccion: (tipo: Tip
             <span>{t("Comenzar otra partida")}</span>
           </button>
         )}
+        {!pausa && <p className="nota cierre-lema">{t("Sin reloj. Con ayuda. A tu ritmo.")}</p>}
       </div>
     </section>
   );

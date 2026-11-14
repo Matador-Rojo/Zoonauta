@@ -1,85 +1,119 @@
-/* Tema oscuro y lima de Zoonauta en todas las pantallas (la portada ya lo era).
-   Redefine las variables del sistema y ajusta lo pensado para fondo claro. Los
-   pictogramas y las ilustraciones se dibujaron para fondo claro: siempre van sobre
-   una base clara (--base-pictograma), nunca directamente sobre el fondo oscuro. */
+/* Tema de Zoonauta 6.0: azul noche con acento cian/turquesa (decisión del propietario,
+   2026-11-14, a partir de la portada «Bosque de luz»). Redefine las variables de base.css.
+   Los pictogramas y las ilustraciones van sin fondo, como en la 5.0.
+   Contrastes medidos sobre --superficie (#0b2436): --tinta 15,6:1; --tinta-suave 9,1:1;
+   --linea-fuerte 3,4:1 (componentes); texto oscuro #03212b sobre --expedicion 11,9:1. */
 :root {
   color-scheme: dark;
-  --niebla: #0b1a14;
-  --tinta: #ecf0e8;
-  --tinta-suave: #b9c9bd; /* 8,9:1 sobre --superficie */
-  --superficie: #13291f;
-  --linea: #2c4a3c;
-  --linea-fuerte: #6f9a83; /* 4,9:1 sobre --superficie */
-  --expedicion: #d2ee8b; /* lima: acento principal */
-  --expedicion-oscuro: #b6d66c;
+  --noche: #04141f;
+  --niebla: #061a28; /* fondo de página */
+  --tinta: #f4fbfd;
+  --tinta-suave: #a9c6d0;
+  --superficie: #0b2436;
+  --superficie-2: #081c2b;
+  --campo: #0f3046;
+  --linea: rgb(255 255 255 / 10%);
+  --linea-fuerte: #4f7d8f;
+  --expedicion: #5eead4; /* cian: acento principal */
+  --expedicion-oscuro: #22d3ee;
+  --expedicion-claro: #a5f3fc;
+  --tinta-sobre-acento: #03212b;
+  --ambar: var(--expedicion);
+  --ambar-tinta: var(--tinta-sobre-acento);
   --agua: #7cc7e2;
-  --agua-claro: #10303d;
-  --exito-fondo: #17402c;
-  --neutro-fondo: #10241b;
+  --agua-claro: #0e2f44;
+  --exito-fondo: #0c3340;
+  --neutro-fondo: #0a2030;
   --alerta: #ff9f8f;
-  --alerta-fondo: #3b1b16;
-  --foco: #a8c8ff;
-  --base-pictograma: #f4f6ef;
-  --tinta-sobre-pictograma: #1b2b24;
+  --alerta-fondo: #3b1b1d;
+  --foco: #a5f3fc;
+  --base-pictograma: #f3fbfa;
+  --tinta-sobre-pictograma: #13232b;
+  --serif: Georgia, "Times New Roman", serif;
 }
 
 body {
   background:
-    radial-gradient(1100px 560px at 85% -8%, #1a3d2e 0, transparent 70%),
-    radial-gradient(900px 500px at -10% 105%, #12301f 0, transparent 70%), var(--niebla);
+    radial-gradient(1100px 560px at 85% -8%, #0d3550 0, transparent 70%),
+    radial-gradient(900px 500px at -10% 105%, #0a2a3a 0, transparent 70%), var(--niebla);
   background-attachment: fixed;
 }
 
-/* --- Pictogramas e ilustraciones sobre base clara --- */
-.tarjeta-imagen,
-.animal-actual img,
-.cierre-visual img,
-.opcion-modalidad img {
-  background: var(--base-pictograma);
-  border-radius: var(--radio-tarjeta);
+/* Titulares de pantalla en serif, como la portada. */
+.encabezado-pantalla h1,
+.cierre-contenido h1,
+.selector-modalidad h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
-.tarjeta-imagen img {
-  padding: 0.4rem;
+
+/* Foco: cian claro con halo oscuro para leerse sobre fotos y sobre el acento. */
+:focus-visible {
+  outline-color: var(--foco);
+  box-shadow: 0 0 0 6px rgb(4 20 31 / 85%);
 }
-.animal-actual img {
-  padding: 0.5rem;
+/* Los títulos reciben el foco por programa al cambiar de pantalla: sin marco visible. */
+[tabindex="-1"]:focus {
+  box-shadow: none;
 }
-.control img {
-  background: var(--base-pictograma);
-  border-radius: 50%;
-  padding: 3px;
-}
+
+/* --- Pictogramas e ilustraciones: sin fondo, directamente sobre el panel (como la 5.0;
+   decisión del propietario, 2026-11-14). --- */
 .boton-principal img {
-  background: var(--base-pictograma);
-  border-radius: 50%;
-  padding: 2px;
-}
-.tira-celda {
-  background: var(--base-pictograma);
-  color: var(--tinta-sobre-pictograma);
-  border-color: var(--base-pictograma);
-}
-.tira {
-  background: var(--neutro-fondo);
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
 /* --- Botones y controles --- */
+.boton-principal {
+  background: var(--expedicion);
+  color: var(--tinta-sobre-acento);
+  box-shadow: 0 0.4rem 1.4rem rgb(1 14 22 / 60%);
+}
+.boton-principal:hover {
+  background: #8ff7e6;
+}
+.boton-secundario,
+.boton-texto,
+.control-redondo {
+  background: transparent;
+  border-color: var(--linea-fuerte);
+}
 .boton-texto:hover,
 .control-redondo:hover,
 .boton-secundario:hover:not(:disabled) {
-  background: #1d3a2d;
+  background: rgb(94 234 212 / 12%);
+  border-color: var(--expedicion);
+}
+.control {
+  background: var(--superficie);
 }
 .control[data-control="ayuda"] {
-  color: var(--ambar-tinta);
+  background: var(--expedicion);
+  border-color: var(--expedicion);
+  color: var(--tinta-sobre-acento);
+}
+.control[data-control="repetir"] {
+  background: var(--agua-claro);
+  border-color: var(--agua);
 }
 .control:is([data-control="continuar"], [data-control="reanudar"]) {
-  color: #132d1f;
+  background: var(--expedicion);
+  border-color: var(--expedicion);
+  color: var(--tinta-sobre-acento);
 }
 .control:hover {
   border-color: var(--expedicion);
 }
-.control[data-control="ayuda"]:hover {
+.control:is([data-control="ayuda"], [data-control="continuar"], [data-control="reanudar"]):hover {
   border-color: #fff;
+}
+.tarjeta-animal,
+.tarjeta-habitat,
+.animal-actual,
+.guia {
+  background: var(--superficie);
 }
 .tarjeta-animal:hover,
 .tarjeta-habitat:hover:not(:disabled) {
@@ -89,25 +123,42 @@ body {
   background: var(--neutro-fondo);
 }
 .opcion-modalidad:hover {
-  background: #1b3a2c;
+  background: #0f2e42;
+}
+.busqueda,
+.campo select,
+.campo input {
+  background: var(--campo);
 }
 
-/* --- Progreso y avisos --- */
+/* --- Progreso --- */
+.progreso progress,
+.cierre-resumen progress {
+  background: var(--superficie-2);
+}
 progress::-webkit-progress-bar {
-  background: var(--superficie);
+  background: var(--superficie-2);
 }
 
-/* --- Interruptor: la bolita oscura sobre lima cuando está activo --- */
+/* --- Interruptor: bolita oscura sobre cian cuando está activo --- */
+.interruptor input {
+  background: #2b4556;
+}
 .interruptor input:checked::before {
-  background: #0b1a14;
+  background: var(--tinta-sobre-acento);
 }
 
 /* --- Diálogos --- */
 dialog {
-  border: 1px solid var(--linea);
+  border: 0;
+  background: linear-gradient(180deg, var(--superficie), var(--superficie-2));
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 10%),
+    0 28px 70px -18px rgb(0 0 0 / 75%);
 }
 dialog::backdrop {
-  background: rgb(3 10 7 / 72%);
+  background: rgb(2 10 16 / 62%);
+  backdrop-filter: blur(8px);
 }
 
 /* --- Guía y hábitats --- */
@@ -142,7 +193,7 @@ dialog::backdrop {
   padding: 0;
   border-radius: 50%;
   background: var(--expedicion);
-  color: #132d1f;
+  color: var(--tinta-sobre-acento);
   font-size: 1.3rem;
   font-weight: 800;
 }
@@ -179,11 +230,12 @@ dialog::backdrop {
   grid-area: tira;
   align-self: start;
 }
+/* La foto del acierto no estira la guía: su alto queda limitado para que los hábitats quepan. */
 .guia-foto {
   grid-area: foto;
+  align-self: center;
   width: 100%;
-  height: 100%;
-  min-height: 12rem;
+  height: clamp(7rem, 24vh, 15rem);
   object-fit: cover;
   border-radius: var(--radio-tarjeta);
   border: 3px solid var(--expedicion);
@@ -194,8 +246,7 @@ dialog::backdrop {
     grid-template-areas: "cabecera" "titulo" "tira" "foto";
   }
   .guia-foto {
-    height: auto;
-    aspect-ratio: 16 / 9;
-    margin-top: 1rem;
+    height: clamp(4rem, 12vh, 8rem);
+    margin-top: 0.5rem;
   }
 }
