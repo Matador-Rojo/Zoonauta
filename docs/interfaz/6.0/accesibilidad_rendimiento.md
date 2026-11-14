@@ -1,4 +1,4 @@
-# Accesibilidad y rendimiento — interfaz 6.0 (/v6/)
+# Accesibilidad y rendimiento — interfaz 6.0 («/», antes /v6/)
 
 Fecha: 2026-11-14 · Rama `experimental/zoonauta-v6-modern-web` · Chrome 157 · Windows.
 

@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 17357,
-      "sha256": "4d932b3cc4e7e98245bf3761bb74e07d8c0d05658b359d4abf6de2c6b17e9509"
+      "bytes": 17372,
+      "sha256": "bc635521e996d6aba8b861e10f4c31694cb5010d3c4c7caf212b945f423307e4"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -2211,8 +2211,8 @@
     },
     {
       "ruta": "docs/guia_interfaz.md",
-      "bytes": 22175,
-      "sha256": "537ca39734b1a866a88f988268515d17a109cb41e266166a831eb635bf584d1a"
+      "bytes": 22390,
+      "sha256": "68932c6ae3d9d6af788d8a460379097088866c15e100f70ce3c94f7394b4d987"
     },
     {
       "ruta": "docs/guia_poc_consola.md",
@@ -2306,13 +2306,13 @@
     },
     {
       "ruta": "docs/interfaz/alternativas_voz.md",
-      "bytes": 7405,
-      "sha256": "fb67fe098bb9589ba297d2bc0ecfe4e9bab731809733ffc289969da9c0b45425"
+      "bytes": 7667,
+      "sha256": "ab6c894ed793bd671f3a8ea3614b1d7f9b4b6fe22ec4080f23f6eb6a281de092"
     },
     {
       "ruta": "docs/interfaz/diseno_visual.md",
-      "bytes": 14098,
-      "sha256": "4fe3919b487b2e852e544df0f3ea408ad00d9f3d00563db958b2f4246591e61a"
+      "bytes": 14229,
+      "sha256": "e0d42de6059c5976170a571aa84414f13d199708a203312835615aab9b1b390c"
     },
     {
       "ruta": "docs/interfaz/fondos_generados.json",
@@ -2596,8 +2596,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 3818,
-      "sha256": "c6d851520744f441dad73a1d44e8f30e9c69b11a0b295d64829aa28d47876c87"
+      "bytes": 3876,
+      "sha256": "8379b5d24e7af20ae2c8dac9a158e3353584b47716976942036a623e79977142"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -7671,8 +7671,8 @@
     },
     {
       "ruta": "tests/verificar_voz_v6.cjs",
-      "bytes": 10127,
-      "sha256": "6140d215317cad0a0f4a4056c598f3a50d2d763a88af7dac04707a8c0ce46545"
+      "bytes": 10292,
+      "sha256": "db5478d5fba1fbeba90159bcd9d54efe3c6d3b5470bd4697e04e32d88e89372f"
     },
     {
       "ruta": "assets/ilustraciones_ligeras/indice.json",
@@ -9833,6 +9833,16 @@
       "ruta": "docs/interfaz/6.0/pantallas.md",
       "bytes": 5532,
       "sha256": "26bfc88ac1829a660b3d66347f8ab44e7145c7e8e4b57884d9c86c3f8c0e2d32"
+    },
+    {
+      "ruta": "docs/interfaz/6.0/accesibilidad_rendimiento.md",
+      "bytes": 5925,
+      "sha256": "d613627400872dd9f09fcc38652f58bc0b1e7bc5daaa2b23ff7c7d3a6e1f163a"
+    },
+    {
+      "ruta": "docs/voz/elevenlabs/README.md",
+      "bytes": 12128,
+      "sha256": "9f5bfc8d0cc0ebe27d4ab6f26c06072cb6e848996dd86e2aacf4d15d8fb6a50e"
     }
   ],
   "nombre_proyecto": "Zoonauta",

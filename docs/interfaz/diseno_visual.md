@@ -1,5 +1,8 @@
 # Zoonauta: dirección visual 4.4
 
+> **Histórico (2026-11-14).** Dirección visual de la 4.4/5.0 (en `/v5/`). La 6.0 se rige por `docs/interfaz/6.0/identidad.md`.
+
+
 La portada ocupa una sola pantalla. Sus ocho paisajes cambian cada 10 segundos,
 con nombre y contador sincronizados, controles de pausa y navegación manual.
 No existe una sección inferior ni desplazamiento vertical en el inicio. Los ocho

@@ -2,8 +2,10 @@
 
 Fecha: 2026-11-13 (modelo actualizado el 2026-11-14) · Rama: `experimental/zoonauta-v6-modern-web`
 
-Ninguna grabación se ha generado todavía. Este documento y el inventario solo preparan el trabajo:
-no se ha usado la API ni se ha gastado ningún crédito.
+**Estado (2026-11-14): grabaciones completas en español.** Las 350 grabaciones de Marcela
+(modelo `eleven_v4`) están en `assets/voz/grabada/es-419/` y cubren los 353 mensajes del juego
+(tres reutilizan un duplicado); `tests/test_voz_grabada_cobertura.py` lo comprueba jugando todos los
+animales. En pt-BR no hay grabaciones y la voz está bloqueada en la 6.0.
 
 ## Reglas
 
@@ -13,9 +15,10 @@ no se ha usado la API ni se ha gastado ningún crédito.
    animales, hábitats o conectores, o reutilizar un audio solo porque comparte palabras con otro.
 3. **Se permite reutilizar** un audio únicamente si el mensaje es **exactamente igual** y su contexto
    de reproducción es compatible (columna `duplicado_de`).
-4. **Orden de reproducción**: Zoonauta busca primero la grabación completa del mensaje exacto. Si no
-   existe, lee el mensaje entero con la voz alternativa elegida (Piper, Kokoro o la voz del
-   navegador). Nunca deja una frase a medias ni mezcla motores dentro de un mensaje.
+4. **Orden de reproducción**: Zoonauta reproduce la grabación completa del mensaje exacto. En la 6.0
+   es la única voz: si faltara una grabación, la guía no lee ese mensaje con otra voz. (La 5.0, en
+   `/v5/`, usaba antes Piper, Kokoro o la voz del navegador como alternativa.) Nunca deja una frase
+   a medias ni mezcla motores dentro de un mensaje.
 5. No se modifica el contenido educativo. Los textos del inventario se obtienen con el mismo
    generador y la misma traducción que usa el servidor.
 
