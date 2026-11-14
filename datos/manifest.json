@@ -756,8 +756,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 12200,
-      "sha256": "c504b6555a77bec1b221d0b53a555d84a4273d50dd4c352827e8a0418b8d5010"
+      "bytes": 13027,
+      "sha256": "9c2612ff1c66ad7e649d4a30a37733f9a2ba3b95e0c21b4328f46d4f1aae3c01"
     },
     {
       "ruta": "codigo/interfaz/voz.py",
@@ -766,8 +766,8 @@
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
-      "bytes": 35140,
-      "sha256": "01923c90367ba4eb71e711248f8635a285ccba9b1e5b6994859fe8f9d41958bd"
+      "bytes": 36387,
+      "sha256": "1084dab62eb13d8f1864fe87e944b6ab87386a532dac4a89122de0a634029fea"
     },
     {
       "ruta": "codigo/interfaz/web/estilos.css",

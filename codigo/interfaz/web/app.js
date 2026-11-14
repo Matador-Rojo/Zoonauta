@@ -1,6 +1,6 @@
 "use strict";
 let vista = null, ocupado = false, voces = [], vozElegida = "", locucion = null;
-let diccionarios={es:{},"pt-BR":{}}, catalogoVoces=[], pedidoVoz=null, turnoVoz=0, audioURL=null;
+let diccionarios={es:{},"pt-BR":{}}, catalogoVoces=[], grabadas={}, pedidoVoz=null, turnoVoz=0, audioURL=null;
 let locucionNativa=null;
 const eleccionesVoz={};
 const canalVoz=crypto.randomUUID();
@@ -462,6 +462,10 @@ async function hablar(prueba=false,contexto="respuesta") {
   if(!vista||!$("voz").checked)return;
   if(!prueba&&vista.fase==="INICIO"&&(contexto!=="modalidad"||!$("elegir-modalidad")?.open))return;
   pararVoz();
+  // 1) Grabación completa del mensaje exacto (ElevenLabs). Nunca se unen audios:
+  // si falta, el mensaje entero se lee con la voz alternativa elegida.
+  // "Probar voz" siempre prueba esa voz alternativa.
+  if(!prueba&&grabadas[vista.idioma]>0&&await hablarGrabada(contexto))return;
   if(!vozElegida){notaVoz();return;}
   const seleccionada=voces.find(v=>v.id===vozElegida);
   if(seleccionada?.nativa){hablarNavegador(seleccionada,prueba,contexto);return;}
@@ -474,6 +478,27 @@ async function hablar(prueba=false,contexto="respuesta") {
     if(!r.ok){const d=await r.json();throw Error(d.error||t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."));}
     const blob=await r.blob();if(turno!==turnoVoz)return;
     pedidoVoz=null;
+    await reproducir(blob,turno);
+  }catch(e){if(e.name!=="AbortError"&&turno===turnoVoz){pararVoz();notificar(e.message);notaVoz();}}
+}
+async function hablarGrabada(contexto) {
+  // Devuelve true si la locución quedó a cargo de la grabación (o se canceló).
+  const turno=turnoVoz,control=new AbortController();pedidoVoz=control;
+  const entrada={idioma:vista.idioma,revision:vista.revision,sesion_id:vista.sesion_id,reto_id:vista.reto_id,contexto};
+  try {
+    const r=await fetch("/api/voz/grabada",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(entrada),signal:control.signal});
+    if(turno!==turnoVoz)return true;
+    pedidoVoz=null;
+    if(!r.ok)return false;
+    await reproducir(await r.blob(),turno);
+    return true;
+  }catch(e){
+    if(e.name==="AbortError"||turno!==turnoVoz)return true;
+    pedidoVoz=null;return false;
+  }
+}
+async function reproducir(blob,turno) {
+  try {
     audioURL=URL.createObjectURL(blob);const audio=new Audio(audioURL);locucion=audio;
     audio.playbackRate=Number($("velocidad").value);audio.preservesPitch=true;
     audio.onended=()=>{if(turno===turnoVoz){pararVoz();notaVoz();}};
@@ -541,5 +566,5 @@ $("idioma").addEventListener("change",cambiarIdioma);
 window.speechSynthesis?.addEventListener("voiceschanged",()=>{if(vista)cargarVoces();});
 window.addEventListener("pagehide",()=>{pararVoz();detenerCarrusel();});
 Promise.all([fetch("/api/vista"),fetch("/api/idiomas"),fetch("/api/voz/config")].map(async p=>{const r=await p;if(!r.ok)throw Error();return r.json();}))
-.then(([v,d,c])=>{vista=v;diccionarios=d;catalogoVoces=c.voces;render();cargarVoces();})
+.then(([v,d,c])=>{vista=v;diccionarios=d;catalogoVoces=c.voces;grabadas=c.grabadas||{};render();cargarVoces();})
 .catch(()=>{juego.replaceChildren(nodo("p","introduccion","No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página."));juego.setAttribute("aria-busy","false");});
