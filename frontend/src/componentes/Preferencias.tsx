@@ -53,6 +53,18 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
     }
   };
   const hayVoz = voces.some((v) => v.disponible);
+  // Estado de la voz elegida (mismos mensajes que en 5.0, ya traducidos).
+  const elegida = voces.find((v) => v.id === valores.vozId);
+  const notaVoz = !hayVoz
+    ? "No hay voces preparadas para este idioma. Abre iniciar_juego.bat para descargar los modelos."
+    : elegida?.nativa
+      ? elegida.local
+        ? "Voz del navegador instalada en este equipo. No requiere descargar modelos."
+        : "Voz del navegador. Puede necesitar Internet; no requiere descargar modelos."
+      : "Las voces se reproducen en este equipo, sin conexión después de preparar los modelos.";
+  const notaNavegador = voces.some((v) => v.nativa)
+    ? "Microsoft y Google: se muestran las voces compatibles que ofrece tu navegador."
+    : "Este navegador no ofrece voces de Microsoft o Google para esta región. Puedes usar Piper o Kokoro.";
   return (
     <dialog ref={ref} className="preferencias" aria-labelledby="titulo-preferencias" onClose={onCerrar}>
       <div className="preferencias-cabecera">
@@ -150,7 +162,12 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
           </label>
           <label className="campo">
             <span>{t(idioma === "pt-BR" ? "Voz en portugués brasileño" : "Voz en español")}</span>
-            <select value={valores.vozId} disabled={!hayVoz} onChange={(e) => onCambio({ vozId: e.target.value })}>
+            <select
+              value={valores.vozId}
+              disabled={!hayVoz}
+              aria-describedby="nota-voz nota-navegador"
+              onChange={(e) => onCambio({ vozId: e.target.value })}
+            >
               {MOTORES.map(([motor, nombre]) => {
                 const grupo = voces.filter((v) => v.motor === motor);
                 if (!grupo.length) return null;
@@ -174,6 +191,12 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
               <option value={1.1}>{t("Más ágil")}</option>
             </select>
           </label>
+          <p id="nota-voz" className="nota" role="status">
+            {t(notaVoz)}
+          </p>
+          <p id="nota-navegador" className="nota">
+            {t(notaNavegador)}
+          </p>
           <button type="button" className="boton-secundario" disabled={!hayVoz} onClick={onProbarVoz}>
             <Icono nombre="reproducir" />
             <span>{t("Probar voz")}</span>

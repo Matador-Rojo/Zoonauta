@@ -2606,8 +2606,8 @@
     },
     {
       "ruta": "tests/ejecutar_navegador.py",
-      "bytes": 3414,
-      "sha256": "434148e530558ca7a19f1288bdb494f6ad70f25ae1a269b4acb3f4abe7d8b6c0"
+      "bytes": 3601,
+      "sha256": "5882122edb49b1a68c5ddcfcfd988f91f94b374f19ca9698645e69e75eb160f2"
     },
     {
       "ruta": "tests/test_aprendizaje.py",
@@ -5286,8 +5286,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
-      "bytes": 6972,
-      "sha256": "be44dfc43d52a1adf229e57b11b2db3c5a15bdf7264c38453466f2da86aecdd3"
+      "bytes": 8109,
+      "sha256": "cbfd86202e5418d777535b0d0bc7abea169f074eb3ca8341a98947ab4be47fcf"
     },
     {
       "ruta": "frontend/src/componentes/Reto.tsx",
@@ -5321,8 +5321,8 @@
     },
     {
       "ruta": "frontend/src/voz.ts",
-      "bytes": 7548,
-      "sha256": "bc34e4359eb7adb240125c5b608373c24ca5f26f5a666a2845b36d59c02d0025"
+      "bytes": 7689,
+      "sha256": "e9ead637607db6ad57c531926beb2936d6f53075cfecc852aad3e39e0586a840"
     },
     {
       "ruta": "frontend/tsconfig.json",
@@ -5387,7 +5387,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 920,
-      "sha256": "78b806b10cac3b8f2fc0088bfce6c693580d5575a01a53ec30123a0810e834c0"
+      "sha256": "33cf287d4debbfcbdd2d08e6a543750963c86357ff68d6f8d4692f979f96dace"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -7695,9 +7695,14 @@
       "sha256": "007f561ff30a93c92b594021ecd580c1b1a72600a74f72734cb3ad2257f44ee2"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-Hg_E5INJ.js",
-      "bytes": 251595,
-      "sha256": "b68bdd58151e789a6b9c23634888152842b88cfd284a428aacb3d6c7c0874df5"
+      "ruta": "codigo/interfaz/web6/assets/index-CHTxEukW.js",
+      "bytes": 252410,
+      "sha256": "b34a4d3cb9530b083e696aac5cbfb9b03d93895b2847c6eff862ca2e199bd100"
+    },
+    {
+      "ruta": "tests/verificar_voz_v6.cjs",
+      "bytes": 8545,
+      "sha256": "f5cf489e52742d387e6cb047d214117a5668fc64268ac0e6a6a3054768c11710"
     }
   ],
   "nombre_proyecto": "Zoonauta",
