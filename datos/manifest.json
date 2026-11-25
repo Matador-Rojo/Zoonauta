@@ -169,8 +169,8 @@
     },
     {
       "ruta": "README.md",
-      "bytes": 10703,
-      "sha256": "1a60dc2dd3437a3dbc7ffbdde721f215feeacb2991a56f1172b5c13cc8ddfaf5"
+      "bytes": 7937,
+      "sha256": "41bee6c270e92e24ea49f754d47b6c515252dc79800ddec36b79bb58019e9643"
     },
     {
       "ruta": "assets/animales/A01.webp",
@@ -14571,6 +14571,51 @@
       "ruta": "docs/interfaz/portada_zoonauta.webp",
       "bytes": 151430,
       "sha256": "db0793db75c624e2e2452cebefa13b1c683a6f86f3cb4d69db81e87caedb1674"
+    },
+    {
+      "ruta": "README.en.md",
+      "bytes": 7700,
+      "sha256": "92b32ff5ef57ed2d6942f0b2eb6ef6e6e9ab6445638e931ea40c0ee07da37220"
+    },
+    {
+      "ruta": "README.pt-BR.md",
+      "bytes": 7837,
+      "sha256": "ddd973ccb81d6a481ac18ce253950795c042c737dfc7c01d560c5f175054cfe9"
+    },
+    {
+      "ruta": "docs/interfaz/readme/album.webp",
+      "bytes": 62972,
+      "sha256": "a1480f58a02ae829a5e243324d0b1d1560364b71fdb0ba22c927464dcf4c81fd"
+    },
+    {
+      "ruta": "docs/interfaz/readme/catalogo.webp",
+      "bytes": 95708,
+      "sha256": "76f1ba7b3909caba1f748ffef2dc420c0f5d6dcf5e1a8bafc069ee295a9d3b62"
+    },
+    {
+      "ruta": "docs/interfaz/readme/logo-dark.svg",
+      "bytes": 2979,
+      "sha256": "3c29a87dc1fad29ead29686e78fe429e70dc895888f383fefc1cb07cff91f244"
+    },
+    {
+      "ruta": "docs/interfaz/readme/logo-light.svg",
+      "bytes": 2692,
+      "sha256": "c86c8f144d0f993cc7f3cf3d50e257c5143cd2afba5c27723b693edd5d992b8c"
+    },
+    {
+      "ruta": "docs/interfaz/readme/portada_contraste.webp",
+      "bytes": 140960,
+      "sha256": "2ec3ba952bb0af49f56b0532905774934c0ea18a83cf2c8f641e6c9663eba522"
+    },
+    {
+      "ruta": "docs/interfaz/readme/portada_dia.webp",
+      "bytes": 210352,
+      "sha256": "a5fef8680ee52b38109cae5a696f4c931231ceceeb06271fe9559109c1a4037f"
+    },
+    {
+      "ruta": "docs/interfaz/readme/reto_pista.webp",
+      "bytes": 174570,
+      "sha256": "5b9ba6083d6574c368a5552ad9ff13de0371eed032008090a5cadf815fd49c1b"
     }
   ],
   "nombre_proyecto": "Zoonauta",

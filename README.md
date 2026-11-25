@@ -1,123 +1,146 @@
-# Zoonauta
+<div align="center">
 
-Juego educativo de animales y hábitats con pictogramas CAA y una guía de inteligencia artificial.
-Disponible en **español (`es-419`)**, **portugués brasileño (`pt-BR`)** e **inglés (`en`)**, con
-**8 voces grabadas completas** (ElevenLabs, 412 mensajes por voz) para jugar sin Internet ni APIs externas.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/interfaz/readme/logo-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="docs/interfaz/readme/logo-light.svg" />
+  <img alt="Zoonauta" src="docs/interfaz/readme/logo-dark.svg" width="380" />
+</picture>
 
-![Portada de Zoonauta](docs/interfaz/portada_zoonauta.webp)
+<br />
 
-Zoonauta reúne **288 animales**, **48 hábitats**, pistas adaptativas guiadas por un agente local,
-**Mi álbum de expedición** persistente, tres temas visuales accesibles y soporte completo como
-**PWA** y servidor **WSGI** para despliegue web.
+**Elige un animal. Sigue las pistas y descubre dónde vive.**
+
+Juego educativo de animales y hábitats con pictogramas CAA, guía adaptativa local y 8 voces grabadas completas.
+
+<p>
+  <a href="https://github.com/Matador-Rojo/Zoonauta/releases"><strong>Descargar Zoonauta-Web.zip</strong></a>
+  &nbsp;&middot;&nbsp;
+  <a href="#galería">Galería</a>
+  &nbsp;&middot;&nbsp;
+  <a href="#cómo-se-juega">Cómo se juega</a>
+  &nbsp;&middot;&nbsp;
+  <a href="#idiomas-y-voces">Idiomas y voces</a>
+  &nbsp;&middot;&nbsp;
+  <a href="#ejecutar-el-juego">Ejecutar</a>
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Animales-288-0f766e?style=flat-square" alt="288 animales" />
+  <img src="https://img.shields.io/badge/H%C3%A1bitats-48-13614c?style=flat-square" alt="48 hábitats" />
+  <img src="https://img.shields.io/badge/Idiomas-ES%20%C2%B7%20PT--BR%20%C2%B7%20EN-2563eb?style=flat-square" alt="3 idiomas" />
+  <img src="https://img.shields.io/badge/Voces-8%20(ElevenLabs)-d97706?style=flat-square" alt="8 voces" />
+  <img src="https://img.shields.io/badge/Accesibilidad-WCAG%20AAA%2021%3A1-111827?style=flat-square" alt="WCAG AAA 21:1" />
+  <img src="https://img.shields.io/badge/Stack-Python%20%2B%20React%2019-334155?style=flat-square" alt="Python + React 19" />
+</p>
+
+<p>
+  <strong>Español</strong> &nbsp;|&nbsp; <a href="README.pt-BR.md">Português (Brasil)</a> &nbsp;|&nbsp; <a href="README.en.md">English</a>
+</p>
+
+</div>
+
+---
+
+<p align="center">
+  <img src="docs/interfaz/portada_zoonauta.webp" alt="Portada de Zoonauta — Bosque de luz" width="100%" />
+</p>
+
+## Galería
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/interfaz/readme/catalogo.webp" alt="Catálogo de 288 animales" />
+      <p align="center"><strong>Catálogo de 288 animales</strong><br />Orden variado por biomas, filtros alfabéticos, buscador y filtro <em>Por descubrir</em>.</p>
+    </td>
+    <td width="50%">
+      <img src="docs/interfaz/readme/reto_pista.webp" alt="Reto con pista adaptativa y pictogramas CAA" />
+      <p align="center"><strong>Pistas adaptativas con pictogramas CAA</strong><br />El agente elige la ayuda más útil según las opciones visibles, sin reloj ni castigos.</p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <p align="center">
+        <img src="docs/interfaz/readme/album.webp" alt="Mi álbum de expedición" width="84%" />
+      </p>
+      <p align="center"><strong>Mi álbum de expedición</strong><br />Pasaporte personal guardado en el navegador con 2 series de 5 estrellas (animales y hábitats) y colección paginada 3 × 3.</p>
+    </td>
+  </tr>
+</table>
+
+### Tres temas visuales adaptativos
+
+<table>
+  <tr>
+    <td width="33.3%" align="center">
+      <img src="docs/interfaz/portada_zoonauta.webp" alt="Bosque de noche" />
+      <br /><strong>Bosque de noche</strong><br /><sub>Observatorio bioluminiscente (predeterminado)</sub>
+    </td>
+    <td width="33.3%" align="center">
+      <img src="docs/interfaz/readme/portada_dia.webp" alt="Bosque de día" />
+      <br /><strong>Bosque de día</strong><br /><sub>Tema claro editorial con paleta solar</sub>
+    </td>
+    <td width="33.3%" align="center">
+      <img src="docs/interfaz/readme/portada_contraste.webp" alt="Alto contraste 21:1 AAA" />
+      <br /><strong>Alto contraste</strong><br /><sub>WCAG AAA 21:1 en blanco y negro puro</sub>
+    </td>
+  </tr>
+</table>
+
+---
 
 ## Cómo se juega
 
-La portada «Bosque de luz» resume el juego en una frase: *Elige un animal. Sigue las pistas y
-descubre dónde vive.* Pulsa **Comenzar** y escoge **Yo elijo** o **El agente elige**. La guía lee
-«¿Quién elige el animal?» al abrir ese selector.
+Pulsa **Comenzar** y elige quién escoge el animal:
 
-- **Yo elijo:** explora los **288 animales** en páginas de 6 con orden híbrido:
-  - En **Todas** y **Por descubrir**, el catálogo usa un orden aleatorio variado por biomas
-    (garantizando 6 hábitats distintos por página y renovándose en cada partida).
-  - En los filtros alfabéticos (`A–C` a `Q–Z`) y en el buscador por nombre, ordena de la `A` a la `Z`.
-  - Los animales ya resueltos muestran su sello `✓` y el filtro **Por descubrir** muestra cuántos faltan.
-- **El agente elige:** prioriza automáticamente los animales que aún no has descubierto en tu álbum;
-  al completar los 288, vuelve a mezclar todo el catálogo de forma continua y sin bloqueos. Puedes elegir
-  entre **1 y 48 retos** por partida (8 por defecto).
+- **Yo elijo:** explora los **288 animales** en páginas de 6. En *Todas* y *Por descubrir* se muestran biomas intercalados en orden aleatorio renovado en cada partida; en los filtros `A–C` a `Q–Z` y el buscador se ordenan alfabéticamente. Los animales ya descubiertos llevan sello `✓`.
+- **El agente elige:** prioriza automáticamente los animales aún no descubiertos en tu álbum y, al completar los 288, vuelve a mezclar todo el catálogo de forma continua. Configura entre **1 y 48 retos** por partida.
 
-Cada reto presenta el animal a la izquierda con **Pista**, **Repetir**, **Pausar** y **Salir** debajo;
-a la derecha, la guía con su frase y sus pictogramas CAA, y los hábitats para elegir (**2, 4 u 8** según
-Preferencias). Si transcurren unos segundos sin acción, el botón **Pista** ofrece una invitación visual sutil.
-Al pedir **Pista** o elegir un hábitat no confirmado, el **agente de la guía** selecciona la ayuda que mejor
-distingue las opciones visibles, sin penalizaciones ni límite de tiempo (ver [El agente adaptativo](#el-agente-adaptativo)).
-Al acertar, el hábitat se marca con `✓`, se guarda el sello en **Mi álbum** y **Continuar** pasa al siguiente reto.
-No hay puntos, reloj ni límite de intentos.
+En cada reto verás el animal a la izquierda con **Pista**, **Repetir**, **Pausar** y **Salir**; a la derecha, la guía con frase de apoyo + pictogramas CAA y **2, 4 u 8 hábitats** para elegir. Al acertar, el hábitat se marca con `✓`, se guarda el sello en **Mi álbum** y suena una celebración acústica propia del bioma.
 
-Las opciones de hábitat priorizan la claridad cognitiva para niños y personas con discapacidad intelectual:
-incluyen siempre el hábitat principal y los secundarios documentados, y completan el panel con hábitats
-claramente distintos entre sí. Cualquier hábitat secundario documentado también resuelve el reto.
+---
 
-### Mi álbum de expedición
+## Idiomas y voces
 
-Cada usuario dispone de su propio álbum guardado localmente en su navegador (`localStorage`), de modo que
-cada persona empieza en cero y conserva su progreso de forma independiente:
+Zoonauta traduce en vivo toda la interfaz, los **288 animales**, los **48 hábitats**, las etiquetas CAA, las pistas, las confirmaciones y el álbum. Incluye **8 voces grabadas completas** (`412` mensajes por voz · `3 296` audios totales) que funcionan sin Internet ni APIs externas:
 
-- **Dos series de 5 estrellas:**
-  - *Estrellas de animales:* `1`, `20`, `80`, `160` y `288` animales descubiertos.
-  - *Estrellas de hábitats:* `1`, `5`, `15`, `30` y `48` hábitats explorados.
-- **Rejilla paginada 3 × 3** (9 hallazgos por página con navegación `←` / `→`) con traducción automática
-  de nombres al cambiar de idioma.
-- Botón discreto **Reiniciar álbum** en dos pasos para comenzar una colección desde cero cuando se desee.
+| Idioma | Voces disponibles | Audios por voz |
+| :--- | :--- | :---: |
+| **Español (`es-419`)** | Marcela, Valeria, Gaby, Diego | 412 |
+| **Português (`pt-BR`)** | Roberta, Will | 412 |
+| **English (`en`)** | Mark, Jessica | 412 |
 
-### Pantalla completa, identidad visual y accesibilidad
+El servidor soporta **AAC (`.m4a` / `audio/mp4`)** —usado a 32 kbps mono en `Zoonauta-Web.zip`—, **MP3** y **WAV**.
 
-Cada pantalla se adapta a escritorio (`1440 × 900`), portátil (`1280 × 720`) y móvil (`390 × 844` y `320 px`)
-sin desplazamiento innecesario. La interfaz incluye **tres temas visuales** en tiempo real con un
-**logotipo vectorial adaptativo** (zorro y estrella):
+---
 
-- **Bosque de noche** *(predeterminado)*: observatorio bioluminiscente con acento cian/turquesa, tipografía
-  editorial serif (`Fraunces Variable`) y lectura accesible (`Atkinson Hyperlegible Next`), ambas locales.
-- **Bosque de día:** tema claro editorial cálido con acento verde selva y portada diurna.
-- **Alto contraste (WCAG AAA 21:1):** negro puro (`#000000`) y blanco puro (`#ffffff`) con relieve sólido
-  nítido, logotipo monocromo blanco y cero efectos decorativos distractores.
+## Accesibilidad y preferencias
 
-Cada tema cuenta con su **portada animada 2K** (`assets/portada/*.mp4`) y versión estática de alta nitidez
-cuando está activo **Reducir movimiento**. Además, el juego incluye manifiesto y *service worker* para
-instalarlo como **PWA** (*Instalar app* en Preferencias).
+- **Tamaño de texto:** *Pequeño*, *Normal* y *Grande*.
+- **Reducir movimiento:** respeta `prefers-reduced-motion` y sustituye videos y transiciones por vistas estáticas nítidas.
+- **Proteger Preferencias:** bloqueo opcional de pulsación prolongada para evitar cambios accidentales.
+- **Sonidos del bosque y háptica:** paisaje suave, 5 familias sonoras por bioma (mar, agua dulce, bosque, montaña y sabana), música serena en pausa y fanfarria al completar la partida; se atenúan automáticamente mientras habla la guía.
+- **PWA instalable:** incluye manifiesto web y *service worker* (*Instalar app* en Preferencias).
 
-## Preferencias, idiomas y voces
-
-**Preferencias** («Tu expedición · A tu manera.») se abre sobre cualquier pantalla y también puede protegerse
-con pulsación prolongada (**Proteger Preferencias**):
-
-- **Idioma:** **Español**, **Português (Brasil)** o **English**. Traduce en vivo interfaz, botones,
-  los 288 animales, los 48 hábitats, etiquetas CAA, pistas, confirmaciones y el álbum.
-- **La partida:** cantidad de retos (`1` a `48`) y hábitats por reto (`2`, `4` u `8`).
-- **Voz:** *Una guía con voz*, selector de narrador según idioma, ritmo de lectura (*Despacio*, *Natural*,
-  *Más ágil*) y **Probar voz**:
-  - **Español (`es-419`):** Marcela, Valeria, Gaby y Diego *(4 voces × 412 audios)*
-  - **Português (`pt-BR`):** Roberta y Will *(2 voces × 412 audios)*
-  - **English (`en`):** Mark y Jessica *(2 voces × 412 audios)*
-- **Sonidos del bosque:** paisaje suave durante el juego, celebración acústica reactiva al bioma
-  (5 familias sonoras: mar, agua dulce, bosque, montaña y sabana), música serena en pausa, fanfarria de
-  victoria y háptica suave en dispositivos compatibles. Se atenúan automáticamente mientras habla la guía.
-- **Pantalla:** *Aspecto visual* (*Bosque de noche*, *Bosque de día*, *Alto contraste*), **Tamaño de texto**
-  (*Pequeño*, *Normal*, *Grande*) y *Reducir movimiento*.
-
-Las **8 voces** (`3 296` audios en total) cubren el 100 % de los mensajes del juego sin unir fragmentos y
-funcionan sin Internet. El servidor soporta nativamente **AAC (`.m4a` / `audio/mp4`)** —usado a 32 kbps mono
-en el paquete web liviano— así como **MP3** y **WAV**.
-
-## Estructura del proyecto
-
-- **`codigo/motores/` y `codigo/entrenamiento/`** *(modelos de IA)*: baseline `ID3` (`id3.py`), agente adaptativo (`agente.py`), selector probabilístico Beta-Bernoulli (`aprendizaje6.py`, `bayes.py`), simulador, entrenamiento y evaluación reproducible.
-- **`codigo/nucleo/`, `codigo/respuestas/` y `codigo/interfaz/`** *(backend)*: espacio de estados y gestor de reglas (`estado.py`, `gestor.py`), generador CAA, servidor HTTP con soporte `206 Partial Content` para video, adaptador **WSGI** (`wsgi.py`) sin dependencias externas y panel `/revision`.
-- **`frontend/`** *(frontend)*: aplicación React 19 + TypeScript + Vite compilada en `codigo/interfaz/web6/`.
-- **`datos/` y `assets/`**: catálogo validado (288 animales, 48 hábitats, rasgos, pistas, traducciones `pt-BR` y `en`, manifiesto SHA-256), ilustraciones, pictogramas, grabaciones de voz y portadas 2K.
-- **`docs/` y `tests/`**: documentación técnica, experimentos reproducibles y pruebas automatizadas.
-
-Documentación de referencia: [manual de usuario](docs/manual_usuario.md),
-[contrato de identidad visual](docs/interfaz/6.0/identidad.md),
-[accesibilidad y rendimiento](docs/interfaz/6.0/accesibilidad_rendimiento.md) y
-[cierre técnico](docs/cierre_tecnico_hito3.md).
+---
 
 ## Ejecutar el juego
 
-### En equipo local (Windows / Linux / macOS)
+### En tu equipo (Windows / Linux / macOS)
 
-Requiere únicamente **Python 3.10 o posterior** (sin dependencias externas para ejecutar el servidor):
+Solo necesitas **Python 3.10 o posterior** (el servidor usa únicamente la biblioteca estándar de Python):
 
-- **Windows:** abre `iniciar_juego.bat` o ejecuta:
-  ```console
-  py -3 -m codigo.interfaz.iniciar
-  ```
-- **Linux / macOS:** ejecuta `bash iniciar_juego.sh` o:
-  ```console
-  python3 -m codigo.interfaz.iniciar
-  ```
+```console
+# Windows
+iniciar_juego.bat
+# o desde terminal:
+py -3 -m codigo.interfaz.iniciar
 
-El iniciador abre `http://127.0.0.1:8766` y la revisión técnica está disponible en `/revision`.
-Para indicar otro puerto:
+# Linux / macOS
+python3 -m codigo.interfaz.iniciar
+```
+
+El juego se abre en `http://127.0.0.1:8766` y el panel técnico en `/revision`. Para usar otro puerto:
 
 ```console
 py -3 -m codigo.interfaz.servidor --puerto 8080
@@ -125,51 +148,26 @@ py -3 -m codigo.interfaz.servidor --puerto 8080
 
 ### Despliegue web (Hostinger / WSGI / Docker)
 
-- **Paquete web (`Zoonauta-Web.zip`, ~71 MB):** incluye la app compilada, imágenes ligeras optimizadas
-  y las 8 voces completas en **AAC 32 kbps (`.m4a`)**, listo para subir a un servidor web Python.
-- **WSGI (`codigo.interfaz.wsgi:application`):** compatible con Gunicorn, Passenger/Hostinger y PythonAnywhere
-  sin dependencias adicionales.
-- **Docker:** `Dockerfile` y `docker-compose.yml` incluidos en la raíz del proyecto.
+- **Paquete web listo para subir:** descarga **`Zoonauta-Web.zip`** (~71 MB) desde la sección [Releases](https://github.com/Matador-Rojo/Zoonauta/releases). Incluye el frontend compilado, imágenes ligeras y las 8 voces completas en AAC 32 kbps (`.m4a`).
+- **WSGI sin dependencias:** `codigo.interfaz.wsgi:application` (compatible con Hostinger, Gunicorn y PythonAnywhere).
+- **Docker:** `Dockerfile` y `docker-compose.yml` listos en la raíz.
 
-## Inteligencia artificial y revisión
+---
 
-### El agente adaptativo
+## Estructura y pruebas
 
-En la partida principal (288 animales, 48 hábitats) un agente local decide qué pista ofrecer en cada turno
-sin usar Internet ni APIs externas. Evalúa el animal, los hábitats visibles, las selecciones previas,
-las ayudas ya mostradas y las repeticiones. Combina las 3 pistas progresivas por hábitat con 32 ayudas breves
-por rasgo, afirmando únicamente rasgos documentados y evitando repetir características compartidas con un
-hábitat ya intentado.
-
-También están disponibles `--agente AGENTE_APRENDIDO` (modelo Beta-Bernoulli entrenado fuera de línea y
-congelado), `--agente ID3_OPCIONES` (ganancia de información sobre las opciones visibles) y
-`--agente PISTAS_PROGRESIVAS` (secuencia fija nivel 1 → 2 → 3). El detalle técnico y las evaluaciones
-se encuentran en [docs/agente/agente_6.md](docs/agente/agente_6.md).
-
-### Catálogo experimental (48 animales, 8 hábitats)
-
-Con `--catalogo-original` la interfaz conserva el banco experimental original y las políticas `PROBABILISTICO`,
-`ID3` y `ROTACION` para reproducir los experimentos de evaluación.
-
-### Comandos útiles y pruebas
+- `codigo/motores/` y `codigo/entrenamiento/`: agente adaptativo local, baseline `ID3`, selector probabilístico Beta-Bernoulli y simulador.
+- `codigo/nucleo/`, `codigo/respuestas/` y `codigo/interfaz/`: reglas de partida, generador CAA, servidor HTTP/WSGI y frontend compilado (`web6/`).
+- `frontend/`: aplicación React 19 + TypeScript + Vite.
+- `datos/` y `assets/`: catálogo validado, traducciones (`pt-BR`, `en`), manifiesto SHA-256, ilustraciones, pictogramas, voces y portadas.
+- `docs/` y `tests/`: documentación técnica, experimentos reproducibles y pruebas automatizadas.
 
 ```console
 python -m unittest discover -s tests -v
-python -m unittest tests.test_voz_grabada_cobertura tests.test_interfaz tests.test_idiomas_voz tests.test_catalogo_voz
 python -m codigo.nucleo.verificar_paquete
-python -m codigo.nucleo.auditoria --salida resultados_nuevos/auditoria.json
-python -m codigo.poc.aceptacion
 npm --prefix frontend run check
-npm --prefix frontend run build
 ```
 
-**Verificación:** pruebas unitarias Python (incluyendo cobertura completa de las 8 voces en `es`,
-`pt-BR` y `en` recorriendo los 288 animales), **8 pruebas Vitest** (TypeScript + ESLint + Prettier),
-pruebas de navegador Playwright con `axe-core`, verificación de integridad SHA-256 (`verificar_paquete`)
-y smoke test del paquete web descomprimido con audios `audio/mp4` en los tres idiomas.
+## Créditos
 
-## Créditos e imágenes
-
-Las ilustraciones de animales, pictogramas de apoyo y paisajes son recursos originales generados con IA
-documentados en `datos/imagenes_*_ia.json` y se ofrecen bajo licencia **CC BY-NC-SA 4.0**. Los créditos
-históricos de ARASAAC y del prototipo inicial se conservan en [docs/creditos_pictogramas.md](docs/creditos_pictogramas.md).
+Ilustraciones de animales, pictogramas de apoyo y paisajes originales generados con IA bajo licencia **CC BY-NC-SA 4.0**. Más detalles en [docs/creditos_pictogramas.md](docs/creditos_pictogramas.md) y [docs/manual_usuario.md](docs/manual_usuario.md).
