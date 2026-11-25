@@ -42,7 +42,7 @@ Jogo educativo de animais e habitats com pictogramas CAA, guia adaptativo local 
 ---
 
 <p align="center">
-  <img src="docs/interfaz/portada_zoonauta.webp" alt="Tela inicial do Zoonauta — Floresta de luz" width="100%" />
+  <img src="docs/interfaz/readme/pt-BR/portada_noche.webp" alt="Tela inicial do Zoonauta — Floresta de luz" width="100%" />
 </p>
 
 ## Galeria
@@ -50,18 +50,18 @@ Jogo educativo de animais e habitats com pictogramas CAA, guia adaptativo local 
 <table>
   <tr>
     <td width="50%">
-      <img src="docs/interfaz/readme/catalogo.webp" alt="Catálogo de 288 animais" />
+      <img src="docs/interfaz/readme/pt-BR/catalogo.webp" alt="Catálogo de 288 animais" />
       <p align="center"><strong>Catálogo de 288 animais</strong><br />Ordem variada por biomas, filtros alfabéticos, busca e filtro <em>Por descobrir</em>.</p>
     </td>
     <td width="50%">
-      <img src="docs/interfaz/readme/reto_pista.webp" alt="Desafio com pista adaptativa e pictogramas CAA" />
+      <img src="docs/interfaz/readme/pt-BR/reto_pista.webp" alt="Desafio com pista adaptativa e pictogramas CAA" />
       <p align="center"><strong>Pistas adaptativas com pictogramas CAA</strong><br />O agente escolhe a dica mais útil conforme as opções visíveis, sem relógio nem punições.</p>
     </td>
   </tr>
   <tr>
     <td colspan="2">
       <p align="center">
-        <img src="docs/interfaz/readme/album.webp" alt="Meu álbum de expedição" width="84%" />
+        <img src="docs/interfaz/readme/pt-BR/album.webp" alt="Meu álbum de expedição" width="84%" />
       </p>
       <p align="center"><strong>Meu álbum de expedição</strong><br />Passaporte pessoal salvo no navegador com 2 fileiras de 5 estrelas (animais e habitats) e coleção paginada 3 × 3.</p>
     </td>
@@ -73,15 +73,15 @@ Jogo educativo de animais e habitats com pictogramas CAA, guia adaptativo local 
 <table>
   <tr>
     <td width="33.3%" align="center">
-      <img src="docs/interfaz/portada_zoonauta.webp" alt="Floresta à noite" />
+      <img src="docs/interfaz/readme/pt-BR/portada_noche.webp" alt="Floresta à noite" />
       <br /><strong>Floresta à noite</strong><br /><sub>Observatório bioluminescente (padrão)</sub>
     </td>
     <td width="33.3%" align="center">
-      <img src="docs/interfaz/readme/portada_dia.webp" alt="Floresta de dia" />
+      <img src="docs/interfaz/readme/pt-BR/portada_dia.webp" alt="Floresta de dia" />
       <br /><strong>Floresta de dia</strong><br /><sub>Tema claro editorial com paleta solar</sub>
     </td>
     <td width="33.3%" align="center">
-      <img src="docs/interfaz/readme/portada_contraste.webp" alt="Alto contraste 21:1 AAA" />
+      <img src="docs/interfaz/readme/pt-BR/portada_contraste.webp" alt="Alto contraste 21:1 AAA" />
       <br /><strong>Alto contraste</strong><br /><sub>WCAG AAA 21:1 em preto e branco puro</sub>
     </td>
   </tr>

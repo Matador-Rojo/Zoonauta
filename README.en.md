@@ -42,7 +42,7 @@ Educational animal & habitat discovery game with AAC pictograms, a local adaptiv
 ---
 
 <p align="center">
-  <img src="docs/interfaz/portada_zoonauta.webp" alt="Zoonauta home screen — Forest of light" width="100%" />
+  <img src="docs/interfaz/readme/en/portada_noche.webp" alt="Zoonauta home screen — Forest of light" width="100%" />
 </p>
 
 ## Gallery
@@ -50,18 +50,18 @@ Educational animal & habitat discovery game with AAC pictograms, a local adaptiv
 <table>
   <tr>
     <td width="50%">
-      <img src="docs/interfaz/readme/catalogo.webp" alt="288-animal catalog" />
+      <img src="docs/interfaz/readme/en/catalogo.webp" alt="288-animal catalog" />
       <p align="center"><strong>288-animal catalog</strong><br />Biome-interleaved random discovery order, A–Z letter filters, instant search, and an <em>Undiscovered</em> filter.</p>
     </td>
     <td width="50%">
-      <img src="docs/interfaz/readme/reto_pista.webp" alt="Challenge screen with adaptive hint and AAC pictograms" />
+      <img src="docs/interfaz/readme/en/reto_pista.webp" alt="Challenge screen with adaptive hint and AAC pictograms" />
       <p align="center"><strong>Adaptive hints with AAC pictograms</strong><br />A local AI guide picks the clearest hint for the visible habitats, with no timers or penalties.</p>
     </td>
   </tr>
   <tr>
     <td colspan="2">
       <p align="center">
-        <img src="docs/interfaz/readme/album.webp" alt="My expedition album" width="84%" />
+        <img src="docs/interfaz/readme/en/album.webp" alt="My expedition album" width="84%" />
       </p>
       <p align="center"><strong>My expedition album</strong><br />Personal browser-saved passport with two 5-star milestone tracks (animals &amp; habitats) and a 3 × 3 paginated stamp book.</p>
     </td>
@@ -73,15 +73,15 @@ Educational animal & habitat discovery game with AAC pictograms, a local adaptiv
 <table>
   <tr>
     <td width="33.3%" align="center">
-      <img src="docs/interfaz/portada_zoonauta.webp" alt="Night forest" />
+      <img src="docs/interfaz/readme/en/portada_noche.webp" alt="Night forest" />
       <br /><strong>Night forest</strong><br /><sub>Bioluminescent observatory (default)</sub>
     </td>
     <td width="33.3%" align="center">
-      <img src="docs/interfaz/readme/portada_dia.webp" alt="Day forest" />
+      <img src="docs/interfaz/readme/en/portada_dia.webp" alt="Day forest" />
       <br /><strong>Day forest</strong><br /><sub>Warm light editorial theme</sub>
     </td>
     <td width="33.3%" align="center">
-      <img src="docs/interfaz/readme/portada_contraste.webp" alt="High contrast 21:1 AAA" />
+      <img src="docs/interfaz/readme/en/portada_contraste.webp" alt="High contrast 21:1 AAA" />
       <br /><strong>High contrast</strong><br /><sub>Pure black &amp; white WCAG AAA 21:1</sub>
     </td>
   </tr>
