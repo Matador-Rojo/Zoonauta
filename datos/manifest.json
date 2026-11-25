@@ -159,13 +159,13 @@
   "archivos": [
     {
       "ruta": ".gitattributes",
-      "bytes": 237,
-      "sha256": "2a5c59bbf91732d48a68a61aca76522cb8a8505131508d29f3efed22f4682977"
+      "bytes": 251,
+      "sha256": "358f13a54ae75cd50f80051c0a89867f77521577295250850f4c08efedd097ca"
     },
     {
       "ruta": ".gitignore",
-      "bytes": 531,
-      "sha256": "2cb6d8ec0d5b91d2e250fe1b713db0a7c9d9bc4718999c809800ce1069818788"
+      "bytes": 561,
+      "sha256": "d54a3a4243c9b1d885b1da268440db5b39d17ff5b23157f90059b2cffb01555d"
     },
     {
       "ruta": "README.md",
@@ -994,8 +994,8 @@
     },
     {
       "ruta": "datos/imagenes_animales_ia.json",
-      "bytes": 94806,
-      "sha256": "b6fffd15f7dc3ed60752f53dfbb73eb44a5767d1ab0beaa41ba39ac243f70eb7"
+      "bytes": 93934,
+      "sha256": "73aff2fff0a21169a6f64117cd4539ff488ddc1b59c54154c58e9a3fed3f1cce"
     },
     {
       "ruta": "datos/imagenes_apoyos_ia.json",
@@ -1059,8 +1059,8 @@
     },
     {
       "ruta": "docs/cierre_tecnico_hito3.md",
-      "bytes": 5688,
-      "sha256": "defdf59cf75bdb9ef4311fb806c10a2ed026f6c550bb2e89a832b41730a39bef"
+      "bytes": 8042,
+      "sha256": "5e5fff344cce3834a0d3577ec8b6819acf91e3ab5afda071021d080df090ab7d"
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
@@ -1704,13 +1704,13 @@
     },
     {
       "ruta": "docs/experimentos/hito3/auditoria_banco.json",
-      "bytes": 442,
-      "sha256": "fb8809cd5944541dfa074a6d82c5e20d7a7f72be2615ad024c5af656b73d15f1"
+      "bytes": 428,
+      "sha256": "4644ff6aca135ca12308ba2232ef1cfee912de96fd2fff7d2c4316942a56fd8d"
     },
     {
       "ruta": "docs/experimentos/hito3/revision_aceptacion.json",
-      "bytes": 150996,
-      "sha256": "e934e882d7183e492e6e0e7082952aaa52e8d784dc11d712b1e069e84b21dd4b"
+      "bytes": 146287,
+      "sha256": "f2b28faed2e4268f5d9269e6cd1061874b91f41ae1e738045128d1802a432fa8"
     },
     {
       "ruta": "docs/experimentos/hito3/revision_catalogo.json",
@@ -2199,8 +2199,8 @@
     },
     {
       "ruta": "docs/experimentos/pruebas_automaticas.txt",
-      "bytes": 3360,
-      "sha256": "97850ef3c3f48d34cd93ef5fa926b9c93a96057b60cd8c053e90208d66e7e3a9"
+      "bytes": 3392,
+      "sha256": "9de47d538021b374861faff74e385425dc66217c11614414346d2a5a5212b544"
     },
     {
       "ruta": "docs/experimentos/resumen_experimentos.json",
@@ -2494,8 +2494,8 @@
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-redisenio/resumen.json",
-      "bytes": 481,
-      "sha256": "9e71e50196c12826d06b5284b044a0fe4faca06ebbc90b662ebf29fe23537cd4"
+      "bytes": 469,
+      "sha256": "abcf90a0543fc1a01171976fea5d6412c09fb5b8517dd200da4dda8526ad4ac7"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-redisenio/revision_navegador.json",
@@ -2514,8 +2514,8 @@
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/aceptacion.json",
-      "bytes": 124222,
-      "sha256": "3767d474823d794da4bbf4c72fd6fa49d76fc437f59acd735b71f13b8fe5ee32"
+      "bytes": 120507,
+      "sha256": "d67b4f95ec33eaf45a0a0bcdcc037ca8eac6126c26b3315eaebb4fff70e0870e"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/interfaz.json",
@@ -2529,13 +2529,13 @@
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/medicion_corregida.json",
-      "bytes": 1726,
-      "sha256": "463ce82d489f4e846ab580f451b8b812ba8ce998efb3d964a0dc8026a976ce32"
+      "bytes": 1661,
+      "sha256": "1678c2b320a59038b6038cbd826736ac6ba8beb4e57abbf744f04107f53a0fe1"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/medicion_original.json",
-      "bytes": 1718,
-      "sha256": "1d9e5eed4f3c17402d7610fa96c2d2a61cdc1077ddcedc3fcdda9af39186482c"
+      "bytes": 1653,
+      "sha256": "bbc2061f7c26771912bd71e7a908e45f71a7a7eea77ed91496c148c8f045ac26"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/pruebas_python.txt",
@@ -2544,13 +2544,13 @@
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/rendimiento.json",
-      "bytes": 713,
-      "sha256": "f82551fa74cef3dde8a9fe7cc772947fe2e582a3b4fbd35cd746ba74f29ea244"
+      "bytes": 697,
+      "sha256": "3e69aebcad6a740ddc24fa1690d29de1ecf5df04bfd6acc4e96eac262c593c7c"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/resumen.json",
-      "bytes": 798,
-      "sha256": "6fc175ad98db443761f9570415dbd281f11afb29c24640268b7546b1f4a06c12"
+      "bytes": 786,
+      "sha256": "ae903698ae3b8060167f0b055bbbad8e54c01bc39bf8d7f959b9132ce34b4de7"
     },
     {
       "ruta": "docs/interfaz/revisiones/2026-10-10-voces/voces_navegador.json",
@@ -2559,8 +2559,8 @@
     },
     {
       "ruta": "docs/manual_usuario.md",
-      "bytes": 5073,
-      "sha256": "6f01fe98e644cefe5846a3718bb470a3e49f4a106e19f2ee47c512407f4909d7"
+      "bytes": 6007,
+      "sha256": "deda3458f41ff3514934b262ba9946930bf0ffc602c43ac09d6d9ec625fec243"
     },
     {
       "ruta": "docs/resultados/arbol_id3.json",
@@ -2574,8 +2574,8 @@
     },
     {
       "ruta": "docs/resultados/demo_consola.txt",
-      "bytes": 10280,
-      "sha256": "f83a34d8b35707e3c559498eadb316cb4290d5e8a86fc0e306cf88266d159c03"
+      "bytes": 10485,
+      "sha256": "f3b7790e97a92d3392af1232e5e5e78eeaff463898c16acf7bbb9d3d9a4189a6"
     },
     {
       "ruta": "docs/resultados/eventos_demo.jsonl",
@@ -2589,8 +2589,8 @@
     },
     {
       "ruta": "iniciar_juego.bat",
-      "bytes": 372,
-      "sha256": "63b9ff8ca32f89a3e99a71119708e3cbfb4bcf39d093050caf89cb539b884688"
+      "bytes": 394,
+      "sha256": "379a205b4f3fb8901fbabebf0fca8131a5c3aad5ab4a65475f3afd63a6a9d0a6"
     },
     {
       "ruta": "iniciar_juego.sh",
@@ -5204,8 +5204,8 @@
     },
     {
       "ruta": "frontend/.gitignore",
-      "bytes": 14,
-      "sha256": "4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97"
+      "bytes": 15,
+      "sha256": "853bdb9e4c430bb46f05289d0d2c37d6b99128f78ab80d4fa929c50af733be90"
     },
     {
       "ruta": "frontend/index.html",
@@ -5224,58 +5224,58 @@
     },
     {
       "ruta": "frontend/src/App.tsx",
-      "bytes": 24351,
-      "sha256": "3d55b09a54128e95dca6f52c1b7533266fb544803e3e7775f640e466e50c92f0"
+      "bytes": 24998,
+      "sha256": "9331ee33d5a92437542d486f3465f0e23466580df0f33b36d9a400f2f8d9432f"
     },
     {
       "ruta": "frontend/src/api/cliente.ts",
-      "bytes": 2061,
-      "sha256": "895032bf493616f238e807764ac7caf408c34235a238c4b1835172259a794eef"
+      "bytes": 2123,
+      "sha256": "5748323f29da84a59e1c0a35550fc9654a5e3927dd2b9a816193b2acb086f21c"
     },
     {
       "ruta": "frontend/src/api/tipos.ts",
-      "bytes": 1816,
-      "sha256": "8e21f310318ff70b673c646c93d7f19304a89b38aaab683646eaefcb52493ee2"
+      "bytes": 1893,
+      "sha256": "39be2c92ff7df129ad7571109524c7530ca93d863a76c9dd1013d902eed6a08e"
     },
     {
       "ruta": "frontend/src/componentes/Catalogo.tsx",
-      "bytes": 13549,
-      "sha256": "1e48d2b6edbca12418b1fa89d6e0c48fc99ff9f3cae83f86723d3acc00fc3fc5"
+      "bytes": 13906,
+      "sha256": "e7ba592c933d91fba4a9a04c78201e8ad0a7335520820ceb3a2efe0345df7c62"
     },
     {
       "ruta": "frontend/src/componentes/Cierre.tsx",
-      "bytes": 9197,
-      "sha256": "0a64c65ae1fe959db49ef23e59aa997c3ee085f3dc90db22d3d62c17b6c37b66"
+      "bytes": 9425,
+      "sha256": "888c0e87d89fb53916513c69b59f5e893d42c7bf2afc42cb15d171e7d3bd7d4c"
     },
     {
       "ruta": "frontend/src/componentes/Encabezado.tsx",
-      "bytes": 1344,
-      "sha256": "f8780133fc3167123b0c7914ea47c08f8722c531549d522d42bef10fb72a6b9b"
+      "bytes": 1387,
+      "sha256": "bd7b5df2be7544898473442642929999fed784e86f66b850a230a9cf3cf2809f"
     },
     {
       "ruta": "frontend/src/componentes/Icono.tsx",
-      "bytes": 2454,
-      "sha256": "39708685645330020e18a3653bc5d46c4838aa25ec5b5d1eb17b41ce51e7f21f"
+      "bytes": 2520,
+      "sha256": "d9d4c149fbfff79bc4474beb271ea318a58191b6e003e226befd63a0cc198a19"
     },
     {
       "ruta": "frontend/src/componentes/Pictograma.tsx",
-      "bytes": 1789,
-      "sha256": "f445a87a4643eab424c787ddbc44bbd6cb66d1e2af20a1871cc24d5e919dadfd"
+      "bytes": 1849,
+      "sha256": "d4dba7d65bf2de5e99d0d7d1a89e9d02d278651820c3c1473b87423cfbc4b05f"
     },
     {
       "ruta": "frontend/src/componentes/Portada.tsx",
-      "bytes": 6463,
-      "sha256": "feaccf95e8596cce26b3f8b4a8c7ebb067428b9b2b2b1de836f4c7113db7f389"
+      "bytes": 6641,
+      "sha256": "1a486c216546fdaaf3eabba09f88533cf702a7e35de2fd60e4ca375e09b25a4d"
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
-      "bytes": 14604,
-      "sha256": "8f47797b4605e92e88c314710e7c87d1a501ffae44672de42db5a1be7f3cb3c1"
+      "bytes": 14976,
+      "sha256": "238a0eae145358e4673c51b1aaee5a38f57323cf85cd8d4cf5c81de7724541c8"
     },
     {
       "ruta": "frontend/src/componentes/Reto.tsx",
-      "bytes": 13268,
-      "sha256": "1daa14fa3bc8aa700c2788d0009f3f747eca6702a69cb5f3a0e5da6e6f00cc8f"
+      "bytes": 13614,
+      "sha256": "5a925482f5fc265bc092c4ec6a9b9b2a97e218b303aa9cf28363e68c6e57d420"
     },
     {
       "ruta": "frontend/src/estilos/base.css",
@@ -5294,18 +5294,18 @@
     },
     {
       "ruta": "frontend/src/i18n.ts",
-      "bytes": 4446,
-      "sha256": "fe76d222875ea8a5781589f6cb48b48925370c3aae859fdc0cccdc1e252000e4"
+      "bytes": 4543,
+      "sha256": "68bd1c25d5dd5b293b79528a4ae39190cc757de68f5f5016e79a77b37f965e82"
     },
     {
       "ruta": "frontend/src/main.tsx",
-      "bytes": 699,
-      "sha256": "2e2673348b4548451e30a2bd4c151905c92e41ebbf1d91f76e1859cd25041df9"
+      "bytes": 721,
+      "sha256": "26c166bf4534e8d1c1b17cec6fd7d308f117639745e8618925b40c775b2badd4"
     },
     {
       "ruta": "frontend/src/voz.ts",
-      "bytes": 4504,
-      "sha256": "f3e3b9494a5de414cbe6ab9b7ff8926a578311b35d6f3c803b2b8577d1ba23b1"
+      "bytes": 4630,
+      "sha256": "2721a839539ed57ca47c7a41d6a0295ae0624b824463d58cc1a9b4961a7f6b02"
     },
     {
       "ruta": "frontend/tsconfig.json",
@@ -5314,8 +5314,8 @@
     },
     {
       "ruta": "frontend/vite.config.ts",
-      "bytes": 786,
-      "sha256": "b9b499ed4a35e7b68792aae34278d04044795a2059b96dd36f9f7436e4e37cdb"
+      "bytes": 809,
+      "sha256": "5a7832ad57ae5491f8b28ced86e6828f98210e525044bd91048e2362aa52ac04"
     },
     {
       "ruta": "tests/verificar_v6.cjs",
@@ -5389,28 +5389,28 @@
     },
     {
       "ruta": "frontend/src/pruebas/contenido-listo.test.tsx",
-      "bytes": 1689,
-      "sha256": "659b9af71aa6cd25cf77f8a2af802543174acee977a1ffcff3f20a1f16c22ca4"
+      "bytes": 1730,
+      "sha256": "3ae6231e743d5a2e8911ebf81bff98d04c97c57a6b12fde6a5aae6aeded57f2c"
     },
     {
       "ruta": "frontend/src/pruebas/i18n.test.ts",
-      "bytes": 1552,
-      "sha256": "1d2e628483ae7bd5c98e424daba973aaca99b7d152fcee8eec1bc002fe26e611"
+      "bytes": 1587,
+      "sha256": "89e8af64739734642a07984928875cd40df45f8bcf17baab891b1831e29ec2c4"
     },
     {
       "ruta": "frontend/src/pruebas/preparar.ts",
-      "bytes": 43,
-      "sha256": "9b328c4843431fa76d8de00008fc159e95f99a840211085ff3b8f25e53d14409"
+      "bytes": 44,
+      "sha256": "60aa525f7ffa6bfd3045d22710d4eeef3a5ff2074ecc3dbcef99374badebad17"
     },
     {
       "ruta": "frontend/vitest.config.ts",
-      "bytes": 274,
-      "sha256": "140a243c92cd6beef3fb3f7f54527cf2b7ed9f7d72fe8f6a7e6dbb123558e1ea"
+      "bytes": 285,
+      "sha256": "c2fb04e49f28458ec8fe5563f121a8155ce27d48dcc0538650d7ef2891353018"
     },
     {
       "ruta": "ruff.toml",
-      "bytes": 395,
-      "sha256": "7ed1cccca7786719960066f7ffbc0c080e6abc7da7676016cfd03870744c9da9"
+      "bytes": 404,
+      "sha256": "d969848343be126d76ae263e166959f9540b639c446757d1dee158388f97c58c"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/atkinson-hyperlegible-next-latin-ext-wght-normal-C6vrW8VD.woff2",
@@ -8019,8 +8019,8 @@
     },
     {
       "ruta": "frontend/src/componentes/dialogos.ts",
-      "bytes": 1348,
-      "sha256": "8e1d8a6c6fa73d4cf90526b906ead013e4a3dca9fa47187f3b99057c19190a3b"
+      "bytes": 1379,
+      "sha256": "9ec5178f04106453a4f507a802de0eb28d98dc4b9cdb9f6fbb46e501bb10485f"
     },
     {
       "ruta": "frontend/src/estilos/preferencias.css",
@@ -9819,8 +9819,8 @@
     },
     {
       "ruta": "docs/traducciones/revision_es_pt.csv",
-      "bytes": 134469,
-      "sha256": "f08e001eb8286067729e28abee666d3149036a5f8b6df3d8d17680fbe28d6de5"
+      "bytes": 135727,
+      "sha256": "8ee9a7e005a7ec9d5592879a0ea9551d31b8409e1634f3b667d98f9d4989c04e"
     },
     {
       "ruta": "docs/voz/pendiente_fase5.md",
@@ -9864,8 +9864,8 @@
     },
     {
       "ruta": "docs/voz/elevenlabs/textos_pendientes_es-419.txt",
-      "bytes": 734,
-      "sha256": "f28b0dc605e8759963ce172a58a3d2356779d6ad83e42e9636e7a94a8f91251d"
+      "bytes": 743,
+      "sha256": "bba2234f51718588a23b6033471359a5ff5f6eab39da25702c7c154b1494cfa9"
     },
     {
       "ruta": "codigo/entrenamiento/entrenar_agente6.py",
@@ -10259,18 +10259,18 @@
     },
     {
       "ruta": "frontend/src/componentes/BosqueVivo.tsx",
-      "bytes": 16837,
-      "sha256": "fe91a263c35b05d3295b5351f9316de3ff1245d3e8d5d0c23c11199436ae182c"
+      "bytes": 17318,
+      "sha256": "d8fa629dd12ec483d3cc7b0d81907b537e73f351d699408a32f211e0a43d4807"
     },
     {
       "ruta": "frontend/src/componentes/useLuzPuntero.ts",
-      "bytes": 2282,
-      "sha256": "0e4365a36a6f0cdb58bc6f4684fbf66e8861b7ade58e396c0e866622962b20ff"
+      "bytes": 2333,
+      "sha256": "e2f721061da18086fb3b81a4b0c545906133fbfdea1d13c38f893ab8f39df03b"
     },
     {
       "ruta": "codigo/interfaz/web/manifest.webmanifest",
-      "bytes": 582,
-      "sha256": "afc53e70a45aa84ffcdad311637a1d6950aa7c135d5b586bc39a55dd8d2c4155"
+      "bytes": 603,
+      "sha256": "1d0b38b1e6dde24f9cad1d207181a0d336b70706fef0f4b8cd18ecd01c38f649"
     },
     {
       "ruta": "codigo/interfaz/web/revision.css",
@@ -10284,13 +10284,13 @@
     },
     {
       "ruta": "frontend/src/sonido.ts",
-      "bytes": 20246,
-      "sha256": "a18ed264c1d2cd9b6bf6286123531a3c6dfc7b22a1a1845fb4b8feec90fe935b"
+      "bytes": 20838,
+      "sha256": "a1b8649afe0210e63f54653893296af432460f693ed9a980a60eaaf5448a548c"
     },
     {
       "ruta": "frontend/src/componentes/PortadaViva.tsx",
-      "bytes": 5117,
-      "sha256": "ad66120232f08b8e428b6628ca80cdb0f48049dde9e7878604cabcac04503d20"
+      "bytes": 5286,
+      "sha256": "17b56e94aa81a375ece325c8583af3e2f25c4f8cb3b31cb9ce26a055c359b7b4"
     },
     {
       "ruta": "assets/portada/bosque-de-luz.mp4",
@@ -14499,23 +14499,23 @@
     },
     {
       "ruta": ".dockerignore",
-      "bytes": 665,
-      "sha256": "7836281712a5d0aefc0646ac884de4b990f69b56d37f53b5a7ccf124c3316c80"
+      "bytes": 696,
+      "sha256": "9d2f12a4d05d660cd9e2f2e749ae2d5a75dfab7e72f3cd858a3854ccca626792"
     },
     {
       "ruta": "Dockerfile",
-      "bytes": 669,
-      "sha256": "385230279ee54a2d592564eab8120deabcf015cdffce17d630999186ecacff47"
+      "bytes": 695,
+      "sha256": "8facbba1e2b7eac658dec1ca1efaf7baaf9077872c60999c26666dff99bd40f0"
     },
     {
       "ruta": "docker-compose.yml",
-      "bytes": 277,
-      "sha256": "910d83935c1f3659741aa52243dbe2e846572a9b17ad62b6d82d69fa09e91117"
+      "bytes": 292,
+      "sha256": "1c5ff0326f1949fcacff889054a531c831733c4b4e16c1b889de8168716a72c9"
     },
     {
       "ruta": "docs/despliegue_hostinger.md",
-      "bytes": 2059,
-      "sha256": "132d3411dcf36ef432a24f32eed4f05aeab2f6c64f94174773738ff175576f16"
+      "bytes": 3918,
+      "sha256": "feb26f1706e582d739f44c39f58afe6ca2359e194da66781a251b3879b6439a4"
     },
     {
       "ruta": "codigo/interfaz/wsgi.py",
@@ -14524,33 +14524,33 @@
     },
     {
       "ruta": "frontend/src/componentes/SenderoProgreso.tsx",
-      "bytes": 3347,
-      "sha256": "dec43c67ed732c1397b136975b79c5a7455f5c5b301ce1acf21d6e474a110e5f"
+      "bytes": 3427,
+      "sha256": "48dbace48576a3825e349f6dc3a33f35a07aac9bed1651f85e27f40abdadef19"
     },
     {
       "ruta": "frontend/src/album.ts",
-      "bytes": 3349,
-      "sha256": "583c79a43db44c5d46375dea245ae08d1a675c330648fcde717877919aa77c00"
+      "bytes": 3442,
+      "sha256": "b13b07210c7f6fb0f1db0b93dcc70392d6fd6b89073e2b21f80371d3ecd02bc5"
     },
     {
       "ruta": "frontend/src/componentes/Album.tsx",
-      "bytes": 8958,
-      "sha256": "cb068dd9581256c11f8e63410fc46a8ba0c608a984684a7f71c522ae6ee56a44"
+      "bytes": 9185,
+      "sha256": "41df0d1f4e75f56077b07f4e635f8cc666a365ea05d983e07d55f7c0cfecf87c"
     },
     {
       "ruta": "frontend/src/componentes/NumeroAnimado.tsx",
-      "bytes": 1319,
-      "sha256": "dbe9ffee171a2fe5e26747ca12531f5355b3166b76d9a1a0e7a6d6bde4ddb61c"
+      "bytes": 1361,
+      "sha256": "c9f34af380cb076475803a8d73afcfb7be79827707053691e9a12b7fbffbc4c5"
     },
     {
       "ruta": "frontend/src/haptica.ts",
-      "bytes": 818,
-      "sha256": "43b3d371834519506e7452ae3d7498d3de0641f8d8b13b1839ed67a421fad3d9"
+      "bytes": 841,
+      "sha256": "cb66c874637712a80a9751e165022cb348433acfb1f71edaf9ca31fce9caaeef"
     },
     {
       "ruta": "frontend/src/componentes/LogoZoonauta.tsx",
-      "bytes": 2163,
-      "sha256": "09a48d1038f332893b51cc26e02dfd5cca2d979d8b916b58115d33ba4e2b9ee6"
+      "bytes": 2197,
+      "sha256": "059511c599fd6117c6b444016d5f6df45e4dfebd7692604ebb9d3a83d79ca012"
     },
     {
       "ruta": "codigo/interfaz/web6/assets/index-BnuF5pTa.css",
