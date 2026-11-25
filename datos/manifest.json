@@ -2589,13 +2589,13 @@
     },
     {
       "ruta": "iniciar_juego.bat",
-      "bytes": 66,
-      "sha256": "0d9f2bd4badb6e611c3cacb6e1efb7e94d3c68a1a48325a864893e112752a8db"
+      "bytes": 372,
+      "sha256": "63b9ff8ca32f89a3e99a71119708e3cbfb4bcf39d093050caf89cb539b884688"
     },
     {
       "ruta": "iniciar_juego.sh",
-      "bytes": 94,
-      "sha256": "afe82eefc2dd680086264f1a00b20c19aac1c189edd34dbd3e1b3bdbd3dfc301"
+      "bytes": 284,
+      "sha256": "af2d50cc9e61d958154b2bd318ab7b5930d6d1652d7994f5181cd867b3eff86d"
     },
     {
       "ruta": "tests/__init__.py",
