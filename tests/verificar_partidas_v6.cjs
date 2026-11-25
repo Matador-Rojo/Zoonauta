@@ -54,11 +54,11 @@ async function partida(browser, {modalidad, opciones, retos, idioma = 'es', anch
   await page.keyboard.press('Tab'); // al salir del campo se ajusta de 1 a 48
   await page.locator('dialog.preferencias select').nth(1).selectOption(String(opciones));
   const voz = page.locator('.pref-voz input[role="switch"]');
-  // En pt-BR la voz está bloqueada (apagada y desactivada); en español se apaga con teclado.
-  if (idioma === 'es') {
+  // Apaga la voz con teclado si está habilitada en el idioma actual (es y pt-BR tienen grabaciones).
+  if (!(await voz.isDisabled())) {
     await voz.focus();
     await page.keyboard.press('Space');
-  } else assert.ok(await voz.isDisabled());
+  }
   assert.equal(await voz.isChecked(), false);
   await page.keyboard.press('Escape');
   assert.equal(await dialogo.evaluate(d => d.open), false);

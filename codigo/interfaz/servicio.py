@@ -70,7 +70,8 @@ class SesionWeb:
             orden[0], orden[1] = orden[1], orden[0]
         return GestorPartida(self.banco, retos, self.politica, origen="INTERFAZ_MANUAL",
                              sesion_id=sid, registro=registro, motor=motor,
-                             ayuda_en_pendiente=True, orden_escenarios=orden)
+                             ayuda_en_pendiente=True, orden_escenarios=orden,
+                             modo_opciones="aleatorio_facil" if self.banco.ampliado else "afinidad")
 
     def vista(self) -> dict:
         with self.lock:
@@ -113,7 +114,7 @@ class SesionWeb:
                 if entrada.get("prueba") or self.gestor.estado.fase != "INICIO":
                     raise ConflictoVista("La pantalla ha cambiado. Se recuperó la vista actual.")
                 pregunta = "¿Quién elige el animal?"
-                return pregunta if self.idioma == "es" else idiomas.PORTUGUES["interfaz"][pregunta]
+                return idiomas.interfaz(pregunta, self.idioma)
             return (idiomas.saludo(self.idioma) if entrada.get("prueba")
                     else idiomas.texto(self.respuesta["texto_voz"], self.idioma, self.banco))
 
@@ -155,10 +156,25 @@ class SesionWeb:
                     if type(opciones) is not int or opciones not in (2, 4, 8):
                         raise ValueError("Selecciona 2, 4 u 8 hábitats.")
                     self.gestor.N = retos
+                    # Prioriza animales aún no descubiertos en «Mi álbum»; al completarse
+                    # los 288, continúa de forma fluida con todo el catálogo barajado.
+                    descubiertos = payload.get("animales_descubiertos")
+                    if isinstance(descubiertos, list):
+                        vistos_ids = {x for x in descubiertos if isinstance(x, str)}
+                        if vistos_ids:
+                            todos = list(self.banco.escenarios)
+                            pendientes = [e for e in todos if self.banco.escenarios[e]["animal_id"] not in vistos_ids]
+                            ya_vistos = [e for e in todos if self.banco.escenarios[e]["animal_id"] in vistos_ids]
+                            orden_nuevo = (
+                                self.aleatorio.sample(pendientes, len(pendientes))
+                                + self.aleatorio.sample(ya_vistos, len(ya_vistos))
+                            )
+                            self.gestor.orden_escenarios = tuple(orden_nuevo)
+                payload_evento = {k: v for k, v in payload.items() if k != "animales_descubiertos"}
                 # El cliente nunca puede crear eventos internos ni pasar
                 # acciones directamente al motor de guía.
                 evento = Evento(tipo, eid, self.gestor.sesion_id,
-                                self.gestor.estado.reto_id, payload, False)
+                                self.gestor.estado.reto_id, payload_evento, False)
                 salida = self.gestor.procesar(evento)
                 aceptada, motivo, emitida = salida.aceptada, salida.motivo, salida.respuesta
                 if aceptada:

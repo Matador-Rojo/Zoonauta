@@ -1,1 +1,58 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zoonauta · Revisión técnica</title><link rel="stylesheet" href="/estilos.css"><script src="/revision.js" defer></script></head><body><main class="tecnico"><h1>Zoonauta · Revisión técnica</h1><p>La política está configurada al arrancar el servidor. El modelo permanece congelado. Esta página consulta la sesión del navegador y no ejecuta acciones del jugador.</p><p><a href="/">Volver al juego</a></p><button id="actualizar" class="secundario">Actualizar registro</button> <button id="descargar" class="primario">Descargar JSON de la sesión</button><pre id="datos" aria-live="polite">Cargando…</pre></main></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#04141f">
+  <title>Zoonauta · Revisión técnica</title>
+  <link rel="icon" href="/zoonauta-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/revision.css">
+  <script src="/revision.js" defer></script>
+</head>
+<body>
+  <header class="rev-cabecera">
+    <a class="rev-marca" href="/">
+      <img src="/zoonauta-logo.svg" alt="" width="40" height="40">
+      <span>Zoonauta <small>Observatorio del agente</small></span>
+    </a>
+    <a class="rev-volver" href="/">← Volver al juego</a>
+  </header>
+
+  <main class="rev-contenedor">
+    <section class="rev-hero" aria-labelledby="rev-titulo">
+      <p class="rev-rotulo">Revisión técnica y trazabilidad</p>
+      <h1 id="rev-titulo">Zoonauta · Revisión técnica</h1>
+      <p class="rev-nota">
+        La política está configurada al arrancar el servidor. El modelo permanece congelado. Esta página consulta la sesión del navegador y no ejecuta acciones del jugador.
+      </p>
+      <div class="rev-acciones">
+        <button id="actualizar" type="button" class="rev-btn rev-btn-sec">Actualizar registro</button>
+        <button id="descargar" type="button" class="rev-btn rev-btn-pri">Descargar JSON de la sesión</button>
+        <button id="descargar-csv" type="button" class="rev-btn rev-btn-sec">Exportar CSV</button>
+        <button id="descargar-anonimo" type="button" class="rev-btn rev-btn-sec">Exportar anonimizado</button>
+      </div>
+    </section>
+
+    <section class="rev-metricas" id="rev-metricas" aria-label="Resumen de la sesión"></section>
+
+    <section class="rev-panel" aria-labelledby="rev-linea-titulo">
+      <div class="rev-panel-cabecera">
+        <h2 id="rev-linea-titulo">Línea de tiempo del agente</h2>
+        <div class="rev-filtros" role="group" aria-label="Filtrar eventos">
+          <button type="button" class="rev-chip" data-filtro="TODOS" aria-pressed="true">Todos</button>
+          <button type="button" class="rev-chip" data-filtro="AYUDA" aria-pressed="false">Ayudas</button>
+          <button type="button" class="rev-chip" data-filtro="SELECCION" aria-pressed="false">Selecciones</button>
+          <button type="button" class="rev-chip" data-filtro="CONFIRMACION" aria-pressed="false">Confirmaciones</button>
+        </div>
+      </div>
+      <ol id="rev-linea" class="rev-linea"></ol>
+    </section>
+
+    <details class="rev-panel rev-json" open>
+      <summary>Registro técnico completo (JSON)</summary>
+      <pre id="datos" aria-live="polite">Cargando…</pre>
+    </details>
+  </main>
+</body>
+</html>

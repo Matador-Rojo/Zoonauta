@@ -6,7 +6,7 @@ Uso: python -m codigo.nucleo.actualizar_manifiesto [--incluir RUTA ...]
 - Añade archivos nuevos solo de frontend/ y web6/, o los indicados con --incluir.
 - Quita entradas de archivos borrados (p. ej. compilados viejos de web6/).
 - Conserva el orden y el formato del manifiesto. No toca archivos fuera de las
-  carpetas del paquete ni los JSON con CRLF heredados (ver CLAUDE.md).
+  carpetas del paquete ni los JSON con CRLF heredados.
 """
 from __future__ import annotations
 

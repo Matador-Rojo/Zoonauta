@@ -95,6 +95,118 @@ class CoberturaVozGrabada(unittest.TestCase):
             self.assertGreater(len(leidos), 100)
             self.assertEqual(faltan, {}, f"{len(faltan)} mensajes sin grabación de {len(leidos)} leídos")
 
+    def test_voces_multiples_es(self):
+        carpeta_valeria = CARPETA_AUDIO / "es-419-valeria"
+        carpeta_gaby = CARPETA_AUDIO / "es-419-gaby"
+        carpeta_diego = CARPETA_AUDIO / "es-419-diego"
+        if not (
+            carpeta_valeria.is_dir()
+            and any(carpeta_valeria.glob("*.mp3"))
+            and carpeta_gaby.is_dir()
+            and any(carpeta_gaby.glob("*.mp3"))
+            and carpeta_diego.is_dir()
+            and any(carpeta_diego.glob("*.mp3"))
+        ):
+            self.skipTest("sin grabaciones locales de Valeria, Gaby o Diego")
+        with TemporaryDirectory() as carpeta:
+            servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=True)
+            Thread(target=servidor.serve_forever, daemon=True).start()
+            base = f"http://127.0.0.1:{servidor.server_port}"
+            try:
+                cfg, _ = _pedir(base, "/api/voz/config")
+                voces_es = cfg.get("voces_grabadas", {}).get("es", [])
+                ids = [v["id"] for v in voces_es]
+                self.assertEqual(ids, ["marcela", "valeria", "gaby", "diego"])
+                for v in voces_es:
+                    self.assertEqual(v["cantidad"], 412)
+                # Comprueba que los cuatro archivos existen y son distintos en disco
+                banco = servidor.banco
+                rutas = [
+                    voz_grabada.buscar("¿Dónde puede vivir este animal?", "es", banco, voz=vid)
+                    for vid in ids
+                ]
+                for ruta in rutas:
+                    self.assertIsNotNone(ruta)
+                contenidos = {ruta.read_bytes() for ruta in rutas if ruta is not None}
+                self.assertEqual(len(contenidos), 4)
+            finally:
+                servidor.shutdown()
+                servidor.server_close()
+
+    def test_cobertura_completa_pt_br_roberta_y_will(self):
+        carpeta_pt = CARPETA_AUDIO / "pt-BR"
+        carpeta_will = CARPETA_AUDIO / "pt-BR-will"
+        if not (
+            carpeta_pt.is_dir()
+            and any(carpeta_pt.glob("*.mp3"))
+            and carpeta_will.is_dir()
+            and any(carpeta_will.glob("*.mp3"))
+        ):
+            self.skipTest("sin grabaciones locales de Roberta o Will (pt-BR)")
+        with TemporaryDirectory() as carpeta:
+            servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=True)
+            Thread(target=servidor.serve_forever, daemon=True).start()
+            base = f"http://127.0.0.1:{servidor.server_port}"
+            try:
+                cfg, _ = _pedir(base, "/api/voz/config")
+                self.assertEqual(cfg["grabadas"]["pt-BR"], 412)
+                voces_pt = cfg.get("voces_grabadas", {}).get("pt-BR", [])
+                self.assertEqual(
+                    voces_pt,
+                    [
+                        {"id": "roberta", "etiqueta": "Roberta · ElevenLabs", "cantidad": 412},
+                        {"id": "will", "etiqueta": "Will · ElevenLabs", "cantidad": 412},
+                    ],
+                )
+                banco = servidor.banco
+                r = voz_grabada.buscar("Onde este animal pode viver?", "pt-BR", banco, voz="roberta")
+                w = voz_grabada.buscar("Onde este animal pode viver?", "pt-BR", banco, voz="will")
+                self.assertIsNotNone(r)
+                self.assertIsNotNone(w)
+                self.assertGreater(r.stat().st_size, 1000)
+                self.assertGreater(w.stat().st_size, 1000)
+                self.assertNotEqual(r.read_bytes(), w.read_bytes())
+            finally:
+                servidor.shutdown()
+                servidor.server_close()
+
+    def test_cobertura_completa_en_mark_y_jessica(self):
+        carpeta_en = CARPETA_AUDIO / "en"
+        carpeta_jessica = CARPETA_AUDIO / "en-jessica"
+        if not (
+            carpeta_en.is_dir()
+            and any(carpeta_en.glob("*.mp3"))
+            and carpeta_jessica.is_dir()
+            and any(carpeta_jessica.glob("*.mp3"))
+        ):
+            self.skipTest("sin grabaciones locales de Mark o Jessica (en)")
+        with TemporaryDirectory() as carpeta:
+            servidor = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=True)
+            Thread(target=servidor.serve_forever, daemon=True).start()
+            base = f"http://127.0.0.1:{servidor.server_port}"
+            try:
+                cfg, _ = _pedir(base, "/api/voz/config")
+                self.assertEqual(cfg["grabadas"]["en"], 412)
+                voces_en = cfg.get("voces_grabadas", {}).get("en", [])
+                self.assertEqual(
+                    voces_en,
+                    [
+                        {"id": "mark", "etiqueta": "Mark · ElevenLabs", "cantidad": 412},
+                        {"id": "jessica", "etiqueta": "Jessica · ElevenLabs", "cantidad": 412},
+                    ],
+                )
+                banco = servidor.banco
+                m = voz_grabada.buscar("Where can this animal live?", "en", banco, voz="mark")
+                j = voz_grabada.buscar("Where can this animal live?", "en", banco, voz="jessica")
+                self.assertIsNotNone(m)
+                self.assertIsNotNone(j)
+                self.assertGreater(m.stat().st_size, 1000)
+                self.assertGreater(j.stat().st_size, 1000)
+                self.assertNotEqual(m.read_bytes(), j.read_bytes())
+            finally:
+                servidor.shutdown()
+                servidor.server_close()
+
 
 if __name__ == "__main__":
     unittest.main()

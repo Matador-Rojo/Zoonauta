@@ -1,16 +1,24 @@
 import { forwardRef, useState } from "react";
-import type { Idioma } from "../api/tipos";
+import type { Idioma, VozGrabadaInfo } from "../api/tipos";
 import { useT } from "../i18n";
 import { IDIOMAS_CON_VOZ } from "../voz";
 import { CERRAR_FUERA } from "./dialogos";
 import { Icono } from "./Icono";
 
+export type TemaVisual = "noche" | "dia" | "contraste";
+export type EscalaTexto = "pequeno" | "normal" | "grande";
+
 export interface ValoresPreferencias {
   retos: string;
   opciones: number;
   vozActiva: boolean;
+  vozGrabada: string;
   velocidad: number;
-  movimientoReducido: boolean;
+  sonidoBosque: boolean;
+  protegerPreferencias: boolean;
+  movimientoReducido: boolean | null;
+  tema: TemaVisual;
+  escala: EscalaTexto;
 }
 
 interface Props {
@@ -19,7 +27,11 @@ interface Props {
   enInicio: boolean;
   /** Mensajes con grabación de la voz de Zoonauta en el idioma actual. */
   grabadas: number;
+  /** Voces grabadas disponibles para el idioma actual. */
+  vocesDisponibles: VozGrabadaInfo[];
   sistemaReduce: boolean;
+  puedeInstalar?: boolean;
+  onInstalar?: () => void;
   onCambio: (cambios: Partial<ValoresPreferencias>) => void;
   onIdioma: (idioma: Idioma) => void;
   onProbarVoz: () => void;
@@ -33,19 +45,50 @@ interface Props {
  * prevent-page-scroll-under-modal-dialog, animate-to-from-top-layer, switch).
  */
 export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Preferencias(
-  { idioma, valores, enInicio, grabadas, sistemaReduce, onCambio, onIdioma, onProbarVoz, onCerrar },
+  {
+    idioma,
+    valores,
+    enInicio,
+    grabadas,
+    vocesDisponibles,
+    sistemaReduce,
+    puedeInstalar = false,
+    onInstalar,
+    onCambio,
+    onIdioma,
+    onProbarVoz,
+    onCerrar,
+  },
   ref,
 ) {
   const { t } = useT();
   const [hayMas, setHayMas] = useState(false);
-  const vozHabilitada = IDIOMAS_CON_VOZ.includes(idioma);
   const hayVoz = grabadas > 0;
+  const vozHabilitada = IDIOMAS_CON_VOZ.includes(idioma) && hayVoz;
+  const opcionesVoz: VozGrabadaInfo[] = !vozHabilitada
+    ? []
+    : vocesDisponibles.length > 0
+      ? vocesDisponibles
+      : [
+          idioma === "en"
+            ? { id: "mark", etiqueta: "Mark · ElevenLabs", cantidad: grabadas }
+            : idioma === "pt-BR"
+              ? { id: "roberta", etiqueta: "Roberta · ElevenLabs", cantidad: grabadas }
+              : { id: "marcela", etiqueta: "Marcela · ElevenLabs", cantidad: grabadas },
+        ];
+  const vozActual = opcionesVoz.some((v) => v.id === valores.vozGrabada)
+    ? valores.vozGrabada
+    : (opcionesVoz[0]?.id ?? "");
   const vozActiva = vozHabilitada && valores.vozActiva;
+  const etiquetaVoz =
+    idioma === "en" ? "Voz en inglés" : idioma === "pt-BR" ? "Voz en portugués brasileño" : "Voz en español";
   const notaVoz = !vozHabilitada
-    ? "La voz en portugués todavía no está disponible."
-    : hayVoz
-      ? "Voz grabada de Zoonauta. Funciona en este equipo, sin Internet."
-      : "Faltan las grabaciones de la voz de Zoonauta en assets/voz/grabada.";
+    ? idioma === "en"
+      ? "La voz en inglés todavía no está disponible."
+      : idioma === "pt-BR"
+        ? "La voz en portugués todavía no está disponible."
+        : "Faltan las grabaciones de la voz de Zoonauta en assets/voz/grabada."
+    : "Voz grabada de Zoonauta. Funciona en este equipo, sin Internet.";
 
   // Retos: se escribe libremente y se ajusta de 1 a 48 al salir o con − / +.
   const numero = Number.parseInt(valores.retos, 10);
@@ -85,6 +128,7 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
           <select id="pref-idioma" value={idioma} onChange={(e) => onIdioma(e.target.value as Idioma)}>
             <option value="es">Español</option>
             <option value="pt-BR">Português (Brasil)</option>
+            <option value="en">English</option>
           </select>
         </div>
 
@@ -173,20 +217,22 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
               onChange={(e) => onCambio({ vozActiva: e.target.checked })}
             />
           </label>
-          {/* Una sola voz por ahora: Marcela (ElevenLabs). En pt-BR el selector queda bloqueado. */}
+          {/* Voces grabadas disponibles en español (Marcela, Valeria). En pt-BR queda bloqueado. */}
           <div className="pref-campo" data-apagado={!vozActiva || undefined}>
-            <label htmlFor="pref-voces">
-              {t(idioma === "pt-BR" ? "Voz en portugués brasileño" : "Voz en español")}
-            </label>
+            <label htmlFor="pref-voces">{t(etiquetaVoz)}</label>
             <select
               id="pref-voces"
-              value={vozHabilitada ? "marcela" : ""}
+              value={vozHabilitada ? vozActual : ""}
               disabled={!vozActiva || !hayVoz}
               aria-describedby="nota-voz"
-              onChange={() => undefined}
+              onChange={(e) => onCambio({ vozGrabada: e.target.value })}
             >
               {vozHabilitada ? (
-                <option value="marcela">Marcela · ElevenLabs</option>
+                opcionesVoz.map((v) => (
+                  <option key={v.id} value={v.id}>
+                    {v.etiqueta}
+                  </option>
+                ))
               ) : (
                 <option value="">{t("Sin voces disponibles")}</option>
               )}
@@ -219,12 +265,41 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
           </button>
         </fieldset>
 
+        <div className="pref-sonido">
+          <label className="interruptor">
+            <span className="interruptor-texto">
+              <span className="interruptor-titulo">{t("Sonidos del bosque")}</span>
+              <span className="nota">{t("Ambiente suave y tonos de aviso.")}</span>
+            </span>
+            <input
+              type="checkbox"
+              role="switch"
+              {...{ switch: "" }}
+              checked={valores.sonidoBosque}
+              onChange={(e) => onCambio({ sonidoBosque: e.target.checked })}
+            />
+          </label>
+          <label className="interruptor">
+            <span className="interruptor-texto">
+              <span className="interruptor-titulo">{t("Proteger Preferencias")}</span>
+              <span className="nota">{t("Mantener pulsado para abrir.")}</span>
+            </span>
+            <input
+              type="checkbox"
+              role="switch"
+              {...{ switch: "" }}
+              checked={valores.protegerPreferencias}
+              onChange={(e) => onCambio({ protegerPreferencias: e.target.checked })}
+            />
+          </label>
+        </div>
+
         <fieldset className="pref-grupo pref-pantalla">
           <legend>{t("Pantalla")}</legend>
           <label className="interruptor">
             <span className="interruptor-texto">
               <span className="interruptor-titulo">{t("Reducir movimiento")}</span>
-              {sistemaReduce && (
+              {sistemaReduce && (valores.movimientoReducido ?? true) && (
                 <span className="nota" id="nota-movimiento">
                   {t("Tu equipo ya pide reducir el movimiento.")}
                 </span>
@@ -234,12 +309,37 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
               type="checkbox"
               role="switch"
               {...{ switch: "" }}
-              checked={valores.movimientoReducido || sistemaReduce}
-              disabled={sistemaReduce}
-              aria-describedby={sistemaReduce ? "nota-movimiento" : undefined}
+              checked={valores.movimientoReducido ?? sistemaReduce}
+              aria-describedby={sistemaReduce && (valores.movimientoReducido ?? true) ? "nota-movimiento" : undefined}
               onChange={(e) => onCambio({ movimientoReducido: e.target.checked })}
             />
           </label>
+          <div className="pref-fila-doble">
+            <div className="pref-campo">
+              <label htmlFor="pref-tema">{t("Aspecto visual")}</label>
+              <select
+                id="pref-tema"
+                value={valores.tema}
+                onChange={(e) => onCambio({ tema: e.target.value as TemaVisual })}
+              >
+                <option value="noche">{t("Bosque de noche")}</option>
+                <option value="dia">{t("Bosque de día")}</option>
+                <option value="contraste">{t("Alto contraste")}</option>
+              </select>
+            </div>
+            <div className="pref-campo">
+              <label htmlFor="pref-escala">{t("Tamaño de texto")}</label>
+              <select
+                id="pref-escala"
+                value={valores.escala}
+                onChange={(e) => onCambio({ escala: e.target.value as EscalaTexto })}
+              >
+                <option value="pequeno">{t("Pequeño")}</option>
+                <option value="normal">{t("Normal")}</option>
+                <option value="grande">{t("Grande")}</option>
+              </select>
+            </div>
+          </div>
         </fieldset>
       </div>
 
@@ -253,11 +353,19 @@ export const Preferencias = forwardRef<HTMLDialogElement, Props>(function Prefer
             <p>{t("Ilustraciones de animales, pictogramas y paisajes originales generados con IA.")}</p>
           </div>
         </details>
-        <form method="dialog">
-          <button className="pref-volver">
-            {t("Volver al juego")} <span aria-hidden="true">↗</span>
-          </button>
-        </form>
+        <div className="pref-pie-acciones">
+          {puedeInstalar && onInstalar && (
+            <button type="button" className="boton-secundario pref-instalar" onClick={onInstalar}>
+              <Icono nombre="descargar" />
+              <span>{t("Instalar app")}</span>
+            </button>
+          )}
+          <form method="dialog">
+            <button className="pref-volver">
+              {t("Volver al juego")} <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+        </div>
       </footer>
     </dialog>
   );

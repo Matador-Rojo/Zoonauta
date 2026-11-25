@@ -1,30 +1,57 @@
 import { useRef } from "react";
+import { motion } from "motion/react";
 import type { Modalidad, Vista } from "../api/tipos";
 import { useT } from "../i18n";
+import altoContraste960 from "../recursos/alto-contraste-960.webp";
+import altoContraste1672 from "../recursos/alto-contraste-1672.webp";
+import bosqueDia960 from "../recursos/bosque-de-dia-960.webp";
+import bosqueDia1672 from "../recursos/bosque-de-dia-1672.webp";
 import fondo960 from "../recursos/bosque-de-luz-960.webp";
 import fondo1672 from "../recursos/bosque-de-luz-1672.webp";
 import { CERRAR_FUERA, useCerrarFuera } from "./dialogos";
 import { Icono } from "./Icono";
 import { Pictograma } from "./Pictograma";
+import { PortadaViva } from "./PortadaViva";
+import type { TemaVisual } from "./Preferencias";
+import { moverLuzPuntero } from "./useLuzPuntero";
+
+const FONDOS_TEMA: Record<TemaVisual, { grande: string; mediano: string }> = {
+  noche: { grande: fondo1672, mediano: fondo960 },
+  dia: { grande: bosqueDia1672, mediano: bosqueDia960 },
+  contraste: { grande: altoContraste1672, mediano: altoContraste960 },
+};
 
 /**
- * Portada «Bosque de luz» (decidida por el propietario el 2026-11-14).
- * El fondo está aprobado: no se sustituye ni se le aplican filtros, capas ni animaciones;
- * conserva su encuadre y su velo oscuro (copia WebP del PNG original en assets/portada/).
- * La portada ocupa exactamente la vista y no lleva pictogramas. Comenzar abre
- * «¿Quién elige el animal?» (Yo elijo / El agente elige), como en la 5.0.
+ * Portada cinematográfica de Zoonauta 6.0 con tres mundos sincronizados al tema visual:
+ * - Bosque de noche: ciervo y búho bajo la luna («Bosque de luz»).
+ * - Bosque de día: jaguar y guacamayo rojo en selva soleada.
+ * - Alto contraste: lobo ártico y búho nival bajo aurora boreal.
+ * Cada tema muestra su imagen WebP de carga instantánea y su video 2K en bucle invisible
+ * (desactivable al instante con «Reducir movimiento»).
  */
 interface Props {
   vista: Vista;
+  tema: TemaVisual;
+  reducido: boolean;
+  onVideoActivo?: (activo: boolean) => void;
   onComenzar: (modalidad: Modalidad) => void;
   onAbrirModalidad: () => void;
   onCerrarModalidad: () => void;
 }
 
-export function Portada({ vista, onComenzar, onAbrirModalidad, onCerrarModalidad }: Props) {
+export function Portada({
+  vista,
+  tema,
+  reducido,
+  onVideoActivo,
+  onComenzar,
+  onAbrirModalidad,
+  onCerrarModalidad,
+}: Props) {
   const { t } = useT();
   const selector = useRef<HTMLDialogElement>(null);
   useCerrarFuera(selector);
+  const fondo = FONDOS_TEMA[tema];
 
   // Los pictogramas del selector pesan ~500 KB cada uno: se piden solo cuando hay
   // intención de pulsar Comenzar (puntero o foco), sin competir con la carga inicial.
@@ -44,11 +71,11 @@ export function Portada({ vista, onComenzar, onAbrirModalidad, onCerrarModalidad
   };
 
   return (
-    <section className="portada" aria-labelledby="titulo-pantalla">
+    <section className="portada" data-tema={tema} aria-labelledby="titulo-pantalla">
       <img
         className="portada-paisaje"
-        src={fondo1672}
-        srcSet={`${fondo960} 960w, ${fondo1672} 1672w`}
+        src={fondo.grande}
+        srcSet={`${fondo.mediano} 960w, ${fondo.grande} 1672w`}
         sizes="max(100vw, 177.7vh)"
         width={1672}
         height={941}
@@ -57,26 +84,55 @@ export function Portada({ vista, onComenzar, onAbrirModalidad, onCerrarModalidad
         fetchPriority="high"
         decoding="async"
       />
+      <PortadaViva tema={tema} poster={fondo.grande} reducido={reducido} onVideoActivo={onVideoActivo} />
       <div className="portada-velo" aria-hidden="true" />
 
       <div className="portada-bienvenida">
-        <p className="portada-introduccion">{t("Un bosque que cobra vida")}</p>
-        <h1 id="titulo-pantalla" tabIndex={-1}>
+        <motion.p
+          className="portada-introduccion"
+          initial={reducido ? false : { opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {t("Un bosque que cobra vida")}
+        </motion.p>
+        <motion.h1
+          id="titulo-pantalla"
+          tabIndex={-1}
+          initial={reducido ? false : { opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.52, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
+        >
           {t("Descubre el")} <span>{t("bosque de luz.")}</span>
-        </h1>
-        <p className="portada-descripcion">{t("Elige un animal. Sigue las pistas y descubre dónde vive.")}</p>
-        <button
+        </motion.h1>
+        <motion.p
+          className="portada-descripcion"
+          initial={reducido ? false : { opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.48, delay: 0.13, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {t("Elige un animal. Sigue las pistas y descubre dónde vive.")}
+        </motion.p>
+        <motion.button
           type="button"
           className="portada-comenzar"
           aria-haspopup="dialog"
+          initial={reducido ? false : { opacity: 0, y: 14, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.48, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          whileHover={reducido ? undefined : { scale: 1.028 }}
+          whileTap={reducido ? undefined : { scale: 0.965 }}
           onClick={abrirSelector}
           onPointerEnter={precargarSelector}
+          onPointerMove={moverLuzPuntero}
           onFocus={precargarSelector}
           onTouchStart={precargarSelector}
         >
-          <Icono nombre="reproducir" />
+          <span className="comenzar-icono" aria-hidden="true">
+            <Icono nombre="reproducir" />
+          </span>
           <span>{t("Comenzar")}</span>
-        </button>
+        </motion.button>
       </div>
 
       <dialog
@@ -99,13 +155,16 @@ export function Portada({ vista, onComenzar, onAbrirModalidad, onCerrarModalidad
               type="button"
               className="opcion-modalidad"
               autoFocus={i === 0}
+              onPointerMove={moverLuzPuntero}
               onClick={() => {
                 selector.current?.close();
                 onComenzar(modo);
               }}
             >
               {/* Diferida: el diálogo cerrado no debe descargar ~1 MB al abrir la portada. */}
-              <Pictograma id={picto} datos={vista.pictogramas[picto]} perezosa />
+              <span className="opcion-modalidad-escena">
+                <Pictograma id={picto} datos={vista.pictogramas[picto]} perezosa />
+              </span>
               <span>{t(etiqueta)}</span>
             </button>
           ))}

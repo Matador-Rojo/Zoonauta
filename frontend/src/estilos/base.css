@@ -211,13 +211,11 @@ p {
   border-color: var(--expedicion);
 }
 /* Respuesta al pulsar: una leve compresión, solo con movimiento permitido. */
-@media (prefers-reduced-motion: no-preference) {
-  :root[data-movimiento="normal"] :is(button, .boton-principal):not(:disabled) {
-    transition-property: background-color, border-color, box-shadow, scale;
-  }
-  :root[data-movimiento="normal"] :is(button):not(:disabled):active {
-    scale: 0.97;
-  }
+:root[data-movimiento="normal"] :is(button, .boton-principal):not(:disabled) {
+  transition-property: background-color, border-color, box-shadow, scale;
+}
+:root[data-movimiento="normal"] :is(button):not(:disabled):active {
+  scale: 0.97;
 }
 
 /* --- Cabecera --- */

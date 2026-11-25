@@ -31,7 +31,6 @@ GRUPOS = {
 }
 # Compatibilidad con el nombre anterior del grupo de pictogramas.
 CARPETA = GRUPOS["pictogramas"]["carpeta"]
-LADO = GRUPOS["pictogramas"]["lado"]
 
 
 def huella(ruta: Path) -> str:

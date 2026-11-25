@@ -77,7 +77,7 @@ class Idiomas(unittest.TestCase):
         self.assertEqual("COMPLETADA", self.actuar("continuar")["vista"]["fase"])
 
     def test_idioma_invalido_y_pantalla_antigua_no_alteran_idioma(self):
-        for idioma in (None, [], "pt", "en", True):
+        for idioma in (None, [], "pt", "fr", True):
             with self.assertRaises(ValueError):
                 self.s.cambiar_idioma(self.entrada(idioma=idioma))
         e = self.entrada(idioma="pt-BR")
@@ -87,7 +87,11 @@ class Idiomas(unittest.TestCase):
         self.assertEqual("es", self.s.idioma)
 
     def test_pregunta_de_modalidad_se_lee_sin_alterar_la_partida(self):
-        for idioma, pregunta in [("es", "¿Quién elige el animal?"), ("pt-BR", "Quem escolhe o animal?")]:
+        for idioma, pregunta in [
+            ("es", "¿Quién elige el animal?"),
+            ("pt-BR", "Quem escolhe o animal?"),
+            ("en", "Who chooses the animal?"),
+        ]:
             self.s.cambiar_idioma(self.entrada(idioma=idioma))
             antes = deepcopy(self.s.revision_tecnica())
             self.assertEqual(pregunta, self.s.texto_voz(self.entrada(idioma=idioma, contexto="modalidad")))
@@ -156,7 +160,7 @@ class HTTP(unittest.TestCase):
         self.c.request("GET", "/api/voz/config")
         r = self.c.getresponse(); configuracion = json.loads(r.read())
         self.assertEqual([], configuracion["voces"])
-        self.assertEqual({"es", "pt-BR"}, set(configuracion["grabadas"]))
+        self.assertEqual({"es", "pt-BR", "en"}, set(configuracion["grabadas"]))
 
 
 if __name__ == "__main__":

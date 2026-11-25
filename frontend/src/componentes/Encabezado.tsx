@@ -1,5 +1,7 @@
 import type { Vista } from "../api/tipos";
 import { useT } from "../i18n";
+import { NumeroAnimado } from "./NumeroAnimado";
+import { SenderoProgreso } from "./SenderoProgreso";
 
 /** Rótulo, título de la pantalla y avance real de la partida (el servidor es la fuente). */
 export function Encabezado({
@@ -7,14 +9,18 @@ export function Encabezado({
   titulo,
   subtitulo,
   etiqueta,
+  reducido = false,
 }: {
   vista: Vista;
   titulo: string;
   subtitulo?: string;
   etiqueta?: string;
+  reducido?: boolean;
 }) {
   const { t } = useT();
   const { completados, total } = vista.progreso;
+  const plantilla = t("{n} de {total} completados", { n: "__N__", total });
+  const partes = plantilla.split("__N__");
   return (
     <header className="encabezado-pantalla">
       <div className="encabezado-texto">
@@ -25,8 +31,12 @@ export function Encabezado({
         {subtitulo && <p className="subtitulo">{t(subtitulo)}</p>}
       </div>
       <div className="progreso">
-        <span className="progreso-texto">{t("{n} de {total} completados", { n: completados, total })}</span>
-        <progress max={total} value={completados} aria-label={t("Progreso de la partida")} />
+        <span className="progreso-texto">
+          {partes[0]}
+          <NumeroAnimado valor={completados} reducido={reducido} />
+          {partes[1] ?? ""}
+        </span>
+        <SenderoProgreso completados={completados} total={total} etiquetaAria={t("Progreso de la partida")} />
       </div>
     </header>
   );

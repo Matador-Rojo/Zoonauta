@@ -129,20 +129,15 @@ const caso = async (nombre, fn) => { await fn(); casos.push(nombre); };
       await page.keyboard.press('Escape');
     });
 
-    await caso('sin conexión con la voz: aviso persistente y la partida sigue', async () => {
+    await caso('sin conexión con la voz: no bloquea con notificaciones y la partida sigue', async () => {
       estado.fallo = true;
       await repetir();
-      const aviso = page.getByRole('alert');
-      await aviso.waitFor();
-      assert.match(await aviso.textContent(), /No se pudo reproducir la voz/);
       await page.waitForTimeout(500);
-      assert.equal(await aviso.count(), 1, 'el aviso no desaparece solo');
+      assert.equal(await page.getByRole('alert').count(), 0, 'no aparecen notificaciones emergentes');
       estado.fallo = false;
       const mensaje = await page.locator('#mensaje').textContent();
       await page.locator('button[data-control="ayuda"]').click();
       await page.waitForFunction(t => document.querySelector('#mensaje').textContent !== t, mensaje);
-      await aviso.getByRole('button', {name: 'Cerrar notificación'}).click();
-      assert.equal(await page.getByRole('alert').count(), 0);
     });
 
     await caso('Preferencias: una sola voz (Marcela) y bloqueada en pt-BR', async () => {

@@ -16,6 +16,30 @@ from codigo.nucleo.registro import Registro
 from codigo.respuestas.generador import GeneradorRespuestas
 
 
+# Familias visuales claramente diferenciables para niños (los 48 hábitats agrupados en 8 macro-entornos).
+FAMILIA_HABITAT: dict[str, str] = {
+    **{f"H{i:02d}": "BOSQUE" for i in range(1, 9)},
+    **{f"H{i:02d}": "SABANA_MATORRAL" for i in range(9, 17)},
+    "H17": "DESIERTO", "H18": "DESIERTO", "H19": "DESIERTO",
+    "H20": "MONTANA_CUEVA", "H21": "MONTANA_CUEVA",
+    "H22": "HIELO_POLAR",
+    **{f"H{i:02d}": "AGUA_DULCE" for i in range(23, 33)},
+    **{f"H{i:02d}": "MAR_OCEANO" for i in range(33, 41)},
+    **{f"H{i:02d}": "COSTA_PLAYA" for i in range(41, 49)},
+}
+FAMILIAS_ACUATICAS = {"AGUA_DULCE", "MAR_OCEANO", "COSTA_PLAYA"}
+
+
+def _similitud_rasgos(rasgos_a: dict, rasgos_b: dict) -> int:
+    """Cuenta cuántos rasgos ecológicos coinciden entre dos hábitats (0 = máximo contraste)."""
+    comunes = 0
+    for k, va in rasgos_a.items():
+        vb = rasgos_b.get(k)
+        if vb is not None and va[0] == vb[0]:
+            comunes += 1
+    return comunes
+
+
 class GestorPartida:
     def __init__(self, banco: BancoDatos, retos: int | None = None, politica: str | None = None,
                  orden_escenarios: list[str] | None = None, origen: str = "CONSOLA_MANUAL",
@@ -23,12 +47,16 @@ class GestorPartida:
                  motor: MotorGuia | MotorPistas | MotorAgente | MotorID3Opciones | None = None,
                  traza_completa: bool = True,
                  ayuda_en_pendiente: bool = False, cantidad_opciones: int = 8,
-                 semilla_opciones: int | str | None = None):
+                 semilla_opciones: int | str | None = None,
+                 modo_opciones: str = "afinidad"):
         self.banco = banco
         if type(cantidad_opciones) is not int or cantidad_opciones not in (2, 4, 8):
             raise ValueError("Selecciona 2, 4 u 8 hábitats.")
+        if modo_opciones not in ("afinidad", "aleatorio_facil"):
+            raise ValueError(f"Modo de opciones no reconocido: {modo_opciones}.")
         self.cantidad_opciones = cantidad_opciones
         self.semilla_opciones = semilla_opciones
+        self.modo_opciones = modo_opciones
         self.N = banco.configuracion["retos_por_partida"] if retos is None else retos
         if type(self.N) is not int or not 1 <= self.N <= 48:
             raise ValueError("La cantidad de retos debe ser un entero entre 1 y 48.")
@@ -236,6 +264,90 @@ class GestorPartida:
         s.elecciones_reto = []
         s.ayudas_reto = []
 
+    def _seleccionar_opciones_faciles(self, animal_id: str, azar: Random) -> list[str]:
+        """Opciones aleatorias de baja dificultad para niños: máximo contraste visual y ecológico.
+
+        - Nunca incluye distractores de la misma familia visual que los hábitats válidos del animal
+          (p. ej. si el objetivo es un bosque, no aparece ningún otro bosque; si es marino, ningún
+          otro mar/arrecife).
+        - Evita ``afines``, ``contrastes_preferentes`` y rasgos compartidos (agua/clima/relieve).
+        - Pone como máximo un hábitat por familia visual en el tablero (8 familias distintas para
+          hasta 8 tarjetas), priorizando contraste agua vs. tierra en tableros de 2 y 4 opciones.
+        """
+        ficha = self.banco.animales[animal_id]
+        confirmados = list(ficha["habitats_confirmados"][:self.cantidad_opciones])
+        faltan = self.cantidad_opciones - len(confirmados)
+        if faltan <= 0:
+            return confirmados
+
+        evitar = set(confirmados) | set(ficha.get("contrastes_preferentes", ()))
+        familias_objetivo: set[str] = set()
+        rasgos_objetivo: list[dict] = []
+        for h_id in confirmados:
+            evitar.update(self.banco.habitats[h_id].get("afines", ()))
+            fam = FAMILIA_HABITAT.get(h_id)
+            if fam:
+                familias_objetivo.add(fam)
+            rasgos_objetivo.append(self.banco.rasgos_habitat.get(h_id, {}))
+
+        objetivo_es_acuatico = bool(familias_objetivo & FAMILIAS_ACUATICAS)
+        todos = list(self.banco.configuracion["orden_habitats"])
+
+        def puntaje_cercania(h: str) -> tuple[int, int, int, float]:
+            """Menor puntaje = más diferente y fácil de distinguir para un niño."""
+            fam = FAMILIA_HABITAT.get(h, h)
+            misma_familia = 1 if fam in familias_objetivo else 0
+            es_afin = 1 if h in evitar else 0
+            rasgos_h = self.banco.rasgos_habitat.get(h, {})
+            similitud = sum(_similitud_rasgos(rasgos_h, ro) for ro in rasgos_objetivo)
+            # En retos acuáticos, preferir primero distractores terrestres (y viceversa)
+            mismo_medio = 1 if (objetivo_es_acuatico and fam in FAMILIAS_ACUATICAS) else 0
+            return (misma_familia, es_afin, similitud + mismo_medio * 2, azar.random())
+
+        # Agrupar candidatos por familia visual distinta al objetivo, excluyendo siempre afines/contrastes
+        por_familia: dict[str, list[str]] = {}
+        for h in todos:
+            if h in evitar:
+                continue
+            fam = FAMILIA_HABITAT.get(h, h)
+            if fam in familias_objetivo:
+                continue
+            por_familia.setdefault(fam, []).append(h)
+
+        # Ordenar los candidatos dentro de cada familia distinta al objetivo
+        familias_ordenadas: list[tuple[tuple[int, int, int, float], str, list[str]]] = []
+        for fam, lista in por_familia.items():
+            evaluados = [(puntaje_cercania(h), h) for h in lista]
+            evaluados.sort(key=lambda item: item[0])
+            mejor_score = evaluados[0][0]
+            familias_ordenadas.append((mejor_score, fam, [h for _, h in evaluados]))
+
+        # Ordenar familias de más diferente a menos diferente (con aleatoriedad en empates)
+        familias_ordenadas.sort(key=lambda item: item[0])
+        elegidos: list[str] = []
+        bloqueados_entre_si: set[str] = set()
+        # Primera pasada: 1 hábitat por cada familia distinta al objetivo, evitando afines entre sí
+        for _, _, candidatos in familias_ordenadas:
+            if len(elegidos) == faltan:
+                break
+            libres = [h for h in candidatos if h not in bloqueados_entre_si]
+            elegido = libres[0] if libres else candidatos[0]
+            elegidos.append(elegido)
+            bloqueados_entre_si.add(elegido)
+            bloqueados_entre_si.update(self.banco.habitats[elegido].get("afines", ()))
+
+        # Segunda pasada si el animal tenía 2+ confirmados en familias distintas y faltan tarjetas para 8:
+        # completar con los hábitats más lejanos de familias que no sean del objetivo.
+        if len(elegidos) < faltan:
+            candidatos_extra = [h for h in todos if h not in confirmados and h not in elegidos]
+            candidatos_extra.sort(key=puntaje_cercania)
+            for h in candidatos_extra:
+                if len(elegidos) == faltan:
+                    break
+                elegidos.append(h)
+
+        return confirmados + elegidos
+
     def _preparar(self, animal_id: str) -> None:
         s = self.estado
         self._limpiar_reto()
@@ -250,7 +362,10 @@ class GestorPartida:
             semilla = int.from_bytes(hashlib.sha256(clave.encode()).digest()[:8], "big")
             azar = Random(semilla)
             if self.banco.ampliado:
-                orden = list(self.banco.opciones_ordenadas[animal_id][:self.cantidad_opciones])
+                if self.modo_opciones == "aleatorio_facil":
+                    orden = self._seleccionar_opciones_faciles(animal_id, azar)
+                else:
+                    orden = list(self.banco.opciones_ordenadas[animal_id][:self.cantidad_opciones])
             else:
                 orden = self.banco.configuracion["orden_habitats"]
                 pendientes = [h for h in orden if self.banco.evaluar(animal_id, h)["estado"] == "PENDIENTE"]

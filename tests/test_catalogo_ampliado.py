@@ -83,3 +83,49 @@ class CatalogoAmpliado(unittest.TestCase):
         gestor.procesar(gestor.crear_evento("ayuda"))
         salida = gestor.procesar(gestor.crear_evento("ayuda"))
         self.assertEqual(("P_SENALAR", "P_H31"), salida.respuesta.pictogramas)
+
+    def test_modo_aleatorio_facil_evita_habitats_afines_y_varia(self):
+        from codigo.nucleo.gestor import FAMILIA_HABITAT, FAMILIAS_ACUATICAS
+        # En la interfaz web (Hito 3), las opciones no confirmadas son aleatorias,
+        # de familias visuales distintas al objetivo y distintas entre sí.
+        for animal in ("A01", "A05", "N012", "N144"):
+            ficha = self.banco.animales[animal]
+            confirmados = set(ficha["habitats_confirmados"])
+            familias_obj = {FAMILIA_HABITAT[h] for h in confirmados}
+            evitar = set(ficha["contrastes_preferentes"])
+            for h_id in confirmados:
+                evitar.update(self.banco.habitats[h_id]["afines"])
+            evitar -= confirmados
+            vistos = []
+            for semilla in (1, 2, 3):
+                g = GestorPartida(self.banco, 1, semilla_opciones=semilla,
+                                  modo_opciones="aleatorio_facil", traza_completa=False)
+                g.procesar(g.crear_evento("iniciar", modalidad="JUGADOR", cantidad_opciones=8))
+                g.procesar(g.crear_evento("elegir_animal", animal_id=animal))
+                g.avanzar_preparacion()
+                opciones = set(g.estado.opciones_habitat)
+                self.assertEqual(8, len(opciones))
+                self.assertTrue(confirmados <= opciones)
+                distractores = opciones - confirmados
+                self.assertEqual(set(), distractores & evitar)
+                self.assertEqual(set(), {FAMILIA_HABITAT[h] for h in distractores} & familias_obj)
+                if len(confirmados) == 1:
+                    self.assertEqual(len(distractores), len({FAMILIA_HABITAT[h] for h in distractores}))
+                vistos.append(frozenset(opciones))
+            self.assertGreater(len(set(vistos)), 1)
+
+        # En tableros de 2 y 4 opciones para animales acuáticos, ningún distractor es acuático.
+        for animal in self.banco.animales:
+            ficha = self.banco.animales[animal]
+            confirmados = set(ficha["habitats_confirmados"])
+            familias_obj = {FAMILIA_HABITAT[h] for h in confirmados}
+            g = GestorPartida(self.banco, 1, semilla_opciones=42,
+                              modo_opciones="aleatorio_facil", traza_completa=False)
+            g.procesar(g.crear_evento("iniciar", modalidad="JUGADOR", cantidad_opciones=4))
+            g.procesar(g.crear_evento("elegir_animal", animal_id=animal))
+            g.avanzar_preparacion()
+            distractores = set(g.estado.opciones_habitat) - confirmados
+            self.assertEqual(set(), {FAMILIA_HABITAT[h] for h in distractores} & familias_obj, animal)
+            self.assertEqual(len(distractores), len({FAMILIA_HABITAT[h] for h in distractores}), animal)
+            if familias_obj <= FAMILIAS_ACUATICAS:
+                self.assertEqual(set(), {FAMILIA_HABITAT[h] for h in distractores} & FAMILIAS_ACUATICAS, animal)

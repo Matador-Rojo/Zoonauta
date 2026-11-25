@@ -26,13 +26,12 @@ from codigo.interfaz import idiomas
 from codigo.nucleo.datos import BancoDatos, RAIZ_PROYECTO
 from codigo.respuestas.generador import GeneradorRespuestas
 
-IDIOMAS_GRABACION = {"es": "es-419", "pt-BR": "pt-BR"}
+IDIOMAS_GRABACION = {"es": "es-419", "pt-BR": "pt-BR", "en": "en"}
 CARPETA_DOCS = RAIZ_PROYECTO / "docs/voz/elevenlabs"
 CSV_CATALOGO = CARPETA_DOCS / "catalogo_voces.csv"
 RESUMEN = CARPETA_DOCS / "resumen_catalogo.json"
 CARPETA_AUDIO = RAIZ_PROYECTO / "assets/voz/grabada"
-EXTENSIONES = (".mp3", ".wav")
-ESTADOS = ("pendiente", "generado", "descargado", "verificado", "rechazado", "usa_duplicado")
+EXTENSIONES = (".m4a", ".mp3", ".wav")
 
 # Créditos por carácter al generar en la web de ElevenLabs (consultado el
 # 2026-11-14). Confirmar en la pantalla de generación: la tarifa puede cambiar.
@@ -83,17 +82,20 @@ def extraer(banco: BancoDatos | None = None) -> list[Locucion]:
     banco = banco or BancoDatos(ampliado=True)
     g = GeneradorRespuestas(banco)
     pt = lambda texto: idiomas.texto(texto, "pt-BR", banco)
+    en = lambda texto: idiomas.texto(texto, "en", banco)
     lista: list[Locucion] = []
 
-    def agregar(id, componentes, categoria, tipo, prioridad, contexto, origen, es, pt_br=None):
+    def agregar(id, componentes, categoria, tipo, prioridad, contexto, origen, es, pt_br=None, en_txt=None):
         lista.append(Locucion(id, componentes, categoria, tipo, prioridad, contexto, origen,
-                              {"es": es, "pt-BR": pt_br if pt_br is not None else pt(es)}))
+                              {"es": es,
+                               "pt-BR": pt_br if pt_br is not None else pt(es),
+                               "en": en_txt if en_txt is not None else en(es)}))
 
     pregunta = "¿Quién elige el animal?"
     agregar("INTERFAZ_MODALIDAD", "interfaz:¿Quién elige el animal?", "pregunta", "fijo", "P1",
             "Al abrir el selector de modalidad (Comenzar).",
             "codigo/interfaz/servicio.py; datos/traducciones_pt_BR.json#interfaz",
-            pregunta, idiomas.PORTUGUES["interfaz"][pregunta])
+            pregunta, idiomas.PORTUGUES["interfaz"][pregunta], idiomas.INGLES["interfaz"][pregunta])
     # El saludo de "Probar voz" no se graba: en la 5.0 ese botón prueba la voz alternativa;
     # en la 6.0 reproduce la grabación del mensaje que está en pantalla.
     for mid, (categoria, contexto) in FIJOS.items():
@@ -173,7 +175,7 @@ def revisar_pronunciacion(texto: str, idioma: str) -> list[str]:
         if ENCLISE.search(texto):
             notas.append("Ênclise (-se/-la): correcta, pero formal en pt-BR hablado; "
                          "decidir en revisión humana sin cambiar el texto aquí.")
-    if texto.startswith(("¡", "Sim!")):
+    if texto.startswith(("¡", "Sim!", "Yes!")):
         notas.append("Exclamación inicial: entonación alegre y breve, sin gritar.")
     if len(re.findall(r"[.!?](\s|$)", texto)) > 1:
         notas.append("Varias oraciones: mantener una pausa breve y natural entre ellas.")

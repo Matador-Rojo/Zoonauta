@@ -1,0 +1,291 @@
+/* Observatorio técnico /revision — estética Atlas Bioluminiscente, autocontenido y CSP-safe. */
+:root {
+  color-scheme: dark;
+  --fondo: #04141f;
+  --panel: linear-gradient(166deg, rgb(14 43 64 / 0.9), rgb(6 23 36 / 0.96));
+  --tinta: #f4fbfd;
+  --suave: #a8c7d4;
+  --cian: #5eead4;
+  --cian-claro: #a5f3fc;
+  --ambar: #fbbf24;
+  --borde: rgb(165 243 252 / 0.16);
+  --borde-fuerte: #4f7d8f;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--tinta);
+  background:
+    radial-gradient(1000px 520px at 88% -8%, rgb(16 74 108 / 0.55) 0, transparent 70%),
+    radial-gradient(880px 480px at -10% 105%, rgb(11 64 78 / 0.45) 0, transparent 70%),
+    var(--fondo);
+}
+.rev-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 1.1rem clamp(1rem, 3vw, 2rem);
+}
+.rev-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--tinta);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+.rev-marca small {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cian-claro);
+}
+.rev-volver {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--borde-fuerte);
+  color: var(--tinta);
+  text-decoration: none;
+  font-weight: 700;
+  background: rgb(10 34 52 / 0.8);
+}
+.rev-volver:hover {
+  border-color: var(--cian);
+}
+
+.rev-contenedor {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem) 3rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.rev-hero,
+.rev-panel {
+  padding: clamp(1.1rem, 2.5vw, 1.75rem);
+  border-radius: 22px;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  box-shadow:
+    inset 0 1px 0 rgb(165 243 252 / 0.16),
+    0 20px 44px -24px rgb(0 4 10 / 0.85);
+}
+.rev-rotulo {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cian);
+}
+.rev-hero h1 {
+  margin: 0 0 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+  line-height: 1.1;
+}
+.rev-nota {
+  margin: 0 0 1.2rem;
+  color: var(--suave);
+  max-width: 70ch;
+}
+.rev-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.rev-btn {
+  min-height: 44px;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+.rev-btn-pri {
+  background: linear-gradient(155deg, #a7fbf0 0%, var(--cian) 50%, #22d3ee 100%);
+  color: #03212b;
+  border-color: rgb(255 255 255 / 0.45);
+}
+.rev-btn-sec {
+  background: rgb(11 38 58 / 0.85);
+  color: var(--tinta);
+  border-color: var(--borde-fuerte);
+}
+.rev-btn:hover {
+  border-color: var(--cian-claro);
+}
+
+.rev-metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  gap: 0.85rem;
+}
+.rev-kpi {
+  padding: 1rem 1.15rem;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  box-shadow: inset 0 1px 0 rgb(165 243 252 / 0.14);
+}
+.rev-kpi-etiqueta {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--suave);
+}
+.rev-kpi-valor {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--cian-claro);
+  word-break: break-word;
+}
+
+.rev-panel-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.rev-panel h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+}
+.rev-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.rev-chip {
+  min-height: 38px;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--borde-fuerte);
+  background: rgb(9 31 48 / 0.8);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.rev-chip[aria-pressed="true"] {
+  background: var(--cian);
+  border-color: #ffffff;
+  color: #03212b;
+}
+
+.rev-linea {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+.rev-vacio {
+  padding: 1.2rem;
+  border-radius: 14px;
+  border: 1px dashed var(--borde-fuerte);
+  color: var(--suave);
+  text-align: center;
+}
+.rev-evento {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  background: rgb(5 21 34 / 0.78);
+  border: 1px solid var(--borde);
+}
+.rev-evento[data-tipo="CONFIRMACION"] {
+  border-color: rgb(94 234 212 / 0.5);
+}
+.rev-evento[data-tipo="AYUDA"] {
+  border-color: rgb(251 191 36 / 0.48);
+}
+.rev-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgb(94 234 212 / 0.16);
+  color: var(--cian-claro);
+}
+.rev-evento[data-tipo="AYUDA"] .rev-badge {
+  background: rgb(251 191 36 / 0.18);
+  color: #fde68a;
+}
+.rev-evento[data-tipo="CONFIRMACION"] .rev-badge {
+  background: rgb(52 211 153 / 0.22);
+  color: #a7f3d0;
+}
+.rev-evento-cuerpo strong {
+  display: block;
+  font-size: 0.96rem;
+}
+.rev-evento-meta {
+  display: block;
+  font-size: 0.84rem;
+  color: var(--suave);
+}
+.rev-hora {
+  font-size: 0.8rem;
+  color: var(--suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.rev-json summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+#datos {
+  margin: 0.9rem 0 0;
+  padding: 1rem;
+  border-radius: 14px;
+  background: #020d15;
+  border: 1px solid var(--borde);
+  color: #cdebf5;
+  font-size: 0.85rem;
+  overflow: auto;
+  max-height: 28rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--cian-claro);
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .rev-evento {
+    grid-template-columns: 1fr;
+  }
+}

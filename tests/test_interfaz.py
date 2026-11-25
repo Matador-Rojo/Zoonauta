@@ -206,6 +206,147 @@ class PruebasInterfaz(unittest.TestCase):
             self.assertTrue(p["licencia"])
             self.assertTrue(p["autor_imagen"])
 
+    def test_servidor_listo_para_web_https_cache_gzip_y_healthz(self):
+        import gzip
+        from tempfile import TemporaryDirectory
+        from threading import Thread
+        from urllib.error import HTTPError
+        from urllib.request import Request, urlopen
+        from codigo.interfaz.servidor import Servidor
+
+        with TemporaryDirectory() as carpeta:
+            srv = Servidor(("127.0.0.1", 0), registros=Path(carpeta), ampliado=True)
+            Thread(target=srv.serve_forever, daemon=True).start()
+            base = f"http://127.0.0.1:{srv.server_port}"
+            try:
+                # 1. /healthz
+                with urlopen(f"{base}/healthz") as r:
+                    self.assertEqual(r.status, 200)
+                    self.assertTrue(json.loads(r.read())["ok"])
+
+                # 2. Compresión gzip en JSON grande (/api/vista)
+                req_gz = Request(f"{base}/api/vista", headers={"Accept-Encoding": "gzip", "X-Forwarded-Proto": "https"})
+                with urlopen(req_gz) as r:
+                    self.assertEqual(r.headers.get("Content-Encoding"), "gzip")
+                    self.assertIn("Secure", r.headers.get("Set-Cookie", ""))
+                    cookie = r.headers.get("Set-Cookie", "").split(";", 1)[0]
+                    vista = json.loads(gzip.decompress(r.read()))
+
+                # 3. POST aceptado con Origin HTTPS (Hostinger / proxy reverso) y bloqueado si es otro dominio
+                body = json.dumps({"tipo": "iniciar", "payload": {"modalidad": "AGENTE", "retos": 1},
+                                   "evento_id": uuid4().hex, "revision": vista["revision"],
+                                   "sesion_id": vista["sesion_id"], "reto_id": vista["reto_id"]}).encode()
+                req_https = Request(
+                    f"{base}/api/accion",
+                    data=body,
+                    headers={
+                        "Content-Type": "application/json",
+                        "Cookie": cookie,
+                        "Origin": f"https://127.0.0.1:{srv.server_port}",
+                        "X-Forwarded-Proto": "https",
+                    },
+                )
+                with urlopen(req_https) as r:
+                    self.assertEqual(r.status, 200)
+                    self.assertTrue(json.loads(r.read())["aceptada"])
+
+                req_malo = Request(
+                    f"{base}/api/accion",
+                    data=body,
+                    headers={"Content-Type": "application/json", "Origin": "https://malicioso.example"},
+                )
+                with self.assertRaises(HTTPError) as ctx:
+                    urlopen(req_malo)
+                self.assertEqual(ctx.exception.code, 403)
+
+                # 4. ETag + 304 Not Modified en imágenes cacheadas
+                with urlopen(f"{base}/habitats/H01.webp") as r:
+                    etag = r.headers.get("ETag")
+                    self.assertTrue(etag)
+                    self.assertIn("max-age=604800", r.headers.get("Cache-Control", ""))
+                req_304 = Request(f"{base}/habitats/H01.webp", headers={"If-None-Match": etag})
+                with self.assertRaises(HTTPError) as ctx304:
+                    urlopen(req_304)
+                self.assertEqual(ctx304.exception.code, 304)
+
+                # 5. Streaming Range 206 de video de portada
+                req_range = Request(f"{base}/portada/bosque-de-luz.mp4", headers={"Range": "bytes=0-1023"})
+                with urlopen(req_range) as r:
+                    self.assertEqual(r.status, 206)
+                    self.assertEqual(len(r.read()), 1024)
+            finally:
+                srv.shutdown()
+                srv.server_close()
+
+    def test_adaptador_wsgi_pythonanywhere_https_y_voz(self):
+        import gzip
+        import io
+        from tempfile import TemporaryDirectory
+        from codigo.interfaz.wsgi import crear_aplicacion
+
+        with TemporaryDirectory() as carpeta:
+            app = crear_aplicacion(registros=Path(carpeta), ampliado=True)
+
+            def llamar(metodo, ruta, *, body=b"", headers=None, esquema="https"):
+                env = {
+                    "REQUEST_METHOD": metodo,
+                    "PATH_INFO": ruta,
+                    "QUERY_STRING": "",
+                    "SERVER_NAME": "matadorrojo.pythonanywhere.com",
+                    "SERVER_PORT": "443",
+                    "wsgi.url_scheme": esquema,
+                    "wsgi.input": io.BytesIO(body),
+                    "CONTENT_LENGTH": str(len(body)),
+                }
+                for k, v in (headers or {}).items():
+                    if k.lower() == "content-type":
+                        env["CONTENT_TYPE"] = v
+                    else:
+                        env["HTTP_" + k.upper().replace("-", "_")] = v
+                resp = {}
+                def start(status, hdrs):
+                    resp["status"] = status
+                    resp["headers"] = dict(hdrs)
+                datos = b"".join(app(env, start))
+                return resp["status"], resp["headers"], datos
+
+            st, _, raw = llamar("GET", "/healthz")
+            self.assertTrue(st.startswith("200"))
+            self.assertTrue(json.loads(raw)["ok"])
+
+            st, hdrs, raw = llamar("GET", "/api/vista", headers={"Accept-Encoding": "gzip"})
+            self.assertTrue(st.startswith("200"))
+            self.assertEqual(hdrs.get("Content-Encoding"), "gzip")
+            self.assertIn("Secure", hdrs.get("Set-Cookie", ""))
+            cookie = hdrs["Set-Cookie"].split(";", 1)[0]
+            vista = json.loads(gzip.decompress(raw))
+
+            accion = json.dumps({
+                "tipo": "iniciar", "payload": {"modalidad": "AGENTE", "retos": 1},
+                "evento_id": uuid4().hex, "revision": vista["revision"],
+                "sesion_id": vista["sesion_id"], "reto_id": vista["reto_id"],
+            }).encode()
+            st, _, raw = llamar(
+                "POST", "/api/accion", body=accion,
+                headers={
+                    "Content-Type": "application/json",
+                    "Cookie": cookie,
+                    "Origin": "https://matadorrojo.pythonanywhere.com",
+                },
+            )
+            self.assertTrue(st.startswith("200"))
+            self.assertTrue(json.loads(raw)["aceptada"])
+
+            st, hdrs, _ = llamar("GET", "/habitats/H01.webp")
+            self.assertTrue(st.startswith("200"))
+            st304, _, body304 = llamar("GET", "/habitats/H01.webp", headers={"If-None-Match": hdrs["ETag"]})
+            self.assertTrue(st304.startswith("304"))
+            self.assertEqual(body304, b"")
+
+            st206, _, trozo = llamar("GET", "/portada/bosque-de-luz.mp4", headers={"Range": "bytes=0-511"})
+            self.assertTrue(st206.startswith("206"))
+            self.assertEqual(len(trozo), 512)
+
 
 if __name__ == "__main__":
     unittest.main()

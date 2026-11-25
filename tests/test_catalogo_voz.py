@@ -41,10 +41,13 @@ class Inventario(unittest.TestCase):
     def test_inventario_exhaustivo_y_exacto_en_ambos_idiomas(self):
         es = {f["texto"] for f in self.tabla if f["idioma"] == "es-419"}
         pt = {f["texto"] for f in self.tabla if f["idioma"] == "pt-BR"}
+        en = {f["texto"] for f in self.tabla if f["idioma"] == "en"}
         emitibles = self.emitibles()
         self.assertEqual(emitibles, es)
         self.assertEqual({idiomas.texto(t, "pt-BR", self.banco) if t != "¿Quién elige el animal?"
                           else idiomas.PORTUGUES["interfaz"][t] for t in emitibles}, pt)
+        self.assertEqual({idiomas.texto(t, "en", self.banco) if t != "¿Quién elige el animal?"
+                          else idiomas.INGLES["interfaz"][t] for t in emitibles}, en)
 
     def test_ids_y_conteos(self):
         ids = [loc.id for loc in self.locuciones]
@@ -60,7 +63,7 @@ class Inventario(unittest.TestCase):
         self.assertEqual(32, cuenta["apoyo_con_pista_rasgo"])
         self.assertTrue({p for p in self.banco.variantes} <= set(ids))
         for f in self.tabla:
-            self.assertRegex(f["archivo"], r"^(es-419|pt-BR)/[A-Z0-9_]+\.mp3$")
+            self.assertRegex(f["archivo"], r"^(es-419|pt-BR|en)/[A-Z0-9_]+\.mp3$")
 
     def test_solo_se_reutiliza_un_mensaje_identico(self):
         for idioma in catalogo_voz.IDIOMAS_GRABACION.values():
@@ -153,7 +156,7 @@ class HTTPGrabada(unittest.TestCase):
             self.assertEqual(400, r.status)
             self.c.request("GET", "/api/voz/config", headers={"Cookie": self.cookie})
             config = json.loads(self.c.getresponse().read())
-            self.assertEqual({"es": 1, "pt-BR": 0}, config["grabadas"])
+            self.assertEqual({"es": 1, "pt-BR": 0, "en": 0}, config["grabadas"])
 
     def test_grabacion_permite_reproducir_blob_y_rechaza_pantalla_antigua(self):
         with TemporaryDirectory() as tmp, patch.object(voz_grabada, "CARPETA_AUDIO", Path(tmp)):

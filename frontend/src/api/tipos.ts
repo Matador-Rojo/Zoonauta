@@ -1,7 +1,7 @@
 // Contrato de /api/vista. El servidor Python es la autoridad de reglas y progreso;
 // el frontend solo presenta la vista y envía acciones con su revisión.
 
-export type Idioma = "es" | "pt-BR";
+export type Idioma = "es" | "pt-BR" | "en";
 
 export type Fase =
   "INICIO" | "SELECCION_ANIMAL" | "ESPERANDO_RESPUESTA" | "RETO_RESUELTO" | "PAUSADA" | "COMPLETADA" | "ABANDONADA";
@@ -69,3 +69,9 @@ export interface ResultadoAccion {
 }
 
 export type Diccionarios = Record<Idioma, Record<string, string>>;
+
+export interface VozGrabadaInfo {
+  id: string;
+  etiqueta: string;
+  cantidad: number;
+}

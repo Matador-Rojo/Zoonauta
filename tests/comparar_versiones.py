@@ -1,7 +1,7 @@
 """Compara la 5.0 («/») y la 6.0 («/v6/») pantalla por pantalla, lado a lado.
 
-Es la comprobación obligatoria antes de presentar un cambio visual como «mejora»
-(ver CLAUDE.md): obliga a mirar lo anterior y lo nuevo con el mismo estado de partida.
+Es la comprobación obligatoria antes de presentar un cambio visual como «mejora»:
+obliga a mirar lo anterior y lo nuevo con el mismo estado de partida.
 Crea una sesión real en cada pantalla, captura ambas versiones en escritorio y móvil y
 guarda un PNG por pareja con la 5.0 a la izquierda y la 6.0 a la derecha.
 

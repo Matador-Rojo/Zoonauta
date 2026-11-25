@@ -119,7 +119,11 @@ async function axe(page, nombre) {
       await quieta.getByRole('button', {name: 'Preferencias'}).click();
       const interruptor = quieta.getByRole('switch', {name: /Reducir movimiento/});
       assert.ok(await interruptor.isChecked());
-      assert.ok(await interruptor.isDisabled());
+      assert.equal(await interruptor.isDisabled(), false, 'el usuario puede activar animaciones manualmente');
+      await interruptor.uncheck();
+      assert.equal(await quieta.evaluate(() => document.documentElement.dataset.movimiento), 'normal');
+      await interruptor.check();
+      assert.equal(await quieta.evaluate(() => document.documentElement.dataset.movimiento), 'reducido');
       await quieta.keyboard.press('Escape');
     });
 

@@ -1,7 +1,7 @@
-/* Portada «Bosque de luz» (6.0). Fondo aprobado sin filtros, capas ni animaciones; la
-   interfaz se adapta al fondo. Ocupa exactamente la vista: sin desplazamiento vertical ni
-   horizontal, también con Preferencias o «¿Quién elige?» abiertos (son diálogos encima).
-   Sin pictogramas en la portada. Movimiento: solo una entrada breve del texto. */
+/* Portada «Bosque de luz» — Atlas Bioluminiscente (6.0).
+   El fondo aprobado se conserva puro (sin filtros, capas ni animaciones sobre la imagen).
+   La atmósfera viva (<canvas class="bosque-vivo">) y la tipografía editorial Fraunces
+   elevan la escena sin provocar desplazamiento ni alterar el encuadre en ninguna vista. */
 
 .portada {
   position: relative;
@@ -12,9 +12,13 @@
   flex-direction: column;
   color: #fff;
   background: var(--noche);
+  overflow: hidden;
 }
-/* El fondo y el velo cubren la vista; no recortan contenido (solo se posicionan). */
+
+/* El fondo base, la escena en video real y el velo cubren la vista sin recortar contenido. */
 .portada-paisaje,
+.portada-viva-capa,
+.portada-video,
 .portada-velo {
   position: absolute;
   inset: 0;
@@ -26,170 +30,372 @@
   object-fit: cover;
   object-position: center;
 }
-.portada-velo {
+.portada-viva-capa {
   z-index: -2;
-  background-color: rgb(0 0 0 / 0.2);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.55s ease-out;
+}
+.portada-viva-capa[data-listo="true"] {
+  opacity: 1;
+}
+.portada-video {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.35s ease-in-out;
+}
+.portada-video[data-visible="true"] {
+  opacity: 1;
+}
+.portada-velo {
+  z-index: -1;
   background-image:
-    linear-gradient(180deg, rgb(0 9 15 / 0.44), rgb(0 9 15 / 0.08) 24%, rgb(0 9 15 / 0.08) 78%, rgb(0 9 15 / 0.28)),
-    radial-gradient(ellipse at 21% 44%, rgb(1 9 14 / 0.76), rgb(1 9 14 / 0.42) 37%, transparent 67%);
+    linear-gradient(
+      180deg,
+      rgb(1 10 18 / 0.44) 0%,
+      rgb(1 10 18 / 0) 20%,
+      rgb(1 10 18 / 0) 80%,
+      rgb(1 10 18 / 0.32) 100%
+    ),
+    radial-gradient(
+      ellipse 56% 80% at 17% 50%,
+      rgb(1 10 18 / 0.84) 0%,
+      rgb(1 10 18 / 0.5) 42%,
+      rgb(1 10 18 / 0.08) 68%,
+      transparent 100%
+    );
 }
 
-/* En la portada la cabecera queda encima del bosque: solo logo, nombre y Preferencias. */
+/* En la portada la cabecera flota sobre el bosque con presencia limpia y editorial. */
 .cabecera[data-fase="INICIO"] {
   position: absolute;
   inset: 0 0 auto;
-  padding: clamp(10px, 2.4vh, 24px) clamp(16px, 5vw, 80px);
+  padding: clamp(12px, 2.5vh, 26px) clamp(16px, 5vw, 80px);
   color: #fff;
 }
 .cabecera[data-fase="INICIO"] .marca {
-  font-size: 1.8rem;
-  letter-spacing: -0.04em;
+  font-size: 1.85rem;
+  letter-spacing: -0.035em;
+  text-shadow: 0 2px 14px rgb(1 12 20 / 0.8);
 }
-.cabecera[data-fase="INICIO"] .marca img {
+.cabecera[data-fase="INICIO"] .marca img,
+.cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
   width: 52px;
   height: 52px;
+  filter: drop-shadow(0 0 12px rgb(45 212 191 / 0.34));
 }
 .cabecera[data-fase="INICIO"] .marca-subtitulo {
   display: none;
 }
 .cabecera[data-fase="INICIO"] .boton-texto {
-  border-color: var(--expedicion);
-  background: rgb(4 20 31 / 0.72);
-  color: #fff;
+  padding: 0.55rem 1.25rem;
+  border: 1.5px solid rgb(94 234 212 / 0.55);
+  background: linear-gradient(180deg, rgb(8 30 46 / 0.78), rgb(4 19 30 / 0.84));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.16),
+    0 10px 28px -10px rgb(0 8 15 / 0.85);
+  backdrop-filter: blur(12px);
+  color: #f4fbfd;
+}
+.cabecera[data-fase="INICIO"] .boton-texto svg {
+  color: var(--expedicion);
 }
 .cabecera[data-fase="INICIO"] .boton-texto:hover {
-  background: rgb(8 34 53 / 0.92);
+  border-color: var(--expedicion-claro);
+  background: linear-gradient(180deg, rgb(12 44 66 / 0.92), rgb(6 27 42 / 0.94));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.22),
+    0 0 20px rgb(94 234 212 / 0.24),
+    0 12px 30px -10px rgb(0 8 15 / 0.9);
 }
 
 .portada-bienvenida {
+  position: relative;
+  z-index: 3;
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: min(100%, 56rem);
-  padding: 4.5rem 1.5rem clamp(0.8rem, 4vh, 3rem) clamp(1.5rem, 6.7vw, 7rem);
+  width: min(100%, 58rem);
+  padding: 4.5rem 1.5rem clamp(1rem, 4.5vh, 3.2rem) clamp(1.5rem, 6.7vw, 7rem);
 }
 .portada-introduccion {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.85rem;
-  margin: 0 0 clamp(0.5rem, 1.6vh, 1.2rem);
-  font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1.2rem);
+  margin: 0 0 clamp(0.6rem, 1.8vh, 1.25rem);
+  font-size: clamp(0.78rem, 0.7rem + 0.36vw, 1.05rem);
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--expedicion-claro);
-  text-shadow: 0 2px 10px #001018;
+  text-shadow:
+    0 0 14px rgb(94 234 212 / 0.38),
+    0 2px 10px #001018;
 }
 .portada-introduccion::before {
   content: "";
-  flex: 0 0 clamp(1.5rem, 3.2vw, 3.4rem);
-  border-top: 0.13rem solid currentColor;
+  flex: 0 0 clamp(1.75rem, 3.5vw, 3.6rem);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--expedicion));
+  box-shadow: 0 0 10px rgb(94 234 212 / 0.65);
 }
+
 .portada h1 {
   margin: 0;
-  font: 700 clamp(2.4rem, min(4.2rem + 1.6vw, 12.5vh), 6.2rem) / 0.96 var(--serif);
-  letter-spacing: -0.045em;
-  color: #fbfeff;
-  text-shadow: 0 0.15rem 0.9rem #020d14d9;
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(2.5rem, min(4.3rem + 1.8vw, 12.6vh), 6.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  word-spacing: 0.04em;
+  color: #f8feff;
+  text-shadow:
+    0 4px 26px rgb(1 12 20 / 0.88),
+    0 1px 4px rgb(1 12 20 / 0.9);
   text-wrap: initial;
 }
 .portada h1 span {
   display: block;
-  color: var(--expedicion);
+  color: #79f4e2;
+  font-weight: 700;
   text-shadow:
-    0 0 0.12em rgb(94 234 212 / 0.35),
-    0 0 0.33em rgb(34 211 238 / 0.22),
-    0 0.1em 0.22em #01121bc9;
+    0 0 0.16em rgb(94 234 212 / 0.45),
+    0 0 0.44em rgb(34 211 238 / 0.28),
+    0 0.1em 0.24em rgb(1 16 25 / 0.85);
 }
+
 .portada-descripcion {
   max-width: 34ch;
-  margin: clamp(0.6rem, 1.8vh, 1.4rem) 0 clamp(0.8rem, 2.6vh, 2rem);
-  font-size: clamp(1.1rem, 0.93rem + 0.48vw, 1.5rem);
-  line-height: 1.4;
-  color: #fff;
+  margin: clamp(0.75rem, 2vh, 1.5rem) 0 clamp(1rem, 2.8vh, 2.2rem);
+  font-size: clamp(1.08rem, 0.92rem + 0.48vw, 1.45rem);
+  line-height: 1.48;
+  color: #eef9fc;
   text-shadow:
-    0 2px 8px #001018,
-    0 2px 16px #001018;
+    0 2px 8px rgb(0 12 20 / 0.92),
+    0 4px 20px rgb(0 12 20 / 0.85);
 }
+
 .portada-comenzar {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.9rem;
-  min-height: 56px;
-  padding: 0.7em 1.7em;
-  border: 2px solid var(--expedicion-claro);
+  gap: 0.85rem;
+  min-height: 58px;
+  padding: 0.62em 1.75em 0.62em 0.85em;
+  border: 1.5px solid #c9fbf4;
   border-radius: 999px;
-  background: linear-gradient(164deg, #8ff7e6 0%, var(--expedicion) 45%, var(--expedicion-oscuro) 100%);
+  background: linear-gradient(155deg, #b8fdf2 0%, #5eead4 42%, #22d3ee 100%);
   box-shadow:
-    inset 0 0 0.7rem rgb(255 255 255 / 0.45),
-    0 0 1.45rem rgb(34 211 238 / 0.45),
-    0 0.45rem 1.65rem rgb(1 14 22 / 0.7);
+    inset 0 2px 2px rgb(255 255 255 / 0.65),
+    inset 0 -3px 10px rgb(6 78 94 / 0.25),
+    0 0 26px rgb(45 212 191 / 0.46),
+    0 12px 32px -6px rgb(1 12 20 / 0.82);
   color: var(--tinta-sobre-acento);
-  font-size: clamp(1.15rem, 0.95rem + 0.62vw, 1.75rem);
-  font-weight: 750;
+  font-size: clamp(1.15rem, 0.95rem + 0.56vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
   line-height: 1.15;
   transition:
-    transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.24s;
+}
+.portada-comenzar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    180px circle at var(--luz-x, 30%) var(--luz-y, 35%),
+    rgb(255 255 255 / 0.52),
+    transparent 68%
+  );
+  opacity: 0;
+  transition: opacity 0.24s;
+  pointer-events: none;
+}
+.portada-comenzar::after {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -45%;
+  width: 42%;
+  background: linear-gradient(105deg, transparent 20%, rgb(255 255 255 / 0.52) 50%, transparent 80%);
+  opacity: 0;
+  transform: translateX(-160%) skewX(-18deg);
+  pointer-events: none;
+}
+.comenzar-icono {
+  display: grid;
+  place-items: center;
+  width: 2.15em;
+  height: 2.15em;
+  border-radius: 50%;
+  background: rgb(3 33 43 / 0.14);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35);
 }
 .portada-comenzar svg {
   width: 1em;
   height: 1em;
   fill: currentColor;
+  transform: translateX(1px);
 }
 @media (hover: hover) and (pointer: fine) {
   .portada-comenzar:hover {
+    border-color: #ffffff;
     box-shadow:
-      inset 0 0 0.7rem rgb(255 255 255 / 0.5),
-      0 0 2rem rgb(34 211 238 / 0.65),
-      0 0.6rem 1.8rem rgb(1 14 22 / 0.7);
+      inset 0 2px 3px rgb(255 255 255 / 0.78),
+      inset 0 -3px 10px rgb(6 78 94 / 0.22),
+      0 0 38px rgb(94 234 212 / 0.72),
+      0 16px 36px -6px rgb(1 12 20 / 0.85);
+  }
+  .portada-comenzar:hover::before {
+    opacity: 1;
   }
 }
 
-/* Entrada breve del texto: solo con movimiento permitido. */
-@media (prefers-reduced-motion: no-preference) {
-  :root[data-movimiento="normal"] .portada-bienvenida > * {
-    animation: portada-entra 0.55s ease-out both;
-  }
-  :root[data-movimiento="normal"] .portada-bienvenida > :nth-child(2) {
-    animation-delay: 0.06s;
-  }
-  :root[data-movimiento="normal"] .portada-bienvenida > :nth-child(3) {
-    animation-delay: 0.12s;
-  }
-  :root[data-movimiento="normal"] .portada-bienvenida > :nth-child(4) {
-    animation-delay: 0.18s;
-  }
-  :root[data-movimiento="normal"] .portada-comenzar:hover {
-    transform: translateY(-2px);
-  }
+/* Coreografía de entrada y vida sutil de la portada: solo con movimiento permitido. */
+:root[data-movimiento="normal"] .portada-bienvenida > * {
+  animation: portada-entra 0.52s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+:root[data-movimiento="normal"] .portada-bienvenida > :nth-child(2) {
+  animation-delay: 0.07s;
+}
+:root[data-movimiento="normal"] .portada-bienvenida > :nth-child(3) {
+  animation-delay: 0.14s;
+}
+:root[data-movimiento="normal"] .portada-bienvenida > :nth-child(4) {
+  animation-delay: 0.21s;
+}
+:root[data-movimiento="normal"] .portada-introduccion::before {
+  transform-origin: left center;
+  animation: linea-dibuja 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+:root[data-movimiento="normal"] .portada h1 span {
+  animation: titulo-respira 5.5s ease-in-out 0.8s infinite;
+}
+:root[data-movimiento="normal"] .portada-comenzar {
+  transition-property: transform, box-shadow, border-color;
+  animation:
+    portada-entra 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.21s both,
+    cta-aura 4.8s ease-in-out 1.2s infinite;
+}
+:root[data-movimiento="normal"] .portada-comenzar::after {
+  opacity: 1;
+  animation: destello-barra 5.2s cubic-bezier(0.4, 0, 0.2, 1) 1.6s infinite;
+}
+:root[data-movimiento="normal"] .portada-comenzar:hover {
+  transform: translateY(-3px) scale(1.015);
+}
+:root[data-movimiento="normal"] .portada-comenzar .comenzar-icono {
+  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-movimiento="normal"] .portada-comenzar:hover .comenzar-icono {
+  transform: scale(1.08) translateX(2px);
+}
+:root[data-movimiento="normal"] .cabecera[data-fase="INICIO"] .marca img,
+:root[data-movimiento="normal"] .cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
+  animation: emblema-respira 5s ease-in-out infinite;
 }
 @keyframes portada-entra {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(14px);
+  }
+}
+@keyframes linea-dibuja {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+@keyframes titulo-respira {
+  0%,
+  100% {
+    text-shadow:
+      0 0 0.16em rgb(94 234 212 / 0.45),
+      0 0 0.44em rgb(34 211 238 / 0.28),
+      0 0.1em 0.24em rgb(1 16 25 / 0.85);
+  }
+  50% {
+    text-shadow:
+      0 0 0.22em rgb(165 243 252 / 0.68),
+      0 0 0.58em rgb(94 234 212 / 0.42),
+      0 0.1em 0.24em rgb(1 16 25 / 0.85);
+  }
+}
+@keyframes cta-aura {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 2px 2px rgb(255 255 255 / 0.65),
+      inset 0 -3px 10px rgb(6 78 94 / 0.25),
+      0 0 26px rgb(45 212 191 / 0.46),
+      0 12px 32px -6px rgb(1 12 20 / 0.82);
+  }
+  50% {
+    box-shadow:
+      inset 0 2px 2px rgb(255 255 255 / 0.72),
+      inset 0 -3px 10px rgb(6 78 94 / 0.22),
+      0 0 38px rgb(94 234 212 / 0.68),
+      0 14px 36px -6px rgb(1 12 20 / 0.85);
+  }
+}
+@keyframes destello-barra {
+  0%,
+  72% {
+    transform: translateX(-160%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(520%) skewX(-18deg);
+  }
+}
+@keyframes emblema-respira {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgb(210 238 139 / 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgb(94 234 212 / 0.48));
+  }
+}
+
+/* Tableta vertical: encuadre que conserva completo al ciervo bajo la luna */
+@media (max-width: 960px) and (orientation: portrait) {
+  .portada-paisaje,
+  .portada-video {
+    object-position: 78% center;
   }
 }
 
 /* Móvil vertical */
 @media (max-width: 700px) {
-  .portada-paisaje {
+  .portada-paisaje,
+  .portada-video {
     object-position: 82% center;
   }
   .portada-velo {
     background-image:
-      linear-gradient(180deg, rgb(0 9 15 / 0.45), rgb(0 9 15 / 0.1) 23%, rgb(0 9 15 / 0.1) 80%, rgb(0 9 15 / 0.27)),
+      linear-gradient(
+        180deg,
+        rgb(1 10 18 / 0.56),
+        rgb(1 10 18 / 0.12) 23%,
+        rgb(1 10 18 / 0.12) 78%,
+        rgb(1 10 18 / 0.38)
+      ),
       radial-gradient(
         ellipse at 8% 48%,
-        rgb(1 9 14 / 0.87),
-        rgb(1 9 14 / 0.68) 44%,
-        rgb(1 9 14 / 0.16) 88%,
-        transparent
+        rgb(1 10 17 / 0.9) 0%,
+        rgb(1 10 17 / 0.72) 46%,
+        rgb(1 10 17 / 0.2) 86%,
+        transparent 100%
       );
   }
   .cabecera[data-fase="INICIO"] {
@@ -198,7 +404,8 @@
   .cabecera[data-fase="INICIO"] .marca {
     font-size: 1.45rem;
   }
-  .cabecera[data-fase="INICIO"] .marca img {
+  .cabecera[data-fase="INICIO"] .marca img,
+  .cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
     width: 40px;
     height: 40px;
   }
@@ -206,19 +413,38 @@
     padding-inline: 14px;
   }
   .portada-bienvenida {
-    padding: 4rem 1.25rem 1.2rem;
+    padding: 4.2rem 1.25rem 1.2rem;
   }
   .portada h1 {
-    font-size: clamp(2.35rem, 11.5vw, 3.6rem);
+    font-size: clamp(2.35rem, 11.2vw, 3.6rem);
   }
   .portada-introduccion {
     letter-spacing: 0.12em;
   }
 }
+@media (max-width: 400px) {
+  .cabecera[data-fase="INICIO"] {
+    padding: 10px 10px;
+    gap: 0.35rem;
+  }
+  .cabecera[data-fase="INICIO"] .marca {
+    font-size: 1.2rem;
+    gap: 0.4rem;
+  }
+  .cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
+    width: 34px;
+    height: 34px;
+  }
+  .cabecera[data-fase="INICIO"] .boton-texto {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.85rem;
+  }
+}
 
-/* Pantalla baja o apaisada: se compacta y se quita el adorno superior. */
+/* Pantalla baja o apaisada: se compacta sin perder presencia ni provocar desplazamiento. */
 @media (max-height: 560px) {
-  .cabecera[data-fase="INICIO"] .marca img {
+  .cabecera[data-fase="INICIO"] .marca img,
+  .cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
     width: 36px;
     height: 36px;
   }
@@ -241,6 +467,6 @@
   .portada-comenzar {
     min-height: 48px;
     font-size: 1.1rem;
-    padding-block: 0.45em;
+    padding-block: 0.4em;
   }
 }

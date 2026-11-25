@@ -1,4 +1,4 @@
-import type { Diccionarios, Idioma, ResultadoAccion, TipoAccion, Vista } from "./tipos";
+import type { Diccionarios, Idioma, ResultadoAccion, TipoAccion, Vista, VozGrabadaInfo } from "./tipos";
 
 async function json<T>(respuesta: Response): Promise<T> {
   return (await respuesta.json()) as T;
@@ -22,7 +22,11 @@ function enviar(ruta: string, cuerpo: unknown, signal?: AbortSignal, keepalive =
 
 export const cargarVista = () => obtener<Vista>("/api/vista");
 export const cargarDiccionarios = () => obtener<Diccionarios>("/api/idiomas");
-export const cargarConfigVoz = () => obtener<{ grabadas?: Partial<Record<Idioma, number>> }>("/api/voz/config");
+export const cargarConfigVoz = () =>
+  obtener<{
+    grabadas?: Partial<Record<Idioma, number>>;
+    voces_grabadas?: Partial<Record<Idioma, VozGrabadaInfo[]>>;
+  }>("/api/voz/config");
 
 /** Envía una acción con la semántica de 5.0: evento_id único, revisión, sesión y reto. */
 export async function enviarAccion(

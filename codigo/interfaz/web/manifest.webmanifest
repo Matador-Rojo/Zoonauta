@@ -1,0 +1,21 @@
+{
+  "name": "Zoonauta · Animales y hábitats",
+  "short_name": "Zoonauta",
+  "description": "Juego educativo para descubrir dónde viven 288 animales en 48 hábitats, con pictogramas, pistas y una guía con voz.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "categories": ["education", "kids", "games"],
+  "background_color": "#03101a",
+  "theme_color": "#04141f",
+  "lang": "es-419",
+  "icons": [
+    {
+      "src": "/zoonauta-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

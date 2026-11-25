@@ -6,14 +6,16 @@
 import { pedirGrabacion } from "./api/cliente";
 import type { Idioma, Vista } from "./api/tipos";
 
-/** Idiomas con voz. En pt-BR la voz queda bloqueada hasta que existan grabaciones. */
-export const IDIOMAS_CON_VOZ: readonly Idioma[] = ["es"];
+/** Idiomas con voz grabada (es: Marcela/Valeria/Gaby/Diego; pt-BR: Roberta/Will; en: Mark). */
+export const IDIOMAS_CON_VOZ: readonly Idioma[] = ["es", "pt-BR", "en"];
 
 export interface AjustesVoz {
   activa: boolean;
   velocidad: number;
   /** Mensajes con grabación disponible en este idioma (0 = no se piden). */
   grabadas: number;
+  /** Identificador de la voz grabada elegida (p. ej. "marcela" o "valeria"). */
+  voz?: string;
 }
 
 export type ContextoLectura = "respuesta" | "modalidad" | "prueba";
@@ -23,8 +25,20 @@ export class GuiaVoz {
   private pedido: AbortController | null = null;
   private audio: HTMLAudioElement | null = null;
   private audioURL: string | null = null;
+  private hablando = false;
 
-  constructor(private readonly alError: (mensaje: string) => void) {}
+  constructor(
+    private readonly alError: (mensaje: string) => void,
+    private readonly alEstado?: (hablando: boolean) => void,
+    private readonly alProgreso?: (fraccion: number) => void,
+  ) {}
+
+  private fijarHablando(activo: boolean) {
+    if (this.hablando === activo) return;
+    this.hablando = activo;
+    this.alEstado?.(activo);
+    if (!activo) this.alProgreso?.(0);
+  }
 
   parar() {
     this.turno++;
@@ -39,6 +53,7 @@ export class GuiaVoz {
       URL.revokeObjectURL(this.audioURL);
       this.audioURL = null;
     }
+    this.fijarHablando(false);
   }
 
   /** «Probar voz» (contexto "prueba") reproduce la grabación del mensaje que está en pantalla. */
@@ -61,6 +76,7 @@ export class GuiaVoz {
           sesion_id: vista.sesion_id,
           reto_id: vista.reto_id,
           contexto: contexto === "modalidad" ? "modalidad" : "respuesta",
+          ...(ajustes.voz ? { voz: ajustes.voz } : {}),
         },
         control.signal,
       );
@@ -90,6 +106,11 @@ export class GuiaVoz {
     this.audio = audio;
     audio.playbackRate = velocidad;
     audio.preservesPitch = true;
+    audio.ontimeupdate = () => {
+      if (turno === this.turno && audio.duration > 0 && Number.isFinite(audio.duration)) {
+        this.alProgreso?.(Math.min(1, Math.max(0, audio.currentTime / audio.duration)));
+      }
+    };
     audio.onended = () => {
       if (turno === this.turno) this.parar();
     };
@@ -99,6 +120,7 @@ export class GuiaVoz {
         this.alError(error);
       }
     };
+    this.fijarHablando(true);
     await audio.play();
   }
 }

@@ -1,0 +1,34 @@
+/**
+ * Isotipo vectorial minimalista oficial de Zoonauta (zorro explorador + estrella).
+ * Usa variables CSS (--logo-zorro y --logo-estrella) para adaptarse al instante a
+ * Bosque de noche (turquesa bioluminiscente + dorado), Bosque de día (dorado solar + verde bosque)
+ * y Alto contraste (blanco puro 21:1 AAA).
+ */
+export function LogoZoonauta({ size = 44, className }: { size?: number; className?: string }) {
+  return (
+    <svg
+      className={`logo-zoonauta ${className ?? ""}`.trim()}
+      width={size}
+      height={size}
+      viewBox="105 148 1020 1020"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <g className="logo-zorro">
+        <path
+          fillRule="evenodd"
+          d="M279 237 C360 284 485 345 541 462 C585 454 639 454 681 462 C740 338 868 302 981 236 C1014 302 1033 377 1028 445 C1024 514 992 571 951 614 C1002 668 1038 741 1049 809 C989 745 939 702 880 681 C816 659 751 678 705 732 C663 781 641 854 621 911 C598 847 576 774 534 728 C483 672 427 662 381 673 C306 686 244 742 182 810 C193 741 231 669 280 615 C239 566 215 509 216 445 C217 370 245 299 279 237 Z M961 334 C927 378 866 393 812 420 C742 455 701 525 694 622 C725 568 766 534 824 507 C901 476 943 436 961 334 Z"
+        />
+        <path d="M191 828 C240 807 302 825 360 856 C435 896 496 966 565 1033 C598 1065 644 1059 680 1026 C746 961 800 899 853 869 C920 831 992 806 1043 825 C997 886 930 928 853 961 C759 1002 684 1063 618 1116 C549 1062 473 1004 389 970 C296 933 234 883 191 828 Z" />
+        <path d="M353 801 C374 774 406 757 436 757 C483 757 516 791 533 845 C480 812 430 786 353 801 Z" />
+        <path d="M895 801 C872 774 841 757 812 757 C762 757 729 791 709 845 C765 811 817 786 895 801 Z" />
+        <path d="M563 944 C563 927 590 921 619 921 C648 921 676 928 676 946 C676 961 647 995 626 1003 C619 1006 610 1003 602 996 C581 980 563 957 563 944 Z" />
+      </g>
+      <path
+        className="logo-estrella"
+        d="M622 213 Q629 201 635 213 C652 256 675 278 716 293 Q725 298 716 303 C672 319 651 345 634 386 Q628 395 622 386 C605 344 582 319 541 303 Q531 298 541 293 C584 277 608 256 622 213 Z"
+      />
+    </svg>
+  );
+}

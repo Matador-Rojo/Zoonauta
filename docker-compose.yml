@@ -1,0 +1,15 @@
+services:
+  zoonauta:
+    build: .
+    container_name: zoonauta
+    restart: unless-stopped
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "8000"
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      - zoonauta_registros:/app/registros
+
+volumes:
+  zoonauta_registros:

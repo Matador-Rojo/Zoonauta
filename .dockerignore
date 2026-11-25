@@ -1,0 +1,31 @@
+# Exclusiones para imagen Docker / despliegue web en Hostinger
+.git
+.github
+.claude
+.shrink
+.pytest_cache
+__pycache__
+*.pyc
+output/
+registros/
+resultados_nuevos/
+docs/
+tests/
+frontend/
+*.bat
+*.sh
+*.md
+
+# Interfaz 5.0 pesada no usada en producción (se conservan logos, manifest y sw.js)
+codigo/interfaz/web/fondos/
+codigo/interfaz/web/portada-selva.webp
+codigo/interfaz/web/paisajes.webp
+
+# Originales pesados reemplazados automáticamente por assets/*_ligeros/
+assets/expedicion/animales/*.webp
+assets/expedicion/paisajes/*.webp
+assets/expedicion/pictogramas/*.webp
+assets/paisajes/*.webp
+assets/pictogramas/*.webp
+assets/ilustraciones/*.webp
+assets/portada/*.png
