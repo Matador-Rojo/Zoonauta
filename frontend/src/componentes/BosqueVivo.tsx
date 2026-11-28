@@ -56,18 +56,30 @@ const COLORES_DIA = {
   ambar: "101, 163, 13",
 } as const;
 
-function crearAmbiente(ancho: number, alto: number, enPortada: boolean, esDia: boolean): Particula {
+function crearAmbiente(
+  ancho: number,
+  alto: number,
+  enPortada: boolean,
+  esDia: boolean,
+): Particula {
   const r = Math.random();
-  const tono: Particula["tono"] = r < 0.45 ? "cian" : r < 0.8 ? "luna" : "ambar";
+  const tono: Particula["tono"] =
+    r < 0.45 ? "cian" : r < 0.8 ? "luna" : "ambar";
   const esHoja = esDia;
-  const x = enPortada ? ancho * (0.24 + Math.random() * 0.76) : Math.random() * ancho;
-  const y = enPortada ? alto * (0.1 + Math.random() * 0.86) : Math.random() * alto;
+  const x = enPortada
+    ? ancho * (0.24 + Math.random() * 0.76)
+    : Math.random() * ancho;
+  const y = enPortada
+    ? alto * (0.1 + Math.random() * 0.86)
+    : Math.random() * alto;
   return {
     x,
     y,
     vx: esHoja ? 0.22 + Math.random() * 0.3 : (Math.random() - 0.5) * 0.28,
     vy: esHoja ? 0.24 + Math.random() * 0.3 : -0.08 - Math.random() * 0.22,
-    radio: esHoja ? 6.8 + Math.random() * 4.8 : (enPortada ? 1.6 : 1.3) + Math.random() * (enPortada ? 2.2 : 1.6),
+    radio: esHoja
+      ? 6.8 + Math.random() * 4.8
+      : (enPortada ? 1.6 : 1.3) + Math.random() * (enPortada ? 2.2 : 1.6),
     fase: Math.random() * Math.PI * 2,
     velocidadPulso: 0.016 + Math.random() * 0.022,
     deriva: esHoja ? 0.38 + Math.random() * 0.28 : 0.14 + Math.random() * 0.22,
@@ -117,7 +129,15 @@ function crearDestellosRio(ancho: number, alto: number): DestelloRio[] {
  * - En Bosque de día: luciérnagas y polen dorado/esmeralda de alto contraste sobre el fondo claro.
  * - En Alto contraste, pausa o movimiento reducido: se detiene y limpia por completo.
  */
-export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tema?: TemaVisual; reducido: boolean }) {
+export function BosqueVivo({
+  fase,
+  tema = "noche",
+  reducido,
+}: {
+  fase: Fase;
+  tema?: TemaVisual;
+  reducido: boolean;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const faseRef = useRef<Fase>(fase);
   const brotePendiente = useRef(false);
@@ -125,7 +145,10 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
   useEffect(() => {
     const previa = faseRef.current;
     faseRef.current = fase;
-    if ((fase === "RETO_RESUELTO" || fase === "COMPLETADA") && previa !== fase) {
+    if (
+      (fase === "RETO_RESUELTO" || fase === "COMPLETADA") &&
+      previa !== fase
+    ) {
       brotePendiente.current = true;
     }
   }, [fase]);
@@ -161,7 +184,15 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
     ajustar();
 
     const enPortada = fase === "INICIO";
-    const cantidad = enPortada ? (ancho < 700 ? 22 : 38) : ancho < 700 ? 16 : esDia ? 34 : 22;
+    const cantidad = enPortada
+      ? ancho < 700
+        ? 22
+        : 38
+      : ancho < 700
+        ? 16
+        : esDia
+          ? 34
+          : 22;
     const particulas: Particula[] = Array.from({ length: cantidad }, () =>
       crearAmbiente(ancho, alto, enPortada, esDia),
     );
@@ -255,9 +286,22 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
         }
       }
 
-      const halo = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radio * (esDia ? 3.8 : 4.6));
-      halo.addColorStop(0, `rgba(${rgb}, ${(alfa * (esDia ? 0.92 : 0.94)).toFixed(3)})`);
-      halo.addColorStop(0.4, `rgba(${rgb}, ${(alfa * (esDia ? 0.42 : 0.36)).toFixed(3)})`);
+      const halo = ctx.createRadialGradient(
+        p.x,
+        p.y,
+        0,
+        p.x,
+        p.y,
+        radio * (esDia ? 3.8 : 4.6),
+      );
+      halo.addColorStop(
+        0,
+        `rgba(${rgb}, ${(alfa * (esDia ? 0.92 : 0.94)).toFixed(3)})`,
+      );
+      halo.addColorStop(
+        0.4,
+        `rgba(${rgb}, ${(alfa * (esDia ? 0.42 : 0.36)).toFixed(3)})`,
+      );
       halo.addColorStop(1, `rgba(${rgb}, 0)`);
       ctx.fillStyle = halo;
       ctx.beginPath();
@@ -274,7 +318,13 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
       if (esDia) {
         ctx.fillStyle = `rgba(255, 251, 235, ${(alfa * 0.85).toFixed(3)})`;
         ctx.beginPath();
-        ctx.arc(p.x - radio * 0.16, p.y - radio * 0.16, radio * 0.28, 0, Math.PI * 2);
+        ctx.arc(
+          p.x - radio * 0.16,
+          p.y - radio * 0.16,
+          radio * 0.28,
+          0,
+          Math.PI * 2,
+        );
         ctx.fill();
       }
     };
@@ -290,7 +340,8 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
       if (brotePendiente.current) {
         brotePendiente.current = false;
         const extra = ancho < 700 ? 14 : 26;
-        for (let i = 0; i < extra; i++) destellos.push(crearDestello(ancho, alto, esDia));
+        for (let i = 0; i < extra; i++)
+          destellos.push(crearDestello(ancho, alto, esDia));
         ondas.push({
           x: ancho * 0.62,
           y: alto * 0.42,
@@ -303,7 +354,7 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
 
       ctx.clearRect(0, 0, ancho, alto);
 
-      // Capa 1 (solo portada): haces suaves de luz lunar y reflejos vivos en el río.
+      // Capa 1 (solo portada): haces suaves de luz y reflejos vivos sobre el río.
       if (faseRef.current === "INICIO") {
         ctx.save();
         for (let i = 0; i < 3; i++) {
@@ -314,10 +365,23 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
           const finY = alto * 0.88;
           const grosor = ancho * (0.045 + i * 0.018);
           const haz = ctx.createLinearGradient(origenX, origenY, finX, finY);
-          const brillo = 0.036 + 0.022 * (0.5 + 0.5 * osc);
-          haz.addColorStop(0, `rgba(165, 243, 252, ${(brillo * 1.4).toFixed(3)})`);
-          haz.addColorStop(0.52, `rgba(94, 234, 212, ${brillo.toFixed(3)})`);
-          haz.addColorStop(1, "rgba(94, 234, 212, 0)");
+          if (esDia) {
+            const brillo = 0.055 + 0.028 * (0.5 + 0.5 * osc);
+            haz.addColorStop(
+              0,
+              `rgba(253, 224, 71, ${(brillo * 1.35).toFixed(3)})`,
+            );
+            haz.addColorStop(0.52, `rgba(254, 243, 199, ${brillo.toFixed(3)})`);
+            haz.addColorStop(1, "rgba(254, 243, 199, 0)");
+          } else {
+            const brillo = 0.036 + 0.022 * (0.5 + 0.5 * osc);
+            haz.addColorStop(
+              0,
+              `rgba(165, 243, 252, ${(brillo * 1.4).toFixed(3)})`,
+            );
+            haz.addColorStop(0.52, `rgba(94, 234, 212, ${brillo.toFixed(3)})`);
+            haz.addColorStop(1, "rgba(94, 234, 212, 0)");
+          }
           ctx.fillStyle = haz;
           ctx.beginPath();
           ctx.moveTo(origenX - grosor * 0.35, origenY);
@@ -328,14 +392,32 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
           ctx.fill();
         }
 
-        // Reflejos bioluminiscentes suaves sobre el agua del río.
+        // Reflejos suaves sobre el agua del río (dorados en día, bioluminiscentes en noche).
         for (const r of destellosRio) {
           r.fase += r.velocidad;
           const pulso = 0.5 + 0.5 * Math.sin(r.fase);
           const dx = Math.sin(r.fase * 0.7) * 6;
-          const grad = ctx.createRadialGradient(r.x + dx, r.y, 0, r.x + dx, r.y, r.ancho);
-          grad.addColorStop(0, `rgba(147, 250, 236, ${(pulso * 0.16).toFixed(3)})`);
-          grad.addColorStop(1, "rgba(34, 211, 238, 0)");
+          const grad = ctx.createRadialGradient(
+            r.x + dx,
+            r.y,
+            0,
+            r.x + dx,
+            r.y,
+            r.ancho,
+          );
+          if (esDia) {
+            grad.addColorStop(
+              0,
+              `rgba(254, 249, 195, ${(pulso * 0.22).toFixed(3)})`,
+            );
+            grad.addColorStop(1, "rgba(253, 224, 71, 0)");
+          } else {
+            grad.addColorStop(
+              0,
+              `rgba(147, 250, 236, ${(pulso * 0.16).toFixed(3)})`,
+            );
+            grad.addColorStop(1, "rgba(34, 211, 238, 0)");
+          }
           ctx.fillStyle = grad;
           ctx.save();
           ctx.translate(r.x + dx, r.y);
@@ -360,7 +442,10 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
           const grosor = ancho * (0.075 + i * 0.03);
           const haz = ctx.createLinearGradient(origenX, origenY, finX, finY);
           const brillo = 0.085 + 0.025 * (0.5 + 0.5 * osc);
-          haz.addColorStop(0, `rgba(253, 224, 71, ${(brillo * 1.25).toFixed(3)})`);
+          haz.addColorStop(
+            0,
+            `rgba(253, 224, 71, ${(brillo * 1.25).toFixed(3)})`,
+          );
           haz.addColorStop(0.5, `rgba(254, 243, 199, ${brillo.toFixed(3)})`);
           haz.addColorStop(1, "rgba(254, 243, 199, 0)");
           ctx.fillStyle = haz;
@@ -394,7 +479,8 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
       }
 
       // Capa 3: luciérnagas ambientales con vuelo orgánico y estela suave.
-      const intensidad = faseRef.current === "INICIO" ? 0.88 : esDia ? 0.84 : 0.54;
+      const intensidad =
+        faseRef.current === "INICIO" ? 0.88 : esDia ? 0.84 : 0.54;
       for (const p of particulas) {
         p.estela.push({ x: p.x, y: p.y });
         if (p.estela.length > 6) p.estela.shift();
@@ -423,7 +509,10 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
           p.estela.length = 0;
         } else if (p.y < -20) {
           p.y = alto + 16;
-          p.x = faseRef.current === "INICIO" ? ancho * (0.22 + Math.random() * 0.78) : Math.random() * ancho;
+          p.x =
+            faseRef.current === "INICIO"
+              ? ancho * (0.22 + Math.random() * 0.78)
+              : Math.random() * ancho;
           p.estela.length = 0;
         }
         if (p.x < -20) {
@@ -477,5 +566,12 @@ export function BosqueVivo({ fase, tema = "noche", reducido }: { fase: Fase; tem
     };
   }, [activo, fase, esDia]);
 
-  return <canvas ref={canvasRef} className="bosque-vivo" data-fase={fase} aria-hidden="true" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="bosque-vivo"
+      data-fase={fase}
+      aria-hidden="true"
+    />
+  );
 }

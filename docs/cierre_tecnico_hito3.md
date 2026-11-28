@@ -95,7 +95,7 @@ por tamaño y SHA-256.
 | Reinicio del proceso servidor o pérdida de cookie | Inicia otra sesión; el progreso acumulado en *Mi álbum* se conserva localmente en el navegador |
 | Voz no disponible o lectura cancelada | Conserva la interacción por texto e imágenes sin bloquear la partida |
 | Pantalla pequeña (`320 px`) o zoom alto | Permite desplazamiento como último recurso sin aplastar imágenes ni controles |
-| Reducir movimiento activo | Desmonta los videos de portada y muestra las imágenes estáticas `1672 × 941` sin animaciones |
+| Reducir movimiento activo | Detiene el lienzo atmosférico `<BosqueVivo />` y las animaciones, mostrando las portadas 2K (`1672 × 941`) estáticas sin movimiento |
 | Partida finalizada o álbum completado (`288/288`) | Presenta el resumen real y los hallazgos; al volver a jugar con el agente, mezcla nuevamente todo el catálogo sin bloquearse |
 
 ## Evaluación de uso con personas (alcance ético)

@@ -774,8 +774,8 @@
     },
     {
       "ruta": "codigo/interfaz/servidor.py",
-      "bytes": 25386,
-      "sha256": "930eee5f16d97396d6e75079f8745d0092ce3295c254ef98e9341c6860786213"
+      "bytes": 22264,
+      "sha256": "b942dc4c0bdba5b3f996d05f3bdd0bce2cd67e8ec7ac233ad10175aa2dfb4b01"
     },
     {
       "ruta": "codigo/interfaz/web/app.js",
@@ -1059,8 +1059,8 @@
     },
     {
       "ruta": "docs/cierre_tecnico_hito3.md",
-      "bytes": 8042,
-      "sha256": "bf7eb439d7a78539c07458971eff25dca0d128a442185f1f5b8db2645e626335"
+      "bytes": 8081,
+      "sha256": "06e48df40a581169e537492b477765eea706839ac4bb4358affce69348db50c7"
     },
     {
       "ruta": "docs/creditos_pictogramas.md",
@@ -2559,8 +2559,8 @@
     },
     {
       "ruta": "docs/manual_usuario.md",
-      "bytes": 6007,
-      "sha256": "f58f7c5a3c5b4d32427406ccb1f4f9d382b367eb59be030a93ba29d87e9d8421"
+      "bytes": 6027,
+      "sha256": "fa554e42259d3954f6560f003f4146d11cf1c3c12b8079689dd74c943c958d00"
     },
     {
       "ruta": "docs/resultados/arbol_id3.json",
@@ -2634,8 +2634,8 @@
     },
     {
       "ruta": "tests/test_interfaz.py",
-      "bytes": 17445,
-      "sha256": "7401ef5398686899b45fd88a7e0708c850eb31373605b10a7dc81c5fcdd83529"
+      "bytes": 17319,
+      "sha256": "27ade6db293d6c7c7fa3250832eb5a22029211fa79772e945d43aa4a7567216f"
     },
     {
       "ruta": "tests/test_nucleo.py",
@@ -5224,8 +5224,8 @@
     },
     {
       "ruta": "frontend/src/App.tsx",
-      "bytes": 25655,
-      "sha256": "564274c7f9d2b6771f8f72fa988a76b8fc221caa33927d8245b3494aa82370e3"
+      "bytes": 25502,
+      "sha256": "31e4e9f55933c24380a423032be5678a350a66cb2403c771a182e1a89715ef42"
     },
     {
       "ruta": "frontend/src/api/cliente.ts",
@@ -5264,8 +5264,8 @@
     },
     {
       "ruta": "frontend/src/componentes/Portada.tsx",
-      "bytes": 6641,
-      "sha256": "1a486c216546fdaaf3eabba09f88533cf702a7e35de2fd60e4ca375e09b25a4d"
+      "bytes": 6370,
+      "sha256": "bfb5512d4fdda79104ee701b3ab37cb29ce1cc09d2c584503245b5e39251028e"
     },
     {
       "ruta": "frontend/src/componentes/Preferencias.tsx",
@@ -5289,8 +5289,8 @@
     },
     {
       "ruta": "frontend/src/estilos/portada.css",
-      "bytes": 12213,
-      "sha256": "90766364b4703fc943bd77eea5e17e4cc01819884a377f00f513ca03a9a719d8"
+      "bytes": 11812,
+      "sha256": "bfdb06410b3bc68785dda9a15cb3fcdfb9806bd2214cc5717b6b926e30bae7dc"
     },
     {
       "ruta": "frontend/src/i18n.ts",
@@ -5370,7 +5370,7 @@
     {
       "ruta": "codigo/interfaz/web6/index.html",
       "bytes": 1321,
-      "sha256": "921b58d0276da6ef98ab497aadcf6015c12ee828fa84f74ffa0a4012a6e6dcb1"
+      "sha256": "6c8e79edecacce8492c9790c616d7dfa0e6649d64869e050a35233781e8037ea"
     },
     {
       "ruta": "codigo/nucleo/actualizar_manifiesto.py",
@@ -8009,8 +8009,8 @@
     },
     {
       "ruta": "frontend/src/estilos/tema.css",
-      "bytes": 87297,
-      "sha256": "c111adf073969b4d2c56ba0d8d38d6a5ebcf687487232e9dab28f2eef8cd764f"
+      "bytes": 88815,
+      "sha256": "e9a88844d331305b8302eb4de8db30b6130c509c06fd03871c9d4be479792bc2"
     },
     {
       "ruta": "assets/portada/bosque-de-luz-ciervo.png",
@@ -10259,8 +10259,8 @@
     },
     {
       "ruta": "frontend/src/componentes/BosqueVivo.tsx",
-      "bytes": 17318,
-      "sha256": "d8fa629dd12ec483d3cc7b0d81907b537e73f351d699408a32f211e0a43d4807"
+      "bytes": 18111,
+      "sha256": "99de248ebd0c53860da20d67945e2f1a3cb2ce734a2de0a6a2a3e576b993de06"
     },
     {
       "ruta": "frontend/src/componentes/useLuzPuntero.ts",
@@ -10286,26 +10286,6 @@
       "ruta": "frontend/src/sonido.ts",
       "bytes": 20838,
       "sha256": "a1b8649afe0210e63f54653893296af432460f693ed9a980a60eaaf5448a548c"
-    },
-    {
-      "ruta": "frontend/src/componentes/PortadaViva.tsx",
-      "bytes": 5286,
-      "sha256": "17b56e94aa81a375ece325c8583af3e2f25c4f8cb3b31cb9ce26a055c359b7b4"
-    },
-    {
-      "ruta": "assets/portada/bosque-de-luz.mp4",
-      "bytes": 922942,
-      "sha256": "abd52f9b51179192c681e9a060fb19decc4202de9567f263dc5fd1950b6a4b44"
-    },
-    {
-      "ruta": "assets/portada/alto-contraste.mp4",
-      "bytes": 923887,
-      "sha256": "cf922bc62de052d54ba3cd3e98468bbe6603d66fc13b9b4288f2b68a2e7e247b"
-    },
-    {
-      "ruta": "assets/portada/bosque-de-dia.mp4",
-      "bytes": 1398455,
-      "sha256": "554382e8f5b16b3eda71f9bade1486afebb81a7ab4f3eea62a3a9426392cd8a2"
     },
     {
       "ruta": "frontend/src/recursos/alto-contraste-1672.webp",
@@ -14514,13 +14494,13 @@
     },
     {
       "ruta": "docs/despliegue_hostinger.md",
-      "bytes": 3918,
-      "sha256": "feb26f1706e582d739f44c39f58afe6ca2359e194da66781a251b3879b6439a4"
+      "bytes": 3872,
+      "sha256": "585431e6151734fa4d65307a39d99ca288cd6e0dec12cdb678d8866031bea922"
     },
     {
       "ruta": "codigo/interfaz/wsgi.py",
-      "bytes": 5060,
-      "sha256": "a0c778722367927da7e8898cb7116d1f610c7ddaffdcf0c36ac80a9e6955a769"
+      "bytes": 5054,
+      "sha256": "582b0dfa5036bcfaf0dbe3d8a33925d9a452cb42e73bd64007a37fd7189d364a"
     },
     {
       "ruta": "frontend/src/componentes/SenderoProgreso.tsx",
@@ -14551,11 +14531,6 @@
       "ruta": "frontend/src/componentes/LogoZoonauta.tsx",
       "bytes": 2197,
       "sha256": "059511c599fd6117c6b444016d5f6df45e4dfebd7692604ebb9d3a83d79ca012"
-    },
-    {
-      "ruta": "codigo/interfaz/web6/assets/index-BnuF5pTa.css",
-      "bytes": 104094,
-      "sha256": "8311c2e012344ac0c53c997a2094c519fbb67828d839101ffd262140d80b7c58"
     },
     {
       "ruta": "datos/traducciones_en.json",
@@ -14673,9 +14648,14 @@
       "sha256": "5a0d2367e6c86b3091a1d94c203a3b3a70fe023ed7f55dcce2c6ea625c9a896a"
     },
     {
-      "ruta": "codigo/interfaz/web6/assets/index-BWQqobEj.js",
-      "bytes": 466957,
-      "sha256": "4010637850c22e4ab86d3662f85f6b5fc32626a3a280ec618cecfafc94e9930a"
+      "ruta": "codigo/interfaz/web6/assets/index-Bn_dbV8J.css",
+      "bytes": 103745,
+      "sha256": "43591d40c9a4212301806cf19921423ad3244c31fbdb21a47abf008692550e2e"
+    },
+    {
+      "ruta": "codigo/interfaz/web6/assets/index-DPHgMI9E.js",
+      "bytes": 465097,
+      "sha256": "7c8744ecf4aec226abb989ce40365ce340a627821ed69d13f3dc68292c2b0eb7"
     }
   ],
   "nombre_proyecto": "Zoonauta",

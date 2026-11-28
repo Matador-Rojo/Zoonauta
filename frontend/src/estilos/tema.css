@@ -12,8 +12,16 @@
   --tinta-suave: #a8c7d4;
   --superficie: #0a2234;
   --superficie-2: #061826;
-  --superficie-cristal: linear-gradient(166deg, rgb(14 43 64 / 0.88) 0%, rgb(6 23 36 / 0.94) 100%);
-  --superficie-profunda: linear-gradient(170deg, rgb(9 31 48 / 0.92) 0%, rgb(4 17 28 / 0.96) 100%);
+  --superficie-cristal: linear-gradient(
+    166deg,
+    rgb(14 43 64 / 0.88) 0%,
+    rgb(6 23 36 / 0.94) 100%
+  );
+  --superficie-profunda: linear-gradient(
+    170deg,
+    rgb(9 31 48 / 0.92) 0%,
+    rgb(4 17 28 / 0.96) 100%
+  );
   --campo: #0d2e45;
   --linea: rgb(165 243 252 / 0.13);
   --linea-fuerte: #528499;
@@ -35,7 +43,8 @@
   --base-pictograma: #f3fbfa;
   --tinta-sobre-pictograma: #13232b;
   --serif: "Fraunces Variable", Georgia, "Times New Roman", serif;
-  --sombra-panel: 0 20px 44px -24px rgb(0 4 10 / 0.88), inset 0 1px 0 rgb(165 243 252 / 0.14);
+  --sombra-panel:
+    0 20px 44px -24px rgb(0 4 10 / 0.88), inset 0 1px 0 rgb(165 243 252 / 0.14);
 }
 
 /* Atmósfera nocturna envolvente: «Observatorio Bioluminiscente / Carta Estelar» */
@@ -43,9 +52,21 @@ body {
   background-color: var(--niebla);
   background-image:
     radial-gradient(circle, rgb(165 243 252 / 0.085) 1px, transparent 1px),
-    radial-gradient(1100px 620px at 88% -8%, rgb(16 74 108 / 0.58) 0, transparent 68%),
-    radial-gradient(920px 560px at -12% 106%, rgb(11 64 78 / 0.52) 0, transparent 70%),
-    radial-gradient(640px 420px at 50% 44%, rgb(9 42 66 / 0.36) 0, transparent 74%);
+    radial-gradient(
+      1100px 620px at 88% -8%,
+      rgb(16 74 108 / 0.58) 0,
+      transparent 68%
+    ),
+    radial-gradient(
+      920px 560px at -12% 106%,
+      rgb(11 64 78 / 0.52) 0,
+      transparent 70%
+    ),
+    radial-gradient(
+      640px 420px at 50% 44%,
+      rgb(9 42 66 / 0.36) 0,
+      transparent 74%
+    );
   background-size:
     28px 28px,
     100% 100%,
@@ -64,7 +85,7 @@ body {
   z-index: 0;
 }
 .bosque-vivo[data-fase="INICIO"] {
-  z-index: 2;
+  z-index: 4;
 }
 
 main#juego {
@@ -105,7 +126,10 @@ main#juego {
   --logo-zorro: #d97706;
   --logo-estrella: #13614c;
 }
-:root[data-tema="dia"] .cabecera:not([data-fase="INICIO"]) .marca .logo-zoonauta {
+:root[data-tema="dia"]
+  .cabecera:not([data-fase="INICIO"])
+  .marca
+  .logo-zoonauta {
   filter: drop-shadow(0 2px 5px rgb(180 83 9 / 0.18));
 }
 :root[data-tema="dia"] .cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
@@ -119,7 +143,10 @@ main#juego {
   --logo-estrella: #ffffff;
 }
 :root[data-tema="contraste"] .cabecera .marca .logo-zoonauta,
-:root[data-tema="contraste"] .cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
+:root[data-tema="contraste"]
+  .cabecera[data-fase="INICIO"]
+  .marca
+  .logo-zoonauta {
   filter: none;
   animation: none;
 }
@@ -167,7 +194,12 @@ main#juego {
 
 /* --- Botones y controles táctiles 3D nocturnos --- */
 .boton-principal {
-  background: linear-gradient(155deg, #a7fbf0 0%, var(--expedicion) 48%, #22d3ee 100%);
+  background: linear-gradient(
+    155deg,
+    #a7fbf0 0%,
+    var(--expedicion) 48%,
+    #22d3ee 100%
+  );
   color: var(--tinta-sobre-acento);
   border-color: rgb(255 255 255 / 0.55);
   box-shadow:
@@ -193,7 +225,11 @@ main#juego {
 .boton-secundario,
 .boton-texto,
 .control-redondo {
-  background: linear-gradient(180deg, rgb(16 48 70 / 0.88), rgb(8 27 42 / 0.94));
+  background: linear-gradient(
+    180deg,
+    rgb(16 48 70 / 0.88),
+    rgb(8 27 42 / 0.94)
+  );
   border: 1.5px solid rgb(125 211 252 / 0.38);
   box-shadow:
     inset 0 1px 0 rgb(207 250 254 / 0.2),
@@ -203,7 +239,11 @@ main#juego {
 .boton-texto:hover,
 .control-redondo:hover,
 .boton-secundario:hover:not(:disabled) {
-  background: linear-gradient(180deg, rgb(21 64 92 / 0.94), rgb(11 38 58 / 0.96));
+  background: linear-gradient(
+    180deg,
+    rgb(21 64 92 / 0.94),
+    rgb(11 38 58 / 0.96)
+  );
   border-color: var(--expedicion);
   box-shadow:
     inset 0 1px 0 rgb(207 250 254 / 0.28),
@@ -222,7 +262,11 @@ main#juego {
 .control {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgb(16 48 70 / 0.92) 0%, rgb(8 27 42 / 0.97) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(16 48 70 / 0.92) 0%,
+    rgb(8 27 42 / 0.97) 100%
+  );
   border: 1.5px solid rgb(125 211 252 / 0.36);
   box-shadow:
     inset 0 1px 0 rgb(207 250 254 / 0.2),
@@ -257,7 +301,11 @@ main#juego {
     0 0 18px rgb(94 234 212 / 0.35);
 }
 .control[data-control="repetir"] {
-  background: linear-gradient(180deg, rgb(16 48 70 / 0.92) 0%, rgb(8 27 42 / 0.97) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(16 48 70 / 0.92) 0%,
+    rgb(8 27 42 / 0.97) 100%
+  );
   border-color: rgb(125 211 252 / 0.36);
   box-shadow:
     inset 0 1px 0 rgb(207 250 254 / 0.2),
@@ -272,7 +320,11 @@ main#juego {
     0 0 22px rgb(94 234 212 / 0.42);
 }
 .control:hover {
-  background: linear-gradient(180deg, rgb(21 62 90 / 0.95) 0%, rgb(10 35 54 / 0.98) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(21 62 90 / 0.95) 0%,
+    rgb(10 35 54 / 0.98) 100%
+  );
   border-color: var(--expedicion);
   box-shadow:
     inset 0 1px 0 rgb(207 250 254 / 0.28),
@@ -280,7 +332,11 @@ main#juego {
     0 0 22px rgb(94 234 212 / 0.26),
     0 18px 30px -16px rgb(0 4 10 / 0.92);
 }
-.control:is([data-control="ayuda"], [data-control="continuar"], [data-control="reanudar"]):hover {
+.control:is(
+    [data-control="ayuda"],
+    [data-control="continuar"],
+    [data-control="reanudar"]
+  ):hover {
   border-color: #ffffff;
   background: linear-gradient(156deg, #ccfdf6 0%, #7ef5e3 48%, #34e0d0 100%);
   box-shadow:
@@ -314,7 +370,12 @@ main#juego {
 /* Escenario iluminado del espécimen (animal activo y robot) */
 .animal-actual {
   background:
-    radial-gradient(ellipse 82% 58% at 50% 48%, rgb(45 212 191 / 0.16) 0%, rgb(14 116 144 / 0.05) 56%, transparent 80%),
+    radial-gradient(
+      ellipse 82% 58% at 50% 48%,
+      rgb(45 212 191 / 0.16) 0%,
+      rgb(14 116 144 / 0.05) 56%,
+      transparent 80%
+    ),
     var(--superficie-cristal);
   border-color: rgb(165 243 252 / 0.24);
 }
@@ -366,7 +427,12 @@ main#juego {
 /* Tarjetas de catálogo: láminas de atlas naturalista */
 .tarjeta-animal {
   background:
-    radial-gradient(ellipse 76% 54% at 50% 46%, rgb(45 212 191 / 0.1) 0%, transparent 72%), var(--superficie-cristal);
+    radial-gradient(
+      ellipse 76% 54% at 50% 46%,
+      rgb(45 212 191 / 0.1) 0%,
+      transparent 72%
+    ),
+    var(--superficie-cristal);
   border: 1.5px solid var(--linea);
   transition:
     border-color 0.22s,
@@ -394,7 +460,12 @@ main#juego {
   position: relative;
   overflow-x: clip;
   background:
-    radial-gradient(ellipse 68% 90% at 50% -18%, rgb(56 189 248 / 0.16) 0%, transparent 70%), var(--superficie-cristal);
+    radial-gradient(
+      ellipse 68% 90% at 50% -18%,
+      rgb(56 189 248 / 0.16) 0%,
+      transparent 70%
+    ),
+    var(--superficie-cristal);
   border: 1.5px solid rgb(165 243 252 / 0.18);
   transition:
     border-color 0.28s,
@@ -406,12 +477,22 @@ main#juego {
   position: absolute;
   inset: 0 18% auto;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, rgb(94 234 212 / 0.65), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(94 234 212 / 0.65),
+    transparent
+  );
   pointer-events: none;
 }
 .guia.ayuda {
   background:
-    radial-gradient(ellipse 74% 92% at 50% -16%, rgb(251 191 36 / 0.2) 0%, transparent 72%), var(--superficie-cristal);
+    radial-gradient(
+      ellipse 74% 92% at 50% -16%,
+      rgb(251 191 36 / 0.2) 0%,
+      transparent 72%
+    ),
+    var(--superficie-cristal);
   border-color: rgb(251 191 36 / 0.58);
   box-shadow:
     0 20px 44px -24px rgb(0 4 10 / 0.88),
@@ -420,11 +501,20 @@ main#juego {
     0 0 32px -10px rgb(251 191 36 / 0.34);
 }
 .guia.ayuda::before {
-  background: linear-gradient(90deg, transparent, rgb(252 211 77 / 0.85), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(252 211 77 / 0.85),
+    transparent
+  );
 }
 .guia.confirmacion {
   background:
-    radial-gradient(ellipse 80% 96% at 50% -12%, rgb(52 211 153 / 0.26) 0%, transparent 74%),
+    radial-gradient(
+      ellipse 80% 96% at 50% -12%,
+      rgb(52 211 153 / 0.26) 0%,
+      transparent 74%
+    ),
     linear-gradient(160deg, rgb(12 56 68 / 0.94) 0%, rgb(6 31 44 / 0.96) 100%);
   border-color: var(--expedicion);
   box-shadow:
@@ -437,7 +527,11 @@ main#juego {
 }
 .guia.neutral {
   background:
-    radial-gradient(ellipse 70% 88% at 50% -18%, rgb(125 211 252 / 0.13) 0%, transparent 72%),
+    radial-gradient(
+      ellipse 70% 88% at 50% -18%,
+      rgb(125 211 252 / 0.13) 0%,
+      transparent 72%
+    ),
     var(--superficie-profunda);
   border-color: rgb(148 163 184 / 0.28);
 }
@@ -559,7 +653,11 @@ main#juego {
   padding: 0.3rem 0.5rem;
   border-radius: 12px;
   border: 1.5px solid var(--linea-fuerte);
-  background: linear-gradient(180deg, rgb(12 39 58 / 0.72), rgb(7 26 40 / 0.86));
+  background: linear-gradient(
+    180deg,
+    rgb(12 39 58 / 0.72),
+    rgb(7 26 40 / 0.86)
+  );
   color: var(--tinta);
   font-size: 0.875rem;
   font-weight: 700;
@@ -573,7 +671,12 @@ main#juego {
   border-color: var(--expedicion);
 }
 .filtro-letra[aria-pressed="true"] {
-  background: linear-gradient(155deg, #a7fbf0 0%, var(--expedicion) 55%, #22d3ee 100%);
+  background: linear-gradient(
+    155deg,
+    #a7fbf0 0%,
+    var(--expedicion) 55%,
+    #22d3ee 100%
+  );
   border-color: #ffffff;
   color: var(--tinta-sobre-acento);
   box-shadow: 0 0 16px rgb(94 234 212 / 0.32);
@@ -652,7 +755,13 @@ main#juego {
   mask-image: linear-gradient(to right, transparent, #000 44px);
 }
 .diario-marco[data-izq][data-der] .diario-viewport {
-  mask-image: linear-gradient(to right, transparent, #000 36px, #000 calc(100% - 36px), transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 36px,
+    #000 calc(100% - 36px),
+    transparent
+  );
 }
 .diario-lista {
   list-style: none;
@@ -758,7 +867,12 @@ main#juego {
 }
 .tarjeta-habitat span {
   z-index: 3;
-  background: linear-gradient(180deg, transparent 0%, rgb(2 12 20 / 0.52) 42%, rgb(2 11 19 / 0.94) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgb(2 12 20 / 0.52) 42%,
+    rgb(2 11 19 / 0.94) 100%
+  );
   color: #f7feff;
   text-shadow: 0 2px 8px rgb(0 6 12 / 0.95);
 }
@@ -852,7 +966,12 @@ main#juego {
 /* --- Santuario de pausa y cierre --- */
 .cierre-visual {
   background:
-    radial-gradient(ellipse 76% 58% at 50% 48%, rgb(94 234 212 / 0.16) 0%, rgb(251 191 36 / 0.05) 56%, transparent 78%),
+    radial-gradient(
+      ellipse 76% 58% at 50% 48%,
+      rgb(94 234 212 / 0.16) 0%,
+      rgb(251 191 36 / 0.05) 56%,
+      transparent 78%
+    ),
     var(--superficie-cristal);
   border-color: rgb(165 243 252 / 0.18);
 }
@@ -918,7 +1037,12 @@ progress::-moz-progress-bar {
 /* --- Selector de modalidad --- */
 .opcion-modalidad {
   background:
-    radial-gradient(ellipse 74% 58% at 50% 42%, rgb(45 212 191 / 0.12) 0%, transparent 72%), var(--superficie-profunda);
+    radial-gradient(
+      ellipse 74% 58% at 50% 42%,
+      rgb(45 212 191 / 0.12) 0%,
+      transparent 72%
+    ),
+    var(--superficie-profunda);
   border: 1.5px solid rgb(165 243 252 / 0.22);
   box-shadow: var(--sombra-panel);
   transition:
@@ -951,7 +1075,11 @@ dialog {
   position: relative;
   border: 1px solid rgb(165 243 252 / 0.22);
   background:
-    radial-gradient(ellipse 80% 42% at 50% -10%, rgb(34 211 238 / 0.14) 0%, transparent 70%),
+    radial-gradient(
+      ellipse 80% 42% at 50% -10%,
+      rgb(34 211 238 / 0.14) 0%,
+      transparent 70%
+    ),
     linear-gradient(180deg, #0c273a, #061724);
   box-shadow:
     inset 0 1px 0 rgb(165 243 252 / 0.28),
@@ -1057,11 +1185,16 @@ dialog::backdrop {
 :root[data-movimiento="normal"] .animal-actual img {
   animation: animal-respira 4.8s ease-in-out infinite;
 }
-:root[data-movimiento="normal"] .cierre[data-estado="COMPLETADA"] .cierre-visual img {
+:root[data-movimiento="normal"]
+  .cierre[data-estado="COMPLETADA"]
+  .cierre-visual
+  img {
   transform-origin: center bottom;
   animation: robot-saluda 3.8s ease-in-out infinite;
 }
-:root[data-movimiento="normal"] .cierre[data-estado="COMPLETADA"] .boton-principal {
+:root[data-movimiento="normal"]
+  .cierre[data-estado="COMPLETADA"]
+  .boton-principal {
   animation: pulso-guia 3.6s ease-in-out 0.6s infinite;
 }
 
@@ -1127,16 +1260,28 @@ dialog::backdrop {
 :root[data-movimiento="normal"] .guia[data-hablando="true"] .guia-onda i {
   animation: onda-voz 0.85s ease-in-out infinite;
 }
-:root[data-movimiento="normal"] .guia[data-hablando="true"] .guia-onda i:nth-child(2) {
+:root[data-movimiento="normal"]
+  .guia[data-hablando="true"]
+  .guia-onda
+  i:nth-child(2) {
   animation-delay: 0.14s;
 }
-:root[data-movimiento="normal"] .guia[data-hablando="true"] .guia-onda i:nth-child(3) {
+:root[data-movimiento="normal"]
+  .guia[data-hablando="true"]
+  .guia-onda
+  i:nth-child(3) {
   animation-delay: 0.28s;
 }
-:root[data-movimiento="normal"] .guia[data-hablando="true"] .guia-onda i:nth-child(4) {
+:root[data-movimiento="normal"]
+  .guia[data-hablando="true"]
+  .guia-onda
+  i:nth-child(4) {
   animation-delay: 0.42s;
 }
-:root[data-movimiento="normal"] .guia[data-hablando="true"] .guia-onda i:nth-child(5) {
+:root[data-movimiento="normal"]
+  .guia[data-hablando="true"]
+  .guia-onda
+  i:nth-child(5) {
   animation-delay: 0.56s;
 }
 
@@ -1285,21 +1430,34 @@ dialog::backdrop {
   --picker-hover: rgb(19 97 76 / 0.1);
   --picker-sombra: 0 18px 36px -12px rgb(46 42 26 / 0.26);
   --sombra-panel:
-    0 14px 28px -16px rgb(46 42 26 / 0.24), 0 2px 6px -1px rgb(46 42 26 / 0.08), inset 0 1px 0 rgb(255 255 255 / 0.95);
+    0 14px 28px -16px rgb(46 42 26 / 0.24), 0 2px 6px -1px rgb(46 42 26 / 0.08),
+    inset 0 1px 0 rgb(255 255 255 / 0.95);
 }
 :root[data-tema="dia"] body {
   background-color: var(--niebla);
   background-image:
     radial-gradient(circle, rgb(42 66 51 / 0.065) 1px, transparent 1px),
-    radial-gradient(1100px 640px at 90% -6%, rgb(253 224 71 / 0.26) 0, transparent 66%),
-    radial-gradient(960px 580px at -10% 106%, rgb(134 202 158 / 0.34) 0, transparent 68%);
+    radial-gradient(
+      1100px 640px at 90% -6%,
+      rgb(253 224 71 / 0.26) 0,
+      transparent 66%
+    ),
+    radial-gradient(
+      960px 580px at -10% 106%,
+      rgb(134 202 158 / 0.34) 0,
+      transparent 68%
+    );
   background-size:
     24px 24px,
     100% 100%,
     100% 100%;
 }
 :root[data-tema="dia"] .cabecera:not([data-fase="INICIO"]) {
-  background: linear-gradient(180deg, rgb(243 237 224 / 0.94), rgb(243 237 224 / 0));
+  background: linear-gradient(
+    180deg,
+    rgb(243 237 224 / 0.94),
+    rgb(243 237 224 / 0)
+  );
 }
 :root[data-tema="dia"] .animal-actual,
 :root[data-tema="dia"] .guia,
@@ -1330,7 +1488,9 @@ dialog::backdrop {
     0 0 0 2.5px var(--expedicion),
     0 18px 32px -12px rgb(19 97 76 / 0.38);
 }
-:root[data-tema="dia"] .habitats[data-resuelto="true"] .tarjeta-habitat.elegido {
+:root[data-tema="dia"]
+  .habitats[data-resuelto="true"]
+  .tarjeta-habitat.elegido {
   border-color: #ffffff;
   box-shadow:
     0 0 0 3.5px var(--expedicion),
@@ -1343,11 +1503,20 @@ dialog::backdrop {
 }
 :root[data-tema="dia"] .guia {
   background:
-    radial-gradient(ellipse 68% 90% at 50% -18%, rgb(20 120 96 / 0.08) 0%, transparent 70%), var(--superficie-cristal);
+    radial-gradient(
+      ellipse 68% 90% at 50% -18%,
+      rgb(20 120 96 / 0.08) 0%,
+      transparent 70%
+    ),
+    var(--superficie-cristal);
 }
 :root[data-tema="dia"] .guia.ayuda {
   background:
-    radial-gradient(ellipse 74% 92% at 50% -16%, rgb(245 158 11 / 0.18) 0%, transparent 72%),
+    radial-gradient(
+      ellipse 74% 92% at 50% -16%,
+      rgb(245 158 11 / 0.18) 0%,
+      transparent 72%
+    ),
     linear-gradient(168deg, #fffdf6 0%, #fbf3dc 100%);
   border-color: #b87004;
   box-shadow:
@@ -1357,7 +1526,11 @@ dialog::backdrop {
 }
 :root[data-tema="dia"] .guia.confirmacion {
   background:
-    radial-gradient(ellipse 80% 96% at 50% -12%, rgb(16 140 104 / 0.16) 0%, transparent 74%),
+    radial-gradient(
+      ellipse 80% 96% at 50% -12%,
+      rgb(16 140 104 / 0.16) 0%,
+      transparent 74%
+    ),
     linear-gradient(160deg, #e2f5e9 0%, #f5fbf6 100%);
   border-color: var(--expedicion);
   box-shadow:
@@ -1377,7 +1550,11 @@ dialog::backdrop {
 :root[data-tema="dia"] .animal-actual[data-tono="ayuda"] {
   border-color: #b87004;
   background:
-    radial-gradient(ellipse 82% 62% at 50% 42%, rgb(245 158 11 / 0.18) 0%, transparent 74%),
+    radial-gradient(
+      ellipse 82% 62% at 50% 42%,
+      rgb(245 158 11 / 0.18) 0%,
+      transparent 74%
+    ),
     linear-gradient(168deg, #fffdf6 0%, #fbf3dc 100%);
   box-shadow:
     inset 0 0 0 1px rgb(184 112 4 / 0.24),
@@ -1387,7 +1564,11 @@ dialog::backdrop {
 :root[data-tema="dia"] .animal-actual[data-tono="confirmacion"] {
   border-color: var(--expedicion);
   background:
-    radial-gradient(ellipse 84% 66% at 50% 42%, rgb(16 140 104 / 0.16) 0%, transparent 76%),
+    radial-gradient(
+      ellipse 84% 66% at 50% 42%,
+      rgb(16 140 104 / 0.16) 0%,
+      transparent 76%
+    ),
     linear-gradient(160deg, #e2f5e9 0%, #f5fbf6 100%);
   box-shadow:
     inset 0 0 0 1.5px rgb(19 97 76 / 0.3),
@@ -1443,7 +1624,8 @@ dialog::backdrop {
   color: #5eead4;
 }
 :root[data-tema="dia"] .control[data-control="ayuda"],
-:root[data-tema="dia"] .control:is([data-control="continuar"], [data-control="reanudar"]),
+:root[data-tema="dia"]
+  .control:is([data-control="continuar"], [data-control="reanudar"]),
 :root[data-tema="dia"] .boton-principal,
 :root[data-tema="dia"] .filtro-letra[aria-pressed="true"],
 :root[data-tema="dia"] .pref-volver {
@@ -1458,7 +1640,11 @@ dialog::backdrop {
 :root[data-tema="dia"] .pref-volver:hover,
 :root[data-tema="dia"] .boton-principal:hover,
 :root[data-tema="dia"]
-  .control:is([data-control="ayuda"], [data-control="continuar"], [data-control="reanudar"]):hover {
+  .control:is(
+    [data-control="ayuda"],
+    [data-control="continuar"],
+    [data-control="reanudar"]
+  ):hover {
   background: linear-gradient(160deg, #229274 0%, #17725a 60%, #0f5240 100%);
   color: #ffffff;
   border-color: #093529;
@@ -1728,7 +1914,8 @@ dialog::backdrop {
 }
 :root[data-tema="contraste"] .control:hover,
 :root[data-tema="contraste"] .control[data-control="repetir"]:hover,
-:root[data-tema="contraste"] .control[data-control="repetir"][data-hablando="true"],
+:root[data-tema="contraste"]
+  .control[data-control="repetir"][data-hablando="true"],
 :root[data-tema="contraste"] .boton-secundario:hover:not(:disabled),
 :root[data-tema="contraste"] .boton-texto:hover,
 :root[data-tema="contraste"] .control-redondo:hover,
@@ -1753,7 +1940,8 @@ dialog::backdrop {
   box-shadow: 0 1px 0 #ffffff;
 }
 :root[data-tema="contraste"] .control[data-control="ayuda"],
-:root[data-tema="contraste"] .control:is([data-control="continuar"], [data-control="reanudar"]),
+:root[data-tema="contraste"]
+  .control:is([data-control="continuar"], [data-control="reanudar"]),
 :root[data-tema="contraste"] .boton-principal,
 :root[data-tema="contraste"] .filtro-letra[aria-pressed="true"],
 :root[data-tema="contraste"] .pref-volver {
@@ -1767,7 +1955,11 @@ dialog::backdrop {
   animation: none;
 }
 :root[data-tema="contraste"]
-  .control:is([data-control="ayuda"], [data-control="continuar"], [data-control="reanudar"]):hover,
+  .control:is(
+    [data-control="ayuda"],
+    [data-control="continuar"],
+    [data-control="reanudar"]
+  ):hover,
 :root[data-tema="contraste"] .boton-principal:hover,
 :root[data-tema="contraste"] .pref-volver:hover {
   background: #ffffff;
@@ -1779,7 +1971,11 @@ dialog::backdrop {
     0 6px 0 #ffffff;
 }
 :root[data-tema="contraste"]
-  .control:is([data-control="ayuda"], [data-control="continuar"], [data-control="reanudar"]):active,
+  .control:is(
+    [data-control="ayuda"],
+    [data-control="continuar"],
+    [data-control="reanudar"]
+  ):active,
 :root[data-tema="contraste"] .boton-principal:active,
 :root[data-tema="contraste"] .pref-volver:active {
   box-shadow:
@@ -1834,7 +2030,9 @@ dialog::backdrop {
     0 0 0 2px #000000,
     0 0 0 5px #ffffff;
 }
-:root[data-tema="contraste"] .habitats[data-resuelto="true"] .tarjeta-habitat.elegido {
+:root[data-tema="contraste"]
+  .habitats[data-resuelto="true"]
+  .tarjeta-habitat.elegido {
   border: 3.5px solid #ffffff;
   box-shadow:
     0 0 0 3px #000000,
@@ -1854,8 +2052,19 @@ dialog::backdrop {
 }
 :root[data-tema="contraste"] .portada-velo {
   background-image:
-    linear-gradient(180deg, rgb(0 0 0 / 0.46) 0%, transparent 18%, transparent 82%, rgb(0 0 0 / 0.36) 100%),
-    radial-gradient(ellipse 56% 84% at 17% 50%, rgb(0 0 0 / 0.94) 0%, rgb(0 0 0 / 0.72) 44%, transparent 70%);
+    linear-gradient(
+      180deg,
+      rgb(0 0 0 / 0.46) 0%,
+      transparent 18%,
+      transparent 82%,
+      rgb(0 0 0 / 0.36) 100%
+    ),
+    radial-gradient(
+      ellipse 56% 84% at 17% 50%,
+      rgb(0 0 0 / 0.94) 0%,
+      rgb(0 0 0 / 0.72) 44%,
+      transparent 70%
+    );
 }
 :root[data-tema="contraste"] .cabecera[data-fase="INICIO"] .boton-texto {
   background: #000000;
@@ -1925,7 +2134,10 @@ dialog::backdrop {
 }
 
 /* ===== Transiciones cinematográficas entre pantallas (View Transitions API) ===== */
-:root[data-movimiento="normal"] .tarjeta-animal[data-volando="true"] .tarjeta-imagen img,
+:root[data-movimiento="normal"]
+  .tarjeta-animal[data-volando="true"]
+  .tarjeta-imagen
+  img,
 :root[data-movimiento="normal"] .animal-actual img {
   view-transition-name: animal-protagonista;
 }
@@ -1970,8 +2182,20 @@ dialog::backdrop {
   z-index: 3;
   border-radius: inherit;
   background:
-    linear-gradient(90deg, transparent 10%, rgb(186 255 244 / 0.85) 50%, transparent 90%) top / 100% 1.5px no-repeat,
-    linear-gradient(125deg, transparent 28%, rgb(255 255 255 / 0.14) 48%, rgb(165 243 252 / 0.2) 52%, transparent 70%);
+    linear-gradient(
+        90deg,
+        transparent 10%,
+        rgb(186 255 244 / 0.85) 50%,
+        transparent 90%
+      )
+      top / 100% 1.5px no-repeat,
+    linear-gradient(
+      125deg,
+      transparent 28%,
+      rgb(255 255 255 / 0.14) 48%,
+      rgb(165 243 252 / 0.2) 52%,
+      transparent 70%
+    );
   opacity: 0;
   transition: opacity 0.26s ease-out;
   pointer-events: none;
@@ -1981,7 +2205,8 @@ dialog::backdrop {
   .tarjeta-habitat.elegido::after {
     opacity: 1;
   }
-  :root[data-movimiento="normal"]:not([data-tema="contraste"]) .tarjeta-habitat {
+  :root[data-movimiento="normal"]:not([data-tema="contraste"])
+    .tarjeta-habitat {
     transition:
       transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
       border-color 0.22s,
@@ -1989,15 +2214,19 @@ dialog::backdrop {
       opacity 0.28s,
       filter 0.28s;
   }
-  :root[data-movimiento="normal"]:not([data-tema="contraste"]) .tarjeta-habitat:hover:not(:disabled) {
-    transform: perspective(860px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-2px);
+  :root[data-movimiento="normal"]:not([data-tema="contraste"])
+    .tarjeta-habitat:hover:not(:disabled) {
+    transform: perspective(860px) rotateX(var(--tilt-x, 0deg))
+      rotateY(var(--tilt-y, 0deg)) translateY(-2px);
   }
   :root[data-movimiento="normal"] .tarjeta-habitat .paisaje {
     transition:
       transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
       filter 0.34s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  :root[data-movimiento="normal"] .tarjeta-habitat:hover:not(:disabled) .paisaje {
+  :root[data-movimiento="normal"]
+    .tarjeta-habitat:hover:not(:disabled)
+    .paisaje {
     transform: translate3d(var(--px, 0px), var(--py, 0px), 0) scale(1.075);
     filter: brightness(1.06) saturate(1.09);
   }
@@ -2016,7 +2245,11 @@ dialog::backdrop {
   inset: -12%;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 46%, rgb(94 234 212 / 0.16) 0%, transparent 64%);
+  background: radial-gradient(
+    circle at 50% 46%,
+    rgb(94 234 212 / 0.16) 0%,
+    transparent 64%
+  );
   transition:
     background 0.45s ease,
     opacity 0.45s ease,
@@ -2070,12 +2303,18 @@ dialog::backdrop {
   position: relative;
   overflow: hidden;
 }
-:root[data-movimiento="normal"]:not([data-tema="contraste"]) .guia.ayuda::after {
+:root[data-movimiento="normal"]:not([data-tema="contraste"])
+  .guia.ayuda::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(110deg, transparent 30%, rgb(251 191 36 / 0.14) 50%, transparent 70%);
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgb(251 191 36 / 0.14) 50%,
+    transparent 70%
+  );
   transform: translateX(-100%);
   animation: linterna-barrido 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
 }
@@ -2102,14 +2341,28 @@ dialog::backdrop {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: radial-gradient(circle, #fffbeb 0%, #5eead4 62%, transparent 100%);
+  background: radial-gradient(
+    circle,
+    #fffbeb 0%,
+    #5eead4 62%,
+    transparent 100%
+  );
   box-shadow: 0 0 12px rgb(94 234 212 / 0.85);
 }
 .destello-estrella {
   width: 13px;
   height: 13px;
   background: linear-gradient(135deg, #fffbeb, #fbbf24);
-  clip-path: polygon(50% 0%, 63% 35%, 100% 50%, 63% 65%, 50% 100%, 37% 65%, 0% 50%, 37% 35%);
+  clip-path: polygon(
+    50% 0%,
+    63% 35%,
+    100% 50%,
+    63% 65%,
+    50% 100%,
+    37% 65%,
+    0% 50%,
+    37% 35%
+  );
   filter: drop-shadow(0 0 8px rgb(251 191 36 / 0.85));
 }
 .destello-hoja {
@@ -2163,14 +2416,28 @@ dialog::backdrop {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle, #fffbeb 0%, #5eead4 55%, transparent 100%);
+  background: radial-gradient(
+    circle,
+    #fffbeb 0%,
+    #5eead4 55%,
+    transparent 100%
+  );
   box-shadow: 0 0 18px rgb(94 234 212 / 0.72);
 }
 .victoria-estrella {
   width: 14px;
   height: 14px;
   background: linear-gradient(135deg, #fffbeb, #fcd34d);
-  clip-path: polygon(50% 0%, 63% 35%, 100% 50%, 63% 65%, 50% 100%, 37% 65%, 0% 50%, 37% 35%);
+  clip-path: polygon(
+    50% 0%,
+    63% 35%,
+    100% 50%,
+    63% 65%,
+    50% 100%,
+    37% 65%,
+    0% 50%,
+    37% 35%
+  );
   filter: drop-shadow(0 0 10px rgb(252 211 77 / 0.8));
 }
 .victoria-hoja {
@@ -2203,21 +2470,51 @@ dialog::backdrop {
 /* Tema Bosque de día: destellos, hojas y spotlight cálidos bien visibles sobre claro */
 :root[data-tema="dia"] .tarjeta-habitat::after {
   background:
-    linear-gradient(90deg, transparent 10%, rgb(255 251 235 / 0.92) 50%, transparent 90%) top / 100% 1.5px no-repeat,
-    linear-gradient(125deg, transparent 30%, rgb(255 255 255 / 0.24) 50%, transparent 70%);
+    linear-gradient(
+        90deg,
+        transparent 10%,
+        rgb(255 251 235 / 0.92) 50%,
+        transparent 90%
+      )
+      top / 100% 1.5px no-repeat,
+    linear-gradient(
+      125deg,
+      transparent 30%,
+      rgb(255 255 255 / 0.24) 50%,
+      transparent 70%
+    );
 }
 :root[data-tema="dia"] .animal-foco {
-  background: radial-gradient(circle at 50% 46%, rgb(13 148 136 / 0.14) 0%, transparent 64%);
+  background: radial-gradient(
+    circle at 50% 46%,
+    rgb(13 148 136 / 0.14) 0%,
+    transparent 64%
+  );
 }
 :root[data-tema="dia"] .animal-actual[data-tono="ayuda"] .animal-foco {
-  background: radial-gradient(circle at 50% 44%, rgb(217 119 6 / 0.22) 0%, rgb(251 191 36 / 0.08) 50%, transparent 72%);
+  background: radial-gradient(
+    circle at 50% 44%,
+    rgb(217 119 6 / 0.22) 0%,
+    rgb(251 191 36 / 0.08) 50%,
+    transparent 72%
+  );
 }
 :root[data-tema="dia"] .animal-actual[data-tono="confirmacion"] .animal-foco {
-  background: radial-gradient(circle at 50% 44%, rgb(5 150 105 / 0.22) 0%, rgb(217 119 6 / 0.1) 50%, transparent 72%);
+  background: radial-gradient(
+    circle at 50% 44%,
+    rgb(5 150 105 / 0.22) 0%,
+    rgb(217 119 6 / 0.1) 50%,
+    transparent 72%
+  );
 }
 :root[data-tema="dia"] .destello-punto,
 :root[data-tema="dia"] .victoria-luz {
-  background: radial-gradient(circle, #fef3c7 0%, #059669 65%, transparent 100%);
+  background: radial-gradient(
+    circle,
+    #fef3c7 0%,
+    #059669 65%,
+    transparent 100%
+  );
   box-shadow: 0 0 12px rgb(5 150 105 / 0.55);
 }
 :root[data-tema="dia"] .destello-estrella,
@@ -2301,7 +2598,11 @@ dialog::backdrop {
   pointer-events: none;
 }
 .sendero-linea {
-  background: repeating-linear-gradient(90deg, rgb(165 243 252 / 0.34) 0 5px, transparent 5px 10px);
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(165 243 252 / 0.34) 0 5px,
+    transparent 5px 10px
+  );
 }
 .sendero-avance {
   transform-origin: left center;
@@ -2375,7 +2676,11 @@ dialog::backdrop {
 
 /* Bosque de día: sendero esmeralda, estrellas doradas intensas y huella verde bosque */
 :root[data-tema="dia"] .sendero-linea {
-  background: repeating-linear-gradient(90deg, rgb(15 118 110 / 0.32) 0 5px, transparent 5px 10px);
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(15 118 110 / 0.32) 0 5px,
+    transparent 5px 10px
+  );
 }
 :root[data-tema="dia"] .sendero-avance {
   background: linear-gradient(90deg, #059669, #10b981, #d97706);
@@ -2416,7 +2721,11 @@ dialog::backdrop {
 
 /* Alto contraste 21:1 AAA: sendero y estrellas blanco puro sobre negro puro */
 :root[data-tema="contraste"] .sendero-linea {
-  background: repeating-linear-gradient(90deg, #ffffff 0 4px, transparent 4px 9px);
+  background: repeating-linear-gradient(
+    90deg,
+    #ffffff 0 4px,
+    transparent 4px 9px
+  );
 }
 :root[data-tema="contraste"] .sendero-avance {
   background: #ffffff;
@@ -2491,7 +2800,11 @@ dialog::backdrop {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--tinta);
-  background: linear-gradient(180deg, rgb(16 48 70 / 0.88), rgb(8 27 42 / 0.94));
+  background: linear-gradient(
+    180deg,
+    rgb(16 48 70 / 0.88),
+    rgb(8 27 42 / 0.94)
+  );
   border: 1.5px solid rgb(125 211 252 / 0.38);
   box-shadow:
     inset 0 1px 0 rgb(207 250 254 / 0.2),
@@ -2508,7 +2821,11 @@ dialog::backdrop {
   flex: none;
 }
 .boton-album:hover {
-  background: linear-gradient(180deg, rgb(21 64 92 / 0.94), rgb(11 38 58 / 0.96));
+  background: linear-gradient(
+    180deg,
+    rgb(21 64 92 / 0.94),
+    rgb(11 38 58 / 0.96)
+  );
   border-color: var(--expedicion);
   box-shadow:
     inset 0 1px 0 rgb(207 250 254 / 0.28),
@@ -2578,7 +2895,11 @@ dialog::backdrop {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgb(94 234 212 / 0.32), rgb(94 234 212 / 0.52));
+  background: linear-gradient(
+    90deg,
+    rgb(94 234 212 / 0.32),
+    rgb(94 234 212 / 0.52)
+  );
   transform-origin: left center;
   transform: scaleX(0);
   pointer-events: none;
@@ -2592,7 +2913,8 @@ dialog::backdrop {
 }
 
 /* ===== Empujoncito gentil por inactividad en Pista (Pok Pok / Sago Mini) ===== */
-:root[data-movimiento="normal"]:not([data-tema="contraste"]) .control[data-invitar="true"] {
+:root[data-movimiento="normal"]:not([data-tema="contraste"])
+  .control[data-invitar="true"] {
   animation: pista-invitar 2.1s ease-in-out infinite;
 }
 @keyframes pista-invitar {
@@ -2779,11 +3101,19 @@ dialog::backdrop {
   opacity: 1;
   border-style: solid;
   border-color: rgb(251 191 36 / 0.58);
-  background: linear-gradient(155deg, rgb(251 191 36 / 0.16), rgb(9 31 48 / 0.85));
+  background: linear-gradient(
+    155deg,
+    rgb(251 191 36 / 0.16),
+    rgb(9 31 48 / 0.85)
+  );
 }
 .album-medalla[data-tipo="habitat"][data-obtenida="true"] {
   border-color: rgb(94 234 212 / 0.62);
-  background: linear-gradient(155deg, rgb(94 234 212 / 0.16), rgb(9 31 48 / 0.85));
+  background: linear-gradient(
+    155deg,
+    rgb(94 234 212 / 0.16),
+    rgb(9 31 48 / 0.85)
+  );
 }
 .album-medalla-icono {
   display: grid;
@@ -2984,7 +3314,9 @@ dialog::backdrop {
   background: rgb(19 97 76 / 0.14);
   color: var(--expedicion);
 }
-:root[data-tema="dia"] .filtro-faltantes[aria-pressed="true"] .filtro-faltantes-cuenta {
+:root[data-tema="dia"]
+  .filtro-faltantes[aria-pressed="true"]
+  .filtro-faltantes-cuenta {
   background: rgb(255 255 255 / 0.22);
   color: #ffffff;
 }
@@ -3030,11 +3362,14 @@ dialog::backdrop {
   background: linear-gradient(155deg, #fffbeb 0%, #faeac5 100%);
   border-color: #b87004;
 }
-:root[data-tema="dia"] .album-medalla[data-tipo="habitat"][data-obtenida="true"] {
+:root[data-tema="dia"]
+  .album-medalla[data-tipo="habitat"][data-obtenida="true"] {
   background: linear-gradient(155deg, #ecfdf5 0%, #d1fae5 100%);
   border-color: var(--expedicion);
 }
-:root[data-tema="dia"] .album-medalla[data-tipo="habitat"][data-obtenida="true"] .album-medalla-icono {
+:root[data-tema="dia"]
+  .album-medalla[data-tipo="habitat"][data-obtenida="true"]
+  .album-medalla-icono {
   background: var(--expedicion);
   color: #ffffff;
 }
@@ -3048,7 +3383,9 @@ dialog::backdrop {
   background: #ffffff;
   color: #000000;
 }
-:root[data-tema="contraste"] .filtro-faltantes[aria-pressed="true"] .filtro-faltantes-cuenta {
+:root[data-tema="contraste"]
+  .filtro-faltantes[aria-pressed="true"]
+  .filtro-faltantes-cuenta {
   background: #000000;
   color: #ffffff;
 }
@@ -3094,8 +3431,12 @@ dialog::backdrop {
 :root[data-tema="contraste"] .album-medalla:not([data-obtenida="true"]) {
   border-style: dashed;
 }
-:root[data-tema="contraste"] .album-medalla[data-obtenida="true"] .album-medalla-icono,
-:root[data-tema="contraste"] .album-medalla[data-tipo="habitat"][data-obtenida="true"] .album-medalla-icono {
+:root[data-tema="contraste"]
+  .album-medalla[data-obtenida="true"]
+  .album-medalla-icono,
+:root[data-tema="contraste"]
+  .album-medalla[data-tipo="habitat"][data-obtenida="true"]
+  .album-medalla-icono {
   background: #ffffff;
   color: #000000;
 }

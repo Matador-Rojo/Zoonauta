@@ -2,7 +2,7 @@
 
 Uso en PythonAnywhere (/var/www/<usuario>_pythonanywhere_com_wsgi.py):
     import sys
-    sys.path.insert(0, '/home/<usuario>/Zoonauta-Hostinger')
+    sys.path.insert(0, '/home/<usuario>/Zoonauta-Web')
     from codigo.interfaz.wsgi import application
 """
 from __future__ import annotations

@@ -269,11 +269,10 @@ class PruebasInterfaz(unittest.TestCase):
                     urlopen(req_304)
                 self.assertEqual(ctx304.exception.code, 304)
 
-                # 5. Streaming Range 206 de video de portada
-                req_range = Request(f"{base}/portada/bosque-de-luz.mp4", headers={"Range": "bytes=0-1023"})
-                with urlopen(req_range) as r:
-                    self.assertEqual(r.status, 206)
-                    self.assertEqual(len(r.read()), 1024)
+                # 5. Los videos de portada fueron retirados (portada 2K estática + BosqueVivo)
+                with self.assertRaises(HTTPError) as ctx404:
+                    urlopen(f"{base}/portada/bosque-de-luz.mp4")
+                self.assertEqual(ctx404.exception.code, 404)
             finally:
                 srv.shutdown()
                 srv.server_close()
@@ -343,9 +342,8 @@ class PruebasInterfaz(unittest.TestCase):
             self.assertTrue(st304.startswith("304"))
             self.assertEqual(body304, b"")
 
-            st206, _, trozo = llamar("GET", "/portada/bosque-de-luz.mp4", headers={"Range": "bytes=0-511"})
-            self.assertTrue(st206.startswith("206"))
-            self.assertEqual(len(trozo), 512)
+            st404, _, _ = llamar("GET", "/portada/bosque-de-luz.mp4")
+            self.assertTrue(st404.startswith("404"))
 
 
 if __name__ == "__main__":

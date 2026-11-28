@@ -47,19 +47,6 @@ WEB6 = (Path(__file__).parent / "web6").resolve()
 TIPOS_V6 = {".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8",
             ".css": "text/css; charset=utf-8", ".svg": "image/svg+xml", ".webp": "image/webp",
             ".woff2": "font/woff2"}
-VIDEOS_PORTADA = {
-    "bosque-de-luz.webm": "video/webm",
-    "bosque-de-luz.mp4": "video/mp4",
-    "bosque-de-dia.webm": "video/webm",
-    "bosque-de-dia.mp4": "video/mp4",
-    "alto-contraste.webm": "video/webm",
-    "alto-contraste.mp4": "video/mp4",
-}
-PREFIJOS_VIDEO_TEMA = {
-    "noche": "bosque-de-luz",
-    "dia": "bosque-de-dia",
-    "contraste": "alto-contraste",
-}
 
 
 def _ligeros(carpeta: str) -> dict[str, Path]:
@@ -224,50 +211,6 @@ class Manejador(BaseHTTPRequestHandler):
             # El navegador puede cancelar una descarga al pausar la lectura.
             pass
 
-    def _enviar_rango(self, archivo: Path, tipo: str):
-        """Sirve video con soporte HTTP Range (206) leyendo solo el trozo solicitado."""
-        st = archivo.stat()
-        total = st.st_size
-        tag = f'"{st.st_mtime_ns:x}-{total:x}"'
-        rango = self.headers.get("Range")
-        if not rango and self.headers.get("If-None-Match") == tag:
-            self.send_response(304)
-            self.send_header("ETag", tag)
-            self.send_header("Cache-Control", CACHE_MEDIOS)
-            self.end_headers()
-            return
-        inicio, fin, codigo = 0, total - 1, 200
-        if rango and rango.startswith("bytes="):
-            parte = rango.removeprefix("bytes=").split(",")[0].strip()
-            a, _, b = parte.partition("-")
-            try:
-                inicio = int(a) if a else max(0, total - int(b))
-                fin = int(b) if b and a else total - 1
-                inicio = max(0, min(inicio, total - 1))
-                fin = max(inicio, min(fin, total - 1))
-                codigo = 206
-            except ValueError:
-                inicio, fin, codigo = 0, total - 1, 200
-        largo = fin - inicio + 1
-        with archivo.open("rb") as fh:
-            fh.seek(inicio)
-            trozo = fh.read(largo)
-        self.send_response(codigo)
-        self.send_header("Content-Type", tipo)
-        self.send_header("Accept-Ranges", "bytes")
-        self.send_header("Content-Length", str(len(trozo)))
-        if codigo == 206:
-            self.send_header("Content-Range", f"bytes {inicio}-{fin}/{total}")
-        self.send_header("ETag", tag)
-        self.send_header("Cache-Control", CACHE_MEDIOS)
-        self.send_header("X-Content-Type-Options", "nosniff")
-        self.send_header("Content-Security-Policy", "default-src 'self'")
-        self.end_headers()
-        try:
-            self.wfile.write(trozo)
-        except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
-            pass
-
     def _enviar_v6(self, ruta):
         """Interfaz 6.0 compilada con Vite (frontend/ → web6/). No requiere Node para jugar."""
         if ruta in ("/v6", "/v6/"):
@@ -358,19 +301,6 @@ class Manejador(BaseHTTPRequestHandler):
                 "grabadas": voz_grabada.disponibles(self.server.banco),
                 "voces_grabadas": voz_grabada.voces_disponibles(self.server.banco),
             })
-        elif ruta == "/api/portada":
-            carpeta = RAIZ_PROYECTO / "assets/portada"
-            videos = {
-                tema: next((f"/portada/{pref}.{ext}" for ext in ("webm", "mp4") if (carpeta / f"{pref}.{ext}").is_file()), None)
-                for tema, pref in PREFIJOS_VIDEO_TEMA.items()
-            }
-            self._enviar({"video": videos["noche"], "videos": videos})
-        elif ruta.startswith("/portada/") and ruta.removeprefix("/portada/") in VIDEOS_PORTADA:
-            nombre = ruta.removeprefix("/portada/")
-            archivo = RAIZ_PROYECTO / "assets/portada" / nombre
-            if not archivo.is_file():
-                return self._enviar({"error": "Recurso no encontrado."}, codigo=404)
-            self._enviar_rango(archivo, VIDEOS_PORTADA[nombre])
         elif ruta.startswith("/media/"):
             picto = self.server.banco.pictogramas.get(ruta.removeprefix("/media/"))
             if not picto:

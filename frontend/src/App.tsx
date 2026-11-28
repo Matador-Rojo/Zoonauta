@@ -131,7 +131,6 @@ export function App() {
     useState<EventoInstalacionPwa | null>(null);
   const [manteniendoPref, setManteniendoPref] = useState(false);
   const [animalVolando, setAnimalVolando] = useState<string | null>(null);
-  const [videoPortadaActivo, setVideoPortadaActivo] = useState(false);
   const [prefs, setPrefs] = useState<ValoresPreferencias>(() => ({
     retos: "8",
     opciones: 8,
@@ -579,7 +578,6 @@ export function App() {
         vista={vista}
         tema={prefs.tema}
         reducido={movimientoReducido}
-        onVideoActivo={setVideoPortadaActivo}
         onAbrirModalidad={() => hablar(vista, "modalidad")}
         onCerrarModalidad={() => {
           if (vistaRef.current?.fase === "INICIO") guia.parar();
@@ -637,7 +635,7 @@ export function App() {
         <BosqueVivo
           fase={vista.fase}
           tema={prefs.tema}
-          reducido={movimientoReducido || (enInicio && videoPortadaActivo)}
+          reducido={movimientoReducido}
         />
         <a className="saltar" href="#juego">
           {t("Ir al juego")}

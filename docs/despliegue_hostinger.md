@@ -6,9 +6,9 @@ de observación `/revision`:
 
 - **HTTPS / Proxy reverso:** acepta `Origin` en `https://`, lee `X-Forwarded-Proto` / `X-Forwarded-Host` y marca cookies como `Secure` en HTTPS.
 - **Adaptador WSGI sin dependencias:** `codigo.interfaz.wsgi:application` listo para PythonAnywhere, Gunicorn o servidores WSGI.
-- **Caché HTTP y compresión:** `gzip` automático en JSON/HTML/JS/CSS/SVG, `ETag` + `304 Not Modified` en imágenes y videos (`max-age=604800`), `Cache-Control` en audios de voz (`max-age=86400`), y streaming real por rangos (`206 Partial Content`) en videos de portada.
+- **Caché HTTP y compresión:** `gzip` automático en JSON/HTML/JS/CSS/SVG, `ETag` + `304 Not Modified` en imágenes (`max-age=604800`) y `Cache-Control` en audios de voz (`max-age=86400`).
 - **Control de memoria:** expiración automática de sesiones inactivas (`TTL = 2 h`, tope de `500` sesiones concurrentes) y ruta de salud `/healthz`.
-- **Paquete web optimizado (`Zoonauta-Web.zip`, ~73.6 MB):** incluye el frontend compilado (`web6/`), imágenes ligeras WebP (`pictogramas_ligeros`, `paisajes_ligeros`, `ilustraciones_ligeras`, sin duplicados de `assets/animales/`), videos de portada H.264 `faststart` sin pista de audio, y las **8 voces completas** (`3 296` audios: 4 ES, 2 PT-BR, 2 EN) convertidas a **AAC-LC 32 kbps mono `.m4a`** (`audio/mp4`, `24 kHz`, `+faststart`).
+- **Paquete web optimizado (`Zoonauta-Web.zip`, ~70 MB):** incluye el frontend compilado (`web6/`) con portadas WebP 2K (`1672 × 941`) + atmósfera viva `<BosqueVivo />` sin archivos de video, imágenes ligeras WebP (`pictogramas_ligeros`, `paisajes_ligeros`, `ilustraciones_ligeras`, sin duplicados de `assets/animales/`), y las **8 voces completas** (`3 296` audios: 4 ES, 2 PT-BR, 2 EN) convertidas a **AAC-LC 32 kbps mono `.m4a`** (`audio/mp4`, `24 kHz`, `+faststart`).
 
 ## Opción 1 (gratuita y más rápida): PythonAnywhere (WSGI)
 

@@ -35,9 +35,9 @@ pantalla, sin moverla. En computadora muestra dos columnas; en el móvil, una.
 - **Aspecto visual:** *Bosque de noche* (predeterminado), *Bosque de día* (claro) o
   *Alto contraste* (negro y blanco puros, WCAG AAA 21:1).
 - **Tamaño de texto:** *Pequeño*, *Normal* o *Grande*.
-- **Reducir movimiento:** desactiva las animaciones y el video de portada, mostrando las
-  portadas estáticas en alta nitidez. Respeta la preferencia del sistema al abrir, pero
-  se puede cambiar manualmente en cualquier momento.
+- **Reducir movimiento:** desactiva el lienzo atmosférico y las animaciones, mostrando las
+  portadas 2K en alta nitidez completamente estáticas. Respeta la preferencia del sistema al
+  abrir, pero se puede cambiar manualmente en cualquier momento.
 - **Instalar app (PWA):** si el navegador lo permite, ofrece instalar Zoonauta como aplicación.
 
 Usa **Volver al juego**, la ×, Escape o toca fuera para cerrar Preferencias. Tab y

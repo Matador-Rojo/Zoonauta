@@ -15,10 +15,8 @@
   overflow: hidden;
 }
 
-/* El fondo base, la escena en video real y el velo cubren la vista sin recortar contenido. */
+/* El fondo base y el velo cubren la vista sin recortar contenido. */
 .portada-paisaje,
-.portada-viva-capa,
-.portada-video,
 .portada-velo {
   position: absolute;
   inset: 0;
@@ -29,24 +27,6 @@
   z-index: -3;
   object-fit: cover;
   object-position: center;
-}
-.portada-viva-capa {
-  z-index: -2;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.55s ease-out;
-}
-.portada-viva-capa[data-listo="true"] {
-  opacity: 1;
-}
-.portada-video {
-  object-fit: cover;
-  object-position: center;
-  opacity: 0;
-  transition: opacity 1.35s ease-in-out;
-}
-.portada-video[data-visible="true"] {
-  opacity: 1;
 }
 .portada-velo {
   z-index: -1;
@@ -103,7 +83,11 @@
 }
 .cabecera[data-fase="INICIO"] .boton-texto:hover {
   border-color: var(--expedicion-claro);
-  background: linear-gradient(180deg, rgb(12 44 66 / 0.92), rgb(6 27 42 / 0.94));
+  background: linear-gradient(
+    180deg,
+    rgb(12 44 66 / 0.92),
+    rgb(6 27 42 / 0.94)
+  );
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.22),
     0 0 20px rgb(94 234 212 / 0.24),
@@ -227,7 +211,12 @@
   position: absolute;
   inset: -40% auto -40% -45%;
   width: 42%;
-  background: linear-gradient(105deg, transparent 20%, rgb(255 255 255 / 0.52) 50%, transparent 80%);
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgb(255 255 255 / 0.52) 50%,
+    transparent 80%
+  );
   opacity: 0;
   transform: translateX(-160%) skewX(-18deg);
   pointer-events: none;
@@ -301,7 +290,10 @@
   transform: scale(1.08) translateX(2px);
 }
 :root[data-movimiento="normal"] .cabecera[data-fase="INICIO"] .marca img,
-:root[data-movimiento="normal"] .cabecera[data-fase="INICIO"] .marca .logo-zoonauta {
+:root[data-movimiento="normal"]
+  .cabecera[data-fase="INICIO"]
+  .marca
+  .logo-zoonauta {
   animation: emblema-respira 5s ease-in-out infinite;
 }
 @keyframes portada-entra {
@@ -369,16 +361,14 @@
 
 /* Tableta vertical: encuadre que conserva completo al ciervo bajo la luna */
 @media (max-width: 960px) and (orientation: portrait) {
-  .portada-paisaje,
-  .portada-video {
+  .portada-paisaje {
     object-position: 78% center;
   }
 }
 
 /* Móvil vertical */
 @media (max-width: 700px) {
-  .portada-paisaje,
-  .portada-video {
+  .portada-paisaje {
     object-position: 82% center;
   }
   .portada-velo {

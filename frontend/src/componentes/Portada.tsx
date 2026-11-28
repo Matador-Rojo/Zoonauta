@@ -11,7 +11,6 @@ import fondo1672 from "../recursos/bosque-de-luz-1672.webp";
 import { CERRAR_FUERA, useCerrarFuera } from "./dialogos";
 import { Icono } from "./Icono";
 import { Pictograma } from "./Pictograma";
-import { PortadaViva } from "./PortadaViva";
 import type { TemaVisual } from "./Preferencias";
 import { moverLuzPuntero } from "./useLuzPuntero";
 
@@ -22,18 +21,17 @@ const FONDOS_TEMA: Record<TemaVisual, { grande: string; mediano: string }> = {
 };
 
 /**
- * Portada cinematográfica de Zoonauta 6.0 con tres mundos sincronizados al tema visual:
+ * Portada editorial de Zoonauta 6.0 con tres mundos sincronizados al tema visual:
  * - Bosque de noche: ciervo y búho bajo la luna («Bosque de luz»).
  * - Bosque de día: jaguar y guacamayo rojo en selva soleada.
  * - Alto contraste: lobo ártico y búho nival bajo aurora boreal.
- * Cada tema muestra su imagen WebP de carga instantánea y su video 2K en bucle invisible
- * (desactivable al instante con «Reducir movimiento»).
+ * Cada tema muestra su ilustración WebP en máxima nitidez (1672 × 941) acompañada
+ * por la atmósfera viva <BosqueVivo /> (desactivable al instante con «Reducir movimiento»).
  */
 interface Props {
   vista: Vista;
   tema: TemaVisual;
   reducido: boolean;
-  onVideoActivo?: (activo: boolean) => void;
   onComenzar: (modalidad: Modalidad) => void;
   onAbrirModalidad: () => void;
   onCerrarModalidad: () => void;
@@ -43,7 +41,6 @@ export function Portada({
   vista,
   tema,
   reducido,
-  onVideoActivo,
   onComenzar,
   onAbrirModalidad,
   onCerrarModalidad,
@@ -71,7 +68,11 @@ export function Portada({
   };
 
   return (
-    <section className="portada" data-tema={tema} aria-labelledby="titulo-pantalla">
+    <section
+      className="portada"
+      data-tema={tema}
+      aria-labelledby="titulo-pantalla"
+    >
       <img
         className="portada-paisaje"
         src={fondo.grande}
@@ -84,7 +85,6 @@ export function Portada({
         fetchPriority="high"
         decoding="async"
       />
-      <PortadaViva tema={tema} poster={fondo.grande} reducido={reducido} onVideoActivo={onVideoActivo} />
       <div className="portada-velo" aria-hidden="true" />
 
       <div className="portada-bienvenida">
@@ -163,7 +163,11 @@ export function Portada({
             >
               {/* Diferida: el diálogo cerrado no debe descargar ~1 MB al abrir la portada. */}
               <span className="opcion-modalidad-escena">
-                <Pictograma id={picto} datos={vista.pictogramas[picto]} perezosa />
+                <Pictograma
+                  id={picto}
+                  datos={vista.pictogramas[picto]}
+                  perezosa
+                />
               </span>
               <span>{t(etiqueta)}</span>
             </button>
