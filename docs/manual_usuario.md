@@ -22,7 +22,7 @@ pantalla, sin moverla. En computadora muestra dos columnas; en el móvil, una.
   (ElevenLabs, 412 mensajes cada una):
   - **Español:** Marcela, Valeria, Gaby y Diego.
   - **Português (Brasil):** Roberta y Will.
-  - **English:** Mark y Jessica.
+  - **English:** Jessica y Mark.
   **Probar voz** reproduce el mensaje que está en pantalla.
 - **Ritmo de lectura:** *Despacio*, *Natural* o *Más ágil*.
 - **Sonidos del bosque:** activa o desactiva el paisaje suave del bosque durante el

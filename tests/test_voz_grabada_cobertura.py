@@ -191,8 +191,8 @@ class CoberturaVozGrabada(unittest.TestCase):
                 self.assertEqual(
                     voces_en,
                     [
-                        {"id": "mark", "etiqueta": "Mark · ElevenLabs", "cantidad": 412},
                         {"id": "jessica", "etiqueta": "Jessica · ElevenLabs", "cantidad": 412},
+                        {"id": "mark", "etiqueta": "Mark · ElevenLabs", "cantidad": 412},
                     ],
                 )
                 banco = servidor.banco

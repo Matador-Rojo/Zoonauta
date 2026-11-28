@@ -30,8 +30,8 @@ VOCES_GRABADAS: dict[str, tuple[dict[str, str], ...]] = {
         {"id": "will", "etiqueta": "Will · ElevenLabs", "subcarpeta": "pt-BR-will"},
     ),
     "en": (
-        {"id": "mark", "etiqueta": "Mark · ElevenLabs", "subcarpeta": "en"},
         {"id": "jessica", "etiqueta": "Jessica · ElevenLabs", "subcarpeta": "en-jessica"},
+        {"id": "mark", "etiqueta": "Mark · ElevenLabs", "subcarpeta": "en"},
     ),
 }
 

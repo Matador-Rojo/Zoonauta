@@ -13,7 +13,7 @@
 Jogo educativo de animais e habitats com pictogramas CAA, guia adaptativo local e 8 vozes gravadas completas.
 
 <p>
-  <a href="https://github.com/Matador-Rojo/Zoonauta/releases"><strong>Baixar Zoonauta-Web.zip</strong></a>
+  <a href="https://matarojo.pythonanywhere.com/"><strong>Jogar agora</strong></a>
   &nbsp;&middot;&nbsp;
   <a href="#galeria">Galeria</a>
   &nbsp;&middot;&nbsp;
@@ -108,7 +108,7 @@ O Zoonauta traduz ao vivo toda a interface, os **288 animais**, os **48 habitats
 | :--- | :--- | :---: |
 | **Español (`es-419`)** | Marcela, Valeria, Gaby, Diego | 412 |
 | **Português (`pt-BR`)** | Roberta, Will | 412 |
-| **English (`en`)** | Mark, Jessica | 412 |
+| **English (`en`)** | Jessica, Mark | 412 |
 
 O servidor suporta nativamente **AAC (`.m4a` / `audio/mp4`)** — usado a 32 kbps mono em `Zoonauta-Web.zip` —, **MP3** e **WAV**.
 

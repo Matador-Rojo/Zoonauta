@@ -13,7 +13,7 @@
 Educational animal & habitat discovery game with AAC pictograms, a local adaptive AI guide, and 8 complete recorded voices.
 
 <p>
-  <a href="https://github.com/Matador-Rojo/Zoonauta/releases"><strong>Download Zoonauta-Web.zip</strong></a>
+  <a href="https://matarojo.pythonanywhere.com/"><strong>Play now</strong></a>
   &nbsp;&middot;&nbsp;
   <a href="#gallery">Gallery</a>
   &nbsp;&middot;&nbsp;
@@ -108,7 +108,7 @@ Zoonauta translates the entire UI, all **288 animals**, **48 habitats**, AAC pic
 | :--- | :--- | :---: |
 | **Español (`es-419`)** | Marcela, Valeria, Gaby, Diego | 412 |
 | **Português (`pt-BR`)** | Roberta, Will | 412 |
-| **English (`en`)** | Mark, Jessica | 412 |
+| **English (`en`)** | Jessica, Mark | 412 |
 
 The server natively serves **AAC (`.m4a` / `audio/mp4`)** — used at 32 kbps mono in `Zoonauta-Web.zip` — as well as **MP3** and **WAV**.
 

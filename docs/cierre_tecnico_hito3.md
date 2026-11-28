@@ -24,7 +24,7 @@ La aplicación dispone de:
   grabadas completas** de ElevenLabs (`412` mensajes por voz):
   - **Español:** Marcela, Valeria, Gaby y Diego.
   - **Português (Brasil):** Roberta y Will.
-  - **English:** Mark y Jessica.
+  - **English:** Jessica y Mark.
 - **3 temas visuales** con logotipo vectorial adaptativo (*Bosque de noche*, *Bosque de día* y *Alto contraste*
   WCAG AAA 21:1), **3 tamaños de texto** (*Pequeño*, *Normal*, *Grande*), *Reducir movimiento*, bloqueo
   opcional *Proteger Preferencias*, sonidos del bosque con celebración acústica reactiva a 5 familias de biomas,

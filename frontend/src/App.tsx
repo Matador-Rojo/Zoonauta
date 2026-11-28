@@ -1,9 +1,28 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { MotionConfig, motion } from "motion/react";
-import { cargarAlbum, limpiarAlbum, registrarHallazgoEnAlbum, resumenAlbum, type RegistroAlbum } from "./album";
-import { cargarConfigVoz, cargarDiccionarios, cargarVista, enviarAccion, enviarIdioma } from "./api/cliente";
-import type { Diccionarios, Idioma, Modalidad, TipoAccion, Vista, VozGrabadaInfo } from "./api/tipos";
+import {
+  cargarAlbum,
+  limpiarAlbum,
+  registrarHallazgoEnAlbum,
+  resumenAlbum,
+  type RegistroAlbum,
+} from "./album";
+import {
+  cargarConfigVoz,
+  cargarDiccionarios,
+  cargarVista,
+  enviarAccion,
+  enviarIdioma,
+} from "./api/cliente";
+import type {
+  Diccionarios,
+  Idioma,
+  Modalidad,
+  TipoAccion,
+  Vista,
+  VozGrabadaInfo,
+} from "./api/tipos";
 import { Album } from "./componentes/Album";
 import { BosqueVivo } from "./componentes/BosqueVivo";
 import { Catalogo } from "./componentes/Catalogo";
@@ -12,7 +31,12 @@ import { useCerrarFuera } from "./componentes/dialogos";
 import { Icono } from "./componentes/Icono";
 import { LogoZoonauta } from "./componentes/LogoZoonauta";
 import { Portada } from "./componentes/Portada";
-import { Preferencias, type EscalaTexto, type TemaVisual, type ValoresPreferencias } from "./componentes/Preferencias";
+import {
+  Preferencias,
+  type EscalaTexto,
+  type TemaVisual,
+  type ValoresPreferencias,
+} from "./componentes/Preferencias";
 import { Controles, Reto } from "./componentes/Reto";
 import { vibrar } from "./haptica";
 import { ContextoIdioma, crearTraductor } from "./i18n";
@@ -74,7 +98,9 @@ function escalaInicial(): EscalaTexto {
 // Preferencia del sistema, escuchada en vivo. Marca el valor inicial, pero la persona
 // puede desactivar «Reducir movimiento» en Preferencias si desea ver las animaciones.
 function useSistemaReduceMovimiento(): boolean {
-  const [reduce, setReduce] = useState(() => matchMedia("(prefers-reduced-motion: reduce)").matches);
+  const [reduce, setReduce] = useState(
+    () => matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
   useEffect(() => {
     const consulta = matchMedia("(prefers-reduced-motion: reduce)");
     const alCambiar = () => setReduce(consulta.matches);
@@ -86,16 +112,23 @@ function useSistemaReduceMovimiento(): boolean {
 
 export function App() {
   const [vista, setVista] = useState<Vista | null>(null);
-  const [diccionarios, setDiccionarios] = useState<Diccionarios>({ es: {}, "pt-BR": {}, en: {} });
+  const [diccionarios, setDiccionarios] = useState<Diccionarios>({
+    es: {},
+    "pt-BR": {},
+    en: {},
+  });
   const [grabadas, setGrabadas] = useState<Partial<Record<Idioma, number>>>({});
-  const [vocesGrabadas, setVocesGrabadas] = useState<Partial<Record<Idioma, VozGrabadaInfo[]>>>({});
+  const [vocesGrabadas, setVocesGrabadas] = useState<
+    Partial<Record<Idioma, VozGrabadaInfo[]>>
+  >({});
   const [errorCarga, setErrorCarga] = useState(false);
   const [ocupado, setOcupado] = useState(false);
   const [hablando, setHablando] = useState(false);
   const [progresoVoz, setProgresoVoz] = useState(0);
   const [hallazgos, setHallazgos] = useState<Hallazgo[]>([]);
   const [album, setAlbum] = useState<RegistroAlbum[]>(() => cargarAlbum());
-  const [eventoInstalar, setEventoInstalar] = useState<EventoInstalacionPwa | null>(null);
+  const [eventoInstalar, setEventoInstalar] =
+    useState<EventoInstalacionPwa | null>(null);
   const [manteniendoPref, setManteniendoPref] = useState(false);
   const [animalVolando, setAnimalVolando] = useState<string | null>(null);
   const [videoPortadaActivo, setVideoPortadaActivo] = useState(false);
@@ -126,11 +159,17 @@ export function App() {
   useCerrarFuera(albumDialogo);
 
   const idioma: Idioma = vista?.idioma ?? "es";
-  const traductor = useMemo(() => crearTraductor(diccionarios, idioma), [diccionarios, idioma]);
+  const traductor = useMemo(
+    () => crearTraductor(diccionarios, idioma),
+    [diccionarios, idioma],
+  );
   const { t } = traductor;
 
   const silenciarError = useCallback(() => undefined, []);
-  const guia = useMemo(() => new GuiaVoz(silenciarError, setHablando, setProgresoVoz), [silenciarError]);
+  const guia = useMemo(
+    () => new GuiaVoz(silenciarError, setHablando, setProgresoVoz),
+    [silenciarError],
+  );
   const sonido = useMemo(() => new MotorSonido(), []);
 
   // Carga inicial: la cookie de sesión permite recuperar la partida al recargar.
@@ -164,12 +203,16 @@ export function App() {
     document.title = "Zoonauta · " + t("Animales y hábitats");
   }, [idioma, t]);
   useEffect(() => {
-    document.documentElement.dataset.movimiento = movimientoReducido ? "reducido" : "normal";
+    document.documentElement.dataset.movimiento = movimientoReducido
+      ? "reducido"
+      : "normal";
   }, [movimientoReducido]);
   useEffect(() => {
     document.documentElement.dataset.tema = prefs.tema;
     guardarLocal(CLAVE_TEMA, prefs.tema);
-    const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const meta = document.querySelector<HTMLMetaElement>(
+      'meta[name="theme-color"]',
+    );
     if (meta) meta.content = COLOR_TEMA[prefs.tema];
   }, [prefs.tema]);
   useEffect(() => {
@@ -193,7 +236,14 @@ export function App() {
     guardarLocal(CLAVE_ESCALA, prefs.escala);
   }, [prefs.escala]);
   useEffect(() => {
-    guardarLocal(CLAVE_MOVIMIENTO, prefs.movimientoReducido === null ? null : prefs.movimientoReducido ? "1" : "0");
+    guardarLocal(
+      CLAVE_MOVIMIENTO,
+      prefs.movimientoReducido === null
+        ? null
+        : prefs.movimientoReducido
+          ? "1"
+          : "0",
+    );
   }, [prefs.movimientoReducido]);
   useEffect(() => {
     guardarLocal(CLAVE_SONIDO, prefs.sonidoBosque ? "1" : "0");
@@ -225,7 +275,13 @@ export function App() {
     if (!fase) return;
     sonido.fijarOculto(document.hidden);
     sonido.fijarModo(
-      fase === "COMPLETADA" ? "victoria" : fase === "PAUSADA" ? "pausa" : fase === "ABANDONADA" ? "silencio" : "juego",
+      fase === "COMPLETADA"
+        ? "victoria"
+        : fase === "PAUSADA"
+          ? "pausa"
+          : fase === "ABANDONADA"
+            ? "silencio"
+            : "juego",
     );
     if (primeraFase.current) {
       primeraFase.current = false;
@@ -243,7 +299,14 @@ export function App() {
     (idIdioma: Idioma) => {
       const lista = vocesGrabadas[idIdioma] ?? [];
       if (lista.some((v) => v.id === prefs.vozGrabada)) return prefs.vozGrabada;
-      return lista[0]?.id ?? (idIdioma === "en" ? "mark" : idIdioma === "pt-BR" ? "roberta" : "marcela");
+      return (
+        lista[0]?.id ??
+        (idIdioma === "en"
+          ? "jessica"
+          : idIdioma === "pt-BR"
+            ? "roberta"
+            : "marcela")
+      );
     },
     [vocesGrabadas, prefs.vozGrabada],
   );
@@ -257,13 +320,18 @@ export function App() {
         voz: resolverVoz(v.idioma),
       };
       void guia.hablar(v, ajustes, contexto, {
-        error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
+        error: t(
+          "No se pudo reproducir la voz. Puedes volver a pulsar Repetir.",
+        ),
       });
     },
     [guia, prefs.vozActiva, prefs.velocidad, resolverVoz, grabadas, t],
   );
 
-  const animalesDescubiertos = useMemo(() => new Set(album.map((r) => r.animalId)), [album]);
+  const animalesDescubiertos = useMemo(
+    () => new Set(album.map((r) => r.animalId)),
+    [album],
+  );
   const descubiertosRef = useRef<Set<string>>(animalesDescubiertos);
   useEffect(() => {
     descubiertosRef.current = animalesDescubiertos;
@@ -274,7 +342,10 @@ export function App() {
       const actual = vistaRef.current;
       if (ocupadoRef.current || !actual) return;
       if (tipo === "iniciar") {
-        const n = Math.min(48, Math.max(1, Math.round(Number(prefs.retos) || 8)));
+        const n = Math.min(
+          48,
+          Math.max(1, Math.round(Number(prefs.retos) || 8)),
+        );
         payload = {
           ...payload,
           retos: n,
@@ -293,9 +364,15 @@ export function App() {
         if (datos.vista) {
           const cambiaPantalla = datos.vista.fase !== actual.fase;
           const doc = document as Document & {
-            startViewTransition?: (cb: () => void) => { finished: Promise<void> };
+            startViewTransition?: (cb: () => void) => {
+              finished: Promise<void>;
+            };
           };
-          if (cambiaPantalla && !movimientoReducido && typeof doc.startViewTransition === "function") {
+          if (
+            cambiaPantalla &&
+            !movimientoReducido &&
+            typeof doc.startViewTransition === "function"
+          ) {
             const trans = doc.startViewTransition(() => {
               flushSync(() => setVista(datos.vista!));
             });
@@ -316,19 +393,32 @@ export function App() {
           } else if (tipo === "elegir_animal") {
             sonido.tocar("elegir");
             vibrar("toque", movimientoReducido);
-          } else if (tipo === "continuar" && datos.vista.fase !== "COMPLETADA") {
+          } else if (
+            tipo === "continuar" &&
+            datos.vista.fase !== "COMPLETADA"
+          ) {
             sonido.tocar("transicion");
             vibrar("toque", movimientoReducido);
-          } else if (tipo === "continuar" && datos.vista.fase === "COMPLETADA") {
+          } else if (
+            tipo === "continuar" &&
+            datos.vista.fase === "COMPLETADA"
+          ) {
             sonido.tocar("cierre");
             vibrar("victoria", movimientoReducido);
           }
-          if (tipo === "seleccionar_habitat" && datos.vista.fase === "RETO_RESUELTO" && actual.animal) {
+          if (
+            tipo === "seleccionar_habitat" &&
+            datos.vista.fase === "RETO_RESUELTO" &&
+            actual.animal
+          ) {
             const habId = String(payload.habitat_id ?? "");
             const hab = actual.opciones_habitat.find((h) => h.id === habId);
             if (hab) {
               setHallazgos((prev) =>
-                prev.some((x) => x.animalId === actual.animal!.id && x.habitatId === hab.id)
+                prev.some(
+                  (x) =>
+                    x.animalId === actual.animal!.id && x.habitatId === hab.id,
+                )
                   ? prev
                   : [
                       ...prev,
@@ -341,7 +431,8 @@ export function App() {
                       },
                     ],
               );
-              const imagenAnimal = actual.pictogramas[actual.animal.pictograma_id]?.imagen ?? "";
+              const imagenAnimal =
+                actual.pictogramas[actual.animal.pictograma_id]?.imagen ?? "";
               setAlbum(
                 (prev) =>
                   registrarHallazgoEnAlbum(prev, {
@@ -356,7 +447,10 @@ export function App() {
             }
             sonido.tocar("acierto", habId);
             vibrar("acierto", movimientoReducido);
-          } else if (tipo === "seleccionar_habitat" && datos.vista.fase === "ESPERANDO_RESPUESTA") {
+          } else if (
+            tipo === "seleccionar_habitat" &&
+            datos.vista.fase === "ESPERANDO_RESPUESTA"
+          ) {
             sonido.tocar("neutral");
             vibrar("neutral", movimientoReducido);
           } else if (tipo === "ayuda") {
@@ -364,7 +458,13 @@ export function App() {
             vibrar("pista", movimientoReducido);
           }
         }
-        if (datos.aceptada && datos.respuesta_emitida && datos.vista && tipo !== "pausar" && tipo !== "nueva_partida")
+        if (
+          datos.aceptada &&
+          datos.respuesta_emitida &&
+          datos.vista &&
+          tipo !== "pausar" &&
+          tipo !== "nueva_partida"
+        )
           hablar(datos.vista, "respuesta");
       } catch {
         /* sin notificaciones emergentes */
@@ -439,12 +539,18 @@ export function App() {
     }
   };
 
-  const totalDescubiertos = useMemo(() => resumenAlbum(album).animalesUnicos, [album]);
+  const totalDescubiertos = useMemo(
+    () => resumenAlbum(album).animalesUnicos,
+    [album],
+  );
 
   if (errorCarga)
     return (
       <main id="juego">
-        <p className="introduccion">No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta página.</p>
+        <p className="introduccion">
+          No se pudo cargar el juego. Inicia el servidor y vuelve a abrir esta
+          página.
+        </p>
       </main>
     );
   if (!vista)
@@ -461,7 +567,9 @@ export function App() {
     ? "INICIO"
     : vista.fase === "SELECCION_ANIMAL"
       ? "CATALOGO"
-      : vista.fase === "PAUSADA" || vista.fase === "COMPLETADA" || vista.fase === "ABANDONADA"
+      : vista.fase === "PAUSADA" ||
+          vista.fase === "COMPLETADA" ||
+          vista.fase === "ABANDONADA"
         ? `CIERRE-${vista.fase}`
         : "RETO";
   let pantalla: React.ReactNode;
@@ -476,7 +584,9 @@ export function App() {
         onCerrarModalidad={() => {
           if (vistaRef.current?.fase === "INICIO") guia.parar();
         }}
-        onComenzar={(modalidad: Modalidad) => void accion("iniciar", { modalidad })}
+        onComenzar={(modalidad: Modalidad) =>
+          void accion("iniciar", { modalidad })
+        }
       />
     );
   } else if (vista.fase === "SELECCION_ANIMAL") {
@@ -491,10 +601,16 @@ export function App() {
           void accion("elegir_animal", { animal_id: id });
         }}
         onCambioPagina={() => sonido.tocar("pagina")}
-        controles={<Controles vista={vista} onAccion={(tipo) => void accion(tipo)} />}
+        controles={
+          <Controles vista={vista} onAccion={(tipo) => void accion(tipo)} />
+        }
       />
     );
-  } else if (vista.fase === "PAUSADA" || vista.fase === "COMPLETADA" || vista.fase === "ABANDONADA") {
+  } else if (
+    vista.fase === "PAUSADA" ||
+    vista.fase === "COMPLETADA" ||
+    vista.fase === "ABANDONADA"
+  ) {
     pantalla = (
       <Cierre
         vista={vista}
@@ -530,7 +646,10 @@ export function App() {
           <a className="marca" href="/">
             <LogoZoonauta size={44} />
             <span className="marca-texto">
-              Zoonauta<span className="marca-subtitulo">{t("Animales y hábitats")}</span>
+              Zoonauta
+              <span className="marca-subtitulo">
+                {t("Animales y hábitats")}
+              </span>
             </span>
           </a>
           <div className="cabecera-acciones">
@@ -540,7 +659,11 @@ export function App() {
               aria-haspopup="dialog"
               data-protegido={prefs.protegerPreferencias ? "true" : undefined}
               data-manteniendo={manteniendoPref ? "true" : undefined}
-              title={prefs.protegerPreferencias ? t("Mantén pulsado para abrir Preferencias") : undefined}
+              title={
+                prefs.protegerPreferencias
+                  ? t("Mantén pulsado para abrir Preferencias")
+                  : undefined
+              }
               onClick={() => {
                 if (!prefs.protegerPreferencias) abrirPreferencias();
               }}
@@ -549,18 +672,27 @@ export function App() {
               onPointerLeave={cancelarMantenerPref}
               onPointerCancel={cancelarMantenerPref}
               onKeyDown={(e) => {
-                if (prefs.protegerPreferencias && (e.key === "Enter" || e.key === " ") && !e.repeat) {
+                if (
+                  prefs.protegerPreferencias &&
+                  (e.key === "Enter" || e.key === " ") &&
+                  !e.repeat
+                ) {
                   e.preventDefault();
                   iniciarMantenerPref();
                 }
               }}
               onKeyUp={(e) => {
-                if (prefs.protegerPreferencias && (e.key === "Enter" || e.key === " ")) {
+                if (
+                  prefs.protegerPreferencias &&
+                  (e.key === "Enter" || e.key === " ")
+                ) {
                   cancelarMantenerPref();
                 }
               }}
             >
-              <Icono nombre={prefs.protegerPreferencias ? "candado" : "ajustes"} />
+              <Icono
+                nombre={prefs.protegerPreferencias ? "candado" : "ajustes"}
+              />
               <span>{t("Preferencias")}</span>
             </button>
             <button
@@ -590,7 +722,11 @@ export function App() {
           <motion.div
             key={clavePantalla}
             className="escena-pantalla"
-            initial={movimientoReducido || enInicio ? false : { opacity: 0, x: 18, scale: 0.992 }}
+            initial={
+              movimientoReducido || enInicio
+                ? false
+                : { opacity: 0, x: 18, scale: 0.992 }
+            }
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -608,7 +744,12 @@ export function App() {
           onInstalar={() => void instalarApp()}
           valores={prefs}
           onCambio={(cambios) => {
-            if ("velocidad" in cambios || "vozGrabada" in cambios || cambios.vozActiva === false) guia.parar();
+            if (
+              "velocidad" in cambios ||
+              "vozGrabada" in cambios ||
+              cambios.vozActiva === false
+            )
+              guia.parar();
             setPrefs((p) => ({ ...p, ...cambios }));
           }}
           onIdioma={(nuevo) => void cambiarIdioma(nuevo)}
@@ -623,7 +764,9 @@ export function App() {
               },
               "prueba",
               {
-                error: t("No se pudo reproducir la voz. Puedes volver a pulsar Repetir."),
+                error: t(
+                  "No se pudo reproducir la voz. Puedes volver a pulsar Repetir.",
+                ),
               },
             )
           }
